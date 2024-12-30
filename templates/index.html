@@ -59,7 +59,7 @@
         <div id="status" class="text-center text-sm text-gray-500 my-1"></div>
 
         <div class="flex items-center p-4 bg-white border-t border-gray-300 gradient-bg">
-            <img src="/static/images/Christmas_reindeer_avatar_80x80.png" alt="助手头像" class="w-10 h-10 rounded-full mr-4 shadow-lg">
+            <img src="/static/images/Christmas_reindeer_avatar_80x80.png" alt="助手头像" class="w-10 h-10 rounded-full mr-4 shadow-lg assistant-avatar input-avatar">
             <input id="user_input" type="text" placeholder="请输入内容" onkeydown="checkEnter(event)" class="flex-grow px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-500">
             <button onclick="sendMessage()" class="ml-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 shadow-md focus:outline-none">发送</button>
         </div>
@@ -109,9 +109,9 @@
 
             if (type === 'assistant') {
                 const avatar = document.createElement('img');
-                avatar.src = "/static/images/Christmas_reindeer_avatar_80x80.png";
+                avatar.src = document.querySelector('.input-avatar').src;
                 avatar.alt = "助手头像";
-                avatar.className = "w-6 h-6 rounded-full";
+                avatar.className = "w-6 h-6 rounded-full assistant-avatar";
                 bubble.appendChild(avatar);
             }
 
@@ -181,6 +181,7 @@
                 
                 if (response.ok && result.success) {
                     const roleName = result.role_name || (role === 'santa' ? '圣诞老人' : '驯鹿');
+                    updateAvatar(role);
                     addMessage(`角色已切换为: ${roleName}`, 'assistant');
                     closeSettingsModal();
                 } else {
@@ -194,6 +195,17 @@
             } finally {
                 statusDiv.textContent = '';
             }
+        }
+
+        function updateAvatar(role) {
+            const avatarImages = document.querySelectorAll('.assistant-avatar');
+            const newSrc = role === 'santa' 
+                ? "https://picx.zhimg.com/v2-0073a8a49b65ac0e83bf20db4cf4ba53_720w.jpg?source=172ae18b"
+                : "/static/images/Christmas_reindeer_avatar_80x80.png";
+            
+            avatarImages.forEach(img => {
+                img.src = newSrc;
+            });
         }
     </script>
 </body>
