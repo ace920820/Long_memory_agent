@@ -30,7 +30,7 @@
 </head>
 <body class="flex flex-col h-screen bg-green-100 relative">
     <div class="absolute top-4 left-4 text-xl cursor-pointer" title="帮助">❓</div>
-    <div class="absolute top-4 right-4 text-xl cursor-pointer" title="设置">⚙️</div>
+    <div class="absolute top-4 right-4 text-xl cursor-pointer" onclick="openSettingsModal()" title="设置">⚙️</div>
 
     <div class="flex justify-center items-center christmas-header py-4 shadow-lg">
         <h1 class="text-2xl font-bold">🎄 圣诞快乐！！ 🎁</h1>
@@ -64,6 +64,25 @@
     <div class="snowflake" style="top: 0; left: 50%; animation-delay: 4s;"></div>
     <div class="snowflake" style="top: 0; left: 70%; animation-delay: 6s;"></div>
     <div class="snowflake" style="top: 0; left: 90%; animation-delay: 8s;"></div>
+
+    <div id="settingsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-xl">
+            <h2 class="text-xl font-bold mb-4 text-red-600">选择角色</h2>
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <button onclick="setRole('santa')" class="flex items-center p-3 border rounded-lg hover:bg-red-100">
+                        🎅 圣诞老人
+                    </button>
+                    <button onclick="setRole('reindeer')" class="flex items-center p-3 border rounded-lg hover:bg-green-100">
+                        🦌 驯鹿
+                    </button>
+                </div>
+                <button onclick="closeSettingsModal()" class="w-full mt-4 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
         function addMessage(content, type) {
@@ -112,6 +131,47 @@
         function checkEnter(event) {
             if (event.key === 'Enter') {
                 sendMessage();
+            }
+        }
+
+        function openSettingsModal() {
+            document.getElementById('settingsModal').classList.remove('hidden');
+        }
+
+        function closeSettingsModal() {
+            document.getElementById('settingsModal').classList.add('hidden');
+        }
+
+        async function setRole(role) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = '正在设置角色...';
+
+            try {
+                const response = await fetch('/set_role', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_id: 'default_user',
+                        role: role
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    const roleName = result.role_name || (role === 'santa' ? '圣诞老人' : '驯鹿');
+                    addMessage(`角色已切换为: ${roleName}`, 'assistant');
+                    closeSettingsModal();
+                } else {
+                    const errorMessage = result.error || '角色设置失败';
+                    addMessage(`设置失败: ${errorMessage}`, 'assistant');
+                    console.error('Role setting failed:', result);
+                }
+            } catch (error) {
+                console.error('Error setting role:', error);
+                addMessage('设置角色时发生错误，请稍后重试。', 'assistant');
+            } finally {
+                statusDiv.textContent = '';
             }
         }
     </script>

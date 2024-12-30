@@ -1,17 +1,24 @@
+import logging
+
 class ChatAgent:
     def __init__(self, model, roles_config, default_roles, task_manager=None, classification_model=None):
         self.model = model
+        self.roles_config = roles_config
         self.task_manager = task_manager
         self.classification_model = classification_model
         self.user_contexts = {}
         self.user_roles = {}
+        
         # 初始化默认角色
         for user_id, role_info in default_roles.items():
-            role_name = role_info.get("role")
-            if role_name in roles_config:
-                self.user_roles[user_id] = roles_config[role_name]
+            if isinstance(role_info, dict) and 'role' in role_info:
+                role_name = role_info['role']
+                if role_name in roles_config:
+                    self.user_roles[user_id] = role_name
+                else:
+                    raise ValueError(f"Default role '{role_name}' is not defined in roles configuration.")
             else:
-                raise ValueError(f"Default role '{role_name}' is not defined in roles configuration.")
+                logging.warning(f"Invalid role_info format for user {user_id}")
 
     def set_role(self, user_id, role, roles_config):
         """Set the role for a user."""
@@ -73,9 +80,12 @@ class ChatAgent:
 
         # 如果是首次对话，添加角色上下文
         if not user_context:
-            role_context = self.user_roles.get(user_id, {}).get("prompt_context", "")
-            if role_context:
-                user_context.append({"role": "system", "content": role_context})
+            role_name = self.user_roles.get(user_id)
+            if role_name:
+                role_config = self.roles_config.get(role_name, {})
+                role_prompt = role_config.get("prompt", "")
+                if role_prompt:
+                    user_context.append({"role": "system", "content": role_prompt})
 
         # 添加用户输入到上下文
         user_context.append({"role": "user", "content": user_input})
@@ -97,3 +107,18 @@ class ChatAgent:
         self.user_contexts[user_id] = user_context[-10:]  # 保留最近10轮对话
 
         return assistant_message
+
+    def set_user_role(self, user_id, role):
+        """Set the role for a user and clear their conversation history."""
+        if role not in self.roles_config:
+            raise ValueError(f"Invalid role: {role}")
+        
+        # 设置新角色
+        self.user_roles[user_id] = role
+        
+        # 清空该用户的对话上下文
+        if user_id in self.user_contexts:
+            self.user_contexts[user_id] = []
+            logging.info(f"Cleared conversation history for user {user_id} after role change to {role}")
+        
+        return True
