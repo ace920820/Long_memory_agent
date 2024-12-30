@@ -177,3 +177,41 @@ class ChatAgent:
             logging.info(f"Cleared conversation history for user {user_id} after role change to {role}")
         
         return True
+
+    def process_query(self, user_id: str, query: str) -> str:
+        """优化的对话处理流程"""
+        try:
+            # 1. 查询意图分析
+            intent = self.analyze_intent(query)
+            
+            # 2. 动态检索策略
+            if intent.get('requires_memory'):
+                memories = self.memory_manager.get_relevant_memories(
+                    user_id, 
+                    query,
+                    top_k=intent.get('memory_count', 5)
+                )
+            else:
+                memories = []
+            
+            # 3. 动态提示词构建
+            prompt = self.build_dynamic_prompt(
+                query=query,
+                memories=memories,
+                intent=intent,
+                user_role=self.get_user_role(user_id)
+            )
+            
+            # 4. 响应生成与后处理
+            response = self.llm_model.generate(prompt)
+            processed_response = self.post_process_response(response, intent)
+            
+            # 5. 智能记忆更新
+            if intent.get('should_memorize'):
+                self.update_memories(user_id, query, processed_response)
+            
+            return processed_response
+            
+        except Exception as e:
+            logging.error(f"Error in process_query: {str(e)}")
+            return "抱歉，处理您的请求时出现了错误。"

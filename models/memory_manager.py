@@ -6,6 +6,10 @@ from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
 import os
+import torch
+from transformers import BertTokenizer, BertModel
+from sentence_transformers import util
+import re
 
 class MemoryManager:
     def __init__(self, 
@@ -150,7 +154,7 @@ class MemoryManager:
                 json.dump(simplified_memories, f, ensure_ascii=False, indent=2)
             
             logging.info("Successfully saved memories to file")
-            logging.debug(f"Saved memories: {json.dumps(simplified_memories, ensure_ascii=False, indent=2)}")
+            # logging.debug(f"Saved memories: {json.dumps(simplified_memories, ensure_ascii=False, indent=2)}")
         except Exception as e:
             logging.error(f"Error saving memories: {str(e)}")
 
@@ -233,7 +237,7 @@ class MemoryManager:
                 "message": "记忆更新失败"
             }
 
-    def retrieve_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
+    def retrieve_memories(self, user_id: str, query: str, top_k: int = 50) -> List[Dict]:
         """检索相关记忆"""
         try:
             # 确保用户存在且有记忆
@@ -684,3 +688,187 @@ class MemoryManager:
         except Exception as e:
             logging.error(f"Error in LLM-based split: {str(e)}")
             return None 
+
+    def get_relevant_memories(self, user_id, query, top_k=5):
+        """优化的记忆检索方法"""
+        try:
+            # 1. 动态相似度阈值
+            base_threshold = self.similarity_threshold
+            query_length = len(query)
+            adjusted_threshold = base_threshold * (1 - 0.1 * (query_length > 50))  # 长查询降低阈值
+            
+            # 2. 时间衰减因子
+            current_time = datetime.now()
+            def get_time_weight(memory_time):
+                time_diff = (current_time - datetime.fromisoformat(memory_time)).days
+                return 1 / (1 + 0.1 * time_diff)  # 时间权重衰减
+            
+            # 3. 记忆类型权重
+            type_weights = {
+                'fact': 1.2,
+                'preference': 1.1,
+                'personality': 1.3,
+                'experience': 1.0,
+                'general': 0.9
+            }
+            
+            # 获取并排序记忆
+            relevant_memories = []
+            for memory in self.get_all_memories(user_id):
+                similarity = self.calculate_similarity(query, memory['content'])
+                time_weight = get_time_weight(memory.get('timestamp', ''))
+                type_weight = type_weights.get(memory.get('type', 'general'), 1.0)
+                
+                final_score = similarity * time_weight * type_weight
+                if final_score >= adjusted_threshold:
+                    memory['relevance_score'] = final_score
+                    relevant_memories.append(memory)
+            
+            return sorted(relevant_memories, key=lambda x: x['relevance_score'], reverse=True)
+            
+        except Exception as e:
+            logging.error(f"Error in get_relevant_memories: {str(e)}")
+            return []
+
+    def get_memories_for_context(self, user_id, query):
+        """获取用于上下文的记忆"""
+        relevant_memories = self.get_relevant_memories(user_id, query)
+        
+        # 格式化记忆为上下文字符串
+        context_memories = []
+        for memory in relevant_memories:
+            formatted_memory = f"记忆 ({memory.get('type', 'general')}): {memory.get('content', '')}"
+            context_memories.append(formatted_memory)
+        
+        return "\n".join(context_memories) if context_memories else "" 
+
+    def clean_memories(self, user_id: str) -> Dict:
+        """清理重复和无意义的记忆，并自动更新记忆类型"""
+        try:
+            if user_id not in self.memories:
+                return {"success": False, "error": "用户不存在"}
+
+            all_memories = self.get_all_memories(user_id)
+            if not all_memories:
+                return {"success": False, "error": "没有找到需要整理的记忆"}
+
+            # 创建记忆内容的嵌入向量
+            memory_texts = [m['content'] for m in all_memories]
+            memory_embeddings = self.model.encode(memory_texts, convert_to_tensor=True)
+
+            # 计算记忆间的相似度矩阵
+            similarities = util.pytorch_cos_sim(memory_embeddings, memory_embeddings)
+
+            # 要删除的记忆索引
+            memories_to_delete = []
+            # 要更新类型的记忆
+            memories_to_update = []
+
+            # 定义无意义记忆的模式
+            meaningless_patterns = [
+                r"用户(说|表示|问).*(吗|呢)\??$",  # 问句模式
+                r"用户(说|表示).*什么.*",  # 泛泛而谈的模式
+                r"^(嗯|好的|明白|知道了|谢谢).*",  # 简单应答模式
+                r"用户想知道.*",  # 询问模式
+                r"用户在问.*"  # 询问模式
+            ]
+
+            # 定义记忆类型的模式
+            type_patterns = {
+                'fact': [
+                    r"用户(说|表示).*是.*",  # 事实陈述
+                    r".*的特点是.*",
+                    r".*位于.*",
+                    r".*包含.*",
+                    r".*由.*组成"
+                ],
+                'preference': [
+                    r"用户(喜欢|讨厌|热爱|偏好|不喜欢).*",  # 偏好表达
+                    r".*觉得.*很(好|差|棒|糟)",
+                    r".*认为.*比.*更.*",
+                    r".*更倾向于.*"
+                ],
+                'personality': [
+                    r".*的性格.*",  # 性格特征
+                    r".*的个性.*",
+                    r".*这个人.*",
+                    r".*的习惯是.*"
+                ],
+                'experience': [
+                    r".*曾经.*",  # 经历
+                    r".*经历过.*",
+                    r".*发生过.*",
+                    r".*做过.*"
+                ]
+            }
+
+            # 检测重复、无意义的记忆，并更新记忆类型
+            for i in range(len(all_memories)):
+                if i in memories_to_delete:
+                    continue
+
+                content = all_memories[i]['content']
+                current_type = all_memories[i].get('type', 'general')
+                
+                # 检查是否是无意义的记忆
+                if any(re.search(pattern, content) for pattern in meaningless_patterns):
+                    memories_to_delete.append(i)
+                    logging.info(f"标记无意义记忆: {content}")
+                    continue
+
+                # 检查重复记忆
+                for j in range(i + 1, len(all_memories)):
+                    if j in memories_to_delete:
+                        continue
+                    
+                    similarity = similarities[i][j]
+                    if similarity >= 0.85:  # 高相似度阈值
+                        content_j = all_memories[j]['content']
+                        logging.info(f"发现相似记忆 ({similarity:.2f}):\n{content}\n{content_j}")
+                        memories_to_delete.append(j)
+
+                # 自动判断并更新记忆类型
+                detected_type = None
+                for memory_type, patterns in type_patterns.items():
+                    if any(re.search(pattern, content) for pattern in patterns):
+                        detected_type = memory_type
+                        break
+
+                if detected_type and detected_type != current_type:
+                    memories_to_update.append({
+                        'index': i,
+                        'new_type': detected_type,
+                        'old_type': current_type
+                    })
+
+            # 更新记忆类型
+            updated_count = 0
+            for update in memories_to_update:
+                idx = update['index']
+                if idx < len(self.memories[user_id]):
+                    self.memories[user_id][idx]['type'] = update['new_type']
+                    updated_count += 1
+                    logging.info(f"更新记忆类型: {update['old_type']} -> {update['new_type']}\n内容: {self.memories[user_id][idx]['content']}")
+
+            # 删除标记的记忆
+            deleted_count = 0
+            if memories_to_delete:
+                delete_result = self.delete_memories(user_id, memories_to_delete)
+                if delete_result.get("success"):
+                    deleted_count = delete_result.get('deleted_count', 0)
+
+            # 保存更改
+            if updated_count > 0:
+                self.save_memories()
+
+            return {
+                "success": True,
+                "message": f"清理完成：删除了 {deleted_count} 条重复或无意义记忆，更新了 {updated_count} 条记忆的类型",
+                "deleted_count": deleted_count,
+                "updated_count": updated_count,
+                "total_memories": len(all_memories)
+            }
+
+        except Exception as e:
+            logging.error(f"Error in clean_memories: {str(e)}")
+            return {"success": False, "error": str(e)} 

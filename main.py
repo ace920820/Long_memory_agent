@@ -20,7 +20,7 @@ def create_memory_manager():
         manager = MemoryManager(
             model_name="all-MiniLM-L6-v2",
             memory_file="config/user_memories.json",
-            similarity_threshold=0.55
+            similarity_threshold=0.45
         )
         
         # 验证 get_all_memories 方法是否存在
@@ -53,7 +53,7 @@ def create_app():
     memory_manager = MemoryManager(
         model_config=config.get('embedding_model'),
         memory_file="config/user_memories.json",
-        similarity_threshold=0.55
+        similarity_threshold=0.45
     )
 
     # 添加示例文档
@@ -225,6 +225,18 @@ def create_app():
                 "error": "Failed to split memory",
                 "details": str(e)
             }), 500
+
+    @app.route('/api/memories/clean', methods=['POST'])
+    def clean_memories():
+        try:
+            data = request.json
+            user_id = data.get('user_id', 'default_user')
+            
+            result = memory_manager.clean_memories(user_id)
+            return jsonify(result)
+        except Exception as e:
+            logging.error(f"Error in clean_memories endpoint: {str(e)}")
+            return jsonify({"error": "Failed to clean memories"}), 500
 
     return app
 

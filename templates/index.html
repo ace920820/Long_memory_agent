@@ -96,6 +96,21 @@
     <div class="snowflake" style="top: 0; left: 70%; animation-delay: 6s;"></div>
     <div class="snowflake" style="top: 0; left: 90%; animation-delay: 8s;"></div>
 
+    <div class="memory-manager-button-container" style="position: fixed; top: 20px; right: 20px;">
+        <button onclick="openMemoryManager()" class="memory-manager-btn" style="
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        ">
+            记忆管理
+        </button>
+    </div>
+
     <script>
         function addMessage(content, type) {
             const messagesDiv = document.getElementById('messages');
@@ -246,6 +261,11 @@
             avatarImages.forEach(img => {
                 img.src = newSrc;
             });
+        }
+
+        function openMemoryManager() {
+            // 在新窗口打开记忆管理页面
+            window.open('/memory-manager', '_blank', 'width=800,height=600');
         }
     </script>
 </body>

@@ -34,6 +34,9 @@
                 <button onclick="restructureSelectedMemories()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                     重构选中记忆
                 </button>
+                <button onclick="cleanMemories()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+                    清理重复记忆
+                </button>
             </div>
             <div class="flex gap-2">
                 <input type="text" id="searchMemory" placeholder="搜索记忆..." 
@@ -620,6 +623,39 @@
             } catch (error) {
                 console.error('Error splitting memory:', error);
                 showNotification('拆分记忆时发生错误', 'error');
+            }
+        }
+
+        async function cleanMemories() {
+            try {
+                if (!confirm('确定要清理记忆吗？这将删除重复和无意义的记忆。')) {
+                    return;
+                }
+
+                showNotification('正在清理记忆...', 'info');
+
+                const response = await fetch('/api/memories/clean', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        user_id: 'default_user'
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification(result.message, 'success');
+                    // 刷新记忆列表
+                    await fetchMemories();
+                } else {
+                    showNotification('清理失败: ' + (result.error || '未知错误'), 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showNotification('清理过程中发生错误', 'error');
             }
         }
     </script>
