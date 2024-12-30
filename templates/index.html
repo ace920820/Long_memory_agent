@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .gradient-bg {
-            background: linear-gradient(90deg, rgba(227,32,36,1) 0%, rgba(0,123,0,1) 100%);
+            background: linear-gradient(90deg, rgba(227,32,36,0.8) 0%, rgba(0,123,0,0.8) 100%);
         }
         .christmas-header {
             background: linear-gradient(to right, #ff0000, #00ff00);
@@ -15,8 +15,8 @@
         }
         .snowflake {
             position: absolute;
-            width: 1em;
-            height: 1em;
+            width: 0.5em;
+            height: 0.5em;
             background: white;
             opacity: 0.8;
             border-radius: 50%;
@@ -25,6 +25,17 @@
         @keyframes snowfall {
             from { transform: translateY(-100%); }
             to { transform: translateY(100vh); }
+        }
+        .chat-container {
+            height: calc(100vh - 8rem);
+        }
+        .message-bubble {
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .decoration-image {
+            max-height: 100px;
+            width: auto;
         }
     </style>
 </head>
@@ -36,16 +47,16 @@
         <h1 class="text-2xl font-bold">🎄 圣诞快乐！！ 🎁</h1>
     </div>
 
-    <div class="flex flex-col flex-grow overflow-hidden">
+    <div class="flex-grow flex flex-col overflow-hidden">
         <div id="messages" class="flex-grow overflow-y-auto p-6 space-y-4 bg-white shadow-lg rounded-lg mx-4 mt-4">
             <!-- 消息会动态加载到这里 -->
         </div>
 
-        <div class="flex justify-center py-4">
-            <img src="https://picx.zhimg.com/v2-0073a8a49b65ac0e83bf20db4cf4ba53_720w.jpg?source=172ae18b" alt="圣诞装饰" class="rounded-full shadow-lg">
+        <div class="flex justify-center py-2">
+            <img src="https://picx.zhimg.com/v2-0073a8a49b65ac0e83bf20db4cf4ba53_720w.jpg?source=172ae18b" alt="圣诞装饰" class="rounded-full shadow-lg decoration-image">
         </div>
 
-        <div id="status" class="text-center text-sm text-gray-500 my-2"></div>
+        <div id="status" class="text-center text-sm text-gray-500 my-1"></div>
 
         <div class="flex items-center p-4 bg-white border-t border-gray-300 gradient-bg">
             <img src="/static/images/Christmas_reindeer_avatar_80x80.png" alt="助手头像" class="w-10 h-10 rounded-full mr-4 shadow-lg">
@@ -54,17 +65,11 @@
         </div>
     </div>
 
-    <footer class="bg-green-200 py-2 text-center text-sm text-red-600">
+    <footer class="bg-green-200 py-1 text-center text-sm text-red-600">
         © 2024 圣诞对话系统 - All rights reserved.
     </footer>
 
-    <!-- Falling Snowflakes -->
-    <div class="snowflake" style="top: 0; left: 10%; animation-delay: 0s;"></div>
-    <div class="snowflake" style="top: 0; left: 30%; animation-delay: 2s;"></div>
-    <div class="snowflake" style="top: 0; left: 50%; animation-delay: 4s;"></div>
-    <div class="snowflake" style="top: 0; left: 70%; animation-delay: 6s;"></div>
-    <div class="snowflake" style="top: 0; left: 90%; animation-delay: 8s;"></div>
-
+    <!-- 设置弹窗 -->
     <div id="settingsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
         <div class="bg-white p-6 rounded-lg shadow-xl">
             <h2 class="text-xl font-bold mb-4 text-red-600">选择角色</h2>
@@ -84,21 +89,37 @@
         </div>
     </div>
 
+    <!-- Falling Snowflakes -->
+    <div class="snowflake" style="top: 0; left: 10%; animation-delay: 0s;"></div>
+    <div class="snowflake" style="top: 0; left: 30%; animation-delay: 2s;"></div>
+    <div class="snowflake" style="top: 0; left: 50%; animation-delay: 4s;"></div>
+    <div class="snowflake" style="top: 0; left: 70%; animation-delay: 6s;"></div>
+    <div class="snowflake" style="top: 0; left: 90%; animation-delay: 8s;"></div>
+
     <script>
         function addMessage(content, type) {
             const messagesDiv = document.getElementById('messages');
             const messageDiv = document.createElement('div');
-            messageDiv.className = `flex items-center max-w-xs p-4 rounded-lg ${type === 'user' ? 'ml-auto bg-red-100' : 'mr-auto bg-green-100'} shadow`;
+            messageDiv.className = `flex ${type === 'user' ? 'justify-end' : 'justify-start'}`;
+            
+            const bubble = document.createElement('div');
+            bubble.className = `message-bubble p-3 rounded-lg ${
+                type === 'user' ? 'bg-red-100' : 'bg-green-100'
+            } shadow-sm flex items-start space-x-2`;
+
             if (type === 'assistant') {
                 const avatar = document.createElement('img');
                 avatar.src = "/static/images/Christmas_reindeer_avatar_80x80.png";
                 avatar.alt = "助手头像";
-                avatar.className = "w-8 h-8 rounded-full mr-4";
-                messageDiv.appendChild(avatar);
+                avatar.className = "w-6 h-6 rounded-full";
+                bubble.appendChild(avatar);
             }
+
             const messageText = document.createElement('span');
+            messageText.className = "text-gray-800";
             messageText.textContent = content;
-            messageDiv.appendChild(messageText);
+            bubble.appendChild(messageText);
+            messageDiv.appendChild(bubble);
             messagesDiv.appendChild(messageDiv);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }

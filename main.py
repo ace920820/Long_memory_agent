@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from models.llm_model import LLMModel
 from models.agent import ChatAgent
 from services.llm_service import LLMService
+from models.rag_module import RAGModule
 import yaml
 import logging.config
 import sys
@@ -22,7 +23,22 @@ default_roles = config.get("default_roles", {})
 
 # Initialize components
 llm_model = LLMModel(config)
-chat_agent = ChatAgent(llm_model, roles_config, default_roles)
+rag_module = RAGModule(similarity_threshold=0.45)
+
+# 添加示例文档
+documents = [
+    "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
+    "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
+    "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
+    "Jamie最喜欢的人是他的老婆和多米",
+    "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。",
+    "Jamie注重实用性，喜欢将复杂的概念转化为明确的目标和可执行的方案，这种务实的态度让人印象深刻。你的思维清晰，条理分明，善于组织和表达自己的想法，同时又保留着对新事物的开放心态与热情。无论是在学习还是解决问题的过程中，你都展现出一种沉着冷静的魅力与内心的追求。"
+
+    # ... 添加更多相关文档
+]
+rag_module.add_documents(documents)
+
+chat_agent = ChatAgent(llm_model, roles_config, default_roles, rag_module=rag_module)
 llm_service = LLMService(chat_agent)
 
 
@@ -96,5 +112,5 @@ def set_role():
 
 
 if __name__ == "__main__":
-    # app.run(
-    app.run(host='10.151.79.239', port=5000,debug=True)
+    app.run(debug=True)
+    # app.run(host='10.151.79.239', port=5000,debug=True)
