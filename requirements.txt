@@ -1,0 +1,25 @@
+# Web Framework
+Flask==2.0.1
+
+# AI/ML Libraries
+faiss-cpu==1.7.4
+sentence-transformers==2.2.2
+numpy>=1.19.5
+torch>=1.9.0
+transformers>=4.11.3
+
+# Configuration
+PyYAML==6.0.1
+
+# Logging
+python-json-logger==2.0.7
+
+# Utilities
+python-dateutil==2.8.2
+requests>=2.26.0
+tqdm>=4.62.3
+
+# Development Tools
+pytest==7.1.1
+black==22.3.0
+flake8==4.0.1 

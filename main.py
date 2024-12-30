@@ -3,6 +3,7 @@ from models.llm_model import LLMModel
 from models.agent import ChatAgent
 from services.llm_service import LLMService
 from models.rag_module import RAGModule
+from models.memory_manager import MemoryManager
 import yaml
 import logging.config
 import sys
@@ -23,7 +24,12 @@ default_roles = config.get("default_roles", {})
 
 # Initialize components
 llm_model = LLMModel(config)
-rag_module = RAGModule(similarity_threshold=0.45)
+rag_module = RAGModule(similarity_threshold=0.55)
+memory_manager = MemoryManager(
+    model_name="all-MiniLM-L6-v2",
+    memory_file="config/user_memories.json",
+    similarity_threshold=0.55
+)
 
 # 添加示例文档
 documents = [
@@ -38,7 +44,13 @@ documents = [
 ]
 rag_module.add_documents(documents)
 
-chat_agent = ChatAgent(llm_model, roles_config, default_roles, rag_module=rag_module)
+chat_agent = ChatAgent(
+    llm_model, 
+    roles_config, 
+    default_roles, 
+    rag_module=rag_module,
+    memory_manager=memory_manager
+)
 llm_service = LLMService(chat_agent)
 
 
@@ -71,8 +83,13 @@ def chat():
             chat_agent.set_user_role(user_id, default_role)
             logging.info(f"Assigned default role to user: {user_id}")
 
-        response = llm_service.handle_query(user_id, user_input)
-        return jsonify({"response": response})
+        result = llm_service.handle_query(user_id, user_input)
+        
+        # 如果返回值是字典（包含记忆状态）
+        if isinstance(result, dict):
+            return jsonify(result)
+        # 如果是字符串（向后兼容）
+        return jsonify({"response": result})
 
     except Exception as e:
         logging.error(f"Error in chat endpoint: {str(e)}")

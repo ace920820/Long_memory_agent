@@ -117,7 +117,24 @@
 
             const messageText = document.createElement('span');
             messageText.className = "text-gray-800";
-            messageText.textContent = content;
+            
+            // 处理不同的响应格式
+            let messageContent = '';
+            if (typeof content === 'string') {
+                messageContent = content;
+            } else if (content && typeof content === 'object') {
+                if (content.error) {
+                    messageContent = content.error;
+                } else if (content.response) {
+                    messageContent = content.response;
+                } else {
+                    messageContent = '无法解析的响应格式';
+                }
+            } else {
+                messageContent = '无效的响应';
+            }
+            
+            messageText.textContent = messageContent;
             bubble.appendChild(messageText);
             messageDiv.appendChild(bubble);
             messagesDiv.appendChild(messageDiv);
@@ -140,9 +157,32 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ user_input: userInput })
                 });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
                 const result = await response.json();
-                addMessage(result.response, 'assistant');
+                
+                // 添加调试日志
+                console.log('Received response:', result);
+                
+                // 显示消息
+                if (result.error) {
+                    addMessage({ error: result.error }, 'assistant');
+                } else {
+                    addMessage({ response: result.response }, 'assistant');
+                }
+                
+                // 显示记忆更新状态
+                if (result.memory_status && result.memory_status.success) {
+                    const memoryNote = document.createElement('div');
+                    memoryNote.className = 'text-xs text-gray-500 mt-1 italic text-center';
+                    memoryNote.textContent = `${result.memory_status.message}: ${result.memory_status.content.split('\n')[0]}`;
+                    document.getElementById('messages').appendChild(memoryNote);
+                }
             } catch (error) {
+                console.error('Error:', error);
                 addMessage('网络异常，请稍后重试。', 'assistant');
             } finally {
                 statusDiv.textContent = '';

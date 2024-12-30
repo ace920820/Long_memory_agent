@@ -36,81 +36,83 @@ class RAGModule:
             return False
 
     def search(self, query: str, top_k: int = 5) -> List[Dict[str, str]]:
-        """检索与查询最相关的文档。
-        :param query: 用户查询
-        :param top_k: 返回的文档数量
-        :return: 包含文档及其相似度的列表
-        """
+        """检索与查询最相关的文档。"""
         try:
             query_embedding = self.model.encode([query])
             distances, indices = self.index.search(query_embedding, top_k)
             results = []
             
             # FAISS返回的是L2距离，需要转换为相似度分数
-            # L2距离越小表示越相似，转换为相似度分数：1 / (1 + distance)
             for i, idx in enumerate(indices[0]):
                 if idx < len(self.doc_store):
                     similarity_score = 1 / (1 + float(distances[0][i]))
                     if similarity_score >= self.similarity_threshold:
+                        doc = self.doc_store[idx]
                         results.append({
-                            "document": self.doc_store[idx],
+                            "document": doc,
                             "score": similarity_score
                         })
-                        logging.debug(f"Document matched with score {similarity_score}: {self.doc_store[idx][:100]}...")
+                        logging.info(f"知识库匹配 (得分: {similarity_score:.4f}):\n文本: {doc}")
                     else:
-                        logging.debug(f"Document filtered out due to low similarity score {similarity_score}")
+                        logging.info(f"知识库文本因相似度过低被过滤 (得分: {similarity_score:.4f}):\n文本: {self.doc_store[idx]}")
             
             return results
         except Exception as e:
             logging.error(f"Search failed: {str(e)}")
             return []
 
-    def generate_response(self, query: str, llm_model, top_k: int = 5, role_prompt: str = None) -> str:
+    def generate_response(self, query: str, llm_model, role_prompt: str = None, context: list = None, memories: list = None) -> str:
         """生成基于上下文增强的回答。
         :param query: 用户查询
         :param llm_model: LLM模型实例
-        :param top_k: 用于增强的相关文档数量
         :param role_prompt: 角色提示词
+        :param context: 对话历史上下文
+        :param memories: 相关记忆列表
         :return: 回答文本
         """
         try:
-            relevant_docs = self.search(query, top_k)
+            relevant_docs = self.search(query, top_k=5)
             
-            # 如果没有找到相关度足够高的文档，直接使用角色提示生成回答
-            if not relevant_docs:
-                logging.info("No relevant documents found above similarity threshold")
-                context = []
-                if role_prompt:
-                    context.append({"role": "system", "content": role_prompt})
+            # 构建知识库内容
+            docs_context = []
+            if relevant_docs:
+                docs_context.extend([doc["document"] for doc in relevant_docs])
+            
+            # 添加记忆内容
+            if memories:
+                for m in memories:
+                    first_line = m['content'].split('\n')[0]
+                    docs_context.append(f"历史记忆: {first_line}")
+            
+            # 如果没有相关文档和记忆，且有上下文，直接使用上下文
+            if not docs_context and context:
+                context.append({"role": "user", "content": query})
                 return llm_model.generate_response(query, context)
 
-            # 按相似度分数排序并记录日志
-            relevant_docs.sort(key=lambda x: x["score"], reverse=True)
-            for doc in relevant_docs:
-                logging.debug(f"Using document with score {doc['score']}: {doc['document'][:100]}...")
-
-            context = "\n".join([doc["document"] for doc in relevant_docs])
-            
-            # 构建提示词，包含角色设定
+            # 构建完整的系统提示词
             system_prompt = "你是一个知识丰富的助手，需要基于提供的参考信息来回答问题。"
             if role_prompt:
                 system_prompt = f"{role_prompt}\n\n同时，你需要基于提供的参考信息来回答问题。"
 
-            prompt = f"""基于以下参考信息回答问题：
+            # 构建带有知识库内容的提示词
+            knowledge_prompt = f"""基于以下参考信息回答问题：
 
 参考信息：
-{context}
+{chr(10).join(docs_context)}
 
 问题：{query}
 
-请根据上述参考信息提供准确、相关的回答。如果参考信息不足以回答问题，请说明。"""
+请根据上述参考信息提供准确、相关的回答。"""
 
-            conversation_context = [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": prompt}
-            ]
+            # 合并上下文
+            conversation_context = context or []
+            if not any(msg.get("role") == "system" for msg in conversation_context):
+                conversation_context.insert(0, {"role": "system", "content": system_prompt})
+            
+            conversation_context.append({"role": "user", "content": knowledge_prompt})
 
-            return llm_model.generate_response(prompt, conversation_context)
+            return llm_model.generate_response(knowledge_prompt, conversation_context)
+            
         except Exception as e:
             logging.error(f"Response generation failed: {str(e)}")
             return "抱歉，生成回答时出现错误。"
