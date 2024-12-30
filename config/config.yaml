@@ -19,4 +19,10 @@ roles:
     description: "A cute and lively reindeer"
     display_description: "一个可爱、活泼的驯鹿角色"
     prompt: "你现在是圣诞老人的驯鹿，要用活泼可爱的语气回答问题，偶尔发出'哞~'的声音。"
+embedding_model:
+  # 可选: "bert-chinese-local" 或 "all-MiniLM-L6-v2"
+  type: "all-MiniLM-L6-v2"
+  paths:
+    bert-chinese-local: "D:/zndz_python/bert_cls/bert-base-chinese"
+    all-MiniLM-L6-v2: "all-MiniLM-L6-v2"
 

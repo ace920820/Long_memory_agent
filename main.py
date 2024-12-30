@@ -50,7 +50,11 @@ def create_app():
     # Initialize components
     llm_model = LLMModel(config)
     rag_module = RAGModule(similarity_threshold=0.55)
-    memory_manager = create_memory_manager()
+    memory_manager = MemoryManager(
+        model_config=config.get('embedding_model'),
+        memory_file="config/user_memories.json",
+        similarity_threshold=0.55
+    )
 
     # 添加示例文档
     documents = [
@@ -182,6 +186,45 @@ def create_app():
         except Exception as e:
             logging.error(f"Error restructuring memories: {str(e)}")
             return jsonify({"error": "Failed to restructure memories"}), 500
+
+    @app.route('/api/memories/delete', methods=['POST'])
+    def delete_memories():
+        try:
+            data = request.json
+            memory_ids = data.get('memoryIds', [])
+            user_id = data.get('user_id', 'default_user')
+            
+            result = memory_manager.delete_memories(user_id, memory_ids)
+            return jsonify(result)
+            
+        except Exception as e:
+            logging.error(f"Error deleting memories: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "Failed to delete memories",
+                "details": str(e)
+            }), 500
+
+    @app.route('/api/memories/split', methods=['POST'])
+    def split_memory():
+        try:
+            data = request.json
+            memory_id = data.get('memoryId')
+            user_id = data.get('user_id', 'default_user')
+            
+            if memory_id is None:
+                return jsonify({"success": False, "error": "Memory ID is required"}), 400
+            
+            result = memory_manager.split_memory(user_id, memory_id)
+            return jsonify(result)
+            
+        except Exception as e:
+            logging.error(f"Error splitting memory: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "Failed to split memory",
+                "details": str(e)
+            }), 500
 
     return app
 
