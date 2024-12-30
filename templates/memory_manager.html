@@ -1,1 +1,380 @@
- 
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记忆管理系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- 顶部导航 -->
+        <nav class="flex justify-between items-center mb-8">
+            <h1 class="text-2xl font-bold text-gray-800">记忆管理系统</h1>
+            <a href="/" class="text-blue-600 hover:text-blue-800">返回对话</a>
+        </nav>
+
+        <!-- 记忆分类标签 -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold mb-3">记忆分类</h2>
+            <div class="flex flex-wrap gap-2" id="memoryTags">
+                <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full active" data-type="all">全部</button>
+                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="fact">事实</button>
+                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="preference">偏好</button>
+                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="dialogue">对话</button>
+            </div>
+        </div>
+
+        <!-- 记忆管理工具栏 -->
+        <div class="flex justify-between items-center mb-6">
+            <div class="flex gap-4">
+                <button onclick="showAddMemoryModal()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                    添加记忆
+                </button>
+                <button onclick="restructureSelectedMemories()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    重构选中记忆
+                </button>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" id="searchMemory" placeholder="搜索记忆..." 
+                    class="px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
+            </div>
+        </div>
+
+        <!-- 记忆列表 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <table class="min-w-full">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <input type="checkbox" id="selectAll" class="rounded">
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">内容</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">时间</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200" id="memoriesList">
+                    <!-- 记忆项会通过 JavaScript 动态添加 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 添加记忆模态框 -->
+    <div id="addMemoryModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-2xl">
+            <h3 class="text-lg font-semibold mb-4">添加新记忆</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">记忆类型</label>
+                    <select id="memoryType" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                        <option value="fact">事实</option>
+                        <option value="preference">偏好</option>
+                        <option value="dialogue">对话</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">记忆内容</label>
+                    <textarea id="memoryContent" rows="4" 
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"></textarea>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button onclick="closeAddMemoryModal()" 
+                        class="px-4 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200">取消</button>
+                    <button onclick="addNewMemory()" 
+                        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 记忆重构模态框 -->
+    <div id="restructureModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-2xl">
+            <h3 class="text-lg font-semibold mb-4">重构记忆</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">选择重构模板</label>
+                    <select id="restructureTemplate" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                        <option value="fact">事实陈述</option>
+                        <option value="preference">个人偏好</option>
+                        <option value="personality">性格特征</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">重构结果预览</label>
+                    <div id="restructurePreview" class="mt-1 p-4 bg-gray-50 rounded-md min-h-[100px]"></div>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button onclick="closeRestructureModal()" 
+                        class="px-4 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200">取消</button>
+                    <button onclick="saveRestructuredMemories()" 
+                        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">保存重构</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let memories = [];
+        let selectedMemories = new Set();
+
+        // 页面加载时获取记忆
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchMemories();
+            
+            // 添加全选功能
+            document.getElementById('selectAll').addEventListener('change', (e) => {
+                const checkboxes = document.querySelectorAll('.memory-checkbox');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = e.target.checked;
+                    if (e.target.checked) {
+                        selectedMemories.add(parseInt(checkbox.value));
+                    } else {
+                        selectedMemories.delete(parseInt(checkbox.value));
+                    }
+                });
+            });
+
+            // 添加搜索功能
+            document.getElementById('searchMemory').addEventListener('input', (e) => {
+                const searchText = e.target.value.toLowerCase();
+                const filteredMemories = memories.filter(memory => 
+                    memory.content.toLowerCase().includes(searchText)
+                );
+                renderMemories(filteredMemories);
+            });
+
+            // 添加分类筛选功能
+            document.querySelectorAll('#memoryTags button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const type = button.dataset.type;
+                    document.querySelectorAll('#memoryTags button').forEach(b => 
+                        b.classList.remove('bg-blue-100', 'text-blue-800'));
+                    button.classList.add('bg-blue-100', 'text-blue-800');
+                    
+                    if (type === 'all') {
+                        renderMemories(memories);
+                    } else {
+                        const filteredMemories = memories.filter(memory => 
+                            memory.type === type
+                        );
+                        renderMemories(filteredMemories);
+                    }
+                });
+            });
+        });
+
+        // 获取记忆列表
+        async function fetchMemories() {
+            try {
+                const response = await fetch('/api/memories');
+                const data = await response.json();
+                
+                console.log('Response from server:', data);  // 添加调试日志
+                
+                if (data.memories) {
+                    memories = data.memories;
+                    console.log('Loaded memories:', memories);  // 添加调试日志
+                    
+                    if (Array.isArray(memories)) {
+                        renderMemories(memories);
+                    } else {
+                        console.error('Memories is not an array:', memories);
+                        alert('记忆数据格式错误');
+                    }
+                } else {
+                    console.error('No memories data in response:', data);
+                    if (data.error) {
+                        console.error('Error details:', data.details);  // 显示详细错误信息
+                        alert(`获取记忆列表失败: ${data.error}\n${data.details || ''}`);
+                    } else {
+                        alert('获取记忆列表失败：未知错误');
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching memories:', error);
+                alert('获取记忆列表失败，请检查控制台获取详细信息');
+            }
+        }
+
+        // 渲染记忆列表
+        function renderMemories(memoriesToRender) {
+            const tbody = document.getElementById('memoriesList');
+            
+            if (!Array.isArray(memoriesToRender)) {
+                console.error('memoriesToRender is not an array:', memoriesToRender);
+                return;
+            }
+            
+            try {
+                tbody.innerHTML = memoriesToRender.map((memory, index) => {
+                    try {
+                        const date = new Date(memory.timestamp);
+                        const formattedDate = date.toLocaleString('zh-CN', {
+                            year: 'numeric',
+                            month: '2-digit',
+                            day: '2-digit',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        });
+
+                        return `
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <input type="checkbox" class="memory-checkbox rounded" 
+                                        value="${memory.id || index}" 
+                                        ${selectedMemories.has(memory.id || index) ? 'checked' : ''}>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-900 whitespace-pre-wrap">${memory.content || '(无内容)'}</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
+                                        ${getTypeColor(memory.type || 'general')}">
+                                        ${memory.type || 'general'}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-500">
+                                    ${formattedDate}
+                                </td>
+                                <td class="px-6 py-4 text-sm">
+                                    <button onclick="editMemory(${memory.id || index})" 
+                                        class="text-blue-600 hover:text-blue-900">编辑</button>
+                                    <button onclick="deleteMemory(${memory.id || index})" 
+                                        class="ml-3 text-red-600 hover:text-red-900">删除</button>
+                                </td>
+                            </tr>
+                        `;
+                    } catch (e) {
+                        console.error('Error rendering memory:', memory, e);
+                        return '';
+                    }
+                }).join('');
+
+                // 添加复选框事件监听
+                document.querySelectorAll('.memory-checkbox').forEach(checkbox => {
+                    checkbox.addEventListener('change', (e) => {
+                        const memoryId = parseInt(e.target.value);
+                        if (e.target.checked) {
+                            selectedMemories.add(memoryId);
+                        } else {
+                            selectedMemories.delete(memoryId);
+                        }
+                    });
+                });
+            } catch (e) {
+                console.error('Error in renderMemories:', e);
+                tbody.innerHTML = '<tr><td colspan="5" class="px-6 py-4 text-center text-red-600">渲染记忆列表时出错</td></tr>';
+            }
+        }
+
+        // 获取记忆类型的颜色样式
+        function getTypeColor(type) {
+            const colors = {
+                fact: 'bg-green-100 text-green-800',
+                preference: 'bg-blue-100 text-blue-800',
+                dialogue: 'bg-purple-100 text-purple-800'
+            };
+            return colors[type] || 'bg-gray-100 text-gray-800';
+        }
+
+        // 显示添加记忆模态框
+        function showAddMemoryModal() {
+            document.getElementById('addMemoryModal').classList.remove('hidden');
+        }
+
+        // 关闭添加记忆模态框
+        function closeAddMemoryModal() {
+            document.getElementById('addMemoryModal').classList.add('hidden');
+        }
+
+        // 添加新记忆
+        async function addNewMemory() {
+            const type = document.getElementById('memoryType').value;
+            const content = document.getElementById('memoryContent').value;
+
+            try {
+                const response = await fetch('/api/memories', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ type, content })
+                });
+
+                if (response.ok) {
+                    closeAddMemoryModal();
+                    fetchMemories();
+                }
+            } catch (error) {
+                console.error('Error adding memory:', error);
+            }
+        }
+
+        // 重构选中的记忆
+        function restructureSelectedMemories() {
+            if (selectedMemories.size === 0) {
+                alert('请先选择要重构的记忆');
+                return;
+            }
+            document.getElementById('restructureModal').classList.remove('hidden');
+            updateRestructurePreview();
+        }
+
+        // 更新重构预览
+        async function updateRestructurePreview() {
+            const template = document.getElementById('restructureTemplate').value;
+            const selectedMemoryIds = Array.from(selectedMemories);
+
+            try {
+                const response = await fetch('/api/memories/restructure-preview', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        memoryIds: selectedMemoryIds,
+                        template: template
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('restructurePreview').textContent = data.preview;
+                }
+            } catch (error) {
+                console.error('Error getting restructure preview:', error);
+            }
+        }
+
+        // 保存重构后的记忆
+        async function saveRestructuredMemories() {
+            const template = document.getElementById('restructureTemplate').value;
+            const selectedMemoryIds = Array.from(selectedMemories);
+
+            try {
+                const response = await fetch('/api/memories/restructure', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        memoryIds: selectedMemoryIds,
+                        template: template
+                    })
+                });
+
+                if (response.ok) {
+                    closeRestructureModal();
+                    selectedMemories.clear();
+                    fetchMemories();
+                }
+            } catch (error) {
+                console.error('Error saving restructured memories:', error);
+            }
+        }
+
+        // 关闭重构模态框
+        function closeRestructureModal() {
+            document.getElementById('restructureModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html> 
