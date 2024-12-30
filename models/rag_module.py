@@ -1,64 +1,127 @@
+from sentence_transformers import SentenceTransformer, util
 import faiss
-from typing import List, Dict
-from sentence_transformers import SentenceTransformer
+import numpy as np
+import os
 import logging
 
 class RAGModule:
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2", index_type: str = "Flat", similarity_threshold: float = 0.6):
-        """初始化RAG模块
-        :param model_name: 嵌入模型的名称
-        :param index_type: FAISS索引类型（如Flat, IVF, HNSW）
-        :param similarity_threshold: 相似度阈值，低于此值的文档将被过滤掉
+    def __init__(self, 
+                 model_name: str = "all-MiniLM-L6-v2",
+                 similarity_threshold: float = 0.5,
+                 index_path: str = "data/vector_store"):
+        """初始化 RAG 模块
+        
+        Args:
+            model_name: 使用的嵌入模型名称
+            similarity_threshold: 相似度阈值
+            index_path: 向量存储路径
         """
-        try:
-            self.model = SentenceTransformer(model_name)
-            self.index = faiss.IndexFlatL2(self.model.get_sentence_embedding_dimension())
-            self.doc_store = []  # 用于存储原始文档及其ID
-            self.similarity_threshold = similarity_threshold
-            logging.info(f"Successfully initialized RAG module with model {model_name}")
-        except Exception as e:
-            logging.error(f"Failed to initialize RAG module: {str(e)}")
-            raise
+        self.model = SentenceTransformer(model_name)
+        self.similarity_threshold = similarity_threshold
+        self.index_path = index_path
+        self.dimension = 384  # all-MiniLM-L6-v2 的向量维度
+        
+        # 初始化或加载索引
+        self._init_index()
+        
+        # 存储文档
+        self.documents = []
+        
+        # 添加示例文档
+        self.add_documents([
+            "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
+            "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
+            "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
+            "Jamie最喜欢的人是他的老婆和多米",
+            "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。"
+        ])
 
-    def add_documents(self, documents: List[str]) -> bool:
-        """向知识库中添加文档。
-        :param documents: 文档列表
-        :return: 是否成功添加
-        """
+    def _init_index(self):
+        """初始化或加载 FAISS 索引"""
         try:
-            embeddings = self.model.encode(documents)
-            self.index.add(embeddings)
-            self.doc_store.extend(documents)
-            logging.info(f"Successfully added {len(documents)} documents to knowledge base")
-            return True
-        except Exception as e:
-            logging.error(f"Failed to add documents: {str(e)}")
-            return False
-
-    def search(self, query: str, top_k: int = 5) -> List[Dict[str, str]]:
-        """检索与查询最相关的文档。"""
-        try:
-            query_embedding = self.model.encode([query])
-            distances, indices = self.index.search(query_embedding, top_k)
-            results = []
+            # 确保目录存在
+            os.makedirs(self.index_path, exist_ok=True)
             
-            # FAISS返回的是L2距离，需要转换为相似度分数
+            # 创建新的索引
+            self.index = faiss.IndexFlatL2(self.dimension)
+            
+            # 如果存在已保存的索引，则加载
+            index_file = os.path.join(self.index_path, "index.faiss")
+            if os.path.exists(index_file):
+                self.index = faiss.read_index(index_file)
+                logging.info(f"Loaded existing index from {index_file}")
+            
+        except Exception as e:
+            logging.error(f"Error initializing index: {str(e)}")
+            # 创建空索引作为后备
+            self.index = faiss.IndexFlatL2(self.dimension)
+
+    def add_documents(self, documents: list):
+        """添加文档到知识库"""
+        try:
+            if not documents:
+                return
+            
+            # 编码文档
+            embeddings = self.model.encode(documents)
+            
+            # 添加到索引
+            self.index.add(embeddings.astype('float32'))
+            
+            # 保存文档
+            self.documents.extend(documents)
+            
+            # 保存索引
+            index_file = os.path.join(self.index_path, "index.faiss")
+            try:
+                faiss.write_index(self.index, index_file)
+                logging.info(f"Successfully saved index to {index_file}")
+            except Exception as e:
+                logging.error(f"Error saving index: {str(e)}")
+            
+            logging.info(f"Added {len(documents)} documents to the knowledge base")
+            
+        except Exception as e:
+            logging.error(f"Error adding documents: {str(e)}")
+
+    def search(self, query: str, top_k: int = 5) -> list:
+        """搜索相关文档
+        
+        Args:
+            query: 查询文本
+            top_k: 返回的最相关文档数量
+        
+        Returns:
+            list: 相关文档列表，每个文档包含内容和相似度分数
+        """
+        try:
+            # 编码查询
+            query_vector = self.model.encode([query])
+            
+            # 搜索最相关的文档
+            distances, indices = self.index.search(
+                query_vector.astype('float32'), 
+                min(top_k, len(self.documents))
+            )
+            
+            # 处理结果
+            results = []
             for i, idx in enumerate(indices[0]):
-                if idx < len(self.doc_store):
-                    similarity_score = 1 / (1 + float(distances[0][i]))
-                    if similarity_score >= self.similarity_threshold:
-                        doc = self.doc_store[idx]
+                if idx < len(self.documents):
+                    similarity = 1 / (1 + float(distances[0][i]))  # 转换距离为相似度
+                    if similarity >= self.similarity_threshold:
                         results.append({
-                            "document": doc,
-                            "score": similarity_score
+                            'document': self.documents[idx],
+                            'score': similarity
                         })
-                        logging.info(f"知识库匹配 (得分: {similarity_score:.4f}):\n文本: {doc}")
+                        logging.info(f"知识库匹配 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
                     else:
-                        logging.info(f"知识库文本因相似度过低被过滤 (得分: {similarity_score:.4f}):\n文本: {self.doc_store[idx]}")
+                        logging.info(f"知识库文本因相似度过低被过滤 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
             
             return results
+            
         except Exception as e:
-            logging.error(f"Search failed: {str(e)}")
+            logging.error(f"Error in search: {str(e)}")
             return []
 
     def generate_response(self, query: str, llm_model, role_prompt=None, context=None, memories=None):
@@ -142,8 +205,8 @@ class RAGModule:
         :return: 是否成功更新
         """
         try:
-            if 0 <= doc_id < len(self.doc_store):
-                self.doc_store[doc_id] = new_content
+            if 0 <= doc_id < len(self.documents):
+                self.documents[doc_id] = new_content
                 embedding = self.model.encode([new_content])
                 self.index.remove_ids([doc_id])
                 self.index.add(embedding)
@@ -160,10 +223,10 @@ class RAGModule:
         :return: 是否成功删除
         """
         try:
-            if 0 <= doc_id < len(self.doc_store):
-                self.doc_store.pop(doc_id)
+            if 0 <= doc_id < len(self.documents):
+                self.documents.pop(doc_id)
                 # 重建索引
-                embeddings = self.model.encode(self.doc_store)
+                embeddings = self.model.encode(self.documents)
                 self.index = faiss.IndexFlatL2(self.model.get_sentence_embedding_dimension())
                 self.index.add(embeddings)
                 logging.info(f"Successfully removed document {doc_id}")

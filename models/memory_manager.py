@@ -12,125 +12,43 @@ from sentence_transformers import util
 import re
 
 class MemoryManager:
-    def __init__(self, 
-                 model_config: dict = None,  # 新增模型配置参数
+    def __init__(self, model_name: str = "all-MiniLM-L6-v2", 
                  memory_file: str = "config/user_memories.json",
-                 similarity_threshold: float = 0.6):
+                 similarity_threshold: float = 0.5):
         """初始化记忆管理器
-        :param model_config: 模型配置字典，包含类型和路径
-        :param memory_file: 记忆存储文件路径
-        :param similarity_threshold: 相似度阈值
+        
+        Args:
+            model_name: 使用的嵌入模型名称
+            memory_file: 记忆存储文件路径
+            similarity_threshold: 相似度阈值
         """
-        if model_config is None:
-            # 默认使用 all-MiniLM-L6-v2
-            self.model = SentenceTransformer("all-MiniLM-L6-v2")
-        else:
-            model_type = model_config.get('type', 'all-MiniLM-L6-v2')
-            model_path = model_config.get('paths', {}).get(model_type)
-            
-            if not model_path:
-                logging.warning(f"Model path not found for {model_type}, using default model")
-                self.model = SentenceTransformer("all-MiniLM-L6-v2")
-            else:
-                try:
-                    if model_type == 'bert-chinese-local':
-                        # 使用本地 BERT 模型
-                        from transformers import BertTokenizer, BertModel
-                        import torch
-                        
-                        class BertEmbedding:
-                            def __init__(self, model_path):
-                                self.tokenizer = BertTokenizer.from_pretrained(model_path)
-                                self.model = BertModel.from_pretrained(model_path)
-                                self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-                                self.model.to(self.device)
-                                self.model.eval()
-
-                            def encode(self, sentences, batch_size=32):
-                                all_embeddings = []
-                                
-                                for i in range(0, len(sentences), batch_size):
-                                    batch = sentences[i:i + batch_size]
-                                    encoded = self.tokenizer(batch, 
-                                                           padding=True, 
-                                                           truncation=True, 
-                                                           max_length=512, 
-                                                           return_tensors='pt')
-                                    
-                                    with torch.no_grad():
-                                        encoded = {k: v.to(self.device) for k, v in encoded.items()}
-                                        outputs = self.model(**encoded)
-                                        # 使用 [CLS] token 的输出作为句子表示
-                                        embeddings = outputs.last_hidden_state[:, 0, :].cpu().numpy()
-                                        all_embeddings.append(embeddings)
-                                
-                                return np.vstack(all_embeddings)
-
-                            def get_sentence_embedding_dimension(self):
-                                return 768  # BERT base 的输出维度
-
-                        self.model = BertEmbedding(model_path)
-                        logging.info(f"Using local BERT model from {model_path}")
-                    else:
-                        # 使用 sentence-transformers 模型
-                        self.model = SentenceTransformer(model_path)
-                        logging.info(f"Using sentence-transformers model: {model_path}")
-                except Exception as e:
-                    logging.error(f"Error loading model {model_type}: {str(e)}")
-                    logging.warning("Falling back to default model")
-                    self.model = SentenceTransformer("all-MiniLM-L6-v2")
-
-        self.dimension = self.model.get_sentence_embedding_dimension()
+        self.model = SentenceTransformer(model_name)
         self.memory_file = memory_file
         self.similarity_threshold = similarity_threshold
-        self.memories = {}
-        self.indices = {}
+        self.memories = self.load_memories()
         
-        # 加载已存在的记忆
-        self.load_memories()
+        # 初始化向量索引
+        self.dimension = 384  # all-MiniLM-L6-v2 的向量维度
+        self.indices = {}  # 用户ID到索引的映射
         
-        # 验证方法是否正确绑定
-        assert hasattr(self, 'get_all_memories'), "get_all_memories method not properly bound"
-
-    def load_memories(self):
+        # 为每个用户创建索引
+        for user_id, memories in self.memories.items():
+            self.create_user_index(user_id)
+        
+        # 确保记忆文件存在
+        if not os.path.exists(memory_file):
+            self.save_memories()
+    
+    def load_memories(self) -> Dict:
         """从文件加载记忆"""
         try:
-            if not os.path.exists(self.memory_file):
-                logging.info(f"Memory file not found at {self.memory_file}, creating new one")
-                self.memories = {"default_user": []}
-                self.indices = {"default_user": faiss.IndexFlatL2(self.dimension)}  # 创建空索引
-                self.save_memories()
-                return
-
-            with open(self.memory_file, 'r', encoding='utf-8') as f:
-                content = f.read()
-                logging.debug(f"Raw file content: {content}")
-                self.memories = json.loads(content)
-
-            # 验证记忆格式并重建索引
-            self.indices = {}
-            for user_id, user_memories in self.memories.items():
-                # 创建用户的索引
-                self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
-                
-                if user_memories:  # 只在有记忆的情况下添加向量
-                    try:
-                        memory_texts = [m['content'] for m in user_memories]
-                        vectors = self.model.encode(memory_texts)
-                        self.indices[user_id].add(vectors.astype('float32'))
-                    except Exception as e:
-                        logging.error(f"Error building index for user {user_id}: {str(e)}")
-                        # 如果构建索引失败，创建空索引
-                        self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
-
-            logging.info(f"Successfully loaded memories for {len(self.memories)} users")
-            logging.debug(f"Loaded memories: {json.dumps(self.memories, ensure_ascii=False, indent=2)}")
-            
+            if os.path.exists(self.memory_file):
+                with open(self.memory_file, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            return {}
         except Exception as e:
             logging.error(f"Error loading memories: {str(e)}")
-            # 出错时初始化空记忆和索引
-            self.memories = {"default_user": []}
-            self.indices = {"default_user": faiss.IndexFlatL2(self.dimension)}
+            return {}
 
     def save_memories(self):
         """保存记忆到文件"""
@@ -145,8 +63,8 @@ class MemoryManager:
                 for memory in memories:
                     simplified_memory = {
                         'content': memory['content'],
-                        'type': memory.get('type', 'general'),  # 添加默认类型
-                        'timestamp': memory.get('timestamp', datetime.now().isoformat())  # 添加默认时间戳
+                        'type': memory.get('type', 'general'),
+                        'timestamp': memory.get('timestamp', datetime.now().isoformat())
                     }
                     simplified_memories[user_id].append(simplified_memory)
             
@@ -154,71 +72,62 @@ class MemoryManager:
                 json.dump(simplified_memories, f, ensure_ascii=False, indent=2)
             
             logging.info("Successfully saved memories to file")
-            # logging.debug(f"Saved memories: {json.dumps(simplified_memories, ensure_ascii=False, indent=2)}")
+            
         except Exception as e:
             logging.error(f"Error saving memories: {str(e)}")
+
+    def create_user_index(self, user_id: str):
+        """为用户创建向量索引"""
+        try:
+            if user_id not in self.indices:
+                self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
+                
+            if user_id in self.memories and self.memories[user_id]:
+                memory_texts = [m['content'] for m in self.memories[user_id]]
+                vectors = self.model.encode(memory_texts)
+                self.indices[user_id].add(vectors.astype('float32'))
+                
+        except Exception as e:
+            logging.error(f"Error creating index for user {user_id}: {str(e)}")
+            self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
 
     def add_memory(self, user_id: str, content: str, memory_type: str = "general") -> Dict:
         """添加新的记忆"""
         try:
-            # 确保用户ID存在于memories字典中
+            # 确保用户存在
             if user_id not in self.memories:
                 self.memories[user_id] = []
                 self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
-                logging.info(f"Created new memory space for user {user_id}")
 
-            # 生成向量
-            try:
-                vector = self.model.encode([content])[0]
-            except Exception as e:
-                logging.error(f"Error encoding content: {str(e)}")
-                raise
-
-            # 创建记忆条目
-            memory_entry = {
-                "content": content,
-                "type": memory_type,
-                "timestamp": datetime.now().isoformat()
+            # 创建新记忆
+            new_memory = {
+                'content': content,
+                'type': memory_type,
+                'timestamp': datetime.now().isoformat()
             }
 
-            # 添加记忆和向量
+            # 添加到记忆列表
+            self.memories[user_id].append(new_memory)
+
+            # 更新向量索引
             try:
-                # 确保向量是正确的形状和类型
-                vector_array = np.array([vector]).astype('float32')
-                if vector_array.shape[1] != self.dimension:
-                    raise ValueError(f"Vector dimension mismatch. Expected {self.dimension}, got {vector_array.shape[1]}")
-                
-                # 添加记忆
-                self.memories[user_id].append(memory_entry)
-                
-                # 添加向量到索引
-                if user_id not in self.indices:
-                    self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
-                self.indices[user_id].add(vector_array)
-                
-                logging.debug(f"Added memory for user {user_id}: {memory_entry}")
-                
+                vector = self.model.encode([content]).astype('float32')
+                self.indices[user_id].add(vector)
             except Exception as e:
-                logging.error(f"Error adding memory to storage: {str(e)}")
-                # 如果添加向量失败，需要回滚记忆添加
-                if user_id in self.memories and self.memories[user_id]:
-                    self.memories[user_id].pop()
+                logging.error(f"Error updating index: {str(e)}")
+                # 回滚记忆添加
+                self.memories[user_id].pop()
                 raise
 
             # 保存到文件
             try:
                 self.save_memories()
             except Exception as e:
-                logging.error(f"Error saving memories to file: {str(e)}")
-                # 回滚内存中的更改
-                if user_id in self.memories and self.memories[user_id]:
-                    self.memories[user_id].pop()
+                logging.error(f"Error saving memories: {str(e)}")
+                # 回滚所有更改
+                self.memories[user_id].pop()
                 if user_id in self.indices:
-                    # 重建索引
-                    old_vectors = np.array([self.model.encode([m['content']]) for m in self.memories[user_id]])
-                    self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
-                    if old_vectors.size > 0:
-                        self.indices[user_id].add(old_vectors.reshape(-1, self.dimension).astype('float32'))
+                    self.create_user_index(user_id)  # 重建索引
                 raise
 
             logging.info(f"Successfully added new memory for user {user_id}")
@@ -689,43 +598,52 @@ class MemoryManager:
             logging.error(f"Error in LLM-based split: {str(e)}")
             return None 
 
-    def get_relevant_memories(self, user_id, query, top_k=5):
-        """优化的记忆检索方法"""
+    def get_relevant_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
+        """获取与查询相关的记忆"""
         try:
-            # 1. 动态相似度阈值
-            base_threshold = self.similarity_threshold
-            query_length = len(query)
-            adjusted_threshold = base_threshold * (1 - 0.1 * (query_length > 50))  # 长查询降低阈值
+            # 获取用户的所有记忆
+            all_memories = self.get_all_memories(user_id)
+            logging.debug(f"Total memories for user {user_id}: {len(all_memories)}")
             
-            # 2. 时间衰减因子
-            current_time = datetime.now()
-            def get_time_weight(memory_time):
-                time_diff = (current_time - datetime.fromisoformat(memory_time)).days
-                return 1 / (1 + 0.1 * time_diff)  # 时间权重衰减
+            if not all_memories:
+                return []
+
+            # 计算查询的嵌入向量
+            query_embedding = self.model.encode([query], convert_to_tensor=True)
             
-            # 3. 记忆类型权重
-            type_weights = {
-                'fact': 1.2,
-                'preference': 1.1,
-                'personality': 1.3,
-                'experience': 1.0,
-                'general': 0.9
-            }
+            # 计算所有记忆的相似度
+            memory_texts = [memory['content'] for memory in all_memories]
+            memory_embeddings = self.model.encode(memory_texts, convert_to_tensor=True)
             
-            # 获取并排序记忆
+            # 计算余弦相似度
+            similarities = util.pytorch_cos_sim(query_embedding, memory_embeddings)[0]
+            
+            # 获取相似度最高的记忆
+            top_k_indices = (-similarities).argsort()[:top_k]
             relevant_memories = []
-            for memory in self.get_all_memories(user_id):
-                similarity = self.calculate_similarity(query, memory['content'])
-                time_weight = get_time_weight(memory.get('timestamp', ''))
-                type_weight = type_weights.get(memory.get('type', 'general'), 1.0)
-                
-                final_score = similarity * time_weight * type_weight
-                if final_score >= adjusted_threshold:
-                    memory['relevance_score'] = final_score
+            
+            # 记录所有记忆的相似度分数
+            logging.debug("所有记忆的相似度分数：")
+            for i, memory in enumerate(all_memories):
+                logging.debug(f"记忆 {i}: {memory['content']} - 相似度: {similarities[i].item():.4f}")
+            
+            for idx in top_k_indices:
+                similarity_score = similarities[idx].item()
+                if similarity_score >= self.similarity_threshold:
+                    memory = all_memories[idx].copy()
+                    memory['similarity'] = similarity_score
                     relevant_memories.append(memory)
-            
-            return sorted(relevant_memories, key=lambda x: x['relevance_score'], reverse=True)
-            
+                    logging.info(f"记忆匹配 (得分: {similarity_score:.4f}):\n文本: {memory['content']}")
+                else:
+                    logging.info(f"记忆因相似度过低被过滤 (得分: {similarity_score:.4f}):\n文本: {all_memories[idx]['content']}")
+
+            # 记录最终选择的记忆
+            logging.debug("最终选择的记忆：")
+            for i, memory in enumerate(relevant_memories):
+                logging.debug(f"{i+1}. {memory['content']} - 相似度: {memory['similarity']:.4f}")
+
+            return relevant_memories
+
         except Exception as e:
             logging.error(f"Error in get_relevant_memories: {str(e)}")
             return []

@@ -1,28 +1,42 @@
-api_key: "sk-6423f724e06d488ca246f2425f6707f4"
-llm_model: "qwen-plus"
+# 全局配置
+default_role: reindeer
+max_context_length: 2000
 temperature: 0.7
-max_tokens: 1500
-log_level: "INFO"
-default_roles:
-  default_user:
-    role: "reindeer"
-roles:
-  santa:
-    name: "Santa Claus"
-    display_name: "圣诞老人"
-    description: "A happy and generous Santa Claus"
-    display_description: "一个快乐、慷慨的圣诞老人角色"
-    prompt: "你现在是圣诞老人，要用温暖友善的语气回答问题，经常使用'ho ho ho'这样的笑声。"
-  reindeer:
-    name: "Reindeer"
-    display_name: "驯鹿"
-    description: "A cute and lively reindeer"
-    display_description: "一个可爱、活泼的驯鹿角色"
-    prompt: "你现在是圣诞老人的驯鹿，要用活泼可爱的语气回答问题，偶尔发出'哞~'的声音。"
-embedding_model:
-  # 可选: "bert-chinese-local" 或 "all-MiniLM-L6-v2"
-  type: "all-MiniLM-L6-v2"
-  paths:
-    bert-chinese-local: "D:/zndz_python/bert_cls/bert-base-chinese"
-    all-MiniLM-L6-v2: "all-MiniLM-L6-v2"
+
+# LLM 配置
+llm:
+  api_key: "sk-6423f724e06d488ca246f2425f6707f4"  # 替换为实际的 API key
+  llm_model: "qwen-plus"
+  temperature: 0.7
+  max_tokens: 2000
+
+# 角色配置路径
+roles_path: roles/
+templates_path: templates/
+
+# 系统级提示词
+system_prompts:
+  error: "抱歉，我现在遇到了一些问题。让我们换个话题吧。"
+  greeting: "欢迎来到圣诞老人的小屋！"
+  role_switch: "好的，我现在切换到{role}的角色。"
+
+# 在现有配置中添加以下内容
+available_roles:
+  - reindeer
+  - santa
+  - elf
+  - assistant
+
+role_descriptions:
+  reindeer: "活泼可爱的驯鹿助手"
+  santa: "慈祥和蔼的圣诞老人"
+  elf: "快乐勤劳的圣诞精灵"
+  assistant: "专业可靠的个人助理"
+
+role_transitions:
+  greeting:
+    santa: "Ho ho ho！欢迎来到圣诞老人的小屋！"
+    elf: "叮叮！欢迎来到圣诞工坊！"
+    reindeer: "哞~欢迎来玩！"
+    assistant: "您好！我是您的个人助理，很高兴为您服务。"
 

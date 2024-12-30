@@ -1,26 +1,23 @@
 import logging
 
 class ChatAgent:
-    def __init__(self, model, roles_config, default_roles, task_manager=None, classification_model=None, rag_module=None, memory_manager=None):
-        self.model = model
+    def __init__(self, llm_model, roles_config, default_roles, rag_module=None, memory_manager=None):
+        """初始化聊天代理。
+        
+        Args:
+            llm_model: LLM模型实例
+            roles_config: 角色配置
+            default_roles: 默认角色设置
+            rag_module: RAG模块实例（可选）
+            memory_manager: 记忆管理器实例（可选）
+        """
+        # 修改属性名，确保与其他地方一致
+        self.llm_model = llm_model  # 将 llm 改为 llm_model
         self.roles_config = roles_config
-        self.task_manager = task_manager
-        self.classification_model = classification_model
+        self.user_roles = default_roles.copy()
         self.user_contexts = {}
-        self.user_roles = {}
         self.rag_module = rag_module
         self.memory_manager = memory_manager
-        
-        # 初始化默认角色
-        for user_id, role_info in default_roles.items():
-            if isinstance(role_info, dict) and 'role' in role_info:
-                role_name = role_info['role']
-                if role_name in roles_config:
-                    self.user_roles[user_id] = role_name
-                else:
-                    raise ValueError(f"Default role '{role_name}' is not defined in roles configuration.")
-            else:
-                logging.warning(f"Invalid role_info format for user {user_id}")
 
     def set_role(self, user_id, role, roles_config):
         """Set the role for a user."""
@@ -75,74 +72,48 @@ class ChatAgent:
             summary = self.model.generate_response(prompt)
             self.user_contexts[user_id] = [summary]
 
-    def chat(self, user_id, user_input):
-        """处理对话并通过上下文管理角色。"""
+    def chat(self, user_id: str, user_input: str) -> dict:
+        """处理用户输入并返回响应"""
         try:
+            # 确保用户有角色设置
+            if user_id not in self.user_roles:
+                raise ValueError(f"No role set for user {user_id}")
+
+            # 1. 获取知识库相关文档
+            relevant_docs = []
+            if self.rag_module:
+                relevant_docs = self.rag_module.search(user_input, top_k=5)
+                logging.debug(f"Retrieved documents: {relevant_docs}")
+
+            # 2. 获取相关记忆
+            memories = []
+            if self.memory_manager:
+                memories = self.memory_manager.get_relevant_memories(user_id, user_input)
+                logging.debug(f"Retrieved memories: {memories}")
+
+            # 3. 构建上下文
+            context = {
+                'chat_history': self.user_contexts.get(user_id, []),
+                'memories': [memory['content'] for memory in memories] if memories else [],
+                'context': [doc['document'] for doc in relevant_docs] if relevant_docs else []
+            }
+
+            # 4. 生成回答
+            assistant_message = self.llm_model.generate_response(user_input, context)
+
+            # 5. 更新对话历史
             if user_id not in self.user_contexts:
                 self.user_contexts[user_id] = []
-
-            # 获取当前角色的提示词
-            role_name = self.user_roles.get(user_id)
-            role_prompt = None
-            if role_name and role_name in self.roles_config:
-                role_prompt = self.roles_config[role_name].get('prompt')
-
-            # 检索相关记忆
-            relevant_memories = []
-            if self.memory_manager:
-                relevant_memories = self.memory_manager.retrieve_memories(user_id, user_input)
-                logging.debug(f"Retrieved memories: {relevant_memories}")
-
-            # 构建上下文，包含历史对话和相关记忆
-            context = []
-            if role_prompt:
-                context.append({"role": "system", "content": role_prompt})
             
-            # 添加历史对话
-            context.extend(self.user_contexts[user_id][-5:])  # 保留最近5轮对话
-            
-            # 添加相关记忆作为系统提示
-            if relevant_memories:
-                memory_texts = []
-                for memory in relevant_memories:
-                    # 只取对话的第一行作为记忆提示
-                    memory_content = memory['content'].split('\n')[0]
-                    memory_texts.append(f"记忆: {memory_content}")
-                
-                memory_context = "\n".join(memory_texts)
-                context.append({
-                    "role": "system", 
-                    "content": f"请记住以下用户相关信息：\n{memory_context}"
-                })
+            self.user_contexts[user_id].extend([
+                {"role": "user", "content": user_input},
+                {"role": "assistant", "content": assistant_message}
+            ])
 
-            # 使用RAG模块生成响应（如果可用）
-            if self.rag_module:
-                assistant_message = self.rag_module.generate_response(
-                    user_input, 
-                    self.model,
-                    role_prompt=role_prompt,
-                    context=context,  # 传递完整上下文
-                    memories=relevant_memories  # 传递相关记忆
-                )
-            else:
-                # 使用原有的响应生成逻辑
-                context.append({"role": "user", "content": user_input})
-                response = self.model.generate_response(user_input, context)
-                if isinstance(response, dict) and 'choices' in response:
-                    assistant_message = response['choices'][0]['message']['content']
-                elif isinstance(response, str):
-                    assistant_message = response
-                else:
-                    raise ValueError("Unexpected response format from LLM.")
-
-            # 更新对话历史
-            self.user_contexts[user_id].append({"role": "user", "content": user_input})
-            self.user_contexts[user_id].append({"role": "assistant", "content": assistant_message})
-            
             # 保持对话历史在合理长度
             self.user_contexts[user_id] = self.user_contexts[user_id][-10:]  # 保留最近10轮对话
 
-            # 存储新的记忆
+            # 6. 存储新的记忆
             memory_status = None
             if self.memory_manager:
                 memory_status = self.memory_manager.add_memory(
@@ -150,6 +121,17 @@ class ChatAgent:
                     f"用户说: {user_input}\n助手回答: {assistant_message}",
                     "dialogue"
                 )
+
+            # 7. 记录调试信息
+            logging.debug(f"""
+            Chat details:
+            User: {user_id}
+            Input: {user_input}
+            Retrieved docs: {len(relevant_docs) if relevant_docs else 0}
+            Retrieved memories: {len(memories) if memories else 0}
+            Context length: {len(context['chat_history'])}
+            Response length: {len(assistant_message)}
+            """)
 
             return {
                 "response": assistant_message,
@@ -171,6 +153,10 @@ class ChatAgent:
             
             # 设置新角色
             self.user_roles[user_id] = role
+            
+            # 更新 LLM 模型的角色设置
+            if not self.llm_model.set_role(role):
+                raise ValueError(f"Failed to set role {role} in LLM model")
             
             # 清空该用户的对话上下文
             if user_id in self.user_contexts:

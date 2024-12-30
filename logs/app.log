@@ -1,0 +1,371 @@
+2024-12-30 23:24:11,270 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:24:11,270 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:24:11,271 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:24:21,529 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:24:21,530 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:24:21,541 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:24:21] "GET / HTTP/1.1" 200 -
+2024-12-30 23:24:21,616 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:24:21] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-30 23:24:23,947 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:24:23] "POST /set_role HTTP/1.1" 200 -
+2024-12-30 23:24:27,622 - root - ERROR - main.py:139 - Error in chat endpoint: name 'llm_service' is not defined
+2024-12-30 23:24:27,623 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:24:27] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2024-12-30 23:27:12,353 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:27:12,353 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:27:12,355 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:27:33,663 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:27:33,663 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:27:33,664 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:27:44,648 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:27:44,648 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:27:44,665 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:27:44] "GET / HTTP/1.1" 200 -
+2024-12-30 23:27:44,815 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:27:44] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-30 23:27:46,665 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:27:46] "POST /set_role HTTP/1.1" 200 -
+2024-12-30 23:27:50,286 - root - ERROR - main.py:139 - Error in chat endpoint: handle_query() missing 1 required positional argument: 'query'
+2024-12-30 23:27:50,286 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:27:50] "[35m[1mPOST /chat HTTP/1.1[0m" 500 -
+2024-12-30 23:30:46,897 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:30:46,897 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:30:46,898 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:31:01,239 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:31:01,240 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:31:01,257 - root - INFO - rag_module.py:119 - 知识库文本因相似度过低被过滤 (得分: 0.4710):
+文本: Jamie最喜欢的人是他的老婆和多米
+2024-12-30 23:31:01,258 - root - INFO - memory_manager.py:246 - Successfully retrieved 22 memories for user default_user
+2024-12-30 23:31:01,839 - root - INFO - memory_manager.py:630 - 记忆匹配 (得分: 0.5484):
+文本: 用户表示我也喜欢喝热红酒
+2024-12-30 23:31:01,839 - root - INFO - memory_manager.py:630 - 记忆匹配 (得分: 0.5193):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:31:01,840 - root - INFO - memory_manager.py:630 - 记忆匹配 (得分: 0.5085):
+文本: 用户表示威士忌也很不错！
+2024-12-30 23:31:01,840 - root - INFO - memory_manager.py:630 - 记忆匹配 (得分: 0.5073):
+文本: 用户表示我喜欢沙丘和银翼杀手2049这两部电影。
+2024-12-30 23:31:01,840 - root - INFO - memory_manager.py:630 - 记忆匹配 (得分: 0.5049):
+文本: 用户表示哪部电视剧比较好看
+2024-12-30 23:31:04,788 - root - ERROR - memory_manager.py:112 - Error adding memory to storage: 'MemoryManager' object has no attribute 'dimension'
+2024-12-30 23:31:04,788 - root - ERROR - memory_manager.py:143 - Error in add_memory: 'MemoryManager' object has no attribute 'dimension'
+2024-12-30 23:31:04,788 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:31:04] "POST /chat HTTP/1.1" 200 -
+2024-12-30 23:35:56,483 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:35:56,483 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:35:56,485 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:36:07,583 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:36:07,585 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:36:07,611 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:07] "GET / HTTP/1.1" 200 -
+2024-12-30 23:36:07,762 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:07] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-30 23:36:09,704 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:09] "GET /memory-manager HTTP/1.1" 200 -
+2024-12-30 23:36:09,789 - root - INFO - memory_manager.py:246 - Successfully retrieved 22 memories for user default_user
+2024-12-30 23:36:09,789 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:09] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:36:15,865 - root - INFO - memory_manager.py:246 - Successfully retrieved 22 memories for user default_user
+2024-12-30 23:36:16,500 - root - INFO - memory_manager.py:734 - 发现相似记忆 (1.00):
+用户说: 你好
+助手回答: 抱歉，生成回答时出现错误。
+用户说: 你好
+助手回答: 抱歉，生成回答时出现错误。
+2024-12-30 23:36:16,501 - root - INFO - memory_manager.py:723 - 标记无意义记忆: 用户说: 我喜欢什么酒
+助手回答: 您好！目前我还不了解您的具体饮酒偏好。为了更好地为您推荐，您可以告诉我一些关于您对酒的喜好信息，例如：
+
+1. 您平时更喜欢哪种类型的酒（如白酒、红酒、啤酒、威士忌等）？
+2. 您偏好较烈的酒还是较为温和的酒？
+3. 是否有特别喜欢的品牌或产地？
+4. 通常在什么场合下饮酒（如正式晚宴、休闲聚会等）？
+
+有了这些信息后，我可以为您提供更准确的建议。如果您曾经提到过自己喜欢的酒类，也可以提醒我一下，我会根据您的记录给出更好的推荐。
+
+期待您的回复！
+2024-12-30 23:36:16,501 - root - INFO - memory_manager.py:723 - 标记无意义记忆: 用户说: 我喜欢什么电影
+助手回答: 您好！目前我还没有关于您电影偏好的具体信息。为了更好地了解您的喜好并为您推荐适合的电影，您可以告诉我一些相关信息：
+
+1. **您喜欢的电影类型**：例如动作片、科幻片、爱情片、悬疑片、喜剧片等。
+2. **最喜欢的导演或演员**：某些导演或演员的作品风格可能更符合您的口味。
+3. **最近看过的电影**：如果您能分享最近看过的几部电影以及对它们的感受（喜欢或不喜欢），这将帮助我更好地理解您的偏好。
+4. **观影场合和心情**：您是喜欢在电影院观看大制作，还是更倾向于在家享受温馨的小众电影？不同的场合可能会影响您对电影的选择。
+
+有了这些信息后，我可以为您提供更加个性化和精准的电影推荐。如果您之前有过相关讨论或提到过喜欢的电影，也可以提醒我一下，我会根据您的记录给出更好的建议。
+
+期待您的回复！
+2024-12-30 23:36:16,502 - root - INFO - memory_manager.py:723 - 标记无意义记忆: 用户说: 我喜欢什么电影
+助手回答: 你可以说说你之前看过的电影里有哪些特别喜欢的类型或者具体影片呀？比如是科幻类的《星际穿越》，还是爱情类的《泰坦尼克号》呢🧐
+2024-12-30 23:36:16,502 - root - INFO - memory_manager.py:758 - 更新记忆类型: dialogue -> fact
+内容: 用户说: 我的名字是？
+助手回答: 你的名字是 V! *叮叮* 
+
+我可记得清清楚楚呢！在圣诞工坊里，记住每个朋友的名字是非常重要的魔法哦。这样我们才能为每个人送上最特别的祝福和礼物呢！
+
+有什么想和我聊聊的吗，V？或者你想看看我们为其他小朋友准备的特别礼物？*开心地跳了跳*
+
+叮叮～
+2024-12-30 23:36:16,502 - root - INFO - memory_manager.py:758 - 更新记忆类型: dialogue -> fact
+内容: 用户说: jamie最喜欢的人是
+助手回答: 要确定“Jamie最喜欢的人”需要更多的背景信息呢。你可以具体说说这个Jamie是在哪部电影、电视剧、小说或者是在你的生活中呀？这样我就能更好地回答你啦。😊
+
+例如：
+- 如果是电影《恋恋笔记本》中的Jamie，她最爱的人就是Noah。
+- 如果是其他的情境下的Jamie，可能答案就会不一样哦。
+2024-12-30 23:36:16,502 - root - INFO - memory_manager.py:403 - Attempting to delete memories [10, 12, 13, 20] for user default_user
+2024-12-30 23:36:16,502 - root - INFO - memory_manager.py:412 - Deleting memory at index 20
+2024-12-30 23:36:16,502 - root - INFO - memory_manager.py:412 - Deleting memory at index 13
+2024-12-30 23:36:16,502 - root - INFO - memory_manager.py:412 - Deleting memory at index 12
+2024-12-30 23:36:16,502 - root - INFO - memory_manager.py:412 - Deleting memory at index 10
+2024-12-30 23:36:16,997 - root - ERROR - memory_manager.py:440 - Error deleting memories: 'MemoryManager' object has no attribute 'dimension'
+2024-12-30 23:36:16,997 - root - ERROR - memory_manager.py:780 - Error in clean_memories: 'MemoryManager' object has no attribute 'save_memories'
+2024-12-30 23:36:17,002 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:17] "POST /api/memories/clean HTTP/1.1" 200 -
+2024-12-30 23:36:21,089 - root - INFO - memory_manager.py:246 - Successfully retrieved 18 memories for user default_user
+2024-12-30 23:36:21,615 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:21] "POST /api/memories/clean HTTP/1.1" 200 -
+2024-12-30 23:36:21,618 - root - INFO - memory_manager.py:246 - Successfully retrieved 18 memories for user default_user
+2024-12-30 23:36:21,618 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:21] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:36:26,499 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:26] "GET /memory-manager HTTP/1.1" 200 -
+2024-12-30 23:36:26,580 - root - INFO - memory_manager.py:246 - Successfully retrieved 18 memories for user default_user
+2024-12-30 23:36:26,581 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:26] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:36:30,193 - root - INFO - memory_manager.py:246 - Successfully retrieved 18 memories for user default_user
+2024-12-30 23:36:30,725 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:30] "POST /api/memories/clean HTTP/1.1" 200 -
+2024-12-30 23:36:30,728 - root - INFO - memory_manager.py:246 - Successfully retrieved 18 memories for user default_user
+2024-12-30 23:36:30,728 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:30] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:36:36,352 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:36] "POST /api/memories/restructure-preview HTTP/1.1" 200 -
+2024-12-30 23:36:37,324 - root - ERROR - memory_manager.py:346 - Error updating memories: 'MemoryManager' object has no attribute 'dimension'
+2024-12-30 23:36:37,324 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:36:37] "POST /api/memories/restructure HTTP/1.1" 200 -
+2024-12-30 23:37:41,101 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_manager.py', reloading
+2024-12-30 23:37:41,778 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:37:57,245 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:37:57,245 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:37:57,246 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:38:09,309 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:38:09,311 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:38:09,333 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:38:09] "GET / HTTP/1.1" 200 -
+2024-12-30 23:38:09,337 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:38:09] "GET /memory-manager HTTP/1.1" 200 -
+2024-12-30 23:38:09,481 - root - INFO - memory_manager.py:249 - Successfully retrieved 22 memories for user default_user
+2024-12-30 23:38:09,481 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:38:09] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:38:09,492 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:38:09] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-30 23:38:13,155 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:38:13] "POST /api/memories/restructure-preview HTTP/1.1" 200 -
+2024-12-30 23:38:14,660 - root - ERROR - memory_manager.py:349 - Error updating memories: 'MemoryManager' object has no attribute 'save_memories'
+2024-12-30 23:38:14,660 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:38:14] "POST /api/memories/restructure HTTP/1.1" 200 -
+2024-12-30 23:40:40,597 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_manager.py', reloading
+2024-12-30 23:40:41,460 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:40:57,639 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:40:57,639 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:40:57,640 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:41:10,269 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:41:10,271 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:41:10,293 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:10] "GET / HTTP/1.1" 200 -
+2024-12-30 23:41:10,452 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:10] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-30 23:41:11,544 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:11] "GET /memory-manager HTTP/1.1" 200 -
+2024-12-30 23:41:11,631 - root - INFO - memory_manager.py:245 - Successfully retrieved 22 memories for user default_user
+2024-12-30 23:41:11,631 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:11] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:41:14,372 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:14] "POST /api/memories/restructure-preview HTTP/1.1" 200 -
+2024-12-30 23:41:15,293 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:41:15,293 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:15] "POST /api/memories/restructure HTTP/1.1" 200 -
+2024-12-30 23:41:15,306 - root - INFO - memory_manager.py:245 - Successfully retrieved 22 memories for user default_user
+2024-12-30 23:41:15,306 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:15] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:41:22,347 - root - INFO - memory_manager.py:245 - Successfully retrieved 22 memories for user default_user
+2024-12-30 23:41:22,429 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.87):
+用户表示我也喜欢喝热红酒
+用户表示你好
+2024-12-30 23:41:22,429 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.87):
+用户表示我也喜欢喝热红酒
+用户表示你好
+2024-12-30 23:41:22,430 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.87):
+用户表示我也喜欢喝热红酒
+用户表示你好
+2024-12-30 23:41:22,430 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.87):
+用户表示我也喜欢喝热红酒
+用户表示你好
+2024-12-30 23:41:22,430 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.94):
+用户表示我也喜欢喝热红酒
+用户表示我喜欢什么酒
+2024-12-30 23:41:22,430 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.94):
+用户表示我也喜欢喝热红酒
+用户表示我喜欢什么电影
+2024-12-30 23:41:22,430 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.87):
+用户表示我也喜欢喝热红酒
+用户表示你好
+2024-12-30 23:41:22,430 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.93):
+用户表示我也喜欢喝热红酒
+用户表示刚才我们谈到电影了吗
+2024-12-30 23:41:22,430 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.87):
+用户表示我也喜欢喝热红酒
+用户表示请叫我V
+2024-12-30 23:41:22,431 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.94):
+用户表示我也喜欢喝热红酒
+用户表示我喜欢什么电影
+2024-12-30 23:41:22,433 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.91):
+用户表示jamie最喜欢的认识
+用户表示jamie
+2024-12-30 23:41:22,433 - root - INFO - memory_manager.py:733 - 发现相似记忆 (0.97):
+用户表示jamie最喜欢的认识
+用户表示jamie最喜欢的人是
+2024-12-30 23:41:22,433 - root - INFO - memory_manager.py:402 - Attempting to delete memories [8, 9, 10, 11, 12, 13, 14, 15, 16, 20, 19, 21] for user default_user
+2024-12-30 23:41:22,433 - root - INFO - memory_manager.py:411 - Deleting memory at index 21
+2024-12-30 23:41:22,433 - root - INFO - memory_manager.py:411 - Deleting memory at index 20
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 19
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 16
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 15
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 14
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 13
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 12
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 11
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 10
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 9
+2024-12-30 23:41:22,434 - root - INFO - memory_manager.py:411 - Deleting memory at index 8
+2024-12-30 23:41:22,476 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:41:22,476 - root - INFO - memory_manager.py:430 - Successfully deleted 12 memories
+2024-12-30 23:41:22,476 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:22] "POST /api/memories/clean HTTP/1.1" 200 -
+2024-12-30 23:41:22,480 - root - INFO - memory_manager.py:245 - Successfully retrieved 10 memories for user default_user
+2024-12-30 23:41:22,480 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:22] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:41:45,137 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:45] "GET / HTTP/1.1" 200 -
+2024-12-30 23:41:45,151 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:45] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-30 23:41:48,809 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:48] "POST /set_role HTTP/1.1" 200 -
+2024-12-30 23:41:49,141 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:49] "POST /set_role HTTP/1.1" 200 -
+2024-12-30 23:41:49,576 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:41:49] "POST /set_role HTTP/1.1" 200 -
+2024-12-30 23:42:00,357 - root - INFO - rag_module.py:119 - 知识库文本因相似度过低被过滤 (得分: 0.5159):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2024-12-30 23:42:00,357 - root - INFO - memory_manager.py:245 - Successfully retrieved 10 memories for user default_user
+2024-12-30 23:42:00,407 - root - INFO - memory_manager.py:629 - 记忆匹配 (得分: 0.6575):
+文本: 用户表示我也喜欢喝热红酒
+2024-12-30 23:42:00,407 - root - INFO - memory_manager.py:629 - 记忆匹配 (得分: 0.6410):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:42:00,407 - root - INFO - memory_manager.py:631 - 记忆因相似度过低被过滤 (得分: 0.5990):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:42:00,407 - root - INFO - memory_manager.py:631 - 记忆因相似度过低被过滤 (得分: 0.5535):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:42:00,407 - root - INFO - memory_manager.py:631 - 记忆因相似度过低被过滤 (得分: 0.5211):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:42:03,297 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:42:03,297 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2024-12-30 23:42:03,297 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:42:03] "POST /chat HTTP/1.1" 200 -
+2024-12-30 23:42:41,046 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:42:41] "GET /memory-manager HTTP/1.1" 200 -
+2024-12-30 23:42:41,143 - root - INFO - memory_manager.py:245 - Successfully retrieved 11 memories for user default_user
+2024-12-30 23:42:41,143 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:42:41] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:45:05,817 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_manager.py', reloading
+2024-12-30 23:45:06,232 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:45:17,539 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:45:17,539 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:45:31,034 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:45:31,034 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:45:31,034 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:45:43,637 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:45:43,652 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:45:48,563 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:45:48] "GET / HTTP/1.1" 200 -
+2024-12-30 23:45:48,650 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:45:48] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-30 23:45:51,931 - root - INFO - rag_module.py:119 - 知识库文本因相似度过低被过滤 (得分: 0.5159):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2024-12-30 23:45:51,931 - root - INFO - memory_manager.py:245 - Successfully retrieved 11 memories for user default_user
+2024-12-30 23:45:52,071 - root - INFO - memory_manager.py:644 - 记忆匹配 (得分: 0.6575):
+文本: 用户表示我也喜欢喝热红酒
+2024-12-30 23:45:52,071 - root - INFO - memory_manager.py:644 - 记忆匹配 (得分: 0.6410):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:45:52,071 - root - INFO - memory_manager.py:646 - 记忆因相似度过低被过滤 (得分: 0.5990):
+文本: 用户表示我喜欢沙丘和银翼杀手2049这两部电影。
+2024-12-30 23:45:52,071 - root - INFO - memory_manager.py:646 - 记忆因相似度过低被过滤 (得分: 0.5650):
+文本: 用户说: 我喜欢什么电影
+助手回答: 根据目前我所掌握的信息，您提到自己喜欢喝热红酒以及即将到来的圣诞节氛围。但您还没有告诉我具体的电影偏好相关信息，如果您能给我一些关于您喜欢的电影类型、演员或者特定电影的提示，我可以更好地为您推荐电影。比如您可以告诉我您是更倾向于动作片、爱情片、科幻片还是其他类型的电影呢？这样我就能准确地知道您喜欢什么电影啦。
+2024-12-30 23:45:52,071 - root - INFO - memory_manager.py:646 - 记忆因相似度过低被过滤 (得分: 0.5535):
+文本: 用户表示我的名字是？
+2024-12-30 23:45:53,412 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:45:53] "GET /memory-manager HTTP/1.1" 200 -
+2024-12-30 23:45:53,564 - root - INFO - memory_manager.py:245 - Successfully retrieved 11 memories for user default_user
+2024-12-30 23:45:53,564 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:45:53] "GET /api/memories HTTP/1.1" 200 -
+2024-12-30 23:45:54,701 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:45:54,717 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2024-12-30 23:45:54,717 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:45:54] "POST /chat HTTP/1.1" 200 -
+2024-12-30 23:46:41,448 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_manager.py', reloading
+2024-12-30 23:46:42,274 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:46:59,279 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-30 23:46:59,280 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2024-12-30 23:46:59,280 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2024-12-30 23:47:11,448 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-30 23:47:11,449 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2024-12-30 23:47:11,460 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:47:11] "GET / HTTP/1.1" 200 -
+2024-12-30 23:47:11,543 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:47:11] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-30 23:47:15,701 - root - INFO - rag_module.py:119 - 知识库文本因相似度过低被过滤 (得分: 0.4710):
+文本: Jamie最喜欢的人是他的老婆和多米
+2024-12-30 23:47:15,702 - root - INFO - memory_manager.py:245 - Successfully retrieved 12 memories for user default_user
+2024-12-30 23:47:15,868 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5712):
+文本: 用户表示jamie最喜欢的认识
+2024-12-30 23:47:15,868 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5484):
+文本: 用户表示我也喜欢喝热红酒
+2024-12-30 23:47:15,868 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5193):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:47:15,868 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5085):
+文本: 用户表示威士忌也很不错！
+2024-12-30 23:47:15,868 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5073):
+文本: 用户表示我喜欢沙丘和银翼杀手2049这两部电影。
+2024-12-30 23:47:16,751 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:47:16,751 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2024-12-30 23:47:16,751 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:47:16] "POST /chat HTTP/1.1" 200 -
+2024-12-30 23:47:21,831 - root - INFO - rag_module.py:119 - 知识库文本因相似度过低被过滤 (得分: 0.5159):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2024-12-30 23:47:21,833 - root - INFO - memory_manager.py:245 - Successfully retrieved 13 memories for user default_user
+2024-12-30 23:47:22,013 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7150):
+文本: 用户说: 你好
+助手回答: 你好！有什么我可以帮你的吗？
+2024-12-30 23:47:22,013 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6575):
+文本: 用户表示我也喜欢喝热红酒
+2024-12-30 23:47:22,013 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6410):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:47:22,013 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5990):
+文本: 用户表示我喜欢沙丘和银翼杀手2049这两部电影。
+2024-12-30 23:47:22,013 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5650):
+文本: 用户说: 我喜欢什么电影
+助手回答: 根据目前我所掌握的信息，您提到自己喜欢喝热红酒以及即将到来的圣诞节氛围。但您还没有告诉我具体的电影偏好相关信息，如果您能给我一些关于您喜欢的电影类型、演员或者特定电影的提示，我可以更好地为您推荐电影。比如您可以告诉我您是更倾向于动作片、爱情片、科幻片还是其他类型的电影呢？这样我就能准确地知道您喜欢什么电影啦。
+2024-12-30 23:47:23,731 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:47:23,731 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2024-12-30 23:47:23,731 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:47:23] "POST /chat HTTP/1.1" 200 -
+2024-12-30 23:47:25,879 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to santa
+2024-12-30 23:47:25,880 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:47:25] "POST /set_role HTTP/1.1" 200 -
+2024-12-30 23:47:28,500 - root - INFO - rag_module.py:119 - 知识库文本因相似度过低被过滤 (得分: 0.4673):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2024-12-30 23:47:28,501 - root - INFO - memory_manager.py:245 - Successfully retrieved 14 memories for user default_user
+2024-12-30 23:47:28,696 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5502):
+文本: 用户表示jamie最喜欢的认识
+2024-12-30 23:47:28,696 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5354):
+文本: 用户表示我也喜欢喝热红酒
+2024-12-30 23:47:28,696 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5113):
+文本: 用户说: 你好
+助手回答: 你好！有什么我可以帮你的吗？
+2024-12-30 23:47:28,696 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4934):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:47:28,696 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4906):
+文本: 用户表示哪部电视剧比较好看
+2024-12-30 23:47:35,458 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:47:35,458 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2024-12-30 23:47:35,458 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:47:35] "POST /chat HTTP/1.1" 200 -
+2024-12-30 23:47:41,400 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to reindeer
+2024-12-30 23:47:41,400 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:47:41] "POST /set_role HTTP/1.1" 200 -
+2024-12-30 23:47:44,265 - root - INFO - rag_module.py:119 - 知识库文本因相似度过低被过滤 (得分: 0.4673):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2024-12-30 23:47:44,265 - root - INFO - memory_manager.py:245 - Successfully retrieved 15 memories for user default_user
+2024-12-30 23:47:44,637 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5502):
+文本: 用户表示jamie最喜欢的认识
+2024-12-30 23:47:44,637 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5354):
+文本: 用户表示我也喜欢喝热红酒
+2024-12-30 23:47:44,637 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5113):
+文本: 用户说: 你好
+助手回答: 你好！有什么我可以帮你的吗？
+2024-12-30 23:47:44,644 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4934):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:47:44,644 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4906):
+文本: 用户表示哪部电视剧比较好看
+2024-12-30 23:47:49,596 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:47:49,596 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2024-12-30 23:47:49,596 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:47:49] "POST /chat HTTP/1.1" 200 -
+2024-12-30 23:48:30,530 - root - INFO - rag_module.py:119 - 知识库文本因相似度过低被过滤 (得分: 0.5498):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2024-12-30 23:48:30,531 - root - INFO - memory_manager.py:245 - Successfully retrieved 16 memories for user default_user
+2024-12-30 23:48:30,793 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7056):
+文本: 用户说: 你好
+助手回答: 你好！有什么我可以帮你的吗？
+2024-12-30 23:48:30,793 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6966):
+文本: 用户表示我也喜欢喝热红酒
+2024-12-30 23:48:30,793 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6722):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2024-12-30 23:48:30,793 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6555):
+文本: 用户表示我喜欢沙丘和银翼杀手2049这两部电影。
+2024-12-30 23:48:30,793 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6534):
+文本: 用户表示威士忌也很不错！
+2024-12-30 23:48:35,126 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2024-12-30 23:48:35,126 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2024-12-30 23:48:35,126 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [30/Dec/2024 23:48:35] "POST /chat HTTP/1.1" 200 -

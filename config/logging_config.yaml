@@ -1,0 +1,46 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  standard:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  detailed:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: standard
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.FileHandler
+    level: INFO
+    formatter: detailed
+    filename: logs/app.log
+    encoding: utf-8
+
+  error_file:
+    class: logging.FileHandler
+    level: ERROR
+    formatter: detailed
+    filename: logs/error.log
+    encoding: utf-8
+
+  llm_api:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/llm_api.log
+    encoding: utf-8
+
+loggers:
+  llm_calls:
+    level: DEBUG
+    handlers: [llm_api]
+    propagate: no
+
+root:
+  level: DEBUG
+  handlers: [console, file, error_file] 

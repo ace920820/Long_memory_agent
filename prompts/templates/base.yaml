@@ -1,32 +1,60 @@
 # 基础对话模板
 chat:
   base: |
-    角色设定：{role_prompt}
-    
+    {role_prompt}
+
+    {%- if chat_history %}
     对话历史：
     {chat_history}
-    
+    {% endif %}
+
+    {%- if context %}
+    参考信息：
+    {context}
+    {% endif %}
+
+    {%- if memories %}
+    历史记忆：
+    {memories}
+    {% endif %}
+
     用户输入：{user_input}
-    
-    请根据角色设定和对话历史回答用户。
+
+    请根据以上信息，以角色设定的方式回答用户。如果历史信息与当前问题无关，请仅基于问题本身回答。
+
+  simple: |
+    {role_prompt}
+    用户输入：{user_input}
+    请以角色设定的方式直接回答用户。
 
 # RAG 检索增强模板
 rag:
   base: |
-    角色设定：{role_prompt}
-    
+    {role_prompt}
+
+    {%- if context and context|relevance_score(user_input) > 0.6 %}
     参考信息：
     {context}
-    
-    历史记忆：
-    {memories}
-    
-    对话历史：
-    {chat_history}
-    
+    {% endif %}
+
+    {%- if memories and memories|any_relevant(user_input) %}
+    相关记忆：
+    {% for memory in memories|filter_relevant(user_input) %}
+    - {memory}
+    {% endfor %}
+    {% endif %}
+
+    {%- if chat_history and chat_history|recent_relevant(user_input) %}
+    相关对话：
+    {chat_history|get_relevant_history(user_input)}
+    {% endif %}
+
     用户输入：{user_input}
-    
-    请基于以上信息，以角色设定的方式回答用户。
+
+    请基于以上相关信息，以角色设定的方式回答用户。注意：
+    1. 优先使用与问题直接相关的信息
+    2. 如果历史信息不相关，则直接回答问题
+    3. 保持角色特征的一致性
 
 # 记忆相关模板
 memory:
@@ -37,4 +65,5 @@ memory:
     要求：
     1. 保持核心信息不变
     2. 使用更规范的表述方式
-    3. 确保符合{memory_type}类型的特征 
+    3. 确保符合{memory_type}类型的特征
+    4. 删除无关或重复的信息 

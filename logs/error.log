@@ -1,0 +1,8 @@
+2024-12-30 23:24:27,622 - root - ERROR - main.py:139 - Error in chat endpoint: name 'llm_service' is not defined
+2024-12-30 23:27:50,286 - root - ERROR - main.py:139 - Error in chat endpoint: handle_query() missing 1 required positional argument: 'query'
+2024-12-30 23:31:04,788 - root - ERROR - memory_manager.py:112 - Error adding memory to storage: 'MemoryManager' object has no attribute 'dimension'
+2024-12-30 23:31:04,788 - root - ERROR - memory_manager.py:143 - Error in add_memory: 'MemoryManager' object has no attribute 'dimension'
+2024-12-30 23:36:16,997 - root - ERROR - memory_manager.py:440 - Error deleting memories: 'MemoryManager' object has no attribute 'dimension'
+2024-12-30 23:36:16,997 - root - ERROR - memory_manager.py:780 - Error in clean_memories: 'MemoryManager' object has no attribute 'save_memories'
+2024-12-30 23:36:37,324 - root - ERROR - memory_manager.py:346 - Error updating memories: 'MemoryManager' object has no attribute 'dimension'
+2024-12-30 23:38:14,660 - root - ERROR - memory_manager.py:349 - Error updating memories: 'MemoryManager' object has no attribute 'save_memories'

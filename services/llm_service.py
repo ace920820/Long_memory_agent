@@ -9,28 +9,29 @@ class LLMService:
 
     def handle_query(self, user_id: str, query: str) -> dict:
         """处理用户查询
-        :param user_id: 用户ID
-        :param query: 用户输入
-        :return: 包含响应和记忆状态的字典
+        
+        Args:
+            user_id: 用户ID
+            query: 用户输入的查询
+            
+        Returns:
+            dict: 包含响应的字典
         """
         try:
+            # 使用 chat_agent 处理查询
             result = self.chat_agent.chat(user_id, query)
             
-            # 如果返回的是字典（新格式）
+            # 确保返回格式正确
             if isinstance(result, dict):
                 return result
-            
-            # 如果返回的是字符串（旧格式），转换为新格式
-            return {
-                "response": result,
-                "memory_status": None
-            }
-            
+            else:
+                return {"response": str(result)}
+                
         except Exception as e:
             logging.error(f"Error in handle_query: {str(e)}")
             return {
-                "error": "处理请求时出现错误",
-                "memory_status": None
+                "error": "处理查询时出现错误",
+                "details": str(e)
             }
 
     def set_user_role(self, user_id, role):

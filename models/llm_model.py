@@ -1,4 +1,5 @@
 from models.llm_api_wrapper import LLMAPIWrapper
+from services.prompt_manager import PromptManager
 import logging
 import os
 from datetime import datetime
@@ -8,6 +9,11 @@ class LLMModel:
         self.config = config
         self.api_wrapper = LLMAPIWrapper(api_key=config["api_key"], model=config["llm_model"])
         self.model = config["llm_model"]
+        
+        # 初始化提示词管理器
+        self.prompt_manager = PromptManager()
+        self.current_role_prompt = None  # 当前角色的提示词
+        
         # 设置专门的 LLM 调用日志记录器
         self.llm_logger = logging.getLogger('llm_calls')
         self.setup_llm_logger()
@@ -38,51 +44,81 @@ class LLMModel:
         self.llm_logger.addHandler(fh)
         self.llm_logger.setLevel(logging.INFO)
 
-    def generate_response(self, prompt: str, context: list = None) -> str:
-        """生成响应并记录详细日志
-        :param prompt: 提示文本
-        :param context: 对话上下文列表，默认为空列表
-        :return: 生成的响应文本
-        """
+    def set_role(self, role_name: str) -> bool:
+        """设置当前角色"""
+        try:
+            self.current_role_prompt = self.prompt_manager.get_role_prompt(role_name)
+            return True if self.current_role_prompt else False
+        except Exception as e:
+            logging.error(f"Error setting role: {str(e)}")
+            return False
+
+    def _process_response(self, response: dict) -> str:
+        """处理 API 响应"""
+        try:
+            if isinstance(response, dict) and 'choices' in response:
+                return response['choices'][0]['message']['content']
+            elif isinstance(response, str):
+                return response
+            else:
+                logging.warning(f"Unexpected response format: {response}")
+                return str(response)
+        except Exception as e:
+            logging.error(f"Error processing response: {str(e)}")
+            return "抱歉，处理响应时出现错误。"
+
+    def generate_response(self, prompt: str, context: dict = None) -> str:
+        """生成响应并记录详细日志"""
         if context is None:
-            context = []
+            context = {}
         
         try:
-            # 生成请求ID
+            # 生成请求ID用于日志追踪
             request_id = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+            start_time = datetime.now()
+            
+            # 获取系统指令
+            system_instruction = self.prompt_manager.get_system_instruction(
+                template_type='base',
+                role_prompt=self.current_role_prompt,
+                memories=context.get('memories', []),
+                user_input=prompt
+            )
+            
+            # 构建消息列表
+            messages = [
+                {"role": "system", "content": system_instruction}
+            ]
+            
+            # 添加对话历史（如果有）
+            if 'chat_history' in context:
+                messages.extend(context['chat_history'])
+            
+            # 添加当前用户输入
+            messages.append({"role": "user", "content": prompt})
             
             # 记录请求开始
-            start_time = datetime.now()
             self.llm_logger.info("开始 LLM 请求", extra={
                 'request_id': request_id,
-                'prompt': prompt,
+                'prompt': str(messages),
                 'response': '',
                 'tokens': 0,
                 'latency': 0
             })
             
-            # 使用 api_wrapper 调用 LLM
-            full_prompt = context + [{"role": "user", "content": prompt}]
-            response = self.api_wrapper.call_llm(full_prompt)
-            
-            # 处理响应
-            if isinstance(response, dict) and 'choices' in response:
-                result = response['choices'][0]['message']['content']
-            elif isinstance(response, str):
-                result = response
-            else:
-                logging.warning(f"Unexpected response format: {response}")
-                result = str(response)
+            # 调用 API
+            response = self.api_wrapper.call_llm(messages)
+            result = self._process_response(response)
             
             # 计算延迟和token数
             end_time = datetime.now()
             latency = (end_time - start_time).total_seconds() * 1000
-            tokens = len(str(full_prompt).split()) + len(result.split())  # 简单估算
+            tokens = len(str(messages).split()) + len(result.split())  # 简单估算
             
             # 记录完整的请求信息
             self.llm_logger.info("LLM 请求完成", extra={
                 'request_id': request_id,
-                'prompt': str(full_prompt),
+                'prompt': str(messages),
                 'response': result,
                 'tokens': tokens,
                 'latency': latency
@@ -91,14 +127,6 @@ class LLMModel:
             return result
             
         except Exception as e:
-            # 记录错误信息
-            self.llm_logger.error(f"LLM 请求失败: {str(e)}", extra={
-                'request_id': request_id if 'request_id' in locals() else 'unknown',
-                'prompt': str(full_prompt) if 'full_prompt' in locals() else prompt,
-                'response': str(e),
-                'tokens': 0,
-                'latency': 0
-            })
             logging.error(f"Error generating response: {str(e)}")
             return "抱歉，生成回答时出现错误。"
 

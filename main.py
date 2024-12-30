@@ -10,6 +10,7 @@ import logging.config
 import sys
 import logging
 import json
+import os
 
 # 设置控制台输出为 UTF-8 编码
 if sys.stdout.encoding.lower() != 'utf-8':
@@ -39,6 +40,11 @@ def create_memory_manager():
         raise
 
 def create_app():
+    # 确保必要的目录存在
+    os.makedirs('logs', exist_ok=True)
+    os.makedirs('data/vector_store', exist_ok=True)
+    os.makedirs('config', exist_ok=True)
+    
     app = Flask(__name__)
     
     # Load configuration
@@ -60,40 +66,49 @@ def create_app():
     }
 
     # Initialize components
-    llm_model = LLMModel(config)
-    rag_module = RAGModule(similarity_threshold=0.55)
-    memory_manager = MemoryManager(
-        model_config=config.get('embedding_model'),
-        memory_file="config/user_memories.json",
-        similarity_threshold=0.45
-    )
+    try:
+        # 初始化记忆管理器
+        memory_manager = MemoryManager(
+            model_name="all-MiniLM-L6-v2",  # 使用默认模型
+            memory_file="config/user_memories.json",
+            similarity_threshold=0.6
+        )
+        
+        # 初始化 RAG 模块
+        rag_module = RAGModule(
+            model_name="all-MiniLM-L6-v2",
+            similarity_threshold=0.6,
+            index_path="data/vector_store"
+        )
+        
+        # 初始化 LLM 模型
+        llm_model = LLMModel({
+            "api_key": config.get("llm", {}).get("api_key", "your_api_key_here"),
+            "llm_model": config.get("llm", {}).get("llm_model", "qwen-plus"),
+            "temperature": config.get("llm", {}).get("temperature", 0.7),
+            "max_tokens": config.get("llm", {}).get("max_tokens", 2000)
+        })
+        
+        # 初始化聊天代理
+        chat_agent = ChatAgent(
+            llm_model=llm_model,
+            roles_config=roles_config,
+            default_roles=default_roles,
+            rag_module=rag_module,
+            memory_manager=memory_manager
+        )
+        
+        # 初始化 LLM 服务并添加到应用上下文
+        app.llm_service = LLMService(chat_agent)
+        
+    except Exception as e:
+        logging.error(f"Error initializing components: {str(e)}")
+        raise
 
-    # 添加示例文档
-    documents = [
-        "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
-        "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
-        "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
-        "Jamie最喜欢的人是他的老婆和多米",
-        "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。"
-    ]
-    rag_module.add_documents(documents)
-
-    chat_agent = ChatAgent(
-        llm_model, 
-        roles_config, 
-        default_roles, 
-        rag_module=rag_module,
-        memory_manager=memory_manager
-    )
-    llm_service = LLMService(chat_agent)
-
-    # Initialize logging
-    with open("config/logger_config.yaml", "r") as f:
+    # 设置日志配置
+    with open('config/logging_config.yaml', 'r') as f:
         log_config = yaml.safe_load(f)
     logging.config.dictConfig(log_config)
-
-    # 初始化提示词管理器
-    prompt_manager = PromptManager()
 
     # 路由定义
     @app.route('/')
@@ -120,7 +135,8 @@ def create_app():
                 default_role = next(iter(default_roles.values())).get('role', 'reindeer')
                 chat_agent.set_user_role(user_id, default_role)
 
-            result = llm_service.handle_query(user_id, user_input)
+            # 使用应用上下文中的 llm_service
+            result = app.llm_service.handle_query(user_id, user_input)
             return jsonify(result if isinstance(result, dict) else {"response": result})
 
         except Exception as e:
