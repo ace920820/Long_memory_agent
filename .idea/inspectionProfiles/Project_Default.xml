@@ -1,0 +1,31 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="11">
+            <item index="0" class="java.lang.String" itemvalue="addressparser" />
+            <item index="1" class="java.lang.String" itemvalue="jieba3k" />
+            <item index="2" class="java.lang.String" itemvalue="flasgger" />
+            <item index="3" class="java.lang.String" itemvalue="flask" />
+            <item index="4" class="java.lang.String" itemvalue="pypinyin" />
+            <item index="5" class="java.lang.String" itemvalue="jionlp" />
+            <item index="6" class="java.lang.String" itemvalue="pandas" />
+            <item index="7" class="java.lang.String" itemvalue="func_timeout" />
+            <item index="8" class="java.lang.String" itemvalue="flask_cors" />
+            <item index="9" class="java.lang.String" itemvalue="loguru" />
+            <item index="10" class="java.lang.String" itemvalue="Flask-Session" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="main_api.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
