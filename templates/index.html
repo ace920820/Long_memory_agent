@@ -47,6 +47,32 @@
         <h1 class="text-2xl font-bold">🎄 圣诞快乐！！ 🎁</h1>
     </div>
 
+    <div class="mb-4 p-4 bg-white rounded-lg shadow">
+        <h3 class="text-lg font-semibold mb-2">选择对话角色</h3>
+        <div class="flex flex-wrap gap-2" id="roleSelector">
+            <button class="role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 
+                           bg-blue-100 text-blue-800 hover:bg-blue-200 active" 
+                    data-role="reindeer">
+                驯鹿
+            </button>
+            <button class="role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 
+                           bg-gray-100 text-gray-800 hover:bg-gray-200" 
+                    data-role="santa">
+                圣诞老人
+            </button>
+            <button class="role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 
+                           bg-gray-100 text-gray-800 hover:bg-gray-200" 
+                    data-role="elf">
+                圣诞精灵
+            </button>
+            <button class="role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 
+                           bg-gray-100 text-gray-800 hover:bg-gray-200" 
+                    data-role="assistant">
+                个人助理
+            </button>
+        </div>
+    </div>
+
     <div class="flex-grow flex flex-col overflow-hidden">
         <div id="messages" class="flex-grow overflow-y-auto p-6 space-y-4 bg-white shadow-lg rounded-lg mx-4 mt-4">
             <!-- 消息会动态加载到这里 -->
@@ -266,6 +292,111 @@
         function openMemoryManager() {
             // 在新窗口打开记忆管理页面
             window.open('/memory-manager', '_blank', 'width=800,height=600');
+        }
+
+        // 角色配置
+        const roleConfig = {
+            reindeer: {
+                name: '驯鹿',
+                avatar: '/static/images/Christmas_reindeer_avatar_80x80.png'
+            },
+            santa: {
+                name: '圣诞老人',
+                avatar: '/static/images/santa_avatar.png'
+            },
+            elf: {
+                name: '圣诞精灵',
+                avatar: '/static/images/elf_avatar.png'
+            },
+            assistant: {
+                name: '个人助理',
+                avatar: '/static/images/assistant_avatar.png'
+            }
+        };
+
+        // 角色切换功能
+        const roleButtons = document.querySelectorAll('.role-btn');
+        let currentRole = 'reindeer';
+
+        roleButtons.forEach(button => {
+            button.addEventListener('click', async () => {
+                const role = button.dataset.role;
+                
+                try {
+                    const response = await fetch('/set_role', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            user_id: 'default_user',
+                            role: role
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok && result.success) {
+                        // 更新按钮状态
+                        roleButtons.forEach(btn => {
+                            btn.classList.remove('bg-blue-100', 'text-blue-800', 'active');
+                            btn.classList.add('bg-gray-100', 'text-gray-800');
+                        });
+                        button.classList.remove('bg-gray-100', 'text-gray-800');
+                        button.classList.add('bg-blue-100', 'text-blue-800', 'active');
+                        
+                        // 更新当前角色
+                        currentRole = role;
+                        
+                        // 更新头像（如果有的话）
+                        if (roleConfig[role]) {
+                            updateAssistantAvatar(role);
+                        }
+                        
+                        // 添加系统消息提示角色切换
+                        appendMessage('系统', result.message, 'system');
+                    } else {
+                        console.error('Failed to set role:', result.error);
+                        appendMessage('系统', '切换角色失败，请重试', 'error');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    appendMessage('系统', '切换角色时发生错误', 'error');
+                }
+            });
+        });
+
+        // 获取角色的中文名称
+        function getRoleName(role) {
+            const roleNames = {
+                'reindeer': '驯鹿',
+                'elf': '精灵',
+                'santa': '圣诞老人'
+            };
+            return roleNames[role] || role;
+        }
+
+        // 添加消息到聊天界面的辅助函数
+        function appendMessage(sender, message, type = 'chat') {
+            const chatBox = document.getElementById('chatBox');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-4 ${type === 'system' ? 'text-center text-gray-500' : ''}`;
+            
+            if (type === 'system' || type === 'error') {
+                messageDiv.innerHTML = `<p class="text-sm ${type === 'error' ? 'text-red-500' : 'text-gray-500'}">${message}</p>`;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="${sender === 'User' ? 'text-right' : ''}">
+                        <span class="text-xs text-gray-500">${sender}</span>
+                        <div class="${sender === 'User' ? 'bg-blue-100' : 'bg-gray-100'} rounded-lg p-3 inline-block">
+                            <p class="text-gray-800">${message}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
         }
     </script>
 </body>

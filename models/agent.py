@@ -163,20 +163,25 @@ class ChatAgent:
                 "memory_status": None
             }
 
-    def set_user_role(self, user_id, role):
-        """Set the role for a user and clear their conversation history."""
-        if role not in self.roles_config:
-            raise ValueError(f"Invalid role: {role}")
-        
-        # 设置新角色
-        self.user_roles[user_id] = role
-        
-        # 清空该用户的对话上下文
-        if user_id in self.user_contexts:
-            self.user_contexts[user_id] = []
-            logging.info(f"Cleared conversation history for user {user_id} after role change to {role}")
-        
-        return True
+    def set_user_role(self, user_id: str, role: str) -> bool:
+        """Set the role for a user."""
+        try:
+            if role not in self.roles_config:
+                raise ValueError(f"Invalid role: {role}")
+            
+            # 设置新角色
+            self.user_roles[user_id] = role
+            
+            # 清空该用户的对话上下文
+            if user_id in self.user_contexts:
+                self.user_contexts[user_id] = []
+                logging.info(f"Cleared conversation history for user {user_id} after role change to {role}")
+            
+            return True
+            
+        except Exception as e:
+            logging.error(f"Error in set_user_role: {str(e)}")
+            raise
 
     def process_query(self, user_id: str, query: str) -> str:
         """优化的对话处理流程"""

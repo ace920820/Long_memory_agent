@@ -1,0 +1,40 @@
+# 基础对话模板
+chat:
+  base: |
+    角色设定：{role_prompt}
+    
+    对话历史：
+    {chat_history}
+    
+    用户输入：{user_input}
+    
+    请根据角色设定和对话历史回答用户。
+
+# RAG 检索增强模板
+rag:
+  base: |
+    角色设定：{role_prompt}
+    
+    参考信息：
+    {context}
+    
+    历史记忆：
+    {memories}
+    
+    对话历史：
+    {chat_history}
+    
+    用户输入：{user_input}
+    
+    请基于以上信息，以角色设定的方式回答用户。
+
+# 记忆相关模板
+memory:
+  restructure: |
+    请将以下记忆重构为{memory_type}类型的表述：
+    {memory_content}
+    
+    要求：
+    1. 保持核心信息不变
+    2. 使用更规范的表述方式
+    3. 确保符合{memory_type}类型的特征 

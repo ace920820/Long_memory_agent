@@ -237,7 +237,7 @@ class MemoryManager:
                 "message": "记忆更新失败"
             }
 
-    def retrieve_memories(self, user_id: str, query: str, top_k: int = 50) -> List[Dict]:
+    def retrieve_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
         """检索相关记忆"""
         try:
             # 确保用户存在且有记忆

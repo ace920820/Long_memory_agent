@@ -4,6 +4,7 @@ from models.agent import ChatAgent
 from services.llm_service import LLMService
 from models.rag_module import RAGModule
 from models.memory_manager import MemoryManager
+from services.prompt_manager import PromptManager
 import yaml
 import logging.config
 import sys
@@ -44,8 +45,19 @@ def create_app():
     with open("config/config.yaml", "r", encoding='utf-8') as f:
         config = yaml.safe_load(f)
 
-    roles_config = config.get("roles", {})
-    default_roles = config.get("default_roles", {})
+    # 从 prompts 配置加载角色信息
+    prompt_manager = PromptManager()
+    roles_config = {
+        role: prompt_manager.roles[role]
+        for role in prompt_manager.config.get('available_roles', [])
+    }
+    
+    # 设置默认角色
+    default_roles = {
+        'default_user': {
+            'role': prompt_manager.config.get('default_role', 'reindeer')
+        }
+    }
 
     # Initialize components
     llm_model = LLMModel(config)
@@ -79,6 +91,9 @@ def create_app():
     with open("config/logger_config.yaml", "r") as f:
         log_config = yaml.safe_load(f)
     logging.config.dictConfig(log_config)
+
+    # 初始化提示词管理器
+    prompt_manager = PromptManager()
 
     # 路由定义
     @app.route('/')
@@ -115,25 +130,25 @@ def create_app():
     @app.route('/set_role', methods=['POST'])
     def set_role():
         try:
-            user_id = request.json.get('user_id')
-            role = request.json.get('role')
-
-            if not user_id or not role:
-                return jsonify({"error": "Missing user_id or role", "success": False}), 400
-
-            if role not in roles_config:
-                return jsonify({"error": f"Invalid role: {role}", "success": False}), 400
-
+            data = request.json
+            user_id = data.get('user_id', 'default_user')
+            role = data.get('role')
+            
+            # 获取角色提示词
+            role_prompt = prompt_manager.get_role_prompt(role)
+            if not role_prompt:
+                return jsonify({"error": "Invalid role"}), 400
+            
+            # 设置用户角色
             chat_agent.set_user_role(user_id, role)
+            
             return jsonify({
                 "success": True,
-                "message": f"Role set to {role} for user {user_id}",
-                "role_name": roles_config[role].get('name', role)
+                "message": prompt_manager.get_system_prompt("role_switch").format(role=role)
             })
-
         except Exception as e:
-            logging.error(f"Error in set_role endpoint: {str(e)}")
-            return jsonify({"error": "Internal server error", "success": False}), 500
+            logging.error(f"Error setting role: {str(e)}")
+            return jsonify({"error": "Failed to set role"}), 500
 
     @app.route('/api/memories', methods=['GET'])
     def get_memories():

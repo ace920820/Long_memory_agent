@@ -44,7 +44,7 @@ class LLMAPIWrapper:
         payload["parameters"] = {k: v for k, v in payload["parameters"].items() if v is not None}
 
         # 打印日志信息
-        self.logger.debug(f"Calling LLM API with payload: {payload}")
+        # self.logger.debug(f"Calling LLM API with payload: {payload}")
 
         response = requests.post(f"{self.base_url}/chat/completions", json=payload, headers=headers)
         if response.status_code != 200:

@@ -1,0 +1,34 @@
+# 全局配置
+default_role: reindeer
+max_context_length: 2000
+temperature: 0.7
+
+# 角色配置路径
+roles_path: roles/
+templates_path: templates/
+
+# 系统级提示词
+system_prompts:
+  error: "抱歉，我现在遇到了一些问题。让我们换个话题吧。"
+  greeting: "欢迎来到圣诞老人的小屋！"
+  role_switch: "好的，我现在切换到{role}的角色。" 
+
+# 在现有配置中添加以下内容
+available_roles:
+  - reindeer
+  - santa
+  - elf
+  - assistant
+
+role_descriptions:
+  reindeer: "活泼可爱的驯鹿助手"
+  santa: "慈祥和蔼的圣诞老人"
+  elf: "快乐勤劳的圣诞精灵"
+  assistant: "专业可靠的个人助理"
+
+role_transitions:
+  greeting:
+    santa: "Ho ho ho！欢迎来到圣诞老人的小屋！"
+    elf: "叮叮！欢迎来到圣诞工坊！"
+    reindeer: "哞~欢迎来玩！"
+    assistant: "您好！我是您的个人助理，很高兴为您服务。" 

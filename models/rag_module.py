@@ -61,61 +61,79 @@ class RAGModule:
             logging.error(f"Search failed: {str(e)}")
             return []
 
-    def generate_response(self, query: str, llm_model, role_prompt: str = None, context: list = None, memories: list = None) -> str:
-        """生成基于上下文增强的回答。
-        :param query: 用户查询
-        :param llm_model: LLM模型实例
-        :param role_prompt: 角色提示词
-        :param context: 对话历史上下文
-        :param memories: 相关记忆列表
-        :return: 回答文本
-        """
+    def generate_response(self, query: str, llm_model, role_prompt=None, context=None, memories=None):
+        """生成带有检索增强的响应"""
         try:
-            relevant_docs = self.search(query, top_k=5)
+            # 1. 获取相关文档
+            relevant_docs = self.search(query, top_k=5)  # 使用现有的 search 方法
             
-            # 构建知识库内容
-            docs_context = []
-            if relevant_docs:
-                docs_context.extend([doc["document"] for doc in relevant_docs])
+            # 2. 构建提示词
+            prompt_parts = []
             
-            # 添加记忆内容
-            if memories:
-                for m in memories:
-                    first_line = m['content'].split('\n')[0]
-                    docs_context.append(f"历史记忆: {first_line}")
-            
-            # 如果没有相关文档和记忆，且有上下文，直接使用上下文
-            if not docs_context and context:
-                context.append({"role": "user", "content": query})
-                return llm_model.generate_response(query, context)
-
-            # 构建完整的系统提示词
-            system_prompt = "你是一个知识丰富的助手，需要基于提供的参考信息来回答问题。"
+            # 添加角色提示（如果有）
             if role_prompt:
-                system_prompt = f"{role_prompt}\n\n同时，你需要基于提供的参考信息来回答问题。"
-
-            # 构建带有知识库内容的提示词
-            knowledge_prompt = f"""基于以下参考信息回答问题：
-
-参考信息：
-{chr(10).join(docs_context)}
-
-问题：{query}
-
-请根据上述参考信息提供准确、相关的回答。"""
-
-            # 合并上下文
-            conversation_context = context or []
-            if not any(msg.get("role") == "system" for msg in conversation_context):
-                conversation_context.insert(0, {"role": "system", "content": system_prompt})
+                prompt_parts.append({"role": "system", "content": role_prompt})
             
-            conversation_context.append({"role": "user", "content": knowledge_prompt})
-
-            return llm_model.generate_response(knowledge_prompt, conversation_context)
+            # 构建上下文信息
+            context_info = []
+            
+            # 添加相关文档
+            if relevant_docs:
+                context_info.append("参考信息：")
+                # 从搜索结果中提取文档内容
+                doc_contents = [doc["document"] for doc in relevant_docs]
+                context_info.extend(doc_contents)
+            
+            # 添加记忆信息（去重）
+            if memories:
+                seen_contents = set()
+                memory_info = []
+                for memory in memories:
+                    content = memory.get('content', '')
+                    if content and content not in seen_contents:
+                        memory_info.append(f"历史记忆: {content}")
+                        seen_contents.add(content)
+                if memory_info:
+                    context_info.extend(memory_info)
+            
+            # 如果有上下文信息，添加到提示词中
+            if context_info:
+                context_message = "\n".join(context_info)
+                prompt_parts.append({
+                    "role": "system", 
+                    "content": f"请记住以下信息：\n{context_message}"
+                })
+            
+            # 添加历史对话上下文（如果有）
+            if context:
+                # 只添加最近的对话历史，避免重复
+                recent_context = [msg for msg in context if isinstance(msg, dict) and 
+                                msg['role'] not in ('system')][-5:]  # 保留最近5轮对话
+                prompt_parts.extend(recent_context)
+            
+            # 添加当前查询
+            prompt_parts.append({
+                "role": "user",
+                "content": f"{query}\n\n请根据上述信息提供准确、相关的回答。"
+            })
+            
+            # 3. 生成响应
+            response = llm_model.generate_response(
+                prompt=query,
+                context=prompt_parts
+            )
+            
+            # 记录完整的提示词用于调试
+            logging.debug("完整提示词结构：")
+            for part in prompt_parts:
+                logging.debug(f"Role: {part.get('role')}")
+                logging.debug(f"Content: {part.get('content')}\n")
+            
+            return response
             
         except Exception as e:
-            logging.error(f"Response generation failed: {str(e)}")
-            return "抱歉，生成回答时出现错误。"
+            logging.error(f"Error in RAG response generation: {str(e)}")
+            return "抱歉，处理您的请求时出现错误。"
 
     def update_document(self, doc_id: int, new_content: str) -> bool:
         """更新知识库中的文档。
