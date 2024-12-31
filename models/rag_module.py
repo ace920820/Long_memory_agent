@@ -4,13 +4,14 @@ import numpy as np
 import os
 import logging
 
+
 class RAGModule:
-    def __init__(self, 
+    def __init__(self,
                  model_name: str = "all-MiniLM-L6-v2",
                  similarity_threshold: float = 0.5,
                  index_path: str = "data/vector_store"):
         """初始化 RAG 模块
-        
+
         Args:
             model_name: 使用的嵌入模型名称
             similarity_threshold: 相似度阈值
@@ -20,13 +21,13 @@ class RAGModule:
         self.similarity_threshold = similarity_threshold
         self.index_path = index_path
         self.dimension = 384  # all-MiniLM-L6-v2 的向量维度
-        
+
         # 初始化或加载索引
         self._init_index()
-        
+
         # 存储文档
         self.documents = []
-        
+
         # 添加示例文档
         self.add_documents([
             "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
@@ -41,16 +42,20 @@ class RAGModule:
         try:
             # 确保目录存在
             os.makedirs(self.index_path, exist_ok=True)
-            
+
             # 创建新的索引
             self.index = faiss.IndexFlatL2(self.dimension)
-            
+
             # 如果存在已保存的索引，则加载
             index_file = os.path.join(self.index_path, "index.faiss")
             if os.path.exists(index_file):
                 self.index = faiss.read_index(index_file)
                 logging.info(f"Loaded existing index from {index_file}")
-            
+                # 验证索引和文档的一致性
+                if self.index.ntotal > len(self.documents):
+                    logging.warning("Index contains more vectors than documents. Truncating.")
+                    self.index = faiss.IndexFlatL2(self.dimension)  # 重新初始化索引
+
         except Exception as e:
             logging.error(f"Error initializing index: {str(e)}")
             # 创建空索引作为后备
@@ -61,16 +66,17 @@ class RAGModule:
         try:
             if not documents:
                 return
-            
+
             # 编码文档
             embeddings = self.model.encode(documents)
-            
+            assert len(embeddings) == len(documents), "Mismatch between embeddings and documents"
+
             # 添加到索引
             self.index.add(embeddings.astype('float32'))
-            
+
             # 保存文档
             self.documents.extend(documents)
-            
+
             # 保存索引
             index_file = os.path.join(self.index_path, "index.faiss")
             try:
@@ -78,48 +84,48 @@ class RAGModule:
                 logging.info(f"Successfully saved index to {index_file}")
             except Exception as e:
                 logging.error(f"Error saving index: {str(e)}")
-            
+
             logging.info(f"Added {len(documents)} documents to the knowledge base")
-            
+
         except Exception as e:
             logging.error(f"Error adding documents: {str(e)}")
 
     def search(self, query: str, top_k: int = 5) -> list:
         """搜索相关文档
-        
+
         Args:
             query: 查询文本
             top_k: 返回的最相关文档数量
-        
+
         Returns:
             list: 相关文档列表，每个文档包含内容和相似度分数
         """
         try:
             # 编码查询
             query_vector = self.model.encode([query])
-            
-            # 搜索最相关的文档
-            distances, indices = self.index.search(
-                query_vector.astype('float32'), 
-                min(top_k, len(self.documents))
-            )
-            
+
+            # 确保搜索参数不超过索引大小
+            k = min(top_k, self.index.ntotal)
+            distances, indices = self.index.search(query_vector.astype('float32'), k)
+
             # 处理结果
             results = []
             for i, idx in enumerate(indices[0]):
-                if idx < len(self.documents):
-                    similarity = 1 / (1 + float(distances[0][i]))  # 转换距离为相似度
-                    if similarity >= self.similarity_threshold:
-                        results.append({
-                            'document': self.documents[idx],
-                            'score': similarity
-                        })
-                        logging.info(f"知识库匹配 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
-                    else:
-                        logging.info(f"知识库文本因相似度过低被过滤 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
-            
+                if idx >= len(self.documents):
+                    logging.warning(f"Index {idx} is out of range for documents. Skipping.")
+                    continue
+                similarity = 1 / (1 + float(distances[0][i]))  # 转换距离为相似度
+                if similarity >= self.similarity_threshold:
+                    results.append({
+                        'document': self.documents[idx],
+                        'score': similarity
+                    })
+                    logging.info(f"知识库匹配 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
+                else:
+                    logging.info(f"知识库文本因相似度过低被过滤 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
+
             return results
-            
+
         except Exception as e:
             logging.error(f"Error in search: {str(e)}")
             return []

@@ -98,6 +98,10 @@ def create_app():
             memory_manager=memory_manager
         )
         
+        # 确保默认用户有默认角色
+        default_role = next(iter(default_roles.values())).get('role', 'reindeer')
+        chat_agent.set_user_role('default_user', default_role)
+
         # 初始化 LLM 服务并添加到应用上下文
         app.llm_service = LLMService(chat_agent)
         
@@ -131,9 +135,11 @@ def create_app():
             if user_input.lower() == 'exit':
                 return jsonify({"response": "Goodbye!"})
 
+            # 确保用户有角色设置
             if user_id not in chat_agent.user_roles:
                 default_role = next(iter(default_roles.values())).get('role', 'reindeer')
                 chat_agent.set_user_role(user_id, default_role)
+                logging.info(f"Assigned default role '{default_role}' to user {user_id}")
 
             # 使用应用上下文中的 llm_service
             result = app.llm_service.handle_query(user_id, user_input)
