@@ -3,12 +3,14 @@ import faiss
 import numpy as np
 import os
 import logging
+import json
+from typing import List, Dict
 
 
 class RAGModule:
     def __init__(self,
                  model_name: str = "all-MiniLM-L6-v2",
-                 similarity_threshold: float = 0.5,
+                 similarity_threshold: float = 0.6,
                  index_path: str = "data/vector_store"):
         """初始化 RAG 模块
 
@@ -20,115 +22,131 @@ class RAGModule:
         self.model = SentenceTransformer(model_name)
         self.similarity_threshold = similarity_threshold
         self.index_path = index_path
-        self.dimension = 384  # all-MiniLM-L6-v2 的向量维度
-
-        # 初始化或加载索引
-        self._init_index()
-
-        # 存储文档
+        
+        # 初始化文档存储
         self.documents = []
+        self.document_embeddings = None
+        
+        # 确保存储目录存在
+        os.makedirs(index_path, exist_ok=True)
+        
+        # 加载现有索引
+        self._load_index()
 
-        # 添加示例文档
-        self.add_documents([
-            "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
-            "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
-            "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
-            "Jamie最喜欢的人是他的老婆和多米",
-            "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。"
-        ])
-
-    def _init_index(self):
-        """初始化或加载 FAISS 索引"""
+    def _load_index(self):
+        """加载或创建向量索引"""
         try:
-            # 确保目录存在
-            os.makedirs(self.index_path, exist_ok=True)
-
-            # 创建新的索引
-            self.index = faiss.IndexFlatL2(self.dimension)
-
-            # 如果存在已保存的索引，则加载
-            index_file = os.path.join(self.index_path, "index.faiss")
-            if os.path.exists(index_file):
-                self.index = faiss.read_index(index_file)
-                logging.info(f"Loaded existing index from {index_file}")
-                # 验证索引和文档的一致性
-                if self.index.ntotal > len(self.documents):
-                    logging.warning("Index contains more vectors than documents. Truncating.")
-                    self.index = faiss.IndexFlatL2(self.dimension)  # 重新初始化索引
-
+            # 加载文档
+            docs_path = os.path.join(self.index_path, "documents.json")
+            if os.path.exists(docs_path):
+                with open(docs_path, 'r', encoding='utf-8') as f:
+                    self.documents = json.load(f)
+                    
+            # 加载或创建向量索引
+            index_path = os.path.join(self.index_path, "faiss_index.bin")
+            if os.path.exists(index_path):
+                self.index = faiss.read_index(index_path)
+                # 重新计算文档向量
+                if self.documents:
+                    texts = [doc['content'] for doc in self.documents]
+                    self.document_embeddings = self.model.encode(texts)
+            else:
+                self.index = faiss.IndexFlatL2(self.model.get_sentence_embedding_dimension())
+                
         except Exception as e:
-            logging.error(f"Error initializing index: {str(e)}")
-            # 创建空索引作为后备
-            self.index = faiss.IndexFlatL2(self.dimension)
+            logging.error(f"Error loading index: {str(e)}")
+            # 创建新的索引
+            self.documents = []
+            self.document_embeddings = None
+            self.index = faiss.IndexFlatL2(self.model.get_sentence_embedding_dimension())
 
-    def add_documents(self, documents: list):
-        """添加文档到知识库"""
+    def add_documents(self, documents: List[Dict]):
+        """添加新文档到索引
+        
+        Args:
+            documents: 文档列表，每个文档应包含 'content' 和 'metadata' 字段
+        """
+        if not documents:
+            return
+            
         try:
-            if not documents:
-                return
-
-            # 编码文档
-            embeddings = self.model.encode(documents)
-            assert len(embeddings) == len(documents), "Mismatch between embeddings and documents"
-
-            # 添加到索引
-            self.index.add(embeddings.astype('float32'))
-
-            # 保存文档
-            self.documents.extend(documents)
-
-            # 保存索引
-            index_file = os.path.join(self.index_path, "index.faiss")
-            try:
-                faiss.write_index(self.index, index_file)
-                logging.info(f"Successfully saved index to {index_file}")
-            except Exception as e:
-                logging.error(f"Error saving index: {str(e)}")
-
-            logging.info(f"Added {len(documents)} documents to the knowledge base")
-
+            # 编码新文档
+            texts = [doc['content'] for doc in documents]
+            new_embeddings = self.model.encode(texts)
+            
+            # 更新索引
+            self.index.add(new_embeddings.astype('float32'))
+            
+            # 更新文档存储
+            start_idx = len(self.documents)
+            for i, doc in enumerate(documents):
+                doc['id'] = start_idx + i
+                self.documents.append(doc)
+            
+            # 更新文档向量
+            if self.document_embeddings is None:
+                self.document_embeddings = new_embeddings
+            else:
+                self.document_embeddings = np.vstack([self.document_embeddings, new_embeddings])
+            
+            # 保存更新
+            self._save_index()
+            
         except Exception as e:
             logging.error(f"Error adding documents: {str(e)}")
 
-    def search(self, query: str, top_k: int = 5) -> list:
+    def search(self, query: str, top_k: int = 5) -> List[Dict]:
         """搜索相关文档
-
+        
         Args:
             query: 查询文本
             top_k: 返回的最相关文档数量
-
+            
         Returns:
-            list: 相关文档列表，每个文档包含内容和相似度分数
+            相关文档列表，每个文档包含相似度分数
         """
         try:
+            if not self.documents:
+                return []
+                
             # 编码查询
-            query_vector = self.model.encode([query])
-
-            # 确保搜索参数不超过索引大小
-            k = min(top_k, self.index.ntotal)
-            distances, indices = self.index.search(query_vector.astype('float32'), k)
-
-            # 处理结果
+            query_vector = self.model.encode([query])[0]
+            
+            # 搜索相似向量
+            distances, indices = self.index.search(
+                np.array([query_vector]).astype('float32'), 
+                min(top_k, len(self.documents))
+            )
+            
+            # 构建结果
             results = []
             for i, idx in enumerate(indices[0]):
-                if idx >= len(self.documents):
-                    logging.warning(f"Index {idx} is out of range for documents. Skipping.")
-                    continue
-                similarity = 1 / (1 + float(distances[0][i]))  # 转换距离为相似度
-                if similarity >= self.similarity_threshold:
-                    results.append({
-                        'document': self.documents[idx],
-                        'score': similarity
-                    })
-                    logging.info(f"知识库匹配 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
-                else:
-                    logging.info(f"知识库文本因相似度过低被过滤 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
-
+                if idx < len(self.documents):  # 确保索引有效
+                    doc = self.documents[idx].copy()
+                    doc['similarity'] = 1 - distances[0][i]  # 转换距离为相似度
+                    if doc['similarity'] >= self.similarity_threshold:
+                        results.append(doc)
+            
             return results
-
+            
         except Exception as e:
-            logging.error(f"Error in search: {str(e)}")
+            logging.error(f"Error searching documents: {str(e)}")
             return []
+
+    def _save_index(self):
+        """保存索引和文档到磁盘"""
+        try:
+            # 保存文档
+            docs_path = os.path.join(self.index_path, "documents.json")
+            with open(docs_path, 'w', encoding='utf-8') as f:
+                json.dump(self.documents, f, ensure_ascii=False, indent=2)
+            
+            # 保存索引
+            index_path = os.path.join(self.index_path, "faiss_index.bin")
+            faiss.write_index(self.index, index_path)
+            
+        except Exception as e:
+            logging.error(f"Error saving index: {str(e)}")
 
     def generate_response(self, query: str, llm_model, role_prompt=None, context=None, memories=None):
         """生成带有检索增强的响应"""
