@@ -837,3 +837,181 @@
 2024-12-31 11:37:44,262 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [31/Dec/2024 11:37:44] "GET /api/memories HTTP/1.1" 200 -
 2024-12-31 11:37:48,654 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [31/Dec/2024 11:37:48] "GET / HTTP/1.1" 200 -
 2024-12-31 11:37:48,697 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [31/Dec/2024 11:37:48] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-01 21:16:37,275 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-01 21:16:37,275 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-01 21:16:37,277 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2025-01-01 21:16:53,079 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-01 21:16:53,081 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2025-01-01 21:23:30,581 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:23:30] "GET / HTTP/1.1" 200 -
+2025-01-01 21:23:30,681 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:23:30] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-01 21:23:33,203 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:23:33] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-01 21:23:33,290 - root - INFO - memory_manager.py:245 - Successfully retrieved 7 memories for user default_user
+2025-01-01 21:23:33,290 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:23:33] "GET /api/memories HTTP/1.1" 200 -
+2025-01-01 21:23:44,591 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5957):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-01 21:23:44,591 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5721):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-01 21:23:44,591 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5357):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-01 21:23:44,591 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4827):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-01 21:23:44,591 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4553):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-01 21:23:44,591 - root - INFO - memory_manager.py:245 - Successfully retrieved 7 memories for user default_user
+2025-01-01 21:23:44,623 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.8139):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-01 21:23:44,623 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7096):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-01 21:23:44,624 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6631):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-01 21:23:44,624 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5392):
+文本: 用户表示请推荐一部好看的电视剧
+2025-01-01 21:23:44,624 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5255):
+文本: 用户表示威士忌也很不错！
+2025-01-01 21:23:47,591 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-01 21:23:47,591 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2025-01-01 21:23:47,592 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:23:47] "POST /chat HTTP/1.1" 200 -
+2025-01-01 21:24:57,849 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5610):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-01 21:24:57,850 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5538):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-01 21:24:57,850 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5321):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-01 21:24:57,850 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5019):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-01 21:24:57,850 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4817):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-01 21:24:57,851 - root - INFO - memory_manager.py:245 - Successfully retrieved 8 memories for user default_user
+2025-01-01 21:24:58,056 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7700):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-01 21:24:58,057 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6959):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-01 21:24:58,057 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6735):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-01 21:24:58,057 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6250):
+文本: 用户表示请推荐一部好看的电视剧
+2025-01-01 21:24:58,057 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5850):
+文本: 用户表示边水往事是一个很好看的电视剧
+2025-01-01 21:25:05,698 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-01 21:25:05,698 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2025-01-01 21:25:05,699 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:25:05] "POST /chat HTTP/1.1" 200 -
+2025-01-01 21:31:59,169 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5319):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-01 21:31:59,169 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5253):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-01 21:31:59,169 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5216):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-01 21:31:59,169 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4691):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-01 21:31:59,169 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4557):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-01 21:31:59,170 - root - INFO - memory_manager.py:245 - Successfully retrieved 9 memories for user default_user
+2025-01-01 21:31:59,465 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7705):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-01 21:31:59,465 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7115):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-01 21:31:59,465 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6547):
+文本: 用户表示威士忌也很不错！
+2025-01-01 21:31:59,465 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6454):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-01 21:31:59,465 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5610):
+文本: 用户表示请推荐一部好看的电视剧
+2025-01-01 21:32:07,758 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-01 21:32:07,758 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2025-01-01 21:32:07,758 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:32:07] "POST /chat HTTP/1.1" 200 -
+2025-01-01 21:32:07,769 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:32:07] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-01 21:49:25,587 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-01 21:49:25,587 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-01 21:49:25,588 - werkzeug - INFO - _internal.py:97 -  * Restarting with stat
+2025-01-01 21:49:36,291 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-01 21:49:36,292 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 410-187-278
+2025-01-01 21:49:36,303 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:49:36] "GET / HTTP/1.1" 200 -
+2025-01-01 21:49:36,378 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:49:36] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-01 21:49:47,292 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5957):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-01 21:49:47,292 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5721):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-01 21:49:47,292 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5357):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-01 21:49:47,292 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4827):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-01 21:49:47,292 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4553):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-01 21:49:47,292 - root - INFO - memory_manager.py:245 - Successfully retrieved 10 memories for user default_user
+2025-01-01 21:49:47,630 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.8139):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-01 21:49:47,630 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7096):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-01 21:49:47,630 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.6631):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-01 21:49:47,630 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5392):
+文本: 用户表示请推荐一部好看的电视剧
+2025-01-01 21:49:47,630 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5255):
+文本: 用户表示威士忌也很不错！
+2025-01-01 21:49:52,691 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-01 21:49:52,692 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2025-01-01 21:49:52,692 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:49:52] "POST /chat HTTP/1.1" 200 -
+2025-01-01 21:50:03,429 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5572):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-01 21:50:03,429 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5234):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-01 21:50:03,429 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5073):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-01 21:50:03,429 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4840):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-01 21:50:03,429 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4592):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-01 21:50:03,429 - root - INFO - memory_manager.py:245 - Successfully retrieved 11 memories for user default_user
+2025-01-01 21:50:03,793 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.8027):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-01 21:50:03,793 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7154):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-01 21:50:03,793 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7117):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-01 21:50:03,793 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5393):
+文本: 用户说: 我最喜欢的电视剧是什么
+助手回答: 哞~让我想想哦！你说过非常喜欢《老友记》呢！这部经典的美剧真的超好玩的，六个主角之间的友情故事温暖又搞笑。罗斯和瑞秋的爱情、钱德勒的冷笑话、菲比的古怪...每一集都让人笑个不停呢！
+
+你知道吗？在圣诞节特别篇里，他们还在中央公园咖啡馆一起装饰圣诞树呢！ moo~ 真是太温馨啦！
+
+你也最喜欢哪一集呀？要不要分享一下你最爱的情节呀？(◍•ᴗ•◍)
+2025-01-01 21:50:03,793 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5324):
+文本: 用户表示威士忌也很不错！
+2025-01-01 21:50:07,258 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-01 21:50:07,258 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2025-01-01 21:50:07,258 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:50:07] "POST /chat HTTP/1.1" 200 -
+2025-01-01 21:50:56,499 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:50:56] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-01 21:50:56,591 - root - INFO - memory_manager.py:245 - Successfully retrieved 12 memories for user default_user
+2025-01-01 21:50:56,592 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:50:56] "GET /api/memories HTTP/1.1" 200 -
+2025-01-01 21:51:04,375 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:51:04] "POST /api/memories/restructure-preview HTTP/1.1" 200 -
+2025-01-01 21:51:05,245 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-01 21:51:05,246 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:51:05] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-01 21:51:05,250 - root - INFO - memory_manager.py:245 - Successfully retrieved 12 memories for user default_user
+2025-01-01 21:51:05,250 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:51:05] "GET /api/memories HTTP/1.1" 200 -
+2025-01-01 21:51:14,085 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5572):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-01 21:51:14,085 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5234):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-01 21:51:14,085 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.5073):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-01 21:51:14,085 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4840):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-01 21:51:14,085 - root - INFO - rag_module.py:125 - 知识库文本因相似度过低被过滤 (得分: 0.4592):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-01 21:51:14,085 - root - INFO - memory_manager.py:245 - Successfully retrieved 12 memories for user default_user
+2025-01-01 21:51:14,145 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.8125):
+文本: 用户表示除了老友记，我还看过什么电视剧
+2025-01-01 21:51:14,145 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.8027):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-01 21:51:14,145 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7154):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-01 21:51:14,145 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7142):
+文本: 用户表示我最喜欢的电视剧是什么
+2025-01-01 21:51:14,145 - root - INFO - memory_manager.py:636 - 记忆匹配 (得分: 0.7142):
+文本: 用户表示我最喜欢的电视剧是什么
+2025-01-01 21:51:18,928 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-01 21:51:18,928 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2025-01-01 21:51:18,929 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:51:18] "POST /chat HTTP/1.1" 200 -
+2025-01-01 21:51:18,937 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [01/Jan/2025 21:51:18] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
