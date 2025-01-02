@@ -15,7 +15,8 @@ import time
 import random
 
 class MemoryManager:
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2", 
+    def __init__(self, model_name: str = "bge-small-zh-v1.5", 
+                 model_path: str = "D:/models/bge-small-zh-v1.5",
                  memory_file: str = "config/user_memories.json",
                  similarity_threshold: float = 0.5,
                  new_memory_similarity_threshold: float = 0.9):
@@ -23,17 +24,18 @@ class MemoryManager:
         
         Args:
             model_name: 使用的嵌入模型名称
+            model_path: 模型本地路径
             memory_file: 记忆存储文件路径
             similarity_threshold: 相似度阈值
         """
-        self.model = SentenceTransformer(model_name)
+        self.model = SentenceTransformer(model_path)
         self.memory_file = memory_file
         self.similarity_threshold = similarity_threshold
         self.new_memory_similarity_threshold = new_memory_similarity_threshold
         self.memories = self.load_memories()
         
         # 初始化向量索引
-        self.dimension = 384  # all-MiniLM-L6-v2 的向量维度
+        self.dimension = 512  # bge-small-zh-v1.5 的向量维度
         self.indices = {}  # 用户ID到索引的映射
         
         # 为每个用户创建索引

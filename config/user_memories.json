@@ -304,6 +304,19 @@
         ]
       },
       "priority_score": 0.76
+    },
+    {
+      "id": "m_1735813142177_2358",
+      "content": "我祝你圣诞快乐",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T18:19:02.177210",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-02T18:19:02.177210",
+        "last_access": "2025-01-02T18:19:02.177210",
+        "access_history": []
+      },
+      "priority_score": 0.0
     }
   ]
 }
