@@ -99,7 +99,7 @@ class ChatAgent:
             }
 
             # 4. 生成回答
-            assistant_message = self.llm_model.generate_response(user_input, context)
+            assistant_message = self.rag_module.generate_response(user_input,self.llm_model, context)
 
             # 5. 更新对话历史
             if user_id not in self.user_contexts:

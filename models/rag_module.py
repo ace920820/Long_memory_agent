@@ -224,7 +224,7 @@ class RAGModule:
         except Exception as e:
             logging.error(f"Error saving index: {str(e)}")
 
-    def generate_response(self, query: str, llm_model, role_prompt=None, context=None, memories=None):
+    def generate_response(self, query: str, llm_model,context=None, role_prompt=None,  memories=None):
         """生成带有检索增强的响应"""
         try:
             # 1. 获取相关文档
