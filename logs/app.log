@@ -837,3 +837,188 @@
 2024-12-31 11:37:44,262 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [31/Dec/2024 11:37:44] "GET /api/memories HTTP/1.1" 200 -
 2024-12-31 11:37:48,654 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [31/Dec/2024 11:37:48] "GET / HTTP/1.1" 200 -
 2024-12-31 11:37:48,697 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [31/Dec/2024 11:37:48] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2024-12-31 11:43:44,832 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\scripts\\init_memory_file.py', reloading
+2024-12-31 11:43:45,961 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2024-12-31 11:48:13,973 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-31 11:48:13,990 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2024-12-31 12:03:44,830 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\generate_requirements.py', reloading
+2024-12-31 12:03:44,839 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\agent.py', reloading
+2024-12-31 12:03:44,840 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_api_wrapper.py', reloading
+2024-12-31 12:03:44,841 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_model.py', reloading
+2024-12-31 12:03:44,842 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2024-12-31 12:03:44,852 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\context_manager.py', reloading
+2024-12-31 12:03:44,853 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\llm_service.py', reloading
+2024-12-31 12:03:44,854 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\prompt_manager.py', reloading
+2024-12-31 12:03:46,193 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2024-12-31 12:08:15,666 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-31 12:08:15,682 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2024-12-31 12:23:44,877 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2024-12-31 12:23:46,552 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2024-12-31 12:28:14,733 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2024-12-31 12:28:14,748 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2024-12-31 13:46:20,905 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\generate_requirements.py', reloading
+2024-12-31 13:46:21,000 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2024-12-31 13:46:21,016 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\agent.py', reloading
+2024-12-31 13:46:21,033 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_api_wrapper.py', reloading
+2024-12-31 13:46:21,048 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_model.py', reloading
+2024-12-31 13:46:21,065 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2024-12-31 13:46:21,080 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2024-12-31 13:46:21,226 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\scripts\\init_memory_file.py', reloading
+2024-12-31 13:46:21,241 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\context_manager.py', reloading
+2024-12-31 13:46:21,258 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\llm_service.py', reloading
+2024-12-31 13:46:21,277 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\prompt_manager.py', reloading
+2024-12-31 13:46:22,830 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-02 15:01:39,889 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-02 15:01:39,889 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-02 15:01:40,017 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-02 15:02:07,777 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-02 15:02:07,817 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-02 15:02:07,971 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:02:07] "GET / HTTP/1.1" 200 -
+2025-01-02 15:02:08,976 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:02:08] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-02 15:02:09,053 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:02:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-02 15:02:30,413 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.7039):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-02 15:02:30,413 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.5390):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-02 15:02:30,414 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4956):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-02 15:02:30,414 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4709):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-02 15:02:30,414 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4621):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-02 15:02:30,415 - root - INFO - memory_manager.py:245 - Successfully retrieved 7 memories for user default_user
+2025-01-02 15:02:31,009 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5864):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-02 15:02:31,009 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5352):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-02 15:02:31,010 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5100):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-02 15:02:31,010 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4876):
+文本: 用户表示请推荐一部好看的电视剧
+2025-01-02 15:02:31,010 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4724):
+文本: 用户表示边水往事是一个很好看的电视剧
+2025-01-02 15:02:38,112 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-02 15:02:38,112 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2025-01-02 15:02:38,113 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:02:38] "POST /chat HTTP/1.1" 200 -
+2025-01-02 15:04:50,632 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-02 15:04:50,633 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-02 15:04:50,676 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-02 15:05:31,769 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-02 15:05:31,795 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-02 15:05:31,974 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:05:31] "GET / HTTP/1.1" 200 -
+2025-01-02 15:05:31,985 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:05:31] "GET / HTTP/1.1" 200 -
+2025-01-02 15:05:33,105 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:05:33] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-02 15:05:44,471 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.7039):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-02 15:05:44,471 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.5390):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-02 15:05:44,472 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4956):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-02 15:05:44,473 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4709):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-02 15:05:44,473 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4621):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-02 15:05:44,474 - root - INFO - memory_manager.py:245 - Successfully retrieved 8 memories for user default_user
+2025-01-02 15:05:45,558 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5864):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-02 15:05:45,558 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5818):
+文本: 用户说: Jamie最喜欢的人是
+助手回答: 哎呀哞~这个问题我可爱的驯鹿要怎么回答呢？圣诞老人经常说，最喜欢的人当然是家人和好朋友啦！不过具体Jamie最喜欢谁，这可是Jamie的心里话呢，我们还是要尊重别人的隐私哦哞~如果Jamie愿意分享，那一定是很特别的人呢！比如说家人、朋友或者是喜欢的老师之类的。在圣诞节的时候，Jamie可以把小礼物送给最喜欢的人，就像我和圣诞老人给小朋友送礼物一样温暖人心呢！ moo~ 🎄🎁
+2025-01-02 15:05:45,559 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5352):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-02 15:05:45,559 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5100):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-02 15:05:45,560 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4876):
+文本: 用户表示请推荐一部好看的电视剧
+2025-01-02 15:06:12,134 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Program Files\\JetBrains\\PyCharm Community Edition 2021.2.2\\plugins\\python-ce\\helpers\\pydev\\_pydevd_bundle\\pydevd_vars.py', reloading
+2025-01-02 15:06:14,329 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-02 15:06:58,787 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-02 15:06:58,809 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-02 15:07:21,606 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.7039):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-02 15:07:21,606 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.5390):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-02 15:07:21,606 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4956):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-02 15:07:21,607 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4709):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-02 15:07:21,608 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4621):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-02 15:07:21,609 - root - INFO - memory_manager.py:245 - Successfully retrieved 8 memories for user default_user
+2025-01-02 15:07:22,407 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5864):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-02 15:07:22,408 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5818):
+文本: 用户说: Jamie最喜欢的人是
+助手回答: 哎呀哞~这个问题我可爱的驯鹿要怎么回答呢？圣诞老人经常说，最喜欢的人当然是家人和好朋友啦！不过具体Jamie最喜欢谁，这可是Jamie的心里话呢，我们还是要尊重别人的隐私哦哞~如果Jamie愿意分享，那一定是很特别的人呢！比如说家人、朋友或者是喜欢的老师之类的。在圣诞节的时候，Jamie可以把小礼物送给最喜欢的人，就像我和圣诞老人给小朋友送礼物一样温暖人心呢！ moo~ 🎄🎁
+2025-01-02 15:07:22,409 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5352):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-02 15:07:22,410 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5100):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-02 15:07:22,411 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4876):
+文本: 用户表示请推荐一部好看的电视剧
+2025-01-02 15:11:49,935 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-02 15:11:49,937 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-02 15:11:49,940 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-02 15:11:52,673 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-02 15:12:34,688 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-02 15:12:34,689 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-02 15:12:34,732 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-02 15:13:12,653 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-02 15:13:12,675 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-02 15:13:21,556 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:13:21] "GET / HTTP/1.1" 200 -
+2025-01-02 15:13:22,720 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:13:22] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-02 15:13:34,984 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.7039):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-02 15:13:34,985 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.5390):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-02 15:13:34,985 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4956):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-02 15:13:34,985 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4709):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-02 15:13:34,986 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4621):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-02 15:13:34,986 - root - INFO - memory_manager.py:245 - Successfully retrieved 8 memories for user default_user
+2025-01-02 15:13:35,628 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5864):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-02 15:13:35,629 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5818):
+文本: 用户说: Jamie最喜欢的人是
+助手回答: 哎呀哞~这个问题我可爱的驯鹿要怎么回答呢？圣诞老人经常说，最喜欢的人当然是家人和好朋友啦！不过具体Jamie最喜欢谁，这可是Jamie的心里话呢，我们还是要尊重别人的隐私哦哞~如果Jamie愿意分享，那一定是很特别的人呢！比如说家人、朋友或者是喜欢的老师之类的。在圣诞节的时候，Jamie可以把小礼物送给最喜欢的人，就像我和圣诞老人给小朋友送礼物一样温暖人心呢！ moo~ 🎄🎁
+2025-01-02 15:13:35,630 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5352):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-02 15:13:35,630 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5100):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-02 15:13:35,630 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.4876):
+文本: 用户表示请推荐一部好看的电视剧
+2025-01-02 15:14:01,984 - root - INFO - memory_manager.py:74 - Successfully saved memories to file
+2025-01-02 15:14:01,985 - root - INFO - memory_manager.py:133 - Successfully added new memory for user default_user
+2025-01-02 15:14:01,989 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 15:14:01] "POST /chat HTTP/1.1" 200 -
+2025-01-02 15:16:15,980 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.7039):
+文本: Jamie最喜欢的人是他的老婆和多米
+2025-01-02 15:16:15,981 - root - INFO - rag_module.py:160 - 知识库匹配 (得分: 0.5390):
+文本: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-02 15:16:15,981 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4956):
+文本: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-02 15:16:15,981 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4709):
+文本: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-02 15:16:15,981 - root - INFO - rag_module.py:162 - 知识库文本因相似度过低被过滤 (得分: 0.4621):
+文本: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+2025-01-02 15:16:15,982 - root - INFO - memory_manager.py:245 - Successfully retrieved 9 memories for user default_user
+2025-01-02 15:16:16,876 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5864):
+文本: 用户表示我非常喜欢老友记，老友记是我最喜欢的电视剧
+2025-01-02 15:16:16,878 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5818):
+文本: 用户说: Jamie最喜欢的人是
+助手回答: 哎呀哞~这个问题我可爱的驯鹿要怎么回答呢？圣诞老人经常说，最喜欢的人当然是家人和好朋友啦！不过具体Jamie最喜欢谁，这可是Jamie的心里话呢，我们还是要尊重别人的隐私哦哞~如果Jamie愿意分享，那一定是很特别的人呢！比如说家人、朋友或者是喜欢的老师之类的。在圣诞节的时候，Jamie可以把小礼物送给最喜欢的人，就像我和圣诞老人给小朋友送礼物一样温暖人心呢！ moo~ 🎄🎁
+2025-01-02 15:16:16,879 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5352):
+文本: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-02 15:16:16,879 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5100):
+文本: 用户表示我也喜欢喝热红酒
+2025-01-02 15:16:16,880 - root - INFO - memory_manager.py:638 - 记忆因相似度过低被过滤 (得分: 0.5082):
+文本: 用户说: Jamie最喜欢的人是
+助手回答: 哎呀哞~ 这个问题要问Jamie才知道哦！作为一只驯鹿，我只能知道谁对Christmas充满爱意呢，比如很多人都超爱圣诞老人和我们这些可爱的驯鹿小伙伴~
+
+你知道吗？每到圣诞节前夕，我都会看到很多小朋友给圣诞老人写信，分享他们的小心愿。但至于Jamie最喜欢的人是谁，这可是她的秘密呢！我们要尊重别人的隐私哦哞~
+
+如果你想了解Jamie的心思，不如找个机会温柔地问问她本人吧！我相信她一定会很感动你这么关心她的想法呢(◍•ᴗ•◍)✧*。

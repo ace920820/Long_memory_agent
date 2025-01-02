@@ -1,26 +1,40 @@
-from sentence_transformers import SentenceTransformer, util
+from transformers import AutoModel, AutoTokenizer
 import faiss
 import numpy as np
 import os
 import logging
+import torch
+import yaml
 
 
 class RAGModule:
-    def __init__(self,
-                 model_name: str = "all-MiniLM-L6-v2",
-                 similarity_threshold: float = 0.5,
-                 index_path: str = "data/vector_store"):
+    def __init__(self, config_path: str = "config/config.yaml"):
         """初始化 RAG 模块
 
         Args:
-            model_name: 使用的嵌入模型名称
-            similarity_threshold: 相似度阈值
-            index_path: 向量存储路径
+            config_path: 配置文件路径
         """
-        self.model = SentenceTransformer(model_name)
-        self.similarity_threshold = similarity_threshold
-        self.index_path = index_path
-        self.dimension = 384  # all-MiniLM-L6-v2 的向量维度
+        # 加载配置
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+        
+        embedding_config = config['embedding']
+        
+        # 从配置中获取参数
+        model_path = embedding_config['model_path']
+        self.dimension = embedding_config['dimension']
+        self.similarity_threshold = embedding_config['similarity_threshold']
+        self.index_path = embedding_config['index_path']
+
+        try:
+            # 初始化 BGE 模型
+            self.tokenizer = AutoTokenizer.from_pretrained(model_path)
+            self.model = AutoModel.from_pretrained(model_path)
+            self.model.eval()  # 设置为评估模式
+            logging.info(f"Successfully loaded BGE model from {model_path}")
+        except Exception as e:
+            logging.error(f"Error loading BGE model: {str(e)}")
+            raise
 
         # 初始化或加载索引
         self._init_index()
@@ -61,14 +75,37 @@ class RAGModule:
             # 创建空索引作为后备
             self.index = faiss.IndexFlatL2(self.dimension)
 
+    def _encode_text(self, texts: list) -> np.ndarray:
+        """使用 BGE 模型编码文本"""
+        try:
+            # 添加特殊前缀
+            texts = [f"为这个句子生成表示：{text}" for text in texts]
+            
+            # 对文本进行编码
+            with torch.no_grad():
+                inputs = self.tokenizer(texts, 
+                                      padding=True, 
+                                      truncation=True, 
+                                      max_length=512, 
+                                      return_tensors="pt")
+                outputs = self.model(**inputs)
+                embeddings = outputs.last_hidden_state[:, 0].numpy()  # 使用 [CLS] token
+                # 归一化
+                embeddings = embeddings / np.linalg.norm(embeddings, axis=1, keepdims=True)
+                return embeddings
+                
+        except Exception as e:
+            logging.error(f"Error encoding text: {str(e)}")
+            raise
+
     def add_documents(self, documents: list):
         """添加文档到知识库"""
         try:
             if not documents:
                 return
 
-            # 编码文档
-            embeddings = self.model.encode(documents)
+            # 使用 BGE 模型编码文档
+            embeddings = self._encode_text(documents)
             assert len(embeddings) == len(documents), "Mismatch between embeddings and documents"
 
             # 添加到索引
@@ -101,8 +138,8 @@ class RAGModule:
             list: 相关文档列表，每个文档包含内容和相似度分数
         """
         try:
-            # 编码查询
-            query_vector = self.model.encode([query])
+            # 使用 BGE 模型编码查询
+            query_vector = self._encode_text([query])
 
             # 确保搜索参数不超过索引大小
             k = min(top_k, self.index.ntotal)
@@ -153,6 +190,11 @@ class RAGModule:
                 doc_contents = [doc["document"] for doc in relevant_docs]
                 context_info.extend(doc_contents)
             
+            # 添加context中的文本块信息
+            if context and 'context' in context and isinstance(context['context'], list):
+                context_info.append("\n已知信息：")
+                context_info.extend(context['context'])
+            
             # 添加记忆信息（去重）
             if memories:
                 seen_contents = set()
@@ -170,26 +212,26 @@ class RAGModule:
                 context_message = "\n".join(context_info)
                 prompt_parts.append({
                     "role": "system", 
-                    "content": f"请记住以下信息：\n{context_message}"
+                    "content": f"请基于以下信息回答问题：\n{context_message}"
                 })
             
             # 添加历史对话上下文（如果有）
-            if context:
+            if context and 'chat_history' in context:
                 # 只添加最近的对话历史，避免重复
-                recent_context = [msg for msg in context if isinstance(msg, dict) and 
+                recent_context = [msg for msg in context['chat_history'] if isinstance(msg, dict) and 
                                 msg['role'] not in ('system')][-5:]  # 保留最近5轮对话
                 prompt_parts.extend(recent_context)
             
             # 添加当前查询
             prompt_parts.append({
                 "role": "user",
-                "content": f"{query}\n\n请根据上述信息提供准确、相关的回答。"
+                "content": f"{query}\n\n请根据上述信息提供准确、相关的回答。如果信息中没有相关内容，请明确说明。"
             })
             
             # 3. 生成响应
             response = llm_model.generate_response(
                 prompt=query,
-                context=prompt_parts
+                context={"chat_history": prompt_parts}  # 修改为正确的格式
             )
             
             # 记录完整的提示词用于调试

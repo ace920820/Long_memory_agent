@@ -10,6 +10,14 @@ llm:
   temperature: 0.7
   max_tokens: 2000
 
+# 嵌入模型配置
+embedding:
+  model_path: "D:/models/bge-small-zh-v1.5"
+  model_name: "bge-small-zh-v1.5"
+  dimension: 512  # bge-small 的向量维度
+  similarity_threshold: 0.5
+  index_path: "data/vector_store"
+
 # 角色配置路径
 roles_path: roles/
 templates_path: templates/

@@ -39,6 +39,16 @@ def create_memory_manager():
         print(f"Error initializing memory manager: {str(e)}")
         raise
 
+def create_rag_module():
+    """创建并初始化 RAGModule 实例"""
+    try:
+        rag_module = RAGModule()
+        print("RAG module initialized successfully")
+        return rag_module
+    except Exception as e:
+        print(f"Error initializing RAG module: {str(e)}")
+        raise
+
 def create_app():
     # 确保必要的目录存在
     os.makedirs('logs', exist_ok=True)
@@ -75,11 +85,7 @@ def create_app():
         )
         
         # 初始化 RAG 模块
-        rag_module = RAGModule(
-            model_name="all-MiniLM-L6-v2",
-            similarity_threshold=0.6,
-            index_path="data/vector_store"
-        )
+        rag_module = create_rag_module()
         
         # 初始化 LLM 模型
         llm_model = LLMModel({
