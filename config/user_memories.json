@@ -356,6 +356,23 @@
         "access_history": []
       },
       "priority_score": 0.0
+    },
+    {
+      "content": "你好啊",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T16:46:06.931209",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-02T16:46:06.931209",
+        "last_access": "2025-01-02T16:46:28.158868",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T16:46:28.158868",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
     }
   ]
 }

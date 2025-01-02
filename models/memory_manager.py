@@ -144,18 +144,68 @@ class MemoryManager:
             self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
 
     def add_memory(self, user_id: str, content: str, memory_type: str = "general") -> Dict:
-        """添加新的记忆"""
+        """添加新的记忆
+        
+        Args:
+            user_id: 用户ID
+            content: 记忆内容
+            memory_type: 记忆类型
+            
+        Returns:
+            Dict: 包含操作结果的字典
+        """
         try:
             # 确保用户存在
             if user_id not in self.memories:
                 self.memories[user_id] = []
                 self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
 
+            # 如果内容包含对话格式，只保留用户的输入部分
+            if "用户说:" in content and "助手回答:" in content:
+                content = content.split("助手回答:")[0].replace("用户说:", "").strip()
+            elif "用户说:" in content:
+                content = content.replace("用户说:", "").strip()
+
+            # 如果内容为空，不添加记忆
+            if not content:
+                return {
+                    "success": False,
+                    "message": "记忆内容为空，未添加记忆"
+                }
+
+            # 检查是否存在相似记忆
+            if self.memories[user_id]:
+                # 编码新内容
+                new_vector = self.model.encode([content], convert_to_tensor=True)
+                
+                # 获取现有记忆的内容
+                existing_contents = [m['content'] for m in self.memories[user_id]]
+                existing_vectors = self.model.encode(existing_contents, convert_to_tensor=True)
+                
+                # 计算相似度
+                similarities = util.pytorch_cos_sim(new_vector, existing_vectors)[0]
+                max_similarity = torch.max(similarities).item()
+                
+                # 如果存在高相似度的记忆，不添加新记忆
+                if max_similarity >= self.similarity_threshold:
+                    logging.info(f"发现相似记忆 (相似度: {max_similarity:.4f})")
+                    return {
+                        "success": False,
+                        "message": "已存在相似记忆，未添加新记忆",
+                        "similarity": max_similarity
+                    }
+
             # 创建新记忆
             new_memory = {
                 'content': content,
                 'type': memory_type,
-                'timestamp': datetime.now().isoformat()
+                'timestamp': datetime.now().isoformat(),
+                'access_stats': {
+                    'count': 0,
+                    'first_access': datetime.now().isoformat(),
+                    'last_access': datetime.now().isoformat(),
+                    'access_history': []
+                }
             }
 
             # 添加到记忆列表
@@ -182,12 +232,12 @@ class MemoryManager:
                     self.create_user_index(user_id)  # 重建索引
                 raise
 
-            logging.info(f"Successfully added new memory for user {user_id}")
+            logging.info(f"成功添加新记忆: {content}")
             return {
                 "success": True,
                 "content": content,
                 "type": memory_type,
-                "message": "记忆已更新"
+                "message": "记忆已添加"
             }
 
         except Exception as e:
@@ -195,7 +245,7 @@ class MemoryManager:
             return {
                 "success": False,
                 "error": str(e),
-                "message": "记忆更新失败"
+                "message": "记忆添加失败"
             }
 
     def retrieve_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
