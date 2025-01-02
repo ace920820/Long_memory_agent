@@ -15,7 +15,8 @@ import math
 class MemoryManager:
     def __init__(self, model_name: str = "all-MiniLM-L6-v2", 
                  memory_file: str = "config/user_memories.json",
-                 similarity_threshold: float = 0.5):
+                 similarity_threshold: float = 0.5,
+                 new_memory_similarity_threshold: float = 0.9):
         """初始化记忆管理器
         
         Args:
@@ -26,6 +27,7 @@ class MemoryManager:
         self.model = SentenceTransformer(model_name)
         self.memory_file = memory_file
         self.similarity_threshold = similarity_threshold
+        self.new_memory_similarity_threshold = new_memory_similarity_threshold
         self.memories = self.load_memories()
         
         # 初始化向量索引
@@ -187,7 +189,7 @@ class MemoryManager:
                 max_similarity = torch.max(similarities).item()
                 
                 # 如果存在高相似度的记忆，不添加新记忆
-                if max_similarity >= self.similarity_threshold:
+                if max_similarity >= self.new_memory_similarity_threshold:
                     logging.info(f"发现相似记忆 (相似度: {max_similarity:.4f})")
                     return {
                         "success": False,

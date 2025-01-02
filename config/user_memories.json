@@ -17,12 +17,24 @@
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
       "access_stats": {
-        "count": 1,
+        "count": 4,
         "first_access": "2025-01-02T17:03:35.700037",
-        "last_access": "2025-01-02T17:03:35.700037",
+        "last_access": "2025-01-02T17:19:49.003488",
         "access_history": [
           {
             "timestamp": "2025-01-02T17:03:35.700037",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:12:30.180710",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:19:19.719992",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:19:49.003488",
             "type": "reference"
           }
         ]
@@ -58,12 +70,20 @@
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
       "access_stats": {
-        "count": 1,
+        "count": 3,
         "first_access": "2025-01-02T17:03:35.697037",
-        "last_access": "2025-01-02T17:03:35.697037",
+        "last_access": "2025-01-02T17:19:48.998581",
         "access_history": [
           {
             "timestamp": "2025-01-02T17:03:35.697037",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:19:19.721992",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:19:48.998581",
             "type": "reference"
           }
         ]
@@ -99,9 +119,43 @@
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-02T17:02:45.858098",
+        "last_access": "2025-01-02T17:19:19.727992",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T17:19:19.727992",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.92
+    },
+    {
+      "content": "我很喜欢看老友记",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T17:19:25.276279",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-02T17:19:25.276279",
+        "last_access": "2025-01-02T17:19:48.994420",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T17:19:48.994420",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "content": "老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T17:19:59.066433",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-02T17:19:59.066433",
+        "last_access": "2025-01-02T17:19:59.066433",
         "access_history": []
       },
       "priority_score": 0.0
