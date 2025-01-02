@@ -8,3 +8,4 @@
 2024-12-30 23:38:14,660 - root - ERROR - memory_manager.py:349 - Error updating memories: 'MemoryManager' object has no attribute 'save_memories'
 2025-01-02 16:10:15,031 - root - ERROR - main.py:176 - Error setting role: 'ChatAgent' object has no attribute 'set_user_role'
 2025-01-02 16:10:29,073 - root - ERROR - main.py:153 - Error in chat endpoint: 'ChatAgent' object has no attribute 'user_roles'
+2025-01-02 17:23:33,378 - root - ERROR - memory_manager.py:697 - Error in LLM-based split: 'NoneType' object is not subscriptable

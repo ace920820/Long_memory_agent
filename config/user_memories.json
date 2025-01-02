@@ -1,6 +1,7 @@
 {
   "default_user": [
     {
+      "id": "m_1735809995352_1745",
       "content": "用户表示那瓦尔宝典是一本好书",
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
@@ -13,13 +14,14 @@
       "priority_score": 0.0
     },
     {
+      "id": "m_1735809995352_2060",
       "content": "用户表示我也喜欢喝热红酒",
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
       "access_stats": {
-        "count": 4,
+        "count": 9,
         "first_access": "2025-01-02T17:03:35.700037",
-        "last_access": "2025-01-02T17:19:49.003488",
+        "last_access": "2025-01-02T18:02:36.338123",
         "access_history": [
           {
             "timestamp": "2025-01-02T17:03:35.700037",
@@ -36,12 +38,33 @@
           {
             "timestamp": "2025-01-02T17:19:49.003488",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:23:15.394639",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:58:37.919408",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:59:54.203345",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:00:43.057587",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:02:36.338123",
+            "type": "reference"
           }
         ]
       },
       "priority_score": 0.92
     },
     {
+      "id": "m_1735809995352_8324",
       "content": "用户表示威士忌也很不错！",
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
@@ -54,6 +77,7 @@
       "priority_score": 0.0
     },
     {
+      "id": "m_1735809995352_1873",
       "content": "用户表示边水往事是一个很好看的电视剧",
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
@@ -66,13 +90,14 @@
       "priority_score": 0.0
     },
     {
+      "id": "m_1735809995352_9430",
       "content": "用户表示圣诞节要来了，请推荐一个我会喜欢的饮料",
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
       "access_stats": {
-        "count": 3,
+        "count": 8,
         "first_access": "2025-01-02T17:03:35.697037",
-        "last_access": "2025-01-02T17:19:48.998581",
+        "last_access": "2025-01-02T18:02:36.386664",
         "access_history": [
           {
             "timestamp": "2025-01-02T17:03:35.697037",
@@ -85,12 +110,33 @@
           {
             "timestamp": "2025-01-02T17:19:48.998581",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:23:15.392639",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:58:37.920407",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:59:54.204348",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:00:43.059592",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:02:36.386664",
+            "type": "reference"
           }
         ]
       },
       "priority_score": 0.92
     },
     {
+      "id": "m_1735809995352_4183",
       "content": "用户表示请推荐一部好看的电视剧",
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
@@ -103,6 +149,7 @@
       "priority_score": 0.0
     },
     {
+      "id": "m_1735809995352_8220",
       "content": "用户表示Jamie最喜欢的人是",
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
@@ -115,6 +162,7 @@
       "priority_score": 0.0
     },
     {
+      "id": "m_1735809995352_8164",
       "content": "你好啊",
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
@@ -132,16 +180,45 @@
       "priority_score": 0.92
     },
     {
+      "id": "m_1735809995352_1236",
       "content": "我很喜欢看老友记",
       "type": "dialogue",
       "timestamp": "2025-01-02T17:19:25.276279",
       "access_stats": {
-        "count": 1,
+        "count": 8,
         "first_access": "2025-01-02T17:19:25.276279",
-        "last_access": "2025-01-02T17:19:48.994420",
+        "last_access": "2025-01-02T18:11:57.093654",
         "access_history": [
           {
             "timestamp": "2025-01-02T17:19:48.994420",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:23:15.390646",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:58:37.911412",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:59:54.193370",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:00:43.051611",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:02:36.267601",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:07:49.851667",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:11:57.093654",
             "type": "reference"
           }
         ]
@@ -149,16 +226,84 @@
       "priority_score": 0.76
     },
     {
+      "id": "m_1735809995352_7047",
       "content": "老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢",
       "type": "dialogue",
       "timestamp": "2025-01-02T17:19:59.066433",
       "access_stats": {
-        "count": 0,
+        "count": 7,
         "first_access": "2025-01-02T17:19:59.066433",
-        "last_access": "2025-01-02T17:19:59.066433",
-        "access_history": []
+        "last_access": "2025-01-02T18:11:57.158668",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T17:23:15.386664",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:58:37.917410",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:59:54.199346",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:00:43.055588",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:02:36.314117",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:07:49.932206",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:11:57.158668",
+            "type": "reference"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1735809995352_8941",
+      "content": "猫和老鼠是我小时候最喜欢的动画片",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T17:23:22.815806",
+      "access_stats": {
+        "count": 6,
+        "first_access": "2025-01-02T17:23:22.815806",
+        "last_access": "2025-01-02T18:11:57.122655",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T17:58:37.913411",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T17:59:54.196349",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:00:43.053587",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:02:36.289119",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:07:49.883678",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T18:11:57.122655",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
     }
   ]
 }

@@ -11,6 +11,8 @@ from transformers import BertTokenizer, BertModel
 from sentence_transformers import util
 import re
 import math
+import time
+import random
 
 class MemoryManager:
     def __init__(self, model_name: str = "all-MiniLM-L6-v2", 
@@ -105,6 +107,7 @@ class MemoryManager:
                 simplified_memories[user_id] = []
                 for memory in memories:
                     simplified_memory = {
+                        'id': memory.get('id', self._generate_memory_id()),  # 保存ID,如果没有则生成新的
                         'content': memory['content'],
                         'type': memory.get('type', 'general'),
                         'timestamp': memory.get('timestamp', datetime.now().isoformat()),
@@ -144,6 +147,12 @@ class MemoryManager:
         except Exception as e:
             logging.error(f"Error creating index for user {user_id}: {str(e)}")
             self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
+
+    def _generate_memory_id(self) -> str:
+        """生成唯一的记忆ID"""
+        timestamp = int(time.time() * 1000)  # 毫秒级时间戳
+        random_num = random.randint(1000, 9999)  # 4位随机数
+        return f"m_{timestamp}_{random_num}"
 
     def add_memory(self, user_id: str, content: str, memory_type: str = "general") -> Dict:
         """添加新的记忆
@@ -199,6 +208,7 @@ class MemoryManager:
 
             # 创建新记忆
             new_memory = {
+                'id': self._generate_memory_id(),  # 添加唯一ID
                 'content': content,
                 'type': memory_type,
                 'timestamp': datetime.now().isoformat(),
@@ -754,18 +764,6 @@ class MemoryManager:
         except Exception as e:
             logging.error(f"获取相关记忆失败: {str(e)}")
             return []
-
-    def get_memories_for_context(self, user_id, query):
-        """获取用于上下文的记忆"""
-        relevant_memories = self.get_relevant_memories(user_id, query)
-        
-        # 格式化记忆为上下文字符串
-        context_memories = []
-        for memory in relevant_memories:
-            formatted_memory = f"记忆 ({memory.get('type', 'general')}): {memory.get('content', '')}"
-            context_memories.append(formatted_memory)
-        
-        return "\n".join(context_memories) if context_memories else "" 
 
     def clean_memories(self, user_id: str) -> Dict:
         """清理重复和无意义的记忆，并自动更新记忆类型"""
