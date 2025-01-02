@@ -48,3 +48,23 @@ role_transitions:
     reindeer: "哞~欢迎来玩！"
     assistant: "您好！我是您的个人助理，很高兴为您服务。"
 
+memory:
+  max_memories: 1000
+  clean_threshold: 0.85
+  similarity_threshold: 0.45
+  access_history_limit: 10  # 保存最近访问历史的数量
+  priority_weights:
+    time: 0.3
+    importance: 0.4
+    access: 0.3
+  storage:
+    save_interval: 300  # 自动保存间隔（秒）
+    backup_count: 3    # 保留的备份文件数量
+  access_stats:
+    history_limit: 10  # 保存最近访问历史的数量
+    cleanup_interval: 86400  # 清理历史记录的间隔（秒）
+  access_types:
+    read: 1.0      # 直接读取权重
+    write: 1.5     # 写入权重
+    reference: 0.8  # 检索引用权重
+

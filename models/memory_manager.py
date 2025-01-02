@@ -1,6 +1,6 @@
 import json
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import List, Dict, Optional
 from sentence_transformers import SentenceTransformer
 import faiss
@@ -10,6 +10,7 @@ import torch
 from transformers import BertTokenizer, BertModel
 from sentence_transformers import util
 import re
+import math
 
 class MemoryManager:
     def __init__(self, model_name: str = "all-MiniLM-L6-v2", 
@@ -38,14 +39,54 @@ class MemoryManager:
         # 确保记忆文件存在
         if not os.path.exists(memory_file):
             self.save_memories()
+        
+        # 优先级相关配置
+        self.priority_config = {
+            'weights': {
+                'time': 0.3,
+                'importance': 0.4,
+                'access': 0.3
+            },
+            'type_weights': {
+                'fact': 0.8,
+                'preference': 0.6,
+                'dialogue': 0.4,
+                'general': 0.5
+            },
+            'max_memories': 1000,
+            'cleanup_threshold': 0.85
+        }
+        
+        # 初始化或迁移现有记忆的访问统计
+        self._initialize_memory_stats()
     
     def load_memories(self) -> Dict:
         """从文件加载记忆"""
         try:
             if os.path.exists(self.memory_file):
                 with open(self.memory_file, 'r', encoding='utf-8') as f:
-                    return json.load(f)
+                    memories = json.load(f)
+                    
+                # 确保所有记忆都有完整的访问统计结构
+                for user_id, user_memories in memories.items():
+                    for memory in user_memories:
+                        if 'access_stats' not in memory:
+                            memory['access_stats'] = {
+                                'count': memory.get('access_count', 0),  # 兼容旧数据
+                                'first_access': memory.get('timestamp', datetime.now().isoformat()),
+                                'last_access': memory.get('last_access', memory.get('timestamp')),
+                                'access_history': []
+                            }
+                        # 删除旧的统计字段
+                        memory.pop('access_count', None)
+                        
+                        # 确保有优先级分数
+                        if 'priority_score' not in memory:
+                            memory['priority_score'] = 0.0
+                            
+                return memories
             return {}
+            
         except Exception as e:
             logging.error(f"Error loading memories: {str(e)}")
             return {}
@@ -56,7 +97,7 @@ class MemoryManager:
             # 确保目录存在
             os.makedirs(os.path.dirname(self.memory_file), exist_ok=True)
             
-            # 只保存必要的字段
+            # 保存包含访问统计的完整记忆数据
             simplified_memories = {}
             for user_id, memories in self.memories.items():
                 simplified_memories[user_id] = []
@@ -64,7 +105,18 @@ class MemoryManager:
                     simplified_memory = {
                         'content': memory['content'],
                         'type': memory.get('type', 'general'),
-                        'timestamp': memory.get('timestamp', datetime.now().isoformat())
+                        'timestamp': memory.get('timestamp', datetime.now().isoformat()),
+                        'access_stats': {
+                            'count': memory.get('access_stats', {}).get('count', 0),
+                            'first_access': memory.get('access_stats', {}).get(
+                                'first_access', memory.get('timestamp', datetime.now().isoformat())
+                            ),
+                            'last_access': memory.get('access_stats', {}).get(
+                                'last_access', memory.get('timestamp', datetime.now().isoformat())
+                            ),
+                            'access_history': memory.get('access_stats', {}).get('access_history', [])
+                        },
+                        'priority_score': memory.get('priority_score', 0.0)
                     }
                     simplified_memories[user_id].append(simplified_memory)
             
@@ -149,7 +201,6 @@ class MemoryManager:
     def retrieve_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
         """检索相关记忆"""
         try:
-            # 确保用户存在且有记忆
             if user_id not in self.memories:
                 logging.info(f"No memories found for user {user_id}")
                 return []
@@ -187,6 +238,9 @@ class MemoryManager:
                     memory = self.memories[user_id][idx]
                     
                     if similarity_score >= self.similarity_threshold:
+                        # 更新访问统计
+                        self.update_memory_access(user_id, idx, 'reference')
+                        
                         memory_copy = memory.copy()
                         memory_copy['score'] = similarity_score
                         results.append(memory_copy)
@@ -212,41 +266,25 @@ class MemoryManager:
             return []
 
     def get_all_memories(self, user_id: str) -> List[Dict]:
-        """获取用户的所有记忆，并为每条记忆添加ID"""
-        try:
-            # 检查用户是否存在
-            if user_id not in self.memories:
-                logging.info(f"Creating new memory list for user {user_id}")
-                self.memories[user_id] = []
-                self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
-                return []
-
-            memories = self.memories[user_id]
-            formatted_memories = []
+        """获取用户的所有记忆
+        
+        Args:
+            user_id: 用户ID
             
-            # 为每条记忆添加ID和格式化时间
-            for i, memory in enumerate(memories):
-                try:
-                    formatted_memory = memory.copy()
-                    formatted_memory['id'] = i
-                    formatted_memory.setdefault('type', 'general')
-                    formatted_memory.setdefault('timestamp', datetime.now().isoformat())
-                    
-                    if 'content' not in formatted_memory:
-                        logging.warning(f"Memory at index {i} missing content field")
-                        continue
-                    
-                    formatted_memories.append(formatted_memory)
-                    
-                except Exception as e:
-                    logging.error(f"Error formatting memory at index {i}: {str(e)}")
-                    continue
-
-            logging.info(f"Successfully retrieved {len(formatted_memories)} memories for user {user_id}")
-            return formatted_memories
-
+        Returns:
+            List[Dict]: 记忆列表
+        """
+        try:
+            if user_id not in self.memories:
+                logging.info(f"No memories found for user {user_id}")
+                return []
+            
+            memories = self.memories[user_id]
+            logging.info(f"Successfully retrieved {len(memories)} memories for user {user_id}")
+            return memories
+            
         except Exception as e:
-            logging.error(f"Error in get_all_memories: {str(e)}")
+            logging.error(f"Error retrieving memories: {str(e)}")
             return []
 
     def preview_restructure(self, user_id: str, memory_ids: List[int], template: str) -> Dict:
@@ -599,53 +637,70 @@ class MemoryManager:
             return None 
 
     def get_relevant_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
-        """获取与查询相关的记忆"""
+        """获取与查询相关的记忆
+        
+        Args:
+            user_id: 用户ID
+            query: 查询文本
+            top_k: 返回的最相关记忆数量
+            
+        Returns:
+            相关记忆列表，每个记忆包含相似度分数
+        """
         try:
             # 获取用户的所有记忆
             all_memories = self.get_all_memories(user_id)
-            logging.debug(f"Total memories for user {user_id}: {len(all_memories)}")
-            
             if not all_memories:
                 return []
 
             # 计算查询的嵌入向量
             query_embedding = self.model.encode([query], convert_to_tensor=True)
             
-            # 计算所有记忆的相似度
-            memory_texts = [memory['content'] for memory in all_memories]
-            memory_embeddings = self.model.encode(memory_texts, convert_to_tensor=True)
-            
-            # 计算余弦相似度
-            similarities = util.pytorch_cos_sim(query_embedding, memory_embeddings)[0]
-            
-            # 获取相似度最高的记忆
-            top_k_indices = (-similarities).argsort()[:top_k]
-            relevant_memories = []
-            
-            # 记录所有记忆的相似度分数
-            logging.debug("所有记忆的相似度分数：")
-            for i, memory in enumerate(all_memories):
-                logging.debug(f"记忆 {i}: {memory['content']} - 相似度: {similarities[i].item():.4f}")
-            
-            for idx in top_k_indices:
-                similarity_score = similarities[idx].item()
-                if similarity_score >= self.similarity_threshold:
-                    memory = all_memories[idx].copy()
-                    memory['similarity'] = similarity_score
-                    relevant_memories.append(memory)
-                    logging.info(f"记忆匹配 (得分: {similarity_score:.4f}):\n文本: {memory['content']}")
-                else:
-                    logging.info(f"记忆因相似度过低被过滤 (得分: {similarity_score:.4f}):\n文本: {all_memories[idx]['content']}")
+            # 为每条记忆计算相似度并记录
+            memory_scores = []
+            for idx, memory in enumerate(all_memories):
+                content = memory['content']
+                memory_embedding = self.model.encode([content], convert_to_tensor=True)
+                similarity = util.pytorch_cos_sim(query_embedding, memory_embedding)[0][0].item()
+                
+                # 记录详细的相似度信息
+                memory_scores.append({
+                    'content': content,
+                    'similarity': similarity,
+                    'memory_id': memory.get('id', '未知'),
+                    'timestamp': memory.get('timestamp', '未知'),
+                    'index': idx  # 添加索引以便后续更新访问统计
+                })
+                logging.debug(f"记忆相似度计算:\n"
+                             f"查询: {query}\n"
+                             f"记忆: {content}\n"
+                             f"相似度: {similarity:.4f}")
 
-            # 记录最终选择的记忆
-            logging.debug("最终选择的记忆：")
-            for i, memory in enumerate(relevant_memories):
-                logging.debug(f"{i+1}. {memory['content']} - 相似度: {memory['similarity']:.4f}")
+            # 按相似度排序
+            memory_scores.sort(key=lambda x: x['similarity'], reverse=True)
+            
+            # 获取相似度超过阈值的记忆
+            relevant_memories = []
+            for score in memory_scores[:top_k]:
+                if score['similarity'] >= self.similarity_threshold:
+                    memory_idx = score['index']
+                    memory = all_memories[memory_idx].copy()
+                    memory['similarity'] = score['similarity']
+                    
+                    # 更新记忆访问统计
+                    self.update_memory_access(user_id, memory_idx, 'reference')
+                    
+                    relevant_memories.append(memory)
+                    logging.info(f"记忆匹配 (得分: {score['similarity']:.4f}):\n"
+                               f"文本: {score['content']}")
+                else:
+                    logging.info(f"记忆因相似度过低被过滤 (得分: {score['similarity']:.4f}):\n"
+                               f"文本: {score['content']}")
 
             return relevant_memories
-
+            
         except Exception as e:
-            logging.error(f"Error in get_relevant_memories: {str(e)}")
+            logging.error(f"获取相关记忆失败: {str(e)}")
             return []
 
     def get_memories_for_context(self, user_id, query):
@@ -789,4 +844,161 @@ class MemoryManager:
 
         except Exception as e:
             logging.error(f"Error in clean_memories: {str(e)}")
+            return {"success": False, "error": str(e)} 
+
+    def calculate_priority_score(self, memory: Dict) -> float:
+        """计算记忆的优先级分数"""
+        current_time = datetime.now()
+        W_t, W_i, W_a = (self.priority_config['weights'][k] for k in ['time', 'importance', 'access'])
+        
+        # 时间因子
+        last_access = datetime.fromisoformat(
+            memory.get('access_stats', {}).get('last_access', current_time.isoformat())
+        )
+        days_since_access = (current_time - last_access).days
+        time_factor = 1 / (1 + math.exp(days_since_access - 7))
+        
+        # 重要性因子
+        memory_type = memory.get('type', 'general')
+        base_weight = self.priority_config['type_weights'].get(memory_type, 0.5)
+        key_weight = 0.2 if memory.get('is_key_memory', False) else 0.0
+        importance_factor = base_weight * (1 + key_weight)
+        
+        # 访问因子 - 使用持久化的访问统计
+        access_count = memory.get('access_stats', {}).get('count', 0)
+        access_factor = min(1, access_count / 10 + 5 / (1 + days_since_access))
+        
+        # 最终优先级分数
+        priority_score = W_t * time_factor + W_i * importance_factor + W_a * access_factor
+        return round(priority_score, 3)
+
+    def update_memory_priority(self, user_id: str, memory_id: int) -> Dict:
+        """更新指定记忆的优先级信息"""
+        try:
+            if user_id not in self.memories:
+                return {"success": False, "error": "User not found"}
+                
+            if 0 <= memory_id < len(self.memories[user_id]):
+                memory = self.memories[user_id][memory_id]
+                memory['last_access'] = datetime.now().isoformat()
+                memory['access_count'] = memory.get('access_count', 0) + 1
+                memory['priority_score'] = self.calculate_priority_score(memory)
+                self.save_memories()
+                return {"success": True, "priority_score": memory['priority_score']}
+            
+            return {"success": False, "error": "Memory ID out of range"}
+            
+        except Exception as e:
+            logging.error(f"Error updating memory priority: {str(e)}")
+            return {"success": False, "error": str(e)}
+
+    def clean_low_priority_memories(self, user_id: str) -> Dict:
+        """清理低优先级记忆"""
+        try:
+            if user_id not in self.memories:
+                return {"success": False, "error": "User not found"}
+                
+            memories = self.memories[user_id]
+            if len(memories) <= self.priority_config['max_memories']:
+                return {"success": True, "cleaned": 0}
+            
+            # 更新所有记忆的优先级分数
+            for memory in memories:
+                if 'priority_score' not in memory:
+                    memory['priority_score'] = self.calculate_priority_score(memory)
+            
+            # 按优先级排序
+            memories.sort(key=lambda x: x['priority_score'])
+            
+            # 删除低优先级记忆
+            to_delete = len(memories) - self.priority_config['max_memories']
+            deleted_memories = memories[:to_delete]
+            self.memories[user_id] = memories[to_delete:]
+            
+            # 保存更改
+            self.save_memories()
+            
+            logging.info(f"Cleaned {to_delete} low-priority memories for user {user_id}")
+            return {
+                "success": True,
+                "cleaned": to_delete,
+                "lowest_score": deleted_memories[0]['priority_score'] if deleted_memories else None,
+                "highest_score": deleted_memories[-1]['priority_score'] if deleted_memories else None
+            }
+            
+        except Exception as e:
+            logging.error(f"Error cleaning low priority memories: {str(e)}")
+            return {"success": False, "error": str(e)} 
+
+    def access_memory(self, user_id: str, memory_id: int):
+        """访问记忆的便捷方法"""
+        return self.update_memory_access(user_id, memory_id, 'read')
+
+    def _initialize_memory_stats(self):
+        """初始化或迁移记忆访问统计"""
+        for user_id, memories in self.memories.items():
+            for memory in memories:
+                if 'access_stats' not in memory:
+                    memory['access_stats'] = {
+                        'count': memory.get('access_count', 0),  # 迁移旧的访问计数
+                        'first_access': memory.get('created_at', datetime.now().isoformat()),
+                        'last_access': memory.get('last_access', datetime.now().isoformat()),
+                        'access_history': []  # 用于记录详细的访问历史
+                    }
+                # 删除旧的统计字段
+                memory.pop('access_count', None)
+                memory.pop('last_access', None)
+        self.save_memories()
+
+    def update_memory_access(self, user_id: str, memory_id: int, access_type: str = 'read') -> Dict:
+        """更新记忆的访问统计信息
+        
+        Args:
+            user_id: 用户ID
+            memory_id: 记忆ID
+            access_type: 访问类型（'read', 'write', 'reference'等）
+        """
+        try:
+            if user_id not in self.memories:
+                return {"success": False, "error": "User not found"}
+                
+            if 0 <= memory_id < len(self.memories[user_id]):
+                memory = self.memories[user_id][memory_id]
+                current_time = datetime.now().isoformat()
+                
+                # 确保存在访问统计结构
+                if 'access_stats' not in memory:
+                    memory['access_stats'] = {
+                        'count': 0,
+                        'first_access': current_time,
+                        'last_access': current_time,
+                        'access_history': []
+                    }
+                
+                # 更新访问统计
+                memory['access_stats']['count'] += 1
+                memory['access_stats']['last_access'] = current_time
+                
+                # 记录访问历史（保留最近10次）
+                memory['access_stats']['access_history'].append({
+                    'timestamp': current_time,
+                    'type': access_type
+                })
+                memory['access_stats']['access_history'] = \
+                    memory['access_stats']['access_history'][-10:]
+                
+                # 更新优先级分数
+                memory['priority_score'] = self.calculate_priority_score(memory)
+                
+                self.save_memories()
+                return {
+                    "success": True, 
+                    "access_count": memory['access_stats']['count'],
+                    "priority_score": memory['priority_score']
+                }
+            
+            return {"success": False, "error": "Memory ID out of range"}
+            
+        except Exception as e:
+            logging.error(f"Error updating memory access: {str(e)}")
             return {"success": False, "error": str(e)} 

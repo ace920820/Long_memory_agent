@@ -5,6 +5,8 @@ import os
 import logging
 import torch
 import yaml
+import json
+from typing import List, Dict
 
 
 class RAGModule:
@@ -36,43 +38,54 @@ class RAGModule:
             logging.error(f"Error loading BGE model: {str(e)}")
             raise
 
-        # 初始化或加载索引
-        self._init_index()
-
-        # 存储文档
+        # 存储文档和向量
         self.documents = []
+        self.document_embeddings = None
 
-        # 添加示例文档
-        self.add_documents([
+        # 确保存储目录存在
+        os.makedirs(self.index_path, exist_ok=True)
+        
+        # 先加载或创建索引
+        self._load_index()
+        
+        # 在索引加载后再添加示例文档
+        example_docs = [
             "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
             "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
             "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
             "Jamie最喜欢的人是他的老婆和多米",
             "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。"
-        ])
+        ]
+        
+        # 只有当文档为空时才添加示例文档
+        if not self.documents:
+            self.add_documents(example_docs)
 
-    def _init_index(self):
-        """初始化或加载 FAISS 索引"""
+    def _load_index(self):
+        """加载或创建向量索引"""
         try:
-            # 确保目录存在
-            os.makedirs(self.index_path, exist_ok=True)
-
-            # 创建新的索引
-            self.index = faiss.IndexFlatL2(self.dimension)
-
-            # 如果存在已保存的索引，则加载
-            index_file = os.path.join(self.index_path, "index.faiss")
-            if os.path.exists(index_file):
-                self.index = faiss.read_index(index_file)
-                logging.info(f"Loaded existing index from {index_file}")
-                # 验证索引和文档的一致性
-                if self.index.ntotal > len(self.documents):
-                    logging.warning("Index contains more vectors than documents. Truncating.")
-                    self.index = faiss.IndexFlatL2(self.dimension)  # 重新初始化索引
-
+            # 加载文档
+            docs_path = os.path.join(self.index_path, "documents.json")
+            if os.path.exists(docs_path):
+                with open(docs_path, 'r', encoding='utf-8') as f:
+                    self.documents = json.load(f)
+                    
+            # 加载或创建向量索引
+            index_path = os.path.join(self.index_path, "faiss_index.bin")
+            if os.path.exists(index_path):
+                self.index = faiss.read_index(index_path)
+                # 重新计算文档向量
+                if self.documents:
+                    texts = [doc['content'] for doc in self.documents]
+                    self.document_embeddings = self._encode_text(texts)
+            else:
+                self.index = faiss.IndexFlatL2(self.dimension)
+                
         except Exception as e:
-            logging.error(f"Error initializing index: {str(e)}")
-            # 创建空索引作为后备
+            logging.error(f"Error loading index: {str(e)}")
+            # 创建新的索引
+            self.documents = []
+            self.document_embeddings = None
             self.index = faiss.IndexFlatL2(self.dimension)
 
     def _encode_text(self, texts: list) -> np.ndarray:
@@ -85,7 +98,7 @@ class RAGModule:
             with torch.no_grad():
                 inputs = self.tokenizer(texts, 
                                       padding=True, 
-                                      truncation=True, 
+                                      truncation=True,      
                                       max_length=512, 
                                       return_tensors="pt")
                 outputs = self.model(**inputs)
@@ -98,74 +111,118 @@ class RAGModule:
             logging.error(f"Error encoding text: {str(e)}")
             raise
 
-    def add_documents(self, documents: list):
-        """添加文档到知识库"""
+    def add_documents(self, documents: List[str]) -> None:
+        """添加新文档到知识库
+        
+        Args:
+            documents: 文档内容列表
+        """
         try:
-            if not documents:
-                return
-
-            # 使用 BGE 模型编码文档
-            embeddings = self._encode_text(documents)
-            assert len(embeddings) == len(documents), "Mismatch between embeddings and documents"
-
-            # 添加到索引
-            self.index.add(embeddings.astype('float32'))
-
-            # 保存文档
-            self.documents.extend(documents)
-
-            # 保存索引
-            index_file = os.path.join(self.index_path, "index.faiss")
-            try:
-                faiss.write_index(self.index, index_file)
-                logging.info(f"Successfully saved index to {index_file}")
-            except Exception as e:
-                logging.error(f"Error saving index: {str(e)}")
-
-            logging.info(f"Added {len(documents)} documents to the knowledge base")
-
+            # 将文本列表转换为文档格式
+            formatted_docs = []
+            for doc in documents:
+                formatted_docs.append({
+                    'content': doc,  # 存储原始内容
+                    'document': doc  # 保持与搜索结果格式一致
+                })
+            
+            # 编码新文档
+            new_embeddings = self._encode_text([doc['content'] for doc in formatted_docs])
+            
+            # 更新索引
+            self.index.add(new_embeddings.astype('float32'))
+            
+            # 更新文档存储
+            start_idx = len(self.documents)
+            for i, doc in enumerate(formatted_docs):
+                doc['id'] = start_idx + i
+                self.documents.append(doc)
+            
+            # 更新文档向量
+            if self.document_embeddings is None:
+                self.document_embeddings = new_embeddings
+            else:
+                self.document_embeddings = np.vstack([self.document_embeddings, new_embeddings])
+            
+            # 保存更新
+            self._save_index()
+            
+            logging.info(f"Successfully added {len(documents)} documents")
+            
         except Exception as e:
             logging.error(f"Error adding documents: {str(e)}")
+            raise
 
-    def search(self, query: str, top_k: int = 5) -> list:
+    def search(self, query: str, top_k: int = 5) -> List[Dict]:
         """搜索相关文档
-
+        
         Args:
             query: 查询文本
             top_k: 返回的最相关文档数量
-
+            
         Returns:
-            list: 相关文档列表，每个文档包含内容和相似度分数
+            相关文档列表，每个文档包含相似度分数
         """
         try:
-            # 使用 BGE 模型编码查询
-            query_vector = self._encode_text([query])
-
-            # 确保搜索参数不超过索引大小
-            k = min(top_k, self.index.ntotal)
-            distances, indices = self.index.search(query_vector.astype('float32'), k)
-
-            # 处理结果
+            if not self.documents:
+                logging.info("知识库为空，无法进行搜索")
+                return []
+                
+            # 编码查询
+            query_vector = self._encode_text([query])[0]
+            logging.info(f"正在搜索查询: '{query}'")
+            
+            # 搜索相似向量
+            distances, indices = self.index.search(
+                np.array([query_vector]).astype('float32'), 
+                min(top_k, len(self.documents))
+            )
+            
+            # 构建结果
             results = []
             for i, idx in enumerate(indices[0]):
-                if idx >= len(self.documents):
-                    logging.warning(f"Index {idx} is out of range for documents. Skipping.")
-                    continue
-                similarity = 1 / (1 + float(distances[0][i]))  # 转换距离为相似度
-                if similarity >= self.similarity_threshold:
-                    results.append({
-                        'document': self.documents[idx],
-                        'score': similarity
-                    })
-                    logging.info(f"知识库匹配 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
-                else:
-                    logging.info(f"知识库文本因相似度过低被过滤 (得分: {similarity:.4f}):\n文本: {self.documents[idx]}")
-
+                if idx < len(self.documents):  # 确保索引有效
+                    doc = self.documents[idx].copy()
+                    similarity = 1 - distances[0][i]  # 转换距离为相似度
+                    doc['similarity'] = similarity
+                    
+                    # 记录每个候选文档的信息
+                    log_msg = (
+                        f"\n候选文档 {idx}:"
+                        f"\n - 内容: {doc['content']}"
+                        f"\n - 相似度得分: {similarity:.4f}"
+                    )
+                    
+                    if similarity >= self.similarity_threshold:
+                        results.append(doc)
+                        log_msg += f"\n - 状态: 采用 (得分 >= {self.similarity_threshold})"
+                    else:
+                        log_msg += f"\n - 状态: 丢弃 (得分 < {self.similarity_threshold})"
+                    
+                    logging.info(log_msg)
+            
+            logging.info(f"共找到 {len(results)}/{len(indices[0])} 个相关文档")
+            
             return results
-
+            
         except Exception as e:
-            logging.error(f"Error in search: {str(e)}")
+            logging.error(f"搜索文档时发生错误: {str(e)}")
             return []
+
+    def _save_index(self):
+        """保存索引和文档到磁盘"""
+        try:
+            # 保存文档
+            docs_path = os.path.join(self.index_path, "documents.json")
+            with open(docs_path, 'w', encoding='utf-8') as f:
+                json.dump(self.documents, f, ensure_ascii=False, indent=2)
+            
+            # 保存索引
+            index_path = os.path.join(self.index_path, "faiss_index.bin")
+            faiss.write_index(self.index, index_path)
+            
+        except Exception as e:
+            logging.error(f"Error saving index: {str(e)}")
 
     def generate_response(self, query: str, llm_model, role_prompt=None, context=None, memories=None):
         """生成带有检索增强的响应"""

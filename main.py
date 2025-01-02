@@ -281,6 +281,54 @@ def create_app():
             logging.error(f"Error in clean_memories endpoint: {str(e)}")
             return jsonify({"error": "Failed to clean memories"}), 500
 
+    @app.route('/api/memories/priority', methods=['POST'])
+    def update_memory_priority():
+        try:
+            data = request.json
+            user_id = data.get('user_id', 'default_user')
+            memory_id = data.get('memory_id')
+            
+            if memory_id is None:
+                return jsonify({"success": False, "error": "Memory ID is required"}), 400
+            
+            result = memory_manager.update_memory_priority(user_id, memory_id)
+            return jsonify(result)
+            
+        except Exception as e:
+            logging.error(f"Error updating memory priority: {str(e)}")
+            return jsonify({"error": "Failed to update memory priority"}), 500
+
+    @app.route('/api/memories/clean-low-priority', methods=['POST'])
+    def clean_low_priority():
+        try:
+            data = request.json
+            user_id = data.get('user_id', 'default_user')
+            
+            result = memory_manager.clean_low_priority_memories(user_id)
+            return jsonify(result)
+            
+        except Exception as e:
+            logging.error(f"Error cleaning low priority memories: {str(e)}")
+            return jsonify({"error": "Failed to clean low priority memories"}), 500
+
+    @app.route('/api/memories/access', methods=['POST'])
+    def access_memory():
+        try:
+            data = request.json
+            user_id = data.get('user_id', 'default_user')
+            memory_id = data.get('memory_id')
+            access_type = data.get('access_type', 'read')
+            
+            if memory_id is None:
+                return jsonify({"success": False, "error": "Memory ID is required"}), 400
+            
+            result = memory_manager.update_memory_access(user_id, memory_id, access_type)
+            return jsonify(result)
+            
+        except Exception as e:
+            logging.error(f"Error accessing memory: {str(e)}")
+            return jsonify({"error": "Failed to access memory"}), 500
+
     return app
 
 if __name__ == "__main__":
