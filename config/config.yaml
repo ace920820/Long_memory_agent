@@ -5,7 +5,6 @@ temperature: 0.7
 
 # LLM 配置
 llm:
-  api_key: "sk-6423f724e06d488ca246f2425f6707f4"  # 替换为实际的 API key
   llm_model: "qwen-plus"
   temperature: 0.7
   max_tokens: 2000

@@ -11,6 +11,7 @@ import sys
 import logging
 import json
 import os
+from datetime import datetime
 
 # 设置控制台输出为 UTF-8 编码
 if sys.stdout.encoding.lower() != 'utf-8':
@@ -182,11 +183,57 @@ def create_app():
     def get_memories():
         try:
             user_id = request.args.get('user_id', 'default_user')
+            logging.info(f"正在获取用户 {user_id} 的记忆列表")
+            
+            # 获取记忆列表
             memories = memory_manager.get_all_memories(user_id)
-            return jsonify({"memories": memories})
+            
+            # 验证返回的数据
+            if memories is None:
+                return jsonify({
+                    "success": False,
+                    "error": "记忆管理器返回了空数据"
+                }), 500
+                
+            if not isinstance(memories, list):
+                logging.error(f"记忆数据类型错误: {type(memories)}")
+                return jsonify({
+                    "success": False,
+                    "error": "记忆数据格式错误"
+                }), 500
+                
+            # 验证每个记忆的数据完整性
+            valid_memories = []
+            for memory in memories:
+                if isinstance(memory, dict) and 'content' in memory:
+                    # 确保必要的字段存在
+                    memory['type'] = memory.get('type', 'general')
+                    memory['timestamp'] = memory.get('timestamp', datetime.now().isoformat())
+                    memory['access_stats'] = memory.get('access_stats', {
+                        'count': 0,
+                        'first_access': memory.get('timestamp', datetime.now().isoformat()),
+                        'last_access': memory.get('timestamp', datetime.now().isoformat()),
+                        'access_history': []
+                    })
+                    valid_memories.append(memory)
+                else:
+                    logging.warning(f"跳过无效的记忆数据: {memory}")
+            
+            logging.info(f"成功获取 {len(valid_memories)} 条记忆")
+            
+            return jsonify({
+                "success": True,
+                "memories": valid_memories,
+                "count": len(valid_memories)
+            })
+            
         except Exception as e:
-            logging.error(f"Error getting memories: {str(e)}")
-            return jsonify({"error": "Failed to get memories"}), 500
+            logging.error(f"获取记忆列表时出错: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "获取记忆列表失败",
+                "details": str(e)
+            }), 500
 
     @app.route('/api/memories', methods=['POST'])
     def add_memory():
@@ -258,7 +305,7 @@ def create_app():
             if memory_id is None:
                 return jsonify({"success": False, "error": "Memory ID is required"}), 400
             
-            result = memory_manager.split_memory(user_id, memory_id)
+            result = memory_manager.split_memory(user_id, memory_id,llm_model)
             return jsonify(result)
             
         except Exception as e:

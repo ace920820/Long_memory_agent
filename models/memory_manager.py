@@ -541,7 +541,7 @@ class MemoryManager:
             logging.error(f"Error deleting memories: {str(e)}")
             return {"success": False, "error": str(e)}
 
-    def split_memory(self, user_id: str, memory_id: int) -> Dict:
+    def split_memory(self, user_id: str, memory_id: int,llm_model) -> Dict:
         """拆分记忆为多个较短的记忆"""
         try:
             if user_id not in self.memories:
@@ -560,7 +560,7 @@ class MemoryManager:
             # 2. 如果规则拆分得到的片段为1条，使用LLM进行拆分
             if len(segments) <= 1:
                 logging.info("Rule-based split failed, attempting LLM-based split")
-                llm_segments = self._llm_based_split(content)
+                llm_segments = self._llm_based_split(content,llm_model)
                 if llm_segments and len(llm_segments) > 1:  # 确保LLM拆分成功且产生多个片段
                     segments = llm_segments
                     logging.info(f"LLM split successful, generated {len(segments)} segments")
@@ -576,13 +576,37 @@ class MemoryManager:
             new_memories = []
             for segment in segments:
                 if segment.strip():  # 忽略空字符串
-                    result = self.add_memory(user_id, segment, memory_type)
-                    if result.get("success"):
-                        new_memories.append(result)
+                    # 创建新记忆
+                    new_memory = {
+                        'id': self._generate_memory_id(),
+                        'content': segment,
+                        'type': memory_type,
+                        'timestamp': datetime.now().isoformat(),
+                        'access_stats': {
+                            'count': 0,
+                            'first_access': datetime.now().isoformat(),
+                            'last_access': datetime.now().isoformat(),
+                            'access_history': []
+                        },
+                        'priority_score': 0.0
+                    }
+                    self.memories[user_id].append(new_memory)
+                    new_memories.append(new_memory)
             
-            # 4. 如果成功添加了新记忆，删除原始记忆
+            # 4. 如果成功添加了新记忆，删除原始记忆并更新索引
             if len(new_memories) > 1:  # 只有在成功拆分为多条记忆时才删除原记忆
+                # 删除原始记忆
                 self.delete_memories(user_id, [memory_id])
+                
+                # 重建索引
+                memory_texts = [m['content'] for m in self.memories[user_id]]
+                vectors = self.model.encode(memory_texts)
+                self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
+                self.indices[user_id].add(vectors.astype('float32'))
+                
+                # 保存更改
+                self.save_memories()
+                
                 return {
                     "success": True,
                     "message": f"记忆已拆分为 {len(new_memories)} 条",
@@ -590,9 +614,12 @@ class MemoryManager:
                 }
             else:
                 # 清理已添加的新记忆（如果有的话）
-                for new_memory in new_memories:
-                    if 'id' in new_memory:
-                        self.delete_memories(user_id, [new_memory['id']])
+                indices_to_delete = []
+                for i, memory in enumerate(self.memories[user_id]):
+                    if memory['id'] in [m['id'] for m in new_memories]:
+                        indices_to_delete.append(i)
+                if indices_to_delete:
+                    self.delete_memories(user_id, indices_to_delete)
                 return {
                     "success": False,
                     "error": "拆分失败",
@@ -648,7 +675,7 @@ class MemoryManager:
         
         return segments or [content]
 
-    def _llm_based_split(self, content: str) -> Optional[List[str]]:
+    def _llm_based_split(self, content: str,llm_model) -> Optional[List[str]]:
         """使用LLM进行记忆拆分"""
         try:
             # 构建更详细的提示词
@@ -662,10 +689,6 @@ class MemoryManager:
 {content}
 
 请直接返回拆分后的句子，每句一行，不要添加任何其他内容。如果内容无法合理拆分，请返回空行。"""
-
-            # 调用LLM
-            from models.llm_model import LLMModel
-            llm = LLMModel()  # 假设你有一个LLM模型实例
             
             try:
                 response = llm.generate(prompt)

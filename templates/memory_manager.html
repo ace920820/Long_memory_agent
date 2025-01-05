@@ -17,21 +17,35 @@
         </nav>
 
         <!-- 记忆统计面板 -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <!-- 记忆类型分布 -->
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-lg font-semibold mb-4">记忆类型分布</h3>
-                <canvas id="memoryTypeChart"></canvas>
+        <div class="bg-white rounded-lg shadow p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 基础统计 -->
+                <div>
+                <h3 class="text-lg font-semibold mb-4">记忆统计</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">总记忆数</span>
+                        <span id="totalMemories" class="font-semibold">0</span>
+                    </div>
+                    <div id="typeStats" class="space-y-2">
+                        <!-- 类型统计将通过JavaScript动态添加 -->
+                    </div>
+                </div>
             </div>
-            <!-- 记忆访问统计 -->
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-lg font-semibold mb-4">访问频率统计</h3>
-                <canvas id="accessFrequencyChart"></canvas>
+                <!-- 访问统计 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">访问统计</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">今日访问</span>
+                            <span id="todayAccess" class="font-semibold">0</span>
             </div>
-            <!-- 记忆时间分布 -->
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-lg font-semibold mb-4">记忆时间分布</h3>
-                <canvas id="timeDistributionChart"></canvas>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">本周访问</span>
+                            <span id="weekAccess" class="font-semibold">0</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -223,30 +237,106 @@
                 const response = await fetch('/api/memories');
                 const data = await response.json();
                 
-                console.log('Response from server:', data);  // 添加调试日志
+                console.log('Response from server:', data);  // 调试日志
                 
-                if (data.memories) {
-                    memories = data.memories;
-                    console.log('Loaded memories:', memories);  // 添加调试日志
-                    
-                    if (Array.isArray(memories)) {
-                        renderMemories(memories);
-                    } else {
-                        console.error('Memories is not an array:', memories);
-                        alert('记忆数据格式错误');
+                if (!data) {
+                    throw new Error('服务器返回的数据为空');
+                }
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                // 确保 memories 是数组
+                memories = Array.isArray(data.memories) ? data.memories : [];
+                console.log('处理后的记忆数据:', memories);  // 调试日志
+                
+                // 先渲染记忆列表
+                renderMemories(memories);
+                
+                // 延迟更新统计信息，确保DOM元素已经加载
+                setTimeout(() => {
+                    try {
+                        updateStats(memories);
+                    } catch (error) {
+                        console.error('更新统计信息时出错:', error);
                     }
-                } else {
-                    console.error('No memories data in response:', data);
-                    if (data.error) {
-                        console.error('Error details:', data.details);  // 显示详细错误信息
-                        alert(`获取记忆列表失败: ${data.error}\n${data.details || ''}`);
-                    } else {
-                        alert('获取记忆列表失败：未知错误');
+                }, 100);
+                
+            } catch (error) {
+                console.error('获取记忆列表时出错:', error);
+                showNotification('获取记忆列表失败: ' + error.message, 'error');
+            }
+        }
+
+        // 更新统计信息
+        function updateStats(memories) {
+            if (!Array.isArray(memories)) {
+                console.error('Invalid memories data:', memories);
+                return;
+            }
+
+            // 基础统计
+            const stats = {
+                total: memories.length,
+                byType: {},
+                todayAccess: 0,
+                weekAccess: 0
+            };
+
+            const now = new Date();
+            const today = now.toISOString().split('T')[0];
+            const weekAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);
+
+            // 统计各类型记忆数量和访问数据
+            memories.forEach(memory => {
+                // 类型统计
+                const type = memory.type || 'general';
+                stats.byType[type] = (stats.byType[type] || 0) + 1;
+
+                // 访问统计
+                const accessStats = memory.access_stats || {};
+                const lastAccess = accessStats.last_access ? new Date(accessStats.last_access) : null;
+                
+                if (lastAccess) {
+                    // 今日访问
+                    if (lastAccess.toISOString().split('T')[0] === today) {
+                        stats.todayAccess++;
+                    }
+                    // 本周访问
+                    if (lastAccess >= weekAgo) {
+                        stats.weekAccess++;
                     }
                 }
-            } catch (error) {
-                console.error('Error fetching memories:', error);
-                alert('获取记忆列表失败，请检查控制台获取详细信息');
+            });
+
+            // 更新总数显示
+            const totalElement = document.getElementById('totalMemories');
+            if (totalElement) {
+                totalElement.textContent = stats.total;
+            }
+
+            // 更新类型分布
+            const typeStats = document.getElementById('typeStats');
+            if (typeStats) {
+                typeStats.innerHTML = Object.entries(stats.byType)
+                    .map(([type, count]) => `
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">${type}</span>
+                            <span class="font-semibold">${count}</span>
+                        </div>
+                    `).join('');
+            }
+
+            // 更新访问统计
+            const todayAccessElement = document.getElementById('todayAccess');
+            if (todayAccessElement) {
+                todayAccessElement.textContent = stats.todayAccess;
+            }
+
+            const weekAccessElement = document.getElementById('weekAccess');
+            if (weekAccessElement) {
+                weekAccessElement.textContent = stats.weekAccess;
             }
         }
 
@@ -555,38 +645,17 @@
         // 添加通知功能
         function showNotification(message, type = 'info') {
             const notification = document.createElement('div');
-            notification.className = `
-                fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg 
-                transition-all duration-300 transform translate-y-0 opacity-100
-                flex items-center gap-2
-                ${type === 'success' ? 'bg-green-500 text-white' : 
-                  type === 'error' ? 'bg-red-500 text-white' : 
-                  type === 'info' ? 'bg-blue-500 text-white' :
-                  'bg-gray-500 text-white'}
-            `;
-            
-            // 添加图标
-            const icon = document.createElement('span');
-            icon.className = 'text-xl';
-            icon.innerHTML = type === 'success' ? '✓' : 
-                            type === 'error' ? '✕' : 
-                            type === 'info' ? 'ℹ' : '•';
-            notification.appendChild(icon);
-            
-            const text = document.createElement('span');
-            text.textContent = message;
-            notification.appendChild(text);
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg ${
+                type === 'error' ? 'bg-red-500' : 'bg-blue-500'
+            } text-white max-w-md z-50`;
+            notification.textContent = message;
             
             document.body.appendChild(notification);
             
-            // 动画效果
+            // 3秒后自动消失
             setTimeout(() => {
-                notification.style.opacity = '0';
-                notification.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    notification.remove();
-                }, 300);
-            }, 2000);
+                notification.remove();
+            }, 3000);
         }
 
         // 添加拆分记忆的函数
@@ -741,91 +810,110 @@
 
         // 更新统计图表
         function updateMemoryStats(memories) {
-            // 记忆类型分布
-            const typeStats = memories.reduce((acc, memory) => {
-                acc[memory.type] = (acc[memory.type] || 0) + 1;
-                return acc;
-            }, {});
+            if (!Array.isArray(memories)) {
+                console.error('Invalid memories data:', memories);
+                return;
+            }
 
-            new Chart(document.getElementById('memoryTypeChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: Object.keys(typeStats),
-                    datasets: [{
-                        data: Object.values(typeStats),
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.8)',
-                            'rgba(255, 99, 132, 0.8)',
-                            'rgba(255, 206, 86, 0.8)',
-                            'rgba(75, 192, 192, 0.8)'
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
+            // 基础统计
+            const stats = {
+                total: memories.length,
+                byType: {}
+            };
+
+            // 统计各类型记忆数量
+            memories.forEach(memory => {
+                const type = memory.type || 'general';
+                stats.byType[type] = (stats.byType[type] || 0) + 1;
             });
 
-            // 访问频率统计
-            const accessStats = memories.map(m => m.access_stats?.count || 0);
-            new Chart(document.getElementById('accessFrequencyChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['0', '1-5', '6-10', '10+'],
-                    datasets: [{
-                        label: '访问次数分布',
-                        data: [
-                            accessStats.filter(count => count === 0).length,
-                            accessStats.filter(count => count > 0 && count <= 5).length,
-                            accessStats.filter(count => count > 5 && count <= 10).length,
-                            accessStats.filter(count => count > 10).length
-                        ],
-                        backgroundColor: 'rgba(54, 162, 235, 0.8)'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true
+            // 更新总数显示
+            const totalElement = document.getElementById('totalMemories');
+            if (totalElement) {
+                totalElement.textContent = stats.total;
+            }
+
+            // 更新类型分布
+            const typeStats = document.getElementById('typeStats');
+            if (typeStats) {
+                typeStats.innerHTML = Object.entries(stats.byType)
+                    .map(([type, count]) => `
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">${type}</span>
+                            <span class="font-semibold">${count}</span>
+                        </div>
+                    `).join('');
+            }
+
+            // 更新访问频率图表
+            const accessCtx = document.getElementById('accessFrequencyChart');
+            if (accessCtx) {
+                const accessStats = memories.map(m => m.access_stats?.count || 0);
+                const accessData = {
+                    '0次': accessStats.filter(count => count === 0).length,
+                    '1-5次': accessStats.filter(count => count > 0 && count <= 5).length,
+                    '6-10次': accessStats.filter(count => count > 5 && count <= 10).length,
+                    '10次以上': accessStats.filter(count => count > 10).length
+                };
+
+                new Chart(accessCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(accessData),
+                        datasets: [{
+                            label: '记忆数量',
+                            data: Object.values(accessData),
+                            backgroundColor: 'rgba(54, 162, 235, 0.8)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1
+                                }
+                            }
                         }
                     }
-                }
-            });
+                });
+            }
 
-            // 记忆时间分布
-            const timeStats = memories.reduce((acc, memory) => {
-                const date = new Date(memory.timestamp);
-                const month = date.toLocaleString('zh-CN', { month: 'short' });
-                acc[month] = (acc[month] || 0) + 1;
-                return acc;
-            }, {});
+            // 更新时间分布图表
+            const timeCtx = document.getElementById('timeDistributionChart');
+            if (timeCtx) {
+                const timeStats = {};
+                memories.forEach(memory => {
+                    const date = new Date(memory.timestamp);
+                    const month = date.toLocaleString('zh-CN', { month: 'short' });
+                    timeStats[month] = (timeStats[month] || 0) + 1;
+                });
 
-            new Chart(document.getElementById('timeDistributionChart'), {
-                type: 'line',
-                data: {
-                    labels: Object.keys(timeStats),
-                    datasets: [{
-                        label: '记忆数量',
-                        data: Object.values(timeStats),
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        tension: 0.1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true
+                new Chart(timeCtx, {
+                    type: 'line',
+                    data: {
+                        labels: Object.keys(timeStats),
+                        datasets: [{
+                            label: '记忆数量',
+                            data: Object.values(timeStats),
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1
+                                }
+                            }
                         }
                     }
-                }
-            });
+                });
+            }
         }
     </script>
 </body>

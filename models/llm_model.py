@@ -6,6 +6,7 @@ from datetime import datetime
 
 class LLMModel:
     def __init__(self, config=None):
+        config["api_key"] =  os.getenv("DASHSCOPE_API_KEY")
         self.config = config
         self.api_wrapper = LLMAPIWrapper(api_key=config["api_key"], model=config["llm_model"])
         self.model = config["llm_model"]

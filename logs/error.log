@@ -9,3 +9,9 @@
 2025-01-02 16:10:15,031 - root - ERROR - main.py:176 - Error setting role: 'ChatAgent' object has no attribute 'set_user_role'
 2025-01-02 16:10:29,073 - root - ERROR - main.py:153 - Error in chat endpoint: 'ChatAgent' object has no attribute 'user_roles'
 2025-01-02 17:23:33,378 - root - ERROR - memory_manager.py:697 - Error in LLM-based split: 'NoneType' object is not subscriptable
+2025-01-06 01:24:55,693 - LLMAPIWrapper - ERROR - llm_api_wrapper.py:51 - API call failed with status 401: {"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"7449e15e-5d38-91de-b66d-d9a71ba61f4a"}
+2025-01-06 01:24:55,694 - root - ERROR - llm_model.py:130 - Error generating response: API call failed with status 401: {"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"7449e15e-5d38-91de-b66d-d9a71ba61f4a"}
+2025-01-06 01:49:31,789 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
+2025-01-06 01:49:42,468 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
+2025-01-06 01:49:51,384 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
+2025-01-06 01:49:57,457 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'

@@ -1,451 +1,261 @@
 {
   "default_user": [
     {
-      "id": "m_1735809995352_1745",
+      "id": "m_1736100417745_6559",
       "content": "用户表示那瓦尔宝典是一本好书",
       "type": "fact",
-      "timestamp": "2025-01-02T17:02:45.858098",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-02T17:02:45.858098",
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
         "access_history": []
       },
       "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_2060",
+      "id": "m_1736100417745_3286",
       "content": "用户表示我也喜欢喝热红酒",
       "type": "fact",
-      "timestamp": "2025-01-02T17:02:45.858098",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 9,
-        "first_access": "2025-01-02T17:03:35.700037",
-        "last_access": "2025-01-02T18:02:36.338123",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T17:03:35.700037",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:12:30.180710",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:19:19.719992",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:19:49.003488",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:23:15.394639",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:58:37.919408",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:59:54.203345",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:00:43.057587",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:02:36.338123",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.92
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_8324",
+      "id": "m_1736100417745_9022",
       "content": "用户表示威士忌也很不错！",
       "type": "fact",
-      "timestamp": "2025-01-02T17:02:45.858098",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-02T17:02:45.858098",
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
         "access_history": []
       },
       "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_1873",
+      "id": "m_1736100417745_9948",
       "content": "用户表示边水往事是一个很好看的电视剧",
       "type": "fact",
-      "timestamp": "2025-01-02T17:02:45.858098",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-02T17:02:45.858098",
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
         "access_history": []
       },
       "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_9430",
+      "id": "m_1736100417745_3214",
       "content": "用户表示圣诞节要来了，请推荐一个我会喜欢的饮料",
       "type": "fact",
-      "timestamp": "2025-01-02T17:02:45.858098",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 9,
-        "first_access": "2025-01-02T17:03:35.697037",
-        "last_access": "2025-01-02T19:15:25.841472",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T17:03:35.697037",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:19:19.721992",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:19:48.998581",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:23:15.392639",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:58:37.920407",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:59:54.204348",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:00:43.059592",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:02:36.386664",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T19:15:25.841472",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.92
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_4183",
+      "id": "m_1736100417745_6749",
       "content": "用户表示请推荐一部好看的电视剧",
       "type": "fact",
-      "timestamp": "2025-01-02T17:02:45.858098",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 1,
-        "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-03T19:32:12.500559",
-        "access_history": [
-          {
-            "timestamp": "2025-01-03T19:32:12.500559",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.92
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_8220",
+      "id": "m_1736100417745_3974",
       "content": "用户表示Jamie最喜欢的人是",
       "type": "fact",
-      "timestamp": "2025-01-02T17:02:45.858098",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 2,
-        "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-03T19:29:53.296323",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T19:20:57.173929",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-03T19:29:53.296323",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.92
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_8164",
+      "id": "m_1736100417745_9597",
       "content": "你好啊",
       "type": "fact",
-      "timestamp": "2025-01-02T17:02:45.858098",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 1,
-        "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-02T17:19:19.727992",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T17:19:19.727992",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.92
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_1236",
+      "id": "m_1736100417745_1220",
       "content": "我很喜欢看老友记",
-      "type": "dialogue",
-      "timestamp": "2025-01-02T17:19:25.276279",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 8,
-        "first_access": "2025-01-02T17:19:25.276279",
-        "last_access": "2025-01-02T18:11:57.093654",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T17:19:48.994420",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:23:15.390646",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:58:37.911412",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:59:54.193370",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:00:43.051611",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:02:36.267601",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:07:49.851667",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:11:57.093654",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.76
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_7047",
+      "id": "m_1736100417745_2538",
       "content": "老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢",
-      "type": "dialogue",
-      "timestamp": "2025-01-02T17:19:59.066433",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 7,
-        "first_access": "2025-01-02T17:19:59.066433",
-        "last_access": "2025-01-02T18:11:57.158668",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T17:23:15.386664",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:58:37.917410",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:59:54.199346",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:00:43.055588",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:02:36.314117",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:07:49.932206",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:11:57.158668",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.76
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735809995352_8941",
+      "id": "m_1736100417745_4310",
       "content": "猫和老鼠是我小时候最喜欢的动画片",
-      "type": "dialogue",
-      "timestamp": "2025-01-02T17:23:22.815806",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 6,
-        "first_access": "2025-01-02T17:23:22.815806",
-        "last_access": "2025-01-02T18:11:57.122655",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T17:58:37.913411",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T17:59:54.196349",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:00:43.053587",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:02:36.289119",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:07:49.883678",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-02T18:11:57.122655",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.76
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735813142177_2358",
+      "id": "m_1736100417745_8979",
       "content": "我祝你圣诞快乐",
-      "type": "dialogue",
-      "timestamp": "2025-01-02T18:19:02.177210",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 1,
-        "first_access": "2025-01-02T18:19:02.177210",
-        "last_access": "2025-01-02T18:20:16.643235",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T18:20:16.643235",
-            "type": "reference"
-          }
-        ]
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
       },
-      "priority_score": 0.76
+      "priority_score": 0.0
     },
     {
-      "id": "m_1735813315550_7359",
-      "content": "Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago",
-      "type": "dialogue",
-      "timestamp": "2025-01-02T18:21:55.550469",
-      "access_stats": {
-        "count": 1,
-        "first_access": "2025-01-02T18:21:55.550469",
-        "last_access": "2025-01-02T18:22:16.573859",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T18:22:16.573859",
-            "type": "reference"
-          }
-        ]
-      },
-      "priority_score": 0.76
-    },
-    {
-      "id": "m_1735816357540_9594",
+      "id": "m_1736100417745_3383",
       "content": "你是谁",
-      "type": "dialogue",
-      "timestamp": "2025-01-02T19:12:37.540150",
-      "access_stats": {
-        "count": 3,
-        "first_access": "2025-01-02T19:12:37.540150",
-        "last_access": "2025-01-03T19:29:06.074414",
-        "access_history": [
-          {
-            "timestamp": "2025-01-02T19:12:47.705991",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-03T19:28:45.619008",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-03T19:29:06.074414",
-            "type": "reference"
-          }
-        ]
-      },
-      "priority_score": 0.76
-    },
-    {
-      "id": "m_1735816437913_6941",
-      "content": "author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago",
-      "type": "dialogue",
-      "timestamp": "2025-01-02T19:13:57.913314",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-02T19:13:57.913314",
-        "last_access": "2025-01-02T19:13:57.913314",
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
         "access_history": []
       },
       "priority_score": 0.0
     },
     {
-      "id": "m_1735816534549_8914",
+      "id": "m_1736100417745_8569",
       "content": "过节了请你推荐给我一个我会喜欢的饮料",
-      "type": "dialogue",
-      "timestamp": "2025-01-02T19:15:34.549380",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-02T19:15:34.549380",
-        "last_access": "2025-01-02T19:15:34.549380",
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
         "access_history": []
       },
       "priority_score": 0.0
     },
     {
-      "id": "m_1735883425032_3608",
+      "id": "m_1736100417745_4256",
       "content": "你好呀，新年快乐！",
-      "type": "dialogue",
-      "timestamp": "2025-01-03T13:50:25.032441",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-03T13:50:25.032441",
-        "last_access": "2025-01-03T13:50:25.032441",
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
         "access_history": []
       },
       "priority_score": 0.0
     },
     {
-      "id": "m_1735903901409_6313",
+      "id": "m_1736100417745_9667",
       "content": "我今天吃了两顿三明治",
-      "type": "dialogue",
-      "timestamp": "2025-01-03T19:31:41.409920",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-03T19:31:41.409920",
-        "last_access": "2025-01-03T19:31:41.409920",
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
         "access_history": []
       },
       "priority_score": 0.0
     },
     {
-      "id": "m_1735903945800_3040",
+      "id": "m_1736100417745_7632",
       "content": "我喜欢看的电视剧有哪些",
-      "type": "dialogue",
-      "timestamp": "2025-01-03T19:32:25.800493",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-03T19:32:25.800493",
-        "last_access": "2025-01-03T19:32:25.800493",
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736100417745_9691",
+      "content": "作者zhaobingzhi修正了文档查询失败问题，1小时之前提交。",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736100417745_5798",
+      "content": "embedding更换为bge，2小时之前由作者zhaobingzhi提交。",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736100417745_1575",
+      "content": "补充RAG示例问题，更新对应add文档过程，zhaobingzhi提交。",
+      "type": "fact",
+      "timestamp": "2025-01-06T02:05:22.995985",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-06T02:05:22.995985",
+        "last_access": "2025-01-06T02:05:22.995985",
         "access_history": []
       },
       "priority_score": 0.0

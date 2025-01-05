@@ -4455,3 +4455,715 @@
 2025-01-06 01:03:51,414 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
 2025-01-06 01:04:04,268 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
 2025-01-06 01:04:04,281 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 01:24:15,032 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 01:24:15,032 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 01:24:15,045 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:24:24,803 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:24:24,813 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 01:24:33,880 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:24:33] "GET / HTTP/1.1" 200 -
+2025-01-06 01:24:34,518 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:24:34] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 01:24:37,369 - root - INFO - rag_module.py:173 - 正在搜索查询: '你好'
+2025-01-06 01:24:37,393 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.0575
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,393 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1243
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,394 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1897
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,394 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,394 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,394 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 01:24:37,440 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:24:37,440 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.8436):
+内容: 你好啊
+2025-01-06 01:24:37,441 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5701):
+内容: 你好呀，新年快乐！
+2025-01-06 01:24:37,441 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5165):
+内容: 你是谁
+2025-01-06 01:24:37,441 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4985):
+内容: 用户表示威士忌也很不错！
+2025-01-06 01:24:37,441 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4847):
+内容: 我祝你圣诞快乐
+2025-01-06 01:24:37,441 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-06 01:24:37,441 - root - INFO - memory_manager.py:322 - 1. 得分: 0.8436
+内容: 你好啊
+
+2025-01-06 01:24:37,455 - root - INFO - rag_module.py:173 - 正在搜索查询: '你好'
+2025-01-06 01:24:37,455 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.0575
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,455 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1243
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,455 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1897
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,455 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,455 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:24:37,455 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 01:24:55,693 - LLMAPIWrapper - ERROR - llm_api_wrapper.py:51 - API call failed with status 401: {"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"7449e15e-5d38-91de-b66d-d9a71ba61f4a"}
+2025-01-06 01:24:55,694 - root - ERROR - llm_model.py:130 - Error generating response: API call failed with status 401: {"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"7449e15e-5d38-91de-b66d-d9a71ba61f4a"}
+2025-01-06 01:24:57,015 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9073)
+2025-01-06 01:24:57,015 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:24:57] "POST /chat HTTP/1.1" 200 -
+2025-01-06 01:25:30,950 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 01:25:30,951 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 01:25:30,975 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:25:41,914 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:25:41,926 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 01:25:41,970 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:25:41] "GET / HTTP/1.1" 200 -
+2025-01-06 01:25:42,461 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:25:42] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 01:25:45,136 - root - INFO - rag_module.py:173 - 正在搜索查询: '你好'
+2025-01-06 01:25:45,137 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.0575
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,137 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1243
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,137 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1897
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,137 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,137 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,137 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 01:25:45,159 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:25:45,159 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.8436):
+内容: 你好啊
+2025-01-06 01:25:45,160 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5701):
+内容: 你好呀，新年快乐！
+2025-01-06 01:25:45,160 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5165):
+内容: 你是谁
+2025-01-06 01:25:45,160 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4985):
+内容: 用户表示威士忌也很不错！
+2025-01-06 01:25:45,160 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4847):
+内容: 我祝你圣诞快乐
+2025-01-06 01:25:45,160 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-06 01:25:45,160 - root - INFO - memory_manager.py:322 - 1. 得分: 0.8436
+内容: 你好啊
+
+2025-01-06 01:25:45,174 - root - INFO - rag_module.py:173 - 正在搜索查询: '你好'
+2025-01-06 01:25:45,174 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.0575
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,174 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1243
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,174 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1897
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,175 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,175 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 01:25:45,175 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 01:26:06,603 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9073)
+2025-01-06 01:26:06,603 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:26:06] "POST /chat HTTP/1.1" 200 -
+2025-01-06 01:39:37,958 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 01:39:37,959 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 01:39:37,998 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:40:17,581 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:40:17,596 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 01:40:17,870 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:40:17] "GET / HTTP/1.1" 200 -
+2025-01-06 01:40:18,902 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:40:18] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 01:40:25,093 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:40:25] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 01:40:25,548 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 01:40:25,551 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:40:25] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:40:49,591 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:40:49] "POST /api/memories/restructure-preview HTTP/1.1" 200 -
+2025-01-06 01:40:54,317 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:40:54] "POST /api/memories/restructure-preview HTTP/1.1" 200 -
+2025-01-06 01:40:55,704 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:40:55,705 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:40:55] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 01:40:55,919 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 01:40:55,920 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:40:55] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:41:07,865 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 01:41:14,153 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:14,155 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:14] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 01:41:14,344 - root - INFO - memory_manager.py:562 - Rule-based split failed, attempting LLM-based split
+2025-01-06 01:41:19,987 - root - INFO - memory_manager.py:566 - LLM split successful, generated 4 segments
+2025-01-06 01:41:24,271 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:24,273 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:24] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 01:41:24,404 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 01:41:24,405 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:24] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:41:24,815 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 01:41:24,816 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:24] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:41:25,531 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:25,533 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:25] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 01:41:25,719 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:25,720 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:25] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 01:41:26,365 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 01:41:26,369 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:26] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:41:26,506 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 01:41:26,507 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:26] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:41:27,419 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:27,420 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:27] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 01:41:28,851 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:28] "POST /api/memories/clean HTTP/1.1" 200 -
+2025-01-06 01:41:29,390 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:29,390 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 作者zhaobingzhi修正了文档查询失败问题，1小时之前提交。
+2025-01-06 01:41:33,830 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:33,831 - root - INFO - memory_manager.py:249 - 成功添加新记忆: embedding更换为bge，2小时之前由作者zhaobingzhi提交。
+2025-01-06 01:41:37,099 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:37,100 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 补充RAG示例问题，更新对应add文档过程，zhaobingzhi提交。
+2025-01-06 01:41:42,023 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 01:41:42,025 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:42] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:41:42,142 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 01:41:42,144 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:42] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:41:43,500 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9312)
+2025-01-06 01:41:43,501 - root - INFO - memory_manager.py:504 - Attempting to delete memories [14] for user default_user
+2025-01-06 01:41:43,501 - root - INFO - memory_manager.py:513 - Deleting memory at index 14
+2025-01-06 01:41:46,812 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:41:46,815 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 01:41:46,815 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:46] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 01:41:46,835 - root - INFO - memory_manager.py:347 - Successfully retrieved 21 memories for user default_user
+2025-01-06 01:41:46,836 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:41:46] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:42:51,345 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 01:42:51,346 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 01:42:51,347 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 01:42:51,552 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 01:42:51,555 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 01:42:51,557 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 01:42:53,322 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:43:38,606 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:43:38,628 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 01:44:41,420 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 01:44:41,420 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 01:44:41,455 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:45:14,207 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:45:14,241 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 01:47:46,806 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:47:46] "GET / HTTP/1.1" 200 -
+2025-01-06 01:47:47,787 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:47:47] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 01:47:52,938 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:47:52] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 01:47:53,449 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 01:47:53,450 - root - INFO - memory_manager.py:347 - Successfully retrieved 21 memories for user default_user
+2025-01-06 01:47:53,450 - root - INFO - main.py:222 - 成功获取 21 条记忆
+2025-01-06 01:47:53,452 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:47:53] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:47:58,134 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:47:58] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 01:47:58,568 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 01:47:58,569 - root - INFO - memory_manager.py:347 - Successfully retrieved 21 memories for user default_user
+2025-01-06 01:47:58,570 - root - INFO - main.py:222 - 成功获取 21 条记忆
+2025-01-06 01:47:58,572 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:47:58] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:48:11,315 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:48:11] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 01:48:11,736 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 01:48:11,738 - root - INFO - memory_manager.py:347 - Successfully retrieved 21 memories for user default_user
+2025-01-06 01:48:11,738 - root - INFO - main.py:222 - 成功获取 21 条记忆
+2025-01-06 01:48:11,740 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:48:11] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:48:33,759 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:48:33] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 01:48:34,181 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 01:48:34,182 - root - INFO - memory_manager.py:347 - Successfully retrieved 21 memories for user default_user
+2025-01-06 01:48:34,183 - root - INFO - main.py:222 - 成功获取 21 条记忆
+2025-01-06 01:48:34,186 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:48:34] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:49:31,789 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
+2025-01-06 01:49:31,790 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:49:31] "[35m[1mPOST /api/memories/split HTTP/1.1[0m" 500 -
+2025-01-06 01:49:42,468 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
+2025-01-06 01:49:42,470 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:49:42] "[35m[1mPOST /api/memories/split HTTP/1.1[0m" 500 -
+2025-01-06 01:49:51,384 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
+2025-01-06 01:49:51,384 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:49:51] "[35m[1mPOST /api/memories/split HTTP/1.1[0m" 500 -
+2025-01-06 01:49:57,457 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
+2025-01-06 01:49:57,460 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:49:57] "[35m[1mPOST /api/memories/split HTTP/1.1[0m" 500 -
+2025-01-06 01:51:32,113 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 01:51:32,114 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 01:51:32,138 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:52:03,847 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:52:03,864 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 01:52:03,945 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:52:03] "GET / HTTP/1.1" 200 -
+2025-01-06 01:52:04,864 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:52:04] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 01:52:10,000 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:52:10] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 01:52:10,434 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 01:52:10,434 - root - INFO - memory_manager.py:347 - Successfully retrieved 21 memories for user default_user
+2025-01-06 01:52:10,435 - root - INFO - main.py:222 - 成功获取 21 条记忆
+2025-01-06 01:52:10,642 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:52:10] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:52:18,302 - root - INFO - memory_manager.py:504 - Attempting to delete memories [12] for user default_user
+2025-01-06 01:52:18,303 - root - INFO - memory_manager.py:513 - Deleting memory at index 12
+2025-01-06 01:52:22,247 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:52:22,247 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 01:52:24,333 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 01:52:24,334 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:52:24] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 01:52:24,342 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 01:52:24,343 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 01:52:24,343 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 01:52:24,345 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:52:24] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:52:47,502 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:52:47] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 01:52:47,957 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 01:52:47,957 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 01:52:47,957 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 01:52:47,960 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:52:47] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:58:43,684 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\generate_requirements.py', reloading
+2025-01-06 01:58:43,714 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\agent.py', reloading
+2025-01-06 01:58:43,717 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-06 01:58:43,728 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\scripts\\init_memory_file.py', reloading
+2025-01-06 01:58:43,729 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\context_manager.py', reloading
+2025-01-06 01:58:43,730 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\llm_service.py', reloading
+2025-01-06 01:58:43,731 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\prompt_manager.py', reloading
+2025-01-06 01:58:45,387 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:59:12,411 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:59:12,429 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 02:01:23,072 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:01:23] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:01:23,523 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:01:23,523 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 02:01:23,524 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 02:01:23,526 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:01:23] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:01:25,967 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:01:25] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:01:26,437 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:01:26,438 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 02:01:26,438 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 02:01:26,440 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:01:26] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:01:30,759 - root - INFO - memory_manager.py:562 - Rule-based split failed, attempting LLM-based split
+2025-01-06 02:01:30,759 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:01:30,760 - root - WARNING - memory_manager.py:568 - LLM split failed or produced single segment
+2025-01-06 02:01:30,760 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:01:30] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 02:01:34,479 - root - INFO - memory_manager.py:562 - Rule-based split failed, attempting LLM-based split
+2025-01-06 02:01:34,479 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:01:34,479 - root - WARNING - memory_manager.py:568 - LLM split failed or produced single segment
+2025-01-06 02:01:34,480 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:01:34] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 02:01:37,542 - root - INFO - memory_manager.py:562 - Rule-based split failed, attempting LLM-based split
+2025-01-06 02:01:37,543 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:01:37,543 - root - WARNING - memory_manager.py:568 - LLM split failed or produced single segment
+2025-01-06 02:01:37,544 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:01:37] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 02:02:04,319 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:04] "GET / HTTP/1.1" 200 -
+2025-01-06 02:02:05,546 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:05] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:02:08,899 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:08] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-06 02:02:09,314 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:09] "[33mGET /api/documents HTTP/1.1[0m" 404 -
+2025-01-06 02:02:09,331 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:09] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -
+2025-01-06 02:02:13,531 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:13] "GET / HTTP/1.1" 200 -
+2025-01-06 02:02:13,605 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:13] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:02:14,838 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:14] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-06 02:02:15,378 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:15] "[33mGET /api/documents HTTP/1.1[0m" 404 -
+2025-01-06 02:02:15,405 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:15] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -
+2025-01-06 02:02:16,607 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:16] "GET / HTTP/1.1" 200 -
+2025-01-06 02:02:16,689 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:16] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:02:17,574 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:17] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:02:18,038 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:02:18,038 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 02:02:18,040 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 02:02:18,042 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:18] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:02:19,419 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:19] "GET / HTTP/1.1" 200 -
+2025-01-06 02:02:19,498 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:19] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:02:22,046 - root - INFO - rag_module.py:173 - 正在搜索查询: 'git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验'
+2025-01-06 02:02:22,047 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2207
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,047 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4819
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,047 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.5703
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,047 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.6233
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,048 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6722
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,048 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 02:02:22,563 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5689):
+内容: 补充RAG示例问题，更新对应add文档过程，zhaobingzhi提交。
+2025-01-06 02:02:22,564 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5458):
+内容: Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。
+2025-01-06 02:02:22,564 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5428):
+内容: author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago
+2025-01-06 02:02:22,564 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5104):
+内容: 作者zhaobingzhi修正了文档查询失败问题，1小时之前提交。
+2025-01-06 02:02:22,564 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4840):
+内容: embedding更换为bge，2小时之前由作者zhaobingzhi提交。
+2025-01-06 02:02:22,564 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-06 02:02:22,689 - root - INFO - rag_module.py:173 - 正在搜索查询: 'git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验'
+2025-01-06 02:02:22,823 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2207
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,823 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4819
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,823 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.5703
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,824 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.6233
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,824 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6722
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:02:22,824 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 02:02:25,431 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:25] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:02:25,895 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:02:25,895 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 02:02:25,896 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 02:02:25,898 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:25] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:02:29,718 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:29] "GET / HTTP/1.1" 200 -
+2025-01-06 02:02:29,799 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:29] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:02:42,508 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:42] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:02:43,066 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:02:43,066 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 02:02:43,067 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 02:02:43,069 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:43] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:02:50,792 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:02:50,792 - root - INFO - memory_manager.py:249 - 成功添加新记忆: git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验
+2025-01-06 02:02:50,793 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:50] "POST /api/memories HTTP/1.1" 200 -
+2025-01-06 02:02:50,830 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:02:50,830 - root - INFO - memory_manager.py:347 - Successfully retrieved 23 memories for user default_user
+2025-01-06 02:02:50,831 - root - INFO - main.py:222 - 成功获取 23 条记忆
+2025-01-06 02:02:50,832 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:50] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:02:54,043 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 1.0000)
+2025-01-06 02:02:54,045 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:54] "POST /chat HTTP/1.1" 200 -
+2025-01-06 02:02:54,544 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 1.0000)
+2025-01-06 02:02:54,544 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:54] "POST /api/memories HTTP/1.1" 200 -
+2025-01-06 02:02:54,668 - root - INFO - memory_manager.py:562 - Rule-based split failed, attempting LLM-based split
+2025-01-06 02:02:54,669 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:02:54,669 - root - WARNING - memory_manager.py:568 - LLM split failed or produced single segment
+2025-01-06 02:02:54,670 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:54] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 02:02:54,714 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:02:54,714 - root - INFO - memory_manager.py:347 - Successfully retrieved 23 memories for user default_user
+2025-01-06 02:02:54,715 - root - INFO - main.py:222 - 成功获取 23 条记忆
+2025-01-06 02:02:54,716 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:54] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:02:58,981 - root - INFO - memory_manager.py:562 - Rule-based split failed, attempting LLM-based split
+2025-01-06 02:02:58,981 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:02:58,981 - root - WARNING - memory_manager.py:568 - LLM split failed or produced single segment
+2025-01-06 02:02:58,982 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:02:58] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 02:03:10,545 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9875)
+2025-01-06 02:03:10,546 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:10] "POST /api/memories HTTP/1.1" 200 -
+2025-01-06 02:03:10,560 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:03:10,561 - root - INFO - memory_manager.py:347 - Successfully retrieved 23 memories for user default_user
+2025-01-06 02:03:10,561 - root - INFO - main.py:222 - 成功获取 23 条记忆
+2025-01-06 02:03:10,565 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:10] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:03:13,579 - root - INFO - memory_manager.py:562 - Rule-based split failed, attempting LLM-based split
+2025-01-06 02:03:13,580 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:03:13,580 - root - WARNING - memory_manager.py:568 - LLM split failed or produced single segment
+2025-01-06 02:03:13,580 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:13] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 02:03:13,675 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9875)
+2025-01-06 02:03:13,678 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:13] "POST /api/memories HTTP/1.1" 200 -
+2025-01-06 02:03:13,729 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:03:13,729 - root - INFO - memory_manager.py:347 - Successfully retrieved 23 memories for user default_user
+2025-01-06 02:03:13,729 - root - INFO - main.py:222 - 成功获取 23 条记忆
+2025-01-06 02:03:13,731 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:13] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:03:15,943 - root - INFO - memory_manager.py:504 - Attempting to delete memories [21] for user default_user
+2025-01-06 02:03:15,943 - root - INFO - memory_manager.py:513 - Deleting memory at index 21
+2025-01-06 02:03:18,368 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:03:18,369 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:03:18,370 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:18] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:03:18,381 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:03:18,381 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 02:03:18,381 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 02:03:18,383 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:18] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:03:24,772 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:24] "GET / HTTP/1.1" 200 -
+2025-01-06 02:03:24,849 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:24] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:03:27,059 - root - INFO - rag_module.py:173 - 正在搜索查询: 'git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验'
+2025-01-06 02:03:27,061 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2207
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,062 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4819
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,062 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.5703
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,063 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.6233
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,064 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6722
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,064 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 02:03:27,214 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:03:27,214 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 1.0000):
+内容: git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验
+2025-01-06 02:03:27,215 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5689):
+内容: 补充RAG示例问题，更新对应add文档过程，zhaobingzhi提交。
+2025-01-06 02:03:27,215 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5458):
+内容: Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。
+2025-01-06 02:03:27,216 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5104):
+内容: 作者zhaobingzhi修正了文档查询失败问题，1小时之前提交。
+2025-01-06 02:03:27,216 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4840):
+内容: embedding更换为bge，2小时之前由作者zhaobingzhi提交。
+2025-01-06 02:03:27,217 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-06 02:03:27,217 - root - INFO - memory_manager.py:322 - 1. 得分: 1.0000
+内容: git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验
+
+2025-01-06 02:03:27,586 - root - INFO - rag_module.py:173 - 正在搜索查询: 'git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验'
+2025-01-06 02:03:27,586 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2207
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,586 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4819
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,587 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.5703
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,587 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.6233
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,587 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6722
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:27,587 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 02:03:39,721 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 1.0000)
+2025-01-06 02:03:39,722 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:39] "POST /chat HTTP/1.1" 200 -
+2025-01-06 02:03:39,758 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:03:39] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:03:50,684 - root - INFO - rag_module.py:173 - 正在搜索查询: '助手头像 你好呀，小驯鹿来啦~ 哞~ 看来你重复了相同的Git提交信息呢。让我来帮你整理一下这个功能更新的重点： ### 提交信息概述 **提交类型:** feat (新功能) **提交描述:** 1. **新增知识库管理页面：** - **文档管理：** 支持多格式文档的上传、预览、编辑和删除 - **内容管理：** 支持内容分段和编辑 - **索引管理：** 支持索引状态查看和操作 2. **更新主页面：** - 添加了知识库管理的入口 3. **优化页面布局和交互体验：** - 改善了整体页面的布局和用户体验 ### 详细说明 - **文档管理：** - 用户可以上传各种格式的文档（如PDF、Word等） - 可以直接在页面上预览文档内容 - 支持对文档进行编辑和删除操作 - **内容管理：** - 文档内容可以分段展示 - 每个段落都可以单独编辑 - **索引管理：** - 用户可以查看索引的状态 - 可以对索引进行相关操作 - **主页面更新：** - 在主页面增加了进入知识库管理的功能入口 - **页面优化：** - 对页面的整体布局进行了调整 - 改善了用户与页面的交互体验 如果你有具体的问题或者需要进一步了解某个部分的细节，请告诉我哦！哞~ 😊 希望这些信息能帮到你，就像圣诞老人给小朋友送礼物一样贴心呢！'
+2025-01-06 02:03:50,685 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.1581
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:50,685 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.3127
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:50,685 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4406
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:50,686 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.4514
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:50,686 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.5499
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:50,686 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 02:03:51,132 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:03:51,133 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.7621):
+内容: git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验
+2025-01-06 02:03:51,133 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5646):
+内容: 补充RAG示例问题，更新对应add文档过程，zhaobingzhi提交。
+2025-01-06 02:03:51,133 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5538):
+内容: 作者zhaobingzhi修正了文档查询失败问题，1小时之前提交。
+2025-01-06 02:03:51,133 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5485):
+内容: Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。
+2025-01-06 02:03:51,134 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5100):
+内容: embedding更换为bge，2小时之前由作者zhaobingzhi提交。
+2025-01-06 02:03:51,134 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-06 02:03:51,134 - root - INFO - memory_manager.py:322 - 1. 得分: 0.7621
+内容: git commit -m "feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态 [main 811456e] feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验
+
+2025-01-06 02:03:51,699 - root - INFO - rag_module.py:173 - 正在搜索查询: '助手头像 你好呀，小驯鹿来啦~ 哞~ 看来你重复了相同的Git提交信息呢。让我来帮你整理一下这个功能更新的重点： ### 提交信息概述 **提交类型:** feat (新功能) **提交描述:** 1. **新增知识库管理页面：** - **文档管理：** 支持多格式文档的上传、预览、编辑和删除 - **内容管理：** 支持内容分段和编辑 - **索引管理：** 支持索引状态查看和操作 2. **更新主页面：** - 添加了知识库管理的入口 3. **优化页面布局和交互体验：** - 改善了整体页面的布局和用户体验 ### 详细说明 - **文档管理：** - 用户可以上传各种格式的文档（如PDF、Word等） - 可以直接在页面上预览文档内容 - 支持对文档进行编辑和删除操作 - **内容管理：** - 文档内容可以分段展示 - 每个段落都可以单独编辑 - **索引管理：** - 用户可以查看索引的状态 - 可以对索引进行相关操作 - **主页面更新：** - 在主页面增加了进入知识库管理的功能入口 - **页面优化：** - 对页面的整体布局进行了调整 - 改善了用户与页面的交互体验 如果你有具体的问题或者需要进一步了解某个部分的细节，请告诉我哦！哞~ 😊 希望这些信息能帮到你，就像圣诞老人给小朋友送礼物一样贴心呢！'
+2025-01-06 02:03:51,699 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.1581
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:51,699 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.3127
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:51,700 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4406
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:51,700 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.4514
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:51,700 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.5499
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-06 02:03:51,700 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-06 02:04:28,653 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:04:28,654 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 助手头像 你好呀，小驯鹿来啦~ 哞~ 看来你重复了相同的Git提交信息呢。让我来帮你整理一下这个功能更新的重点： ### 提交信息概述 **提交类型:** feat (新功能) **提交描述:** 1. **新增知识库管理页面：** - **文档管理：** 支持多格式文档的上传、预览、编辑和删除 - **内容管理：** 支持内容分段和编辑 - **索引管理：** 支持索引状态查看和操作 2. **更新主页面：** - 添加了知识库管理的入口 3. **优化页面布局和交互体验：** - 改善了整体页面的布局和用户体验 ### 详细说明 - **文档管理：** - 用户可以上传各种格式的文档（如PDF、Word等） - 可以直接在页面上预览文档内容 - 支持对文档进行编辑和删除操作 - **内容管理：** - 文档内容可以分段展示 - 每个段落都可以单独编辑 - **索引管理：** - 用户可以查看索引的状态 - 可以对索引进行相关操作 - **主页面更新：** - 在主页面增加了进入知识库管理的功能入口 - **页面优化：** - 对页面的整体布局进行了调整 - 改善了用户与页面的交互体验 如果你有具体的问题或者需要进一步了解某个部分的细节，请告诉我哦！哞~ 😊 希望这些信息能帮到你，就像圣诞老人给小朋友送礼物一样贴心呢！
+2025-01-06 02:04:28,657 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:04:28] "POST /chat HTTP/1.1" 200 -
+2025-01-06 02:04:32,098 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:04:32] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:04:32,562 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:04:32,562 - root - INFO - memory_manager.py:347 - Successfully retrieved 23 memories for user default_user
+2025-01-06 02:04:32,563 - root - INFO - main.py:222 - 成功获取 23 条记忆
+2025-01-06 02:04:32,566 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:04:32] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:04:37,078 - root - INFO - memory_manager.py:504 - Attempting to delete memories [22] for user default_user
+2025-01-06 02:04:37,080 - root - INFO - memory_manager.py:513 - Deleting memory at index 22
+2025-01-06 02:04:42,460 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:04:42,461 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:04:47,455 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:04:47,456 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:04:47] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-06 02:04:47,480 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:04:47,481 - root - INFO - memory_manager.py:347 - Successfully retrieved 25 memories for user default_user
+2025-01-06 02:04:47,481 - root - INFO - main.py:222 - 成功获取 25 条记忆
+2025-01-06 02:04:47,483 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:04:47] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:04:53,724 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:04:53] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:04:54,138 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:04:54,138 - root - INFO - memory_manager.py:347 - Successfully retrieved 25 memories for user default_user
+2025-01-06 02:04:54,139 - root - INFO - main.py:222 - 成功获取 25 条记忆
+2025-01-06 02:04:54,141 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:04:54] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:05:07,112 - root - INFO - memory_manager.py:347 - Successfully retrieved 25 memories for user default_user
+2025-01-06 02:05:11,942 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:05:11] "POST /api/memories/clean HTTP/1.1" 200 -
+2025-01-06 02:05:11,973 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:05:11,973 - root - INFO - memory_manager.py:347 - Successfully retrieved 25 memories for user default_user
+2025-01-06 02:05:11,974 - root - INFO - main.py:222 - 成功获取 25 条记忆
+2025-01-06 02:05:11,976 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:05:11] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:05:17,054 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:05:17] "POST /api/memories/restructure-preview HTTP/1.1" 200 -
+2025-01-06 02:05:22,004 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:05:22] "POST /api/memories/restructure-preview HTTP/1.1" 200 -
+2025-01-06 02:05:52,702 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:05:52,704 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:05:52] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 02:05:53,002 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:05:53,002 - root - INFO - memory_manager.py:347 - Successfully retrieved 25 memories for user default_user
+2025-01-06 02:05:53,003 - root - INFO - main.py:222 - 成功获取 25 条记忆
+2025-01-06 02:05:53,004 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:05:53] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:06:08,612 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:08] "GET / HTTP/1.1" 200 -
+2025-01-06 02:06:09,362 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:09] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:06:12,140 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:12] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:06:12,833 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:06:12,833 - root - INFO - memory_manager.py:347 - Successfully retrieved 25 memories for user default_user
+2025-01-06 02:06:12,834 - root - INFO - main.py:222 - 成功获取 25 条记忆
+2025-01-06 02:06:12,834 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:12] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:06:13,975 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:13,977 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:13] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 02:06:15,327 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:15,329 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:15] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 02:06:15,779 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:15,781 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:15] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 02:06:15,837 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:15,839 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:15] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 02:06:17,216 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:17,218 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:17] "POST /api/memories/restructure HTTP/1.1" 200 -
+2025-01-06 02:06:45,641 - root - INFO - memory_manager.py:504 - Attempting to delete memories [23] for user default_user
+2025-01-06 02:06:45,641 - root - INFO - memory_manager.py:513 - Deleting memory at index 23
+2025-01-06 02:06:48,179 - root - INFO - memory_manager.py:504 - Attempting to delete memories [21] for user default_user
+2025-01-06 02:06:48,179 - root - INFO - memory_manager.py:513 - Deleting memory at index 21
+2025-01-06 02:06:48,387 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:48,387 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:06:48,388 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:48] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:06:48,406 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:06:48,407 - root - INFO - memory_manager.py:347 - Successfully retrieved 23 memories for user default_user
+2025-01-06 02:06:48,408 - root - INFO - main.py:222 - 成功获取 23 条记忆
+2025-01-06 02:06:48,409 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:48] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:06:50,401 - root - INFO - memory_manager.py:504 - Attempting to delete memories [20] for user default_user
+2025-01-06 02:06:50,401 - root - INFO - memory_manager.py:513 - Deleting memory at index 20
+2025-01-06 02:06:50,738 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:50,738 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:06:50,738 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:50] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:06:50,753 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:06:50,753 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 02:06:50,754 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 02:06:50,755 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:50] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:06:51,400 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:51,401 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:06:51,402 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:51] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:06:51,409 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:06:51,409 - root - INFO - memory_manager.py:347 - Successfully retrieved 22 memories for user default_user
+2025-01-06 02:06:51,410 - root - INFO - main.py:222 - 成功获取 22 条记忆
+2025-01-06 02:06:51,411 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:51] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:06:54,532 - root - INFO - memory_manager.py:504 - Attempting to delete memories [21] for user default_user
+2025-01-06 02:06:54,532 - root - INFO - memory_manager.py:513 - Deleting memory at index 21
+2025-01-06 02:06:55,064 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:55,065 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:06:55,066 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:55] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:06:55,079 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:06:55,079 - root - INFO - memory_manager.py:347 - Successfully retrieved 21 memories for user default_user
+2025-01-06 02:06:55,080 - root - INFO - main.py:222 - 成功获取 21 条记忆
+2025-01-06 02:06:55,081 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:55] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:06:57,155 - root - INFO - memory_manager.py:504 - Attempting to delete memories [20] for user default_user
+2025-01-06 02:06:57,156 - root - INFO - memory_manager.py:513 - Deleting memory at index 20
+2025-01-06 02:06:57,747 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:06:57,748 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:06:57,749 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:57] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:06:57,778 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:06:57,778 - root - INFO - memory_manager.py:347 - Successfully retrieved 20 memories for user default_user
+2025-01-06 02:06:57,778 - root - INFO - main.py:222 - 成功获取 20 条记忆
+2025-01-06 02:06:57,780 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:57] "GET /api/memories HTTP/1.1" 200 -

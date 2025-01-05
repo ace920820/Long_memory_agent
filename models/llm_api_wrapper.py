@@ -7,7 +7,7 @@ import logging
 
 class LLMAPIWrapper:
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None, base_url: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"):
-        self.api_key = api_key or os.getenv("DASHSCOPE_API_KEY")
+        self.api_key = os.getenv("DASHSCOPE_API_KEY")
         self.model = model or os.getenv("DASHSCOPE_MODEL")
         self.base_url = base_url
 
@@ -82,7 +82,7 @@ class LLMAPIWrapper:
 # Example usage
 if __name__ == "__main__":
     try:
-        api_wrapper = LLMAPIWrapper(api_key="sk-6423f724e06d488ca246f2425f6707f4")
+        api_wrapper = LLMAPIWrapper(api_key=os.getenv("DASHSCOPE_API_KEY"))
         response = api_wrapper.call_model(
             model="qwen-plus",
             messages=[
