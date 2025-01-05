@@ -15,3 +15,9 @@
 2025-01-06 01:49:42,468 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
 2025-01-06 01:49:51,384 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
 2025-01-06 01:49:57,457 - root - ERROR - main.py:312 - Error splitting memory: split_memory() missing 1 required positional argument: 'llm_model'
+2025-01-06 02:01:30,759 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:01:34,479 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:01:37,543 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:02:54,669 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:02:58,981 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:03:13,580 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined

@@ -5167,3 +5167,52 @@
 2025-01-06 02:06:57,778 - root - INFO - memory_manager.py:347 - Successfully retrieved 20 memories for user default_user
 2025-01-06 02:06:57,778 - root - INFO - main.py:222 - 成功获取 20 条记忆
 2025-01-06 02:06:57,780 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:06:57] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:08:30,022 - root - INFO - memory_manager.py:504 - Attempting to delete memories [7] for user default_user
+2025-01-06 02:08:30,023 - root - INFO - memory_manager.py:513 - Deleting memory at index 7
+2025-01-06 02:08:30,513 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:08:30,514 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:08:30,514 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:08:30] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:08:30,535 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:08:30,536 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 02:08:30,536 - root - INFO - main.py:222 - 成功获取 19 条记忆
+2025-01-06 02:08:30,538 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:08:30] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:09:35,694 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 02:09:35,696 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 02:09:35,739 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 02:09:35,740 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 02:09:35,741 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 02:09:35,742 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 02:09:37,763 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 02:10:06,298 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 02:10:06,314 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 02:12:11,979 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 02:12:11,980 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 02:12:12,006 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 02:12:36,861 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 02:12:36,878 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 02:13:02,777 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:13:02] "GET / HTTP/1.1" 200 -
+2025-01-06 02:13:03,902 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:13:03] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 02:13:25,974 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:13:25] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 02:13:26,357 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:13:26,358 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 02:13:26,359 - root - INFO - main.py:222 - 成功获取 19 条记忆
+2025-01-06 02:13:26,362 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:13:26] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:13:31,905 - root - INFO - memory_manager.py:504 - Attempting to delete memories [11] for user default_user
+2025-01-06 02:13:31,905 - root - INFO - memory_manager.py:513 - Deleting memory at index 11
+2025-01-06 02:13:32,302 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:13:32,303 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:13:32,303 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:13:32] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:13:32,351 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:13:32,351 - root - INFO - memory_manager.py:347 - Successfully retrieved 18 memories for user default_user
+2025-01-06 02:13:32,352 - root - INFO - main.py:222 - 成功获取 18 条记忆
+2025-01-06 02:13:32,353 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:13:32] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 02:13:34,587 - root - INFO - memory_manager.py:504 - Attempting to delete memories [12] for user default_user
+2025-01-06 02:13:34,588 - root - INFO - memory_manager.py:513 - Deleting memory at index 12
+2025-01-06 02:13:35,224 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-06 02:13:35,225 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-06 02:13:35,225 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:13:35] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-06 02:13:35,254 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-06 02:13:35,255 - root - INFO - memory_manager.py:347 - Successfully retrieved 17 memories for user default_user
+2025-01-06 02:13:35,255 - root - INFO - main.py:222 - 成功获取 17 条记忆
+2025-01-06 02:13:35,256 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:13:35] "GET /api/memories HTTP/1.1" 200 -

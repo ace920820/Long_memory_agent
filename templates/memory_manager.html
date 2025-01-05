@@ -606,32 +606,21 @@
 
         // 删除记忆
         async function deleteMemory(memoryId) {
-            console.log('Attempting to delete memory:', memoryId); // 添加调试日志
-            
-            if (!confirm('确定要删除这条记忆吗？')) {
-                return;
-            }
-
             try {
                 const response = await fetch('/api/memories/delete', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        memoryIds: [memoryId]
+                        memoryIds: [memoryId],
+                        user_id: 'default_user'
                     })
                 });
 
-                console.log('Delete response:', response); // 添加调试日志
-
                 const result = await response.json();
-                console.log('Delete result:', result); // 添加调试日志
                 
                 if (result.success) {
-                    // 从选中集合中移除
                     selectedMemories.delete(memoryId);
-                    // 重新加载记忆列表
                     await fetchMemories();
-                    // 显示成功消息
                     showNotification('记忆已删除', 'success');
                 } else {
                     showNotification(`删除失败: ${result.error}`, 'error');
