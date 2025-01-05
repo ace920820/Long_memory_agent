@@ -122,19 +122,16 @@
     <div class="snowflake" style="top: 0; left: 70%; animation-delay: 6s;"></div>
     <div class="snowflake" style="top: 0; left: 90%; animation-delay: 8s;"></div>
 
-    <div class="memory-manager-button-container" style="position: fixed; top: 20px; right: 20px;">
-        <button onclick="openMemoryManager()" class="memory-manager-btn" style="
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        ">
+    <div class="management-buttons" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 10px;">
+        <a href="/memory-manager" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 flex items-center shadow-lg">
+            <span class="mdi mdi-brain mr-2"></span>
             记忆管理
-        </button>
+        </a>
+        
+        <a href="/knowledge-base" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center shadow-lg">
+            <span class="mdi mdi-database mr-2"></span>
+            知识库管理
+        </a>
     </div>
 
     <script>

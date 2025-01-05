@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG 知识库管理系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex">
+        <!-- 侧边栏 -->
+        <aside class="w-64 bg-white shadow-lg">
+            <div class="p-4 border-b">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-xl font-bold text-gray-800">知识库管理</h1>
+                    <a href="/" class="text-blue-600 hover:text-blue-800">返回对话</a>
+                </div>
+            </div>
+            <nav class="p-4 space-y-2">
+                <button onclick="showTab('documents')" class="w-full flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg">
+                    <span class="mdi mdi-folder-multiple mr-3"></span>
+                    文档管理
+                </button>
+                <button onclick="showTab('content')" class="w-full flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mdi mdi-file-document-edit mr-3"></span>
+                    内容管理
+                </button>
+                <button onclick="showTab('index')" class="w-full flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mdi mdi-database mr-3"></span>
+                    索引管理
+                </button>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="flex-1 p-8">
+            <!-- 文档管理页面 -->
+            <div id="documents-tab" class="space-y-6">
+                <!-- 顶部操作栏 -->
+                <div class="flex justify-between items-center">
+                    <div class="flex gap-4">
+                        <button onclick="showUploadModal()" class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center hover:bg-blue-600">
+                            <span class="mdi mdi-upload mr-2"></span>
+                            上传文档
+                        </button>
+                        <button onclick="showIndexModal()" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center hover:bg-green-600">
+                            <span class="mdi mdi-refresh mr-2"></span>
+                            更新索引
+                        </button>
+                    </div>
+                    <div class="flex gap-4">
+                        <select id="docTypeFilter" class="px-4 py-2 border rounded-lg">
+                            <option value="">所有类型</option>
+                            <option value="pdf">PDF文档</option>
+                            <option value="docx">Word文档</option>
+                            <option value="md">Markdown</option>
+                            <option value="txt">纯文本</option>
+                        </select>
+                        <input type="text" id="searchDocs" placeholder="搜索文档..." 
+                            class="px-4 py-2 border rounded-lg w-64">
+                    </div>
+                </div>
+
+                <!-- 文档列表 -->
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-4 border-b">
+                        <h2 class="text-lg font-semibold">文档列表</h2>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <input type="checkbox" class="rounded" onclick="toggleAllDocuments(this)">
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">文档名称</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">大小</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">状态</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">更新时间</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="documentsList" class="bg-white divide-y divide-gray-200">
+                                <!-- 文档列表将通过 JavaScript 动态加载 -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 分页控件 -->
+                    <div class="px-6 py-4 flex items-center justify-between border-t">
+                        <div class="flex items-center">
+                            <span class="text-sm text-gray-700">每页显示</span>
+                            <select id="pageSize" class="mx-2 border rounded px-2 py-1">
+                                <option>10</option>
+                                <option>20</option>
+                                <option>50</option>
+                            </select>
+                            <span class="text-sm text-gray-700">条</span>
+                        </div>
+                        <div class="flex gap-2" id="pagination">
+                            <!-- 分页按钮将通过 JavaScript 动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 内容管理页面 -->
+            <div id="content-tab" class="hidden space-y-6">
+                <!-- 内容编辑区域 -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-semibold mb-4">内容编辑</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">分段设置</label>
+                            <div class="flex gap-4">
+                                <input type="number" class="px-4 py-2 border rounded-lg w-32" placeholder="段落大小">
+                                <select class="px-4 py-2 border rounded-lg">
+                                    <option>按段落</option>
+                                    <option>按字数</option>
+                                    <option>按句子</option>
+                                </select>
+                                <button class="px-4 py-2 bg-blue-500 text-white rounded-lg">应用</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">内容预览</label>
+                            <div class="border rounded-lg p-4 min-h-[200px] max-h-[400px] overflow-y-auto">
+                                <!-- 内容预览区域 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 索引管理页面 -->
+            <div id="index-tab" class="hidden space-y-6">
+                <!-- 索引状态卡片 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold mb-4">索引状态</h3>
+                        <div class="space-y-2">
+                            <p>总文档数：<span id="totalDocs">0</span></p>
+                            <p>已索引：<span id="indexedDocs">0</span></p>
+                            <p>索引大小：<span id="indexSize">0 MB</span></p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold mb-4">索引操作</h3>
+                        <div class="space-y-2">
+                            <button onclick="rebuildIndex()" class="w-full px-4 py-2 bg-blue-500 text-white rounded-lg">重建索引</button>
+                            <button onclick="optimizeIndex()" class="w-full px-4 py-2 bg-green-500 text-white rounded-lg">优化索引</button>
+                            <button onclick="backupIndex()" class="w-full px-4 py-2 bg-yellow-500 text-white rounded-lg">备份索引</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold mb-4">索引配置</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span>向量维度</span>
+                                <input type="number" value="512" class="border rounded px-2 py-1 w-24">
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>相似度阈值</span>
+                                <input type="number" value="0.8" step="0.1" min="0" max="1" class="border rounded px-2 py-1 w-24">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 上传文档模态框 -->
+    <div id="uploadModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-2xl">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">上传文档</h3>
+                <button onclick="closeUploadModal()" class="text-gray-500 hover:text-gray-700">
+                    <span class="mdi mdi-close"></span>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                    <div class="space-y-2">
+                        <span class="mdi mdi-upload text-4xl text-gray-400"></span>
+                        <p class="text-gray-600">拖拽文件到此处或点击上传</p>
+                        <p class="text-sm text-gray-500">支持 PDF, Word, Markdown, TXT 格式</p>
+                    </div>
+                    <input type="file" id="fileInput" class="hidden" multiple accept=".pdf,.docx,.md,.txt">
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span>文档类型</span>
+                        <select class="border rounded px-2 py-1">
+                            <option>自动检测</option>
+                            <option>技术文档</option>
+                            <option>知识库</option>
+                            <option>其他</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end gap-4">
+                <button onclick="closeUploadModal()" class="px-4 py-2 border rounded-lg hover:bg-gray-100">取消</button>
+                <button onclick="uploadDocuments()" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">开始上传</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDocuments();
+            updateIndexStats();
+        });
+
+        // 显示/隐藏不同的标签页
+        function showTab(tabName) {
+            document.querySelectorAll('[id$="-tab"]').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            document.getElementById(`${tabName}-tab`).classList.remove('hidden');
+        }
+
+        // 加载文档列表
+        async function loadDocuments() {
+            try {
+                const response = await fetch('/api/documents');
+                const data = await response.json();
+                renderDocuments(data.documents || []);
+            } catch (error) {
+                console.error('Error loading documents:', error);
+                showNotification('加载文档列表失败', 'error');
+            }
+        }
+
+        // 渲染文档列表
+        function renderDocuments(documents) {
+            const tbody = document.getElementById('documentsList');
+            tbody.innerHTML = documents.map((doc, index) => `
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <input type="checkbox" class="rounded" value="${doc.id}">
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center">
+                            <span class="mdi ${getFileIcon(doc.type)} text-2xl mr-2"></span>
+                            <span class="text-sm text-gray-900">${doc.name}</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getTypeColor(doc.type)}">
+                            ${doc.type}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        ${formatFileSize(doc.size)}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(doc.status)}">
+                            ${doc.status}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        ${formatDate(doc.updated_at)}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <div class="flex gap-2">
+                            <button onclick="previewDocument(${doc.id})" class="text-blue-600 hover:text-blue-900">预览</button>
+                            <button onclick="editDocument(${doc.id})" class="text-green-600 hover:text-green-900">编辑</button>
+                            <button onclick="deleteDocument(${doc.id})" class="text-red-600 hover:text-red-900">删除</button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // 辅助函数
+        function getFileIcon(type) {
+            const icons = {
+                'pdf': 'mdi-file-pdf',
+                'docx': 'mdi-file-word',
+                'md': 'mdi-language-markdown',
+                'txt': 'mdi-file-document'
+            };
+            return icons[type] || 'mdi-file';
+        }
+
+        function getTypeColor(type) {
+            const colors = {
+                'pdf': 'bg-red-100 text-red-800',
+                'docx': 'bg-blue-100 text-blue-800',
+                'md': 'bg-green-100 text-green-800',
+                'txt': 'bg-gray-100 text-gray-800'
+            };
+            return colors[type] || 'bg-gray-100 text-gray-800';
+        }
+
+        function getStatusColor(status) {
+            const colors = {
+                '已索引': 'bg-green-100 text-green-800',
+                '未索引': 'bg-yellow-100 text-yellow-800',
+                '处理中': 'bg-blue-100 text-blue-800',
+                '错误': 'bg-red-100 text-red-800'
+            };
+            return colors[status] || 'bg-gray-100 text-gray-800';
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function formatDate(date) {
+            return new Date(date).toLocaleString('zh-CN');
+        }
+
+        // 模态框操作
+        function showUploadModal() {
+            document.getElementById('uploadModal').classList.remove('hidden');
+        }
+
+        function closeUploadModal() {
+            document.getElementById('uploadModal').classList.add('hidden');
+        }
+
+        // 文件上传
+        async function uploadDocuments() {
+            const fileInput = document.getElementById('fileInput');
+            const files = fileInput.files;
+            
+            if (files.length === 0) {
+                showNotification('请选择要上传的文件', 'warning');
+                return;
+            }
+
+            const formData = new FormData();
+            for (let file of files) {
+                formData.append('files', file);
+            }
+
+            try {
+                const response = await fetch('/api/documents/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('文件上传成功', 'success');
+                    closeUploadModal();
+                    loadDocuments();
+                } else {
+                    showNotification(result.error || '上传失败', 'error');
+                }
+            } catch (error) {
+                console.error('Error uploading files:', error);
+                showNotification('上传文件时发生错误', 'error');
+            }
+        }
+
+        // 通知功能
+        function showNotification(message, type = 'info') {
+            // 实现通知显示逻辑
+        }
+
+        // 更新索引统计信息
+        async function updateIndexStats() {
+            try {
+                const response = await fetch('/api/index/stats');
+                const stats = await response.json();
+                
+                document.getElementById('totalDocs').textContent = stats.total_docs;
+                document.getElementById('indexedDocs').textContent = stats.indexed_docs;
+                document.getElementById('indexSize').textContent = formatFileSize(stats.index_size);
+            } catch (error) {
+                console.error('Error updating index stats:', error);
+            }
+        }
+
+        // 索引操作
+        async function rebuildIndex() {
+            // 实现重建索引逻辑
+        }
+
+        async function optimizeIndex() {
+            // 实现优化索引逻辑
+        }
+
+        async function backupIndex() {
+            // 实现备份索引逻辑
+        }
+    </script>
+</body>
+</html> 
