@@ -95,9 +95,9 @@
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
       "access_stats": {
-        "count": 8,
+        "count": 9,
         "first_access": "2025-01-02T17:03:35.697037",
-        "last_access": "2025-01-02T18:02:36.386664",
+        "last_access": "2025-01-02T19:15:25.841472",
         "access_history": [
           {
             "timestamp": "2025-01-02T17:03:35.697037",
@@ -130,6 +130,10 @@
           {
             "timestamp": "2025-01-02T18:02:36.386664",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-02T19:15:25.841472",
+            "type": "reference"
           }
         ]
       },
@@ -141,12 +145,17 @@
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-02T17:02:45.858098",
-        "access_history": []
+        "last_access": "2025-01-03T19:32:12.500559",
+        "access_history": [
+          {
+            "timestamp": "2025-01-03T19:32:12.500559",
+            "type": "reference"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.92
     },
     {
       "id": "m_1735809995352_8220",
@@ -154,12 +163,21 @@
       "type": "fact",
       "timestamp": "2025-01-02T17:02:45.858098",
       "access_stats": {
-        "count": 0,
+        "count": 2,
         "first_access": "2025-01-02T17:02:45.858098",
-        "last_access": "2025-01-02T17:02:45.858098",
-        "access_history": []
+        "last_access": "2025-01-03T19:29:53.296323",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T19:20:57.173929",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-03T19:29:53.296323",
+            "type": "reference"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.92
     },
     {
       "id": "m_1735809995352_8164",
@@ -311,9 +329,123 @@
       "type": "dialogue",
       "timestamp": "2025-01-02T18:19:02.177210",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-02T18:19:02.177210",
-        "last_access": "2025-01-02T18:19:02.177210",
+        "last_access": "2025-01-02T18:20:16.643235",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T18:20:16.643235",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1735813315550_7359",
+      "content": "Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T18:21:55.550469",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-02T18:21:55.550469",
+        "last_access": "2025-01-02T18:22:16.573859",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T18:22:16.573859",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1735816357540_9594",
+      "content": "你是谁",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T19:12:37.540150",
+      "access_stats": {
+        "count": 3,
+        "first_access": "2025-01-02T19:12:37.540150",
+        "last_access": "2025-01-03T19:29:06.074414",
+        "access_history": [
+          {
+            "timestamp": "2025-01-02T19:12:47.705991",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-03T19:28:45.619008",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-03T19:29:06.074414",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1735816437913_6941",
+      "content": "author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T19:13:57.913314",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-02T19:13:57.913314",
+        "last_access": "2025-01-02T19:13:57.913314",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1735816534549_8914",
+      "content": "过节了请你推荐给我一个我会喜欢的饮料",
+      "type": "dialogue",
+      "timestamp": "2025-01-02T19:15:34.549380",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-02T19:15:34.549380",
+        "last_access": "2025-01-02T19:15:34.549380",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1735883425032_3608",
+      "content": "你好呀，新年快乐！",
+      "type": "dialogue",
+      "timestamp": "2025-01-03T13:50:25.032441",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-03T13:50:25.032441",
+        "last_access": "2025-01-03T13:50:25.032441",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1735903901409_6313",
+      "content": "我今天吃了两顿三明治",
+      "type": "dialogue",
+      "timestamp": "2025-01-03T19:31:41.409920",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-03T19:31:41.409920",
+        "last_access": "2025-01-03T19:31:41.409920",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1735903945800_3040",
+      "content": "我喜欢看的电视剧有哪些",
+      "type": "dialogue",
+      "timestamp": "2025-01-03T19:32:25.800493",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-03T19:32:25.800493",
+        "last_access": "2025-01-03T19:32:25.800493",
         "access_history": []
       },
       "priority_score": 0.0

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>记忆管理系统</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 添加图表库 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
@@ -14,33 +16,53 @@
             <a href="/" class="text-blue-600 hover:text-blue-800">返回对话</a>
         </nav>
 
-        <!-- 记忆分类标签 -->
-        <div class="mb-6">
-            <h2 class="text-lg font-semibold mb-3">记忆分类</h2>
-            <div class="flex flex-wrap gap-2" id="memoryTags">
-                <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full active" data-type="all">全部</button>
-                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="fact">事实</button>
-                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="preference">偏好</button>
-                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="dialogue">对话</button>
+        <!-- 记忆统计面板 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- 记忆类型分布 -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold mb-4">记忆类型分布</h3>
+                <canvas id="memoryTypeChart"></canvas>
+            </div>
+            <!-- 记忆访问统计 -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold mb-4">访问频率统计</h3>
+                <canvas id="accessFrequencyChart"></canvas>
+            </div>
+            <!-- 记忆时间分布 -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold mb-4">记忆时间分布</h3>
+                <canvas id="timeDistributionChart"></canvas>
             </div>
         </div>
 
-        <!-- 记忆管理工具栏 -->
-        <div class="flex justify-between items-center mb-6">
-            <div class="flex gap-4">
-                <button onclick="showAddMemoryModal()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-                    添加记忆
-                </button>
-                <button onclick="restructureSelectedMemories()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                    重构选中记忆
-                </button>
-                <button onclick="cleanMemories()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
-                    清理重复记忆
-                </button>
-            </div>
-            <div class="flex gap-2">
-                <input type="text" id="searchMemory" placeholder="搜索记忆..." 
-                    class="px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
+        <!-- 记忆分类标签和工具栏 -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <!-- 记忆分类标签 -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-3">记忆分类</h2>
+                    <div class="flex flex-wrap gap-2" id="memoryTags">
+                        <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full active" data-type="all">全部</button>
+                        <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="fact">事实</button>
+                        <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="preference">偏好</button>
+                        <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="dialogue">对话</button>
+                    </div>
+                </div>
+
+                <!-- 记忆管理工具 -->
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="showAddMemoryModal()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                        添加记忆
+                    </button>
+                    <button onclick="restructureSelectedMemories()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        重构选中
+                    </button>
+                    <button onclick="cleanMemories()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+                        清理重复
+                    </button>
+                    <input type="text" id="searchMemory" placeholder="搜索记忆..." 
+                        class="px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
+                </div>
             </div>
         </div>
 
@@ -49,21 +71,34 @@
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             <input type="checkbox" id="selectAll" class="rounded">
                         </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            内容
-                        </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">时间</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">内容</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">类型</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">创建时间</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">访问统计</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
                     </tr>
                 </thead>
                 <tbody id="memoriesList" class="bg-white divide-y divide-gray-200">
                     <!-- 记忆列表将在这里动态渲染 -->
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <!-- 记忆详情模态框 -->
+    <div id="memoryDetailModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-4xl">
+            <h3 class="text-lg font-semibold mb-4">记忆详情</h3>
+            <div id="memoryDetailContent" class="space-y-4">
+                <!-- 记忆详情将在这里动态渲染 -->
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeMemoryDetailModal()" 
+                    class="px-4 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200">关闭</button>
+            </div>
         </div>
     </div>
 
@@ -224,88 +259,68 @@
                 return;
             }
             
-            try {
-                // 重置全选框
-                const selectAllCheckbox = document.getElementById('selectAll');
-                if (selectAllCheckbox) {
-                    selectAllCheckbox.checked = false;
-                }
-                
-                tbody.innerHTML = memoriesToRender.map((memory, index) => {
-                    try {
-                        const date = new Date(memory.timestamp);
-                        const formattedDate = date.toLocaleString('zh-CN', {
-                            year: 'numeric',
-                            month: '2-digit',
-                            day: '2-digit',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        });
-
-                        return `
-                            <tr class="hover:bg-gray-50" data-memory-id="${index}">
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <input type="checkbox" class="memory-checkbox rounded" 
-                                        value="${index}" 
-                                        ${selectedMemories.has(index) ? 'checked' : ''}>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="text-sm text-gray-900 whitespace-pre-wrap">${memory.content}</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
-                                        ${memory.type}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    ${formattedDate}
-                                </td>
-                                <td class="px-6 py-4 text-sm flex gap-2">
-                                    <button onclick="deleteMemory(${index})" 
-                                        class="text-red-600 hover:text-red-900 hover:underline">
-                                        删除
-                                    </button>
-                                    ${memory.content.length > 30 ? `
-                                        <button onclick="splitMemory(${index})" 
-                                            class="text-yellow-600 hover:text-yellow-900 hover:underline flex items-center">
-                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                                    d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2"/>
-                                            </svg>
-                                            拆分
-                                        </button>
-                                    ` : ''}
-                                </td>
-                            </tr>
-                        `;
-                    } catch (e) {
-                        console.error('Error rendering memory row:', e);
-                        return '';
-                    }
-                }).join('');
-
-                // 添加复选框事件监听
-                document.querySelectorAll('.memory-checkbox').forEach(checkbox => {
-                    checkbox.addEventListener('change', (e) => {
-                        const memoryId = parseInt(e.target.value);
-                        if (e.target.checked) {
-                            selectedMemories.add(memoryId);
-                        } else {
-                            selectedMemories.delete(memoryId);
-                            // 取消选择时同时取消全选
-                            document.getElementById('selectAll').checked = false;
-                        }
-                        updateRestructureButtonState();
-                    });
+            tbody.innerHTML = memoriesToRender.map((memory, index) => {
+                const date = new Date(memory.timestamp);
+                const formattedDate = date.toLocaleString('zh-CN', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit'
                 });
-                
-                // 更新重构按钮状态
-                updateRestructureButtonState();
-                
-            } catch (e) {
-                console.error('Error in renderMemories:', e);
-                tbody.innerHTML = '<tr><td colspan="5" class="px-6 py-4 text-center text-red-600">渲染记忆列表时出错</td></tr>';
-            }
+
+                // 访问统计信息
+                const accessStats = memory.access_stats || {};
+                const accessCount = accessStats.count || 0;
+                const lastAccess = accessStats.last_access ? 
+                    new Date(accessStats.last_access).toLocaleString('zh-CN', {
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    }) : '无访问记录';
+
+                return `
+                    <tr class="hover:bg-gray-50" data-memory-id="${index}">
+                        <td class="px-4 py-4 whitespace-nowrap">
+                            <input type="checkbox" class="memory-checkbox rounded" 
+                                value="${index}" 
+                                ${selectedMemories.has(index) ? 'checked' : ''}>
+                        </td>
+                        <td class="px-4 py-4">
+                            <div class="text-sm text-gray-900 whitespace-pre-wrap cursor-pointer hover:text-blue-600"
+                                onclick="showMemoryDetail(${index})">
+                                ${memory.content}
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getTypeColor(memory.type)}">
+                                ${memory.type}
+                            </span>
+                        </td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                            ${formattedDate}
+                        </td>
+                        <td class="px-4 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-500">
+                                <div>访问次数: ${accessCount}</div>
+                                <div>最近访问: ${lastAccess}</div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 text-sm flex gap-2">
+                            <button onclick="deleteMemory(${index})" 
+                                class="text-red-600 hover:text-red-900 hover:underline">删除</button>
+                            ${memory.content.length > 30 ? `
+                                <button onclick="splitMemory(${index})" 
+                                    class="text-yellow-600 hover:text-yellow-900 hover:underline">拆分</button>
+                            ` : ''}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            // 更新统计图表
+            updateMemoryStats(memoriesToRender);
         }
 
         // 获取记忆类型的颜色样式
@@ -657,6 +672,160 @@
                 console.error('Error:', error);
                 showNotification('清理过程中发生错误', 'error');
             }
+        }
+
+        // 显示记忆详情
+        function showMemoryDetail(index) {
+            const memory = memories[index];
+            const modal = document.getElementById('memoryDetailModal');
+            const content = document.getElementById('memoryDetailContent');
+
+            const accessStats = memory.access_stats || {};
+            const accessHistory = accessStats.access_history || [];
+
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-500 mb-2">记忆内容</h4>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <p class="text-gray-900 whitespace-pre-wrap">${memory.content}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="text-sm font-medium text-gray-500 mb-2">基本信息</h4>
+                            <div class="p-4 bg-gray-50 rounded-lg space-y-2">
+                                <p>ID: ${memory.id || '无'}</p>
+                                <p>类型: ${memory.type}</p>
+                                <p>创建时间: ${new Date(memory.timestamp).toLocaleString()}</p>
+                                <p>优先级分数: ${memory.priority_score || 0}</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-sm font-medium text-gray-500 mb-2">访问统计</h4>
+                            <div class="p-4 bg-gray-50 rounded-lg space-y-2">
+                                <p>总访问次数: ${accessStats.count || 0}</p>
+                                <p>首次访问: ${accessStats.first_access ? new Date(accessStats.first_access).toLocaleString() : '无'}</p>
+                                <p>最近访问: ${accessStats.last_access ? new Date(accessStats.last_access).toLocaleString() : '无'}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-500 mb-2">最近访问历史</h4>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            ${accessHistory.length > 0 ? `
+                                <div class="space-y-2">
+                                    ${accessHistory.map(access => `
+                                        <div class="flex justify-between text-sm">
+                                            <span>${new Date(access.timestamp).toLocaleString()}</span>
+                                            <span class="text-gray-500">${access.type}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : '<p class="text-gray-500">暂无访问记录</p>'}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+        }
+
+        // 关闭记忆详情模态框
+        function closeMemoryDetailModal() {
+            document.getElementById('memoryDetailModal').classList.add('hidden');
+        }
+
+        // 更新统计图表
+        function updateMemoryStats(memories) {
+            // 记忆类型分布
+            const typeStats = memories.reduce((acc, memory) => {
+                acc[memory.type] = (acc[memory.type] || 0) + 1;
+                return acc;
+            }, {});
+
+            new Chart(document.getElementById('memoryTypeChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(typeStats),
+                    datasets: [{
+                        data: Object.values(typeStats),
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.8)',
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(75, 192, 192, 0.8)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // 访问频率统计
+            const accessStats = memories.map(m => m.access_stats?.count || 0);
+            new Chart(document.getElementById('accessFrequencyChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['0', '1-5', '6-10', '10+'],
+                    datasets: [{
+                        label: '访问次数分布',
+                        data: [
+                            accessStats.filter(count => count === 0).length,
+                            accessStats.filter(count => count > 0 && count <= 5).length,
+                            accessStats.filter(count => count > 5 && count <= 10).length,
+                            accessStats.filter(count => count > 10).length
+                        ],
+                        backgroundColor: 'rgba(54, 162, 235, 0.8)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // 记忆时间分布
+            const timeStats = memories.reduce((acc, memory) => {
+                const date = new Date(memory.timestamp);
+                const month = date.toLocaleString('zh-CN', { month: 'short' });
+                acc[month] = (acc[month] || 0) + 1;
+                return acc;
+            }, {});
+
+            new Chart(document.getElementById('timeDistributionChart'), {
+                type: 'line',
+                data: {
+                    labels: Object.keys(timeStats),
+                    datasets: [{
+                        label: '记忆数量',
+                        data: Object.values(timeStats),
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
         }
     </script>
 </body>

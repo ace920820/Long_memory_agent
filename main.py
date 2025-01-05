@@ -329,6 +329,10 @@ def create_app():
             logging.error(f"Error accessing memory: {str(e)}")
             return jsonify({"error": "Failed to access memory"}), 500
 
+    @app.route('/knowledge-base')
+    def knowledge_base():
+        return render_template('knowledge_base.html')
+
     return app
 
 if __name__ == "__main__":

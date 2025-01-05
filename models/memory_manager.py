@@ -698,74 +698,7 @@ class MemoryManager:
                 
         except Exception as e:
             logging.error(f"Error in LLM-based split: {str(e)}")
-            return None 
-
-    def get_relevant_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
-        """获取与查询相关的记忆
-        
-        Args:
-            user_id: 用户ID
-            query: 查询文本
-            top_k: 返回的最相关记忆数量
-            
-        Returns:
-            相关记忆列表，每个记忆包含相似度分数
-        """
-        try:
-            # 获取用户的所有记忆
-            all_memories = self.get_all_memories(user_id)
-            if not all_memories:
-                return []
-
-            # 计算查询的嵌入向量
-            query_embedding = self.model.encode([query], convert_to_tensor=True)
-            
-            # 为每条记忆计算相似度并记录
-            memory_scores = []
-            for idx, memory in enumerate(all_memories):
-                content = memory['content']
-                memory_embedding = self.model.encode([content], convert_to_tensor=True)
-                similarity = util.pytorch_cos_sim(query_embedding, memory_embedding)[0][0].item()
-                
-                # 记录详细的相似度信息
-                memory_scores.append({
-                    'content': content,
-                    'similarity': similarity,
-                    'memory_id': memory.get('id', '未知'),
-                    'timestamp': memory.get('timestamp', '未知'),
-                    'index': idx  # 添加索引以便后续更新访问统计
-                })
-                logging.debug(f"记忆相似度计算:\n"
-                             f"查询: {query}\n"
-                             f"记忆: {content}\n"
-                             f"相似度: {similarity:.4f}")
-
-            # 按相似度排序
-            memory_scores.sort(key=lambda x: x['similarity'], reverse=True)
-            
-            # 获取相似度超过阈值的记忆
-            relevant_memories = []
-            for score in memory_scores[:top_k]:
-                if score['similarity'] >= self.similarity_threshold:
-                    memory_idx = score['index']
-                    memory = all_memories[memory_idx].copy()
-                    memory['similarity'] = score['similarity']
-                    
-                    # 更新记忆访问统计
-                    self.update_memory_access(user_id, memory_idx, 'reference')
-                    
-                    relevant_memories.append(memory)
-                    logging.info(f"记忆匹配 (得分: {score['similarity']:.4f}):\n"
-                               f"文本: {score['content']}")
-                else:
-                    logging.info(f"记忆因相似度过低被过滤 (得分: {score['similarity']:.4f}):\n"
-                               f"文本: {score['content']}")
-
-            return relevant_memories
-            
-        except Exception as e:
-            logging.error(f"获取相关记忆失败: {str(e)}")
-            return []
+            return None
 
     def clean_memories(self, user_id: str) -> Dict:
         """清理重复和无意义的记忆，并自动更新记忆类型"""

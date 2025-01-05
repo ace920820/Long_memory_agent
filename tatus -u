@@ -1,0 +1,8 @@
+[33mcommit 811456e4a3e1edabba8712e122d40e1330a830b5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: zhaobingzhi <zhaobingzhi@wondersgroup.com>
+Date:   Mon Jan 6 01:06:57 2025 +0800
+
+    feat: 添加知识库管理功能 1. 新增知识库管理页面，实现：文档管理（支持多格式文档上传、预览、编辑和删除）、内容管理（支持内容分段和编辑）、索引管理（支持索引状态查看和操作） 2. 更新主页面，添加知识库管理入口 3. 优化页面布局和交互体验
+
+M	templates/index.html
+A	templates/knowledge_base.html

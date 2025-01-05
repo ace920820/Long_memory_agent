@@ -3216,3 +3216,1242 @@
 2025-01-02 18:19:02,204 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
 2025-01-02 18:19:02,205 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 我祝你圣诞快乐
 2025-01-02 18:19:02,206 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:19:02] "POST /chat HTTP/1.1" 200 -
+2025-01-02 18:20:16,537 - root - INFO - rag_module.py:173 - 正在搜索查询: '祝你圣诞快乐'
+2025-01-02 18:20:16,538 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: 0.2548
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,538 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: 0.0069
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,538 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2336
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,539 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.2401
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,539 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.3258
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,539 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 18:20:16,648 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 18:20:16,650 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.9262):
+内容: 我祝你圣诞快乐
+2025-01-02 18:20:16,650 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5528):
+内容: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-02 18:20:16,651 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4859):
+内容: 你好啊
+2025-01-02 18:20:16,651 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4515):
+内容: 用户表示威士忌也很不错！
+2025-01-02 18:20:16,651 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4371):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-02 18:20:16,651 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-02 18:20:16,651 - root - INFO - memory_manager.py:322 - 1. 得分: 0.9262
+内容: 我祝你圣诞快乐
+
+2025-01-02 18:20:16,734 - root - INFO - rag_module.py:173 - 正在搜索查询: '祝你圣诞快乐'
+2025-01-02 18:20:16,734 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: 0.2548
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,735 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: 0.0069
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,735 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2336
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,735 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.2401
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,735 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.3258
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:20:16,736 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 18:20:21,598 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9601)
+2025-01-02 18:20:21,599 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:20:21] "POST /chat HTTP/1.1" 200 -
+2025-01-02 18:21:43,893 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago'
+2025-01-02 18:21:43,894 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2612
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:43,895 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4926
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:43,895 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.5525
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:43,896 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6103
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:43,896 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.6218
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:43,897 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 18:21:44,041 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4592):
+内容: 用户表示那瓦尔宝典是一本好书
+2025-01-02 18:21:44,042 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4591):
+内容: 我很喜欢看老友记
+2025-01-02 18:21:44,042 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4569):
+内容: 用户表示威士忌也很不错！
+2025-01-02 18:21:44,042 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4359):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-02 18:21:44,042 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4239):
+内容: 老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢
+2025-01-02 18:21:44,042 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-02 18:21:44,187 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago'
+2025-01-02 18:21:44,187 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2612
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:44,188 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4926
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:44,188 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.5525
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:44,188 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6103
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:44,188 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.6218
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:44,188 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 18:21:52,855 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago'
+2025-01-02 18:21:52,856 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2612
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:52,856 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4926
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:52,856 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.5525
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:52,856 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6103
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:52,856 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.6218
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:52,857 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 18:21:53,214 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4592):
+内容: 用户表示那瓦尔宝典是一本好书
+2025-01-02 18:21:53,214 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4591):
+内容: 我很喜欢看老友记
+2025-01-02 18:21:53,214 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4569):
+内容: 用户表示威士忌也很不错！
+2025-01-02 18:21:53,215 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4359):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-02 18:21:53,215 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4239):
+内容: 老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢
+2025-01-02 18:21:53,215 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-02 18:21:53,431 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago'
+2025-01-02 18:21:53,431 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2612
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:53,432 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4926
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:53,432 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.5525
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:53,432 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6103
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:53,432 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.6218
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:21:53,432 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 18:21:55,853 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 18:21:55,854 - root - INFO - memory_manager.py:249 - 成功添加新记忆: Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago
+2025-01-02 18:21:55,855 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:21:55] "POST /chat HTTP/1.1" 200 -
+2025-01-02 18:22:04,544 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to assistant
+2025-01-02 18:22:04,545 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:22:04] "POST /set_role HTTP/1.1" 200 -
+2025-01-02 18:22:04,671 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 1.0000)
+2025-01-02 18:22:04,675 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:22:04] "POST /chat HTTP/1.1" 200 -
+2025-01-02 18:22:16,419 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago。根据这些信息，帮我分类汇总今天的更新内容'
+2025-01-02 18:22:16,420 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2906
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:16,421 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.5208
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:16,422 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.5758
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:16,423 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6281
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:16,423 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.6343
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:16,423 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 18:22:16,577 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 18:22:16,578 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.9907):
+内容: Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago
+2025-01-02 18:22:16,578 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4613):
+内容: 我很喜欢看老友记
+2025-01-02 18:22:16,578 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4567):
+内容: 用户表示那瓦尔宝典是一本好书
+2025-01-02 18:22:16,579 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4552):
+内容: 用户表示威士忌也很不错！
+2025-01-02 18:22:16,579 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4366):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-02 18:22:16,579 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-02 18:22:16,579 - root - INFO - memory_manager.py:322 - 1. 得分: 0.9907
+内容: Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago
+
+2025-01-02 18:22:16,779 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Commits on Jan 2, 2025 memory_manager的嵌入模型更新，提升记忆查询准确率 author zhaobingzhi committed 1 minute ago 修复保存记忆时不带id的问题 author zhaobingzhi committed 7 minutes ago 决定增加新回忆是否插入的回忆相似度阈值 author zhaobingzhi committed 1 hour ago 修复记忆重构功能 author zhaobingzhi committed 1 hour ago 修改记忆的生成逻辑，只记录用户输入的内容，不记录代理回答的内容，并在增加记忆前先判定是否已存在相似记忆，如存在则不添加该条记忆。 author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago。根据这些信息，帮我分类汇总今天的更新内容'
+2025-01-02 18:22:17,035 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.2906
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:17,035 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.5208
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:17,036 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.5758
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:17,036 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.6281
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:17,037 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.6343
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 18:22:17,038 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 18:22:34,155 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:22:34] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-02 18:22:34,956 - root - INFO - memory_manager.py:347 - Successfully retrieved 13 memories for user default_user
+2025-01-02 18:22:34,957 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:22:34] "GET /api/memories HTTP/1.1" 200 -
+2025-01-02 18:22:35,511 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9953)
+2025-01-02 18:22:35,512 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:22:35] "POST /chat HTTP/1.1" 200 -
+2025-01-02 18:22:35,566 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 18:22:35] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-02 18:24:47,453 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-02 18:24:47,503 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-02 18:24:47,505 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-02 18:24:49,636 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-02 18:25:22,501 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-02 18:25:22,519 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-02 19:11:23,029 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-02 19:11:23,029 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-02 19:11:23,041 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-02 19:11:35,985 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-02 19:11:35,989 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-02 19:11:58,161 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:11:58] "GET / HTTP/1.1" 200 -
+2025-01-02 19:11:58,702 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:11:58] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-02 19:11:58,757 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:11:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-02 19:12:26,920 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:12:26] "POST /set_role HTTP/1.1" 200 -
+2025-01-02 19:12:27,409 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:12:27] "POST /set_role HTTP/1.1" 200 -
+2025-01-02 19:12:27,953 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:12:27] "POST /set_role HTTP/1.1" 200 -
+2025-01-02 19:12:28,565 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:12:28] "POST /set_role HTTP/1.1" 200 -
+2025-01-02 19:12:32,181 - root - INFO - rag_module.py:173 - 正在搜索查询: '你是谁'
+2025-01-02 19:12:32,181 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.0198
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,181 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1299
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,181 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2290
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,181 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.2334
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,181 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4472
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,181 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 19:12:32,200 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5299):
+内容: 你好啊
+2025-01-02 19:12:32,200 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4523):
+内容: 我祝你圣诞快乐
+2025-01-02 19:12:32,200 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4514):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-02 19:12:32,200 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4450):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-02 19:12:32,200 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4393):
+内容: 用户表示请推荐一部好看的电视剧
+2025-01-02 19:12:32,200 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-02 19:12:32,213 - root - INFO - rag_module.py:173 - 正在搜索查询: '你是谁'
+2025-01-02 19:12:32,213 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.0198
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,213 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1299
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,213 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2290
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,213 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.2334
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,213 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4472
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:32,213 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 19:12:37,552 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 19:12:37,552 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 你是谁
+2025-01-02 19:12:37,552 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:12:37] "POST /chat HTTP/1.1" 200 -
+2025-01-02 19:12:44,400 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to santa
+2025-01-02 19:12:44,400 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:12:44] "POST /set_role HTTP/1.1" 200 -
+2025-01-02 19:12:47,681 - root - INFO - rag_module.py:173 - 正在搜索查询: '你是谁'
+2025-01-02 19:12:47,681 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.0198
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,681 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1299
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,681 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2290
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,681 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.2334
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,681 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4472
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,681 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 19:12:47,710 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 19:12:47,710 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 1.0000):
+内容: 你是谁
+2025-01-02 19:12:47,710 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5299):
+内容: 你好啊
+2025-01-02 19:12:47,710 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4523):
+内容: 我祝你圣诞快乐
+2025-01-02 19:12:47,710 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4514):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-02 19:12:47,710 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4450):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-02 19:12:47,714 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-02 19:12:47,714 - root - INFO - memory_manager.py:322 - 1. 得分: 1.0000
+内容: 你是谁
+
+2025-01-02 19:12:47,730 - root - INFO - rag_module.py:173 - 正在搜索查询: '你是谁'
+2025-01-02 19:12:47,730 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.0198
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,730 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1299
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,730 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2290
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,730 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.2334
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,730 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4472
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:12:47,730 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 19:12:53,999 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 1.0000)
+2025-01-02 19:12:53,999 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:12:53] "POST /chat HTTP/1.1" 200 -
+2025-01-02 19:13:23,350 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:13:23] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-02 19:13:23,648 - root - INFO - memory_manager.py:347 - Successfully retrieved 14 memories for user default_user
+2025-01-02 19:13:23,650 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:13:23] "GET /api/memories HTTP/1.1" 200 -
+2025-01-02 19:13:56,919 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9825)
+2025-01-02 19:13:57,959 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 19:13:57,959 - root - INFO - memory_manager.py:249 - 成功添加新记忆: author zhaobingzhi committed 1 hour ago 修正文档查询失败问题 author zhaobingzhi committed 1 hour ago embeding更换为bge，补充RAG示例问题以及更新对应add文档过程 author zhaobingzhi committed 2 hours ago embeding更换为bge author zhaobingzhi committed 3 hours ago
+2025-01-02 19:13:57,962 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:13:57] "POST /api/memories/split HTTP/1.1" 200 -
+2025-01-02 19:14:24,389 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:14:24] "GET / HTTP/1.1" 200 -
+2025-01-02 19:14:24,441 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:14:24] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-02 19:14:38,283 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:14:38] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-02 19:14:38,594 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-02 19:14:38,594 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:14:38] "GET /api/memories HTTP/1.1" 200 -
+2025-01-02 19:15:25,793 - root - INFO - rag_module.py:173 - 正在搜索查询: '过节了请你推荐给我一个我会喜欢的饮料'
+2025-01-02 19:15:25,799 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.0226
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,799 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.1329
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,799 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.1820
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,799 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.2117
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,799 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.3342
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,801 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 19:15:25,850 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 19:15:25,850 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.7463):
+内容: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-02 19:15:25,850 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5316):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-02 19:15:25,850 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5038):
+内容: 我祝你圣诞快乐
+2025-01-02 19:15:25,850 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4850):
+内容: 用户表示威士忌也很不错！
+2025-01-02 19:15:25,850 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4723):
+内容: 用户表示请推荐一部好看的电视剧
+2025-01-02 19:15:25,850 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-02 19:15:25,850 - root - INFO - memory_manager.py:322 - 1. 得分: 0.7463
+内容: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+
+2025-01-02 19:15:25,874 - root - INFO - rag_module.py:173 - 正在搜索查询: '过节了请你推荐给我一个我会喜欢的饮料'
+2025-01-02 19:15:25,879 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.0226
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,879 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.1329
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,879 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.1820
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,879 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.2117
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,879 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.3342
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:15:25,879 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-02 19:15:34,569 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 19:15:34,572 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 过节了请你推荐给我一个我会喜欢的饮料
+2025-01-02 19:15:34,572 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:15:34] "POST /chat HTTP/1.1" 200 -
+2025-01-02 19:15:34,579 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:15:34] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-02 19:19:21,679 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:19:21] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-02 19:19:22,191 - root - INFO - memory_manager.py:347 - Successfully retrieved 16 memories for user default_user
+2025-01-02 19:19:22,199 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:19:22] "GET /api/memories HTTP/1.1" 200 -
+2025-01-02 19:20:57,129 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Jamie最喜欢的人是谁'
+2025-01-02 19:20:57,129 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: 0.5490
+ - 状态: 采用 (得分 >= 0.5)
+2025-01-02 19:20:57,129 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.1152
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:20:57,129 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.0179
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:20:57,129 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1674
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:20:57,134 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2252
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:20:57,134 - root - INFO - rag_module.py:204 - 共找到 1/5 个相关文档
+2025-01-02 19:20:57,178 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-02 19:20:57,178 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.8432):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-02 19:20:57,178 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4782):
+内容: 老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢
+2025-01-02 19:20:57,178 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4670):
+内容: 我很喜欢看老友记
+2025-01-02 19:20:57,178 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4486):
+内容: 你是谁
+2025-01-02 19:20:57,178 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4424):
+内容: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-02 19:20:57,178 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-02 19:20:57,178 - root - INFO - memory_manager.py:322 - 1. 得分: 0.8432
+内容: 用户表示Jamie最喜欢的人是
+
+2025-01-02 19:20:57,198 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Jamie最喜欢的人是谁'
+2025-01-02 19:20:57,198 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: 0.5490
+ - 状态: 采用 (得分 >= 0.5)
+2025-01-02 19:20:57,198 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.1152
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:20:57,203 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.0179
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:20:57,203 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1674
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:20:57,203 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2252
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-02 19:20:57,203 - root - INFO - rag_module.py:204 - 共找到 1/5 个相关文档
+2025-01-02 19:21:00,655 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:21:00] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-02 19:21:01,247 - root - INFO - memory_manager.py:347 - Successfully retrieved 16 memories for user default_user
+2025-01-02 19:21:01,255 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:21:01] "GET /api/memories HTTP/1.1" 200 -
+2025-01-02 19:21:01,936 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9070)
+2025-01-02 19:21:01,936 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:21:01] "POST /chat HTTP/1.1" 200 -
+2025-01-02 19:21:01,949 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [02/Jan/2025 19:21:01] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-03 13:31:30,506 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-03 13:31:30,515 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-03 13:31:30,712 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-03 13:31:58,435 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-03 13:31:58,506 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-03 13:49:59,966 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 13:49:59] "GET / HTTP/1.1" 200 -
+2025-01-03 13:50:00,946 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 13:50:00] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-03 13:50:01,094 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 13:50:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-03 13:50:03,932 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 13:50:03] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 13:50:04,827 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 13:50:04] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 13:50:05,504 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 13:50:05] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 13:50:06,177 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 13:50:06] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 13:50:16,002 - root - INFO - rag_module.py:173 - 正在搜索查询: '你好呀，新年快乐！'
+2025-01-03 13:50:16,075 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.0899
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,075 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.1551
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,075 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1720
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,075 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2212
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,075 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2815
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,075 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 13:50:16,237 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5966):
+内容: 你好啊
+2025-01-03 13:50:16,238 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5550):
+内容: 我祝你圣诞快乐
+2025-01-03 13:50:16,238 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4909):
+内容: 过节了请你推荐给我一个我会喜欢的饮料
+2025-01-03 13:50:16,238 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4844):
+内容: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-03 13:50:16,238 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4810):
+内容: 用户表示威士忌也很不错！
+2025-01-03 13:50:16,239 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-03 13:50:16,315 - root - INFO - rag_module.py:173 - 正在搜索查询: '你好呀，新年快乐！'
+2025-01-03 13:50:16,316 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.0899
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,316 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.1551
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,316 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1720
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,317 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2212
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,317 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2815
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 13:50:16,317 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 13:50:25,236 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-03 13:50:25,237 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 你好呀，新年快乐！
+2025-01-03 13:50:25,238 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 13:50:25] "POST /chat HTTP/1.1" 200 -
+2025-01-03 15:42:55,106 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-03 15:43:01,400 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-03 15:44:14,096 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-03 15:44:14,129 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-03 18:59:46,570 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-03 18:59:46,571 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-03 18:59:46,679 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-03 19:00:15,840 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-03 19:00:15,936 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-03 19:00:16,322 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:00:16] "GET / HTTP/1.1" 200 -
+2025-01-03 19:00:17,224 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:00:17] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-03 19:00:17,351 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:00:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-03 19:28:37,222 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:37] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:28:37,968 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:37] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:28:38,703 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:38] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:28:39,433 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:39] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:28:39,779 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:39] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:28:40,034 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:40] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:28:40,351 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:40] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:28:41,204 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:41] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:28:45,372 - root - INFO - rag_module.py:173 - 正在搜索查询: '你是谁'
+2025-01-03 19:28:45,429 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.0198
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,430 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1299
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,430 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2290
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,430 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.2334
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,431 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4472
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,431 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 19:28:45,625 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-03 19:28:45,625 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 1.0000):
+内容: 你是谁
+2025-01-03 19:28:45,626 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5299):
+内容: 你好啊
+2025-01-03 19:28:45,626 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4523):
+内容: 我祝你圣诞快乐
+2025-01-03 19:28:45,626 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4514):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-03 19:28:45,626 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4474):
+内容: 你好呀，新年快乐！
+2025-01-03 19:28:45,626 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-03 19:28:45,626 - root - INFO - memory_manager.py:322 - 1. 得分: 1.0000
+内容: 你是谁
+
+2025-01-03 19:28:45,778 - root - INFO - rag_module.py:173 - 正在搜索查询: '你是谁'
+2025-01-03 19:28:45,779 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.0198
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,779 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1299
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,779 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2290
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,780 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.2334
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,781 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4472
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:28:45,782 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 19:28:59,162 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 1.0000)
+2025-01-03 19:28:59,164 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:28:59] "POST /chat HTTP/1.1" 200 -
+2025-01-03 19:29:02,861 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to santa
+2025-01-03 19:29:02,863 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:29:02] "POST /set_role HTTP/1.1" 200 -
+2025-01-03 19:29:05,627 - root - INFO - rag_module.py:173 - 正在搜索查询: '你是谁'
+2025-01-03 19:29:05,629 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.0198
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:05,629 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1299
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:05,630 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2290
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:05,631 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.2334
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:05,632 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4472
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:05,633 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 19:29:06,079 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-03 19:29:06,081 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 1.0000):
+内容: 你是谁
+2025-01-03 19:29:06,081 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5299):
+内容: 你好啊
+2025-01-03 19:29:06,081 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4523):
+内容: 我祝你圣诞快乐
+2025-01-03 19:29:06,081 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4514):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-03 19:29:06,082 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4474):
+内容: 你好呀，新年快乐！
+2025-01-03 19:29:06,083 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-03 19:29:06,086 - root - INFO - memory_manager.py:322 - 1. 得分: 1.0000
+内容: 你是谁
+
+2025-01-03 19:29:06,139 - root - INFO - rag_module.py:173 - 正在搜索查询: '你是谁'
+2025-01-03 19:29:06,140 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.0198
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:06,140 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1299
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:06,140 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2290
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:06,141 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.2334
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:06,141 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.4472
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:06,141 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 19:29:16,372 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 1.0000)
+2025-01-03 19:29:16,382 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:29:16] "POST /chat HTTP/1.1" 200 -
+2025-01-03 19:29:53,189 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Jamie最喜欢的人是'
+2025-01-03 19:29:53,190 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: 0.5793
+ - 状态: 采用 (得分 >= 0.5)
+2025-01-03 19:29:53,190 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.1446
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:53,191 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.0178
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:53,191 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1235
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:53,191 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.1642
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:53,192 - root - INFO - rag_module.py:204 - 共找到 1/5 个相关文档
+2025-01-03 19:29:53,301 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-03 19:29:53,302 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.8817):
+内容: 用户表示Jamie最喜欢的人是
+2025-01-03 19:29:53,303 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4979):
+内容: 老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢
+2025-01-03 19:29:53,303 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4938):
+内容: 我很喜欢看老友记
+2025-01-03 19:29:53,304 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4588):
+内容: 过节了请你推荐给我一个我会喜欢的饮料
+2025-01-03 19:29:53,304 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4573):
+内容: 猫和老鼠是我小时候最喜欢的动画片
+2025-01-03 19:29:53,304 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-03 19:29:53,304 - root - INFO - memory_manager.py:322 - 1. 得分: 0.8817
+内容: 用户表示Jamie最喜欢的人是
+
+2025-01-03 19:29:53,363 - root - INFO - rag_module.py:173 - 正在搜索查询: 'Jamie最喜欢的人是'
+2025-01-03 19:29:53,363 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: 0.5793
+ - 状态: 采用 (得分 >= 0.5)
+2025-01-03 19:29:53,364 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: 0.1446
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:53,364 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.0178
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:53,364 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1235
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:53,365 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.1642
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:29:53,365 - root - INFO - rag_module.py:204 - 共找到 1/5 个相关文档
+2025-01-03 19:30:03,430 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9329)
+2025-01-03 19:30:03,433 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:30:03] "POST /chat HTTP/1.1" 200 -
+2025-01-03 19:30:22,752 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:30:22] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-03 19:30:23,835 - root - INFO - memory_manager.py:347 - Successfully retrieved 17 memories for user default_user
+2025-01-03 19:30:23,838 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:30:23] "GET /api/memories HTTP/1.1" 200 -
+2025-01-03 19:31:31,873 - root - INFO - rag_module.py:173 - 正在搜索查询: '我今天吃了两顿三明治'
+2025-01-03 19:31:31,873 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.3296
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:31,874 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.3520
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:31,875 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.3635
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:31,875 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.4042
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:31,876 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.4501
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:31,877 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 19:31:31,954 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4831):
+内容: 用户表示威士忌也很不错！
+2025-01-03 19:31:31,954 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4613):
+内容: 过节了请你推荐给我一个我会喜欢的饮料
+2025-01-03 19:31:31,954 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4612):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-03 19:31:31,954 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4565):
+内容: 用户表示圣诞节要来了，请推荐一个我会喜欢的饮料
+2025-01-03 19:31:31,954 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4497):
+内容: 我很喜欢看老友记
+2025-01-03 19:31:31,954 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-03 19:31:32,005 - root - INFO - rag_module.py:173 - 正在搜索查询: '我今天吃了两顿三明治'
+2025-01-03 19:31:32,006 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.3296
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:32,006 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.3520
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:32,006 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.3635
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:32,006 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.4042
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:32,006 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.4501
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:31:32,006 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 19:31:41,541 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-03 19:31:41,542 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 我今天吃了两顿三明治
+2025-01-03 19:31:41,544 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:31:41] "POST /chat HTTP/1.1" 200 -
+2025-01-03 19:31:41,584 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:31:41] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-03 19:31:47,758 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:31:47] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-03 19:31:48,410 - root - INFO - memory_manager.py:347 - Successfully retrieved 18 memories for user default_user
+2025-01-03 19:31:48,417 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:31:48] "GET /api/memories HTTP/1.1" 200 -
+2025-01-03 19:32:12,423 - root - INFO - rag_module.py:173 - 正在搜索查询: '我喜欢看的电视剧有哪些'
+2025-01-03 19:32:12,424 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.0730
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,424 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.3066
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,426 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.4541
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,427 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.5058
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,428 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.5625
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,428 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 19:32:12,506 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-03 19:32:12,507 - root - INFO - memory_manager.py:311 - 记忆匹配 (得分: 0.6004):
+内容: 用户表示请推荐一部好看的电视剧
+2025-01-03 19:32:12,507 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.5108):
+内容: 老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢
+2025-01-03 19:32:12,508 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4774):
+内容: 我很喜欢看老友记
+2025-01-03 19:32:12,508 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4658):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-03 19:32:12,508 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4612):
+内容: 用户表示边水往事是一个很好看的电视剧
+2025-01-03 19:32:12,508 - root - INFO - memory_manager.py:320 - 
+最终使用的记忆:
+2025-01-03 19:32:12,508 - root - INFO - memory_manager.py:322 - 1. 得分: 0.6004
+内容: 用户表示请推荐一部好看的电视剧
+
+2025-01-03 19:32:12,651 - root - INFO - rag_module.py:173 - 正在搜索查询: '我喜欢看的电视剧有哪些'
+2025-01-03 19:32:12,652 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.0730
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,655 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.3066
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,656 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.4541
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,657 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.5058
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,658 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.5625
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-03 19:32:12,658 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-03 19:32:25,908 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-03 19:32:25,909 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 我喜欢看的电视剧有哪些
+2025-01-03 19:32:25,910 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:32:25] "POST /chat HTTP/1.1" 200 -
+2025-01-03 19:32:25,978 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:32:25] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-03 19:32:32,212 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:32:32] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-03 19:32:32,966 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-03 19:32:32,972 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:32:32] "GET /api/memories HTTP/1.1" 200 -
+2025-01-03 19:42:43,107 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:42:43] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-03 19:42:43,845 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-03 19:42:43,850 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [03/Jan/2025 19:42:43] "GET /api/memories HTTP/1.1" 200 -
+2025-01-05 23:55:35,713 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-05 23:55:35,713 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-05 23:55:36,108 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-05 23:56:08,077 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-05 23:56:08,162 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-05 23:57:25,409 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-05 23:57:25,410 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-05 23:57:25,411 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-05 23:57:25,412 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-05 23:57:28,203 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-05 23:58:14,241 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-05 23:58:14,259 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-05 23:58:26,281 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\generate_requirements.py', reloading
+2025-01-05 23:58:26,361 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\agent.py', reloading
+2025-01-05 23:58:26,413 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_api_wrapper.py', reloading
+2025-01-05 23:58:26,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_model.py', reloading
+2025-01-05 23:58:26,545 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\scripts\\init_memory_file.py', reloading
+2025-01-05 23:58:26,594 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\context_manager.py', reloading
+2025-01-05 23:58:26,648 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\llm_service.py', reloading
+2025-01-05 23:58:26,679 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\prompt_manager.py', reloading
+2025-01-05 23:58:28,422 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-05 23:59:03,115 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-05 23:59:03,130 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:32:52,962 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 00:32:52,962 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 00:32:53,004 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:33:30,526 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:33:30,553 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:33:30,673 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:33:30] "GET / HTTP/1.1" 200 -
+2025-01-06 00:33:32,012 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:33:32] "GET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1" 200 -
+2025-01-06 00:33:48,355 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:33:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-06 00:34:02,658 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:34:02] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 00:34:21,078 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 00:34:21,080 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:34:21] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 00:39:45,020 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 00:39:45,363 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 00:39:45,412 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:40:19,900 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:40:19,920 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:40:19,988 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:40:19] "GET / HTTP/1.1" 200 -
+2025-01-06 00:40:20,877 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:40:20] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 00:41:08,998 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:41:08] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 00:41:09,430 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 00:41:09,432 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:41:09] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 00:47:17,684 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 00:47:17,684 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 00:47:17,705 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:47:28,839 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:47:28,850 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:47:44,206 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:47:44] "GET / HTTP/1.1" 200 -
+2025-01-06 00:47:44,838 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:47:44] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 00:48:32,693 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 00:48:32,693 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 00:48:32,711 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:48:45,714 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:48:45,726 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:49:03,782 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:49:03] "GET / HTTP/1.1" 200 -
+2025-01-06 00:49:04,398 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:49:04] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 00:49:09,733 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:49:09] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 00:49:09,979 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 00:49:09,981 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:49:09] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 00:51:17,014 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 00:51:17,017 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 00:51:17,018 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-06 00:51:18,279 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:51:30,588 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:51:30,604 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:52:31,643 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:52:31,643 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:52:31,683 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:52:33,217 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:52:48,495 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 00:52:48,495 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 00:52:48,523 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:53:00,429 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:53:00,443 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:53:25,049 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:53:25] "GET / HTTP/1.1" 200 -
+2025-01-06 00:53:25,790 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:53:25] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 00:53:31,425 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:53:31] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-06 00:53:31,564 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:53:31] "[35m[1mGET /api/documents HTTP/1.1[0m" 500 -
+2025-01-06 00:53:31,566 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:53:31] "[35m[1mGET /api/index/status HTTP/1.1[0m" 500 -
+2025-01-06 00:54:04,946 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:54:04,948 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:54:04,948 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:54:05,883 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:54:17,463 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:54:17,473 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:54:25,275 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:54:25] "GET / HTTP/1.1" 200 -
+2025-01-06 00:54:26,303 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:54:26] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 00:54:26,350 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:54:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-06 00:56:05,132 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:56:05,176 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:56:05,200 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 00:56:06,802 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:56:18,894 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 00:56:18,894 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 00:56:18,911 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:56:28,568 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:56:28,576 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:56:39,472 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:39] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-06 00:56:43,924 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:43] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 00:56:44,153 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 00:56:44,155 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:44] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 00:56:46,981 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:46] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 00:56:47,231 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 00:56:47,234 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:47] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 00:56:49,850 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:49] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 00:56:50,077 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 00:56:50,082 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:50] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 00:56:57,476 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:57] "GET / HTTP/1.1" 200 -
+2025-01-06 00:56:58,496 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:58] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 00:56:58,554 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:56:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-06 00:58:50,647 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 00:58:50,647 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 00:58:50,667 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 00:59:00,635 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 00:59:00,643 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 00:59:46,814 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:59:46] "GET / HTTP/1.1" 200 -
+2025-01-06 00:59:47,480 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:59:47] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 00:59:49,046 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:59:49] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 00:59:49,264 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 00:59:49,267 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:59:49] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 00:59:52,495 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:59:52] "GET / HTTP/1.1" 200 -
+2025-01-06 00:59:52,547 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:59:52] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 00:59:53,240 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 00:59:53] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-06 01:03:23,802 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-06 01:03:23,802 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-06 01:03:23,822 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:03:35,368 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:03:35,378 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-06 01:03:35,451 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:35] "GET / HTTP/1.1" 200 -
+2025-01-06 01:03:36,146 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:36] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 01:03:36,970 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:36] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-06 01:03:37,202 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-06 01:03:37,205 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:37] "GET /api/memories HTTP/1.1" 200 -
+2025-01-06 01:03:39,294 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:39] "GET / HTTP/1.1" 200 -
+2025-01-06 01:03:39,328 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:39] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-06 01:03:40,074 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:40] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-06 01:03:40,625 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:40] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -
+2025-01-06 01:03:40,626 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 01:03:40] "[33mGET /api/documents HTTP/1.1[0m" 404 -
+2025-01-06 01:03:50,538 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-06 01:03:51,414 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-06 01:04:04,268 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-06 01:04:04,281 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
