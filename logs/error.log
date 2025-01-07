@@ -21,3 +21,6 @@
 2025-01-06 02:02:54,669 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
 2025-01-06 02:02:58,981 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
 2025-01-06 02:03:13,580 - root - ERROR - memory_manager.py:719 - Error calling LLM: name 'llm' is not defined
+2025-01-06 02:37:35,325 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'str'
+2025-01-06 02:37:41,426 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'str'
+2025-01-06 02:41:12,658 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'

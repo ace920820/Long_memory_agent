@@ -53,19 +53,6 @@
       "priority_score": 0.0
     },
     {
-      "id": "m_1736100510509_1630",
-      "content": "用户表示圣诞节要来了，请推荐一个我会喜欢的饮料",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
       "id": "m_1736100510510_9355",
       "content": "用户表示请推荐一部好看的电视剧",
       "type": "fact",
@@ -146,19 +133,6 @@
     {
       "id": "m_1736100510510_5807",
       "content": "过节了请你推荐给我一个我会喜欢的饮料",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736100510510_2411",
-      "content": "我今天吃了两顿三明治",
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
