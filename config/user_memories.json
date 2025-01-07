@@ -40,58 +40,6 @@
       "priority_score": 0.0
     },
     {
-      "id": "m_1736100510509_8264",
-      "content": "用户表示边水往事是一个很好看的电视剧",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736100510510_9355",
-      "content": "用户表示请推荐一部好看的电视剧",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736100510510_8190",
-      "content": "用户表示Jamie最喜欢的人是",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736100510510_4645",
-      "content": "我很喜欢看老友记",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
       "id": "m_1736100510510_7130",
       "content": "老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢",
       "type": "fact",
@@ -118,79 +66,27 @@
       "priority_score": 0.0
     },
     {
-      "id": "m_1736100510510_9494",
-      "content": "我祝你圣诞快乐",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
+      "id": "m_1736259023833_1341",
+      "content": "请你作为个人助理回答我的问题",
+      "type": "dialogue",
+      "timestamp": "2025-01-07T22:10:23.833054",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
+        "first_access": "2025-01-07T22:10:23.833054",
+        "last_access": "2025-01-07T22:10:23.833054",
         "access_history": []
       },
       "priority_score": 0.0
     },
     {
-      "id": "m_1736100510510_5807",
-      "content": "过节了请你推荐给我一个我会喜欢的饮料",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
+      "id": "m_1736259104956_1809",
+      "content": "我想知道RAG系统最重要的几项功能",
+      "type": "dialogue",
+      "timestamp": "2025-01-07T22:11:44.956158",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736100510510_5283",
-      "content": "我喜欢看的电视剧有哪些",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736100510510_2822",
-      "content": "作者zhaobingzhi修正了文档查询失败问题，1小时之前提交。",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736100510510_7879",
-      "content": "embedding更换为bge，2小时之前由作者zhaobingzhi提交。",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736100510510_2471",
-      "content": "补充RAG示例问题，更新对应add文档过程，zhaobingzhi提交。",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
+        "first_access": "2025-01-07T22:11:44.956158",
+        "last_access": "2025-01-07T22:11:44.956158",
         "access_history": []
       },
       "priority_score": 0.0

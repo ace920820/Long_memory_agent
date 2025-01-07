@@ -281,17 +281,34 @@ def create_app():
     def delete_memories():
         try:
             data = request.json
+            print(f"接收到delete_memories请求： {data}")
             memory_ids = data.get('memoryIds', [])
             user_id = data.get('user_id', 'default_user')
             
-            result = memory_manager.delete_memories(user_id, memory_ids)
+            # 验证 memory_ids
+            if not memory_ids:
+                return jsonify({
+                    "success": False,
+                    "error": "记忆ID列表不能为空"
+                }), 400
+                
+            # 过滤掉无效的 ID（None 或空值）
+            valid_memory_ids = [mid for mid in memory_ids if mid is not None and str(mid).strip()]
+            
+            if not valid_memory_ids:
+                return jsonify({
+                    "success": False,
+                    "error": "没有提供有效的记忆ID"
+                }), 400
+            
+            result = memory_manager.delete_memories(user_id, valid_memory_ids)
             return jsonify(result)
             
         except Exception as e:
             logging.error(f"Error deleting memories: {str(e)}")
             return jsonify({
                 "success": False,
-                "error": "Failed to delete memories",
+                "error": "删除记忆失败",
                 "details": str(e)
             }), 500
 

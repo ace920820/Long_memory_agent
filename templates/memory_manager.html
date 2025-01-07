@@ -52,30 +52,30 @@
         <!-- 记忆分类标签和工具栏 -->
         <div class="bg-white rounded-lg shadow p-6 mb-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <!-- 记忆分类标签 -->
+                <!-- 记忆分类标签 -->
                 <div>
-            <h2 class="text-lg font-semibold mb-3">记忆分类</h2>
-            <div class="flex flex-wrap gap-2" id="memoryTags">
-                <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full active" data-type="all">全部</button>
-                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="fact">事实</button>
-                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="preference">偏好</button>
-                <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="dialogue">对话</button>
-            </div>
-        </div>
+                    <h2 class="text-lg font-semibold mb-3">记忆分类</h2>
+                    <div class="flex flex-wrap gap-2" id="memoryTags">
+                        <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full active" data-type="all">全部</button>
+                        <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="fact">事实</button>
+                        <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="preference">偏好</button>
+                        <button class="px-3 py-1 bg-gray-100 hover:bg-blue-100 text-gray-800 rounded-full" data-type="dialogue">对话</button>
+                    </div>
+                </div>
 
                 <!-- 记忆管理工具 -->
                 <div class="flex flex-wrap gap-4">
-                <button onclick="showAddMemoryModal()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-                    添加记忆
-                </button>
+                    <button onclick="showAddMemoryModal()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                        添加记忆
+                    </button>
                     <button onclick="deleteSelectedMemories()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
                         批量删除
-                </button>
-                <button onclick="cleanMemories()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+                    </button>
+                    <button onclick="cleanMemories()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
                         清理重复
-                </button>
-                <input type="text" id="searchMemory" placeholder="搜索记忆..." 
-                    class="px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    </button>
+                    <input type="text" id="searchMemory" placeholder="搜索记忆..." 
+                        class="px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
                 </div>
             </div>
         </div>
@@ -160,16 +160,16 @@
                 const checkboxes = document.querySelectorAll('.memory-checkbox');
                 checkboxes.forEach(checkbox => {
                     checkbox.checked = e.target.checked;
-                    const memoryId = parseInt(checkbox.value);
+                    const memoryId = checkbox.value;
                     if (e.target.checked) {
                         selectedMemories.add(memoryId);
                     } else {
                         selectedMemories.delete(memoryId);
                     }
                 });
-                console.log('全选后的选中记忆:', Array.from(selectedMemories));  // 调试日志
+                console.log('全选后的选中记忆:', selectedMemories);  // 调试日志
             });
-
+                
             // 添加搜索功能
             document.getElementById('searchMemory').addEventListener('input', (e) => {
                 const searchText = e.target.value.toLowerCase();
@@ -220,7 +220,7 @@
                 console.log('处理后的记忆数据:', memories);  // 调试日志
                 
                 // 先渲染记忆列表
-                        renderMemories(memories);
+                renderMemories(memories);
                 
                 // 延迟更新统计信息，确保DOM元素已经加载
                 setTimeout(() => {
@@ -315,17 +315,17 @@
             if (!Array.isArray(memoriesToRender)) {
                 console.error('memoriesToRender is not an array:', memoriesToRender);
                 return;
-                }
-                
-                tbody.innerHTML = memoriesToRender.map((memory, index) => {
-                        const date = new Date(memory.timestamp);
-                        const formattedDate = date.toLocaleString('zh-CN', {
-                            year: 'numeric',
-                            month: '2-digit',
-                            day: '2-digit',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        });
+            }
+            
+            tbody.innerHTML = memoriesToRender.map((memory, index) => {
+                const date = new Date(memory.timestamp);
+                const formattedDate = date.toLocaleString('zh-CN', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
 
                 // 访问统计信息
                 const accessStats = memory.access_stats || {};
@@ -340,28 +340,28 @@
 
                 const memoryId = parseInt(memory.id || index);
 
-                        return `
+                return `
                     <tr class="hover:bg-gray-50" data-memory-id="${memoryId}">
                         <td class="px-4 py-4 whitespace-nowrap">
-                                    <input type="checkbox" class="memory-checkbox rounded" 
+                            <input type="checkbox" class="memory-checkbox rounded" 
                                 value="${memoryId}"
                                 onchange="handleCheckboxChange(this)"
                                 ${selectedMemories.has(memoryId) ? 'checked' : ''}>
-                                </td>
+                        </td>
                         <td class="px-4 py-4">
                             <div class="text-sm text-gray-900 whitespace-pre-wrap cursor-pointer hover:text-blue-600"
                                 onclick="showMemoryDetail(${index})">
                                 ${memory.content}
                             </div>
-                                </td>
+                        </td>
                         <td class="px-4 py-4 whitespace-nowrap">
                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getTypeColor(memory.type)}">
-                                        ${memory.type}
-                                    </span>
-                                </td>
+                                ${memory.type}
+                            </span>
+                        </td>
                         <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    ${formattedDate}
-                                </td>
+                            ${formattedDate}
+                        </td>
                         <td class="px-4 py-4 whitespace-nowrap">
                             <div class="text-sm text-gray-500">
                                 <div>访问次数: ${accessCount}</div>
@@ -373,16 +373,16 @@
                                 <button onclick="deleteMemory(${memoryId})" 
                                     class="text-red-600 hover:text-red-800">
                                     <i class="material-icons">delete</i>
-                                    </button>
+                                </button>
                                 <button onclick="showMemoryDetail(${index})" 
                                     class="text-blue-600 hover:text-blue-800">
                                     <i class="material-icons">info</i>
-                                        </button>
+                                </button>
                             </div>
-                                </td>
-                            </tr>
-                        `;
-                }).join('');
+                        </td>
+                    </tr>
+                `;
+            }).join('');
 
             // 更新统计图表
             updateMemoryStats(memoriesToRender);
@@ -437,7 +437,7 @@
             } else {
                 selectedMemories.delete(memoryId);
             }
-            console.log('当前选中的记忆:', Array.from(selectedMemories));  // 调试日志
+            console.log('当前选中的记忆:', selectedMemories);  // 调试日志
         }
 
         // 批量删除选中的记忆
@@ -448,17 +448,16 @@
             }
 
             try {
-                const memoryIds = Array.from(selectedMemories).map(id => parseInt(id));
-                console.log('准备删除的记忆:', memoryIds);  // 调试日志
+                console.log('准备删除的记忆:', Array.from(selectedMemories));  // 调试日志
                 const response = await fetch('/api/memories/delete', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        memoryIds: memoryIds,
+                        memoryIds: Array.from(selectedMemories).map(id => parseInt(id)),
                         user_id: 'default_user'
                     })
                 });
-                
+
                 const result = await response.json();
                 
                 if (result.success) {
@@ -477,13 +476,12 @@
         // 删除记忆
         async function deleteMemory(memoryId) {
             try {
-                memoryId = parseInt(memoryId);
                 console.log('准备删除记忆:', memoryId);  // 调试日志
                 const response = await fetch('/api/memories/delete', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        memoryIds: [memoryId],
+                        memoryIds: [parseInt(memoryId)],
                         user_id: 'default_user'
                     })
                 });
@@ -491,7 +489,7 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    selectedMemories.delete(memoryId);
+                    selectedMemories.delete(parseInt(memoryId));
                     await fetchMemories();
                     showNotification('记忆已删除', 'success');
                 } else {
@@ -514,8 +512,8 @@
             document.body.appendChild(notification);
             
             // 3秒后自动消失
-                setTimeout(() => {
-                    notification.remove();
+            setTimeout(() => {
+                notification.remove();
             }, 3000);
         }
 

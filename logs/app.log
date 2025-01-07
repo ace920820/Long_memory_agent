@@ -5295,3 +5295,752 @@
 2025-01-06 02:41:12,657 - root - INFO - memory_manager.py:504 - Attempting to delete memories [None] for user default_user
 2025-01-06 02:41:12,658 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
 2025-01-06 02:41:12,659 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Jan/2025 02:41:12] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 17:48:06,385 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 17:48:06,386 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 17:48:06,575 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 17:48:47,593 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 17:48:47,697 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 17:49:59,210 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:49:59] "GET / HTTP/1.1" 200 -
+2025-01-07 17:50:00,485 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:50:00] "GET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1" 200 -
+2025-01-07 17:50:00,500 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:50:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-07 17:50:02,015 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:50:02] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 17:50:02,815 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 17:50:02,816 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 17:50:02,816 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 17:50:02,819 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:50:02] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 17:50:09,035 - root - INFO - memory_manager.py:504 - Attempting to delete memories [None] for user default_user
+2025-01-07 17:50:09,035 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 17:50:09,036 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:50:09] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 17:54:31,478 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 17:54:31,480 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 17:54:31,528 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 17:55:21,289 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 17:55:21,322 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 17:55:21,564 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:55:21] "GET / HTTP/1.1" 200 -
+2025-01-07 17:55:22,631 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:55:22] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 17:55:24,028 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:55:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-07 17:56:00,013 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:56:00] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 17:56:00,493 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 17:56:00,494 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 17:56:00,495 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 17:56:00,512 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 17:56:00] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 17:56:10,773 - root - INFO - memory_manager.py:504 - Attempting to delete memories [None] for user default_user
+2025-01-07 17:56:10,774 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 17:56:15,809 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\flask\\signals.py', reloading
+2025-01-07 17:56:17,488 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 17:57:18,709 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 17:57:18,750 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 17:57:27,303 - root - INFO - memory_manager.py:504 - Attempting to delete memories [None] for user default_user
+2025-01-07 18:01:41,335 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Program Files\\JetBrains\\PyCharm Community Edition 2021.2.2\\plugins\\python-ce\\helpers\\pydev\\_pydevd_bundle\\pydevd_comm.py', reloading
+2025-01-07 18:01:41,346 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\traceback.py', reloading
+2025-01-07 18:01:42,228 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 18:01:42,229 - root - INFO - memory_manager.py:504 - Attempting to delete memories [None] for user default_user
+2025-01-07 18:01:42,231 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 18:01:42,262 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:01:42] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 18:01:42,263 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:01:42] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 18:01:45,624 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:05:23,941 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:05:23,941 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:05:23,968 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:05:56,520 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:05:56,541 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:05:56,760 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:05:56] "GET / HTTP/1.1" 200 -
+2025-01-07 18:05:58,072 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:05:58] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:05:58,124 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:05:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-07 18:06:03,292 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:06:03] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:06:03,738 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:06:03,739 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:06:03,741 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:06:03,743 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:06:03] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:06:08,783 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:06:08] "[31m[1mPOST /api/memories/delete HTTP/1.1[0m" 400 -
+2025-01-07 18:07:32,309 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:07:32,310 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:07:32,335 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:07:55,311 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:07:55,327 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:08:03,731 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:08:03] "GET / HTTP/1.1" 200 -
+2025-01-07 18:08:04,784 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:08:04] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:08:05,685 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:08:05] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:08:06,076 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:08:06,077 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:08:06,077 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:08:06,270 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:08:06] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:09:22,873 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:09:22,873 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:09:22,899 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:09:46,078 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:09:46,092 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:11:13,815 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:11:13] "GET / HTTP/1.1" 200 -
+2025-01-07 18:11:16,184 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:11:16] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:11:16,215 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:11:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-07 18:12:23,172 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:12:23] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:12:23,616 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:12:23,616 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:12:23,617 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:12:23,618 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:12:23] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:16:13,506 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:16:13,507 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:16:13,553 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:16:55,233 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:16:55,261 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:17:47,375 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:17:47] "GET / HTTP/1.1" 200 -
+2025-01-07 18:17:48,582 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:17:48] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:17:50,257 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:17:50] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:17:50,593 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:17:50,594 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:17:50,595 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:17:50,610 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:17:50] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:19:06,860 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:19:06,860 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:19:06,883 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:19:29,341 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:19:29,358 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:19:43,308 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:43] "GET / HTTP/1.1" 200 -
+2025-01-07 18:19:44,310 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:44] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:19:45,452 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:45] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-07 18:19:46,108 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:46] "[33mGET /api/documents HTTP/1.1[0m" 404 -
+2025-01-07 18:19:46,114 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:46] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -
+2025-01-07 18:19:48,723 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:48] "GET / HTTP/1.1" 200 -
+2025-01-07 18:19:48,790 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:48] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:19:49,871 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:49] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:19:50,240 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:19:50,241 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:19:50,241 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:19:50,243 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:19:50] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:20:33,312 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-07 18:20:33,314 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-07 18:20:35,223 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:21:09,644 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:21:09,644 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:21:09,666 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:21:32,068 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:21:32,081 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:21:40,176 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:21:40] "GET / HTTP/1.1" 200 -
+2025-01-07 18:21:41,153 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:21:41] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:21:41,935 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:21:41] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:21:42,353 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:21:42,353 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:21:42,354 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:21:42,564 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:21:42] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:23:06,873 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:23:06,873 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:23:06,887 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:23:16,025 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:23:16,033 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:23:16,065 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:23:16] "GET / HTTP/1.1" 200 -
+2025-01-07 18:23:16,485 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:23:16] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:23:28,162 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:23:28] "GET / HTTP/1.1" 200 -
+2025-01-07 18:23:28,207 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:23:28] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:23:29,704 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:23:29] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:23:29,881 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:23:29,882 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:23:29,882 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:23:29,884 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:23:29] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:23:42,172 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:23:42] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:23:42,322 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:23:42,322 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:23:42,322 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:23:42,324 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:23:42] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:25:47,434 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:25:47,434 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:25:47,445 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:25:54,979 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:25:54,986 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:25:56,416 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:25:56] "GET / HTTP/1.1" 200 -
+2025-01-07 18:25:56,936 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:25:56] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:25:57,909 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:25:57] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:25:58,110 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:25:58,111 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:25:58,111 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:25:58,113 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:25:58] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:26:52,875 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:26:52,875 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:26:52,889 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:27:00,759 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:27:00,767 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:27:06,698 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:27:06] "GET / HTTP/1.1" 200 -
+2025-01-07 18:27:07,250 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:27:07] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:27:08,221 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:27:08] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:27:08,449 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:27:08,450 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:27:08,451 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:27:08,562 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:27:08] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 18:27:36,734 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 18:27:36,735 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 18:27:36,748 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 18:27:45,607 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 18:27:45,619 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 18:27:45,660 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:27:45] "GET / HTTP/1.1" 200 -
+2025-01-07 18:27:46,122 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:27:46] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 18:27:46,898 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:27:46] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 18:27:47,078 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 18:27:47,078 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 18:27:47,080 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 18:27:47,081 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 18:27:47] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 20:52:25,109 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 20:52:25,109 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 20:52:25,127 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 20:52:35,674 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 20:52:35,674 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 20:52:35,737 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:52:35] "GET / HTTP/1.1" 200 -
+2025-01-07 20:52:36,301 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:52:36] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 20:52:36,609 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:52:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-07 20:52:40,526 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:52:40] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 20:52:40,771 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 20:52:40,771 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 20:52:40,771 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 20:52:40,771 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:52:40] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 20:54:08,030 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 20:54:08,030 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 20:54:08,046 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 20:54:18,451 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 20:54:18,477 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 20:54:18,542 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:54:18] "GET / HTTP/1.1" 200 -
+2025-01-07 20:54:19,027 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:54:19] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 20:54:20,949 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:54:20] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 20:54:21,149 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 20:54:21,149 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 20:54:21,155 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 20:54:21,156 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:54:21] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 20:54:32,745 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 20:54:33,149 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:54:33] "POST /api/memories/clean HTTP/1.1" 200 -
+2025-01-07 20:54:33,180 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 20:54:33,180 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 20:54:33,180 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 20:54:33,180 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:54:33] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 20:55:08,638 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 20:55:08,638 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 20:55:08,654 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 20:55:17,749 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 20:55:17,749 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 20:55:20,681 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:55:20] "GET / HTTP/1.1" 200 -
+2025-01-07 20:55:21,232 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:55:21] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 20:55:22,512 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:55:22] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 20:55:22,732 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 20:55:22,732 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 20:55:22,733 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 20:55:22,735 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:55:22] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 20:55:31,091 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 20:55:31,091 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:55:31] "[35m[1mPOST /api/memories/delete HTTP/1.1[0m" 500 -
+2025-01-07 20:55:33,692 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 20:55:33,693 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:55:33] "[35m[1mPOST /api/memories/delete HTTP/1.1[0m" 500 -
+2025-01-07 20:56:36,571 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 20:56:36,571 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 20:56:36,634 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 20:57:14,498 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 20:57:14,509 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 20:57:14,798 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:57:14] "GET / HTTP/1.1" 200 -
+2025-01-07 20:57:16,149 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:57:16] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 20:57:17,298 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:57:17] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 20:57:17,699 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 20:57:17,699 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 20:57:17,700 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 20:57:17,717 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:57:17] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 20:57:21,729 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 20:57:21,730 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:57:21] "[35m[1mPOST /api/memories/delete HTTP/1.1[0m" 500 -
+2025-01-07 20:58:21,978 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:58:21] "GET / HTTP/1.1" 200 -
+2025-01-07 20:58:22,040 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:58:22] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 20:58:27,672 - root - INFO - rag_module.py:173 - 正在搜索查询: '你好'
+2025-01-07 20:58:29,297 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.0575
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:30,363 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1243
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:30,850 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1897
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:31,384 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:31,902 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:31,902 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-07 20:58:34,185 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4985):
+内容: 用户表示威士忌也很不错！
+2025-01-07 20:58:34,185 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4847):
+内容: 我祝你圣诞快乐
+2025-01-07 20:58:34,185 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4794):
+内容: 过节了请你推荐给我一个我会喜欢的饮料
+2025-01-07 20:58:34,185 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4764):
+内容: 用户表示请推荐一部好看的电视剧
+2025-01-07 20:58:34,185 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4763):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-07 20:58:34,713 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-07 20:58:35,404 - root - INFO - rag_module.py:173 - 正在搜索查询: '你好'
+2025-01-07 20:58:36,455 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.0575
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:36,988 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1243
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:37,412 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.1897
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:41,148 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:41,148 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.2003
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 20:58:41,148 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-07 20:59:04,259 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 20:59:04,259 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 你好
+2025-01-07 20:59:04,259 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:59:04] "POST /chat HTTP/1.1" 200 -
+2025-01-07 20:59:40,254 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:59:40] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 20:59:40,720 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 20:59:40,833 - root - INFO - memory_manager.py:347 - Successfully retrieved 16 memories for user default_user
+2025-01-07 20:59:40,833 - root - INFO - main.py:222 - 成功获取 16 条记忆
+2025-01-07 20:59:40,849 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 20:59:40] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:08:02,921 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 21:08:02,923 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:08:02] "[35m[1mPOST /api/memories/delete HTTP/1.1[0m" 500 -
+2025-01-07 21:08:13,463 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 21:08:13,464 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:08:13] "[35m[1mPOST /api/memories/delete HTTP/1.1[0m" 500 -
+2025-01-07 21:09:59,105 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 21:09:59,105 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 21:09:59,137 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:10:19,797 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:10:19,809 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:10:26,555 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:10:26] "GET / HTTP/1.1" 200 -
+2025-01-07 21:10:27,578 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:10:27] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 21:10:28,051 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:10:28] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 21:10:28,414 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:10:28,414 - root - INFO - memory_manager.py:347 - Successfully retrieved 16 memories for user default_user
+2025-01-07 21:10:28,414 - root - INFO - main.py:222 - 成功获取 16 条记忆
+2025-01-07 21:10:28,414 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:10:28] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:10:31,149 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:10:31] "[31m[1mPOST /api/memories/delete HTTP/1.1[0m" 400 -
+2025-01-07 21:13:39,084 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:13:39] "[31m[1mPOST /api/memories/delete HTTP/1.1[0m" 400 -
+2025-01-07 21:14:37,517 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\generate_requirements.py', reloading
+2025-01-07 21:14:37,536 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\agent.py', reloading
+2025-01-07 21:14:37,536 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_api_wrapper.py', reloading
+2025-01-07 21:14:37,536 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_model.py', reloading
+2025-01-07 21:14:37,536 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-07 21:14:37,548 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\scripts\\init_memory_file.py', reloading
+2025-01-07 21:14:37,548 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\context_manager.py', reloading
+2025-01-07 21:14:37,548 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\llm_service.py', reloading
+2025-01-07 21:14:37,548 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\prompt_manager.py', reloading
+2025-01-07 21:14:38,897 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:15:01,914 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:15:01,932 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:20:37,277 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 21:20:37,277 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 21:20:37,293 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:20:45,705 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:20:45,705 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:20:46,104 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:20:46] "GET / HTTP/1.1" 200 -
+2025-01-07 21:20:46,722 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:20:46] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 21:20:49,125 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:20:49] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 21:20:49,364 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:20:49,364 - root - INFO - memory_manager.py:347 - Successfully retrieved 16 memories for user default_user
+2025-01-07 21:20:49,364 - root - INFO - main.py:222 - 成功获取 16 条记忆
+2025-01-07 21:20:49,473 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:20:49] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:23:46,588 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 21:23:46,588 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 21:23:46,612 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:23:54,891 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:23:54,907 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:24:18,064 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:24:18] "GET / HTTP/1.1" 200 -
+2025-01-07 21:24:18,676 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:24:18] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 21:24:22,825 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:24:22] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 21:24:23,044 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:24:23,044 - root - INFO - memory_manager.py:347 - Successfully retrieved 16 memories for user default_user
+2025-01-07 21:24:23,044 - root - INFO - main.py:222 - 成功获取 16 条记忆
+2025-01-07 21:24:23,044 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:24:23] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:26:24,200 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 21:26:24,200 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 21:26:24,218 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:26:33,345 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:26:33,345 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:26:51,917 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 21:26:51,917 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 21:26:51,936 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:27:02,170 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:27:02,186 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:27:24,744 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 21:27:24,744 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 21:27:24,760 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:27:34,500 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:27:34,516 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:27:53,270 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:53] "GET / HTTP/1.1" 200 -
+2025-01-07 21:27:53,854 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:53] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 21:27:54,756 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:54] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 21:27:54,953 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:27:54,954 - root - INFO - memory_manager.py:347 - Successfully retrieved 16 memories for user default_user
+2025-01-07 21:27:54,954 - root - INFO - main.py:222 - 成功获取 16 条记忆
+2025-01-07 21:27:54,956 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:54] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:27:56,917 - root - INFO - memory_manager.py:504 - Attempting to delete memories [15] for user default_user
+2025-01-07 21:27:56,918 - root - INFO - memory_manager.py:513 - Deleting memory at index 15
+2025-01-07 21:27:57,050 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:27:57,050 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:27:57,051 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:57] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:27:57,056 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:27:57,056 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-07 21:27:57,056 - root - INFO - main.py:222 - 成功获取 15 条记忆
+2025-01-07 21:27:57,056 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:57] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:27:58,603 - root - INFO - memory_manager.py:504 - Attempting to delete memories [14] for user default_user
+2025-01-07 21:27:58,603 - root - INFO - memory_manager.py:513 - Deleting memory at index 14
+2025-01-07 21:27:58,729 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:27:58,729 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:27:58,729 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:58] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:27:58,745 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:27:58,745 - root - INFO - memory_manager.py:347 - Successfully retrieved 14 memories for user default_user
+2025-01-07 21:27:58,745 - root - INFO - main.py:222 - 成功获取 14 条记忆
+2025-01-07 21:27:58,745 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:58] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:27:59,533 - root - INFO - memory_manager.py:504 - Attempting to delete memories [13] for user default_user
+2025-01-07 21:27:59,533 - root - INFO - memory_manager.py:513 - Deleting memory at index 13
+2025-01-07 21:27:59,646 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:27:59,646 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:27:59,646 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:59] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:27:59,661 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:27:59,661 - root - INFO - memory_manager.py:347 - Successfully retrieved 13 memories for user default_user
+2025-01-07 21:27:59,661 - root - INFO - main.py:222 - 成功获取 13 条记忆
+2025-01-07 21:27:59,661 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:27:59] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:28:00,188 - root - INFO - memory_manager.py:504 - Attempting to delete memories [12] for user default_user
+2025-01-07 21:28:00,188 - root - INFO - memory_manager.py:513 - Deleting memory at index 12
+2025-01-07 21:28:00,294 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:28:00,294 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:28:00,294 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:28:00] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:28:00,301 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:28:00,301 - root - INFO - memory_manager.py:347 - Successfully retrieved 12 memories for user default_user
+2025-01-07 21:28:00,301 - root - INFO - main.py:222 - 成功获取 12 条记忆
+2025-01-07 21:28:00,301 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:28:00] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:28:00,753 - root - INFO - memory_manager.py:504 - Attempting to delete memories [11] for user default_user
+2025-01-07 21:28:00,754 - root - INFO - memory_manager.py:513 - Deleting memory at index 11
+2025-01-07 21:28:00,892 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:28:00,892 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:28:00,892 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:28:00] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:28:00,902 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:28:00,902 - root - INFO - memory_manager.py:347 - Successfully retrieved 11 memories for user default_user
+2025-01-07 21:28:00,902 - root - INFO - main.py:222 - 成功获取 11 条记忆
+2025-01-07 21:28:00,902 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:28:00] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:28:01,344 - root - INFO - memory_manager.py:504 - Attempting to delete memories [10] for user default_user
+2025-01-07 21:28:01,345 - root - INFO - memory_manager.py:513 - Deleting memory at index 10
+2025-01-07 21:28:01,427 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:28:01,427 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:28:01,443 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:28:01] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:28:01,443 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:28:01,443 - root - INFO - memory_manager.py:347 - Successfully retrieved 10 memories for user default_user
+2025-01-07 21:28:01,443 - root - INFO - main.py:222 - 成功获取 10 条记忆
+2025-01-07 21:28:01,443 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:28:01] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:28:02,313 - root - INFO - memory_manager.py:504 - Attempting to delete memories [9] for user default_user
+2025-01-07 21:28:02,313 - root - INFO - memory_manager.py:513 - Deleting memory at index 9
+2025-01-07 21:28:02,405 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:28:02,405 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:28:02,405 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:28:02] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:28:02,414 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:28:02,414 - root - INFO - memory_manager.py:347 - Successfully retrieved 9 memories for user default_user
+2025-01-07 21:28:02,414 - root - INFO - main.py:222 - 成功获取 9 条记忆
+2025-01-07 21:28:02,414 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:28:02] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:34:00,032 - root - INFO - memory_manager.py:504 - Attempting to delete memories [5] for user default_user
+2025-01-07 21:34:00,032 - root - INFO - memory_manager.py:513 - Deleting memory at index 5
+2025-01-07 21:34:00,113 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:34:00,113 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:34:00,113 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:34:00] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:34:00,113 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:34:00,113 - root - INFO - memory_manager.py:347 - Successfully retrieved 8 memories for user default_user
+2025-01-07 21:34:00,113 - root - INFO - main.py:222 - 成功获取 8 条记忆
+2025-01-07 21:34:00,113 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:34:00] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:39:13,936 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 21:39:13,937 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 21:39:13,951 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:39:22,624 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:39:22,634 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:40:06,717 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:40:06] "GET / HTTP/1.1" 200 -
+2025-01-07 21:40:07,422 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:40:07] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 21:40:10,387 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:40:10] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 21:40:10,631 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:40:10,631 - root - INFO - memory_manager.py:347 - Successfully retrieved 8 memories for user default_user
+2025-01-07 21:40:10,631 - root - INFO - main.py:222 - 成功获取 8 条记忆
+2025-01-07 21:40:10,631 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:40:10] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:43:52,563 - root - INFO - memory_manager.py:504 - Attempting to delete memories [5] for user default_user
+2025-01-07 21:43:52,563 - root - INFO - memory_manager.py:513 - Deleting memory at index 5
+2025-01-07 21:43:52,639 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:43:52,639 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:43:52,640 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:43:52] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:43:52,646 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:43:52,646 - root - INFO - memory_manager.py:347 - Successfully retrieved 7 memories for user default_user
+2025-01-07 21:43:52,646 - root - INFO - main.py:222 - 成功获取 7 条记忆
+2025-01-07 21:43:52,646 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:43:52] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:44:56,748 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 21:44:56,748 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 21:44:56,764 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:45:05,264 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:45:05,279 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:45:13,977 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:45:13] "GET / HTTP/1.1" 200 -
+2025-01-07 21:45:14,582 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:45:14] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 21:45:43,437 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:45:43] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 21:45:43,688 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:45:43,688 - root - INFO - memory_manager.py:347 - Successfully retrieved 7 memories for user default_user
+2025-01-07 21:45:43,689 - root - INFO - main.py:222 - 成功获取 7 条记忆
+2025-01-07 21:45:43,690 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:45:43] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:46:29,435 - root - INFO - memory_manager.py:347 - Successfully retrieved 7 memories for user default_user
+2025-01-07 21:46:29,533 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:46:29] "POST /api/memories/clean HTTP/1.1" 200 -
+2025-01-07 21:46:29,538 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:46:29,538 - root - INFO - memory_manager.py:347 - Successfully retrieved 7 memories for user default_user
+2025-01-07 21:46:29,538 - root - INFO - main.py:222 - 成功获取 7 条记忆
+2025-01-07 21:46:29,543 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:46:29] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:46:48,648 - root - INFO - memory_manager.py:504 - Attempting to delete memories [4] for user default_user
+2025-01-07 21:46:48,649 - root - INFO - memory_manager.py:513 - Deleting memory at index 4
+2025-01-07 21:46:48,743 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 21:46:48,743 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 21:46:48,743 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:46:48] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 21:46:48,755 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 21:46:48,755 - root - INFO - memory_manager.py:347 - Successfully retrieved 6 memories for user default_user
+2025-01-07 21:46:48,755 - root - INFO - main.py:222 - 成功获取 6 条记忆
+2025-01-07 21:46:48,755 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:46:48] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 21:55:01,054 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-07 21:55:01,760 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 21:55:11,354 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 21:55:11,369 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 21:59:43,044 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:59:43] "GET / HTTP/1.1" 200 -
+2025-01-07 21:59:43,874 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:59:43] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 21:59:57,118 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:59:57] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-07 21:59:57,416 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:59:57] "[33mGET /api/documents HTTP/1.1[0m" 404 -
+2025-01-07 21:59:57,419 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 21:59:57] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -
+2025-01-07 22:00:02,547 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:00:02] "GET / HTTP/1.1" 200 -
+2025-01-07 22:00:02,589 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:00:02] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 22:00:03,744 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:00:03] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 22:00:03,990 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 22:00:03,990 - root - INFO - memory_manager.py:347 - Successfully retrieved 6 memories for user default_user
+2025-01-07 22:00:03,990 - root - INFO - main.py:222 - 成功获取 6 条记忆
+2025-01-07 22:00:03,990 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:00:03] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 22:05:44,192 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 22:05:44,192 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 22:05:44,208 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 22:05:52,848 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 22:05:52,864 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 22:06:30,974 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:06:30] "GET / HTTP/1.1" 200 -
+2025-01-07 22:06:31,721 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:06:31] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 22:06:35,883 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:06:35] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 22:06:36,115 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 22:06:36,116 - root - INFO - memory_manager.py:347 - Successfully retrieved 6 memories for user default_user
+2025-01-07 22:06:36,116 - root - INFO - main.py:222 - 成功获取 6 条记忆
+2025-01-07 22:06:36,118 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:06:36] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 22:08:23,796 - root - INFO - memory_manager.py:504 - Attempting to delete memories [3] for user default_user
+2025-01-07 22:08:23,796 - root - INFO - memory_manager.py:513 - Deleting memory at index 3
+2025-01-07 22:08:23,843 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 22:08:23,843 - root - INFO - memory_manager.py:532 - Successfully deleted 1 memories
+2025-01-07 22:08:23,843 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:08:23] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-07 22:08:23,859 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 22:08:23,859 - root - INFO - memory_manager.py:347 - Successfully retrieved 5 memories for user default_user
+2025-01-07 22:08:23,859 - root - INFO - main.py:222 - 成功获取 5 条记忆
+2025-01-07 22:08:23,859 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:08:23] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 22:09:08,754 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-07 22:09:08,754 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-07 22:09:08,769 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 22:09:17,217 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 22:09:17,217 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 22:09:56,626 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:09:56] "GET / HTTP/1.1" 200 -
+2025-01-07 22:09:57,288 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:09:57] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 22:09:58,149 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:09:58] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-07 22:09:58,417 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:09:58] "[33mGET /api/documents HTTP/1.1[0m" 404 -
+2025-01-07 22:09:58,417 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:09:58] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -
+2025-01-07 22:10:00,522 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:10:00] "GET / HTTP/1.1" 200 -
+2025-01-07 22:10:00,570 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:10:00] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 22:10:01,246 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:10:01] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 22:10:01,482 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 22:10:01,482 - root - INFO - memory_manager.py:347 - Successfully retrieved 5 memories for user default_user
+2025-01-07 22:10:01,482 - root - INFO - main.py:222 - 成功获取 5 条记忆
+2025-01-07 22:10:01,499 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:10:01] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 22:10:05,303 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:10:05] "GET / HTTP/1.1" 200 -
+2025-01-07 22:10:05,347 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:10:05] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 22:10:07,057 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:10:07] "POST /set_role HTTP/1.1" 200 -
+2025-01-07 22:10:18,788 - root - INFO - rag_module.py:173 - 正在搜索查询: '请你作为个人助理回答我的问题'
+2025-01-07 22:10:18,788 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.1592
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,788 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.3154
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,788 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.3441
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,788 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.3588
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,788 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.3791
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,788 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-07 22:10:18,820 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4709):
+内容: 用户表示威士忌也很不错！
+2025-01-07 22:10:18,820 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4596):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-07 22:10:18,820 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4301):
+内容: 用户表示那瓦尔宝典是一本好书
+2025-01-07 22:10:18,820 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4152):
+内容: 老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢
+2025-01-07 22:10:18,820 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.3966):
+内容: 猫和老鼠是我小时候最喜欢的动画片
+2025-01-07 22:10:18,820 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-07 22:10:18,844 - root - INFO - rag_module.py:173 - 正在搜索查询: '请你作为个人助理回答我的问题'
+2025-01-07 22:10:18,844 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.1592
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,844 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.3154
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,844 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.3441
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,844 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.3588
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,844 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.3791
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:10:18,844 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-07 22:10:23,856 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 22:10:23,856 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 请你作为个人助理回答我的问题
+2025-01-07 22:10:23,856 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:10:23] "POST /chat HTTP/1.1" 200 -
+2025-01-07 22:11:16,070 - root - INFO - rag_module.py:173 - 正在搜索查询: '我想知道RAG系统最重要的几项功能'
+2025-01-07 22:11:16,070 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.0427
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,070 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1889
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,070 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.3715
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,070 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.4687
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,070 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.5056
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,070 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-07 22:11:16,086 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4419):
+内容: 用户表示威士忌也很不错！
+2025-01-07 22:11:16,086 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4270):
+内容: 用户表示我也喜欢喝热红酒
+2025-01-07 22:11:16,086 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4263):
+内容: 老友记是我最喜欢的电视剧，小谢尔顿、绝命毒师和权力的游戏我也都非常喜欢
+2025-01-07 22:11:16,086 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4195):
+内容: 用户表示那瓦尔宝典是一本好书
+2025-01-07 22:11:16,086 - root - INFO - memory_manager.py:313 - 记忆因相似度过低被过滤 (得分: 0.4149):
+内容: 请你作为个人助理回答我的问题
+2025-01-07 22:11:16,086 - root - INFO - memory_manager.py:324 - 没有找到相关记忆
+2025-01-07 22:11:16,117 - root - INFO - rag_module.py:173 - 正在搜索查询: '我想知道RAG系统最重要的几项功能'
+2025-01-07 22:11:16,117 - root - INFO - rag_module.py:202 - 
+候选文档 4:
+ - 内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+ - 相似度得分: -0.0427
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,117 - root - INFO - rag_module.py:202 - 
+候选文档 3:
+ - 内容: Jamie最喜欢的人是他的老婆和多米
+ - 相似度得分: -0.1889
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,117 - root - INFO - rag_module.py:202 - 
+候选文档 2:
+ - 内容: V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝
+ - 相似度得分: -0.3715
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,117 - root - INFO - rag_module.py:202 - 
+候选文档 1:
+ - 内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+ - 相似度得分: -0.4687
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,117 - root - INFO - rag_module.py:202 - 
+候选文档 0:
+ - 内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+ - 相似度得分: -0.5056
+ - 状态: 丢弃 (得分 < 0.5)
+2025-01-07 22:11:16,117 - root - INFO - rag_module.py:204 - 共找到 0/5 个相关文档
+2025-01-07 22:11:44,985 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-07 22:11:44,985 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 我想知道RAG系统最重要的几项功能
+2025-01-07 22:11:44,986 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:44] "POST /chat HTTP/1.1" 200 -
+2025-01-07 22:11:45,012 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:45] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 22:11:56,744 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:56] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-07 22:11:57,127 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:57] "[33mGET /api/documents HTTP/1.1[0m" 404 -
+2025-01-07 22:11:57,129 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:57] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -
+2025-01-07 22:11:58,757 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:58] "GET / HTTP/1.1" 200 -
+2025-01-07 22:11:58,810 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:58] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 22:11:59,463 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:59] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-07 22:11:59,678 - root - INFO - main.py:186 - 正在获取用户 default_user 的记忆列表
+2025-01-07 22:11:59,679 - root - INFO - memory_manager.py:347 - Successfully retrieved 7 memories for user default_user
+2025-01-07 22:11:59,680 - root - INFO - main.py:222 - 成功获取 7 条记忆
+2025-01-07 22:11:59,681 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:11:59] "GET /api/memories HTTP/1.1" 200 -
+2025-01-07 22:12:03,553 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:12:03] "GET / HTTP/1.1" 200 -
+2025-01-07 22:12:03,601 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:12:03] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-07 22:12:04,217 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:12:04] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-07 22:12:04,395 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:12:04] "[33mGET /api/documents HTTP/1.1[0m" 404 -
+2025-01-07 22:12:04,408 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:12:04] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -

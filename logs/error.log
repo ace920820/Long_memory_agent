@@ -24,3 +24,12 @@
 2025-01-06 02:37:35,325 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'str'
 2025-01-06 02:37:41,426 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'str'
 2025-01-06 02:41:12,658 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 17:50:09,035 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 17:56:10,774 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 18:01:42,228 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 18:01:42,231 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'NoneType'
+2025-01-07 20:55:31,091 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 20:55:33,692 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 20:57:21,729 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 21:08:02,921 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-07 21:08:13,463 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
