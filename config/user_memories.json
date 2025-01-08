@@ -32,9 +32,9 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 7,
+        "count": 9,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-08T13:27:30.253476",
+        "last_access": "2025-01-08T14:59:04.194846",
         "access_history": [
           {
             "timestamp": "2025-01-08T13:11:34.138165",
@@ -63,6 +63,14 @@
           {
             "timestamp": "2025-01-08T13:27:30.253476",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:56:46.764250",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:59:04.194846",
+            "type": "reference"
           }
         ]
       },
@@ -74,12 +82,17 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
+        "last_access": "2025-01-08T14:59:04.210890",
+        "access_history": [
+          {
+            "timestamp": "2025-01-08T14:59:04.210890",
+            "type": "reference"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.92
     },
     {
       "id": "m_1736312950617_3349",
@@ -87,9 +100,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-08T13:09:10.617617",
       "access_stats": {
-        "count": 8,
+        "count": 10,
         "first_access": "2025-01-08T13:09:10.617617",
-        "last_access": "2025-01-08T13:29:36.339418",
+        "last_access": "2025-01-08T14:59:04.166821",
         "access_history": [
           {
             "timestamp": "2025-01-08T13:11:34.133149",
@@ -121,6 +134,14 @@
           },
           {
             "timestamp": "2025-01-08T13:29:36.339418",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:56:46.768250",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:59:04.166821",
             "type": "reference"
           }
         ]
@@ -198,12 +219,17 @@
       "type": "fact",
       "timestamp": "2025-01-08T13:34:29.578098",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-08T13:34:29.578098",
-        "last_access": "2025-01-08T13:34:29.578098",
-        "access_history": []
+        "last_access": "2025-01-08T15:02:28.607077",
+        "access_history": [
+          {
+            "timestamp": "2025-01-08T15:02:28.607077",
+            "type": "reference"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.92
     },
     {
       "id": "m_1736314476326_8732",
@@ -211,12 +237,17 @@
       "type": "fact",
       "timestamp": "2025-01-08T13:34:36.326447",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-08T13:34:36.326447",
-        "last_access": "2025-01-08T13:34:36.326447",
-        "access_history": []
+        "last_access": "2025-01-08T15:02:28.591528",
+        "access_history": [
+          {
+            "timestamp": "2025-01-08T15:02:28.591528",
+            "type": "reference"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.92
     },
     {
       "id": "m_1736314482368_7635",
@@ -237,9 +268,95 @@
       "type": "fact",
       "timestamp": "2025-01-08T13:34:48.717078",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-08T13:34:48.717078",
-        "last_access": "2025-01-08T13:34:48.717078",
+        "last_access": "2025-01-08T15:02:28.578507",
+        "access_history": [
+          {
+            "timestamp": "2025-01-08T15:02:28.578507",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.92
+    },
+    {
+      "id": "m_1736316915813_9133",
+      "content": "Jamie最喜欢的人是",
+      "type": "dialogue",
+      "timestamp": "2025-01-08T14:15:15.813830",
+      "access_stats": {
+        "count": 9,
+        "first_access": "2025-01-08T14:15:15.813830",
+        "last_access": "2025-01-08T14:56:46.761264",
+        "access_history": [
+          {
+            "timestamp": "2025-01-08T14:21:00.919451",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:37:55.931342",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:39:14.550416",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:41:16.104571",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:42:15.080577",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:46:49.887250",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:47:19.568037",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:56:15.981783",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T14:56:46.761264",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1736319413566_2619",
+      "content": "jamie最喜欢的电视剧是",
+      "type": "dialogue",
+      "timestamp": "2025-01-08T14:56:53.566849",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-08T14:56:53.566849",
+        "last_access": "2025-01-08T14:59:04.181840",
+        "access_history": [
+          {
+            "timestamp": "2025-01-08T14:59:04.181840",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1736319922469_6112",
+      "content": "我在准备面试，我应该重点关注哪些方面？",
+      "type": "dialogue",
+      "timestamp": "2025-01-08T15:05:22.469858",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T15:05:22.469858",
+        "last_access": "2025-01-08T15:05:22.469858",
         "access_history": []
       },
       "priority_score": 0.0

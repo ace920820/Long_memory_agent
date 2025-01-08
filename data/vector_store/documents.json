@@ -1,27 +1,62 @@
 [
   {
     "content": "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
-    "document": "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
-    "id": 0
+    "file_name": "example1.txt",
+    "file_hash": "example1",
+    "file_type": "txt",
+    "file_size": 100,
+    "chunks": [
+      "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。"
+    ],
+    "timestamp": "2025-01-08T14:27:09.873669",
+    "status": "indexed"
   },
   {
     "content": "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
-    "document": "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
-    "id": 1
+    "file_name": "example2.txt",
+    "file_hash": "example2",
+    "file_type": "txt",
+    "file_size": 100,
+    "chunks": [
+      "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。"
+    ],
+    "timestamp": "2025-01-08T14:27:09.873669",
+    "status": "indexed"
   },
   {
     "content": "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
-    "document": "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
-    "id": 2
+    "file_name": "example3.txt",
+    "file_hash": "example3",
+    "file_type": "txt",
+    "file_size": 100,
+    "chunks": [
+      "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝"
+    ],
+    "timestamp": "2025-01-08T14:27:09.873669",
+    "status": "indexed"
   },
   {
     "content": "Jamie最喜欢的人是他的老婆和多米",
-    "document": "Jamie最喜欢的人是他的老婆和多米",
-    "id": 3
+    "file_name": "example4.txt",
+    "file_hash": "example4",
+    "file_type": "txt",
+    "file_size": 100,
+    "chunks": [
+      "Jamie最喜欢的人是他的老婆和多米"
+    ],
+    "timestamp": "2025-01-08T14:27:09.873669",
+    "status": "indexed"
   },
   {
     "content": "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。",
-    "document": "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。",
-    "id": 4
+    "file_name": "example5.txt",
+    "file_hash": "example5",
+    "file_type": "txt",
+    "file_size": 100,
+    "chunks": [
+      "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。"
+    ],
+    "timestamp": "2025-01-08T14:27:09.873669",
+    "status": "indexed"
   }
 ]

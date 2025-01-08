@@ -7,6 +7,12 @@ import torch
 import yaml
 import json
 from typing import List, Dict
+from datetime import datetime
+import hashlib
+from pathlib import Path
+import docx
+import PyPDF2
+import markdown
 
 
 class RAGModule:
@@ -27,6 +33,7 @@ class RAGModule:
         self.dimension = embedding_config['dimension']
         self.similarity_threshold = embedding_config['similarity_threshold']
         self.index_path = embedding_config['index_path']
+        self.docs_path = os.path.join(self.index_path, "documents")
 
         try:
             # 初始化 BGE 模型
@@ -42,24 +49,268 @@ class RAGModule:
         self.documents = []
         self.document_embeddings = None
 
+
         # 确保存储目录存在
         os.makedirs(self.index_path, exist_ok=True)
+        os.makedirs(self.docs_path, exist_ok=True)
         
-        # 先加载或创建索引
+        # 加载或创建索引
         self._load_index()
-        
+
         # 在索引加载后再添加示例文档
         example_docs = [
-            "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
-            "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
-            "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
-            "Jamie最喜欢的人是他的老婆和多米",
-            "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。"
+            {
+                'content': "圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。",
+                'file_name': 'example1.txt',
+                'file_hash': 'example1',
+                'file_type': 'txt',
+                'file_size': 100,
+                'chunks': ["圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。"],
+                'timestamp': datetime.now().isoformat(),
+                'status': 'indexed'
+            },
+            {
+                'content': "驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。",
+                'file_name': 'example2.txt',
+                'file_hash': 'example2',
+                'file_type': 'txt',
+                'file_size': 100,
+                'chunks': ["驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。"],
+                'timestamp': datetime.now().isoformat(),
+                'status': 'indexed'
+            },
+            {
+                'content': "V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝",
+                'file_name': 'example3.txt',
+                'file_hash': 'example3',
+                'file_type': 'txt',
+                'file_size': 100,
+                'chunks': ["V认为117咖啡没有手冲咖啡好喝，但是比红茶好喝"],
+                'timestamp': datetime.now().isoformat(),
+                'status': 'indexed'
+            },
+            {
+                'content': "Jamie最喜欢的人是他的老婆和多米",
+                'file_name': 'example4.txt',
+                'file_hash': 'example4',
+                'file_type': 'txt',
+                'file_size': 100,
+                'chunks': ["Jamie最喜欢的人是他的老婆和多米"],
+                'timestamp': datetime.now().isoformat(),
+                'status': 'indexed'
+            },
+            {
+                'content': "Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。",
+                'file_name': 'example5.txt',
+                'file_hash': 'example5',
+                'file_type': 'txt',
+                'file_size': 100,
+                'chunks': ["Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。"],
+                'timestamp': datetime.now().isoformat(),
+                'status': 'indexed'
+            }
         ]
-        
+
         # 只有当文档为空时才添加示例文档
         if not self.documents:
-            self.add_documents(example_docs)
+            self.documents.extend(example_docs)
+            # 重建索引
+            self._rebuild_index()
+
+    def _extract_text_from_file(self, file_path: str) -> str:
+        """从不同类型的文件中提取文本内容"""
+        file_ext = Path(file_path).suffix.lower()
+        
+        try:
+            if file_ext == '.txt':
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    return f.read()
+                    
+            elif file_ext == '.docx':
+                doc = docx.Document(file_path)
+                return '\n'.join([paragraph.text for paragraph in doc.paragraphs])
+                
+            elif file_ext == '.pdf':
+                text = []
+                with open(file_path, 'rb') as f:
+                    pdf_reader = PyPDF2.PdfReader(f)
+                    for page in pdf_reader.pages:
+                        text.append(page.extract_text())
+                return '\n'.join(text)
+                
+            elif file_ext == '.md':
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    md_text = f.read()
+                    html = markdown.markdown(md_text)
+                    # 简单移除HTML标签
+                    text = html.replace('<p>', '').replace('</p>', '\n')
+                    return text
+                    
+            else:
+                raise ValueError(f"Unsupported file type: {file_ext}")
+                
+        except Exception as e:
+            logging.error(f"Error extracting text from {file_path}: {str(e)}")
+            raise
+
+    def _split_text(self, text: str, max_length: int = 512) -> List[str]:
+        """将长文本分割成较小的片段"""
+        sentences = text.split('。')
+        chunks = []
+        current_chunk = []
+        current_length = 0
+        
+        for sentence in sentences:
+            sentence = sentence.strip() + '。'
+            sentence_length = len(sentence)
+            
+            if current_length + sentence_length > max_length:
+                if current_chunk:
+                    chunks.append(''.join(current_chunk))
+                current_chunk = [sentence]
+                current_length = sentence_length
+            else:
+                current_chunk.append(sentence)
+                current_length += sentence_length
+                
+        if current_chunk:
+            chunks.append(''.join(current_chunk))
+            
+        return chunks
+
+    def add_file(self, file_path: str, file_name: str = None) -> Dict:
+        """添加新文件到知识库
+        
+        Args:
+            file_path: 文件路径
+            file_name: 文件名（可选）
+            
+        Returns:
+            Dict: 包含操作结果的字典
+        """
+        try:
+            if not os.path.exists(file_path):
+                return {"success": False, "error": "File not found"}
+                
+            # 计算文件哈希值作为唯一标识
+            with open(file_path, 'rb') as f:
+                file_hash = hashlib.md5(f.read()).hexdigest()
+                
+            # 检查文件是否已存在
+            for doc in self.documents:
+                if doc.get('file_hash') == file_hash:
+                    return {"success": False, "error": "File already exists"}
+            
+            # 提取文本内容
+            text = self._extract_text_from_file(file_path)
+            
+            # 分割文本
+            chunks = self._split_text(text)
+            
+            # 保存文件到文档目录
+            file_name = file_name or os.path.basename(file_path)
+            target_path = os.path.join(self.docs_path, file_hash + Path(file_path).suffix)
+            with open(file_path, 'rb') as src, open(target_path, 'wb') as dst:
+                dst.write(src.read())
+            
+            # 创建文档记录
+            doc_info = {
+                'id': len(self.documents),
+                'file_name': file_name,
+                'file_hash': file_hash,
+                'file_type': Path(file_path).suffix[1:],
+                'file_size': os.path.getsize(file_path),
+                'chunks': chunks,
+                'timestamp': datetime.now().isoformat(),
+                'status': 'indexed'
+            }
+            
+            # 添加文档内容到索引
+            self.add_documents(chunks)
+            
+            # 更新文档记录
+            self.documents.append(doc_info)
+            self._save_index()
+            
+            return {
+                "success": True,
+                "message": "File added successfully",
+                "document": doc_info
+            }
+            
+        except Exception as e:
+            logging.error(f"Error adding file: {str(e)}")
+            return {"success": False, "error": str(e)}
+
+    def delete_document(self, doc_id: int) -> Dict:
+        """从知识库中删除文档
+        
+        Args:
+            doc_id: 文档ID
+            
+        Returns:
+            Dict: 包含操作结果的字典
+        """
+        try:
+            if not 0 <= doc_id < len(self.documents):
+                return {"success": False, "error": "Document not found"}
+                
+            doc = self.documents[doc_id]
+            
+            # 删除文件
+            file_path = os.path.join(self.docs_path, doc['file_hash'] + '.' + doc['file_type'])
+            if os.path.exists(file_path):
+                os.remove(file_path)
+            
+            # 从列表中移除文档
+            self.documents.pop(doc_id)
+            
+            # 重建索引
+            self._rebuild_index()
+            
+            return {
+                "success": True,
+                "message": "Document deleted successfully"
+            }
+            
+        except Exception as e:
+            logging.error(f"Error deleting document: {str(e)}")
+            return {"success": False, "error": str(e)}
+
+    def _rebuild_index(self):
+        """重建向量索引"""
+        try:
+            # 收集所有文档片段
+            all_chunks = []
+            for doc in self.documents:
+                all_chunks.extend(doc['chunks'])
+            
+            # 重新编码所有文档
+            if all_chunks:
+                self.document_embeddings = self._encode_text(all_chunks)
+                self.index = faiss.IndexFlatL2(self.dimension)
+                self.index.add(self.document_embeddings.astype('float32'))
+            else:
+                self.document_embeddings = None
+                self.index = faiss.IndexFlatL2(self.dimension)
+            
+            # 保存更新
+            self._save_index()
+            
+        except Exception as e:
+            logging.error(f"Error rebuilding index: {str(e)}")
+            raise
+
+    def get_documents(self) -> List[Dict]:
+        """获取所有文档的信息"""
+        return [{
+            'id': i,  # 使用索引作为 id
+            'file_name': doc.get('file_name', ''),
+            'file_type': doc.get('file_type', ''),
+            'file_size': doc.get('file_size', 0),
+            'status': doc.get('status', 'unknown'),
+            'timestamp': doc.get('timestamp', datetime.now().isoformat())
+        } for i, doc in enumerate(self.documents)]
 
     def _load_index(self):
         """加载或创建向量索引"""
@@ -76,7 +327,9 @@ class RAGModule:
                 self.index = faiss.read_index(index_path)
                 # 重新计算文档向量
                 if self.documents:
-                    texts = [doc['content'] for doc in self.documents]
+                    texts = []
+                    for doc in self.documents:
+                        texts.extend(doc['chunks'])
                     self.document_embeddings = self._encode_text(texts)
             else:
                 self.index = faiss.IndexFlatL2(self.dimension)
@@ -111,32 +364,26 @@ class RAGModule:
             logging.error(f"Error encoding text: {str(e)}")
             raise
 
-    def add_documents(self, documents: List[str]) -> None:
+    def add_documents(self, documents: List[Dict]) -> None:
         """添加新文档到知识库
         
         Args:
-            documents: 文档内容列表
+            documents: 文档列表，每个文档都是一个包含必要字段的字典
         """
         try:
-            # 将文本列表转换为文档格式
-            formatted_docs = []
-            for doc in documents:
-                formatted_docs.append({
-                    'content': doc,  # 存储原始内容
-                    'document': doc  # 保持与搜索结果格式一致
-                })
-            
             # 编码新文档
-            new_embeddings = self._encode_text([doc['content'] for doc in formatted_docs])
+            all_chunks = []
+            for doc in documents:
+                if isinstance(doc, dict):
+                    all_chunks.extend(doc['chunks'])
+                else:
+                    # 处理纯文本输入的情况
+                    all_chunks.append(doc)
+            
+            new_embeddings = self._encode_text(all_chunks)
             
             # 更新索引
             self.index.add(new_embeddings.astype('float32'))
-            
-            # 更新文档存储
-            start_idx = len(self.documents)
-            for i, doc in enumerate(formatted_docs):
-                doc['id'] = start_idx + i
-                self.documents.append(doc)
             
             # 更新文档向量
             if self.document_embeddings is None:
@@ -340,4 +587,4 @@ class RAGModule:
             return False
         except Exception as e:
             logging.error(f"Failed to remove document: {str(e)}")
-            return False 
+            return False

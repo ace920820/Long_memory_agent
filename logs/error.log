@@ -34,3 +34,14 @@
 2025-01-07 21:08:02,921 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
 2025-01-07 21:08:13,463 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
 2025-01-08 11:09:23,382 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'str'
+2025-01-08 14:29:02,717 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
+2025-01-08 14:30:42,330 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
+2025-01-08 14:30:44,820 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
+2025-01-08 14:33:34,661 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
+2025-01-08 14:37:55,938 - root - ERROR - agent.py:142 - Error in chat: 'document'
+2025-01-08 14:46:40,875 - root - ERROR - document_routes.py:27 - Error getting documents: 'RAGModule' object has no attribute 'get_documents'
+2025-01-08 14:47:10,573 - root - ERROR - llm_model.py:131 - Error generating response: The 'content' field in each message must be a string.
+2025-01-08 14:47:21,036 - root - ERROR - llm_model.py:131 - Error generating response: The 'content' field in each message must be a string.
+2025-01-08 14:50:02,690 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
+2025-01-08 14:52:32,541 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
+2025-01-08 14:53:03,281 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'

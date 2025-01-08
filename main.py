@@ -5,6 +5,7 @@ from services.llm_service import LLMService
 from models.rag_module import RAGModule
 from models.memory_manager import MemoryManager
 from services.prompt_manager import PromptManager
+from routes.document_routes import init_document_routes
 import yaml
 import logging.config
 import sys
@@ -97,6 +98,9 @@ def create_app():
     with open('config/logging_config.yaml', 'r') as f:
         log_config = yaml.safe_load(f)
     logging.config.dictConfig(log_config)
+
+    # 注册文档管理路由
+    app.register_blueprint(init_document_routes(rag_module))
 
     # 路由定义
     @app.route('/')
