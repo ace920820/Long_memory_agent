@@ -17,29 +17,6 @@ from datetime import datetime
 if sys.stdout.encoding.lower() != 'utf-8':
     sys.stdout = open(sys.stdout.fileno(), mode='w', encoding='utf-8', buffering=1)
 
-def create_memory_manager():
-    """创建并初始化 MemoryManager 实例"""
-    try:
-        manager = MemoryManager(
-            model_name="all-MiniLM-L6-v2",
-            memory_file="config/user_memories.json",
-            similarity_threshold=0.45
-        )
-        
-        # 验证 get_all_memories 方法是否存在
-        if not hasattr(manager, 'get_all_memories'):
-            raise AttributeError("MemoryManager missing required method: get_all_memories")
-        
-        # 打印调试信息
-        print("Memory manager initialized successfully")
-        print("Available methods:", [m for m in dir(manager) if not m.startswith('_')])
-        
-        return manager
-        
-    except Exception as e:
-        print(f"Error initializing memory manager: {str(e)}")
-        raise
-
 def create_rag_module():
     """创建并初始化 RAGModule 实例"""
     try:
@@ -82,7 +59,7 @@ def create_app():
         memory_manager = MemoryManager(
             model_name="all-MiniLM-L6-v2",  # 使用默认模型
             memory_file="config/user_memories.json",
-            similarity_threshold=0.6
+            similarity_threshold=0.5
         )
         
         # 初始化 RAG 模块
@@ -248,34 +225,6 @@ def create_app():
         except Exception as e:
             logging.error(f"Error adding memory: {str(e)}")
             return jsonify({"error": "Failed to add memory"}), 500
-
-    @app.route('/api/memories/restructure-preview', methods=['POST'])
-    def preview_restructure():
-        try:
-            data = request.json
-            memory_ids = data.get('memoryIds', [])
-            template = data.get('template')
-            user_id = data.get('user_id', 'default_user')
-            
-            preview = memory_manager.preview_restructure(user_id, memory_ids, template)
-            return jsonify({"preview": preview})
-        except Exception as e:
-            logging.error(f"Error previewing restructure: {str(e)}")
-            return jsonify({"error": "Failed to preview restructure"}), 500
-
-    @app.route('/api/memories/restructure', methods=['POST'])
-    def restructure_memories():
-        try:
-            data = request.json
-            memory_ids = data.get('memoryIds', [])
-            template = data.get('template')
-            user_id = data.get('user_id', 'default_user')
-            
-            result = memory_manager.restructure_memories(user_id, memory_ids, template)
-            return jsonify(result)
-        except Exception as e:
-            logging.error(f"Error restructuring memories: {str(e)}")
-            return jsonify({"error": "Failed to restructure memories"}), 500
 
     @app.route('/api/memories/delete', methods=['POST'])
     def delete_memories():

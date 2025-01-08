@@ -224,7 +224,7 @@ class RAGModule:
         except Exception as e:
             logging.error(f"Error saving index: {str(e)}")
 
-    def generate_response(self, query: str, llm_model,context=None, role_prompt=None,  memories=None):
+    def generate_response(self, query: str, llm_model,context=None, role_prompt=None):
         """生成带有检索增强的响应"""
         try:
             # 1. 获取相关文档
@@ -253,11 +253,12 @@ class RAGModule:
                 context_info.extend(context['context'])
             
             # 添加记忆信息（去重）
+            memories = context['memories']
             if memories:
                 seen_contents = set()
                 memory_info = []
                 for memory in memories:
-                    content = memory.get('content', '')
+                    content = memory
                     if content and content not in seen_contents:
                         memory_info.append(f"历史记忆: {content}")
                         seen_contents.add(content)

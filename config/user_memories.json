@@ -32,12 +32,41 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 0,
+        "count": 7,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
+        "last_access": "2025-01-08T13:27:30.253476",
+        "access_history": [
+          {
+            "timestamp": "2025-01-08T13:11:34.138165",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:18:58.309014",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:20:46.279016",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:20:46.303088",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:21:43.964606",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:24:49.934348",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:27:30.253476",
+            "type": "reference"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.92
     },
     {
       "id": "m_1736100510510_2261",
@@ -48,6 +77,169 @@
         "count": 0,
         "first_access": "2025-01-06T02:05:22.995985",
         "last_access": "2025-01-06T02:05:22.995985",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736312950617_3349",
+      "content": "我最喜欢的电视剧是什么",
+      "type": "dialogue",
+      "timestamp": "2025-01-08T13:09:10.617617",
+      "access_stats": {
+        "count": 8,
+        "first_access": "2025-01-08T13:09:10.617617",
+        "last_access": "2025-01-08T13:29:36.339418",
+        "access_history": [
+          {
+            "timestamp": "2025-01-08T13:11:34.133149",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:18:54.248444",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:20:46.265015",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:20:46.281016",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:21:43.944952",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:24:49.919346",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:27:30.241426",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T13:29:36.339418",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1736314426067_8119",
+      "content": "用户正在进行一个与高血压慢性病管理中的药物依从性相关的项目。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:33:46.067601",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:33:46.067601",
+        "last_access": "2025-01-08T13:33:46.067601",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736314432433_4161",
+      "content": "在开发一个基于大语言模型（LLM）和LangChain的对话系统，处理检索增强生成（RAG）项目。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:33:52.433460",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:33:52.433460",
+        "last_access": "2025-01-08T13:33:52.433460",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736314443065_6108",
+      "content": "在开发一个用于意图分类的项目，通过使用模板识别诸如“问路”、“医疗咨询”、“预约”、“专家推荐”等多种意图。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:34:03.065052",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:34:03.065052",
+        "last_access": "2025-01-08T13:34:03.065052",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736314452386_7989",
+      "content": "你有一个涉及意图识别的项目，目标是在1秒内返回预测的意图，且缓存的条目量可能高达几十万条。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:34:12.386935",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:34:12.386935",
+        "last_access": "2025-01-08T13:34:12.386935",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736314462346_7262",
+      "content": "你想优化LangChain基础对话系统的响应时间，通过管理和复用过去的相同响应来加速处理。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:34:22.346429",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:34:22.346429",
+        "last_access": "2025-01-08T13:34:22.346429",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736314469578_9425",
+      "content": "目前与项目经理、产品经理以及客户有沟通的需求。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:34:29.578098",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:34:29.578098",
+        "last_access": "2025-01-08T13:34:29.578098",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736314476326_8732",
+      "content": "在为面试做准备，尤其是关于基于大语言模型的对话系统评估、模型难题以及如何解决项目进展中的难题等问题。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:34:36.326447",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:34:36.326447",
+        "last_access": "2025-01-08T13:34:36.326447",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736314482368_7635",
+      "content": "正在简化代理层的功能，并目标实现一个基于LLM和LangChain的功能性原型。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:34:42.368298",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:34:42.368298",
+        "last_access": "2025-01-08T13:34:42.368298",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736314488717_3167",
+      "content": "有一份简历，并正在准备自我介绍，用于英语面试。",
+      "type": "fact",
+      "timestamp": "2025-01-08T13:34:48.717078",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-08T13:34:48.717078",
+        "last_access": "2025-01-08T13:34:48.717078",
         "access_history": []
       },
       "priority_score": 0.0
