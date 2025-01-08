@@ -1,19 +1,6 @@
 {
   "default_user": [
     {
-      "id": "m_1736100510509_3940",
-      "content": "用户表示那瓦尔宝典是一本好书",
-      "type": "fact",
-      "timestamp": "2025-01-06T02:05:22.995985",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
       "id": "m_1736100510509_8486",
       "content": "用户表示我也喜欢喝热红酒",
       "type": "fact",
@@ -61,32 +48,6 @@
         "count": 0,
         "first_access": "2025-01-06T02:05:22.995985",
         "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736259023833_1341",
-      "content": "请你作为个人助理回答我的问题",
-      "type": "dialogue",
-      "timestamp": "2025-01-07T22:10:23.833054",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-07T22:10:23.833054",
-        "last_access": "2025-01-07T22:10:23.833054",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736259104956_1809",
-      "content": "我想知道RAG系统最重要的几项功能",
-      "type": "dialogue",
-      "timestamp": "2025-01-07T22:11:44.956158",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-07T22:11:44.956158",
-        "last_access": "2025-01-07T22:11:44.956158",
         "access_history": []
       },
       "priority_score": 0.0

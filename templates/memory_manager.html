@@ -338,7 +338,7 @@
                         minute: '2-digit'
                     }) : '无访问记录';
 
-                const memoryId = parseInt(memory.id || index);
+                const memoryId = memory.id || index;
 
                 return `
                     <tr class="hover:bg-gray-50" data-memory-id="${memoryId}">
@@ -370,9 +370,9 @@
                         </td>
                         <td class="px-4 py-4 text-sm flex gap-2">
                             <div class="flex space-x-2">
-                                <button onclick="deleteMemory(${memoryId})" 
+                                <button onclick="deleteMemory('${memoryId}')" 
                                     class="text-red-600 hover:text-red-800">
-                                    <i class="material-icons">delete</i>
+                                    <i class="material-icons">删除</i>
                                 </button>
                                 <button onclick="showMemoryDetail(${index})" 
                                     class="text-blue-600 hover:text-blue-800">
@@ -431,7 +431,8 @@
 
         // 处理复选框变化
         function handleCheckboxChange(checkbox) {
-            const memoryId = parseInt(checkbox.value);
+            console.log(checkbox)
+            const memoryId = checkbox.value;
             if (checkbox.checked) {
                 selectedMemories.add(memoryId);
             } else {
@@ -453,7 +454,7 @@
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        memoryIds: Array.from(selectedMemories).map(id => parseInt(id)),
+                        memoryIds: Array.from(selectedMemories).map(id => id),
                         user_id: 'default_user'
                     })
                 });
@@ -481,7 +482,7 @@
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        memoryIds: [parseInt(memoryId)],
+                        memoryIds: [memoryId],
                         user_id: 'default_user'
                     })
                 });
@@ -489,7 +490,7 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    selectedMemories.delete(parseInt(memoryId));
+                    selectedMemories.delete(memoryId);
                     await fetchMemories();
                     showNotification('记忆已删除', 'success');
                 } else {
@@ -691,4 +692,4 @@
         }
     </script>
 </body>
-</html> 
+</html>

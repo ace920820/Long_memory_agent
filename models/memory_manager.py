@@ -495,26 +495,34 @@ class MemoryManager:
             return f"用户在交谈中表现出{content}的特点"
         return content
 
-    def delete_memories(self, user_id: str, memory_ids: List[int]) -> Dict:
-        """删除指定的记忆"""
+    def delete_memories(self, user_id: str, memory_ids: List[str]) -> Dict:
+        """删除指定的记忆
+        
+        Args:
+            user_id (str): 用户ID
+            memory_ids (List[str]): 要删除的记忆ID列表
+            
+        Returns:
+            Dict: 包含操作结果的字典
+        """
         try:
             if user_id not in self.memories:
                 return {"success": False, "error": "User not found"}
 
             logging.info(f"Attempting to delete memories {memory_ids} for user {user_id}")
             
-            # 按照索引从大到小排序，这样删除时不会影响其他记忆的索引
-            sorted_ids = sorted(memory_ids, reverse=True)
             deleted_count = 0
-
-            # 删除记忆
-            for idx in sorted_ids:
-                if 0 <= idx < len(self.memories[user_id]):
-                    logging.info(f"Deleting memory at index {idx}")
-                    self.memories[user_id].pop(idx)
-                    deleted_count += 1
+            # 创建一个新的记忆列表，保留未被删除的记忆
+            new_memories = []
+            for memory in self.memories[user_id]:
+                if memory.get('id') not in memory_ids:
+                    new_memories.append(memory)
                 else:
-                    logging.warning(f"Invalid memory index: {idx}")
+                    deleted_count += 1
+                    logging.info(f"Deleting memory with id {memory.get('id')}")
+            
+            # 更新记忆列表
+            self.memories[user_id] = new_memories
 
             # 重建索引
             if deleted_count > 0:
@@ -548,7 +556,7 @@ class MemoryManager:
                 return {"success": False, "error": "User not found"}
             
             memories = self.memories[user_id]
-            if not (0 <= memory_id < len(memories)):
+            if not memories or memory_id < 0 or memory_id >= len(memories):
                 return {"success": False, "error": "Memory not found"}
             
             content = memories[memory_id]['content']
@@ -596,7 +604,7 @@ class MemoryManager:
             # 4. 如果成功添加了新记忆，删除原始记忆并更新索引
             if len(new_memories) > 1:  # 只有在成功拆分为多条记忆时才删除原记忆
                 # 删除原始记忆
-                self.delete_memories(user_id, [memory_id])
+                self.delete_memories(user_id, [memories[memory_id]['id']])
                 
                 # 重建索引
                 memory_texts = [m['content'] for m in self.memories[user_id]]
@@ -619,7 +627,7 @@ class MemoryManager:
                     if memory['id'] in [m['id'] for m in new_memories]:
                         indices_to_delete.append(i)
                 if indices_to_delete:
-                    self.delete_memories(user_id, indices_to_delete)
+                    self.delete_memories(user_id, [self.memories[user_id][i]['id'] for i in indices_to_delete])
                 return {
                     "success": False,
                     "error": "拆分失败",
@@ -691,7 +699,7 @@ class MemoryManager:
 请直接返回拆分后的句子，每句一行，不要添加任何其他内容。如果内容无法合理拆分，请返回空行。"""
             
             try:
-                response = llm.generate(prompt)
+                response = llm_model.generate(prompt)
                 
                 # 处理响应
                 segments = []
@@ -834,7 +842,7 @@ class MemoryManager:
             # 删除标记的记忆
             deleted_count = 0
             if memories_to_delete:
-                delete_result = self.delete_memories(user_id, memories_to_delete)
+                delete_result = self.delete_memories(user_id, [self.memories[user_id][i]['id'] for i in memories_to_delete])
                 if delete_result.get("success"):
                     deleted_count = delete_result.get('deleted_count', 0)
 

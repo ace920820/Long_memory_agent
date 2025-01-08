@@ -33,3 +33,4 @@
 2025-01-07 20:57:21,729 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
 2025-01-07 21:08:02,921 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
 2025-01-07 21:08:13,463 - root - ERROR - main.py:308 - Error deleting memories: local variable 'data' referenced before assignment
+2025-01-08 11:09:23,382 - root - ERROR - memory_manager.py:541 - Error deleting memories: '<=' not supported between instances of 'int' and 'str'
