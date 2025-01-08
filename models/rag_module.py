@@ -153,30 +153,171 @@ class RAGModule:
             logging.error(f"Error extracting text from {file_path}: {str(e)}")
             raise
 
-    def _split_text(self, text: str, max_length: int = 512) -> List[str]:
-        """将长文本分割成较小的片段"""
-        sentences = text.split('。')
-        chunks = []
-        current_chunk = []
-        current_length = 0
+    def _split_text(self, text: str, max_length: int = 200, overlap: int = 30) -> List[str]:
+        """将长文本分割成较小的片段，使用基于语义的递归分割策略
+
+        Args:
+            text: 要分割的文本
+            max_length: 每个文本块的目标长度
+            overlap: 相邻文本块之间的最小重叠字符数
+
+        Returns:
+            List[str]: 分割后的文本块列表
+        """
+        # 定义分隔符，按语义完整性优先级排序
+        delimiters = [
+            "\n\n",  # 段落分隔符
+            "\n",    # 换行符
+            "。",    # 句号
+            "！",    # 感叹号
+            "？",    # 问号
+            "；",    # 分号
+            "：",    # 冒号
+            "，",    # 逗号
+            "、",    # 顿号
+            " ",    # 空格
+            ""      # 无分隔符，按字符分割
+        ]
         
-        for sentence in sentences:
-            sentence = sentence.strip() + '。'
-            sentence_length = len(sentence)
-            
-            if current_length + sentence_length > max_length:
-                if current_chunk:
-                    chunks.append(''.join(current_chunk))
-                current_chunk = [sentence]
-                current_length = sentence_length
-            else:
-                current_chunk.append(sentence)
-                current_length += sentence_length
+        # 允许的长度浮动范围（±10%）
+        length_margin = max_length * 0.1
+        min_length = max_length - length_margin
+        max_length_with_margin = max_length + length_margin
+
+        def find_semantic_split_point(text: str, target_length: int, delimiter: str) -> int:
+            """在目标长度附近找到最合适的分割点"""
+            if delimiter == "":
+                return target_length
                 
-        if current_chunk:
-            chunks.append(''.join(current_chunk))
+            # 在目标长度前后寻找最近的分隔符
+            left_bound = max(0, target_length - length_margin)
+            right_bound = min(len(text), target_length + length_margin)
             
-        return chunks
+            # 在合理范围内寻找分隔符
+            text_range = text[left_bound:right_bound]
+            last_delimiter_pos = text_range.rfind(delimiter)
+            
+            if last_delimiter_pos != -1:
+                return left_bound + last_delimiter_pos + len(delimiter)
+            return target_length
+
+        def split_by_delimiter(text: str, delimiter: str) -> List[str]:
+            """使用指定的分隔符智能分割文本"""
+            if delimiter == "":
+                return [char for char in text]
+            
+            # 保留分隔符，确保语义完整性
+            segments = []
+            for segment in text.split(delimiter):
+                if segment.strip():
+                    # 如果不是最后一个分段，添加分隔符
+                    if segment != text.split(delimiter)[-1]:
+                        segments.append(segment.strip() + delimiter)
+                    else:
+                        segments.append(segment.strip())
+            return segments
+
+        def recursive_split(text: str, delimiters: List[str], current_level: int = 0) -> List[str]:
+            """递归分割文本，保持语义完整性"""
+            # 如果文本长度在可接受范围内，直接返回
+            if len(text) <= max_length_with_margin:
+                return [text]
+            
+            # 如果已经尝试了所有分隔符，则寻找最佳分割点
+            if current_level >= len(delimiters):
+                chunks = []
+                start = 0
+                while start < len(text):
+                    # 计算当前块的理想长度
+                    remaining_length = len(text) - start
+                    current_max_length = min(max_length_with_margin, remaining_length)
+                    
+                    # 寻找最佳分割点
+                    split_point = find_semantic_split_point(
+                        text[start:], 
+                        current_max_length, 
+                        delimiters[-1]
+                    )
+                    
+                    chunks.append(text[start:start + split_point])
+                    start += split_point - overlap
+                return chunks
+            
+            # 使用当前级别的分隔符分割
+            delimiter = delimiters[current_level]
+            segments = split_by_delimiter(text, delimiter)
+            
+            # 如果分割效果不理想，尝试下一个分隔符
+            if len(segments) <= 1:
+                return recursive_split(text, delimiters, current_level + 1)
+            
+            # 处理分割后的片段
+            chunks = []
+            current_chunk = []
+            current_length = 0
+            
+            for segment in segments:
+                # 如果当前片段过长，递归分割
+                if len(segment) > max_length_with_margin:
+                    # 处理当前累积的chunk
+                    if current_chunk:
+                        chunks.append(''.join(current_chunk))
+                        current_chunk = []
+                        current_length = 0
+                    
+                    # 递归处理长片段
+                    sub_chunks = recursive_split(segment, delimiters, current_level + 1)
+                    chunks.extend(sub_chunks)
+                else:
+                    # 检查添加当前片段是否会导致chunk过长
+                    if current_length + len(segment) > max_length_with_margin:
+                        if current_chunk:
+                            chunks.append(''.join(current_chunk))
+                        current_chunk = [segment]
+                        current_length = len(segment)
+                    else:
+                        current_chunk.append(segment)
+                        current_length += len(segment)
+            
+            # 处理最后一个chunk
+            if current_chunk:
+                chunks.append(''.join(current_chunk))
+            
+            # 智能处理重叠区域
+            if overlap > 0 and len(chunks) > 1:
+                overlapped_chunks = []
+                for i in range(len(chunks)):
+                    if i == 0:
+                        overlapped_chunks.append(chunks[i])
+                    else:
+                        # 在重叠区域内寻找合适的语义边界
+                        prev_chunk = chunks[i-1]
+                        overlap_start = len(prev_chunk) - min(overlap * 2, len(prev_chunk))
+                        overlap_text = prev_chunk[overlap_start:]
+                        
+                        # 在重叠文本中找到最后一个完整的语义单元
+                        best_split_point = 0
+                        for delimiter in delimiters:
+                            if delimiter == "":
+                                continue
+                            last_pos = overlap_text.rfind(delimiter)
+                            if last_pos != -1:
+                                best_split_point = overlap_start + last_pos + len(delimiter)
+                                break
+                        
+                        # 如果找不到合适的分割点，使用默认重叠长度
+                        if best_split_point == 0:
+                            best_split_point = len(prev_chunk) - overlap
+                        
+                        overlap_text = prev_chunk[best_split_point:]
+                        overlapped_chunks.append(overlap_text + chunks[i])
+                
+                chunks = overlapped_chunks
+            
+            return chunks
+        
+        # 开始递归分割
+        return recursive_split(text, delimiters)
 
     def add_file(self, file_path: str, file_name: str = None) -> Dict:
         """添加新文件到知识库

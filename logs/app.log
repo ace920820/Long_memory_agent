@@ -8385,3 +8385,48 @@
 2025-01-08 15:41:11,622 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:41:11] "GET /api/documents HTTP/1.1" 200 -
 2025-01-08 15:41:11,630 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:41:11] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
 2025-01-08 15:41:13,063 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:41:13] "GET /api/documents/content/理智行动.txt HTTP/1.1" 200 -
+2025-01-08 16:08:07,730 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-08 16:08:10,506 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 16:08:49,056 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 16:08:49,079 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 16:09:29,715 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 16:09:29,715 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 16:09:29,730 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 16:09:42,789 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 16:09:42,802 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 16:09:42,952 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:09:42] "GET / HTTP/1.1" 200 -
+2025-01-08 16:09:43,543 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:09:43] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-08 16:11:25,538 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:25] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 16:11:25,804 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:25] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 16:11:25,807 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:25] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 16:11:25,817 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:25] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 16:11:30,075 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:30] "DELETE /api/documents/5 HTTP/1.1" 200 -
+2025-01-08 16:11:30,082 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:30] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 16:11:30,090 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:30] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 16:11:36,620 - root - INFO - rag_module.py:473 - Successfully added 17 documents
+2025-01-08 16:11:36,623 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:36] "POST /api/documents HTTP/1.1" 200 -
+2025-01-08 16:11:36,629 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:36] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 16:11:36,645 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:36] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 16:11:38,568 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:11:38] "GET /api/documents/content/理智行动.txt HTTP/1.1" 200 -
+2025-01-08 16:12:11,042 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:12:11] "DELETE /api/documents/5 HTTP/1.1" 200 -
+2025-01-08 16:12:11,053 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:12:11] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 16:12:11,060 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:12:11] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 16:14:18,383 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 16:14:18,383 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 16:14:18,395 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 16:14:27,902 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 16:14:27,916 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 16:14:27,971 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:14:27] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 16:14:28,282 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:14:28] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 16:14:28,288 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:14:28] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 16:14:28,304 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:14:28] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 16:14:38,341 - root - INFO - rag_module.py:473 - Successfully added 47 documents
+2025-01-08 16:14:38,346 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:14:38] "POST /api/documents HTTP/1.1" 200 -
+2025-01-08 16:14:38,353 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:14:38] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 16:14:38,366 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:14:38] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 16:14:40,169 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:14:40] "GET /api/documents/content/理智行动.txt HTTP/1.1" 200 -
+2025-01-08 16:18:54,817 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-08 16:18:54,818 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-08 16:18:56,166 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
