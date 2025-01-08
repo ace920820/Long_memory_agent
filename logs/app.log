@@ -12410,3 +12410,55 @@
 喜欢解释 -> 从不解释
 过度操心 -> 顾好自己
 喜欢诉苦 -> ...
+2025-01-08 16:50:25,002 - root - INFO - memory_manager.py:204 - 发现相似记忆 (相似度: 0.9587)
+2025-01-08 16:50:25,004 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:50:25] "POST /chat HTTP/1.1" 200 -
+2025-01-08 16:50:48,116 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:50:48] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-08 16:50:48,356 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-01-08 16:50:48,356 - root - INFO - memory_manager.py:347 - Successfully retrieved 19 memories for user default_user
+2025-01-08 16:50:48,357 - root - INFO - main.py:203 - 成功获取 19 条记忆
+2025-01-08 16:50:48,379 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:50:48] "GET /api/memories HTTP/1.1" 200 -
+2025-01-08 16:50:52,480 - root - INFO - memory_manager.py:410 - Attempting to delete memories ['m_1736324600075_6004'] for user default_user
+2025-01-08 16:50:54,875 - root - INFO - memory_manager.py:410 - Attempting to delete memories ['m_1736324600075_6004'] for user default_user
+2025-01-08 16:51:00,096 - root - INFO - memory_manager.py:420 - Deleting memory with id m_1736324600075_6004
+2025-01-08 16:51:00,096 - root - INFO - memory_manager.py:420 - Deleting memory with id m_1736324600075_6004
+2025-01-08 16:51:00,443 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-08 16:51:00,444 - root - INFO - memory_manager.py:438 - Successfully deleted 1 memories
+2025-01-08 16:51:00,446 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:00] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-08 16:51:00,472 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-01-08 16:51:00,473 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-08 16:51:00,473 - root - INFO - memory_manager.py:347 - Successfully retrieved 18 memories for user default_user
+2025-01-08 16:51:00,474 - root - INFO - memory_manager.py:438 - Successfully deleted 1 memories
+2025-01-08 16:51:00,474 - root - INFO - main.py:203 - 成功获取 18 条记忆
+2025-01-08 16:51:00,476 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:00] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-08 16:51:00,492 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:00] "GET /api/memories HTTP/1.1" 200 -
+2025-01-08 16:51:00,499 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-01-08 16:51:00,500 - root - INFO - memory_manager.py:347 - Successfully retrieved 18 memories for user default_user
+2025-01-08 16:51:00,500 - root - INFO - main.py:203 - 成功获取 18 条记忆
+2025-01-08 16:51:00,521 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:00] "GET /api/memories HTTP/1.1" 200 -
+2025-01-08 16:51:03,612 - root - INFO - memory_manager.py:410 - Attempting to delete memories ['m_1736324508139_3191'] for user default_user
+2025-01-08 16:51:03,613 - root - INFO - memory_manager.py:420 - Deleting memory with id m_1736324508139_3191
+2025-01-08 16:51:03,810 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-08 16:51:03,810 - root - INFO - memory_manager.py:438 - Successfully deleted 1 memories
+2025-01-08 16:51:03,811 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:03] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-08 16:51:03,818 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-01-08 16:51:03,818 - root - INFO - memory_manager.py:347 - Successfully retrieved 17 memories for user default_user
+2025-01-08 16:51:03,818 - root - INFO - main.py:203 - 成功获取 17 条记忆
+2025-01-08 16:51:03,832 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:03] "GET /api/memories HTTP/1.1" 200 -
+2025-01-08 16:51:06,503 - root - INFO - memory_manager.py:410 - Attempting to delete memories ['m_1736319413566_2619'] for user default_user
+2025-01-08 16:51:06,504 - root - INFO - memory_manager.py:420 - Deleting memory with id m_1736319413566_2619
+2025-01-08 16:51:06,689 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-08 16:51:06,689 - root - INFO - memory_manager.py:438 - Successfully deleted 1 memories
+2025-01-08 16:51:06,690 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:06] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-08 16:51:06,698 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-01-08 16:51:06,698 - root - INFO - memory_manager.py:347 - Successfully retrieved 16 memories for user default_user
+2025-01-08 16:51:06,699 - root - INFO - main.py:203 - 成功获取 16 条记忆
+2025-01-08 16:51:06,708 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:06] "GET /api/memories HTTP/1.1" 200 -
+2025-01-08 16:51:09,006 - root - INFO - memory_manager.py:410 - Attempting to delete memories ['m_1736316915813_9133'] for user default_user
+2025-01-08 16:51:09,006 - root - INFO - memory_manager.py:420 - Deleting memory with id m_1736316915813_9133
+2025-01-08 16:51:09,191 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-08 16:51:09,193 - root - INFO - memory_manager.py:438 - Successfully deleted 1 memories
+2025-01-08 16:51:09,194 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:09] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-01-08 16:51:09,200 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-01-08 16:51:09,200 - root - INFO - memory_manager.py:347 - Successfully retrieved 15 memories for user default_user
+2025-01-08 16:51:09,200 - root - INFO - main.py:203 - 成功获取 15 条记忆
+2025-01-08 16:51:09,209 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 16:51:09] "GET /api/memories HTTP/1.1" 200 -
