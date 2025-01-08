@@ -32,9 +32,9 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 9,
+        "count": 10,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-08T14:59:04.194846",
+        "last_access": "2025-01-08T16:22:32.455980",
         "access_history": [
           {
             "timestamp": "2025-01-08T13:11:34.138165",
@@ -70,6 +70,10 @@
           },
           {
             "timestamp": "2025-01-08T14:59:04.194846",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-08T16:22:32.455980",
             "type": "reference"
           }
         ]
@@ -279,74 +283,6 @@
         ]
       },
       "priority_score": 0.92
-    },
-    {
-      "id": "m_1736316915813_9133",
-      "content": "Jamie最喜欢的人是",
-      "type": "dialogue",
-      "timestamp": "2025-01-08T14:15:15.813830",
-      "access_stats": {
-        "count": 9,
-        "first_access": "2025-01-08T14:15:15.813830",
-        "last_access": "2025-01-08T14:56:46.761264",
-        "access_history": [
-          {
-            "timestamp": "2025-01-08T14:21:00.919451",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:37:55.931342",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:39:14.550416",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:41:16.104571",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:42:15.080577",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:46:49.887250",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:47:19.568037",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:56:15.981783",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:56:46.761264",
-            "type": "reference"
-          }
-        ]
-      },
-      "priority_score": 0.76
-    },
-    {
-      "id": "m_1736319413566_2619",
-      "content": "jamie最喜欢的电视剧是",
-      "type": "dialogue",
-      "timestamp": "2025-01-08T14:56:53.566849",
-      "access_stats": {
-        "count": 1,
-        "first_access": "2025-01-08T14:56:53.566849",
-        "last_access": "2025-01-08T14:59:04.181840",
-        "access_history": [
-          {
-            "timestamp": "2025-01-08T14:59:04.181840",
-            "type": "reference"
-          }
-        ]
-      },
-      "priority_score": 0.76
     },
     {
       "id": "m_1736319922469_6112",

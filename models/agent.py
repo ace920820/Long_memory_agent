@@ -95,7 +95,7 @@ class ChatAgent:
             context = {
                 'chat_history': self.user_contexts.get(user_id, []),
                 'memories': [memory['content'] for memory in memories] if memories else [],
-                'context': [doc['document'] for doc in relevant_docs] if relevant_docs else []
+                'context': [doc['matched_chunk'] for doc in relevant_docs] if relevant_docs else []
             }
 
             # 4. 生成回答

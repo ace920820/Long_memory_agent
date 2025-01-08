@@ -57,3 +57,16 @@
 2025-01-08 15:32:19,736 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
 2025-01-08 15:32:19,736 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
 2025-01-08 15:32:53,585 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 16:34:00,846 - root - ERROR - agent.py:142 - Error in chat: 'document'
+2025-01-08 16:37:05,626 - root - ERROR - agent.py:142 - Error in chat: 'document'
+2025-01-08 16:38:26,474 - root - ERROR - agent.py:142 - Error in chat: 'document'
+2025-01-08 16:39:01,879 - root - ERROR - agent.py:142 - Error in chat: 'document'
+2025-01-08 16:39:31,834 - root - ERROR - agent.py:142 - Error in chat: 'document'
+2025-01-08 16:40:45,997 - root - ERROR - rag_module.py:730 - Error in RAG response generation: 'document'
+2025-01-08 16:42:19,263 - root - ERROR - rag_module.py:730 - Error in RAG response generation: 'document'
+2025-01-08 16:42:52,826 - root - ERROR - rag_module.py:730 - Error in RAG response generation: 'document'
+2025-01-08 16:44:03,170 - root - ERROR - rag_module.py:730 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-08 16:45:11,284 - root - ERROR - rag_module.py:730 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-08 16:45:56,291 - root - ERROR - rag_module.py:730 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-08 16:47:47,407 - root - ERROR - rag_module.py:730 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-08 16:48:22,841 - root - ERROR - rag_module.py:730 - Error in RAG response generation: sequence item 1: expected str instance, list found

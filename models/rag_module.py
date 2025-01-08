@@ -549,52 +549,90 @@ class RAGModule:
             top_k: 返回的最相关文档数量
             
         Returns:
-            相关文档列表，每个文档包含相似度分数
+            相关文档列表，每个文档包含相似度分数和匹配的文本片段
         """
         try:
-            if not self.documents:
-                logging.info("知识库为空，无法进行搜索")
+            # 如果没有文档或索引，返回空列表
+            if not self.documents or self.document_embeddings is None:
+                logging.warning("搜索失败：知识库为空或索引未建立")
                 return []
-                
-            # 编码查询
+
+            # 编码查询文本
             query_vector = self._encode_text([query])[0]
-            logging.info(f"正在搜索查询: '{query}'")
+            logging.info(f"查询文本: {query}")
+
+            # 构建 chunk 到文档的映射关系
+            chunk_to_doc = []  # 存储每个 chunk 对应的文档索引和 chunk 内容
+            for doc_idx, doc in enumerate(self.documents):
+                for chunk in doc.get('chunks', []):
+                    chunk_to_doc.append({
+                        'doc_idx': doc_idx,
+                        'chunk': chunk,
+                        'doc_name': doc.get('file_name', '')
+                    })
+
+            # 确保有足够的 chunks 可供搜索
+            available_chunks = len(chunk_to_doc)
+            if available_chunks == 0:
+                logging.warning("搜索失败：没有可用的文本块")
+                return []
+
+            search_k = min(top_k * 3, available_chunks)  # 搜索更多的 chunks 以获得更好的文档级结果
             
             # 搜索相似向量
             distances, indices = self.index.search(
                 np.array([query_vector]).astype('float32'), 
-                min(top_k, len(self.documents))
+                search_k
             )
-            
-            # 构建结果
-            results = []
+
+            # 用于存储每个文档的最佳匹配结果
+            doc_best_matches = {}  # doc_idx -> {similarity, chunks}
+
+            # 处理搜索结果
             for i, idx in enumerate(indices[0]):
-                if idx < len(self.documents):  # 确保索引有效
-                    doc = self.documents[idx].copy()
+                if idx < available_chunks:  # 确保索引有效
+                    chunk_info = chunk_to_doc[idx]
+                    doc_idx = chunk_info['doc_idx']
                     similarity = 1 - distances[0][i]  # 转换距离为相似度
-                    doc['similarity'] = similarity
                     
-                    # 记录每个候选文档的信息
-                    log_msg = (
-                        f"\n候选文档 {idx}:"
-                        f"\n - 内容: {doc['content']}"
-                        f"\n - 相似度得分: {similarity:.4f}"
-                    )
-                    
-                    if similarity >= self.similarity_threshold:
-                        results.append(doc)
-                        log_msg += f"\n - 状态: 采用 (得分 >= {self.similarity_threshold})"
-                    else:
-                        log_msg += f"\n - 状态: 丢弃 (得分 < {self.similarity_threshold})"
-                    
-                    logging.info(log_msg)
-            
-            logging.info(f"共找到 {len(results)}/{len(indices[0])} 个相关文档")
-            
+                    # 记录详细的匹配信息
+                    logging.info(f"匹配块 {i+1}:")
+                    logging.info(f"  文档: {chunk_info['doc_name']}")
+                    logging.info(f"  相似度: {similarity:.4f}")
+                    logging.info(f"  匹配内容: {chunk_info['chunk'][:100]}...")
+
+                    # 更新文档的最佳匹配
+                    if doc_idx not in doc_best_matches or similarity > doc_best_matches[doc_idx]['similarity']:
+                        doc_best_matches[doc_idx] = {
+                            'similarity': similarity,
+                            'matched_chunk': chunk_info['chunk']
+                        }
+
+            # 构建最终结果
+            results = []
+            for doc_idx, match_info in doc_best_matches.items():
+                if match_info['similarity'] >= self.similarity_threshold:
+                    doc = self.documents[doc_idx].copy()
+                    doc['similarity'] = match_info['similarity']
+                    doc['matched_chunk'] = match_info['matched_chunk']
+                    results.append(doc)
+
+            # 按相似度排序并限制返回数量
+            results.sort(key=lambda x: x['similarity'], reverse=True)
+            results = results[:top_k]
+
+            # 记录最终结果
+            logging.info(f"\n找到 {len(results)} 个相关文档:")
+            for i, doc in enumerate(results, 1):
+                logging.info(f"\n文档 {i}:")
+                logging.info(f"  文件名: {doc.get('file_name', 'Unknown')}")
+                logging.info(f"  相似度: {doc['similarity']:.4f}")
+                logging.info(f"  匹配片段: {doc['matched_chunk'][:100]}...")
+
             return results
-            
+
         except Exception as e:
-            logging.error(f"搜索文档时发生错误: {str(e)}")
+            logging.error(f"搜索过程中发生错误: {str(e)}")
             return []
 
     def _save_index(self):
@@ -627,13 +665,6 @@ class RAGModule:
             
             # 构建上下文信息
             context_info = []
-            
-            # 添加相关文档
-            if relevant_docs:
-                context_info.append("参考信息：")
-                # 从搜索结果中提取文档内容
-                doc_contents = [doc["document"] for doc in relevant_docs]
-                context_info.extend(doc_contents)
             
             # 添加context中的文本块信息
             if context and 'context' in context and isinstance(context['context'], list):
