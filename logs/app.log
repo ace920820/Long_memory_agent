@@ -6044,3 +6044,49 @@
 2025-01-07 22:12:04,217 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:12:04] "GET /knowledge-base HTTP/1.1" 200 -
 2025-01-07 22:12:04,395 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:12:04] "[33mGET /api/documents HTTP/1.1[0m" 404 -
 2025-01-07 22:12:04,408 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Jan/2025 22:12:04] "[33mGET /api/index/stats HTTP/1.1[0m" 404 -
+2025-01-07 22:13:21,340 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-07 22:13:22,660 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 22:13:32,442 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 22:13:32,458 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 22:15:01,105 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\generate_requirements.py', reloading
+2025-01-07 22:15:01,137 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\agent.py', reloading
+2025-01-07 22:15:01,137 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_api_wrapper.py', reloading
+2025-01-07 22:15:01,137 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_model.py', reloading
+2025-01-07 22:15:01,137 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-07 22:15:01,137 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\scripts\\init_memory_file.py', reloading
+2025-01-07 22:15:01,137 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\context_manager.py', reloading
+2025-01-07 22:15:01,137 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\llm_service.py', reloading
+2025-01-07 22:15:01,137 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\prompt_manager.py', reloading
+2025-01-07 22:15:02,486 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 22:15:10,983 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 22:15:10,983 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 22:55:01,103 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-07 22:55:01,652 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 22:55:10,869 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 22:55:10,886 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-07 23:15:01,117 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-07 23:15:01,871 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-07 23:15:10,818 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-07 23:15:10,818 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 09:10:36,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\generate_requirements.py', reloading
+2025-01-08 09:10:36,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\main.py', reloading
+2025-01-08 09:10:36,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\agent.py', reloading
+2025-01-08 09:10:36,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_api_wrapper.py', reloading
+2025-01-08 09:10:36,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\llm_model.py', reloading
+2025-01-08 09:10:36,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-01-08 09:10:36,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\models\\rag_module.py', reloading
+2025-01-08 09:10:36,486 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\scripts\\init_memory_file.py', reloading
+2025-01-08 09:10:36,486 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\context_manager.py', reloading
+2025-01-08 09:10:36,486 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\llm_service.py', reloading
+2025-01-08 09:10:36,486 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\services\\prompt_manager.py', reloading
+2025-01-08 09:10:38,700 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 09:11:02,580 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 09:11:02,580 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 09:59:59,146 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\dashscope\\__init__.py', reloading
+2025-01-08 09:59:59,154 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\dashscope\\assistants\\__init__.py', reloading
+2025-01-08 09:59:59,154 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\dashscope\\assistants\\assistant_types.py', reloading
+2025-01-08 09:59:59,164 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\dataclasses.py', reloading
+2025-01-08 09:59:59,184 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\inspect.py', reloading
+2025-01-08 10:00:01,524 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 10:00:32,279 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 10:00:32,284 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
