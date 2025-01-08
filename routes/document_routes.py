@@ -93,6 +93,31 @@ def delete_document(doc_id: int):
             "error": str(e)
         }), 500
 
+@document_bp.route('/api/documents/content/<path:file_name>', methods=['GET'])
+def get_document_content(file_name):
+    """获取文档内容"""
+    try:
+        # 查找文档
+        for doc in document_bp.rag_module.documents:
+            if doc['file_name'] == file_name:
+                return jsonify({
+                    "success": True,
+                    "content": doc.get('content', ''),
+                    "chunks": doc.get('chunks', [])
+                })
+        
+        return jsonify({
+            "success": False,
+            "error": "Document not found"
+        }), 404
+        
+    except Exception as e:
+        logging.error(f"Error getting document content: {str(e)}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
 def init_document_routes(rag_module):
     """初始化文档路由"""
     document_bp.rag_module = rag_module

@@ -8359,3 +8359,29 @@
 2025-01-08 15:34:28,203 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:28] "POST /api/documents HTTP/1.1" 200 -
 2025-01-08 15:34:28,210 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:28] "GET /api/documents HTTP/1.1" 200 -
 2025-01-08 15:34:28,216 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:28] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:35:40,663 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:35:40] "DELETE /api/documents/5 HTTP/1.1" 200 -
+2025-01-08 15:35:40,675 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:35:40] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:35:40,683 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:35:40] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:37:59,693 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\routes\\document_routes.py', reloading
+2025-01-08 15:37:59,694 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\git_projects\\long_mem_agent\\routes\\document_routes.py', reloading
+2025-01-08 15:38:01,180 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:38:15,207 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:38:15,217 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:40:23,822 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:40:23,822 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:40:23,836 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:40:32,229 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:40:32,237 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:40:58,102 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:40:58] "GET / HTTP/1.1" 200 -
+2025-01-08 15:40:58,626 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:40:58] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-08 15:40:59,490 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:40:59] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:40:59,759 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:40:59] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:40:59,764 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:40:59] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:40:59,792 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:40:59] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:41:01,168 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:41:01] "GET /api/documents/content/example1.txt HTTP/1.1" 200 -
+2025-01-08 15:41:11,610 - root - INFO - rag_module.py:397 - Successfully added 15 documents
+2025-01-08 15:41:11,614 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:41:11] "POST /api/documents HTTP/1.1" 200 -
+2025-01-08 15:41:11,622 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:41:11] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:41:11,630 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:41:11] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:41:13,063 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:41:13] "GET /api/documents/content/理智行动.txt HTTP/1.1" 200 -
