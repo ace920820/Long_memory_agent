@@ -45,3 +45,15 @@
 2025-01-08 14:50:02,690 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
 2025-01-08 14:52:32,541 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
 2025-01-08 14:53:03,281 - root - ERROR - document_routes.py:27 - Error getting documents: 'id'
+2025-01-08 15:23:37,397 - root - ERROR - document_routes.py:74 - Error uploading document: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2025-01-08 15:28:44,066 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:28:44,066 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:28:49,273 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:28:49,273 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:28:55,671 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:28:55,672 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:31:41,463 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:31:41,463 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:32:19,736 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:32:19,736 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:32:53,585 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 

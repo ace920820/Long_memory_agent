@@ -8186,3 +8186,176 @@
  - 相似度得分: -0.5008
  - 状态: 丢弃 (得分 < 0.5)
 2025-01-08 15:02:42,585 - root - INFO - rag_module.py:430 - 共找到 0/5 个相关文档
+2025-01-08 15:05:22,502 - root - INFO - memory_manager.py:133 - Successfully saved memories to file
+2025-01-08 15:05:22,504 - root - INFO - memory_manager.py:249 - 成功添加新记忆: 我在准备面试，我应该重点关注哪些方面？
+2025-01-08 15:05:22,506 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:05:22] "POST /chat HTTP/1.1" 200 -
+2025-01-08 15:05:22,547 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:05:22] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-08 15:06:39,238 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:06:39] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:06:39,852 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:06:39] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:06:39,880 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:06:39] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:06:39,896 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:06:39] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:06:47,962 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:06:47] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:06:53,443 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:06:53] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:06:54,892 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:06:54] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:07:23,577 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:07:23] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:08:39,297 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:08:39] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:08:39,777 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:08:39] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:08:39,785 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:08:39] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:08:39,799 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:08:39] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:09:58,038 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:09:58] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:14:42,302 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:14:42,302 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:14:42,318 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:14:50,649 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:14:50,657 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:16:20,518 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:20] "GET / HTTP/1.1" 200 -
+2025-01-08 15:16:21,055 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:21] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-08 15:16:24,151 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:24] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:16:24,380 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:24] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:16:24,385 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:24] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:16:24,409 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:24] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:16:28,828 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:28] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:16:29,057 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:29] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:16:29,058 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:29] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:16:29,078 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:29] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:16:57,792 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:16:57] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:17:15,619 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:17:15] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:17:16,426 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:17:16] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:17:17,452 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:17:17] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:17:43,884 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\flask\\blueprints.py', reloading
+2025-01-08 15:17:43,900 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\flask\\sansio\\blueprints.py', reloading
+2025-01-08 15:17:44,472 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:17:52,850 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:17:52,857 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:18:15,079 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-01-08 15:18:15,097 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-01-08 15:18:15,689 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:18:24,095 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:18:24,103 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:19:43,428 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:19:43,428 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:19:43,452 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:19:57,555 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:19:57,567 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:21:22,718 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:21:22] "GET / HTTP/1.1" 200 -
+2025-01-08 15:21:23,292 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:21:23] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-08 15:21:24,811 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:21:24] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:21:25,092 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:21:25] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:21:31,667 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:21:31] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:21:31,678 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:21:31] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:22:01,816 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\requests\\__init__.py', reloading
+2025-01-08 15:22:01,858 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\msilib\\__init__.py', reloading
+2025-01-08 15:22:01,881 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\importlib\\__init__.py', reloading
+2025-01-08 15:22:03,236 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:22:17,584 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:22:17,595 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:23:03,784 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:23:03,785 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:23:03,805 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:23:17,790 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:23:17,803 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:23:20,933 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:23:20] "GET / HTTP/1.1" 200 -
+2025-01-08 15:23:21,480 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:23:21] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-08 15:23:22,338 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:23:22] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:23:22,562 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:23:22] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:23:22,566 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:23:22] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:23:22,592 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:23:22] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:23:37,397 - root - ERROR - document_routes.py:74 - Error uploading document: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2025-01-08 15:23:37,400 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:23:37] "[35m[1mPOST /api/documents HTTP/1.1[0m" 500 -
+2025-01-08 15:24:36,247 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\pip\\_internal\\commands\\show.py', reloading
+2025-01-08 15:24:36,368 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\openai\\_client.py', reloading
+2025-01-08 15:24:36,401 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\openai\\_models.py', reloading
+2025-01-08 15:24:36,429 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\IPython\\core\\tests\\test_completerlib.py', reloading
+2025-01-08 15:24:36,471 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\huggingface_hub\\utils\\_cache_manager.py', reloading
+2025-01-08 15:24:36,499 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\langchain_community\\tools\\bearly\\tool.py', reloading
+2025-01-08 15:24:36,519 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\unstructured_client\\models\\shared\\partition_parameters.py', reloading
+2025-01-08 15:24:36,528 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\git\\types.py', reloading
+2025-01-08 15:24:36,546 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\unstructured\\ingest\\connector\\notion\\types\\database_properties\\files.py', reloading
+2025-01-08 15:24:37,723 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:24:51,821 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:24:51,836 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:25:10,896 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:25:10,897 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:25:10,918 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:25:24,772 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:25:24,784 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:25:52,736 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:25:52] "GET / HTTP/1.1" 200 -
+2025-01-08 15:25:53,320 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:25:53] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-08 15:25:54,257 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:25:54] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:25:54,515 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:25:54] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:25:54,521 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:25:54] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:25:54,555 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:25:54] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:26:10,232 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Program Files\\JetBrains\\PyCharm Community Edition 2021.2.2\\plugins\\python-ce\\helpers\\pydev\\_pydevd_bundle\\pydevd_vars.py', reloading
+2025-01-08 15:26:10,266 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-01-08 15:26:11,541 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:26:26,095 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:26:26,107 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:26:46,790 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:26:46,791 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:26:46,817 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:27:01,795 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:27:01,805 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:27:20,089 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\http\\__init__.py', reloading
+2025-01-08 15:27:20,102 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\unittest\\__init__.py', reloading
+2025-01-08 15:27:20,199 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\idlelib\\iomenu.py', reloading
+2025-01-08 15:27:20,222 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\pip\\_vendor\\rich\\traceback.py', reloading
+2025-01-08 15:27:20,950 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:27:35,170 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:27:35,184 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:28:09,110 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:28:09,110 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:28:09,123 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:28:17,395 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:28:17,404 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:28:44,066 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:28:44,066 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:28:44,067 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:28:44] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:28:49,273 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:28:49,273 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:28:49,273 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:28:49] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:28:55,671 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:28:55,672 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:28:55,673 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:28:55] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:29:35,121 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:29:35,121 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:29:35,141 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:29:49,125 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:29:49,138 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:29:51,763 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:29:51] "GET / HTTP/1.1" 200 -
+2025-01-08 15:29:52,395 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:29:52] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-08 15:29:53,990 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:29:53] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:29:54,228 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:29:54] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:29:54,233 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:29:54] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:29:54,255 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:29:54] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:30:34,935 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\Jamie\\miniconda3\\envs\\py39_env\\Lib\\site-packages\\werkzeug\\utils.py', reloading
+2025-01-08 15:30:36,151 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:30:50,941 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:30:50,955 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:31:41,463 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:31:41,463 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:32:12,005 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:32:12] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:32:19,736 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:32:19,736 - root - ERROR - rag_module.py:242 - Error adding file: Unsupported file type: 
+2025-01-08 15:32:19,738 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:32:19] "[31m[1mPOST /api/documents HTTP/1.1[0m" 400 -
+2025-01-08 15:32:53,585 - root - ERROR - rag_module.py:153 - Error extracting text from temp\txt: Unsupported file type: 
+2025-01-08 15:34:12,643 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-08 15:34:12,643 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-08 15:34:12,656 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-08 15:34:21,580 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-08 15:34:21,589 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 117-000-936
+2025-01-08 15:34:21,620 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:21] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-08 15:34:21,841 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:21] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:34:21,843 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:21] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:34:21,860 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:21] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-08 15:34:28,200 - root - INFO - rag_module.py:397 - Successfully added 15 documents
+2025-01-08 15:34:28,203 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:28] "POST /api/documents HTTP/1.1" 200 -
+2025-01-08 15:34:28,210 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:28] "GET /api/documents HTTP/1.1" 200 -
+2025-01-08 15:34:28,216 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Jan/2025 15:34:28] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -

@@ -34,13 +34,13 @@ def get_documents():
 def upload_document():
     """上传新文档"""
     try:
-        if 'file' not in request.files:
+        if 'files' not in request.files:
             return jsonify({
                 "success": False,
                 "error": "No file part"
             }), 400
             
-        file = request.files['file']
+        file = request.files['files']
         if file.filename == '':
             return jsonify({
                 "success": False,
@@ -54,7 +54,7 @@ def upload_document():
             }), 400
             
         # 保存文件到临时目录
-        filename = secure_filename(file.filename)
+        filename = file.filename
         temp_path = os.path.join('temp', filename)
         os.makedirs('temp', exist_ok=True)
         file.save(temp_path)
