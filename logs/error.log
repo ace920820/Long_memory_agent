@@ -70,3 +70,13 @@
 2025-01-08 16:45:56,291 - root - ERROR - rag_module.py:730 - Error in RAG response generation: sequence item 1: expected str instance, list found
 2025-01-08 16:47:47,407 - root - ERROR - rag_module.py:730 - Error in RAG response generation: sequence item 1: expected str instance, list found
 2025-01-08 16:48:22,841 - root - ERROR - rag_module.py:730 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-12 23:03:04,368 - root - ERROR - agent.py:142 - Error in chat: 'matched_chunk'
+2025-01-12 23:04:56,303 - root - ERROR - agent.py:142 - Error in chat: 'matched_chunk'
+2025-01-12 23:05:50,047 - root - ERROR - agent.py:142 - Error in chat: 'matched_chunk'
+2025-01-12 23:07:20,105 - root - ERROR - agent.py:142 - Error in chat: 'matched_chunk'
+2025-01-12 23:08:55,212 - root - ERROR - rag_module.py:769 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-12 23:10:30,435 - root - ERROR - rag_module.py:769 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-12 23:16:09,944 - root - ERROR - rag_module.py:766 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-12 23:23:32,732 - root - ERROR - rag_module.py:766 - Error in RAG response generation: sequence item 0: expected str instance, list found
+2025-01-12 23:23:59,329 - root - ERROR - rag_module.py:766 - Error in RAG response generation: sequence item 0: expected str instance, list found
+2025-01-12 23:24:50,939 - root - ERROR - rag_module.py:766 - Error in RAG response generation: sequence item 0: expected str instance, list found

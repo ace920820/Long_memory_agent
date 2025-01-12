@@ -1,4 +1,4 @@
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer, AutoModelForSequenceClassification
 import faiss
 import numpy as np
 import os
@@ -41,8 +41,14 @@ class RAGModule:
             self.model = AutoModel.from_pretrained(model_path)
             self.model.eval()  # 设置为评估模式
             logging.info(f"Successfully loaded BGE model from {model_path}")
+            
+            # 初始化 BGE-Rerank 模型
+            self.reranker_tokenizer = AutoTokenizer.from_pretrained(r"D:\models\bge-reranker-base")
+            self.reranker = AutoModelForSequenceClassification.from_pretrained(r"D:\models\bge-reranker-base")
+            self.reranker.eval()
+            logging.info("Successfully loaded BGE-Rerank model")
         except Exception as e:
-            logging.error(f"Error loading BGE model: {str(e)}")
+            logging.error(f"Error loading models: {str(e)}")
             raise
 
         # 存储文档和向量
@@ -541,15 +547,62 @@ class RAGModule:
             logging.error(f"Error adding documents: {str(e)}")
             raise
 
-    def search(self, query: str, top_k: int = 5) -> List[Dict]:
-        """搜索相关文档
+    def _rerank_results(self, query: str, candidates: List[Dict]) -> List[Dict]:
+        """使用 BGE-Rerank 对检索结果进行重排序
         
         Args:
             query: 查询文本
-            top_k: 返回的最相关文档数量
+            candidates: 第一阶段检索的候选结果
             
         Returns:
-            相关文档列表，每个文档包含相似度分数和匹配的文本片段
+            重排序后的结果列表
+        """
+        if not candidates:
+            return candidates
+            
+        # 准备 rerank 的文本对
+        pairs = []
+        for doc in candidates:
+            # 使用匹配到的文本块进行重排序
+            for chunk in doc.get('matched_chunks', []):
+                pairs.append([query, chunk])
+        
+        # 计算 rerank 分数
+        with torch.no_grad():
+            inputs = self.reranker_tokenizer(
+                pairs,
+                padding=True,
+                truncation=True,
+                return_tensors='pt',
+                max_length=512
+            )
+            scores = self.reranker(**inputs).logits.squeeze()
+            scores = torch.sigmoid(scores).tolist()
+        
+        # 如果只有一个结果，确保 scores 是列表
+        if not isinstance(scores, list):
+            scores = [scores]
+        
+        # 更新文档分数并重排序
+        for doc, score in zip(candidates, scores):
+            doc['rerank_score'] = float(score)
+            # 综合考虑向量相似度和 rerank 分数
+            doc['final_score'] = 0.3 * doc['similarity'] + 0.7 * doc['rerank_score']
+        
+        # 按照综合分数重排序
+        candidates.sort(key=lambda x: x['final_score'], reverse=True)
+        
+        return candidates
+
+    def search(self, query: str, top_k: int = 5) -> List[Dict]:
+        """搜索相关文档，使用两阶段检索策略
+        
+        Args:
+            query: 查询文本
+            top_k: 返回的最大结果数量
+            
+        Returns:
+            检索到的文档列表，按相关度排序
         """
         try:
             # 如果没有文档或索引，返回空列表
@@ -577,16 +630,15 @@ class RAGModule:
                 logging.warning("搜索失败：没有可用的文本块")
                 return []
 
-            search_k = min(top_k * 3, available_chunks)  # 搜索更多的 chunks 以获得更好的文档级结果
-            
-            # 搜索相似向量
+            # 第一阶段：向量检索（放宽相似度阈值，获取更多候选）
+            search_k = min(top_k * 3, available_chunks)
             distances, indices = self.index.search(
                 np.array([query_vector]).astype('float32'), 
                 search_k
             )
 
             # 用于存储每个文档的最佳匹配结果
-            doc_best_matches = {}  # doc_idx -> {similarity, chunks}
+            doc_best_matches = {}  # doc_idx -> {similarity, chunks, matched_chunks}
 
             # 处理搜索结果
             for i, idx in enumerate(indices[0]):
@@ -599,63 +651,54 @@ class RAGModule:
                     logging.info(f"匹配块 {i+1}:")
                     logging.info(f"  文档: {chunk_info['doc_name']}")
                     logging.info(f"  相似度: {similarity:.4f}")
-                    logging.info(f"  匹配内容: {chunk_info['chunk'][:100]}...")
-
+                    logging.info(f"  内容: {chunk_info['chunk']}")
+                    
                     # 更新文档的最佳匹配
                     if doc_idx not in doc_best_matches or similarity > doc_best_matches[doc_idx]['similarity']:
                         doc_best_matches[doc_idx] = {
                             'similarity': similarity,
-                            'matched_chunk': chunk_info['chunk']
+                            'chunks': [chunk_info['chunk']],
+                            'matched_chunks': [chunk_info['chunk']]
                         }
+                    else:
+                        doc_best_matches[doc_idx]['chunks'].append(chunk_info['chunk'])
+                        doc_best_matches[doc_idx]['matched_chunks'].append(chunk_info['chunk'])
 
-            # 构建最终结果
-            results = []
+            # 准备第一阶段的结果
+            initial_results = []
             for doc_idx, match_info in doc_best_matches.items():
-                if match_info['similarity'] >= self.similarity_threshold:
+                if match_info['similarity'] >= self.similarity_threshold * 0.8:  # 降低阈值获取更多候选
                     doc = self.documents[doc_idx].copy()
                     doc['similarity'] = match_info['similarity']
-                    doc['matched_chunk'] = match_info['matched_chunk']
-                    results.append(doc)
+                    doc['matched_chunks'] = match_info['matched_chunks']
+                    doc['chunks'] = match_info['chunks']
+                    initial_results.append(doc)
 
-            # 按相似度排序并限制返回数量
-            results.sort(key=lambda x: x['similarity'], reverse=True)
-            results = results[:top_k]
-
-            # 记录最终结果
-            logging.info(f"\n找到 {len(results)} 个相关文档:")
-            for i, doc in enumerate(results, 1):
-                logging.info(f"\n文档 {i}:")
-                logging.info(f"  文件名: {doc.get('file_name', 'Unknown')}")
-                logging.info(f"  相似度: {doc['similarity']:.4f}")
-                logging.info(f"  匹配片段: {doc['matched_chunk'][:100]}...")
-
-            return results
-
+            # 第二阶段：使用 reranker 重排序
+            if initial_results:
+                reranked_results = self._rerank_results(query, initial_results)
+                final_results = reranked_results[:top_k]
+                
+                # 记录最终结果
+                logging.info(f"\n最终结果 (共 {len(final_results)} 个文档):")
+                for doc in final_results:
+                    logging.info(f"\n文档: {doc['file_name']}")
+                    logging.info(f"向量相似度: {doc['similarity']:.4f}")
+                    logging.info(f"Rerank分数: {doc['rerank_score']:.4f}")
+                    logging.info(f"综合分数: {doc['final_score']:.4f}")
+                    
+                return final_results
+            else:
+                logging.info("没有找到相关文档")
+                return []
+                
         except Exception as e:
-            logging.error(f"搜索过程中发生错误: {str(e)}")
+            logging.error(f"搜索过程中出错: {str(e)}")
             return []
-
-    def _save_index(self):
-        """保存索引和文档到磁盘"""
-        try:
-            # 保存文档
-            docs_path = os.path.join(self.index_path, "documents.json")
-            with open(docs_path, 'w', encoding='utf-8') as f:
-                json.dump(self.documents, f, ensure_ascii=False, indent=2)
-            
-            # 保存索引
-            index_path = os.path.join(self.index_path, "faiss_index.bin")
-            faiss.write_index(self.index, index_path)
-            
-        except Exception as e:
-            logging.error(f"Error saving index: {str(e)}")
 
     def generate_response(self, query: str, llm_model,context=None, role_prompt=None):
         """生成带有检索增强的响应"""
         try:
-            # 1. 获取相关文档
-            relevant_docs = self.search(query, top_k=5)  # 使用现有的 search 方法
-            
             # 2. 构建提示词
             prompt_parts = []
             
@@ -669,7 +712,7 @@ class RAGModule:
             # 添加context中的文本块信息
             if context and 'context' in context and isinstance(context['context'], list):
                 context_info.append("\n已知信息：")
-                context_info.extend(context['context'])
+                context_info.extend(context['context'][0][:3])
             
             # 添加记忆信息（去重）
             memories = context['memories']
@@ -760,3 +803,18 @@ class RAGModule:
         except Exception as e:
             logging.error(f"Failed to remove document: {str(e)}")
             return False
+
+    def _save_index(self):
+        """保存索引和文档到磁盘"""
+        try:
+            # 保存文档
+            docs_path = os.path.join(self.index_path, "documents.json")
+            with open(docs_path, 'w', encoding='utf-8') as f:
+                json.dump(self.documents, f, ensure_ascii=False, indent=2)
+            
+            # 保存索引
+            index_path = os.path.join(self.index_path, "faiss_index.bin")
+            faiss.write_index(self.index, index_path)
+            
+        except Exception as e:
+            logging.error(f"Error saving index: {str(e)}")

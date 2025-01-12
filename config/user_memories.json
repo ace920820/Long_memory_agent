@@ -32,14 +32,10 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 10,
+        "count": 11,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-08T16:22:32.455980",
+        "last_access": "2025-01-09T20:17:03.124837",
         "access_history": [
-          {
-            "timestamp": "2025-01-08T13:11:34.138165",
-            "type": "reference"
-          },
           {
             "timestamp": "2025-01-08T13:18:58.309014",
             "type": "reference"
@@ -75,6 +71,10 @@
           {
             "timestamp": "2025-01-08T16:22:32.455980",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-09T20:17:03.124837",
+            "type": "reference"
           }
         ]
       },
@@ -97,60 +97,6 @@
         ]
       },
       "priority_score": 0.92
-    },
-    {
-      "id": "m_1736312950617_3349",
-      "content": "我最喜欢的电视剧是什么",
-      "type": "dialogue",
-      "timestamp": "2025-01-08T13:09:10.617617",
-      "access_stats": {
-        "count": 10,
-        "first_access": "2025-01-08T13:09:10.617617",
-        "last_access": "2025-01-08T14:59:04.166821",
-        "access_history": [
-          {
-            "timestamp": "2025-01-08T13:11:34.133149",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:18:54.248444",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:20:46.265015",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:20:46.281016",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:21:43.944952",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:24:49.919346",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:27:30.241426",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:29:36.339418",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:56:46.768250",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T14:59:04.166821",
-            "type": "reference"
-          }
-        ]
-      },
-      "priority_score": 0.76
     },
     {
       "id": "m_1736314426067_8119",
@@ -296,6 +242,91 @@
         "access_history": []
       },
       "priority_score": 0.0
+    },
+    {
+      "id": "m_1736424571684_5474",
+      "content": "你是谁",
+      "type": "dialogue",
+      "timestamp": "2025-01-09T20:09:31.684545",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-09T20:09:31.685536",
+        "last_access": "2025-01-09T20:09:43.407520",
+        "access_history": [
+          {
+            "timestamp": "2025-01-09T20:09:43.407520",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1736425027687_8612",
+      "content": "我最喜欢的电视剧是？",
+      "type": "dialogue",
+      "timestamp": "2025-01-09T20:17:07.687726",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-09T20:17:07.687726",
+        "last_access": "2025-01-09T20:17:07.687726",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736694535681_4118",
+      "content": "一个人失去魅力的七种行为都有哪些",
+      "type": "dialogue",
+      "timestamp": "2025-01-12T23:08:55.681561",
+      "access_stats": {
+        "count": 12,
+        "first_access": "2025-01-12T23:08:55.681561",
+        "last_access": "2025-01-12T23:30:29.374119",
+        "access_history": [
+          {
+            "timestamp": "2025-01-12T23:15:52.661601",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:16:44.203047",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:23:31.731294",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:23:54.803629",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:24:14.227110",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:25:03.009512",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:26:38.132784",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:27:32.260723",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:29:02.981192",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-12T23:30:29.374119",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
     }
   ]
 }

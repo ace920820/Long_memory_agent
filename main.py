@@ -28,7 +28,7 @@ def create_rag_module():
         print(f"Error initializing RAG module: {str(e)}")
         raise
 
-def create_app():
+def create_app(rag_module):
     # 确保必要的目录存在
     os.makedirs('logs', exist_ok=True)
     os.makedirs('data/vector_store', exist_ok=True)
@@ -62,9 +62,7 @@ def create_app():
             memory_file="config/user_memories.json",
             similarity_threshold=0.5
         )
-        
-        # 初始化 RAG 模块
-        rag_module = create_rag_module()
+
         
         # 初始化 LLM 模型
         llm_model = LLMModel({
@@ -353,5 +351,7 @@ def create_app():
     return app
 
 if __name__ == "__main__":
-    app = create_app()
+    # 初始化 RAG 模块
+    rag_module = create_rag_module()
+    app = create_app(rag_module)
     app.run(debug=True)
