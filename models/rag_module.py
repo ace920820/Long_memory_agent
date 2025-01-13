@@ -712,7 +712,8 @@ class RAGModule:
             # 添加context中的文本块信息
             if context and 'context' in context and isinstance(context['context'], list):
                 context_info.append("\n已知信息：")
-                context_info.extend(context['context'][0][:3])
+                temp_context = context['context'][:3] if len(context['context']) > 0 else []
+                context_info.extend(temp_context)
             
             # 添加记忆信息（去重）
             memories = context['memories']

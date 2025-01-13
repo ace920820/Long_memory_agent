@@ -32,22 +32,10 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 11,
+        "count": 14,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-09T20:17:03.124837",
+        "last_access": "2025-01-13T19:14:42.469196",
         "access_history": [
-          {
-            "timestamp": "2025-01-08T13:18:58.309014",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:20:46.279016",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-08T13:20:46.303088",
-            "type": "reference"
-          },
           {
             "timestamp": "2025-01-08T13:21:43.964606",
             "type": "reference"
@@ -75,6 +63,18 @@
           {
             "timestamp": "2025-01-09T20:17:03.124837",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:10:12.262245",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:12:49.606882",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:14:42.469196",
+            "type": "reference"
           }
         ]
       },
@@ -86,12 +86,28 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 1,
+        "count": 5,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-08T14:59:04.210890",
+        "last_access": "2025-01-13T19:33:58.419511",
         "access_history": [
           {
             "timestamp": "2025-01-08T14:59:04.210890",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:10:12.254207",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:12:49.577313",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:14:42.415185",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:33:58.419511",
             "type": "reference"
           }
         ]
@@ -267,12 +283,29 @@
       "type": "dialogue",
       "timestamp": "2025-01-09T20:17:07.687726",
       "access_stats": {
-        "count": 0,
+        "count": 4,
         "first_access": "2025-01-09T20:17:07.687726",
-        "last_access": "2025-01-09T20:17:07.687726",
-        "access_history": []
+        "last_access": "2025-01-13T19:33:58.423405",
+        "access_history": [
+          {
+            "timestamp": "2025-01-13T19:10:12.262245",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:12:49.589568",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:14:42.452316",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:33:58.423405",
+            "type": "reference"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.76
     },
     {
       "id": "m_1736694535681_4118",
@@ -322,6 +355,48 @@
           },
           {
             "timestamp": "2025-01-12T23:30:29.374119",
+            "type": "reference"
+          }
+        ]
+      },
+      "priority_score": 0.76
+    },
+    {
+      "id": "m_1736764397735_8074",
+      "content": "我小时候最喜欢的动画片是什么",
+      "type": "dialogue",
+      "timestamp": "2025-01-13T18:33:17.735389",
+      "access_stats": {
+        "count": 7,
+        "first_access": "2025-01-13T18:33:17.735389",
+        "last_access": "2025-01-13T19:33:58.414873",
+        "access_history": [
+          {
+            "timestamp": "2025-01-13T18:34:34.252186",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T18:35:08.015713",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T18:53:50.265285",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:10:12.254207",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:12:49.556531",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:14:42.396973",
+            "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-13T19:33:58.414873",
             "type": "reference"
           }
         ]

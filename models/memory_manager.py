@@ -2,13 +2,11 @@ import json
 import logging
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
-from sentence_transformers import SentenceTransformer
+from transformers import AutoModel, AutoTokenizer
 import faiss
 import numpy as np
 import os
 import torch
-from transformers import BertTokenizer, BertModel
-from sentence_transformers import util
 import re
 import math
 import time
@@ -28,14 +26,22 @@ class MemoryManager:
             memory_file: 记忆存储文件路径
             similarity_threshold: 相似度阈值
         """
-        self.model = SentenceTransformer(model_path)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_path)
+        self.model = AutoModel.from_pretrained(model_path)
         self.memory_file = memory_file
         self.similarity_threshold = similarity_threshold
         self.new_memory_similarity_threshold = new_memory_similarity_threshold
         self.memories = self.load_memories()
         
-        # 初始化向量索引
-        self.dimension = 512  # bge-small-zh-v1.5 的向量维度
+        # 先获取实际的向量维度
+        if self.memories:
+            sample_text = ["测试文本"]
+            sample_vector = self.encode(sample_text)
+            self.dimension = sample_vector.shape[1]
+            logging.info(f"Actual vector dimension: {self.dimension}")
+        else:
+            self.dimension = 768  # 默认维度
+        
         self.indices = {}  # 用户ID到索引的映射
         
         # 为每个用户创建索引
@@ -65,7 +71,7 @@ class MemoryManager:
         
         # 初始化或迁移现有记忆的访问统计
         self._initialize_memory_stats()
-    
+
     def load_memories(self) -> Dict:
         """从文件加载记忆"""
         try:
@@ -137,18 +143,18 @@ class MemoryManager:
 
     def create_user_index(self, user_id: str):
         """为用户创建向量索引"""
-        try:
-            if user_id not in self.indices:
-                self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
-                
-            if user_id in self.memories and self.memories[user_id]:
-                memory_texts = [m['content'] for m in self.memories[user_id]]
-                vectors = self.model.encode(memory_texts)
-                self.indices[user_id].add(vectors.astype('float32'))
-                
-        except Exception as e:
-            logging.error(f"Error creating index for user {user_id}: {str(e)}")
-            self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
+        if user_id not in self.indices:
+            self.indices[user_id] = faiss.IndexFlatIP(self.dimension)
+
+        if user_id in self.memories and self.memories[user_id]:
+            memory_texts = [m['content'] for m in self.memories[user_id]]
+            vectors = self.encode(memory_texts)
+            logging.info(f"Vector dimension: {vectors.shape}")  # 添加日志
+            if vectors.shape[1] != self.dimension:
+                logging.error(f"Dimension mismatch: expected {self.dimension}, got {vectors.shape[1]}")
+                self.dimension = vectors.shape[1]  # 更新维度
+                self.indices[user_id] = faiss.IndexFlatIP(self.dimension)  # 重新创建索引
+            self.indices[user_id].add(vectors.astype('float32'))
 
     def _generate_memory_id(self) -> str:
         """生成唯一的记忆ID"""
@@ -171,7 +177,7 @@ class MemoryManager:
             # 确保用户存在
             if user_id not in self.memories:
                 self.memories[user_id] = []
-                self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
+                self.indices[user_id] = faiss.IndexFlatIP(self.dimension)
 
             # 如果内容包含对话格式，只保留用户的输入部分
             if "用户说:" in content and "助手回答:" in content:
@@ -189,14 +195,14 @@ class MemoryManager:
             # 检查是否存在相似记忆
             if self.memories[user_id]:
                 # 编码新内容
-                new_vector = self.model.encode([content], convert_to_tensor=True)
+                new_vector = self.encode([content], convert_to_tensor=True)
                 
                 # 获取现有记忆的内容
                 existing_contents = [m['content'] for m in self.memories[user_id]]
-                existing_vectors = self.model.encode(existing_contents, convert_to_tensor=True)
+                existing_vectors = self.encode(existing_contents, convert_to_tensor=True)
                 
                 # 计算相似度
-                similarities = util.pytorch_cos_sim(new_vector, existing_vectors)[0]
+                similarities = self.calculate_similarity(new_vector, existing_vectors)
                 max_similarity = torch.max(similarities).item()
                 
                 # 如果存在高相似度的记忆，不添加新记忆
@@ -227,7 +233,7 @@ class MemoryManager:
 
             # 更新向量索引
             try:
-                vector = self.model.encode([content]).astype('float32')
+                vector = self.encode([content]).astype('float32')
                 self.indices[user_id].add(vector)
             except Exception as e:
                 logging.error(f"Error updating index: {str(e)}")
@@ -279,14 +285,14 @@ class MemoryManager:
 
             # 生成查询向量
             try:
-                query_vector = self.model.encode([query])[0]
+                query_vector = self.encode([query])[0]
             except Exception as e:
                 logging.error(f"Error encoding query: {str(e)}")
                 return []
 
             # 搜索相似记忆
             try:
-                distances, indices = self.indices[user_id].search(
+                scores, indices = self.indices[user_id].search(
                     np.array([query_vector]).astype('float32'), 
                     min(top_k, len(self.memories[user_id]))
                 )
@@ -298,7 +304,8 @@ class MemoryManager:
             results = []
             for i, idx in enumerate(indices[0]):
                 if idx < len(self.memories[user_id]):
-                    similarity_score = 1 / (1 + float(distances[0][i]))
+                    # 由于使用了Inner Product，分数范围在[-1, 1]之间
+                    similarity_score = float(scores[0][i])
                     memory = self.memories[user_id][idx]
                     
                     if similarity_score >= self.similarity_threshold:
@@ -426,12 +433,12 @@ class MemoryManager:
             if deleted_count > 0:
                 if self.memories[user_id]:
                     memory_texts = [m['content'] for m in self.memories[user_id]]
-                    vectors = self.model.encode(memory_texts)
-                    self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
+                    vectors = self.encode(memory_texts)
+                    self.indices[user_id] = faiss.IndexFlatIP(self.dimension)
                     self.indices[user_id].add(vectors.astype('float32'))
                 else:
                     # 如果没有记忆了，创建空索引
-                    self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
+                    self.indices[user_id] = faiss.IndexFlatIP(self.dimension)
 
                 # 保存更改
                 self.save_memories()
@@ -506,8 +513,8 @@ class MemoryManager:
                 
                 # 重建索引
                 memory_texts = [m['content'] for m in self.memories[user_id]]
-                vectors = self.model.encode(memory_texts)
-                self.indices[user_id] = faiss.IndexFlatL2(self.dimension)
+                vectors = self.encode(memory_texts)
+                self.indices[user_id] = faiss.IndexFlatIP(self.dimension)
                 self.indices[user_id].add(vectors.astype('float32'))
                 
                 # 保存更改
@@ -641,10 +648,10 @@ class MemoryManager:
 
             # 创建记忆内容的嵌入向量
             memory_texts = [m['content'] for m in all_memories]
-            memory_embeddings = self.model.encode(memory_texts, convert_to_tensor=True)
+            memory_embeddings = self.encode(memory_texts, convert_to_tensor=True)
 
             # 计算记忆间的相似度矩阵
-            similarities = util.pytorch_cos_sim(memory_embeddings, memory_embeddings)
+            similarities = self.calculate_similarity(memory_embeddings, memory_embeddings)
 
             # 要删除的记忆索引
             memories_to_delete = []
@@ -653,7 +660,7 @@ class MemoryManager:
 
             # 定义无意义记忆的模式
             meaningless_patterns = [
-                r"用户(说|表示|问).*(吗|呢)\??$",  # 问句模式
+                r"用户(说|表示|问).*(吗|呢)\\??$",  # 问句模式
                 r"用户(说|表示).*什么.*",  # 泛泛而谈的模式
                 r"^(嗯|好的|明白|知道了|谢谢).*",  # 简单应答模式
                 r"用户想知道.*",  # 询问模式
@@ -759,6 +766,52 @@ class MemoryManager:
         except Exception as e:
             logging.error(f"Error in clean_memories: {str(e)}")
             return {"success": False, "error": str(e)} 
+
+    def encode(self, texts: List[str], convert_to_tensor: bool = False) -> np.ndarray:
+        """将文本编码为向量
+        
+        Args:
+            texts: 要编码的文本列表
+            convert_to_tensor: 是否转换为tensor
+            
+        Returns:
+            np.ndarray: 文本向量
+        """
+        # 对输入进行编码
+        inputs = self.tokenizer(texts, 
+                              padding=True, 
+                              truncation=True, 
+                              max_length=512, 
+                              return_tensors="pt")
+        
+        # 获取向量表示
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+            
+        # 使用[CLS] token的输出作为文本表示
+        embeddings = outputs.last_hidden_state[:, 0]
+        
+        # 归一化
+        embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)
+        
+        # 根据需要返回tensor或numpy数组
+        if convert_to_tensor:
+            return embeddings
+        return embeddings.numpy()
+
+    def calculate_similarity(self, embeddings1: torch.Tensor, embeddings2: torch.Tensor) -> torch.Tensor:
+        """计算两组向量之间的余弦相似度
+        
+        Args:
+            embeddings1: 第一组向量
+            embeddings2: 第二组向量
+            
+        Returns:
+            torch.Tensor: 相似度矩阵
+        """
+        normalized_embeddings1 = torch.nn.functional.normalize(embeddings1, p=2, dim=1)
+        normalized_embeddings2 = torch.nn.functional.normalize(embeddings2, p=2, dim=1)
+        return torch.matmul(normalized_embeddings1, normalized_embeddings2.transpose(0, 1))
 
     def calculate_priority_score(self, memory: Dict) -> float:
         """计算记忆的优先级分数"""

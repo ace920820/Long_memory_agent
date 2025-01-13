@@ -80,3 +80,8 @@
 2025-01-12 23:23:32,732 - root - ERROR - rag_module.py:766 - Error in RAG response generation: sequence item 0: expected str instance, list found
 2025-01-12 23:23:59,329 - root - ERROR - rag_module.py:766 - Error in RAG response generation: sequence item 0: expected str instance, list found
 2025-01-12 23:24:50,939 - root - ERROR - rag_module.py:766 - Error in RAG response generation: sequence item 0: expected str instance, list found
+2025-01-13 18:15:13,406 - root - ERROR - agent.py:142 - Error in chat: 'MemoryManager' object has no attribute 'retrieve_memories'
+2025-01-13 18:33:17,417 - root - ERROR - rag_module.py:766 - Error in RAG response generation: list index out of range
+2025-01-13 18:36:00,007 - root - ERROR - rag_module.py:766 - Error in RAG response generation: list index out of range
+2025-01-13 19:00:29,543 - root - ERROR - rag_module.py:766 - Error in RAG response generation: list index out of range
+2025-01-13 19:10:12,269 - root - ERROR - rag_module.py:766 - Error in RAG response generation: list index out of range
