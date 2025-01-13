@@ -740,7 +740,7 @@ class MemoryManager:
             return {"success": False, "error": str(e)} 
 
     def _rerank_results(self, query: str, memories: List[Dict]) -> List[Dict]:
-        """使用 BGE-Rerank 对检索结果进行重排序
+        """使用 BGE-Rerank 对检索结果进行重排序，并考虑记忆的优先级分数
         
         Args:
             query: 查询文本
@@ -776,8 +776,25 @@ class MemoryManager:
         # 更新记忆分数并重排序
         for memory, score in zip(memories, scores):
             memory['rerank_score'] = float(score)
-            # 综合考虑向量相似度和 rerank 分数
-            memory['final_score'] = 0.3 * memory['similarity'] + 0.7 * memory['rerank_score']
+            
+            # 确保每个记忆都有优先级分数
+            if 'priority_score' not in memory:
+                memory['priority_score'] = self.calculate_priority_score(memory)
+            
+            # 综合考虑三个因素：
+            # 1. 向量相似度 (20%)
+            # 2. BGE-Rerank 分数 (50%)
+            # 3. 记忆优先级分数 (30%)
+            memory['final_score'] = (
+                0.1 * memory['similarity'] +  # 向量相似度
+                0.6 * memory['rerank_score'] +  # 语义相关性
+                0.3 * memory['priority_score']  # 记忆重要性
+            )
+            
+            logging.debug(f"Memory scoring - Similarity: {memory['similarity']:.3f}, "
+                       f"Rerank: {memory['rerank_score']:.3f}, "
+                       f"Priority: {memory['priority_score']:.3f}, "
+                       f"Final: {memory['final_score']:.3f}")
         
         # 按照综合分数重排序
         memories.sort(key=lambda x: x['final_score'], reverse=True)

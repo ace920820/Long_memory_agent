@@ -415,6 +415,58 @@
         "access_history": []
       },
       "priority_score": 0.0
+    },
+    {
+      "id": "m_1736769075300_4394",
+      "content": "我很喜欢冲浪、滑板，我很想玩这些运动",
+      "type": "dialogue",
+      "timestamp": "2025-01-13T19:51:15.300342",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-13T19:51:15.300342",
+        "last_access": "2025-01-13T19:51:15.300342",
+        "access_history": []
+      },
+      "priority_score": 0.8
+    },
+    {
+      "id": "m_1736769142943_6680",
+      "content": "你了解我之前在做的意图识别项目吗",
+      "type": "dialogue",
+      "timestamp": "2025-01-13T19:52:22.943488",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-13T19:52:22.943488",
+        "last_access": "2025-01-13T19:52:22.943488",
+        "access_history": []
+      },
+      "priority_score": 0.8
+    },
+    {
+      "id": "m_1736769870669_7762",
+      "content": "那你知道我喜欢什么酒吗",
+      "type": "dialogue",
+      "timestamp": "2025-01-13T20:04:30.669218",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-13T20:04:30.669218",
+        "last_access": "2025-01-13T20:04:30.669218",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1736769910898_3028",
+      "content": "我在0511\"今天做的特别棒的事情\"是什么",
+      "type": "dialogue",
+      "timestamp": "2025-01-13T20:05:10.898279",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-13T20:05:10.898279",
+        "last_access": "2025-01-13T20:05:10.898279",
+        "access_history": []
+      },
+      "priority_score": 0.0
     }
   ]
 }
