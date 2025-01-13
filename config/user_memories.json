@@ -402,6 +402,19 @@
         ]
       },
       "priority_score": 0.76
+    },
+    {
+      "id": "m_1736768437906_8963",
+      "content": "我小时候最喜欢的动画师",
+      "type": "dialogue",
+      "timestamp": "2025-01-13T19:40:37.906094",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-13T19:40:37.906094",
+        "last_access": "2025-01-13T19:40:37.906094",
+        "access_history": []
+      },
+      "priority_score": 0.0
     }
   ]
 }

@@ -2,7 +2,7 @@ import json
 import logging
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer, AutoModelForSequenceClassification
 import faiss
 import numpy as np
 import os
@@ -32,6 +32,12 @@ class MemoryManager:
         self.similarity_threshold = similarity_threshold
         self.new_memory_similarity_threshold = new_memory_similarity_threshold
         self.memories = self.load_memories()
+        
+        # 初始化 BGE-Rerank 模型
+        self.reranker_tokenizer = AutoTokenizer.from_pretrained(r"D:\models\bge-reranker-base")
+        self.reranker = AutoModelForSequenceClassification.from_pretrained(r"D:\models\bge-reranker-base")
+        self.reranker.eval()
+        logging.info("Successfully loaded BGE-Rerank model")
         
         # 先获取实际的向量维度
         if self.memories:
@@ -271,69 +277,35 @@ class MemoryManager:
     def retrieve_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
         """检索相关记忆"""
         try:
-            if user_id not in self.memories:
-                logging.info(f"No memories found for user {user_id}")
+            if user_id not in self.indices or user_id not in self.memories:
                 return []
+
+            # 编码查询文本
+            query_vector = self.encode([query])[0]
             
-            if not self.memories[user_id]:
-                logging.info(f"Memory list is empty for user {user_id}")
-                return []
-
-            if user_id not in self.indices:
-                logging.error(f"No index found for user {user_id}")
-                return []
-
-            # 生成查询向量
-            try:
-                query_vector = self.encode([query])[0]
-            except Exception as e:
-                logging.error(f"Error encoding query: {str(e)}")
-                return []
-
-            # 搜索相似记忆
-            try:
-                scores, indices = self.indices[user_id].search(
-                    np.array([query_vector]).astype('float32'), 
-                    min(top_k, len(self.memories[user_id]))
-                )
-            except Exception as e:
-                logging.error(f"Error searching memories: {str(e)}")
-                return []
-
-            # 处理结果
-            results = []
-            for i, idx in enumerate(indices[0]):
+            # 使用FAISS进行向量检索
+            similarities, indices = self.indices[user_id].search(
+                query_vector.reshape(1, -1).astype('float32'), 
+                min(top_k * 2, len(self.memories[user_id]))  # 检索更多候选项用于重排序
+            )
+            
+            # 获取检索到的记忆
+            retrieved_memories = []
+            for sim, idx in zip(similarities[0], indices[0]):
                 if idx < len(self.memories[user_id]):
-                    # 由于使用了Inner Product，分数范围在[-1, 1]之间
-                    similarity_score = float(scores[0][i])
-                    memory = self.memories[user_id][idx]
-                    
-                    if similarity_score >= self.similarity_threshold:
-                        # 更新访问统计
-                        self.update_memory_access(user_id, idx, 'reference')
-                        
-                        memory_copy = memory.copy()
-                        memory_copy['score'] = similarity_score
-                        results.append(memory_copy)
-                        logging.info(f"记忆匹配 (得分: {similarity_score:.4f}):\n内容: {memory['content']}")
-                    else:
-                        logging.info(f"记忆因相似度过低被过滤 (得分: {similarity_score:.4f}):\n内容: {memory['content']}")
-
-            # 按相似度排序
-            sorted_results = sorted(results, key=lambda x: x['score'], reverse=True)
+                    memory = self.memories[user_id][idx].copy()
+                    memory['similarity'] = float(sim)  # 添加相似度分数
+                    if sim >= self.similarity_threshold:
+                        retrieved_memories.append(memory)
             
-            # 记录结果
-            if sorted_results:
-                logging.info("\n最终使用的记忆:")
-                for idx, memory in enumerate(sorted_results, 1):
-                    logging.info(f"{idx}. 得分: {memory['score']:.4f}\n内容: {memory['content']}\n")
-            else:
-                logging.info("没有找到相关记忆")
-
-            return sorted_results
-
+            # 使用 rerank 进行重排序
+            reranked_memories = self._rerank_results(query, retrieved_memories)
+            
+            # 只返回 top_k 个最相关的记忆
+            return reranked_memories[:top_k]
+            
         except Exception as e:
-            logging.error(f"Error in retrieve_memories: {str(e)}")
+            logging.error(f"Error retrieving memories: {str(e)}")
             return []
 
     def get_all_memories(self, user_id: str) -> List[Dict]:
@@ -766,6 +738,51 @@ class MemoryManager:
         except Exception as e:
             logging.error(f"Error in clean_memories: {str(e)}")
             return {"success": False, "error": str(e)} 
+
+    def _rerank_results(self, query: str, memories: List[Dict]) -> List[Dict]:
+        """使用 BGE-Rerank 对检索结果进行重排序
+        
+        Args:
+            query: 查询文本
+            memories: 第一阶段检索的候选记忆
+            
+        Returns:
+            重排序后的结果列表
+        """
+        if not memories:
+            return memories
+            
+        # 准备 rerank 的文本对
+        pairs = []
+        for memory in memories:
+            pairs.append([query, memory['content']])
+        
+        # 计算 rerank 分数
+        with torch.no_grad():
+            inputs = self.reranker_tokenizer(
+                pairs,
+                padding=True,
+                truncation=True,
+                return_tensors='pt',
+                max_length=512
+            )
+            scores = self.reranker(**inputs).logits.squeeze()
+            scores = torch.sigmoid(scores).tolist()
+        
+        # 如果只有一个结果，确保 scores 是列表
+        if not isinstance(scores, list):
+            scores = [scores]
+        
+        # 更新记忆分数并重排序
+        for memory, score in zip(memories, scores):
+            memory['rerank_score'] = float(score)
+            # 综合考虑向量相似度和 rerank 分数
+            memory['final_score'] = 0.3 * memory['similarity'] + 0.7 * memory['rerank_score']
+        
+        # 按照综合分数重排序
+        memories.sort(key=lambda x: x['final_score'], reverse=True)
+        
+        return memories
 
     def encode(self, texts: List[str], convert_to_tensor: bool = False) -> np.ndarray:
         """将文本编码为向量
