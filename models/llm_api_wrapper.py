@@ -1,7 +1,6 @@
 import os
 import requests
 from typing import List, Dict, Union, Optional
-from pydantic import BaseModel, ValidationError
 
 import logging
 

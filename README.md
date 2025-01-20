@@ -86,6 +86,11 @@
 - **配置驱动**：通过YAML配置文件管理系统参数
 - **完整日志**：详细的运行日志，便于调试和监控
 - **RESTful API**：标准的HTTP接口支持
+- **大模型支持**：
+  - 支持 Deepseek API 接入
+  - 灵活的模型配置
+  - 环境变量动态加载
+  - 多模型切换能力
 
 ## 🚀 快速开始
 
@@ -102,6 +107,30 @@
   - flask
   - pyyaml
   - python-dotenv
+  - dashscope  # Deepseek API支持
+
+### 环境变量配置
+在运行系统前，需要配置以下环境变量：
+
+```bash
+# 基础环境变量
+PYTHONUNBUFFERED=1
+
+# Deepseek API配置
+DASHSCOPE_API_KEY=your_api_key  # 替换为你的API密钥
+DASHSCOPE_MODEL=qwen-plus       # 可选模型：qwen-plus, qwen-max, 等
+```
+
+你可以通过以下方式设置环境变量：
+
+1. 在系统环境变量中设置
+2. 在 `.env` 文件中配置
+3. 在启动命令中指定：
+```bash
+export DASHSCOPE_API_KEY=your_api_key
+export DASHSCOPE_MODEL=qwen-plus
+python main.py
+```
 
 ### 安装步骤
 

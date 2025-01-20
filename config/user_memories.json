@@ -37,14 +37,10 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 15,
+        "count": 16,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-20T11:56:06.855395",
+        "last_access": "2025-01-20T15:09:07.453181",
         "access_history": [
-          {
-            "timestamp": "2025-01-08T13:24:49.934348",
-            "type": "reference"
-          },
           {
             "timestamp": "2025-01-08T13:27:30.253476",
             "type": "reference"
@@ -80,6 +76,10 @@
           {
             "timestamp": "2025-01-20T11:56:06.855395",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:09:07.453181",
+            "type": "read"
           }
         ]
       },
@@ -91,9 +91,9 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 5,
+        "count": 7,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-13T19:33:58.419511",
+        "last_access": "2025-01-20T15:09:07.495078",
         "access_history": [
           {
             "timestamp": "2025-01-08T14:59:04.210890",
@@ -114,10 +114,18 @@
           {
             "timestamp": "2025-01-13T19:33:58.419511",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-20T15:08:53.586113",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:09:07.495078",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.92
+      "priority_score": 0.83
     },
     {
       "id": "m_1736314426067_8119",
@@ -270,17 +278,41 @@
       "type": "dialogue",
       "timestamp": "2025-01-09T20:09:31.684545",
       "access_stats": {
-        "count": 1,
+        "count": 7,
         "first_access": "2025-01-09T20:09:31.685536",
-        "last_access": "2025-01-09T20:09:43.407520",
+        "last_access": "2025-01-20T15:08:33.388015",
         "access_history": [
           {
             "timestamp": "2025-01-09T20:09:43.407520",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-20T15:00:07.881850",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:02:07.294176",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:04:17.065079",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:04:22.624286",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:06:31.985964",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:08:33.388015",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.76
+      "priority_score": 0.67
     },
     {
       "id": "m_1736425027687_8612",
@@ -288,9 +320,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-09T20:17:07.687726",
       "access_stats": {
-        "count": 6,
+        "count": 8,
         "first_access": "2025-01-09T20:17:07.687726",
-        "last_access": "2025-01-20T11:56:06.859397",
+        "last_access": "2025-01-20T15:09:07.456173",
         "access_history": [
           {
             "timestamp": "2025-01-13T19:10:12.262245",
@@ -315,10 +347,18 @@
           {
             "timestamp": "2025-01-20T11:56:06.859397",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:08:53.598614",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:09:07.456173",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.64
+      "priority_score": 0.7
     },
     {
       "id": "m_1736694535681_4118",
@@ -326,14 +366,10 @@
       "type": "dialogue",
       "timestamp": "2025-01-12T23:08:55.681561",
       "access_stats": {
-        "count": 12,
+        "count": 13,
         "first_access": "2025-01-12T23:08:55.681561",
-        "last_access": "2025-01-12T23:30:29.374119",
+        "last_access": "2025-01-20T15:15:16.893815",
         "access_history": [
-          {
-            "timestamp": "2025-01-12T23:15:52.661601",
-            "type": "reference"
-          },
           {
             "timestamp": "2025-01-12T23:16:44.203047",
             "type": "reference"
@@ -369,6 +405,10 @@
           {
             "timestamp": "2025-01-12T23:30:29.374119",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-20T15:15:16.893815",
+            "type": "read"
           }
         ]
       },
@@ -380,9 +420,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-13T18:33:17.735389",
       "access_stats": {
-        "count": 8,
+        "count": 10,
         "first_access": "2025-01-13T18:33:17.735389",
-        "last_access": "2025-01-20T11:56:06.861909",
+        "last_access": "2025-01-20T15:09:07.498095",
         "access_history": [
           {
             "timestamp": "2025-01-13T18:34:34.252186",
@@ -415,10 +455,18 @@
           {
             "timestamp": "2025-01-20T11:56:06.861909",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:08:53.591604",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:09:07.498095",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.7
+      "priority_score": 0.76
     },
     {
       "id": "m_1736768437906_8963",
@@ -426,12 +474,17 @@
       "type": "dialogue",
       "timestamp": "2025-01-13T19:40:37.906094",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-13T19:40:37.906094",
-        "last_access": "2025-01-13T19:40:37.906094",
-        "access_history": []
+        "last_access": "2025-01-20T15:08:53.594612",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T15:08:53.594612",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.49
     },
     {
       "id": "m_1736769075300_4394",
@@ -465,17 +518,21 @@
       "type": "dialogue",
       "timestamp": "2025-01-13T20:04:30.669218",
       "access_stats": {
-        "count": 1,
+        "count": 2,
         "first_access": "2025-01-13T20:04:30.669218",
-        "last_access": "2025-01-20T11:54:40.792596",
+        "last_access": "2025-01-20T15:08:53.601766",
         "access_history": [
           {
             "timestamp": "2025-01-20T11:54:40.792596",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:08:53.601766",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.49
+      "priority_score": 0.52
     },
     {
       "id": "m_1736769910898_3028",
@@ -509,12 +566,37 @@
       "type": "dialogue",
       "timestamp": "2025-01-18T22:47:50.411326",
       "access_stats": {
-        "count": 0,
+        "count": 6,
         "first_access": "2025-01-18T22:47:50.411326",
-        "last_access": "2025-01-18T22:47:50.411326",
-        "access_history": []
+        "last_access": "2025-01-20T15:08:33.392150",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T15:00:07.885543",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:02:07.296208",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:04:17.070824",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:04:22.632649",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:06:32.014833",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:08:33.392150",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.64
     },
     {
       "id": "m_1737211914288_1326",
@@ -522,12 +604,25 @@
       "type": "dialogue",
       "timestamp": "2025-01-18T22:51:54.288618",
       "access_stats": {
-        "count": 0,
+        "count": 3,
         "first_access": "2025-01-18T22:51:54.288618",
-        "last_access": "2025-01-18T22:51:54.288618",
-        "access_history": []
+        "last_access": "2025-01-20T15:15:38.234464",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T15:12:45.605700",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:13:09.728601",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:15:38.234464",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.55
     },
     {
       "id": "m_1737342421527_2890",
@@ -545,6 +640,139 @@
           },
           {
             "timestamp": "2025-01-20T11:56:06.865431",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52
+    },
+    {
+      "id": "m_1737356937509_8851",
+      "content": "那你知不知道我最喜欢的动画片是什么",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T15:08:57.509641",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-20T15:08:57.509641",
+        "last_access": "2025-01-20T15:09:07.461019",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T15:09:07.461019",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49
+    },
+    {
+      "id": "m_1737356981099_1267",
+      "content": "我最近在看纸牌屋，凯文史派西的表演也让我感到印象深刻",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T15:09:41.099955",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-20T15:09:41.099955",
+        "last_access": "2025-01-20T15:10:12.126065",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T15:10:12.126065",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49
+    },
+    {
+      "id": "m_1737357014936_3264",
+      "content": "其实纸牌屋我只看过第一季和第二季，据说后面也有比较精彩的内容",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T15:10:14.936765",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-20T15:10:14.936765",
+        "last_access": "2025-01-20T15:10:14.936765",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737357065420_5854",
+      "content": "我想问你一个问题：老五跟老四说老三的老二老大了，这里总共有几个人？",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T15:11:05.420080",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-20T15:11:05.420080",
+        "last_access": "2025-01-20T15:11:05.420080",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737357092099_3996",
+      "content": "马上就要过年了，我正准备回家",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T15:11:32.099970",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-20T15:11:32.099970",
+        "last_access": "2025-01-20T15:12:13.258099",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T15:12:13.258099",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49
+    },
+    {
+      "id": "m_1737357136623_9985",
+      "content": "不知道给我爸买啥年货好，我在考虑要不要给他买条烟，上海的凤凰",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T15:12:16.623765",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-20T15:12:16.623765",
+        "last_access": "2025-01-20T15:12:30.695492",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T15:12:30.695492",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49
+    },
+    {
+      "id": "m_1737357154090_6176",
+      "content": "凤凰这个烟有名吗",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T15:12:34.090233",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-20T15:12:34.090233",
+        "last_access": "2025-01-20T15:12:34.090233",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737357169175_7665",
+      "content": "告诉我导诊的更新内容",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T15:12:49.175969",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-01-20T15:12:49.175969",
+        "last_access": "2025-01-20T15:15:38.239169",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T15:13:09.733874",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T15:15:38.239169",
             "type": "read"
           }
         ]

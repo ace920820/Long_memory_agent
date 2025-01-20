@@ -90,3 +90,11 @@
 2025-01-13 20:06:05,539 - root - ERROR - rag_module.py:767 - Error in RAG response generation: sequence item 1: expected str instance, list found
 2025-01-13 20:10:17,363 - root - ERROR - rag_module.py:767 - Error in RAG response generation: sequence item 1: expected str instance, list found
 2025-01-18 22:50:43,405 - root - ERROR - document_routes.py:74 - Error uploading document: [WinError 2] 系统找不到指定的文件。: 'temp\\工作TDL.txt'
+2025-01-20 15:00:07,938 - root - ERROR - llm_model.py:133 - Error generating response: Invalid URL 'https: // api.deepseek.com/chat/completions': No host supplied
+2025-01-20 15:02:07,305 - root - ERROR - llm_model.py:133 - Error generating response: Invalid URL 'https: // api.deepseek.com/chat/completions': No host supplied
+2025-01-20 15:04:17,416 - LLMAPIWrapper - ERROR - llm_api_wrapper.py:50 - API call failed with status 400: {"error":{"message":"Model Not Exist","type":"invalid_request_error","param":null,"code":"invalid_request_error"}}
+2025-01-20 15:04:17,416 - root - ERROR - llm_model.py:133 - Error generating response: API call failed with status 400: {"error":{"message":"Model Not Exist","type":"invalid_request_error","param":null,"code":"invalid_request_error"}}
+2025-01-20 15:04:22,965 - LLMAPIWrapper - ERROR - llm_api_wrapper.py:50 - API call failed with status 400: {"error":{"message":"Model Not Exist","type":"invalid_request_error","param":null,"code":"invalid_request_error"}}
+2025-01-20 15:04:22,965 - root - ERROR - llm_model.py:133 - Error generating response: API call failed with status 400: {"error":{"message":"Model Not Exist","type":"invalid_request_error","param":null,"code":"invalid_request_error"}}
+2025-01-20 15:06:38,000 - LLMAPIWrapper - ERROR - llm_api_wrapper.py:50 - API call failed with status 400: {"error":{"message":"Model Not Exist","type":"invalid_request_error","param":null,"code":"invalid_request_error"}}
+2025-01-20 15:06:38,596 - root - ERROR - llm_model.py:133 - Error generating response: API call failed with status 400: {"error":{"message":"Model Not Exist","type":"invalid_request_error","param":null,"code":"invalid_request_error"}}
