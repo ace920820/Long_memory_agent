@@ -89,3 +89,4 @@
 2025-01-13 19:53:35,929 - root - ERROR - memory_manager.py:316 - Error retrieving memories: 'user_id'
 2025-01-13 20:06:05,539 - root - ERROR - rag_module.py:767 - Error in RAG response generation: sequence item 1: expected str instance, list found
 2025-01-13 20:10:17,363 - root - ERROR - rag_module.py:767 - Error in RAG response generation: sequence item 1: expected str instance, list found
+2025-01-18 22:50:43,405 - root - ERROR - document_routes.py:74 - Error uploading document: [WinError 2] 系统找不到指定的文件。: 'temp\\工作TDL.txt'

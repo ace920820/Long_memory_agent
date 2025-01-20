@@ -6,12 +6,17 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
+        "last_access": "2025-01-20T11:54:40.807624",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T11:54:40.807624",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.65
     },
     {
       "id": "m_1736100510509_2812",
@@ -32,14 +37,10 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 14,
+        "count": 15,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-13T19:14:42.469196",
+        "last_access": "2025-01-20T11:56:06.855395",
         "access_history": [
-          {
-            "timestamp": "2025-01-08T13:21:43.964606",
-            "type": "reference"
-          },
           {
             "timestamp": "2025-01-08T13:24:49.934348",
             "type": "reference"
@@ -75,6 +76,10 @@
           {
             "timestamp": "2025-01-13T19:14:42.469196",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-20T11:56:06.855395",
+            "type": "read"
           }
         ]
       },
@@ -283,9 +288,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-09T20:17:07.687726",
       "access_stats": {
-        "count": 4,
+        "count": 6,
         "first_access": "2025-01-09T20:17:07.687726",
-        "last_access": "2025-01-13T19:33:58.423405",
+        "last_access": "2025-01-20T11:56:06.859397",
         "access_history": [
           {
             "timestamp": "2025-01-13T19:10:12.262245",
@@ -302,10 +307,18 @@
           {
             "timestamp": "2025-01-13T19:33:58.423405",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-20T11:54:40.815219",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T11:56:06.859397",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.76
+      "priority_score": 0.64
     },
     {
       "id": "m_1736694535681_4118",
@@ -367,9 +380,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-13T18:33:17.735389",
       "access_stats": {
-        "count": 7,
+        "count": 8,
         "first_access": "2025-01-13T18:33:17.735389",
-        "last_access": "2025-01-13T19:33:58.414873",
+        "last_access": "2025-01-20T11:56:06.861909",
         "access_history": [
           {
             "timestamp": "2025-01-13T18:34:34.252186",
@@ -398,10 +411,14 @@
           {
             "timestamp": "2025-01-13T19:33:58.414873",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-20T11:56:06.861909",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.76
+      "priority_score": 0.7
     },
     {
       "id": "m_1736768437906_8963",
@@ -448,12 +465,17 @@
       "type": "dialogue",
       "timestamp": "2025-01-13T20:04:30.669218",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-13T20:04:30.669218",
-        "last_access": "2025-01-13T20:04:30.669218",
-        "access_history": []
+        "last_access": "2025-01-20T11:54:40.792596",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T11:54:40.792596",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.49
     },
     {
       "id": "m_1736769910898_3028",
@@ -467,6 +489,67 @@
         "access_history": []
       },
       "priority_score": 0.0
+    },
+    {
+      "id": "m_1737211589202_6674",
+      "content": "我最好的朋友是张文隆和解海林",
+      "type": "dialogue",
+      "timestamp": "2025-01-18T22:46:29.202216",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-18T22:46:29.202216",
+        "last_access": "2025-01-18T22:46:29.202216",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737211670411_8007",
+      "content": "我最好的朋友是谁你知道吗",
+      "type": "dialogue",
+      "timestamp": "2025-01-18T22:47:50.411326",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-18T22:47:50.411326",
+        "last_access": "2025-01-18T22:47:50.411326",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737211914288_1326",
+      "content": "导诊接口更新的内容是什么",
+      "type": "dialogue",
+      "timestamp": "2025-01-18T22:51:54.288618",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-18T22:51:54.288618",
+        "last_access": "2025-01-18T22:51:54.288618",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737342421527_2890",
+      "content": "我最喜欢喝什么酒",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T11:07:01.527974",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-01-20T11:07:01.527974",
+        "last_access": "2025-01-20T11:56:06.865431",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T11:54:40.789008",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T11:56:06.865431",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52
     }
   ]
 }

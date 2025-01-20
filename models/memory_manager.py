@@ -301,8 +301,21 @@ class MemoryManager:
             # 使用 rerank 进行重排序
             reranked_memories = self._rerank_results(query, retrieved_memories)
             
-            # 只返回 top_k 个最相关的记忆
-            return reranked_memories[:top_k]
+            # 只保留 top_k 个最相关的记忆
+            final_memories = reranked_memories[:top_k]
+            
+            # 更新被检索到的记忆的访问信息
+            try:
+                for memory in final_memories:
+                    # 在原始记忆列表中找到对应的记忆索引
+                    for idx, orig_memory in enumerate(self.memories[user_id]):
+                        if orig_memory['id'] == memory['id']:
+                            self.update_memory_access(user_id, idx, 'read')
+                            break
+            except Exception as e:
+                logging.warning(f"Error updating memory access stats: {str(e)}")
+            
+            return final_memories
             
         except Exception as e:
             logging.error(f"Error retrieving memories: {str(e)}")
@@ -852,12 +865,22 @@ class MemoryManager:
         current_time = datetime.now()
         W_t, W_i, W_a = (self.priority_config['weights'][k] for k in ['time', 'importance', 'access'])
         
-        # 时间因子
+        # 时间因子 - 改进的计算方式
         last_access = datetime.fromisoformat(
             memory.get('access_stats', {}).get('last_access', current_time.isoformat())
         )
         days_since_access = (current_time - last_access).days
-        time_factor = 1 / (1 + math.exp(days_since_access - 7))
+        hours_since_access = (current_time - last_access).total_seconds() / 3600
+        
+        # 使用分段函数计算时间衰减
+        if hours_since_access < 24:  # 24小时内
+            time_factor = 1.0 - (hours_since_access / 48)  # 24小时内缓慢衰减
+        elif days_since_access < 7:  # 1周内
+            time_factor = 0.5 * (1 - (days_since_access / 14))  # 一周内中等速度衰减
+        else:  # 超过一周
+            time_factor = 0.25 / (1 + math.log(days_since_access - 6))  # 长期缓慢衰减
+            
+        time_factor = max(0.1, min(1.0, time_factor))  # 确保时间因子在[0.1, 1.0]范围内
         
         # 重要性因子
         memory_type = memory.get('type', 'general')
@@ -867,7 +890,7 @@ class MemoryManager:
         
         # 访问因子 - 使用持久化的访问统计
         access_count = memory.get('access_stats', {}).get('count', 0)
-        access_factor = min(1, access_count / 10 + 5 / (1 + days_since_access))
+        access_factor = min(1, access_count / 10)  # 简化访问因子，不再考虑时间
         
         # 最终优先级分数
         priority_score = W_t * time_factor + W_i * importance_factor + W_a * access_factor
