@@ -44,13 +44,13 @@ def create_app(rag_module):
     prompt_manager = PromptManager()
     roles_config = {
         role: prompt_manager.roles[role]
-        for role in prompt_manager.config.get('available_roles', [])
+        for role in prompt_manager.role_config.get('available_roles', [])
     }
     
     # 设置默认角色
     default_roles = {
         'default_user': {
-            'role': prompt_manager.config.get('default_role', 'reindeer')
+            'role': prompt_manager.role_config.get('default_role', 'reindeer')
         }
     }
 

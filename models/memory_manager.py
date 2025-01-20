@@ -14,7 +14,7 @@ import random
 
 class MemoryManager:
     def __init__(self, model_name: str = "bge-small-zh-v1.5", 
-                 model_path: str = "D:/models/bge-small-zh-v1.5",
+                 model_path: str = "S:/models/bge-small-zh-v1.5",
                  memory_file: str = "config/user_memories.json",
                  similarity_threshold: float = 0.5,
                  new_memory_similarity_threshold: float = 0.9):
@@ -34,8 +34,8 @@ class MemoryManager:
         self.memories = self.load_memories()
         
         # 初始化 BGE-Rerank 模型
-        self.reranker_tokenizer = AutoTokenizer.from_pretrained(r"D:\models\bge-reranker-base")
-        self.reranker = AutoModelForSequenceClassification.from_pretrained(r"D:\models\bge-reranker-base")
+        self.reranker_tokenizer = AutoTokenizer.from_pretrained(r"S:\models\bge-reranker-base")
+        self.reranker = AutoModelForSequenceClassification.from_pretrained(r"S:\models\bge-reranker-base")
         self.reranker.eval()
         logging.info("Successfully loaded BGE-Rerank model")
         

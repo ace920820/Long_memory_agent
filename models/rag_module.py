@@ -16,7 +16,7 @@ import markdown
 
 
 class RAGModule:
-    def __init__(self, config_path: str = "config/config.yaml"):
+    def __init__(self, config_path: str = "config/role_config.yaml"):
         """初始化 RAG 模块
 
         Args:
@@ -27,7 +27,8 @@ class RAGModule:
             config = yaml.safe_load(f)
         
         embedding_config = config['embedding']
-        
+        rerank_config = config['rerank']
+
         # 从配置中获取参数
         model_path = embedding_config['model_path']
         self.dimension = embedding_config['dimension']
@@ -43,8 +44,8 @@ class RAGModule:
             logging.info(f"Successfully loaded BGE model from {model_path}")
             
             # 初始化 BGE-Rerank 模型
-            self.reranker_tokenizer = AutoTokenizer.from_pretrained(r"D:\models\bge-reranker-base")
-            self.reranker = AutoModelForSequenceClassification.from_pretrained(r"D:\models\bge-reranker-base")
+            self.reranker_tokenizer = AutoTokenizer.from_pretrained(rerank_config['model_path'])
+            self.reranker = AutoModelForSequenceClassification.from_pretrained(rerank_config['model_path'])
             self.reranker.eval()
             logging.info("Successfully loaded BGE-Rerank model")
         except Exception as e:

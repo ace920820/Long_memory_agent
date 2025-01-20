@@ -41,6 +41,6 @@ class LLMService:
 
     def load_roles_config(self):
         """Load roles configuration."""
-        with open("config/config.yaml", "r") as f:
+        with open("config/role_config.yaml", "r") as f:
             config = yaml.safe_load(f)
         return config.get("roles", {})

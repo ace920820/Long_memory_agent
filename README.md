@@ -100,14 +100,14 @@
 - Transformers 4.30+
 - 现代浏览器（支持ES6+）
 - 依赖包：
-  - sentence-transformers>=2.2.0
-  - transformers>=4.30.0
-  - torch>=1.10.0
-  - faiss-cpu
-  - flask
-  - pyyaml
-  - python-dotenv
-  - dashscope  # Deepseek API支持
+  - sentence-transformers==3.3.1
+  - transformers==4.48.0
+  - torch==2.5.1
+  - faiss-cpu==1.7.4
+  - flask==3.0.3
+  - pyyaml==6.0.1
+  - python-dotenv==1.0.1
+  - dashscope==1.20.1  # Deepseek API支持
 
 ### 环境变量配置
 在运行系统前，需要配置以下环境变量：
@@ -348,7 +348,7 @@ memory:
   - openai 1.12+
   
 - **Web 框架**
-  - flask 3.1.0
+  - flask 3.0.3
   - flask-cors 4.0.0
 
 - **文档处理**

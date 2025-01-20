@@ -7,7 +7,7 @@ import re
 class PromptManager:
     def __init__(self, prompts_dir: str = "prompts"):
         self.prompts_dir = prompts_dir
-        self.config = self._load_config()
+        self.role_config = self._load_config()
         self.roles = self._load_roles()
         self.templates = self._load_templates()
         self.jinja_env = self._setup_jinja_environment()
@@ -55,7 +55,7 @@ class PromptManager:
     
     def _load_config(self) -> Dict:
         """加载主配置文件"""
-        with open(os.path.join(self.prompts_dir, "config.yaml"), "r", encoding='utf-8') as f:
+        with open(os.path.join(self.prompts_dir, "role_config.yaml"), "r", encoding='utf-8') as f:
             return yaml.safe_load(f)
     
     def _load_roles(self) -> Dict:
@@ -107,7 +107,7 @@ class PromptManager:
     
     def get_system_prompt(self, prompt_name: str) -> str:
         """获取系统提示词"""
-        return self.config["system_prompts"].get(prompt_name, "") 
+        return self.role_config["system_prompts"].get(prompt_name, "")
     
     def get_system_instruction(self, template_type: str = 'base', **kwargs) -> str:
         """获取格式化的系统指令
