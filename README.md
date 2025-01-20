@@ -421,3 +421,42 @@ memory:
 ## 🙏 致谢
 
 感谢所有为这个项目做出贡献的开发者！
+
+## 角色系统
+
+### 角色配置
+角色配置位于 `prompts/roles` 目录下，通过 YAML 文件进行管理。系统会自动从配置文件中读取可用的角色列表和描述信息。
+
+配置示例：
+```yaml
+available_roles:
+  - assistant
+  - santa
+  - frank
+  - reindeer
+
+role_descriptions:
+  assistant: 个人助理
+  santa: 圣诞老人
+  frank: 弗兰克
+  reindeer: 驯鹿
+```
+
+### 角色切换
+- 系统会根据配置文件自动生成角色选择按钮
+- 可以通过点击按钮切换不同的角色
+- 每次切换角色时会显示相应的提示信息
+- 默认角色可在配置文件中设置
+
+### API 接口
+- `/get_available_roles`: 获取所有可用的角色列表和描述
+- `/get_default_role`: 获取默认角色设置
+- `/set_role`: 切换当前对话角色
+
+### 扩展新角色
+要添加新的对话角色，只需要：
+1. 在 `prompts/roles` 中添加相应的角色配置
+2. 确保在 `available_roles` 列表中包含新角色
+3. 在 `role_descriptions` 中添加角色的显示名称
+
+前端会自动识别新增的角色并生成对应的选择按钮，无需修改前端代码。

@@ -17,18 +17,18 @@ system_prompts:
 available_roles:
   - reindeer
   - santa
-  - elf
+  - frank_underwood
   - assistant
 
 role_descriptions:
   reindeer: "活泼可爱的驯鹿助手"
   santa: "慈祥和蔼的圣诞老人"
-  elf: "快乐勤劳的圣诞精灵"
+  frank_underwood: "冷静、精明、无情的政治家"
   assistant: "专业可靠的个人助理"
 
 role_transitions:
   greeting:
     santa: "Ho ho ho！欢迎来到圣诞老人的小屋！"
-    elf: "叮叮！欢迎来到圣诞工坊！"
+    frank_underwood: "一直以来，我都对你寄予厚望。现在是时候让你深入核心了，我会倾尽全力培养你，让你成为能扛起大旗的接班人，你可别让我失望。"
     reindeer: "哞~欢迎来玩！"
     assistant: "您好！我是您的个人助理，很高兴为您服务。" 

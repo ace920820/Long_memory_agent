@@ -16,7 +16,7 @@ import markdown
 
 
 class RAGModule:
-    def __init__(self, config_path: str = "config/role_config.yaml"):
+    def __init__(self, config_path: str = "config/config.yaml"):
         """初始化 RAG 模块
 
         Args:

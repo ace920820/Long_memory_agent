@@ -50,26 +50,6 @@
     <div class="mb-4 p-4 bg-white rounded-lg shadow">
         <h3 class="text-lg font-semibold mb-2">选择对话角色</h3>
         <div class="flex flex-wrap gap-2" id="roleSelector">
-            <button class="role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200
-                           bg-blue-100 text-blue-800 hover:bg-blue-200 active"
-                    data-role="reindeer">
-                驯鹿
-            </button>
-            <button class="role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200
-                           bg-gray-100 text-gray-800 hover:bg-gray-200"
-                    data-role="santa">
-                圣诞老人
-            </button>
-            <button class="role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200
-                           bg-gray-100 text-gray-800 hover:bg-gray-200"
-                    data-role="elf">
-                圣诞精灵
-            </button>
-            <button class="role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200
-                           bg-gray-100 text-gray-800 hover:bg-gray-200"
-                    data-role="assistant">
-                个人助理
-            </button>
         </div>
     </div>
 
@@ -92,7 +72,7 @@
     </div>
 
     <footer class="bg-green-200 py-1 text-center text-sm text-red-600">
-        © 2024 圣诞对话系统 - All rights reserved.
+        2024 圣诞对话系统 - All rights reserved.
     </footer>
 
     <!-- 设置弹窗 -->
@@ -102,10 +82,10 @@
             <div class="space-y-4">
                 <div class="flex items-center space-x-4">
                     <button onclick="setRole('santa')" class="flex items-center p-3 border rounded-lg hover:bg-red-100">
-                        🎅 圣诞老人
+                        圣诞老人
                     </button>
                     <button onclick="setRole('reindeer')" class="flex items-center p-3 border rounded-lg hover:bg-green-100">
-                        🦌 驯鹿
+                        驯鹿
                     </button>
                 </div>
                 <button onclick="closeSettingsModal()" class="w-full mt-4 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">
@@ -258,7 +238,8 @@
                 const result = await response.json();
 
                 if (response.ok && result.success) {
-                    const roleName = result.role_name || (role === 'santa' ? '圣诞老人' : '驯鹿');
+                    // 使用getRoleName函数获取正确的角色名称
+                    const roleName = getRoleName(role);
                     updateAvatar(role);
                     addMessage(`角色已切换为: ${roleName}`, 'assistant');
                     closeSettingsModal();
@@ -365,12 +346,80 @@
 
         // 获取角色的中文名称
         function getRoleName(role) {
-            const roleNames = {
-                'reindeer': '驯鹿',
-                'elf': '精灵',
-                'santa': '圣诞老人'
-            };
-            return roleNames[role] || role;
+            return window.roleDescriptions?.[role]?.name || role;
+        }
+
+        // 动态生成角色按钮
+        async function generateRoleButtons() {
+            try {
+                const response = await fetch('/get_available_roles');
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    const roleSelector = document.getElementById('roleSelector');
+                    roleSelector.innerHTML = ''; // 清空现有按钮
+                    window.roleDescriptions = result.roles; // 保存角色描述信息供后续使用
+                    
+                    Object.entries(result.roles).forEach(([role, info]) => {
+                        const button = document.createElement('button');
+                        button.className = `role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200
+                                          bg-gray-100 text-gray-800 hover:bg-gray-200`;
+                        button.dataset.role = role;
+                        button.textContent = info.name;
+                        if (info.description) {
+                            button.title = info.description;
+                        }
+                        roleSelector.appendChild(button);
+                    });
+                    
+                    // 为新生成的按钮添加点击事件
+                    document.querySelectorAll('.role-btn').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            const role = btn.dataset.role;
+                            document.querySelectorAll('.role-btn').forEach(b => {
+                                if (b === btn) {
+                                    b.classList.add('bg-blue-100', 'text-blue-800');
+                                    b.classList.remove('bg-gray-100', 'text-gray-800');
+                                } else {
+                                    b.classList.remove('bg-blue-100', 'text-blue-800');
+                                    b.classList.add('bg-gray-100', 'text-gray-800');
+                                }
+                            });
+                            setRole(role);
+                        });
+                    });
+                }
+            } catch (error) {
+                console.error('Error generating role buttons:', error);
+            }
+        }
+
+        // 在页面加载完成后获取角色信息并生成按钮
+        document.addEventListener('DOMContentLoaded', async () => {
+            await generateRoleButtons();  // 先生成按钮
+            await getDefaultRole();       // 然后设置默认角色
+        });
+
+        async function getDefaultRole() {
+            try {
+                const response = await fetch('/get_default_role');
+                const result = await response.json();
+                if (response.ok && result.default_role) {
+                    setRole(result.default_role);
+                    // 更新按钮状态
+                    document.querySelectorAll('.role-btn').forEach(btn => {
+                        if (btn.dataset.role === result.default_role) {
+                            btn.classList.add('bg-blue-100', 'text-blue-800');
+                            btn.classList.remove('bg-gray-100', 'text-gray-800');
+                        } else {
+                            btn.classList.remove('bg-blue-100', 'text-blue-800');
+                            btn.classList.add('bg-gray-100', 'text-gray-800');
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('Error getting default role:', error);
+            }
         }
 
         // 添加消息到聊天界面的辅助函数

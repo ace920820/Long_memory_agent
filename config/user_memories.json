@@ -282,48 +282,48 @@
       "type": "dialogue",
       "timestamp": "2025-01-09T20:09:31.684545",
       "access_stats": {
-        "count": 10,
+        "count": 19,
         "first_access": "2025-01-09T20:09:31.685536",
-        "last_access": "2025-01-20T20:58:41.981612",
+        "last_access": "2025-01-20T21:48:22.231209",
         "access_history": [
           {
-            "timestamp": "2025-01-09T20:09:43.407520",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-20T15:00:07.881850",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:02:07.294176",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:04:17.065079",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:04:22.624286",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:06:31.985964",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:08:33.388015",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T20:37:43.718232",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T20:53:00.106757",
-            "type": "read"
-          },
-          {
             "timestamp": "2025-01-20T20:58:41.981612",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:10:58.773755",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:11:05.855810",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:11:59.757246",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:14:12.704432",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:22:50.812822",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:25:27.937003",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:37:53.091491",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:46:20.502203",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:48:22.231209",
             "type": "read"
           }
         ]
@@ -586,34 +586,10 @@
       "type": "dialogue",
       "timestamp": "2025-01-18T22:47:50.411326",
       "access_stats": {
-        "count": 9,
+        "count": 16,
         "first_access": "2025-01-18T22:47:50.411326",
-        "last_access": "2025-01-20T20:58:41.990620",
+        "last_access": "2025-01-20T21:48:22.234209",
         "access_history": [
-          {
-            "timestamp": "2025-01-20T15:00:07.885543",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:02:07.296208",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:04:17.070824",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:04:22.632649",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:06:32.014833",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:08:33.392150",
-            "type": "read"
-          },
           {
             "timestamp": "2025-01-20T20:37:43.722016",
             "type": "read"
@@ -625,10 +601,38 @@
           {
             "timestamp": "2025-01-20T20:58:41.990620",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:11:05.862329",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:11:59.766025",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:14:12.710787",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:22:50.817091",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:25:27.942653",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:46:20.503213",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:48:22.234209",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.73
+      "priority_score": 0.76
     },
     {
       "id": "m_1737211914288_1326",
@@ -813,6 +817,74 @@
           },
           {
             "timestamp": "2025-01-20T15:15:38.239169",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52
+    },
+    {
+      "id": "m_1737378661630_4046",
+      "content": "你在哪",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T21:11:01.630478",
+      "access_stats": {
+        "count": 8,
+        "first_access": "2025-01-20T21:11:01.630478",
+        "last_access": "2025-01-20T21:48:22.236202",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T21:11:05.870004",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:11:59.771230",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:14:12.715668",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:22:50.820688",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:25:27.949284",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:37:53.062953",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:46:20.505270",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:48:22.236202",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.7
+    },
+    {
+      "id": "m_1737380276259_1821",
+      "content": "你好",
+      "type": "dialogue",
+      "timestamp": "2025-01-20T21:37:56.259734",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-01-20T21:37:56.259734",
+        "last_access": "2025-01-20T21:48:22.238357",
+        "access_history": [
+          {
+            "timestamp": "2025-01-20T21:46:20.507403",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T21:48:22.238357",
             "type": "read"
           }
         ]

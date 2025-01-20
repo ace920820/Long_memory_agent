@@ -344,6 +344,47 @@ def create_app(rag_module):
             logging.error(f"Error accessing memory: {str(e)}")
             return jsonify({"error": "Failed to access memory"}), 500
 
+    @app.route('/get_default_role', methods=['GET'])
+    def get_default_role():
+        try:
+            default_role = prompt_manager.role_config.get('default_role', 'assistant')
+            return jsonify({
+                "success": True,
+                "default_role": default_role
+            })
+        except Exception as e:
+            logging.error(f"Error getting default role: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "Failed to get default role",
+                "default_role": "assistant"  # 返回一个安全的默认值
+            }), 500
+
+    @app.route('/get_available_roles', methods=['GET'])
+    def get_available_roles():
+        try:
+            available_roles = prompt_manager.role_config.get('available_roles', [])
+            role_descriptions = prompt_manager.role_config.get('role_descriptions', {})
+            
+            roles_info = {
+                role: {
+                    'name': role_descriptions.get(role, role),
+                    'description': role_descriptions.get(role, '')
+                }
+                for role in available_roles
+            }
+            
+            return jsonify({
+                "success": True,
+                "roles": roles_info
+            })
+        except Exception as e:
+            logging.error(f"Error getting available roles: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "Failed to get available roles"
+            }), 500
+
     @app.route('/knowledge-base')
     def knowledge_base():
         return render_template('knowledge_base.html')
