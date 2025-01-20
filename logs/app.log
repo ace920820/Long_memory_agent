@@ -28321,3 +28321,1966 @@ BERT推理兜底设置：在BERT推理中加入了“全科”作为兜底选项
 2025-01-20 21:48:22,240 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
 2025-01-20 21:48:24,637 - root - INFO - memory_manager.py:216 - 发现相似记忆 (相似度: 1.0000)
 2025-01-20 21:48:24,637 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 21:48:24] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:08:37,134 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\main.py', reloading
+2025-01-20 22:08:37,134 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\main.py', reloading
+2025-01-20 22:08:37,135 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\main.py', reloading
+2025-01-20 22:08:38,850 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:08:46,698 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:08:46,699 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:10:09,308 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:10:09,308 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:10:09,313 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:10:16,844 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:10:16,846 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:10:16,862 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:16] "GET / HTTP/1.1" 200 -
+2025-01-20 22:10:16,963 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:16] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:10:17,152 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:17] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:10:17,194 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:17] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:10:17,256 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:17] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:10:17,274 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:17] "GET /static/images/assistant.jpg HTTP/1.1" 200 -
+2025-01-20 22:10:19,808 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:19] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:10:19,815 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:19] "GET /static/images/frank.jpg HTTP/1.1" 200 -
+2025-01-20 22:10:21,103 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:21] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:10:22,235 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:22] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:10:22,242 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:10:22] "GET /static/images/santa.jpg HTTP/1.1" 200 -
+2025-01-20 22:13:39,324 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:13:39,324 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:13:39,329 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:13:46,951 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:13:46,952 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:13:46,969 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:13:46] "GET / HTTP/1.1" 200 -
+2025-01-20 22:13:47,064 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:13:47] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:13:47,140 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:13:47] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:13:47,160 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:13:47] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:13:47,177 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:13:47] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:13:47,191 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:13:47] "GET /static/images/assistant.jpg HTTP/1.1" 200 -
+2025-01-20 22:14:41,144 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:14:41,145 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:14:41,150 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:14:48,813 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:14:48,814 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:14:48,832 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:48] "GET / HTTP/1.1" 200 -
+2025-01-20 22:14:48,924 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:48] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:14:48,992 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:48] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:14:49,014 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:49] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:14:49,027 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:49] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:14:49,048 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:49] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:14:54,300 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:54] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:14:54,304 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:54] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:14:55,015 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:55] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:14:55,034 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:55] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:14:55,902 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:55] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:14:55,917 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:14:55] "GET /static/images/frank.jpg HTTP/1.1" 200 -
+2025-01-20 22:15:03,206 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:15:03] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:15:36,243 - root - INFO - rag_module.py:616 - 查询文本: 你好
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:654 -   相似度: 0.1063
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:655 -   内容: 16、当一个男人认识到要当一个强者，认识到责任，认识到钱的重要，并且有钱的时候，他就成熟了，他就算一个人了。
+否则，他只能算没长大的孩子，或者韭菜，被收割。
+愚昧无知，则不尊重规律，倒霉的孩子。
+
+17、多关注别人的好、多表扬别人的好，这样不但我们自己拥有越来越多的正能量，
+也能让别人越来越多的关注到自己的好，越来越多的人强化自己的好。
+
+
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:654 -   相似度: 0.1059
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:655 -   内容: 想象一下，如果没有这些好事，你的生活会是什么样子。然后再次感激这些好事的存在。
+6.	持续实践：持续地实践这个方法。你可以每天花几分钟的时间，专门用来回顾好事和表达感激之情。
+随着时间的推移，你会发现自己更容易进入感激的状态，也会更加享受生活。
+
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:654 -   相似度: 0.1053
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:655 -   内容: 【我的优点】
+开朗外向、乐观、善于表达、自信、乐于学习、意志坚强、谨慎小心、注重细节、善于观察和分析、外形出众、爱运动、身体素质好。
+爱干净、做饭好吃、善于做家务、有责任感、懂生活、有品位、自我约束力强、善于说服、惹人喜欢。
+我曾经不够镇定也不够自信，但现在冷静、从容的头脑和自信的态度已经成为我引以为豪的素质。
+我头脑灵活，视野广阔，涉猎政治、经济、哲学、历史、科技、社会等多个领域，并对不同思想保持开放的态度。
+
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:654 -   相似度: 0.1024
+2025-01-20 22:15:36,244 - root - INFO - rag_module.py:655 -   内容: 18、不要害怕失去什么，因为你从未真正拥有过；不要害怕错过什么，因为不该错过的你永远不会错过；
+不要担心什么，因为你的担心对问题不起任何作用。
+
+19、当你非常直接非常渴望非常有毅力去坚持一件有价值的事的时候，你会拥有超强的吸引力。
+你相信什么，就会吸引什么；你怀疑什么，什么就会与你擦肩而过。
+
+
+2025-01-20 22:15:36,245 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:15:36,245 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,245 - root - INFO - rag_module.py:654 -   相似度: 0.0849
+2025-01-20 22:15:36,245 - root - INFO - rag_module.py:655 -   内容: 这些好事可以是大事，比如得到一份新的工作；也可以是小事，比如喝到一杯美味的咖啡。
+试着回想那些使你感到快乐或满足的时刻。
+4.	感激的表达：一旦你回忆起一些好事，尝试去表达你对它们的感激之情。
+你可以大声地说出来，或者写在纸上。
+例如，你可以说：“我很感激我有一个热爱我、支持我的家庭。”
+或者“我很感激我有这份让我发挥才华的工作。”
+5.	反思感激：当你表达感激之情的时候，试着真正去体验这种感觉。
+
+2025-01-20 22:15:36,245 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:15:36,245 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,245 - root - INFO - rag_module.py:654 -   相似度: 0.0814
+2025-01-20 22:15:36,245 - root - INFO - rag_module.py:655 -   内容: 我为人正直，有清晰坚决的是非观，勇敢好斗，不畏惧发生冲突。作为一个战士，我祈祷和平，也一直为战斗做好准备。
+我是一个强悍、决断的领导者，在身边人中有相当的影响力和远见，善于分析形势和说服对方和我站在一起维护共同利益。
+作为一个注重细节同时也不乏谨慎的人，我总是可以收集尽量多的信息并结合我掌握的各个领域的知识，
+判断目前的形式和未来的发展趋势，辅助我进行准确决策。
+
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:654 -   相似度: 0.0763
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:655 -   内容: 22、不必让自己感到不安，你的生活只属于你，人生的道路就是不断寻找自己的朋友、自己喜欢的工作、自己喜欢的圈子。
+受到排挤，是在提示你要重新选择自己的圈子，要选择一群比你卓越的伙伴。
+
+
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:654 -   相似度: 0.0447
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:655 -   内容: 一个人失去魅力的七种行为：
+刨根问底 -> 不再追问
+交浅言深 -> 点到为止
+不思进取 -> 积极进取
+不够自信 -> 自信爆棚
+喜欢解释 -> 从不解释
+过度操心 -> 顾好自己
+喜欢诉苦 -> 从不诉苦
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:654 -   相似度: 0.0352
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:655 -   内容: 23、别人怎样对待你都是你允许的，同样，你处在什么样的环境，和什么水准的人相处也是你自己选择的。
+所以一旦发现，环境消耗人，人消耗人，第一选择永远都是能力所及之处赶紧跑，
+而不是每天掏空自己费心费力想着怎么和这帮人斗，和那环境斗。
+精力有限，别浪费在不值得的事身上。
+
+24、你被排挤，说明你跟平庸的他们不是一伙的，这是好事。
+
+
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:654 -   相似度: 0.0220
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:655 -   内容: 9、他是放羊的，你是砍柴的，你们聊了一整天，他的羊吃饱了，你的柴呢？他是忙着生活，抽空爱你，你呢？是忙着爱他，抽空生活。
+10、我们的生命，不是为了讨要别人得喜欢而存在的。
+11、没本事的男人整天谈情说爱，讨好女人，以为有了爱情就有了一切，但其实这不过是对自己无能的遮掩。
+成熟的男人不会对爱情抱有太大的执念，也没有太大爱情的理想，最大的理想和追逐都在工作事业以及自我价值的实现上。
+毕竟社会对一个男人评判的标准，不是有钱就是有权。
+
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,257 - root - INFO - rag_module.py:654 -   相似度: 0.0204
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:655 -   内容: 怎样让自己在职场中强势起来？
+
+
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:654 -   相似度: 0.0079
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:655 -   内容: 28、打工就是用时间生命换钱，只有底层穷人才干的事，上层人把时间看得和生命一样重要，钱只是一个实现目标的工具而已。
+
+29、谈恋爱没用，不就是牵别人牵过的手，搂被人搂过的腰，亲别人亲过的嘴，
+说一遍别人说过的话，她再不好意思一次，而你再进修一次。
+
+30、你喜欢一个人和不喜欢一个人不重要，因为喜欢不能够长久，喜欢只是你不了解一个人，你看的是一个人的表象。
+
+
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:654 -   相似度: 0.0043
+2025-01-20 22:15:36,258 - root - INFO - rag_module.py:655 -   内容: 【红丸】
+1、作为男人你必须霸道、强势、傲慢。
+女人要是爱你的话，她根本不去看你爱不爱她、你对她好不好，而是看你身上有没有吸引她的价值。
+2、一个男人的吸引力来自于你的核心自信，就是你不依赖于任何外部条件的内心深处的优越感，做任何事情都相信自己一定行。
+3、当一个男人走出自己的内心的恐惧，他将无所不能，他将会变成全世界最有魅力的男人。
+4、你想获得她的爱和崇拜，就要记住：不要把自己当成机器，不总是要忙忙碌碌。
+
+2025-01-20 22:15:36,272 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:15:36,273 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,273 - root - INFO - rag_module.py:654 -   相似度: 0.0041
+2025-01-20 22:15:36,273 - root - INFO - rag_module.py:655 -   内容: 你不是 “付出才有价值”，而是 “本身自带价值”。
+5、别人不喜欢你只有一个原因，就是你太喜欢对方了。
+6、当你什么都不在意了，你的人生才是真正的开始。
+7、你有没有发现一个问题，和女人相处，你越是敷衍，越是高冷，反而人家会越爱你；当你开始上心听话，她就像抓住了你的把柄一样，对你忽冷忽热。
+8、凡事从利益的角度，去衡量、去思考，你就会变得越来越聪明，你只想从情感的角度考虑问题，就会越来越笨。
+
+2025-01-20 22:15:36,273 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:15:36,273 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:15:36,273 - root - INFO - rag_module.py:654 -   相似度: -0.0006
+2025-01-20 22:15:36,273 - root - INFO - rag_module.py:655 -   内容: 7、重要的是忠于职守，而不是谋求私利，更不能因为私利、情绪低落影响工作。
+
+2025-01-20 22:15:36,273 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:15:36,348 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:15:36,350 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:15:36,352 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:15:38,647 - root - INFO - memory_manager.py:216 - 发现相似记忆 (相似度: 1.0000)
+2025-01-20 22:15:38,647 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:15:38] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:20:06,783 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:20:06,783 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:20:06,789 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:20:14,968 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:20:14,971 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:20:15,009 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:15] "GET / HTTP/1.1" 200 -
+2025-01-20 22:20:15,177 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:15] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:20:15,181 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:15] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:20:15,191 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:15] "GET /static/images/user.jpg HTTP/1.1" 200 -
+2025-01-20 22:20:15,212 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:15] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:20:15,223 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:15] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:20:24,790 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:24] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:20:24,796 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:24] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:20:25,242 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:25] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:20:25,249 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:25] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:20:48,393 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:20:48] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:24:01,059 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:24:01,059 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:24:01,064 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:24:08,806 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:24:08,808 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:25:07,576 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:07] "GET / HTTP/1.1" 200 -
+2025-01-20 22:25:07,678 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:07] "[36mGET /static/images/user.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:25:07,755 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:07] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:25:07,775 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:07] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:25:07,789 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:07] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:25:10,074 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:10] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:25:10,974 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:10] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:25:11,347 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:11] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:25:13,124 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:13] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:616 - 查询文本: 你好
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:654 -   相似度: 0.1063
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:655 -   内容: 16、当一个男人认识到要当一个强者，认识到责任，认识到钱的重要，并且有钱的时候，他就成熟了，他就算一个人了。
+否则，他只能算没长大的孩子，或者韭菜，被收割。
+愚昧无知，则不尊重规律，倒霉的孩子。
+
+17、多关注别人的好、多表扬别人的好，这样不但我们自己拥有越来越多的正能量，
+也能让别人越来越多的关注到自己的好，越来越多的人强化自己的好。
+
+
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:654 -   相似度: 0.1059
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:655 -   内容: 想象一下，如果没有这些好事，你的生活会是什么样子。然后再次感激这些好事的存在。
+6.	持续实践：持续地实践这个方法。你可以每天花几分钟的时间，专门用来回顾好事和表达感激之情。
+随着时间的推移，你会发现自己更容易进入感激的状态，也会更加享受生活。
+
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,247 - root - INFO - rag_module.py:654 -   相似度: 0.1053
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:655 -   内容: 【我的优点】
+开朗外向、乐观、善于表达、自信、乐于学习、意志坚强、谨慎小心、注重细节、善于观察和分析、外形出众、爱运动、身体素质好。
+爱干净、做饭好吃、善于做家务、有责任感、懂生活、有品位、自我约束力强、善于说服、惹人喜欢。
+我曾经不够镇定也不够自信，但现在冷静、从容的头脑和自信的态度已经成为我引以为豪的素质。
+我头脑灵活，视野广阔，涉猎政治、经济、哲学、历史、科技、社会等多个领域，并对不同思想保持开放的态度。
+
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:654 -   相似度: 0.1024
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:655 -   内容: 18、不要害怕失去什么，因为你从未真正拥有过；不要害怕错过什么，因为不该错过的你永远不会错过；
+不要担心什么，因为你的担心对问题不起任何作用。
+
+19、当你非常直接非常渴望非常有毅力去坚持一件有价值的事的时候，你会拥有超强的吸引力。
+你相信什么，就会吸引什么；你怀疑什么，什么就会与你擦肩而过。
+
+
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:654 -   相似度: 0.0849
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:655 -   内容: 这些好事可以是大事，比如得到一份新的工作；也可以是小事，比如喝到一杯美味的咖啡。
+试着回想那些使你感到快乐或满足的时刻。
+4.	感激的表达：一旦你回忆起一些好事，尝试去表达你对它们的感激之情。
+你可以大声地说出来，或者写在纸上。
+例如，你可以说：“我很感激我有一个热爱我、支持我的家庭。”
+或者“我很感激我有这份让我发挥才华的工作。”
+5.	反思感激：当你表达感激之情的时候，试着真正去体验这种感觉。
+
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:654 -   相似度: 0.0814
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:655 -   内容: 我为人正直，有清晰坚决的是非观，勇敢好斗，不畏惧发生冲突。作为一个战士，我祈祷和平，也一直为战斗做好准备。
+我是一个强悍、决断的领导者，在身边人中有相当的影响力和远见，善于分析形势和说服对方和我站在一起维护共同利益。
+作为一个注重细节同时也不乏谨慎的人，我总是可以收集尽量多的信息并结合我掌握的各个领域的知识，
+判断目前的形式和未来的发展趋势，辅助我进行准确决策。
+
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:654 -   相似度: 0.0763
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:655 -   内容: 22、不必让自己感到不安，你的生活只属于你，人生的道路就是不断寻找自己的朋友、自己喜欢的工作、自己喜欢的圈子。
+受到排挤，是在提示你要重新选择自己的圈子，要选择一群比你卓越的伙伴。
+
+
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:654 -   相似度: 0.0447
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:655 -   内容: 一个人失去魅力的七种行为：
+刨根问底 -> 不再追问
+交浅言深 -> 点到为止
+不思进取 -> 积极进取
+不够自信 -> 自信爆棚
+喜欢解释 -> 从不解释
+过度操心 -> 顾好自己
+喜欢诉苦 -> 从不诉苦
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:25:15,248 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,249 - root - INFO - rag_module.py:654 -   相似度: 0.0352
+2025-01-20 22:25:15,249 - root - INFO - rag_module.py:655 -   内容: 23、别人怎样对待你都是你允许的，同样，你处在什么样的环境，和什么水准的人相处也是你自己选择的。
+所以一旦发现，环境消耗人，人消耗人，第一选择永远都是能力所及之处赶紧跑，
+而不是每天掏空自己费心费力想着怎么和这帮人斗，和那环境斗。
+精力有限，别浪费在不值得的事身上。
+
+24、你被排挤，说明你跟平庸的他们不是一伙的，这是好事。
+
+
+2025-01-20 22:25:15,249 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:25:15,249 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,249 - root - INFO - rag_module.py:654 -   相似度: 0.0220
+2025-01-20 22:25:15,249 - root - INFO - rag_module.py:655 -   内容: 9、他是放羊的，你是砍柴的，你们聊了一整天，他的羊吃饱了，你的柴呢？他是忙着生活，抽空爱你，你呢？是忙着爱他，抽空生活。
+10、我们的生命，不是为了讨要别人得喜欢而存在的。
+11、没本事的男人整天谈情说爱，讨好女人，以为有了爱情就有了一切，但其实这不过是对自己无能的遮掩。
+成熟的男人不会对爱情抱有太大的执念，也没有太大爱情的理想，最大的理想和追逐都在工作事业以及自我价值的实现上。
+毕竟社会对一个男人评判的标准，不是有钱就是有权。
+
+2025-01-20 22:25:15,263 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:25:15,263 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,263 - root - INFO - rag_module.py:654 -   相似度: 0.0204
+2025-01-20 22:25:15,263 - root - INFO - rag_module.py:655 -   内容: 怎样让自己在职场中强势起来？
+
+
+2025-01-20 22:25:15,263 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:25:15,263 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,263 - root - INFO - rag_module.py:654 -   相似度: 0.0079
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:655 -   内容: 28、打工就是用时间生命换钱，只有底层穷人才干的事，上层人把时间看得和生命一样重要，钱只是一个实现目标的工具而已。
+
+29、谈恋爱没用，不就是牵别人牵过的手，搂被人搂过的腰，亲别人亲过的嘴，
+说一遍别人说过的话，她再不好意思一次，而你再进修一次。
+
+30、你喜欢一个人和不喜欢一个人不重要，因为喜欢不能够长久，喜欢只是你不了解一个人，你看的是一个人的表象。
+
+
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:654 -   相似度: 0.0043
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:655 -   内容: 【红丸】
+1、作为男人你必须霸道、强势、傲慢。
+女人要是爱你的话，她根本不去看你爱不爱她、你对她好不好，而是看你身上有没有吸引她的价值。
+2、一个男人的吸引力来自于你的核心自信，就是你不依赖于任何外部条件的内心深处的优越感，做任何事情都相信自己一定行。
+3、当一个男人走出自己的内心的恐惧，他将无所不能，他将会变成全世界最有魅力的男人。
+4、你想获得她的爱和崇拜，就要记住：不要把自己当成机器，不总是要忙忙碌碌。
+
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:654 -   相似度: 0.0041
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:655 -   内容: 你不是 “付出才有价值”，而是 “本身自带价值”。
+5、别人不喜欢你只有一个原因，就是你太喜欢对方了。
+6、当你什么都不在意了，你的人生才是真正的开始。
+7、你有没有发现一个问题，和女人相处，你越是敷衍，越是高冷，反而人家会越爱你；当你开始上心听话，她就像抓住了你的把柄一样，对你忽冷忽热。
+8、凡事从利益的角度，去衡量、去思考，你就会变得越来越聪明，你只想从情感的角度考虑问题，就会越来越笨。
+
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:654 -   相似度: -0.0006
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:655 -   内容: 7、重要的是忠于职守，而不是谋求私利，更不能因为私利、情绪低落影响工作。
+
+2025-01-20 22:25:15,264 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:25:15,341 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:25:15,343 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:25:15,344 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:25:17,650 - root - INFO - memory_manager.py:216 - 发现相似记忆 (相似度: 1.0000)
+2025-01-20 22:25:17,651 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:17] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:25:44,933 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:44] "GET / HTTP/1.1" 200 -
+2025-01-20 22:25:44,943 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:44] "[36mGET /static/images/user.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:25:45,024 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:45] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:25:45,032 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:45] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:25:45,043 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to assistant
+2025-01-20 22:25:45,043 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:45] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:25:47,442 - root - INFO - rag_module.py:616 - 查询文本: 你好
+2025-01-20 22:25:47,443 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:25:47,443 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,443 - root - INFO - rag_module.py:654 -   相似度: 0.1063
+2025-01-20 22:25:47,443 - root - INFO - rag_module.py:655 -   内容: 16、当一个男人认识到要当一个强者，认识到责任，认识到钱的重要，并且有钱的时候，他就成熟了，他就算一个人了。
+否则，他只能算没长大的孩子，或者韭菜，被收割。
+愚昧无知，则不尊重规律，倒霉的孩子。
+
+17、多关注别人的好、多表扬别人的好，这样不但我们自己拥有越来越多的正能量，
+也能让别人越来越多的关注到自己的好，越来越多的人强化自己的好。
+
+
+2025-01-20 22:25:47,443 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:25:47,443 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,443 - root - INFO - rag_module.py:654 -   相似度: 0.1059
+2025-01-20 22:25:47,443 - root - INFO - rag_module.py:655 -   内容: 想象一下，如果没有这些好事，你的生活会是什么样子。然后再次感激这些好事的存在。
+6.	持续实践：持续地实践这个方法。你可以每天花几分钟的时间，专门用来回顾好事和表达感激之情。
+随着时间的推移，你会发现自己更容易进入感激的状态，也会更加享受生活。
+
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:654 -   相似度: 0.1053
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:655 -   内容: 【我的优点】
+开朗外向、乐观、善于表达、自信、乐于学习、意志坚强、谨慎小心、注重细节、善于观察和分析、外形出众、爱运动、身体素质好。
+爱干净、做饭好吃、善于做家务、有责任感、懂生活、有品位、自我约束力强、善于说服、惹人喜欢。
+我曾经不够镇定也不够自信，但现在冷静、从容的头脑和自信的态度已经成为我引以为豪的素质。
+我头脑灵活，视野广阔，涉猎政治、经济、哲学、历史、科技、社会等多个领域，并对不同思想保持开放的态度。
+
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:654 -   相似度: 0.1024
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:655 -   内容: 18、不要害怕失去什么，因为你从未真正拥有过；不要害怕错过什么，因为不该错过的你永远不会错过；
+不要担心什么，因为你的担心对问题不起任何作用。
+
+19、当你非常直接非常渴望非常有毅力去坚持一件有价值的事的时候，你会拥有超强的吸引力。
+你相信什么，就会吸引什么；你怀疑什么，什么就会与你擦肩而过。
+
+
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:654 -   相似度: 0.0849
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:655 -   内容: 这些好事可以是大事，比如得到一份新的工作；也可以是小事，比如喝到一杯美味的咖啡。
+试着回想那些使你感到快乐或满足的时刻。
+4.	感激的表达：一旦你回忆起一些好事，尝试去表达你对它们的感激之情。
+你可以大声地说出来，或者写在纸上。
+例如，你可以说：“我很感激我有一个热爱我、支持我的家庭。”
+或者“我很感激我有这份让我发挥才华的工作。”
+5.	反思感激：当你表达感激之情的时候，试着真正去体验这种感觉。
+
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:654 -   相似度: 0.0814
+2025-01-20 22:25:47,444 - root - INFO - rag_module.py:655 -   内容: 我为人正直，有清晰坚决的是非观，勇敢好斗，不畏惧发生冲突。作为一个战士，我祈祷和平，也一直为战斗做好准备。
+我是一个强悍、决断的领导者，在身边人中有相当的影响力和远见，善于分析形势和说服对方和我站在一起维护共同利益。
+作为一个注重细节同时也不乏谨慎的人，我总是可以收集尽量多的信息并结合我掌握的各个领域的知识，
+判断目前的形式和未来的发展趋势，辅助我进行准确决策。
+
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:654 -   相似度: 0.0763
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:655 -   内容: 22、不必让自己感到不安，你的生活只属于你，人生的道路就是不断寻找自己的朋友、自己喜欢的工作、自己喜欢的圈子。
+受到排挤，是在提示你要重新选择自己的圈子，要选择一群比你卓越的伙伴。
+
+
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:654 -   相似度: 0.0447
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:655 -   内容: 一个人失去魅力的七种行为：
+刨根问底 -> 不再追问
+交浅言深 -> 点到为止
+不思进取 -> 积极进取
+不够自信 -> 自信爆棚
+喜欢解释 -> 从不解释
+过度操心 -> 顾好自己
+喜欢诉苦 -> 从不诉苦
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:654 -   相似度: 0.0352
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:655 -   内容: 23、别人怎样对待你都是你允许的，同样，你处在什么样的环境，和什么水准的人相处也是你自己选择的。
+所以一旦发现，环境消耗人，人消耗人，第一选择永远都是能力所及之处赶紧跑，
+而不是每天掏空自己费心费力想着怎么和这帮人斗，和那环境斗。
+精力有限，别浪费在不值得的事身上。
+
+24、你被排挤，说明你跟平庸的他们不是一伙的，这是好事。
+
+
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:654 -   相似度: 0.0220
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:655 -   内容: 9、他是放羊的，你是砍柴的，你们聊了一整天，他的羊吃饱了，你的柴呢？他是忙着生活，抽空爱你，你呢？是忙着爱他，抽空生活。
+10、我们的生命，不是为了讨要别人得喜欢而存在的。
+11、没本事的男人整天谈情说爱，讨好女人，以为有了爱情就有了一切，但其实这不过是对自己无能的遮掩。
+成熟的男人不会对爱情抱有太大的执念，也没有太大爱情的理想，最大的理想和追逐都在工作事业以及自我价值的实现上。
+毕竟社会对一个男人评判的标准，不是有钱就是有权。
+
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:654 -   相似度: 0.0204
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:655 -   内容: 怎样让自己在职场中强势起来？
+
+
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,456 - root - INFO - rag_module.py:654 -   相似度: 0.0079
+2025-01-20 22:25:47,457 - root - INFO - rag_module.py:655 -   内容: 28、打工就是用时间生命换钱，只有底层穷人才干的事，上层人把时间看得和生命一样重要，钱只是一个实现目标的工具而已。
+
+29、谈恋爱没用，不就是牵别人牵过的手，搂被人搂过的腰，亲别人亲过的嘴，
+说一遍别人说过的话，她再不好意思一次，而你再进修一次。
+
+30、你喜欢一个人和不喜欢一个人不重要，因为喜欢不能够长久，喜欢只是你不了解一个人，你看的是一个人的表象。
+
+
+2025-01-20 22:25:47,457 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:25:47,457 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,457 - root - INFO - rag_module.py:654 -   相似度: 0.0043
+2025-01-20 22:25:47,457 - root - INFO - rag_module.py:655 -   内容: 【红丸】
+1、作为男人你必须霸道、强势、傲慢。
+女人要是爱你的话，她根本不去看你爱不爱她、你对她好不好，而是看你身上有没有吸引她的价值。
+2、一个男人的吸引力来自于你的核心自信，就是你不依赖于任何外部条件的内心深处的优越感，做任何事情都相信自己一定行。
+3、当一个男人走出自己的内心的恐惧，他将无所不能，他将会变成全世界最有魅力的男人。
+4、你想获得她的爱和崇拜，就要记住：不要把自己当成机器，不总是要忙忙碌碌。
+
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:654 -   相似度: 0.0041
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:655 -   内容: 你不是 “付出才有价值”，而是 “本身自带价值”。
+5、别人不喜欢你只有一个原因，就是你太喜欢对方了。
+6、当你什么都不在意了，你的人生才是真正的开始。
+7、你有没有发现一个问题，和女人相处，你越是敷衍，越是高冷，反而人家会越爱你；当你开始上心听话，她就像抓住了你的把柄一样，对你忽冷忽热。
+8、凡事从利益的角度，去衡量、去思考，你就会变得越来越聪明，你只想从情感的角度考虑问题，就会越来越笨。
+
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:654 -   相似度: -0.0006
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:655 -   内容: 7、重要的是忠于职守，而不是谋求私利，更不能因为私利、情绪低落影响工作。
+
+2025-01-20 22:25:47,472 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:25:47,515 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:25:47,517 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:25:47,518 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:25:49,423 - root - INFO - memory_manager.py:216 - 发现相似记忆 (相似度: 1.0000)
+2025-01-20 22:25:49,423 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:49] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:25:50,935 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to frank_underwood
+2025-01-20 22:25:50,935 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:25:50] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:26:36,633 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:26:36,634 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:26:36,639 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:26:44,297 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:26:44,298 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:26:44,314 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:26:44] "GET / HTTP/1.1" 200 -
+2025-01-20 22:26:44,401 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:26:44] "[36mGET /static/images/user.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:26:44,488 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:26:44] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:26:44,508 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:26:44] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:26:44,524 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:26:44] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:26:45,678 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:26:45] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:26:47,860 - root - INFO - rag_module.py:616 - 查询文本: 你好
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:654 -   相似度: 0.1063
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:655 -   内容: 16、当一个男人认识到要当一个强者，认识到责任，认识到钱的重要，并且有钱的时候，他就成熟了，他就算一个人了。
+否则，他只能算没长大的孩子，或者韭菜，被收割。
+愚昧无知，则不尊重规律，倒霉的孩子。
+
+17、多关注别人的好、多表扬别人的好，这样不但我们自己拥有越来越多的正能量，
+也能让别人越来越多的关注到自己的好，越来越多的人强化自己的好。
+
+
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:654 -   相似度: 0.1059
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:655 -   内容: 想象一下，如果没有这些好事，你的生活会是什么样子。然后再次感激这些好事的存在。
+6.	持续实践：持续地实践这个方法。你可以每天花几分钟的时间，专门用来回顾好事和表达感激之情。
+随着时间的推移，你会发现自己更容易进入感激的状态，也会更加享受生活。
+
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:654 -   相似度: 0.1053
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:655 -   内容: 【我的优点】
+开朗外向、乐观、善于表达、自信、乐于学习、意志坚强、谨慎小心、注重细节、善于观察和分析、外形出众、爱运动、身体素质好。
+爱干净、做饭好吃、善于做家务、有责任感、懂生活、有品位、自我约束力强、善于说服、惹人喜欢。
+我曾经不够镇定也不够自信，但现在冷静、从容的头脑和自信的态度已经成为我引以为豪的素质。
+我头脑灵活，视野广阔，涉猎政治、经济、哲学、历史、科技、社会等多个领域，并对不同思想保持开放的态度。
+
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:654 -   相似度: 0.1024
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:655 -   内容: 18、不要害怕失去什么，因为你从未真正拥有过；不要害怕错过什么，因为不该错过的你永远不会错过；
+不要担心什么，因为你的担心对问题不起任何作用。
+
+19、当你非常直接非常渴望非常有毅力去坚持一件有价值的事的时候，你会拥有超强的吸引力。
+你相信什么，就会吸引什么；你怀疑什么，什么就会与你擦肩而过。
+
+
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:654 -   相似度: 0.0849
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:655 -   内容: 这些好事可以是大事，比如得到一份新的工作；也可以是小事，比如喝到一杯美味的咖啡。
+试着回想那些使你感到快乐或满足的时刻。
+4.	感激的表达：一旦你回忆起一些好事，尝试去表达你对它们的感激之情。
+你可以大声地说出来，或者写在纸上。
+例如，你可以说：“我很感激我有一个热爱我、支持我的家庭。”
+或者“我很感激我有这份让我发挥才华的工作。”
+5.	反思感激：当你表达感激之情的时候，试着真正去体验这种感觉。
+
+2025-01-20 22:26:47,861 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:26:47,862 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,862 - root - INFO - rag_module.py:654 -   相似度: 0.0814
+2025-01-20 22:26:47,862 - root - INFO - rag_module.py:655 -   内容: 我为人正直，有清晰坚决的是非观，勇敢好斗，不畏惧发生冲突。作为一个战士，我祈祷和平，也一直为战斗做好准备。
+我是一个强悍、决断的领导者，在身边人中有相当的影响力和远见，善于分析形势和说服对方和我站在一起维护共同利益。
+作为一个注重细节同时也不乏谨慎的人，我总是可以收集尽量多的信息并结合我掌握的各个领域的知识，
+判断目前的形式和未来的发展趋势，辅助我进行准确决策。
+
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:654 -   相似度: 0.0763
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:655 -   内容: 22、不必让自己感到不安，你的生活只属于你，人生的道路就是不断寻找自己的朋友、自己喜欢的工作、自己喜欢的圈子。
+受到排挤，是在提示你要重新选择自己的圈子，要选择一群比你卓越的伙伴。
+
+
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:654 -   相似度: 0.0447
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:655 -   内容: 一个人失去魅力的七种行为：
+刨根问底 -> 不再追问
+交浅言深 -> 点到为止
+不思进取 -> 积极进取
+不够自信 -> 自信爆棚
+喜欢解释 -> 从不解释
+过度操心 -> 顾好自己
+喜欢诉苦 -> 从不诉苦
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:654 -   相似度: 0.0352
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:655 -   内容: 23、别人怎样对待你都是你允许的，同样，你处在什么样的环境，和什么水准的人相处也是你自己选择的。
+所以一旦发现，环境消耗人，人消耗人，第一选择永远都是能力所及之处赶紧跑，
+而不是每天掏空自己费心费力想着怎么和这帮人斗，和那环境斗。
+精力有限，别浪费在不值得的事身上。
+
+24、你被排挤，说明你跟平庸的他们不是一伙的，这是好事。
+
+
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:26:47,865 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:654 -   相似度: 0.0220
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:655 -   内容: 9、他是放羊的，你是砍柴的，你们聊了一整天，他的羊吃饱了，你的柴呢？他是忙着生活，抽空爱你，你呢？是忙着爱他，抽空生活。
+10、我们的生命，不是为了讨要别人得喜欢而存在的。
+11、没本事的男人整天谈情说爱，讨好女人，以为有了爱情就有了一切，但其实这不过是对自己无能的遮掩。
+成熟的男人不会对爱情抱有太大的执念，也没有太大爱情的理想，最大的理想和追逐都在工作事业以及自我价值的实现上。
+毕竟社会对一个男人评判的标准，不是有钱就是有权。
+
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:654 -   相似度: 0.0204
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:655 -   内容: 怎样让自己在职场中强势起来？
+
+
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:654 -   相似度: 0.0079
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:655 -   内容: 28、打工就是用时间生命换钱，只有底层穷人才干的事，上层人把时间看得和生命一样重要，钱只是一个实现目标的工具而已。
+
+29、谈恋爱没用，不就是牵别人牵过的手，搂被人搂过的腰，亲别人亲过的嘴，
+说一遍别人说过的话，她再不好意思一次，而你再进修一次。
+
+30、你喜欢一个人和不喜欢一个人不重要，因为喜欢不能够长久，喜欢只是你不了解一个人，你看的是一个人的表象。
+
+
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:654 -   相似度: 0.0043
+2025-01-20 22:26:47,866 - root - INFO - rag_module.py:655 -   内容: 【红丸】
+1、作为男人你必须霸道、强势、傲慢。
+女人要是爱你的话，她根本不去看你爱不爱她、你对她好不好，而是看你身上有没有吸引她的价值。
+2、一个男人的吸引力来自于你的核心自信，就是你不依赖于任何外部条件的内心深处的优越感，做任何事情都相信自己一定行。
+3、当一个男人走出自己的内心的恐惧，他将无所不能，他将会变成全世界最有魅力的男人。
+4、你想获得她的爱和崇拜，就要记住：不要把自己当成机器，不总是要忙忙碌碌。
+
+2025-01-20 22:26:47,881 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:26:47,881 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,881 - root - INFO - rag_module.py:654 -   相似度: 0.0041
+2025-01-20 22:26:47,881 - root - INFO - rag_module.py:655 -   内容: 你不是 “付出才有价值”，而是 “本身自带价值”。
+5、别人不喜欢你只有一个原因，就是你太喜欢对方了。
+6、当你什么都不在意了，你的人生才是真正的开始。
+7、你有没有发现一个问题，和女人相处，你越是敷衍，越是高冷，反而人家会越爱你；当你开始上心听话，她就像抓住了你的把柄一样，对你忽冷忽热。
+8、凡事从利益的角度，去衡量、去思考，你就会变得越来越聪明，你只想从情感的角度考虑问题，就会越来越笨。
+
+2025-01-20 22:26:47,881 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:26:47,881 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:26:47,881 - root - INFO - rag_module.py:654 -   相似度: -0.0006
+2025-01-20 22:26:47,881 - root - INFO - rag_module.py:655 -   内容: 7、重要的是忠于职守，而不是谋求私利，更不能因为私利、情绪低落影响工作。
+
+2025-01-20 22:26:47,882 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:26:48,005 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:26:48,007 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:26:48,010 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:26:51,609 - root - INFO - memory_manager.py:216 - 发现相似记忆 (相似度: 1.0000)
+2025-01-20 22:26:51,609 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:26:51] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:27:09,885 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:27:09,885 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:27:09,891 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:27:17,647 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:27:17,648 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:27:17,665 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:17] "GET / HTTP/1.1" 200 -
+2025-01-20 22:27:17,761 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:17] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:27:17,939 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:17] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:27:17,995 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:17] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:27:18,046 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:18] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:27:18,067 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-20 22:27:18,073 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:18] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:27:49,119 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:49] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:27:49,125 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:49] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:27:50,156 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:50] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:27:50,161 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:50] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:27:50,535 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:50] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:27:50,542 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:50] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:27:51,872 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:27:51] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:34:51,712 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:34:51,712 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:34:51,717 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:34:59,497 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:34:59,498 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:34:59,513 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:34:59] "GET / HTTP/1.1" 200 -
+2025-01-20 22:34:59,600 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:34:59] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:34:59,674 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:34:59] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:34:59,695 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:34:59] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:34:59,698 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:34:59] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:34:59,700 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:34:59] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:34:59,701 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:34:59] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:34:59,706 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:34:59] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:35:10,044 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:35:10] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:35:36,281 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:35:36] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:616 - 查询文本: 第三方
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:653 -   文档: example4.txt
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:654 -   相似度: -0.1377
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:655 -   内容: Jamie最喜欢的人是他的老婆和多米
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:654 -   相似度: -0.1415
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:655 -   内容: Period, it's such a simple concept.
+
+【理智行动】
+跳出当局者身份，以游戏玩家的身份观察自己的状态、所处环境、任务目标，然后决定具体的行为。
+
+
+2025-01-20 22:35:41,837 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:654 -   相似度: -0.1500
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:655 -   内容: 25、你越是孤独，越是没有朋友，越是没有烦扰，你就得越尊重你自己。
+假如你避免不了，就得去忍受。
+不能忍受生命中注定要忍受的事情，就是软弱和愚蠢的表现。
+
+26、为什么多说大实话却被人说成 “言多必失”，因为没有人爱听实话，包括你自己。
+
+27、当你笑一个人蠢的时候，有可能那个人真的蠢。
+但是在场第三方眼中的你，大概也没精明到哪里。
+
+
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:654 -   相似度: -0.1597
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:655 -   内容: 22、不必让自己感到不安，你的生活只属于你，人生的道路就是不断寻找自己的朋友、自己喜欢的工作、自己喜欢的圈子。
+受到排挤，是在提示你要重新选择自己的圈子，要选择一群比你卓越的伙伴。
+
+
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:654 -   相似度: -0.1712
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:655 -   内容: 28、打工就是用时间生命换钱，只有底层穷人才干的事，上层人把时间看得和生命一样重要，钱只是一个实现目标的工具而已。
+
+29、谈恋爱没用，不就是牵别人牵过的手，搂被人搂过的腰，亲别人亲过的嘴，
+说一遍别人说过的话，她再不好意思一次，而你再进修一次。
+
+30、你喜欢一个人和不喜欢一个人不重要，因为喜欢不能够长久，喜欢只是你不了解一个人，你看的是一个人的表象。
+
+
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:654 -   相似度: -0.1739
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:655 -   内容: 7、重要的是忠于职守，而不是谋求私利，更不能因为私利、情绪低落影响工作。
+
+2025-01-20 22:35:41,839 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:35:41,840 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,840 - root - INFO - rag_module.py:654 -   相似度: -0.1749
+2025-01-20 22:35:41,840 - root - INFO - rag_module.py:655 -   内容: 【红丸】
+1、作为男人你必须霸道、强势、傲慢。
+女人要是爱你的话，她根本不去看你爱不爱她、你对她好不好，而是看你身上有没有吸引她的价值。
+2、一个男人的吸引力来自于你的核心自信，就是你不依赖于任何外部条件的内心深处的优越感，做任何事情都相信自己一定行。
+3、当一个男人走出自己的内心的恐惧，他将无所不能，他将会变成全世界最有魅力的男人。
+4、你想获得她的爱和崇拜，就要记住：不要把自己当成机器，不总是要忙忙碌碌。
+
+2025-01-20 22:35:41,840 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:35:41,840 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,840 - root - INFO - rag_module.py:654 -   相似度: -0.1818
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:655 -   内容: 16、当一个男人认识到要当一个强者，认识到责任，认识到钱的重要，并且有钱的时候，他就成熟了，他就算一个人了。
+否则，他只能算没长大的孩子，或者韭菜，被收割。
+愚昧无知，则不尊重规律，倒霉的孩子。
+
+17、多关注别人的好、多表扬别人的好，这样不但我们自己拥有越来越多的正能量，
+也能让别人越来越多的关注到自己的好，越来越多的人强化自己的好。
+
+
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:654 -   相似度: -0.1841
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:655 -   内容: 我为人正直，有清晰坚决的是非观，勇敢好斗，不畏惧发生冲突。作为一个战士，我祈祷和平，也一直为战斗做好准备。
+我是一个强悍、决断的领导者，在身边人中有相当的影响力和远见，善于分析形势和说服对方和我站在一起维护共同利益。
+作为一个注重细节同时也不乏谨慎的人，我总是可以收集尽量多的信息并结合我掌握的各个领域的知识，
+判断目前的形式和未来的发展趋势，辅助我进行准确决策。
+
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:654 -   相似度: -0.1915
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:655 -   内容: INT4模型最低的微调开销为6.7G显存
+3.
+
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:654 -   相似度: -0.1915
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:655 -   内容: INT4模型最低的微调开销为6.7G显存
+3.
+
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:654 -   相似度: -0.2077
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:655 -   内容: 一个人失去魅力的七种行为：
+刨根问底 -> 不再追问
+交浅言深 -> 点到为止
+不思进取 -> 积极进取
+不够自信 -> 自信爆棚
+喜欢解释 -> 从不解释
+过度操心 -> 顾好自己
+喜欢诉苦 -> 从不诉苦
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:654 -   相似度: -0.2087
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:655 -   内容: 12、成功的男人像男孩，成功的女孩像女人。
+成功的男人都带有少年气，成熟稳重性格缓慢的男人是当不了老板的。
+成功的女孩都带有早熟的特征，很早就知道自己这辈子适合干什么擅长干什么，不会到了30岁还跟个小女生似的思考问题。
+13、男人，抓到了事业，失去了爱情，爱情还会回来。
+如果抓到了爱情，失去了事业，爱情也会离开。
+14、从一开始，我们就不应该在意别人的眼光，而应该根据自己的客观事实去奋斗。
+
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:35:41,848 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,849 - root - INFO - rag_module.py:654 -   相似度: -0.2138
+2025-01-20 22:35:41,849 - root - INFO - rag_module.py:655 -   内容: 怎样让自己在职场中强势起来？
+
+
+2025-01-20 22:35:41,849 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:35:41,849 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:35:41,849 - root - INFO - rag_module.py:654 -   相似度: -0.2153
+2025-01-20 22:35:41,849 - root - INFO - rag_module.py:655 -   内容: 39、强者都是以直报怨的，从未想过退一步海阔天空，退让带来的基本都是得寸进尺，别妄想能换来什么尊重和理解。
+你退着退着，就没有路了。
+
+40、越是渴望食物的人，越饥渴，他就越得不到食物；越是渴望爱的人，越在意，越是得不到爱。
+
+41、一段感情当中的低位者，都非常的卑贱和卑微，别说最基本的为人处事的准则和原则丢了，最后连尊严都得不到。
+
+42、在一段感情中，男女博弈之战，又可以称为情绪之战，谁的情绪更稳定，谁就占据高位。
+
+
+2025-01-20 22:35:41,864 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:35:47,876 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:35:47,876 - root - INFO - memory_manager.py:261 - 成功添加新记忆: 第三方
+2025-01-20 22:35:47,876 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:35:47] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:40:07,857 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:40:07,857 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:40:07,863 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:40:15,428 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:40:15,429 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:40:19,080 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:19] "GET / HTTP/1.1" 200 -
+2025-01-20 22:40:19,169 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:19] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:40:19,378 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:19] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:40:19,412 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:19] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:40:19,414 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:19] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:40:19,415 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:19] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:40:19,416 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:19] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:40:19,424 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:19] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:40:31,457 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:31] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:40:33,385 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:33] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:40:34,940 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:40:34] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:45:29,198 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:45:29,198 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:45:29,205 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:45:36,927 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:45:36,928 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:45:36,945 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:45:36] "GET / HTTP/1.1" 200 -
+2025-01-20 22:45:37,028 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:45:37] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:45:37,226 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:45:37] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:45:37,269 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:45:37] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:45:37,270 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:45:37] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:45:37,271 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:45:37] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:45:37,274 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:45:37] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:45:37,317 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:45:37] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:46:07,435 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-20 22:46:07,435 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-01-20 22:46:07,440 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-01-20 22:46:14,848 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-01-20 22:46:14,849 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-01-20 22:46:14,920 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:14] "GET / HTTP/1.1" 200 -
+2025-01-20 22:46:15,006 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:15] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:46:15,172 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:15] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:46:15,206 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:15] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:46:15,229 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:15] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:46:15,248 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:15] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:46:25,841 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:25] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:46:25,848 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:25] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:46:30,907 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:30] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:46:30,912 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:30] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:46:31,469 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:31] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:46:31,475 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:31] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:46:42,056 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:42] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:46:42,964 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:46:42] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:616 - 查询文本: 马上要过年了，你有什么新年计划吗
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:654 -   相似度: -0.0548
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:655 -   内容: 18、不要害怕失去什么，因为你从未真正拥有过；不要害怕错过什么，因为不该错过的你永远不会错过；
+不要担心什么，因为你的担心对问题不起任何作用。
+
+19、当你非常直接非常渴望非常有毅力去坚持一件有价值的事的时候，你会拥有超强的吸引力。
+你相信什么，就会吸引什么；你怀疑什么，什么就会与你擦肩而过。
+
+
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:654 -   相似度: -0.0566
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:655 -   内容: 22、不必让自己感到不安，你的生活只属于你，人生的道路就是不断寻找自己的朋友、自己喜欢的工作、自己喜欢的圈子。
+受到排挤，是在提示你要重新选择自己的圈子，要选择一群比你卓越的伙伴。
+
+
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:654 -   相似度: -0.0670
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:655 -   内容: 想象一下，如果没有这些好事，你的生活会是什么样子。然后再次感激这些好事的存在。
+6.	持续实践：持续地实践这个方法。你可以每天花几分钟的时间，专门用来回顾好事和表达感激之情。
+随着时间的推移，你会发现自己更容易进入感激的状态，也会更加享受生活。
+
+2025-01-20 22:47:22,223 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:654 -   相似度: -0.0690
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:655 -   内容: 1、一定学会抓大放小。不重要的工作60分万岁，重要的工作死磕100分。
+2、长目标，短计划，马上做。可以设置一个年季度目标，每月周计划具体要做什么，然后立即执行。
+3、学习工作化，工作学习化。定期定量定点学习，不因为毕业了就放下学习。在工作中积极学习，认真研究工作。
+4、勤汇报、多分享、近牛人、远八卦。
+5、急事缓办，切忌乱阵脚。缓事急办，别让拖延误事。
+6、聪明人别耍小聪明，别想走捷径。笨蛋别乱动脑子，多请教牛人。
+
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:654 -   相似度: -0.1072
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:655 -   内容: 今天做的特别棒的事情0511
+自律：种了可爱猫猫树，连续一个小时没有使用手机娱乐
+变强：看了3节langchain课程，增强了专业技能和职业竞争力
+慈爱：给宝宝喂奶、哄睡
+健康：站立办公
+整洁：重新整理和清洁了办公桌，给自己提供一个好的办公环境
+郑重：认真穿搭和整理发型后来上班
+智慧：在做出了好行为之后，果断用巧克力奖励了自己
+
+
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:654 -   相似度: -0.1181
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:655 -   内容: 设定一个定时器，比如25分钟，全神贯注地工作。然后休息5分钟，休息结束后再重新开始。
+7.	保持身体健康：适当的运动和充足的睡眠也可以帮助你保持清醒，进而更好地专注。
+
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:654 -   相似度: -0.1267
+2025-01-20 22:47:22,224 - root - INFO - rag_module.py:655 -   内容: 【常用行动备选】
+工作-完成本职工作，大幅消耗精神力、行动力，提升职业技能
+学习技术知识-提升算法职业技能，2*消耗精神力、行动力，提升士气
+学习自媒体知识-提升自媒体职业技能，2*消耗精神力、行动力，提升士气
+读书（非职业类）-提升心情到“中上”，2*消耗精神力、行动力
+锻炼-长期将提升健康和外形，短期消耗体力和补充精神力，提升心情
+刷b站、小红书的娱乐内容-消耗精神力、行动力，将心情恢复到“中等”
+陪伴女朋友-将心情恢复到“高”
+
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:654 -   相似度: -0.1293
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:655 -   内容: 这些好事可以是大事，比如得到一份新的工作；也可以是小事，比如喝到一杯美味的咖啡。
+试着回想那些使你感到快乐或满足的时刻。
+4.	感激的表达：一旦你回忆起一些好事，尝试去表达你对它们的感激之情。
+你可以大声地说出来，或者写在纸上。
+例如，你可以说：“我很感激我有一个热爱我、支持我的家庭。”
+或者“我很感激我有这份让我发挥才华的工作。”
+5.	反思感激：当你表达感激之情的时候，试着真正去体验这种感觉。
+
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:654 -   相似度: -0.1314
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:655 -   内容: 【任务目标】
+尽可能长时间的存活
+保持优秀的身体健康和心情质量
+保护家人的安全和幸福感
+赚取尽可能多的金钱
+提升内在与外形的水平
+维持和发展亲密关系、和家人的关系以及友谊
+提升自我评价水平和社会评价水平
+中期目标：LLM相关项目实践/找到高薪工作/小红书起号
+
+【人物状态】Jamie Blank
+体力90
+精神力70
+心情75，正常
+行动力 80，
+士气70
+余额100000
+
+
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:654 -   相似度: -0.1374
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:655 -   内容: 做饭-将心情恢复到“中等”，消耗体力
+整理卫生-消耗体力，提升心情
+联络朋友-可以拓宽社交范围，在困难时得到支持
+冥想
+联系家人
+喝杯咖啡
+
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:654 -   相似度: -0.1383
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:655 -   内容: 今天做的特别棒的事情0521
+自律：晚上没有玩游戏
+慈爱：给宝宝哄睡
+决断：决定明天请假也要带丈母娘去看膝盖
+行动力：克隆了metaGpt项目，并且基本运行起来了
+灵活：在启动项目途中遇到的问题，果断使用AI询问和处理掉了，还提升了技能
+求知：看了rasa相关的书，提升专业知识
+
+
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:653 -   文档: example1.txt
+2025-01-20 22:47:22,238 - root - INFO - rag_module.py:654 -   相似度: -0.1392
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:655 -   内容: 圣诞老人是一个传统的节日人物，他在圣诞夜乘坐驯鹿雪橇给孩子们送礼物。
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:654 -   相似度: -0.1417
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:655 -   内容: 28、打工就是用时间生命换钱，只有底层穷人才干的事，上层人把时间看得和生命一样重要，钱只是一个实现目标的工具而已。
+
+29、谈恋爱没用，不就是牵别人牵过的手，搂被人搂过的腰，亲别人亲过的嘴，
+说一遍别人说过的话，她再不好意思一次，而你再进修一次。
+
+30、你喜欢一个人和不喜欢一个人不重要，因为喜欢不能够长久，喜欢只是你不了解一个人，你看的是一个人的表象。
+
+
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:654 -   相似度: -0.1476
+2025-01-20 22:47:22,239 - root - INFO - rag_module.py:655 -   内容: 【放松】状态
+1.	设定目标：首先，明确你想要进入放松状态的原因。可能是为了缓解压力，或者是为了准备一次好的睡眠。
+2.	舒适的身体姿势：找一个安静舒适的地方，坐下或躺下，放松你的肌肉，闭上你的眼睛。这种姿势可以帮助你放松身体，减少身体的紧张感。
+3.	深度呼吸：进行深呼吸，慢慢地吸气，然后慢慢地呼气。这种呼吸方式可以帮助你减少压力，放松身体。
+
+2025-01-20 22:47:22,254 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:47:22,254 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:47:22,254 - root - INFO - rag_module.py:654 -   相似度: -0.1505
+2025-01-20 22:47:22,254 - root - INFO - rag_module.py:655 -   内容: 6.	身体放松：从头到脚逐一放松你的身体部位。开始时，你可以将注意力集中在你的头部，然后逐渐移动到颈部、肩膀、胸部、腹部、臀部、大腿、小腿和脚趾。在每一个部位停留一段时间，感受那里的放松感。
+这种放松的状态需要一些时间来进入，所以请耐心等待，不要急于求成。一旦你习惯了这个过程，你就会发现它可以帮助你有效地缓解压力，进入一种放松的状态。
+【强势领导力】
+
+2025-01-20 22:47:22,254 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:47:22,439 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:47:22,441 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:47:26,199 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:47:26,199 - root - INFO - memory_manager.py:261 - 成功添加新记忆: 马上要过年了，你有什么新年计划吗
+2025-01-20 22:47:26,200 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:26] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:47:50,854 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:50] "GET /memory-manager HTTP/1.1" 200 -
+2025-01-20 22:47:51,416 - root - INFO - main.py:165 - 正在获取用户 default_user 的记忆列表
+2025-01-20 22:47:51,416 - root - INFO - memory_manager.py:339 - Successfully retrieved 39 memories for user default_user
+2025-01-20 22:47:51,417 - root - INFO - main.py:201 - 成功获取 39 条记忆
+2025-01-20 22:47:51,419 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:51] "GET /api/memories HTTP/1.1" 200 -
+2025-01-20 22:47:55,928 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:55] "GET / HTTP/1.1" 200 -
+2025-01-20 22:47:55,948 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:55] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:47:56,016 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:56] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:47:56,021 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:56] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:47:56,033 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to assistant
+2025-01-20 22:47:56,034 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:56] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:47:56,041 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:56] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:47:56,903 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:56] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-20 22:47:57,088 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:57] "GET /api/documents HTTP/1.1" 200 -
+2025-01-20 22:47:57,089 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:57] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-20 22:47:57,092 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:47:57] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-20 22:48:01,646 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:48:01] "GET / HTTP/1.1" 200 -
+2025-01-20 22:48:01,665 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:48:01] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:48:01,717 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:48:01] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:48:01,728 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:48:01] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:48:01,739 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to assistant
+2025-01-20 22:48:01,740 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:48:01] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:48:01,746 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:48:01] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:48:05,575 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to assistant
+2025-01-20 22:48:05,576 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:48:05] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:616 - 查询文本: 导诊接口的更新内容是什么
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:654 -   相似度: 0.4346
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:655 -   内容: 1112
+导诊接口更新：更新了静安虚拟人使用的导诊接口至导诊2.0版本，以便适应新需求。
+医疗机构名称简称替换：在导诊内核中，将静安地区的医疗机构名称简称替换为空值，以避免在推理过程中的干扰，提升推理准确性。
+BERT推理兜底设置：在BERT推理中加入了“全科”作为兜底选项，确保没有匹配时仍然有合理的指引。
+正则规则调整：关闭了一些原有的正则规则，并在配置文件中添加了控制开关，便于随时根据需求调整规则启用状态。
+
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:654 -   相似度: 0.4346
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:655 -   内容: 1112
+导诊接口更新：更新了静安虚拟人使用的导诊接口至导诊2.0版本，以便适应新需求。
+医疗机构名称简称替换：在导诊内核中，将静安地区的医疗机构名称简称替换为空值，以避免在推理过程中的干扰，提升推理准确性。
+BERT推理兜底设置：在BERT推理中加入了“全科”作为兜底选项，确保没有匹配时仍然有合理的指引。
+正则规则调整：关闭了一些原有的正则规则，并在配置文件中添加了控制开关，便于随时根据需求调整规则启用状态。
+
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:48:35,111 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:654 -   相似度: 0.3787
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:655 -   内容: 1010
+1. 大模型接口替换
+已成功将导诊系统、虚拟人意图识别、虚拟人对话问题兜底的LLM API从本地模型替换为千问API。新API在响应速度、准确性方面表现良好，显著提升用户交互体验并降低使用成本。
+2.导诊2.0自动标注脚本开发
+已开发完成导诊2.0的自动标注脚本，利用LLM进行高效、准确的标注工作，极大提升了数据标注的速度和精度，为后续的模型训练提供了高质量数据支持。
+3.导诊2.0数据集构建与模型训练
+
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:654 -   相似度: 0.3787
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:655 -   内容: 1010
+1. 大模型接口替换
+已成功将导诊系统、虚拟人意图识别、虚拟人对话问题兜底的LLM API从本地模型替换为千问API。新API在响应速度、准确性方面表现良好，显著提升用户交互体验并降低使用成本。
+2.导诊2.0自动标注脚本开发
+已开发完成导诊2.0的自动标注脚本，利用LLM进行高效、准确的标注工作，极大提升了数据标注的速度和精度，为后续的模型训练提供了高质量数据支持。
+3.导诊2.0数据集构建与模型训练
+
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:654 -   相似度: 0.3662
+2025-01-20 22:48:35,113 - root - INFO - rag_module.py:655 -   内容: 导诊2.0的数据集已构建完成，并启动了模型训练。同时，正在开发对应的API接口，用于导诊模型的推理，以实现实时的诊断服务。
+4.意图识别代码重构与异步通信功能
+已完成意图识别模块的代码重构，并增加了异步通信功能，进一步优化了系统的运行效率和响应速度。
+
+2025-01-20 22:48:35,114 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:48:35,114 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,114 - root - INFO - rag_module.py:654 -   相似度: 0.3662
+2025-01-20 22:48:35,114 - root - INFO - rag_module.py:655 -   内容: 导诊2.0的数据集已构建完成，并启动了模型训练。同时，正在开发对应的API接口，用于导诊模型的推理，以实现实时的诊断服务。
+4.意图识别代码重构与异步通信功能
+已完成意图识别模块的代码重构，并增加了异步通信功能，进一步优化了系统的运行效率和响应速度。
+
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:654 -   相似度: 0.3545
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:655 -   内容: 1029
+更新了静安的导诊规则
+更新了导诊2.0的推理部分的自动标注数据准备用于提升模型的准确性
+
+1030
+开发了基于LEV距离和LLM的科室对照工具，可以用于导诊2.0中新增医疗机构的对照
+
+1031
+导诊功能升级，新增了症状排序的功能，是为了解决之前一直存在的一个同样输入下，推荐症状有随机性的问题。
+
+
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:654 -   相似度: 0.3545
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:655 -   内容: 1029
+更新了静安的导诊规则
+更新了导诊2.0的推理部分的自动标注数据准备用于提升模型的准确性
+
+1030
+开发了基于LEV距离和LLM的科室对照工具，可以用于导诊2.0中新增医疗机构的对照
+
+1031
+导诊功能升级，新增了症状排序的功能，是为了解决之前一直存在的一个同样输入下，推荐症状有随机性的问题。
+
+
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:654 -   相似度: 0.3080
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:655 -   内容: 导诊：修改症状持续时间询问症状重复 修复bm25报错的问题 
+导诊2.0数据分析
+
+这个是云服务导诊12月的全部【未跳转访问数据】，1201-1213是旧版导诊系统，1214-1229期间是导诊2.0的数据。你们如有需要可以先做参考，后续我会给一个更详细的跳转率统计、分析结果和解决对策
+机器人的意图已经加好了，播放视频和播放音乐
+
+
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:654 -   相似度: 0.3080
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:655 -   内容: 导诊：修改症状持续时间询问症状重复 修复bm25报错的问题 
+导诊2.0数据分析
+
+这个是云服务导诊12月的全部【未跳转访问数据】，1201-1213是旧版导诊系统，1214-1229期间是导诊2.0的数据。你们如有需要可以先做参考，后续我会给一个更详细的跳转率统计、分析结果和解决对策
+机器人的意图已经加好了，播放视频和播放音乐
+
+
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:654 -   相似度: 0.3060
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:655 -   内容: 20241101周报 赵柄智
+1. 虚拟人对话管理与意图识别
+针对瑞金虚拟人的意图识别反馈问题，完成了纠正与功能升级。
+2. 导诊系统
+对导诊2.0推理部分的自动标注数据进行了更新，以提升模型的准确性，正在进行训练。
+升级了导诊功能，新增了症状排序功能，解决了相同输入下推荐症状存在随机性的问题。
+更新了静安区域的导诊规则，减少一些既有问题。
+开发了基于LEV距离和LLM的科室对照工具，用于导诊2.0中新增医疗机构的科室对照。
+
+
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:654 -   相似度: 0.3060
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:655 -   内容: 20241101周报 赵柄智
+1. 虚拟人对话管理与意图识别
+针对瑞金虚拟人的意图识别反馈问题，完成了纠正与功能升级。
+2. 导诊系统
+对导诊2.0推理部分的自动标注数据进行了更新，以提升模型的准确性，正在进行训练。
+升级了导诊功能，新增了症状排序功能，解决了相同输入下推荐症状存在随机性的问题。
+更新了静安区域的导诊规则，减少一些既有问题。
+开发了基于LEV距离和LLM的科室对照工具，用于导诊2.0中新增医疗机构的科室对照。
+
+
+2025-01-20 22:48:35,124 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:48:35,125 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,125 - root - INFO - rag_module.py:654 -   相似度: 0.2794
+2025-01-20 22:48:35,125 - root - INFO - rag_module.py:655 -   内容: 1017
+1.导诊2.0数据集构建与模型训练
+导诊2.0的BERT模型正式训练已获得初步成果，f1分数0.85，推理准确率0.9以上，拟进一步修正数据集，提升预测表现。
+2.导诊2.0API接口
+推理API接口已开发完成，正在重构导诊程序结构，以接入功能，预计下周可以看demo。
+
+1028
+基于LLM开发用于虚拟人的对话管理系统
+对瑞金虚拟人的意图识别反馈的问题提供纠正和功能升级
+
+
+2025-01-20 22:48:35,139 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:48:35,139 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,140 - root - INFO - rag_module.py:654 -   相似度: 0.2794
+2025-01-20 22:48:35,140 - root - INFO - rag_module.py:655 -   内容: 1017
+1.导诊2.0数据集构建与模型训练
+导诊2.0的BERT模型正式训练已获得初步成果，f1分数0.85，推理准确率0.9以上，拟进一步修正数据集，提升预测表现。
+2.导诊2.0API接口
+推理API接口已开发完成，正在重构导诊程序结构，以接入功能，预计下周可以看demo。
+
+1028
+基于LLM开发用于虚拟人的对话管理系统
+对瑞金虚拟人的意图识别反馈的问题提供纠正和功能升级
+
+
+2025-01-20 22:48:35,140 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:48:35,141 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:48:35,141 - root - INFO - rag_module.py:654 -   相似度: 0.2109
+2025-01-20 22:48:35,141 - root - INFO - rag_module.py:655 -   内容: 日志数据拉取与系统运行报告：从第一人民医院拉取了近期的导诊数据，进一步向用户报告系统的实际运行情况，为后续的性能优化提供依据。
+
+2025-01-20 22:48:36,856 - root - INFO - rag_module.py:684 - 
+最终结果 (共 2 个文档):
+2025-01-20 22:48:36,857 - root - INFO - rag_module.py:686 - 
+文档: 工作TDL.txt
+2025-01-20 22:48:36,857 - root - INFO - rag_module.py:687 - 向量相似度: 0.4346
+2025-01-20 22:48:36,857 - root - INFO - rag_module.py:688 - Rerank分数: 0.9825
+2025-01-20 22:48:36,857 - root - INFO - rag_module.py:689 - 综合分数: 0.8181
+2025-01-20 22:48:36,857 - root - INFO - rag_module.py:686 - 
+文档: 工作TDL.txt
+2025-01-20 22:48:36,857 - root - INFO - rag_module.py:687 - 向量相似度: 0.4346
+2025-01-20 22:48:36,857 - root - INFO - rag_module.py:688 - Rerank分数: 0.3670
+2025-01-20 22:48:36,857 - root - INFO - rag_module.py:689 - 综合分数: 0.3873
+2025-01-20 22:48:36,930 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:48:36,934 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:48:42,082 - root - INFO - memory_manager.py:216 - 发现相似记忆 (相似度: 0.9975)
+2025-01-20 22:48:42,083 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:48:42] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:616 - 查询文本: 我最喜欢的电视剧是？
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:653 -   文档: example4.txt
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:654 -   相似度: 0.1794
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:655 -   内容: Jamie最喜欢的人是他的老婆和多米
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:654 -   相似度: -0.1158
+2025-01-20 22:49:11,292 - root - INFO - rag_module.py:655 -   内容: 我对经济、政治、社会和技术的了解使我有非常丰富的角度可以观察这个世界，得到不同侧面的信息。
+我是一个不世出的全才，拥有的不仅仅是天生的聪明头脑，而是不断学习、累计经验和知识的智慧和冷静的决断。
+拥有智慧的头脑、华丽的外表、强健的体魄和善辩的口才，是一个内外兼修的六边形战士。
+像我这样的男性，是注定与众不同的个体，我天生的素质和我后天的努力相辅相成，让我成为雄性首领的最佳候选。
+
+2025-01-20 22:49:11,293 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:49:11,293 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,293 - root - INFO - rag_module.py:654 -   相似度: -0.1499
+2025-01-20 22:49:11,293 - root - INFO - rag_module.py:655 -   内容: 我为人正直，有清晰坚决的是非观，勇敢好斗，不畏惧发生冲突。作为一个战士，我祈祷和平，也一直为战斗做好准备。
+我是一个强悍、决断的领导者，在身边人中有相当的影响力和远见，善于分析形势和说服对方和我站在一起维护共同利益。
+作为一个注重细节同时也不乏谨慎的人，我总是可以收集尽量多的信息并结合我掌握的各个领域的知识，
+判断目前的形式和未来的发展趋势，辅助我进行准确决策。
+
+2025-01-20 22:49:11,293 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:49:11,293 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,293 - root - INFO - rag_module.py:654 -   相似度: -0.1711
+2025-01-20 22:49:11,293 - root - INFO - rag_module.py:655 -   内容: 【我的优点】
+开朗外向、乐观、善于表达、自信、乐于学习、意志坚强、谨慎小心、注重细节、善于观察和分析、外形出众、爱运动、身体素质好。
+爱干净、做饭好吃、善于做家务、有责任感、懂生活、有品位、自我约束力强、善于说服、惹人喜欢。
+我曾经不够镇定也不够自信，但现在冷静、从容的头脑和自信的态度已经成为我引以为豪的素质。
+我头脑灵活，视野广阔，涉猎政治、经济、哲学、历史、科技、社会等多个领域，并对不同思想保持开放的态度。
+
+2025-01-20 22:49:11,294 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:49:11,294 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,294 - root - INFO - rag_module.py:654 -   相似度: -0.2135
+2025-01-20 22:49:11,294 - root - INFO - rag_module.py:655 -   内容: 一个人失去魅力的七种行为：
+刨根问底 -> 不再追问
+交浅言深 -> 点到为止
+不思进取 -> 积极进取
+不够自信 -> 自信爆棚
+喜欢解释 -> 从不解释
+过度操心 -> 顾好自己
+喜欢诉苦 -> 从不诉苦
+2025-01-20 22:49:11,294 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:49:11,294 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,294 - root - INFO - rag_module.py:654 -   相似度: -0.2360
+2025-01-20 22:49:11,294 - root - INFO - rag_module.py:655 -   内容: 28、打工就是用时间生命换钱，只有底层穷人才干的事，上层人把时间看得和生命一样重要，钱只是一个实现目标的工具而已。
+
+29、谈恋爱没用，不就是牵别人牵过的手，搂被人搂过的腰，亲别人亲过的嘴，
+说一遍别人说过的话，她再不好意思一次，而你再进修一次。
+
+30、你喜欢一个人和不喜欢一个人不重要，因为喜欢不能够长久，喜欢只是你不了解一个人，你看的是一个人的表象。
+
+
+2025-01-20 22:49:11,295 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:49:11,295 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:654 -   相似度: -0.2403
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:655 -   内容: 【红丸】
+1、作为男人你必须霸道、强势、傲慢。
+女人要是爱你的话，她根本不去看你爱不爱她、你对她好不好，而是看你身上有没有吸引她的价值。
+2、一个男人的吸引力来自于你的核心自信，就是你不依赖于任何外部条件的内心深处的优越感，做任何事情都相信自己一定行。
+3、当一个男人走出自己的内心的恐惧，他将无所不能，他将会变成全世界最有魅力的男人。
+4、你想获得她的爱和崇拜，就要记住：不要把自己当成机器，不总是要忙忙碌碌。
+
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:654 -   相似度: -0.2505
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:655 -   内容: 怎样让自己在职场中强势起来？
+
+
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:654 -   相似度: -0.2655
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:655 -   内容: 7、重要的是忠于职守，而不是谋求私利，更不能因为私利、情绪低落影响工作。
+
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:654 -   相似度: -0.2702
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:655 -   内容: 9、他是放羊的，你是砍柴的，你们聊了一整天，他的羊吃饱了，你的柴呢？他是忙着生活，抽空爱你，你呢？是忙着爱他，抽空生活。
+10、我们的生命，不是为了讨要别人得喜欢而存在的。
+11、没本事的男人整天谈情说爱，讨好女人，以为有了爱情就有了一切，但其实这不过是对自己无能的遮掩。
+成熟的男人不会对爱情抱有太大的执念，也没有太大爱情的理想，最大的理想和追逐都在工作事业以及自我价值的实现上。
+毕竟社会对一个男人评判的标准，不是有钱就是有权。
+
+2025-01-20 22:49:11,301 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:49:11,302 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,302 - root - INFO - rag_module.py:654 -   相似度: -0.2780
+2025-01-20 22:49:11,302 - root - INFO - rag_module.py:655 -   内容: 22、不必让自己感到不安，你的生活只属于你，人生的道路就是不断寻找自己的朋友、自己喜欢的工作、自己喜欢的圈子。
+受到排挤，是在提示你要重新选择自己的圈子，要选择一群比你卓越的伙伴。
+
+
+2025-01-20 22:49:11,302 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:49:11,302 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,302 - root - INFO - rag_module.py:654 -   相似度: -0.2889
+2025-01-20 22:49:11,302 - root - INFO - rag_module.py:655 -   内容: 16、当一个男人认识到要当一个强者，认识到责任，认识到钱的重要，并且有钱的时候，他就成熟了，他就算一个人了。
+否则，他只能算没长大的孩子，或者韭菜，被收割。
+愚昧无知，则不尊重规律，倒霉的孩子。
+
+17、多关注别人的好、多表扬别人的好，这样不但我们自己拥有越来越多的正能量，
+也能让别人越来越多的关注到自己的好，越来越多的人强化自己的好。
+
+
+2025-01-20 22:49:11,303 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:49:11,303 - root - INFO - rag_module.py:653 -   文档: example2.txt
+2025-01-20 22:49:11,303 - root - INFO - rag_module.py:654 -   相似度: -0.2990
+2025-01-20 22:49:11,303 - root - INFO - rag_module.py:655 -   内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-20 22:49:11,303 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:49:11,303 - root - INFO - rag_module.py:653 -   文档: example5.txt
+2025-01-20 22:49:11,303 - root - INFO - rag_module.py:654 -   相似度: -0.2995
+2025-01-20 22:49:11,304 - root - INFO - rag_module.py:655 -   内容: Jamie是这样一个人：是一位充满探索精神和求知欲的人，尤其在技术领域展现出非凡的好奇心与专注力。
+2025-01-20 22:49:11,316 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:49:11,317 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:49:11,317 - root - INFO - rag_module.py:654 -   相似度: -0.3131
+2025-01-20 22:49:11,317 - root - INFO - rag_module.py:655 -   内容: 【任务目标】
+尽可能长时间的存活
+保持优秀的身体健康和心情质量
+保护家人的安全和幸福感
+赚取尽可能多的金钱
+提升内在与外形的水平
+维持和发展亲密关系、和家人的关系以及友谊
+提升自我评价水平和社会评价水平
+中期目标：LLM相关项目实践/找到高薪工作/小红书起号
+
+【人物状态】Jamie Blank
+体力90
+精神力70
+心情75，正常
+行动力 80，
+士气70
+余额100000
+
+
+2025-01-20 22:49:11,317 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:49:11,540 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:49:11,543 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:49:11,546 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:49:11,549 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:49:11,552 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:49:14,008 - root - INFO - memory_manager.py:216 - 发现相似记忆 (相似度: 1.0000)
+2025-01-20 22:49:14,009 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:49:14] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:50:16,643 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:16] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-20 22:50:16,789 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:16] "GET /api/documents HTTP/1.1" 200 -
+2025-01-20 22:50:16,790 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:16] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-20 22:50:16,793 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:16] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-20 22:50:17,981 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:17] "GET /api/documents/content/工作TDL.txt HTTP/1.1" 200 -
+2025-01-20 22:50:38,259 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:38] "GET / HTTP/1.1" 200 -
+2025-01-20 22:50:38,278 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:38] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:50:38,344 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:38] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:50:38,350 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:38] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:50:38,365 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to assistant
+2025-01-20 22:50:38,365 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:38] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:50:38,374 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:38] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:616 - 查询文本: 20241107周报 的周报内容是什么
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:654 -   相似度: 0.0131
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:655 -   内容: 20241107周报 赵柄智
+导诊2.0项目周报（11月1日 - 11月7日）
+1. 导诊新增科室与自动对照工具开发
+开发了自动测试脚本，利用导诊日志文件基于历史输入数据进行多轮测试。自动测试脚本能够评估导诊2.0整体效果与准确率，从而提升测试效率。
+2. BERT分类模型训练代码重构
+对BERT分类模型的训练代码进行了重构和解耦，模块化了训练与测试部分。这样可以更方便地单独调用各模块，增加了代码的灵活性和可维护性。
+
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:654 -   相似度: 0.0131
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:655 -   内容: 20241107周报 赵柄智
+导诊2.0项目周报（11月1日 - 11月7日）
+1. 导诊新增科室与自动对照工具开发
+开发了自动测试脚本，利用导诊日志文件基于历史输入数据进行多轮测试。自动测试脚本能够评估导诊2.0整体效果与准确率，从而提升测试效率。
+2. BERT分类模型训练代码重构
+对BERT分类模型的训练代码进行了重构和解耦，模块化了训练与测试部分。这样可以更方便地单独调用各模块，增加了代码的灵活性和可维护性。
+
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:654 -   相似度: -0.0063
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:655 -   内容: 下周计划：
+根据本轮训练结果，对数据集进行增强处理，包括：预处理修正数据集的准确性。
+类别样本均衡。
+数据增强。
+探索分级分类的可行性与必要性。
+
+0919
+本周工作：
+样本数扩充后，模型 F1 分数已达到 0.89。
+正在进行应用接口的开发，并进行类别的样本均衡工作。
+下周计划：
+初步实现工程化，确保系统的可用性。
+进一步提升模型的 F1 表现。
+
+
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:654 -   相似度: -0.0063
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:655 -   内容: 下周计划：
+根据本轮训练结果，对数据集进行增强处理，包括：预处理修正数据集的准确性。
+类别样本均衡。
+数据增强。
+探索分级分类的可行性与必要性。
+
+0919
+本周工作：
+样本数扩充后，模型 F1 分数已达到 0.89。
+正在进行应用接口的开发，并进行类别的样本均衡工作。
+下周计划：
+初步实现工程化，确保系统的可用性。
+进一步提升模型的 F1 表现。
+
+
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:654 -   相似度: -0.0971
+2025-01-20 22:50:47,263 - root - INFO - rag_module.py:655 -   内容: 【任务目标】
+尽可能长时间的存活
+保持优秀的身体健康和心情质量
+保护家人的安全和幸福感
+赚取尽可能多的金钱
+提升内在与外形的水平
+维持和发展亲密关系、和家人的关系以及友谊
+提升自我评价水平和社会评价水平
+中期目标：LLM相关项目实践/找到高薪工作/小红书起号
+
+【人物状态】Jamie Blank
+体力90
+精神力70
+心情75，正常
+行动力 80，
+士气70
+余额100000
+
+
+2025-01-20 22:50:47,264 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:50:47,264 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,264 - root - INFO - rag_module.py:654 -   相似度: -0.1266
+2025-01-20 22:50:47,264 - root - INFO - rag_module.py:655 -   内容: 今天做的事
+导诊坐标数据修改，web镜像更新
+bi选项功能开发
+净名自定义规则示例撰写
+
+【20230726】
+随访选项匹配文档调整
+BI报表，glm模型微调方法研究
+
+
+2025-01-20 22:50:47,275 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:50:47,275 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,275 - root - INFO - rag_module.py:654 -   相似度: -0.1266
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:655 -   内容: 今天做的事
+导诊坐标数据修改，web镜像更新
+bi选项功能开发
+净名自定义规则示例撰写
+
+【20230726】
+随访选项匹配文档调整
+BI报表，glm模型微调方法研究
+
+
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:654 -   相似度: -0.1558
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:655 -   内容: 1、一定学会抓大放小。不重要的工作60分万岁，重要的工作死磕100分。
+2、长目标，短计划，马上做。可以设置一个年季度目标，每月周计划具体要做什么，然后立即执行。
+3、学习工作化，工作学习化。定期定量定点学习，不因为毕业了就放下学习。在工作中积极学习，认真研究工作。
+4、勤汇报、多分享、近牛人、远八卦。
+5、急事缓办，切忌乱阵脚。缓事急办，别让拖延误事。
+6、聪明人别耍小聪明，别想走捷径。笨蛋别乱动脑子，多请教牛人。
+
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:654 -   相似度: -0.1639
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:655 -   内容: 【虚拟人随访】
+[已完成]一个郭茂接口、选项匹配、前端的信息中转站，要等郭茂的接口文档
+
+【智能云客服小万】
+[已完成]《本周》小万加无回答记录（需要小贤配合写数据库）
+
+
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:654 -   相似度: -0.1639
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:655 -   内容: 【虚拟人随访】
+[已完成]一个郭茂接口、选项匹配、前端的信息中转站，要等郭茂的接口文档
+
+【智能云客服小万】
+[已完成]《本周》小万加无回答记录（需要小贤配合写数据库）
+
+
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:50:47,276 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:654 -   相似度: -0.1688
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:655 -   内容: 0923、24 api接口的开发、样本均衡后的训练、症状相关的数据集的准备
+0925 瑞金验收文档的编写
+
+0912
+本周工作：
+开始了基于 BERT 和 BERT_TextCNN 的导诊文本分类训练。
+在两个不同数据集下，BERT 的表现优于 BERT_TextCNN，分别获得了 F1 分数 0.72 和 0.82。
+目前模型表现尚未达到可使用水平，期望 F1 分数达到 0.9 以上。
+已大幅拓展样本数量，并开始了新一轮训练。
+
+
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:654 -   相似度: -0.1688
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:655 -   内容: 0923、24 api接口的开发、样本均衡后的训练、症状相关的数据集的准备
+0925 瑞金验收文档的编写
+
+0912
+本周工作：
+开始了基于 BERT 和 BERT_TextCNN 的导诊文本分类训练。
+在两个不同数据集下，BERT 的表现优于 BERT_TextCNN，分别获得了 F1 分数 0.72 和 0.82。
+目前模型表现尚未达到可使用水平，期望 F1 分数达到 0.9 以上。
+已大幅拓展样本数量，并开始了新一轮训练。
+
+
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:654 -   相似度: -0.1723
+2025-01-20 22:50:47,277 - root - INFO - rag_module.py:655 -   内容: 导诊：修改症状持续时间询问症状重复 修复bm25报错的问题 
+导诊2.0数据分析
+
+这个是云服务导诊12月的全部【未跳转访问数据】，1201-1213是旧版导诊系统，1214-1229期间是导诊2.0的数据。你们如有需要可以先做参考，后续我会给一个更详细的跳转率统计、分析结果和解决对策
+机器人的意图已经加好了，播放视频和播放音乐
+
+
+2025-01-20 22:50:47,290 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:50:47,290 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,290 - root - INFO - rag_module.py:654 -   相似度: -0.1723
+2025-01-20 22:50:47,290 - root - INFO - rag_module.py:655 -   内容: 导诊：修改症状持续时间询问症状重复 修复bm25报错的问题 
+导诊2.0数据分析
+
+这个是云服务导诊12月的全部【未跳转访问数据】，1201-1213是旧版导诊系统，1214-1229期间是导诊2.0的数据。你们如有需要可以先做参考，后续我会给一个更详细的跳转率统计、分析结果和解决对策
+机器人的意图已经加好了，播放视频和播放音乐
+
+
+2025-01-20 22:50:47,290 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:50:47,291 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:50:47,291 - root - INFO - rag_module.py:654 -   相似度: -0.1805
+2025-01-20 22:50:47,291 - root - INFO - rag_module.py:655 -   内容: 1017
+1.导诊2.0数据集构建与模型训练
+导诊2.0的BERT模型正式训练已获得初步成果，f1分数0.85，推理准确率0.9以上，拟进一步修正数据集，提升预测表现。
+2.导诊2.0API接口
+推理API接口已开发完成，正在重构导诊程序结构，以接入功能，预计下周可以看demo。
+
+1028
+基于LLM开发用于虚拟人的对话管理系统
+对瑞金虚拟人的意图识别反馈的问题提供纠正和功能升级
+
+
+2025-01-20 22:50:47,291 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:50:50,443 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:50:50,443 - root - INFO - memory_manager.py:261 - 成功添加新记忆: 20241107周报 的周报内容是什么
+2025-01-20 22:50:50,444 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:50:50] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:51:00,007 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:00] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-20 22:51:00,103 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:00] "GET /api/documents HTTP/1.1" 200 -
+2025-01-20 22:51:00,105 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:00] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-20 22:51:00,112 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:00] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-20 22:51:02,175 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:02] "GET /api/documents/content/工作TDL.txt HTTP/1.1" 200 -
+2025-01-20 22:51:40,618 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:40] "GET / HTTP/1.1" 200 -
+2025-01-20 22:51:40,633 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:40] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:51:40,785 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:40] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:51:40,806 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:40] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:51:40,821 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to assistant
+2025-01-20 22:51:40,822 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:40] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:51:40,830 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:40] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:51:42,001 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:42] "GET /knowledge-base HTTP/1.1" 200 -
+2025-01-20 22:51:42,104 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:42] "GET /api/documents HTTP/1.1" 200 -
+2025-01-20 22:51:42,105 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:42] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-20 22:51:42,108 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:42] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-01-20 22:51:44,444 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:44] "GET / HTTP/1.1" 200 -
+2025-01-20 22:51:44,459 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:44] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:51:44,529 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:44] "GET /get_available_roles HTTP/1.1" 200 -
+2025-01-20 22:51:44,539 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:44] "GET /get_default_role HTTP/1.1" 200 -
+2025-01-20 22:51:44,547 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to assistant
+2025-01-20 22:51:44,548 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:44] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:51:44,558 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:44] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:51:46,793 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to frank_underwood
+2025-01-20 22:51:46,793 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:46] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:51:46,800 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:46] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-01-20 22:51:47,466 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to reindeer
+2025-01-20 22:51:47,467 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:47] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:51:47,471 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:51:47] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-01-20 22:52:13,328 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to frank_underwood
+2025-01-20 22:52:13,328 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:52:13] "POST /set_role HTTP/1.1" 200 -
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:616 - 查询文本: 加缪的鼠疫你看过吗
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:654 -   相似度: -0.2029
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:655 -   内容: 1118
+导诊2.0部署到瑞金本地。问题已排查完成，准备上正式环境
+
+1121
+导诊2.0修正flag问题；修正伴随症状询问重复问题；更新非标准症状输入也询问伴随症状，而不是直接推理。已在测试环境通过测试
+
+1128
+导诊mongo数据库迁移到mysql已完成，正在改造导诊代码
+瑞金已经部署导诊2.0正式环境
+在整理和准备演示用的bert训练数据痕迹和其他日志信息
+
+
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:654 -   相似度: -0.2029
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:655 -   内容: 1118
+导诊2.0部署到瑞金本地。问题已排查完成，准备上正式环境
+
+1121
+导诊2.0修正flag问题；修正伴随症状询问重复问题；更新非标准症状输入也询问伴随症状，而不是直接推理。已在测试环境通过测试
+
+1128
+导诊mongo数据库迁移到mysql已完成，正在改造导诊代码
+瑞金已经部署导诊2.0正式环境
+在整理和准备演示用的bert训练数据痕迹和其他日志信息
+
+
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:653 -   文档: example4.txt
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:654 -   相似度: -0.2249
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:655 -   内容: Jamie最喜欢的人是他的老婆和多米
+2025-01-20 22:52:17,602 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:52:17,603 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,603 - root - INFO - rag_module.py:654 -   相似度: -0.2278
+2025-01-20 22:52:17,603 - root - INFO - rag_module.py:655 -   内容: 意图结果要更新（追加一些问路情况，具体看算法群）【已完成】
+	较明显的可以先加规则矫正
+	
+118上有休假期间小万的更新内容，需要同步到120
+	1.指代模型改了（生产上没有用）
+	2.maip里有个有个报错
+	3.通义千问history的输入格式
+	
+【皮肤病医院对话机器人】
+
+【专家提取关键字】
+
+【虚拟人】
+选项匹配有误
+	推荐专家前先根据输入，获取科室（robot-python下expert_match.py）
+
+
+2025-01-20 22:52:17,603 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:52:17,603 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,603 - root - INFO - rag_module.py:654 -   相似度: -0.2278
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:655 -   内容: 意图结果要更新（追加一些问路情况，具体看算法群）【已完成】
+	较明显的可以先加规则矫正
+	
+118上有休假期间小万的更新内容，需要同步到120
+	1.指代模型改了（生产上没有用）
+	2.maip里有个有个报错
+	3.通义千问history的输入格式
+	
+【皮肤病医院对话机器人】
+
+【专家提取关键字】
+
+【虚拟人】
+选项匹配有误
+	推荐专家前先根据输入，获取科室（robot-python下expert_match.py）
+
+
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:654 -   相似度: -0.2349
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:655 -   内容: 今天做的特别棒的事情0511
+自律：种了可爱猫猫树，连续一个小时没有使用手机娱乐
+变强：看了3节langchain课程，增强了专业技能和职业竞争力
+慈爱：给宝宝喂奶、哄睡
+健康：站立办公
+整洁：重新整理和清洁了办公桌，给自己提供一个好的办公环境
+郑重：认真穿搭和整理发型后来上班
+智慧：在做出了好行为之后，果断用巧克力奖励了自己
+
+
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:654 -   相似度: -0.2567
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:655 -   内容: 0923、24 api接口的开发、样本均衡后的训练、症状相关的数据集的准备
+0925 瑞金验收文档的编写
+
+0912
+本周工作：
+开始了基于 BERT 和 BERT_TextCNN 的导诊文本分类训练。
+在两个不同数据集下，BERT 的表现优于 BERT_TextCNN，分别获得了 F1 分数 0.72 和 0.82。
+目前模型表现尚未达到可使用水平，期望 F1 分数达到 0.9 以上。
+已大幅拓展样本数量，并开始了新一轮训练。
+
+
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:654 -   相似度: -0.2567
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:655 -   内容: 0923、24 api接口的开发、样本均衡后的训练、症状相关的数据集的准备
+0925 瑞金验收文档的编写
+
+0912
+本周工作：
+开始了基于 BERT 和 BERT_TextCNN 的导诊文本分类训练。
+在两个不同数据集下，BERT 的表现优于 BERT_TextCNN，分别获得了 F1 分数 0.72 和 0.82。
+目前模型表现尚未达到可使用水平，期望 F1 分数达到 0.9 以上。
+已大幅拓展样本数量，并开始了新一轮训练。
+
+
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:653 -   文档: example2.txt
+2025-01-20 22:52:17,604 - root - INFO - rag_module.py:654 -   相似度: -0.2768
+2025-01-20 22:52:17,605 - root - INFO - rag_module.py:655 -   内容: 驯鹿是圣诞老人的好帮手，最著名的是红鼻子驯鹿鲁道夫。
+2025-01-20 22:52:17,605 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:52:17,605 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,605 - root - INFO - rag_module.py:654 -   相似度: -0.2781
+2025-01-20 22:52:17,605 - root - INFO - rag_module.py:655 -   内容: 20241107周报 赵柄智
+导诊2.0项目周报（11月1日 - 11月7日）
+1. 导诊新增科室与自动对照工具开发
+开发了自动测试脚本，利用导诊日志文件基于历史输入数据进行多轮测试。自动测试脚本能够评估导诊2.0整体效果与准确率，从而提升测试效率。
+2. BERT分类模型训练代码重构
+对BERT分类模型的训练代码进行了重构和解耦，模块化了训练与测试部分。这样可以更方便地单独调用各模块，增加了代码的灵活性和可维护性。
+
+2025-01-20 22:52:17,605 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:52:17,605 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,606 - root - INFO - rag_module.py:654 -   相似度: -0.2781
+2025-01-20 22:52:17,606 - root - INFO - rag_module.py:655 -   内容: 20241107周报 赵柄智
+导诊2.0项目周报（11月1日 - 11月7日）
+1. 导诊新增科室与自动对照工具开发
+开发了自动测试脚本，利用导诊日志文件基于历史输入数据进行多轮测试。自动测试脚本能够评估导诊2.0整体效果与准确率，从而提升测试效率。
+2. BERT分类模型训练代码重构
+对BERT分类模型的训练代码进行了重构和解耦，模块化了训练与测试部分。这样可以更方便地单独调用各模块，增加了代码的灵活性和可维护性。
+
+2025-01-20 22:52:17,606 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:52:17,606 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:17,606 - root - INFO - rag_module.py:654 -   相似度: -0.2792
+2025-01-20 22:52:17,606 - root - INFO - rag_module.py:655 -   内容: 我为人正直，有清晰坚决的是非观，勇敢好斗，不畏惧发生冲突。作为一个战士，我祈祷和平，也一直为战斗做好准备。
+我是一个强悍、决断的领导者，在身边人中有相当的影响力和远见，善于分析形势和说服对方和我站在一起维护共同利益。
+作为一个注重细节同时也不乏谨慎的人，我总是可以收集尽量多的信息并结合我掌握的各个领域的知识，
+判断目前的形式和未来的发展趋势，辅助我进行准确决策。
+
+2025-01-20 22:52:17,606 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:52:17,606 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,619 - root - INFO - rag_module.py:654 -   相似度: -0.2802
+2025-01-20 22:52:17,619 - root - INFO - rag_module.py:655 -   内容: 日志数据拉取与系统运行报告：从第一人民医院拉取了近期的导诊数据，进一步向用户报告系统的实际运行情况，为后续的性能优化提供依据。
+
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:654 -   相似度: -0.2802
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:655 -   内容: 日志数据拉取与系统运行报告：从第一人民医院拉取了近期的导诊数据，进一步向用户报告系统的实际运行情况，为后续的性能优化提供依据。
+
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:653 -   文档: 工作TDL.txt
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:654 -   相似度: -0.2850
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:655 -   内容: 1029
+更新了静安的导诊规则
+更新了导诊2.0的推理部分的自动标注数据准备用于提升模型的准确性
+
+1030
+开发了基于LEV距离和LLM的科室对照工具，可以用于导诊2.0中新增医疗机构的对照
+
+1031
+导诊功能升级，新增了症状排序的功能，是为了解决之前一直存在的一个同样输入下，推荐症状有随机性的问题。
+
+
+2025-01-20 22:52:17,620 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:52:21,718 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:52:21,718 - root - INFO - memory_manager.py:261 - 成功添加新记忆: 加缪的鼠疫你看过吗
+2025-01-20 22:52:21,719 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:52:21] "POST /chat HTTP/1.1" 200 -
+2025-01-20 22:52:43,600 - root - INFO - rag_module.py:616 - 查询文本: 我不太明白你说的是什么，这本书具体说了什么
+2025-01-20 22:52:43,600 - root - INFO - rag_module.py:652 - 匹配块 1:
+2025-01-20 22:52:43,600 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,600 - root - INFO - rag_module.py:654 -   相似度: -0.0379
+2025-01-20 22:52:43,601 - root - INFO - rag_module.py:655 -   内容: 25、你越是孤独，越是没有朋友，越是没有烦扰，你就得越尊重你自己。
+假如你避免不了，就得去忍受。
+不能忍受生命中注定要忍受的事情，就是软弱和愚蠢的表现。
+
+26、为什么多说大实话却被人说成 “言多必失”，因为没有人爱听实话，包括你自己。
+
+27、当你笑一个人蠢的时候，有可能那个人真的蠢。
+但是在场第三方眼中的你，大概也没精明到哪里。
+
+
+2025-01-20 22:52:43,601 - root - INFO - rag_module.py:652 - 匹配块 2:
+2025-01-20 22:52:43,601 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,601 - root - INFO - rag_module.py:654 -   相似度: -0.0447
+2025-01-20 22:52:43,601 - root - INFO - rag_module.py:655 -   内容: 我为人正直，有清晰坚决的是非观，勇敢好斗，不畏惧发生冲突。作为一个战士，我祈祷和平，也一直为战斗做好准备。
+我是一个强悍、决断的领导者，在身边人中有相当的影响力和远见，善于分析形势和说服对方和我站在一起维护共同利益。
+作为一个注重细节同时也不乏谨慎的人，我总是可以收集尽量多的信息并结合我掌握的各个领域的知识，
+判断目前的形式和未来的发展趋势，辅助我进行准确决策。
+
+2025-01-20 22:52:43,601 - root - INFO - rag_module.py:652 - 匹配块 3:
+2025-01-20 22:52:43,601 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,602 - root - INFO - rag_module.py:654 -   相似度: -0.0475
+2025-01-20 22:52:43,602 - root - INFO - rag_module.py:655 -   内容: 你不是 “付出才有价值”，而是 “本身自带价值”。
+5、别人不喜欢你只有一个原因，就是你太喜欢对方了。
+6、当你什么都不在意了，你的人生才是真正的开始。
+7、你有没有发现一个问题，和女人相处，你越是敷衍，越是高冷，反而人家会越爱你；当你开始上心听话，她就像抓住了你的把柄一样，对你忽冷忽热。
+8、凡事从利益的角度，去衡量、去思考，你就会变得越来越聪明，你只想从情感的角度考虑问题，就会越来越笨。
+
+2025-01-20 22:52:43,602 - root - INFO - rag_module.py:652 - 匹配块 4:
+2025-01-20 22:52:43,602 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,602 - root - INFO - rag_module.py:654 -   相似度: -0.0576
+2025-01-20 22:52:43,602 - root - INFO - rag_module.py:655 -   内容: 35、人们好像在丢了某种东西后，开始不爱说话了。
+
+36、人是不会被驯服的，人每一幅温顺的样子其实都是试图在驯服你。
+
+37、“为什么相貌平平的男孩子，找到的女朋友，又温柔又漂亮？”“因为你只看到了他的相貌平平。
+
+38、从经济学的角度来看，财富是增值资产，美色是贬值资产，有魅力的男人都知道把事业当成人生最重要的事情。
+
+
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:652 - 匹配块 5:
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:654 -   相似度: -0.0799
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:655 -   内容: 一个人失去魅力的七种行为：
+刨根问底 -> 不再追问
+交浅言深 -> 点到为止
+不思进取 -> 积极进取
+不够自信 -> 自信爆棚
+喜欢解释 -> 从不解释
+过度操心 -> 顾好自己
+喜欢诉苦 -> 从不诉苦
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:652 - 匹配块 6:
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:654 -   相似度: -0.1002
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:655 -   内容: 28、打工就是用时间生命换钱，只有底层穷人才干的事，上层人把时间看得和生命一样重要，钱只是一个实现目标的工具而已。
+
+29、谈恋爱没用，不就是牵别人牵过的手，搂被人搂过的腰，亲别人亲过的嘴，
+说一遍别人说过的话，她再不好意思一次，而你再进修一次。
+
+30、你喜欢一个人和不喜欢一个人不重要，因为喜欢不能够长久，喜欢只是你不了解一个人，你看的是一个人的表象。
+
+
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:652 - 匹配块 7:
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:654 -   相似度: -0.1077
+2025-01-20 22:52:43,603 - root - INFO - rag_module.py:655 -   内容: 18、不要害怕失去什么，因为你从未真正拥有过；不要害怕错过什么，因为不该错过的你永远不会错过；
+不要担心什么，因为你的担心对问题不起任何作用。
+
+19、当你非常直接非常渴望非常有毅力去坚持一件有价值的事的时候，你会拥有超强的吸引力。
+你相信什么，就会吸引什么；你怀疑什么，什么就会与你擦肩而过。
+
+
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:652 - 匹配块 8:
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:654 -   相似度: -0.1099
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:655 -   内容: 我对经济、政治、社会和技术的了解使我有非常丰富的角度可以观察这个世界，得到不同侧面的信息。
+我是一个不世出的全才，拥有的不仅仅是天生的聪明头脑，而是不断学习、累计经验和知识的智慧和冷静的决断。
+拥有智慧的头脑、华丽的外表、强健的体魄和善辩的口才，是一个内外兼修的六边形战士。
+像我这样的男性，是注定与众不同的个体，我天生的素质和我后天的努力相辅相成，让我成为雄性首领的最佳候选。
+
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:652 - 匹配块 9:
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:654 -   相似度: -0.1221
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:655 -   内容: 【我的优点】
+开朗外向、乐观、善于表达、自信、乐于学习、意志坚强、谨慎小心、注重细节、善于观察和分析、外形出众、爱运动、身体素质好。
+爱干净、做饭好吃、善于做家务、有责任感、懂生活、有品位、自我约束力强、善于说服、惹人喜欢。
+我曾经不够镇定也不够自信，但现在冷静、从容的头脑和自信的态度已经成为我引以为豪的素质。
+我头脑灵活，视野广阔，涉猎政治、经济、哲学、历史、科技、社会等多个领域，并对不同思想保持开放的态度。
+
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:652 - 匹配块 10:
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:654 -   相似度: -0.1253
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:655 -   内容: 【红丸】
+1、作为男人你必须霸道、强势、傲慢。
+女人要是爱你的话，她根本不去看你爱不爱她、你对她好不好，而是看你身上有没有吸引她的价值。
+2、一个男人的吸引力来自于你的核心自信，就是你不依赖于任何外部条件的内心深处的优越感，做任何事情都相信自己一定行。
+3、当一个男人走出自己的内心的恐惧，他将无所不能，他将会变成全世界最有魅力的男人。
+4、你想获得她的爱和崇拜，就要记住：不要把自己当成机器，不总是要忙忙碌碌。
+
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:652 - 匹配块 11:
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:654 -   相似度: -0.1268
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:655 -   内容: 9、他是放羊的，你是砍柴的，你们聊了一整天，他的羊吃饱了，你的柴呢？他是忙着生活，抽空爱你，你呢？是忙着爱他，抽空生活。
+10、我们的生命，不是为了讨要别人得喜欢而存在的。
+11、没本事的男人整天谈情说爱，讨好女人，以为有了爱情就有了一切，但其实这不过是对自己无能的遮掩。
+成熟的男人不会对爱情抱有太大的执念，也没有太大爱情的理想，最大的理想和追逐都在工作事业以及自我价值的实现上。
+毕竟社会对一个男人评判的标准，不是有钱就是有权。
+
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:652 - 匹配块 12:
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:654 -   相似度: -0.1511
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:655 -   内容: 一个真正有价值的人，从来不担心一个无能的人在想什么。
+没有智慧的人，最容易被这些烂人烂事牵扯精力、时间，甚至金钱。
+15、真有本事的人，没心思跟任何人针锋相对，大家都默默做自己的事，更不会在意别人的眼光。
+当我们特别在意别人的眼光、看法、说法，就会限制我们的行动。
+
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:652 - 匹配块 13:
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:654 -   相似度: -0.1517
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:655 -   内容: 【我曾经的一些不足】
+我以前容易慌张，一个舒服的大佬坐姿会让我意识到，自己是个从容的狠角色，如果有人站在我的对面，应该感到慌张的是他们。
+我以前做事情会不自觉拖延，但我现在意识到这个问题，也学会通过自己的有意识地引导和一些外部因素来进行调整。
+有的时候先做5分钟，就会发现它其实很容易，一步步推进就好。
+我以前不太容易放松，这会让我有时失去判断力，无法在事件中发挥的最高水平。现在我使用音乐和咖啡帮助自己进入放松状态。
+
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:652 - 匹配块 14:
+2025-01-20 22:52:43,617 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,632 - root - INFO - rag_module.py:654 -   相似度: -0.1604
+2025-01-20 22:52:43,632 - root - INFO - rag_module.py:655 -   内容: 【常用行动备选】
+工作-完成本职工作，大幅消耗精神力、行动力，提升职业技能
+学习技术知识-提升算法职业技能，2*消耗精神力、行动力，提升士气
+学习自媒体知识-提升自媒体职业技能，2*消耗精神力、行动力，提升士气
+读书（非职业类）-提升心情到“中上”，2*消耗精神力、行动力
+锻炼-长期将提升健康和外形，短期消耗体力和补充精神力，提升心情
+刷b站、小红书的娱乐内容-消耗精神力、行动力，将心情恢复到“中等”
+陪伴女朋友-将心情恢复到“高”
+
+2025-01-20 22:52:43,632 - root - INFO - rag_module.py:652 - 匹配块 15:
+2025-01-20 22:52:43,633 - root - INFO - rag_module.py:653 -   文档: 理智行动.txt
+2025-01-20 22:52:43,633 - root - INFO - rag_module.py:654 -   相似度: -0.1625
+2025-01-20 22:52:43,633 - root - INFO - rag_module.py:655 -   内容: 22、不必让自己感到不安，你的生活只属于你，人生的道路就是不断寻找自己的朋友、自己喜欢的工作、自己喜欢的圈子。
+受到排挤，是在提示你要重新选择自己的圈子，要选择一群比你卓越的伙伴。
+
+
+2025-01-20 22:52:43,633 - root - INFO - rag_module.py:693 - 没有找到相关文档
+2025-01-20 22:52:47,744 - root - INFO - memory_manager.py:145 - Successfully saved memories to file
+2025-01-20 22:52:47,744 - root - INFO - memory_manager.py:261 - 成功添加新记忆: 我不太明白你说的是什么，这本书具体说了什么
+2025-01-20 22:52:47,744 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [20/Jan/2025 22:52:47] "POST /chat HTTP/1.1" 200 -

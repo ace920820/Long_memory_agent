@@ -365,11 +365,13 @@ def create_app(rag_module):
         try:
             available_roles = prompt_manager.role_config.get('available_roles', [])
             role_descriptions = prompt_manager.role_config.get('role_descriptions', {})
+            role_avatars = prompt_manager.role_config.get('role_avatars', {})
             
             roles_info = {
                 role: {
                     'name': role_descriptions.get(role, role),
-                    'description': role_descriptions.get(role, '')
+                    'description': role_descriptions.get(role, ''),
+                    'avatar': role_avatars.get(role, '')
                 }
                 for role in available_roles
             }

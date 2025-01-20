@@ -26,6 +26,12 @@ role_descriptions:
   frank_underwood: "冷静、精明、无情的政治家"
   assistant: "专业可靠的个人助理"
 
+role_avatars:
+  reindeer: "/static/images/Christmas_reindeer_avatar_80x80.png"
+  santa: "/static/images/santa.jpg"
+  frank_underwood: "/static/images/frank.jpg"
+  assistant: "/static/images/assistant.jpg"
+
 role_transitions:
   greeting:
     santa: "Ho ho ho！欢迎来到圣诞老人的小屋！"
