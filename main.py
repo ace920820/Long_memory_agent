@@ -58,7 +58,9 @@ def create_app(rag_module):
     try:
         # 初始化记忆管理器
         memory_manager = MemoryManager(
-            model_name="all-MiniLM-L6-v2",  # 使用默认模型
+            model_name=config['embedding']['model_name'],  # 使用默认模型
+            model_path = config['embedding']['model_path'],
+            rerank_path = config['rerank']['model_path'],
             memory_file="config/user_memories.json",
             similarity_threshold=0.5
         )

@@ -28,12 +28,17 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-06T02:05:22.995985",
-        "access_history": []
+        "last_access": "2025-01-21T16:49:29.163616",
+        "access_history": [
+          {
+            "timestamp": "2025-01-21T16:49:29.163616",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.65
     },
     {
       "id": "m_1736100510510_7130",
@@ -282,14 +287,10 @@
       "type": "dialogue",
       "timestamp": "2025-01-09T20:09:31.684545",
       "access_stats": {
-        "count": 23,
+        "count": 24,
         "first_access": "2025-01-09T20:09:31.685536",
-        "last_access": "2025-01-20T22:26:48.007909",
+        "last_access": "2025-01-21T16:19:08.061596",
         "access_history": [
-          {
-            "timestamp": "2025-01-20T21:14:12.704432",
-            "type": "read"
-          },
           {
             "timestamp": "2025-01-20T21:22:50.812822",
             "type": "read"
@@ -324,6 +325,10 @@
           },
           {
             "timestamp": "2025-01-20T22:26:48.007909",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:19:08.061596",
             "type": "read"
           }
         ]
@@ -796,9 +801,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-20T15:12:16.623765",
       "access_stats": {
-        "count": 2,
+        "count": 3,
         "first_access": "2025-01-20T15:12:16.623765",
-        "last_access": "2025-01-20T22:47:22.440932",
+        "last_access": "2025-01-21T16:48:28.726439",
         "access_history": [
           {
             "timestamp": "2025-01-20T15:12:30.695492",
@@ -807,10 +812,14 @@
           {
             "timestamp": "2025-01-20T22:47:22.440932",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:48:28.726439",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.52
+      "priority_score": 0.55
     },
     {
       "id": "m_1737357154090_6176",
@@ -857,14 +866,10 @@
       "type": "dialogue",
       "timestamp": "2025-01-20T21:11:01.630478",
       "access_stats": {
-        "count": 12,
+        "count": 13,
         "first_access": "2025-01-20T21:11:01.630478",
-        "last_access": "2025-01-20T22:26:48.005924",
+        "last_access": "2025-01-21T16:19:08.053921",
         "access_history": [
-          {
-            "timestamp": "2025-01-20T21:14:12.715668",
-            "type": "read"
-          },
           {
             "timestamp": "2025-01-20T21:22:50.820688",
             "type": "read"
@@ -900,6 +905,10 @@
           {
             "timestamp": "2025-01-20T22:26:48.005924",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:19:08.053921",
+            "type": "read"
           }
         ]
       },
@@ -911,9 +920,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-20T21:37:56.259734",
       "access_stats": {
-        "count": 6,
+        "count": 8,
         "first_access": "2025-01-20T21:37:56.259734",
-        "last_access": "2025-01-20T22:26:48.001928",
+        "last_access": "2025-01-21T16:23:17.472354",
         "access_history": [
           {
             "timestamp": "2025-01-20T21:46:20.507403",
@@ -938,10 +947,18 @@
           {
             "timestamp": "2025-01-20T22:26:48.001928",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:19:08.035024",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:23:17.472354",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.64
+      "priority_score": 0.7
     },
     {
       "id": "m_1737383747866_8979",
@@ -962,12 +979,17 @@
       "type": "dialogue",
       "timestamp": "2025-01-20T22:47:26.190070",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-20T22:47:26.190070",
-        "last_access": "2025-01-20T22:47:26.190070",
-        "access_history": []
+        "last_access": "2025-01-21T16:48:28.728973",
+        "access_history": [
+          {
+            "timestamp": "2025-01-21T16:48:28.728973",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0
+      "priority_score": 0.49
     },
     {
       "id": "m_1737384650432_2961",
@@ -1004,6 +1026,151 @@
         "count": 0,
         "first_access": "2025-01-20T22:52:47.732124",
         "last_access": "2025-01-20T22:52:47.732124",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737447801053_5385",
+      "content": "总统先生你好",
+      "type": "dialogue",
+      "timestamp": "2025-01-21T16:23:21.053120",
+      "access_stats": {
+        "count": 3,
+        "first_access": "2025-01-21T16:23:21.053120",
+        "last_access": "2025-01-21T16:31:01.087102",
+        "access_history": [
+          {
+            "timestamp": "2025-01-21T16:24:39.456366",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:30:28.346990",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:31:01.087102",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.55
+    },
+    {
+      "id": "m_1737448266484_3959",
+      "content": "总统先生，我想你告诉我，在第一季第四集，你是如何无中生有的给参议长设置了一个困境，让他同意你的教育法案",
+      "type": "dialogue",
+      "timestamp": "2025-01-21T16:31:06.484435",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-21T16:31:06.484435",
+        "last_access": "2025-01-21T16:31:29.821620",
+        "access_history": [
+          {
+            "timestamp": "2025-01-21T16:31:29.821620",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49
+    },
+    {
+      "id": "m_1737448301360_4072",
+      "content": "Frank先生，我想你记错了，当时的情况和民主党党首有关，你暗中支持他竞选众议长的职位，并以这个职位会被取代为筹码，要求现任众议长支持你的法案，能说说你具体是怎么做的吗",
+      "type": "dialogue",
+      "timestamp": "2025-01-21T16:31:41.360690",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-21T16:31:41.360690",
+        "last_access": "2025-01-21T16:31:41.360690",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737448359239_5154",
+      "content": "你似乎忽略了黑人团体和彼得罗素的角色",
+      "type": "dialogue",
+      "timestamp": "2025-01-21T16:32:39.239467",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-21T16:32:39.239467",
+        "last_access": "2025-01-21T16:32:39.239467",
+        "access_history": []
+      },
+      "priority_score": 0.0
+    },
+    {
+      "id": "m_1737449276572_6184",
+      "content": "圣诞快乐！",
+      "type": "dialogue",
+      "timestamp": "2025-01-21T16:47:56.572167",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-01-21T16:47:56.572167",
+        "last_access": "2025-01-21T16:50:00.365812",
+        "access_history": [
+          {
+            "timestamp": "2025-01-21T16:49:29.156503",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:50:00.365812",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52
+    },
+    {
+      "id": "m_1737449316835_2776",
+      "content": "我想想你许愿，希望明年可以收到像戴森空气净化器或者5090这样的圣诞礼物",
+      "type": "dialogue",
+      "timestamp": "2025-01-21T16:48:36.835659",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-01-21T16:48:36.835659",
+        "last_access": "2025-01-21T16:50:00.371912",
+        "access_history": [
+          {
+            "timestamp": "2025-01-21T16:49:29.156503",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-21T16:50:00.371912",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52
+    },
+    {
+      "id": "m_1737449379256_2475",
+      "content": "没错！我也认为圣诞节最开心的就是可以和家人朋友一起共度圣诞，布置圣诞装饰，交换礼物，一起看电影、喝热红酒",
+      "type": "dialogue",
+      "timestamp": "2025-01-21T16:49:39.256655",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-01-21T16:49:39.256655",
+        "last_access": "2025-01-21T16:50:00.363777",
+        "access_history": [
+          {
+            "timestamp": "2025-01-21T16:50:00.363777",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49
+    },
+    {
+      "id": "m_1737449406723_4242",
+      "content": "圣诞老人谢谢你，和你聊天让我感觉非常开心",
+      "type": "dialogue",
+      "timestamp": "2025-01-21T16:50:06.723968",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-01-21T16:50:06.723968",
+        "last_access": "2025-01-21T16:50:06.726988",
         "access_history": []
       },
       "priority_score": 0.0
