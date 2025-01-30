@@ -29,5 +29,5 @@ pyyaml==6.0.1
 
 # Utilities
 requests==2.2.1
-tqdm==4.67.1
+tqdm
 loguru==0.7.2

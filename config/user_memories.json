@@ -6,9 +6,9 @@
       "type": "fact",
       "timestamp": "2025-01-06T02:05:22.995985",
       "access_stats": {
-        "count": 2,
+        "count": 3,
         "first_access": "2025-01-06T02:05:22.995985",
-        "last_access": "2025-01-20T20:38:21.039019",
+        "last_access": "2025-01-20T22:56:34.374011",
         "access_history": [
           {
             "timestamp": "2025-01-20T11:54:40.807624",
@@ -17,10 +17,14 @@
           {
             "timestamp": "2025-01-20T20:38:21.039019",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T22:56:34.374011",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.68
+      "priority_score": 0.71
     },
     {
       "id": "m_1736100510509_2812",
@@ -225,17 +229,21 @@
       "type": "fact",
       "timestamp": "2025-01-08T13:34:36.326447",
       "access_stats": {
-        "count": 1,
+        "count": 2,
         "first_access": "2025-01-08T13:34:36.326447",
-        "last_access": "2025-01-08T15:02:28.591528",
+        "last_access": "2025-01-20T22:59:40.351886",
         "access_history": [
           {
             "timestamp": "2025-01-08T15:02:28.591528",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-20T22:59:40.351886",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.92
+      "priority_score": 0.68
     },
     {
       "id": "m_1736314482368_7635",
@@ -256,17 +264,21 @@
       "type": "fact",
       "timestamp": "2025-01-08T13:34:48.717078",
       "access_stats": {
-        "count": 1,
+        "count": 2,
         "first_access": "2025-01-08T13:34:48.717078",
-        "last_access": "2025-01-08T15:02:28.578507",
+        "last_access": "2025-01-20T22:59:40.354885",
         "access_history": [
           {
             "timestamp": "2025-01-08T15:02:28.578507",
             "type": "reference"
+          },
+          {
+            "timestamp": "2025-01-20T22:59:40.354885",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.92
+      "priority_score": 0.68
     },
     {
       "id": "m_1736319922469_6112",
@@ -274,116 +286,17 @@
       "type": "dialogue",
       "timestamp": "2025-01-08T15:05:22.469858",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-01-08T15:05:22.469858",
-        "last_access": "2025-01-08T15:05:22.469858",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1736424571684_5474",
-      "content": "你是谁",
-      "type": "dialogue",
-      "timestamp": "2025-01-09T20:09:31.684545",
-      "access_stats": {
-        "count": 24,
-        "first_access": "2025-01-09T20:09:31.685536",
-        "last_access": "2025-01-21T16:19:08.061596",
+        "last_access": "2025-01-20T22:59:40.365848",
         "access_history": [
           {
-            "timestamp": "2025-01-20T21:22:50.812822",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:25:27.937003",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:37:53.091491",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:46:20.502203",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:48:22.231209",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:15:36.350712",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:25:15.343321",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:25:47.517252",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:26:48.007909",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-21T16:19:08.061596",
+            "timestamp": "2025-01-20T22:59:40.365848",
             "type": "read"
           }
         ]
       },
-      "priority_score": 0.76
-    },
-    {
-      "id": "m_1736425027687_8612",
-      "content": "我最喜欢的电视剧是？",
-      "type": "dialogue",
-      "timestamp": "2025-01-09T20:17:07.687726",
-      "access_stats": {
-        "count": 9,
-        "first_access": "2025-01-09T20:17:07.687726",
-        "last_access": "2025-01-20T22:49:11.540089",
-        "access_history": [
-          {
-            "timestamp": "2025-01-13T19:10:12.262245",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-13T19:12:49.589568",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-13T19:14:42.452316",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-13T19:33:58.423405",
-            "type": "reference"
-          },
-          {
-            "timestamp": "2025-01-20T11:54:40.815219",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T11:56:06.859397",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:08:53.598614",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:09:07.456173",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:49:11.540089",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.73
+      "priority_score": 0.49
     },
     {
       "id": "m_1736694535681_4118",
@@ -543,9 +456,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-13T20:04:30.669218",
       "access_stats": {
-        "count": 3,
+        "count": 4,
         "first_access": "2025-01-13T20:04:30.669218",
-        "last_access": "2025-01-20T20:38:21.036005",
+        "last_access": "2025-01-20T22:56:34.379007",
         "access_history": [
           {
             "timestamp": "2025-01-20T11:54:40.792596",
@@ -558,10 +471,14 @@
           {
             "timestamp": "2025-01-20T20:38:21.036005",
             "type": "read"
+          },
+          {
+            "timestamp": "2025-01-20T22:56:34.379007",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55
+      "priority_score": 0.58
     },
     {
       "id": "m_1736769910898_3028",
@@ -595,26 +512,10 @@
       "type": "dialogue",
       "timestamp": "2025-01-18T22:47:50.411326",
       "access_stats": {
-        "count": 16,
+        "count": 20,
         "first_access": "2025-01-18T22:47:50.411326",
-        "last_access": "2025-01-20T21:48:22.234209",
+        "last_access": "2025-01-30T14:21:43.532772",
         "access_history": [
-          {
-            "timestamp": "2025-01-20T20:37:43.722016",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T20:53:00.119019",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T20:58:41.990620",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:11:05.862329",
-            "type": "read"
-          },
           {
             "timestamp": "2025-01-20T21:11:59.766025",
             "type": "read"
@@ -637,6 +538,22 @@
           },
           {
             "timestamp": "2025-01-20T21:48:22.234209",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-30T13:46:45.056112",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-30T13:49:34.380346",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-30T14:16:55.695224",
+            "type": "read"
+          },
+          {
+            "timestamp": "2025-01-30T14:21:43.532772",
             "type": "read"
           }
         ]
@@ -835,342 +752,14 @@
       "priority_score": 0.0
     },
     {
-      "id": "m_1737357169175_7665",
-      "content": "告诉我导诊的更新内容",
+      "id": "m_1738218108516_5941",
+      "content": "你是谁",
       "type": "dialogue",
-      "timestamp": "2025-01-20T15:12:49.175969",
-      "access_stats": {
-        "count": 3,
-        "first_access": "2025-01-20T15:12:49.175969",
-        "last_access": "2025-01-20T22:48:36.930167",
-        "access_history": [
-          {
-            "timestamp": "2025-01-20T15:13:09.733874",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T15:15:38.239169",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:48:36.930167",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.55
-    },
-    {
-      "id": "m_1737378661630_4046",
-      "content": "你在哪",
-      "type": "dialogue",
-      "timestamp": "2025-01-20T21:11:01.630478",
-      "access_stats": {
-        "count": 13,
-        "first_access": "2025-01-20T21:11:01.630478",
-        "last_access": "2025-01-21T16:19:08.053921",
-        "access_history": [
-          {
-            "timestamp": "2025-01-20T21:22:50.820688",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:25:27.949284",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:37:53.062953",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:46:20.505270",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:48:22.236202",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:15:36.349705",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:25:15.341327",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:25:47.515268",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:26:48.005924",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-21T16:19:08.053921",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.76
-    },
-    {
-      "id": "m_1737380276259_1821",
-      "content": "你好",
-      "type": "dialogue",
-      "timestamp": "2025-01-20T21:37:56.259734",
-      "access_stats": {
-        "count": 8,
-        "first_access": "2025-01-20T21:37:56.259734",
-        "last_access": "2025-01-21T16:23:17.472354",
-        "access_history": [
-          {
-            "timestamp": "2025-01-20T21:46:20.507403",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T21:48:22.238357",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:15:36.346699",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:25:15.339333",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:25:47.513243",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-20T22:26:48.001928",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-21T16:19:08.035024",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-21T16:23:17.472354",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.7
-    },
-    {
-      "id": "m_1737383747866_8979",
-      "content": "第三方",
-      "type": "dialogue",
-      "timestamp": "2025-01-20T22:35:47.866751",
+      "timestamp": "2025-01-30T14:21:48.516942",
       "access_stats": {
         "count": 0,
-        "first_access": "2025-01-20T22:35:47.866751",
-        "last_access": "2025-01-20T22:35:47.866751",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1737384446190_9061",
-      "content": "马上要过年了，你有什么新年计划吗",
-      "type": "dialogue",
-      "timestamp": "2025-01-20T22:47:26.190070",
-      "access_stats": {
-        "count": 1,
-        "first_access": "2025-01-20T22:47:26.190070",
-        "last_access": "2025-01-21T16:48:28.728973",
-        "access_history": [
-          {
-            "timestamp": "2025-01-21T16:48:28.728973",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.49
-    },
-    {
-      "id": "m_1737384650432_2961",
-      "content": "20241107周报 的周报内容是什么",
-      "type": "dialogue",
-      "timestamp": "2025-01-20T22:50:50.432820",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-20T22:50:50.432820",
-        "last_access": "2025-01-20T22:50:50.432820",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1737384741707_1658",
-      "content": "加缪的鼠疫你看过吗",
-      "type": "dialogue",
-      "timestamp": "2025-01-20T22:52:21.707934",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-20T22:52:21.707934",
-        "last_access": "2025-01-20T22:52:21.707934",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1737384767732_7367",
-      "content": "我不太明白你说的是什么，这本书具体说了什么",
-      "type": "dialogue",
-      "timestamp": "2025-01-20T22:52:47.732124",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-20T22:52:47.732124",
-        "last_access": "2025-01-20T22:52:47.732124",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1737447801053_5385",
-      "content": "总统先生你好",
-      "type": "dialogue",
-      "timestamp": "2025-01-21T16:23:21.053120",
-      "access_stats": {
-        "count": 3,
-        "first_access": "2025-01-21T16:23:21.053120",
-        "last_access": "2025-01-21T16:31:01.087102",
-        "access_history": [
-          {
-            "timestamp": "2025-01-21T16:24:39.456366",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-21T16:30:28.346990",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-21T16:31:01.087102",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.55
-    },
-    {
-      "id": "m_1737448266484_3959",
-      "content": "总统先生，我想你告诉我，在第一季第四集，你是如何无中生有的给参议长设置了一个困境，让他同意你的教育法案",
-      "type": "dialogue",
-      "timestamp": "2025-01-21T16:31:06.484435",
-      "access_stats": {
-        "count": 1,
-        "first_access": "2025-01-21T16:31:06.484435",
-        "last_access": "2025-01-21T16:31:29.821620",
-        "access_history": [
-          {
-            "timestamp": "2025-01-21T16:31:29.821620",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.49
-    },
-    {
-      "id": "m_1737448301360_4072",
-      "content": "Frank先生，我想你记错了，当时的情况和民主党党首有关，你暗中支持他竞选众议长的职位，并以这个职位会被取代为筹码，要求现任众议长支持你的法案，能说说你具体是怎么做的吗",
-      "type": "dialogue",
-      "timestamp": "2025-01-21T16:31:41.360690",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-21T16:31:41.360690",
-        "last_access": "2025-01-21T16:31:41.360690",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1737448359239_5154",
-      "content": "你似乎忽略了黑人团体和彼得罗素的角色",
-      "type": "dialogue",
-      "timestamp": "2025-01-21T16:32:39.239467",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-21T16:32:39.239467",
-        "last_access": "2025-01-21T16:32:39.239467",
-        "access_history": []
-      },
-      "priority_score": 0.0
-    },
-    {
-      "id": "m_1737449276572_6184",
-      "content": "圣诞快乐！",
-      "type": "dialogue",
-      "timestamp": "2025-01-21T16:47:56.572167",
-      "access_stats": {
-        "count": 2,
-        "first_access": "2025-01-21T16:47:56.572167",
-        "last_access": "2025-01-21T16:50:00.365812",
-        "access_history": [
-          {
-            "timestamp": "2025-01-21T16:49:29.156503",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-21T16:50:00.365812",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.52
-    },
-    {
-      "id": "m_1737449316835_2776",
-      "content": "我想想你许愿，希望明年可以收到像戴森空气净化器或者5090这样的圣诞礼物",
-      "type": "dialogue",
-      "timestamp": "2025-01-21T16:48:36.835659",
-      "access_stats": {
-        "count": 2,
-        "first_access": "2025-01-21T16:48:36.835659",
-        "last_access": "2025-01-21T16:50:00.371912",
-        "access_history": [
-          {
-            "timestamp": "2025-01-21T16:49:29.156503",
-            "type": "read"
-          },
-          {
-            "timestamp": "2025-01-21T16:50:00.371912",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.52
-    },
-    {
-      "id": "m_1737449379256_2475",
-      "content": "没错！我也认为圣诞节最开心的就是可以和家人朋友一起共度圣诞，布置圣诞装饰，交换礼物，一起看电影、喝热红酒",
-      "type": "dialogue",
-      "timestamp": "2025-01-21T16:49:39.256655",
-      "access_stats": {
-        "count": 1,
-        "first_access": "2025-01-21T16:49:39.256655",
-        "last_access": "2025-01-21T16:50:00.363777",
-        "access_history": [
-          {
-            "timestamp": "2025-01-21T16:50:00.363777",
-            "type": "read"
-          }
-        ]
-      },
-      "priority_score": 0.49
-    },
-    {
-      "id": "m_1737449406723_4242",
-      "content": "圣诞老人谢谢你，和你聊天让我感觉非常开心",
-      "type": "dialogue",
-      "timestamp": "2025-01-21T16:50:06.723968",
-      "access_stats": {
-        "count": 0,
-        "first_access": "2025-01-21T16:50:06.723968",
-        "last_access": "2025-01-21T16:50:06.726988",
+        "first_access": "2025-01-30T14:21:48.516942",
+        "last_access": "2025-01-30T14:21:48.516942",
         "access_history": []
       },
       "priority_score": 0.0

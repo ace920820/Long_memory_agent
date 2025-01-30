@@ -3,177 +3,503 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>圣诞主题对话系统</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>智能对话系统</title>
     <style>
-        .gradient-bg {
-            background: linear-gradient(90deg, rgba(227,32,36,0.8) 0%, rgba(0,123,0,0.8) 100%);
+        :root {
+            --primary: #007AFF;
+            --background: #F5F5F7;
+            --card-bg: rgba(255,255,255,0.8);
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --border-color: #E5E5EA;
+            --success: #34C759;
+            --warning: #FF9500;
+            --error: #FF3B30;
+            --system-blur: blur(20px);
         }
-        .christmas-header {
-            background: linear-gradient(to right, #ff0000, #00ff00);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text-primary);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 280px;
+            background: var(--card-bg);
+            backdrop-filter: var(--system-blur);
+            -webkit-backdrop-filter: var(--system-blur);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .search-bar {
+            background: rgba(255,255,255,0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 8px 12px;
+            margin: 8px 0;
+            width: 100%;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            background: white;
+            border-color: var(--primary);
+        }
+
+        .role-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+        }
+
+        .role-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin: 4px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .role-item:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .role-item.active {
+            background: var(--primary);
             color: white;
         }
-        .snowflake {
-            position: absolute;
-            width: 0.5em;
-            height: 0.5em;
-            background: white;
-            opacity: 0.8;
+
+        .role-item img {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            animation: snowfall 10s linear infinite;
+            margin-right: 12px;
+            object-fit: cover;
         }
-        @keyframes snowfall {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(100vh); }
+
+        /* 主内容区域 */
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
         }
-        .chat-container {
-            height: calc(100vh - 8rem);
+
+        .main-header {
+            padding: 16px 24px;
+            background: var(--card-bg);
+            backdrop-filter: var(--system-blur);
+            -webkit-backdrop-filter: var(--system-blur);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
         }
-        .message-bubble {
-            max-width: 80%;
-            word-wrap: break-word;
+
+        .header-title {
+            font-size: 20px;
+            font-weight: 600;
         }
-        .decoration-image {
-            max-height: 100px;
-            width: auto;
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .header-actions a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .header-actions a:hover {
+            background: rgba(0,122,255,0.1);
+        }
+
+        /* 消息列表 */
+        .messages-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-radius: 18px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .message[role="assistant"] {
+            background: var(--card-bg);
+            margin-right: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .message[role="user"] {
+            background: var(--primary);
+            color: white;
+            margin-left: auto;
+        }
+
+        .message .reactions {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            background: var(--card-bg);
+            padding: 6px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 1;
+            gap: 8px;
+        }
+
+        .message:hover .reactions {
+            display: flex;
+        }
+
+        .reaction {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .reaction:hover {
+            transform: scale(1.2);
+        }
+
+        /* 输入区域 */
+        .input-area {
+            padding: 16px 24px;
+            background: var(--card-bg);
+            backdrop-filter: var(--system-blur);
+            -webkit-backdrop-filter: var(--system-blur);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        #user_input {
+            flex: 1;
+            border: none;
+            padding: 12px;
+            font-size: 15px;
+            background: transparent;
+        }
+
+        #user_input:focus {
+            outline: none;
+        }
+
+        .send-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .send-button:hover {
+            background: #0051D5;
+        }
+
+        /* 设置弹窗 */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: var(--system-blur);
+            -webkit-backdrop-filter: var(--system-blur);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .modal.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            width: 90%;
+            max-width: 400px;
+            transform: scale(0.9);
+            transition: transform 0.3s;
+        }
+
+        .modal.visible .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                transform: translateX(-100%);
+                z-index: 100;
+            }
+
+            .sidebar.visible {
+                transform: translateX(0);
+            }
+
+            .message {
+                max-width: 85%;
+            }
+        }
+
+        /* 工具提示 */
+        .tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .tooltip.visible {
+            opacity: 1;
         }
     </style>
 </head>
-<body class="flex flex-col h-screen bg-green-100 relative">
-    <div class="absolute top-4 left-4 text-xl cursor-pointer" title="帮助">❓</div>
-    <div class="absolute top-4 right-4 text-xl cursor-pointer" onclick="openSettingsModal()" title="设置">⚙️</div>
-
-    <div class="flex justify-center items-center christmas-header py-4 shadow-lg">
-        <h1 class="text-2xl font-bold">🎄 圣诞快乐！！ 🎁</h1>
-    </div>
-
-    <div class="mb-4 p-4 bg-white rounded-lg shadow">
-        <h3 class="text-lg font-semibold mb-2">选择对话角色</h3>
-        <div class="flex flex-wrap gap-2" id="roleSelector">
+<body>
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <input type="text" class="search-bar" placeholder="搜索角色..." onkeyup="filterRoles(this.value)">
         </div>
-    </div>
+        <div class="role-list" id="roleSelector">
+            <!-- 角色列表将通过 JavaScript 动态生成 -->
+        </div>
+    </aside>
 
-    <div class="flex-grow flex flex-col overflow-hidden">
-        <div id="messages" class="flex-grow overflow-y-auto p-6 space-y-4 bg-white shadow-lg rounded-lg mx-4 mt-4">
-            <!-- 消息会动态加载到这里 -->
+    <!-- 主内容区域 -->
+    <main class="main-container">
+        <header class="main-header">
+            <h1 class="header-title">智能对话系统</h1>
+            <div class="header-actions">
+                <a href="/memory-manager">记忆管理</a>
+                <a href="/knowledge-base">知识库管理</a>
+                <a href="#" onclick="openSettingsModal()">设置</a>
+            </div>
+        </header>
+
+        <div class="messages-container" id="messages">
+            <!-- 消息内容将通过 JavaScript 动态添加 -->
         </div>
 
-        <div class="flex justify-center py-2">
-            <img src="https://picx.zhimg.com/v2-0073a8a49b65ac0e83bf20db4cf4ba53_720w.jpg?source=172ae18b" alt="圣诞装饰" class="rounded-full shadow-lg decoration-image">
+        <div class="input-area">
+            <div class="input-container">
+                <input type="text" id="user_input" placeholder="输入消息..." onkeydown="checkEnter(event)">
+                <button class="send-button" onclick="sendMessage()">发送</button>
+            </div>
         </div>
-
-        <div id="status" class="text-center text-sm text-gray-500 my-1"></div>
-
-        <div class="flex items-center p-4 bg-white border-t border-gray-300 gradient-bg">
-            <img src="/static/images/Christmas_reindeer_avatar_80x80.png" alt="助手头像" class="w-10 h-10 rounded-full mr-4 shadow-lg assistant-avatar input-avatar" id="currentAvatar">
-            <input id="user_input" type="text" placeholder="请输入内容" onkeydown="checkEnter(event)" class="flex-grow px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-500">
-            <button onclick="sendMessage()" class="ml-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 shadow-md focus:outline-none">发送</button>
-        </div>
-    </div>
-
-    <footer class="bg-green-200 py-1 text-center text-sm text-red-600">
-        2024 圣诞对话系统 - All rights reserved.
-    </footer>
+    </main>
 
     <!-- 设置弹窗 -->
-    <div id="settingsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white p-6 rounded-lg shadow-xl">
-            <h2 class="text-xl font-bold mb-4 text-red-600">选择角色</h2>
-            <div class="space-y-4">
-                <div class="flex items-center space-x-4">
-                    <button onclick="setRole('santa')" class="flex items-center p-3 border rounded-lg hover:bg-red-100">
-                        圣诞老人
-                    </button>
-                    <button onclick="setRole('reindeer')" class="flex items-center p-3 border rounded-lg hover:bg-green-100">
-                        驯鹿
-                    </button>
-                </div>
-                <button onclick="closeSettingsModal()" class="w-full mt-4 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">
-                    关闭
-                </button>
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">设置</h2>
+                <span class="modal-close" onclick="closeSettingsModal()">✕</span>
+            </div>
+            <div class="settings-content">
+                <!-- 设置选项将通过 JavaScript 动态添加 -->
             </div>
         </div>
     </div>
 
-    <!-- Falling Snowflakes -->
-    <div class="snowflake" style="top: 0; left: 10%; animation-delay: 0s;"></div>
-    <div class="snowflake" style="top: 0; left: 30%; animation-delay: 2s;"></div>
-    <div class="snowflake" style="top: 0; left: 50%; animation-delay: 4s;"></div>
-    <div class="snowflake" style="top: 0; left: 70%; animation-delay: 6s;"></div>
-    <div class="snowflake" style="top: 0; left: 90%; animation-delay: 8s;"></div>
-
-    <div class="management-buttons" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 10px;">
-        <a href="/memory-manager" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 flex items-center shadow-lg">
-            <span class="mdi mdi-brain mr-2"></span>
-            记忆管理
-        </a>
-
-        <a href="/knowledge-base" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center shadow-lg">
-            <span class="mdi mdi-database mr-2"></span>
-            知识库管理
-        </a>
-    </div>
-
     <script>
+        // 全局状态管理
+        const state = {
+            currentRole: null,
+            roles: {},
+            isTyping: false
+        };
+
+        // 消息处理函数
         function addMessage(content, type) {
             const messagesDiv = document.getElementById('messages');
             const messageDiv = document.createElement('div');
-            messageDiv.className = `flex ${type === 'user' ? 'justify-end' : 'justify-start'}`;
+            messageDiv.className = 'message';
+            messageDiv.setAttribute('role', type);
 
-            const bubble = document.createElement('div');
-            bubble.className = `message-bubble p-3 rounded-lg ${
-                type === 'user' ? 'bg-red-100' : 'bg-green-100'
-            } shadow-sm flex items-start space-x-2`;
-
-            if (type === 'assistant') {
-                const avatar = document.createElement('img');
-                avatar.src = document.querySelector('.input-avatar').src;
-                avatar.alt = "助手头像";
-                avatar.className = "w-6 h-6 rounded-full assistant-avatar";
-                bubble.appendChild(avatar);
-            }
-
-            const messageText = document.createElement('span');
-            messageText.className = "text-gray-800";
-
+            // 创建消息内容
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            
             // 处理不同的响应格式
-            let messageContent = '';
+            let text = '';
             if (typeof content === 'string') {
-                messageContent = content;
+                text = content;
             } else if (content && typeof content === 'object') {
-                if (content.error) {
-                    messageContent = content.error;
-                } else if (content.response) {
-                    messageContent = content.response;
-                } else {
-                    messageContent = '无法解析的响应格式';
-                }
+                text = content.error || content.response || '无法解析的响应格式';
             } else {
-                messageContent = '无效的响应';
+                text = '无效的响应';
             }
 
-            messageText.textContent = messageContent;
-            bubble.appendChild(messageText);
-            messageDiv.appendChild(bubble);
+            messageContent.textContent = text;
+            messageDiv.appendChild(messageContent);
+
+            // 添加反应按钮
+            const reactions = document.createElement('div');
+            reactions.className = 'reactions';
+            const reactionEmojis = ['👍', '❤️', '😊', '👏'];
+            reactionEmojis.forEach(emoji => {
+                const reaction = document.createElement('span');
+                reaction.className = 'reaction';
+                reaction.textContent = emoji;
+                reaction.onclick = (e) => {
+                    e.stopPropagation();
+                    addReaction(messageDiv, emoji);
+                };
+                reactions.appendChild(reaction);
+            });
+            messageDiv.appendChild(reactions);
+
+            // 添加时间戳
+            const timestamp = document.createElement('div');
+            timestamp.className = 'message-timestamp';
+            timestamp.textContent = new Date().toLocaleTimeString();
+            messageDiv.appendChild(timestamp);
+
             messagesDiv.appendChild(messageDiv);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // 添加打字机效果
+            if (type === 'assistant') {
+                typewriterEffect(messageContent, text);
+            }
         }
 
+        // 打字机效果
+        function typewriterEffect(element, text) {
+            element.textContent = '';
+            let i = 0;
+            state.isTyping = true;
+
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 30);
+                } else {
+                    state.isTyping = false;
+                }
+            }
+            type();
+        }
+
+        // 添加反应
+        function addReaction(messageDiv, emoji) {
+            let reactionCounter = messageDiv.querySelector(`.reaction-counter[data-emoji="${emoji}"]`);
+            if (!reactionCounter) {
+                reactionCounter = document.createElement('span');
+                reactionCounter.className = 'reaction-counter';
+                reactionCounter.setAttribute('data-emoji', emoji);
+                reactionCounter.textContent = `${emoji} 1`;
+                messageDiv.appendChild(reactionCounter);
+            } else {
+                const count = parseInt(reactionCounter.textContent.split(' ')[1]) + 1;
+                reactionCounter.textContent = `${emoji} ${count}`;
+            }
+        }
+
+        // 发送消息
         async function sendMessage() {
-            const userInput = document.getElementById('user_input').value;
-            if (!userInput.trim()) return;
+            const userInput = document.getElementById('user_input');
+            const text = userInput.value.trim();
+            if (!text || state.isTyping) return;
 
-            addMessage(userInput, 'user');
-            document.getElementById('user_input').value = '';
+            // 清空输入框并禁用
+            userInput.value = '';
+            userInput.disabled = true;
 
-            const statusDiv = document.getElementById('status');
-            statusDiv.textContent = '正在输入...';
+            // 添加用户消息
+            addMessage(text, 'user');
 
             try {
                 const response = await fetch('/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ user_input: userInput })
+                    body: JSON.stringify({ user_input: text })
                 });
 
                 if (!response.ok) {
@@ -181,300 +507,192 @@
                 }
 
                 const result = await response.json();
-
-                // 添加调试日志
-                console.log('Received response:', result);
-
-                // 显示消息
+                
+                // 添加助手消息
                 if (result.error) {
                     addMessage({ error: result.error }, 'assistant');
                 } else {
                     addMessage({ response: result.response }, 'assistant');
                 }
 
-                // 显示记忆更新状态
-                if (result.memory_status && result.memory_status.success) {
-                    const memoryNote = document.createElement('div');
-                    memoryNote.className = 'text-xs text-gray-500 mt-1 italic text-center';
-                    memoryNote.textContent = `${result.memory_status.message}: ${result.memory_status.content.split('\n')[0]}`;
-                    document.getElementById('messages').appendChild(memoryNote);
+                // 处理记忆状态
+                if (result.memory_status?.success) {
+                    showMemoryStatus(result.memory_status);
                 }
             } catch (error) {
                 console.error('Error:', error);
-                addMessage('网络异常，请稍后重试。', 'assistant');
+                addMessage({ error: '发送消息时出错，请稍后重试' }, 'assistant');
             } finally {
-                statusDiv.textContent = '';
+                // 重新启用输入框
+                userInput.disabled = false;
+                userInput.focus();
             }
         }
 
-        function checkEnter(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
+        // 显示记忆状态
+        function showMemoryStatus(status) {
+            const memoryNote = document.createElement('div');
+            memoryNote.className = 'memory-status';
+            memoryNote.textContent = `${status.message}: ${status.content.split('\n')[0]}`;
+            
+            const messagesDiv = document.getElementById('messages');
+            messagesDiv.appendChild(memoryNote);
+            
+            // 3秒后淡出
+            setTimeout(() => {
+                memoryNote.style.opacity = '0';
+                setTimeout(() => memoryNote.remove(), 500);
+            }, 3000);
         }
 
-        function openSettingsModal() {
-            document.getElementById('settingsModal').classList.remove('hidden');
-        }
-
-        function closeSettingsModal() {
-            document.getElementById('settingsModal').classList.add('hidden');
-        }
-
-        async function setRole(role) {
-            const statusDiv = document.getElementById('status');
-            statusDiv.textContent = '正在设置角色...';
-
-            try {
-                const response = await fetch('/set_role', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        user_id: 'default_user',
-                        role: role
-                    })
-                });
-
-                const result = await response.json();
-
-                if (response.ok && result.success) {
-                    // 使用getRoleName函数获取正确的角色名称
-                    const roleName = getRoleName(role);
-                    updateAvatar(role);
-                    addMessage(`角色已切换为: ${roleName}`, 'assistant');
-                    closeSettingsModal();
-                } else {
-                    const errorMessage = result.error || '角色设置失败';
-                    addMessage(`设置失败: ${errorMessage}`, 'assistant');
-                    console.error('Role setting failed:', result);
-                }
-            } catch (error) {
-                console.error('Error setting role:', error);
-                addMessage('设置角色时发生错误，请稍后重试。', 'assistant');
-            } finally {
-                statusDiv.textContent = '';
-            }
-        }
-
-        function updateAvatar(role) {
-            const avatarImages = document.querySelectorAll('.assistant-avatar');
-            const newSrc = role === 'santa'
-                ? "https://picx.zhimg.com/v2-0073a8a49b65ac0e83bf20db4cf4ba53_720w.jpg?source=172ae18b"
-                : "/static/images/Christmas_reindeer_avatar_80x80.png";
-
-            avatarImages.forEach(img => {
-                img.src = newSrc;
+        // 角色管理
+        function filterRoles(query) {
+            const roles = document.querySelectorAll('.role-item');
+            const normalizedQuery = query.toLowerCase();
+            
+            roles.forEach(role => {
+                const text = role.textContent.toLowerCase();
+                const shouldShow = text.includes(normalizedQuery);
+                role.style.display = shouldShow ? 'flex' : 'none';
             });
         }
 
-        function openMemoryManager() {
-            // 在新窗口打开记忆管理页面
-            window.open('/memory-manager', '_blank', 'width=800,height=600');
-        }
-
-        // 角色配置
-        const roleConfig = {
-            reindeer: {
-                name: '驯鹿',
-                avatar: '/static/images/Christmas_reindeer_avatar_80x80.png'
-            },
-            santa: {
-                name: '圣诞老人',
-                avatar: '/static/images/santa_avatar.png'
-            },
-            elf: {
-                name: '圣诞精灵',
-                avatar: '/static/images/elf_avatar.png'
-            },
-            assistant: {
-                name: '个人助理',
-                avatar: '/static/images/assistant_avatar.png'
-            }
-        };
-
-        // 角色切换功能
-        const roleButtons = document.querySelectorAll('.role-btn');
-        let currentRole = 'reindeer';
-
-        roleButtons.forEach(button => {
-            button.addEventListener('click', async () => {
-                const role = button.dataset.role;
-
-                try {
-                    const response = await fetch('/set_role', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            user_id: 'default_user',
-                            role: role
-                        })
-                    });
-
-                    const result = await response.json();
-
-                    if (response.ok && result.success) {
-                        // 更新按钮状态
-                        roleButtons.forEach(btn => {
-                            btn.classList.remove('bg-blue-100', 'text-blue-800', 'active');
-                            btn.classList.add('bg-gray-100', 'text-gray-800');
-                        });
-                        button.classList.remove('bg-gray-100', 'text-gray-800');
-                        button.classList.add('bg-blue-100', 'text-blue-800', 'active');
-
-                        // 更新当前角色
-                        currentRole = role;
-
-                        // 更新头像（如果有的话）
-                        if (roleConfig[role]) {
-                            updateAssistantAvatar(role);
-                        }
-
-                        // 添加系统消息提示角色切换
-                        appendMessage('系统', result.message, 'system');
-                    } else {
-                        console.error('Failed to set role:', result.error);
-                        appendMessage('系统', '切换角色失败，请重试', 'error');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    appendMessage('系统', '切换角色时发生错误', 'error');
-                }
-            });
-        });
-
-        // 获取角色的中文名称
-        function getRoleName(role) {
-            return window.roleDescriptions?.[role]?.name || role;
-        }
-
-        // 获取角色的中文名称和头像
-        function getRoleInfo(role) {
-            const info = window.roleDescriptions?.[role] || {};
-            return {
-                name: info.name || role,
-                avatar: info.avatar || ''
-            };
-        }
-
-        // 更新当前角色头像
-        function updateAvatar(role) {
-            const roleInfo = getRoleInfo(role);
-            const currentAvatar = document.getElementById('currentAvatar');
-            if (currentAvatar && roleInfo.avatar) {
-                currentAvatar.src = roleInfo.avatar;
-                currentAvatar.alt = roleInfo.name;
-            }
-        }
-
-        // 动态生成角色按钮
         async function generateRoleButtons() {
+            const roleSelector = document.getElementById('roleSelector');
+            roleSelector.innerHTML = '';
+
             try {
                 const response = await fetch('/get_available_roles');
                 const result = await response.json();
                 
-                if (response.ok && result.success) {
-                    const roleSelector = document.getElementById('roleSelector');
-                    roleSelector.innerHTML = ''; // 清空现有按钮
-                    window.roleDescriptions = result.roles; // 保存角色描述信息供后续使用
+                if (!response.ok) throw new Error('Failed to fetch roles');
+                
+                state.roles = result.roles;
+                
+                Object.entries(result.roles).forEach(([roleId, roleInfo]) => {
+                    const roleDiv = document.createElement('div');
+                    roleDiv.className = 'role-item';
+                    roleDiv.dataset.roleId = roleId;
                     
-                    Object.entries(result.roles).forEach(([role, info]) => {
-                        const button = document.createElement('button');
-                        button.className = `role-btn px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200
-                                          bg-gray-100 text-gray-800 hover:bg-gray-200`;
-                        button.dataset.role = role;
-                        button.textContent = info.name;
-                        if (info.description) {
-                            button.title = info.description;
-                        }
-                        roleSelector.appendChild(button);
-                    });
+                    const avatar = document.createElement('img');
+                    avatar.src = roleInfo.avatar || '/static/images/default_avatar.png';
+                    avatar.alt = roleInfo.name;
                     
-                    // 为新生成的按钮添加点击事件
-                    document.querySelectorAll('.role-btn').forEach(btn => {
-                        btn.addEventListener('click', () => {
-                            const role = btn.dataset.role;
-                            document.querySelectorAll('.role-btn').forEach(b => {
-                                if (b === btn) {
-                                    b.classList.add('bg-blue-100', 'text-blue-800');
-                                    b.classList.remove('bg-gray-100', 'text-gray-800');
-                                } else {
-                                    b.classList.remove('bg-blue-100', 'text-blue-800');
-                                    b.classList.add('bg-gray-100', 'text-gray-800');
-                                }
-                            });
-                            setRole(role);
-                        });
-                    });
-                }
+                    const name = document.createElement('span');
+                    name.textContent = roleInfo.name;
+                    
+                    roleDiv.appendChild(avatar);
+                    roleDiv.appendChild(name);
+                    
+                    roleDiv.onclick = () => setRole(roleId);
+                    roleSelector.appendChild(roleDiv);
+                });
             } catch (error) {
-                console.error('Error generating role buttons:', error);
+                console.error('Error loading roles:', error);
+                showError('加载角色列表失败');
             }
         }
 
-        // 在页面加载完成后获取角色信息并生成按钮
+        async function setRole(roleId) {
+            try {
+                const response = await fetch('/set_role', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        role: roleId,  
+                        user_id: 'default_user'  
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    state.currentRole = roleId;
+                    updateActiveRole(roleId);
+                    const roleName = state.roles[roleId]?.name || roleId;
+                    addMessage({ response: `已切换到${roleName}角色` }, 'assistant');
+                    closeSettingsModal();
+                } else {
+                    throw new Error(result.error || '设置角色失败');
+                }
+            } catch (error) {
+                console.error('Error setting role:', error);
+                showError('设置角色失败');
+            }
+        }
+
+        function updateActiveRole(roleId) {
+            document.querySelectorAll('.role-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.roleId === roleId);
+            });
+        }
+
+        // 错误提示
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            document.body.appendChild(errorDiv);
+            
+            setTimeout(() => {
+                errorDiv.style.opacity = '0';
+                setTimeout(() => errorDiv.remove(), 500);
+            }, 3000);
+        }
+
+        // 键盘事件处理
+        function checkEnter(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        // 模态框管理
+        function openSettingsModal() {
+            const modal = document.getElementById('settingsModal');
+            modal.classList.add('visible');
+            
+            // 阻止冒泡
+            modal.onclick = (e) => {
+                if (e.target === modal) {
+                    closeSettingsModal();
+                }
+            };
+        }
+
+        function closeSettingsModal() {
+            document.getElementById('settingsModal').classList.remove('visible');
+        }
+
+        // 移动端适配
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('visible');
+        }
+
+        // 初始化
         document.addEventListener('DOMContentLoaded', async () => {
-            await generateRoleButtons();  // 先生成按钮
-            await getDefaultRole();       // 然后设置默认角色
+            await generateRoleButtons();
+            const userInput = document.getElementById('user_input');
+            userInput.focus();
+
+            // 添加移动端菜单按钮
+            if (window.innerWidth <= 768) {
+                const menuButton = document.createElement('button');
+                menuButton.className = 'menu-button';
+                menuButton.innerHTML = '☰';
+                menuButton.onclick = toggleSidebar;
+                document.querySelector('.main-header').prepend(menuButton);
+            }
         });
 
-        async function getDefaultRole() {
-            try {
-                const response = await fetch('/get_default_role');
-                const result = await response.json();
-                if (response.ok && result.default_role) {
-                    setRole(result.default_role);
-                    // 更新按钮状态
-                    document.querySelectorAll('.role-btn').forEach(btn => {
-                        if (btn.dataset.role === result.default_role) {
-                            btn.classList.add('bg-blue-100', 'text-blue-800');
-                            btn.classList.remove('bg-gray-100', 'text-gray-800');
-                        } else {
-                            btn.classList.remove('bg-blue-100', 'text-blue-800');
-                            btn.classList.add('bg-gray-100', 'text-gray-800');
-                        }
-                    });
-                }
-            } catch (error) {
-                console.error('Error getting default role:', error);
+        // 全局键盘事件
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSettingsModal();
             }
-        }
-
-        // 添加消息到聊天界面的辅助函数
-        function appendMessage(sender, message, type = 'chat') {
-            const chatBox = document.getElementById('messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `mb-4 ${type === 'system' ? 'text-center text-gray-500' : ''}`;
-            
-            if (type === 'chat') {
-                const isUser = sender === 'user';
-                const currentRole = document.querySelector('.role-btn.active')?.dataset.role;
-                const roleInfo = getRoleInfo(currentRole);
-                
-                // 为每个消息保存发送时的角色信息
-                const messageRoleInfo = isUser ? null : {
-                    role: currentRole,
-                    avatar: roleInfo.avatar,
-                    name: roleInfo.name
-                };
-                
-                messageDiv.innerHTML = `
-                    <div class="flex ${isUser ? 'justify-end' : 'justify-start'}">
-                        ${!isUser ? `<img src="${messageRoleInfo.avatar}" alt="${messageRoleInfo.name}" class="w-8 h-8 rounded-full mr-2">` : ''}
-                        <div class="${isUser ? 'bg-blue-500 text-white' : 'bg-gray-200'} rounded-lg px-4 py-2 max-w-[70%]">
-                            ${message}
-                        </div>
-                        ${isUser ? '<img src="/static/images/user_avatar.png" alt="User" class="w-8 h-8 rounded-full ml-2">' : ''}
-                    </div>
-                `;
-            } else {
-                messageDiv.textContent = message;
-            }
-            
-            chatBox.appendChild(messageDiv);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
+        });
     </script>
 </body>
 </html>
