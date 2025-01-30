@@ -1,7 +1,7 @@
 import json
 import logging
 from datetime import datetime, timedelta
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Set, Tuple
 from transformers import AutoModel, AutoTokenizer, AutoModelForSequenceClassification
 import faiss
 import numpy as np
@@ -11,6 +11,9 @@ import re
 import math
 import time
 import random
+from .cluster_manager import ClusterManager
+from .metadata_manager import MetadataManager
+from .memory_summarizer import MemorySummarizer
 
 class MemoryManager:
     def __init__(self, model_name: str = "bge-small-zh-v1.5", 
@@ -51,9 +54,22 @@ class MemoryManager:
         
         self.indices = {}  # 用户ID到索引的映射
         
+        # 初始化动态记忆聚类组件
+        self.cluster_manager = ClusterManager(
+            min_cluster_size=3,
+            similarity_threshold=0.75,
+            vector_dim=self.dimension
+        )
+        self.metadata_manager = MetadataManager()
+        self.memory_summarizer = MemorySummarizer(self.metadata_manager)
+        
+        # 存储每个用户的记忆簇映射
+        self.user_clusters: Dict[str, Dict[int, List[str]]] = {}  # user_id -> {cluster_id -> [memory_ids]}
+        
         # 为每个用户创建索引
         for user_id, memories in self.memories.items():
             self.create_user_index(user_id)
+            self._initialize_user_clusters(user_id)  # 初始化用户的记忆簇
         
         # 确保记忆文件存在
         if not os.path.exists(memory_file):
@@ -116,13 +132,13 @@ class MemoryManager:
             # 确保目录存在
             os.makedirs(os.path.dirname(self.memory_file), exist_ok=True)
             
-            # 保存包含访问统计的完整记忆数据
+            # 保存包含访问统计和簇信息的完整记忆数据
             simplified_memories = {}
             for user_id, memories in self.memories.items():
                 simplified_memories[user_id] = []
                 for memory in memories:
                     simplified_memory = {
-                        'id': memory.get('id', self._generate_memory_id()),  # 保存ID,如果没有则生成新的
+                        'id': memory.get('id', self._generate_memory_id()),
                         'content': memory['content'],
                         'type': memory.get('type', 'general'),
                         'timestamp': memory.get('timestamp', datetime.now().isoformat()),
@@ -136,7 +152,15 @@ class MemoryManager:
                             ),
                             'access_history': memory.get('access_stats', {}).get('access_history', [])
                         },
-                        'priority_score': memory.get('priority_score', 0.0)
+                        'priority_score': memory.get('priority_score', 0.0),
+                        # 添加簇信息
+                        'cluster_info': {
+                            'cluster_id': next(
+                                (cluster_id for cluster_id, memory_ids in self.user_clusters.get(user_id, {}).items() 
+                                if memory.get('id') in memory_ids),
+                                -1  # 如果没有找到簇，返回-1
+                            )
+                        }
                     }
                     simplified_memories[user_id].append(simplified_memory)
             
@@ -185,6 +209,7 @@ class MemoryManager:
             if user_id not in self.memories:
                 self.memories[user_id] = []
                 self.indices[user_id] = faiss.IndexFlatIP(self.dimension)
+                self.user_clusters[user_id] = {}
 
             # 如果内容包含对话格式，只保留用户的输入部分
             if "用户说:" in content and "助手回答:" in content:
@@ -222,8 +247,9 @@ class MemoryManager:
                     }
 
             # 创建新记忆
+            memory_id = self._generate_memory_id()
             new_memory = {
-                'id': self._generate_memory_id(),  # 添加唯一ID
+                'id': memory_id,
                 'content': content,
                 'type': memory_type,
                 'timestamp': datetime.now().isoformat(),
@@ -242,6 +268,10 @@ class MemoryManager:
             try:
                 vector = self.encode([content]).astype('float32')
                 self.indices[user_id].add(vector)
+                
+                # 更新记忆簇
+                self._update_memory_clusters(user_id, memory_id, vector[0])
+                
             except Exception as e:
                 logging.error(f"Error updating index: {str(e)}")
                 # 回滚记忆添加
@@ -249,75 +279,84 @@ class MemoryManager:
                 raise
 
             # 保存到文件
-            try:
-                self.save_memories()
-            except Exception as e:
-                logging.error(f"Error saving memories: {str(e)}")
-                # 回滚所有更改
-                self.memories[user_id].pop()
-                if user_id in self.indices:
-                    self.create_user_index(user_id)  # 重建索引
-                raise
+            self.save_memories()
 
-            logging.info(f"成功添加新记忆: {content}")
             return {
                 "success": True,
-                "content": content,
-                "type": memory_type,
-                "message": "记忆已添加"
+                "message": "成功添加新记忆",
+                "memory_id": memory_id
             }
 
         except Exception as e:
-            logging.error(f"Error in add_memory: {str(e)}")
+            logging.error(f"Error adding memory: {str(e)}")
             return {
                 "success": False,
-                "error": str(e),
-                "message": "记忆添加失败"
+                "message": f"添加记忆失败: {str(e)}"
             }
 
     def retrieve_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
-        """检索相关记忆"""
-        try:
-            if user_id not in self.indices or user_id not in self.memories:
-                return []
+        """检索相关记忆
+        
+        Args:
+            user_id: 用户ID
+            query: 查询文本
+            top_k: 返回的记忆数量
+            
+        Returns:
+            List[Dict]: 相关记忆列表
+        """
+        if user_id not in self.memories or not self.memories[user_id]:
+            return []
 
+        try:
             # 编码查询文本
-            query_vector = self.encode([query])[0]
+            query_vector = self.encode([query]).astype('float32')
             
-            # 使用FAISS进行向量检索
-            similarities, indices = self.indices[user_id].search(
-                query_vector.reshape(1, -1).astype('float32'), 
-                min(top_k * 2, len(self.memories[user_id]))  # 检索更多候选项用于重排序
-            )
+            # 使用FAISS搜索相似向量
+            D, I = self.indices[user_id].search(query_vector, min(top_k * 2, len(self.memories[user_id])))
+            candidates = []
             
-            # 获取检索到的记忆
-            retrieved_memories = []
-            for sim, idx in zip(similarities[0], indices[0]):
-                if idx < len(self.memories[user_id]):
+            # 获取候选记忆并更新访问统计
+            for i, idx in enumerate(I[0]):
+                if idx < len(self.memories[user_id]) and D[0][i] >= self.similarity_threshold:
                     memory = self.memories[user_id][idx].copy()
-                    memory['similarity'] = float(sim)  # 添加相似度分数
-                    if sim >= self.similarity_threshold:
-                        retrieved_memories.append(memory)
+                    memory['similarity'] = float(D[0][i])  # 添加相似度分数
+                    
+                    # 更新记忆访问统计
+                    try:
+                        self.update_memory_access(user_id, memory['id'], 'read')
+                    except Exception as e:
+                        logging.warning(f"Error updating memory access stats: {str(e)}")
+                    
+                    candidates.append(memory)
+
+            # 获取相关簇的摘要
+            cluster_summary = self.get_cluster_summary(user_id, query)
             
-            # 使用 rerank 进行重排序
-            reranked_memories = self._rerank_results(query, retrieved_memories)
+            # 使用BGE-Rerank重排序
+            reranked_results = self._rerank_results(query, candidates)
             
-            # 只保留 top_k 个最相关的记忆
-            final_memories = reranked_memories[:top_k]
-            
-            # 更新被检索到的记忆的访问信息
+            # 如果有簇摘要，添加到结果中
+            if cluster_summary:
+                reranked_results.insert(0, {
+                    'id': 'cluster_summary',
+                    'content': f"相关记忆簇摘要：{cluster_summary}",
+                    'type': 'summary',
+                    'timestamp': datetime.now().isoformat(),
+                    'similarity': 1.0,  # 确保摘要始终排在最前面
+                    'priority_score': 1.0,
+                    'final_score': 1.0
+                })
+
+            # 保存更新后的记忆
             try:
-                for memory in final_memories:
-                    # 在原始记忆列表中找到对应的记忆索引
-                    for idx, orig_memory in enumerate(self.memories[user_id]):
-                        if orig_memory['id'] == memory['id']:
-                            self.update_memory_access(user_id, idx, 'read')
-                            break
+                self.save_memories()
             except Exception as e:
-                logging.warning(f"Error updating memory access stats: {str(e)}")
-            
-            return final_memories
-            
+                logging.warning(f"Error saving memories after updating access stats: {str(e)}")
+
+            # 返回top_k个结果
+            return reranked_results[:top_k]
+
         except Exception as e:
             logging.error(f"Error retrieving memories: {str(e)}")
             return []
@@ -795,13 +834,17 @@ class MemoryManager:
             if 'priority_score' not in memory:
                 memory['priority_score'] = self.calculate_priority_score(memory)
             
+            # 确保每个记忆都有相似度分数
+            if 'similarity' not in memory:
+                memory['similarity'] = 0.5  # 设置默认相似度
+            
             # 综合考虑三个因素：
             # 1. 向量相似度 (20%)
             # 2. BGE-Rerank 分数 (50%)
             # 3. 记忆优先级分数 (30%)
             memory['final_score'] = (
-                0.1 * memory['similarity'] +  # 向量相似度
-                0.6 * memory['rerank_score'] +  # 语义相关性
+                0.2 * memory['similarity'] +  # 向量相似度
+                0.5 * memory['rerank_score'] +  # 语义相关性
                 0.3 * memory['priority_score']  # 记忆重要性
             )
             
@@ -975,7 +1018,7 @@ class MemoryManager:
                 memory.pop('last_access', None)
         self.save_memories()
 
-    def update_memory_access(self, user_id: str, memory_id: int, access_type: str = 'read') -> Dict:
+    def update_memory_access(self, user_id: str, memory_id: str, access_type: str = 'read') -> Dict:
         """更新记忆的访问统计信息
         
         Args:
@@ -984,46 +1027,145 @@ class MemoryManager:
             access_type: 访问类型（'read', 'write', 'reference'等）
         """
         try:
-            if user_id not in self.memories:
-                return {"success": False, "error": "User not found"}
-                
-            if 0 <= memory_id < len(self.memories[user_id]):
-                memory = self.memories[user_id][memory_id]
-                current_time = datetime.now().isoformat()
-                
-                # 确保存在访问统计结构
-                if 'access_stats' not in memory:
-                    memory['access_stats'] = {
-                        'count': 0,
-                        'first_access': current_time,
-                        'last_access': current_time,
-                        'access_history': []
-                    }
-                
-                # 更新访问统计
-                memory['access_stats']['count'] += 1
-                memory['access_stats']['last_access'] = current_time
-                
-                # 记录访问历史（保留最近10次）
-                memory['access_stats']['access_history'].append({
-                    'timestamp': current_time,
-                    'type': access_type
-                })
-                memory['access_stats']['access_history'] = \
-                    memory['access_stats']['access_history'][-10:]
-                
-                # 更新优先级分数
-                memory['priority_score'] = self.calculate_priority_score(memory)
-                
-                self.save_memories()
+            # 找到对应的记忆
+            memory_idx = None
+            for idx, memory in enumerate(self.memories[user_id]):
+                if memory['id'] == memory_id:
+                    memory_idx = idx
+                    break
+            
+            if memory_idx is None:
                 return {
-                    "success": True, 
-                    "access_count": memory['access_stats']['count'],
-                    "priority_score": memory['priority_score']
+                    "success": False,
+                    "error": f"Memory {memory_id} not found"
                 }
             
-            return {"success": False, "error": "Memory ID out of range"}
+            # 获取当前时间
+            current_time = datetime.now().isoformat()
+            
+            # 确保访问统计字段存在
+            if 'access_stats' not in self.memories[user_id][memory_idx]:
+                self.memories[user_id][memory_idx]['access_stats'] = {
+                    'count': 0,
+                    'first_access': current_time,
+                    'last_access': current_time,
+                    'access_history': []
+                }
+            
+            # 更新访问统计
+            access_stats = self.memories[user_id][memory_idx]['access_stats']
+            access_stats['count'] += 1
+            access_stats['last_access'] = current_time
+            
+            # 添加访问记录，最多保留最近10次
+            access_stats['access_history'].append({
+                'time': current_time,
+                'type': access_type
+            })
+            if len(access_stats['access_history']) > 10:
+                access_stats['access_history'] = access_stats['access_history'][-10:]
+            
+            # 更新记忆的优先级分数
+            self.memories[user_id][memory_idx]['priority_score'] = self.calculate_priority_score(
+                self.memories[user_id][memory_idx]
+            )
+            
+            return {
+                "success": True,
+                "message": f"Successfully updated access stats for memory {memory_id}"
+            }
             
         except Exception as e:
             logging.error(f"Error updating memory access: {str(e)}")
-            return {"success": False, "error": str(e)} 
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    def _initialize_user_clusters(self, user_id: str) -> None:
+        """初始化用户的记忆簇
+        
+        Args:
+            user_id: 用户ID
+        """
+        if user_id not in self.memories or not self.memories[user_id]:
+            self.user_clusters[user_id] = {}
+            return
+
+        # 获取所有记忆的向量表示
+        memory_texts = [m['content'] for m in self.memories[user_id]]
+        vectors = self.encode(memory_texts)
+
+        # 初始化用户的簇映射
+        self.user_clusters[user_id] = {}
+
+        # 为每个记忆分配簇
+        for i, vector in enumerate(vectors):
+            memory_id = self.memories[user_id][i]['id']
+            cluster_id = self.cluster_manager.add_memory_vector(vector)
+            
+            # 更新用户簇映射
+            if cluster_id not in self.user_clusters[user_id]:
+                self.user_clusters[user_id][cluster_id] = []
+            self.user_clusters[user_id][cluster_id].append(memory_id)
+
+        # 初始化每个簇的元数据和摘要
+        for cluster_id, memory_ids in self.user_clusters[user_id].items():
+            cluster_texts = [
+                m['content'] for m in self.memories[user_id] 
+                if m['id'] in memory_ids
+            ]
+            self.metadata_manager.initialize_metadata(cluster_id, cluster_texts)
+            self.memory_summarizer.update_summary(cluster_id, cluster_texts)
+
+    def _update_memory_clusters(self, user_id: str, memory_id: str, vector: np.ndarray) -> None:
+        """更新记忆的簇分配
+        
+        Args:
+            user_id: 用户ID
+            memory_id: 记忆ID
+            vector: 记忆的向量表示
+        """
+        # 找到记忆所属的簇
+        cluster_id = self.cluster_manager.add_memory_vector(vector)
+        
+        # 更新用户簇映射
+        if user_id not in self.user_clusters:
+            self.user_clusters[user_id] = {}
+        if cluster_id not in self.user_clusters[user_id]:
+            self.user_clusters[user_id][cluster_id] = []
+        self.user_clusters[user_id][cluster_id].append(memory_id)
+
+        # 更新簇的元数据和摘要
+        cluster_texts = [
+            m['content'] for m in self.memories[user_id] 
+            if m['id'] in self.user_clusters[user_id][cluster_id]
+        ]
+        self.metadata_manager.update_metadata(cluster_id, cluster_texts)
+        self.memory_summarizer.update_summary(cluster_id, cluster_texts)
+
+    def get_cluster_summary(self, user_id: str, query: str) -> Optional[str]:
+        """获取与查询最相关的簇的摘要
+        
+        Args:
+            user_id: 用户ID
+            query: 查询文本
+
+        Returns:
+            簇的摘要，如果没有找到相关簇则返回None
+        """
+        if user_id not in self.user_clusters:
+            return None
+
+        # 获取查询的向量表示
+        query_vector = self.encode([query])[0]
+        
+        # 找到最相关的簇
+        cluster_id = self.cluster_manager.find_related_cluster(query_vector)
+        if cluster_id == -1:
+            return None
+
+        # 记录簇的访问
+        self.metadata_manager.record_access(cluster_id)
+        
+        return self.memory_summarizer.get_cluster_summary(cluster_id)

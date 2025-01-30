@@ -252,59 +252,80 @@
                 weekAccess: 0
             };
 
-            const now = new Date();
-            const today = now.toISOString().split('T')[0];
-            const weekAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);
+            try {
+                const now = new Date();
+                const today = now.toISOString().split('T')[0];
+                const weekAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);
 
-            // 统计各类型记忆数量和访问数据
-            memories.forEach(memory => {
-                // 类型统计
-                const type = memory.type || 'general';
-                stats.byType[type] = (stats.byType[type] || 0) + 1;
+                // 统计各类型记忆数量和访问数据
+                memories.forEach(memory => {
+                    if (!memory) {
+                        console.warn('Found null or undefined memory entry');
+                        return;
+                    }
 
-                // 访问统计
-                const accessStats = memory.access_stats || {};
-                const lastAccess = accessStats.last_access ? new Date(accessStats.last_access) : null;
-                
-                if (lastAccess) {
-                    // 今日访问
-                    if (lastAccess.toISOString().split('T')[0] === today) {
-                        stats.todayAccess++;
+                    // 类型统计
+                    const type = memory.type || 'general';
+                    stats.byType[type] = (stats.byType[type] || 0) + 1;
+
+                    // 访问统计
+                    const accessStats = memory.access_stats || {};
+                    if (accessStats.last_access) {
+                        try {
+                            const lastAccess = new Date(accessStats.last_access);
+                            
+                            // 检查日期是否有效
+                            if (!isNaN(lastAccess.getTime())) {
+                                // 今日访问
+                                if (lastAccess.toISOString().split('T')[0] === today) {
+                                    stats.todayAccess++;
+                                }
+                                // 本周访问
+                                if (lastAccess >= weekAgo) {
+                                    stats.weekAccess++;
+                                }
+                            }
+                        } catch (error) {
+                            console.warn('Invalid date format for last_access:', accessStats.last_access);
+                        }
                     }
-                    // 本周访问
-                    if (lastAccess >= weekAgo) {
-                        stats.weekAccess++;
-                    }
+                });
+
+                // 更新总数显示
+                const totalElement = document.getElementById('totalMemories');
+                if (totalElement) {
+                    totalElement.textContent = stats.total;
                 }
-            });
 
-            // 更新总数显示
-            const totalElement = document.getElementById('totalMemories');
-            if (totalElement) {
-                totalElement.textContent = stats.total;
-            }
+                // 更新类型分布
+                const typeStats = document.getElementById('typeStats');
+                if (typeStats) {
+                    typeStats.innerHTML = Object.entries(stats.byType)
+                        .map(([type, count]) => `
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">${type}</span>
+                                <span class="font-semibold">${count}</span>
+                            </div>
+                        `).join('');
+                }
 
-            // 更新类型分布
-            const typeStats = document.getElementById('typeStats');
-            if (typeStats) {
-                typeStats.innerHTML = Object.entries(stats.byType)
-                    .map(([type, count]) => `
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">${type}</span>
-                            <span class="font-semibold">${count}</span>
-                        </div>
-                    `).join('');
-            }
+                // 更新访问统计
+                const todayAccessElement = document.getElementById('todayAccess');
+                if (todayAccessElement) {
+                    todayAccessElement.textContent = stats.todayAccess;
+                }
 
-            // 更新访问统计
-            const todayAccessElement = document.getElementById('todayAccess');
-            if (todayAccessElement) {
-                todayAccessElement.textContent = stats.todayAccess;
-            }
+                const weekAccessElement = document.getElementById('weekAccess');
+                if (weekAccessElement) {
+                    weekAccessElement.textContent = stats.weekAccess;
+                }
 
-            const weekAccessElement = document.getElementById('weekAccess');
-            if (weekAccessElement) {
-                weekAccessElement.textContent = stats.weekAccess;
+                // 更新图表
+                updateMemoryStats(memories);
+                
+            } catch (error) {
+                console.error('Error updating stats:', error);
+                showNotification('更新统计信息时出错: ' + error.message, 'error');
             }
         }
 
@@ -628,62 +649,85 @@
 
         // 显示记忆详情
         function showMemoryDetail(index) {
-            const memory = memories[index];
-            const modal = document.getElementById('memoryDetailModal');
-            const content = document.getElementById('memoryDetailContent');
+            try {
+                const memory = memories[index];
+                if (!memory) {
+                    throw new Error('记忆数据不存在');
+                }
 
-            const accessStats = memory.access_stats || {};
-            const accessHistory = accessStats.access_history || [];
+                const modal = document.getElementById('memoryDetailModal');
+                const content = document.getElementById('memoryDetailContent');
+                if (!modal || !content) {
+                    throw new Error('找不到模态框元素');
+                }
 
-            content.innerHTML = `
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-sm font-medium text-gray-500 mb-2">记忆内容</h4>
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <p class="text-gray-900 whitespace-pre-wrap">${memory.content}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
+                const accessStats = memory.access_stats || {};
+                const accessHistory = accessStats.access_history || [];
+
+                // 格式化日期的辅助函数
+                const formatDate = (dateStr) => {
+                    try {
+                        if (!dateStr) return '无';
+                        const date = new Date(dateStr);
+                        return isNaN(date.getTime()) ? '无效日期' : date.toLocaleString();
+                    } catch (e) {
+                        return '无效日期';
+                    }
+                };
+
+                content.innerHTML = `
+                    <div class="space-y-6">
                         <div>
-                            <h4 class="text-sm font-medium text-gray-500 mb-2">基本信息</h4>
-                            <div class="p-4 bg-gray-50 rounded-lg space-y-2">
-                                <p>ID: ${memory.id || '无'}</p>
-                                <p>类型: ${memory.type}</p>
-                                <p>创建时间: ${new Date(memory.timestamp).toLocaleString()}</p>
-                                <p>优先级分数: ${memory.priority_score || 0}</p>
+                            <h4 class="text-sm font-medium text-gray-500 mb-2">记忆内容</h4>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <p class="text-gray-900 whitespace-pre-wrap">${memory.content || '无内容'}</p>
                             </div>
                         </div>
                         
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-500 mb-2">基本信息</h4>
+                                <div class="p-4 bg-gray-50 rounded-lg space-y-2">
+                                    <p>ID: ${memory.id || '无'}</p>
+                                    <p>类型: ${memory.type || '无'}</p>
+                                    <p>创建时间: ${formatDate(memory.timestamp)}</p>
+                                    <p>优先级分数: ${memory.priority_score?.toFixed(2) || '0.00'}</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-500 mb-2">访问统计</h4>
+                                <div class="p-4 bg-gray-50 rounded-lg space-y-2">
+                                    <p>总访问次数: ${accessStats.count || 0}</p>
+                                    <p>首次访问: ${formatDate(accessStats.first_access)}</p>
+                                    <p>最近访问: ${formatDate(accessStats.last_access)}</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div>
-                            <h4 class="text-sm font-medium text-gray-500 mb-2">访问统计</h4>
-                            <div class="p-4 bg-gray-50 rounded-lg space-y-2">
-                                <p>总访问次数: ${accessStats.count || 0}</p>
-                                <p>首次访问: ${accessStats.first_access ? new Date(accessStats.first_access).toLocaleString() : '无'}</p>
-                                <p>最近访问: ${accessStats.last_access ? new Date(accessStats.last_access).toLocaleString() : '无'}</p>
+                            <h4 class="text-sm font-medium text-gray-500 mb-2">最近访问历史</h4>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                ${accessHistory.length > 0 ? `
+                                    <div class="space-y-2">
+                                        ${accessHistory.map(access => `
+                                            <div class="flex justify-between text-sm">
+                                                <span>${formatDate(access.time || access.timestamp)}</span>
+                                                <span class="text-gray-500">${access.type || '未知'}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                ` : '<p class="text-gray-500">暂无访问记录</p>'}
                             </div>
                         </div>
                     </div>
+                `;
 
-                    <div>
-                        <h4 class="text-sm font-medium text-gray-500 mb-2">最近访问历史</h4>
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            ${accessHistory.length > 0 ? `
-                                <div class="space-y-2">
-                                    ${accessHistory.map(access => `
-                                        <div class="flex justify-between text-sm">
-                                            <span>${new Date(access.timestamp).toLocaleString()}</span>
-                                            <span class="text-gray-500">${access.type}</span>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            ` : '<p class="text-gray-500">暂无访问记录</p>'}
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            modal.classList.remove('hidden');
+                modal.classList.remove('hidden');
+            } catch (error) {
+                console.error('Error showing memory detail:', error);
+                showNotification('显示记忆详情时出错: ' + error.message, 'error');
+            }
         }
 
         // 关闭记忆详情模态框
