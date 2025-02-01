@@ -293,6 +293,10 @@ class GraphManager:
             是否成功生成可视化图像
         """
         try:
+            # 设置中文字体
+            plt.rcParams['font.sans-serif'] = ['SimHei']
+            plt.rcParams['axes.unicode_minus'] = False
+            
             # 设置绘图参数
             plt.figure(figsize=(20, 16))
             
@@ -308,54 +312,72 @@ class GraphManager:
             colors = plt.cm.Set3(np.linspace(0, 1, len(unique_clusters)))
             color_map = dict(zip(unique_clusters, colors))
             
-            node_colors = [color_map[clusters[node]] for node in self.graph.nodes()]
+            # 使用 spring_layout，但增加斥力以使簇更分散
+            pos = nx.spring_layout(
+                self.graph,
+                k=2.0,      # 增加节点间斥力
+                iterations=100,  # 增加迭代次数以获得更好的布局
+                seed=42
+            )
             
-            # 使用层级布局
-            pos = nx.spring_layout(self.graph, k=2, iterations=50)
-            
-            # 绘制节点
-            nx.draw_networkx_nodes(self.graph, pos,
-                                 node_color=node_colors,
-                                 node_size=2000,
-                                 alpha=0.6)
-            
-            # 根据边的权重绘制边
+            # 绘制边，根据权重调整宽度和透明度
             edges = self.graph.edges(data=True)
-            weights = [d.get('weight', 0.1) for (u, v, d) in edges]
-            nx.draw_networkx_edges(self.graph, pos,
-                                 width=[w * 2 for w in weights],
-                                 alpha=[w for w in weights])
+            if edges:
+                edge_weights = [d.get('weight', 0.1) for (_, _, d) in edges]
+                nx.draw_networkx_edges(
+                    self.graph, pos,
+                    width=[w * 3 for w in edge_weights],
+                    alpha=[w * 0.7 for w in edge_weights],
+                    edge_color='gray'
+                )
+            
+            # 为每个簇分别绘制节点
+            for cluster in unique_clusters:
+                # 获取属于该簇的节点
+                nodes = [node for node, c in clusters.items() if c == cluster]
+                if not nodes:
+                    continue
+                    
+                # 绘制节点
+                nx.draw_networkx_nodes(
+                    self.graph, pos,
+                    nodelist=nodes,
+                    node_color=[color_map[cluster]],
+                    node_size=2000,
+                    alpha=0.7,
+                    label=cluster
+                )
             
             # 准备节点标签
             labels = {}
             for node, data in self.graph.nodes(data=True):
                 content = data['content']
                 metadata = data.get('metadata', {})
-                hierarchy = metadata.get('hierarchy', {})
                 cluster = metadata.get('cluster', '未分类')
                 
                 # 提取关键信息作为标签
                 if len(content) > 20:
-                    label = f"{content[:20]}...\n[{cluster}]"
+                    label = f"{content[:20]}..."
                 else:
-                    label = f"{content}\n[{cluster}]"
+                    label = content
                 labels[node] = label
             
             # 绘制标签
-            nx.draw_networkx_labels(self.graph, pos, labels,
-                                  font_size=8,
-                                  font_family='SimHei')
+            nx.draw_networkx_labels(
+                self.graph, pos, labels,
+                font_size=8,
+                font_family='SimHei'
+            )
             
-            # 添加图例
-            legend_elements = [plt.Line2D([0], [0], marker='o', color='w',
-                                        markerfacecolor=color_map[cluster],
-                                        markersize=10, label=cluster)
-                             for cluster in unique_clusters]
-            plt.legend(handles=legend_elements,
-                      title="记忆簇",
-                      bbox_to_anchor=(1.05, 1),
-                      loc='upper left',
-                      fontsize=8)
+            # 添加图例，确保使用中文字体
+            plt.legend(
+                title="记忆簇",
+                bbox_to_anchor=(1.05, 1),
+                loc='upper left',
+                fontsize=8,
+                title_fontsize=10,
+                prop={'family': 'SimHei'}
+            )
             
             # 调整布局以适应图例
             plt.tight_layout()
