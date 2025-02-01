@@ -295,42 +295,99 @@ class MemoryManager:
             }
 
     def retrieve_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
-        """检索相关记忆
-        
+        """检索相关记忆，支持综合召回和精准召回
+    
         Args:
             user_id: 用户ID
             query: 查询文本
             top_k: 返回的记忆数量
-            
+        
         Returns:
-            List[Dict]: 相关记忆列表
+            List[Dict]: 相关记忆列表，包括精准召回和综合召回结果
         """
         if user_id not in self.memories or not self.memories[user_id]:
             return []
 
         try:
-            # 编码查询文本
-            query_vector = self.encode([query]).astype('float32')
+            # 初始化检索管理器
+            from .retrieval_manager import RetrievalManager
+            retrieval_manager = RetrievalManager(self)
             
-            # 使用FAISS搜索相似向量
-            D, I = self.indices[user_id].search(query_vector, min(top_k * 2, len(self.memories[user_id])))
-            candidates = []
-            
-            # 获取候选记忆并更新访问统计
-            for i, idx in enumerate(I[0]):
-                if idx < len(self.memories[user_id]) and D[0][i] >= self.similarity_threshold:
-                    memory = self.memories[user_id][idx].copy()
-                    memory['similarity'] = float(D[0][i])  # 添加相似度分数
-                    
-                    # 更新记忆访问统计
-                    try:
-                        self.update_memory_access(user_id, memory['id'], 'read')
-                    except Exception as e:
-                        logging.warning(f"Error updating memory access stats: {str(e)}")
-                    
-                    candidates.append(memory)
+            # 使用查询分类器判断召回策略
+            recall_strategy = retrieval_manager.query_classifier.classify_query(query)
 
-            # 获取相关簇的摘要
+            logging.info(f"【召回策略】: {recall_strategy}")
+
+            # 根据查询意图选择不同的召回策略
+            if recall_strategy == 'precise':
+                # 精准召回：返回最相关的记忆片段
+                precise_results = retrieval_manager.precise_retriever.retrieve_precise(
+                    query, user_id, top_k
+                )
+                
+                # 将精准召回的结果转换为记忆对象
+                candidates = []
+                for precise_memory in precise_results:
+                    # 在原始记忆中查找对应的完整记忆
+                    matched_memories = [
+                        m for m in self.memories[user_id] 
+                        if precise_memory in m['content']
+                    ]
+                    
+                    if matched_memories:
+                        memory = matched_memories[0].copy()
+                        memory['content'] = precise_memory  # 使用精准的记忆片段
+                        memory['type'] = 'precise_recall'
+                        candidates.append(memory)
+            
+            elif recall_strategy == 'comprehensive':
+                # 综合召回：返回记忆簇摘要
+                comprehensive_results = retrieval_manager.comprehensive_retriever.retrieve_comprehensive(
+                    query, user_id, top_k
+                )
+                
+                candidates = []
+                for result in comprehensive_results:
+                    # 如果是簇摘要，直接创建摘要记忆对象
+                    if result.get('is_summary', False):
+                        candidates.append({
+                            'id': f"cluster_summary_{result.get('cluster_id', '')}",
+                            'content': result['summary'],
+                            'type': 'comprehensive_recall',
+                            'timestamp': datetime.now().isoformat(),
+                            'similarity': 1.0,
+                            'priority_score': 1.0
+                        })
+                    else:
+                        # 如果是具体记忆，转换为记忆对象
+                        memory = result.copy()
+                        memory['type'] = 'comprehensive_recall'
+                        candidates.append(memory)
+            
+            else:  # 默认为混合策略
+                # 编码查询文本
+                query_vector = self.encode([query]).astype('float32')
+                
+                # 使用FAISS搜索相似向量
+                D, I = self.indices[user_id].search(query_vector, min(top_k * 2, len(self.memories[user_id])))
+                
+                candidates = []
+                # 获取候选记忆并更新访问统计
+                for i, idx in enumerate(I[0]):
+                    if idx < len(self.memories[user_id]) and D[0][i] >= self.similarity_threshold:
+                        memory = self.memories[user_id][idx].copy()
+                        memory['similarity'] = float(D[0][i])  # 添加相似度分数
+                        memory['type'] = 'default_recall'
+                        
+                        # 更新记忆访问统计
+                        try:
+                            self.update_memory_access(user_id, memory['id'], 'read')
+                        except Exception as e:
+                            logging.warning(f"Error updating memory access stats: {str(e)}")
+                        
+                        candidates.append(memory)
+            
+            # 获取相关簇的摘要（作为补充）
             cluster_summary = self.get_cluster_summary(user_id, query)
             
             # 使用BGE-Rerank重排序
