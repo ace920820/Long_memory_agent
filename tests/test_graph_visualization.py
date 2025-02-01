@@ -67,6 +67,10 @@ class TestGraphVisualization(unittest.TestCase):
         """
         logger.info("开始测试图谱可视化...")
         
+        # 更新所有记忆的层级结构
+        success = self.graph_manager.update_all_hierarchies()
+        self.assertTrue(success, "更新层级结构失败")
+        
         # 生成图谱
         output_path = "user_memory_graph.png"
         success = self.graph_manager.visualize(output_path)
@@ -81,8 +85,16 @@ class TestGraphVisualization(unittest.TestCase):
         # 检查节点属性
         for node, data in self.graph_manager.graph.nodes(data=True):
             self.assertIn('content', data, f"节点 {node} 缺少内容")
-            self.assertIn('cluster', data, f"节点 {node} 缺少簇信息")
-            self.assertIn('type', data, f"节点 {node} 缺少类型信息")
+            self.assertIn('metadata', data, f"节点 {node} 缺少元数据")
+            metadata = data['metadata']
+            self.assertIn('hierarchy', metadata, f"节点 {node} 缺少层级信息")
+            self.assertIn('cluster', metadata, f"节点 {node} 缺少簇信息")
+            
+            # 验证层级关系
+            hierarchy = metadata['hierarchy']
+            self.assertIn('parent', hierarchy, f"节点 {node} 缺少父节点信息")
+            self.assertIn('children', hierarchy, f"节点 {node} 缺少子节点信息")
+            self.assertIn('similarity_scores', hierarchy, f"节点 {node} 缺少相似度信息")
         
         logger.info(f"图谱可视化测试完成，输出文件: {output_path}")
 

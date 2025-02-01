@@ -233,6 +233,57 @@ class GraphManager:
             logger.error(f"合并记忆节点失败: {str(e)}")
             return None
 
+    def update_all_hierarchies(self, memories: Optional[List[Dict]] = None) -> bool:
+        """
+        更新所有记忆或指定记忆列表的层级结构
+        Args:
+            memories: 可选，指定要更新的记忆列表。如果为None，则更新所有记忆
+        Returns:
+            是否更新成功
+        """
+        try:
+            logger.info("开始更新记忆层级结构...")
+            
+            # 如果没有指定记忆列表，使用图谱中的所有记忆
+            if memories is None:
+                memories = [
+                    {
+                        'id': node_id,
+                        'content': data['content'],
+                        'metadata': data.get('metadata', {})
+                    }
+                    for node_id, data in self.graph.nodes(data=True)
+                ]
+            
+            # 提取所有记忆的内容和元数据
+            contents = [mem['content'] for mem in memories]
+            metadata_list = [mem.get('metadata', {}) for mem in memories]
+            
+            # 使用层级管理器分析记忆内容，构建层级结构
+            hierarchies = self.hierarchy_manager.analyze_content_hierarchies(contents)
+            
+            # 更新每个记忆的层级信息
+            for i, memory in enumerate(memories):
+                node_id = memory['id']
+                if node_id in self.graph:
+                    # 合并已有元数据和新的层级信息
+                    metadata = metadata_list[i].copy()
+                    metadata['hierarchy'] = hierarchies[i]
+                    metadata['cluster'] = hierarchies[i].get('cluster', '未分类')
+                    metadata['parent'] = hierarchies[i].get('parent', None)
+                    metadata['children'] = hierarchies[i].get('children', [])
+                    
+                    # 更新节点元数据
+                    self.graph.nodes[node_id]['metadata'] = metadata
+                    logger.debug(f"更新节点 {node_id} 的层级信息: {metadata['hierarchy']}")
+            
+            logger.info(f"成功更新 {len(memories)} 个记忆的层级结构")
+            return True
+            
+        except Exception as e:
+            logger.error(f"更新记忆层级结构失败: {str(e)}")
+            return False
+
     def visualize(self, output_path: str = "memory_graph.png") -> bool:
         """
         可视化记忆图谱
@@ -242,68 +293,52 @@ class GraphManager:
             是否成功生成可视化图像
         """
         try:
-            logger.info("开始生成记忆图谱可视化")
-            
-            # 设置中文字体
-            plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
-            plt.rcParams['axes.unicode_minus'] = False    # 用来正常显示负号
-            
-            if not self.graph.nodes:
-                logger.warning("图谱为空，生成空白图像")
-                plt.figure(figsize=(20, 16))
-                plt.text(0.5, 0.5, "空图谱", 
-                        horizontalalignment='center',
-                        verticalalignment='center',
-                        fontproperties='SimHei')
-                plt.savefig(output_path, bbox_inches='tight', dpi=300)
-                plt.close()
-                return True
-            
             # 设置绘图参数
             plt.figure(figsize=(20, 16))
             
-            # 按簇进行布局
-            clusters = {}
-            for node, data in self.graph.nodes(data=True):
-                cluster = data.get('cluster', '未分类')
-                if cluster not in clusters:
-                    clusters[cluster] = []
-                clusters[cluster].append(node)
+            # 获取节点的层级信息
+            hierarchies = nx.get_node_attributes(self.graph, 'metadata')
+            clusters = {
+                node: data.get('cluster', '未分类') 
+                for node, data in hierarchies.items()
+            }
             
-            # 使用 spring_layout 进行布局，但对不同簇的节点施加不同的引力
-            pos = nx.spring_layout(self.graph, k=2.0)
+            # 根据层级信息设置节点颜色
+            unique_clusters = list(set(clusters.values()))
+            colors = plt.cm.Set3(np.linspace(0, 1, len(unique_clusters)))
+            color_map = dict(zip(unique_clusters, colors))
             
-            # 为每个簇分配不同的颜色
-            colors = plt.cm.Set3(np.linspace(0, 1, len(clusters)))
-            cluster_colors = dict(zip(clusters.keys(), colors))
+            node_colors = [color_map[clusters[node]] for node in self.graph.nodes()]
+            
+            # 使用层级布局
+            pos = nx.spring_layout(self.graph, k=2, iterations=50)
             
             # 绘制节点
-            for cluster, nodes in clusters.items():
-                nx.draw_networkx_nodes(self.graph, pos, 
-                                     nodelist=nodes,
-                                     node_color=[cluster_colors[cluster]],
-                                     node_size=2000,
-                                     alpha=0.7,
-                                     label=f"簇: {cluster}")
+            nx.draw_networkx_nodes(self.graph, pos,
+                                 node_color=node_colors,
+                                 node_size=2000,
+                                 alpha=0.6)
             
-            # 绘制边，根据权重调整宽度和透明度
+            # 根据边的权重绘制边
             edges = self.graph.edges(data=True)
-            if edges:
-                edge_weights = [d['weight'] for (_, _, d) in edges]
-                nx.draw_networkx_edges(self.graph, pos, 
-                                     width=[w * 3 for w in edge_weights],
-                                     alpha=[w * 0.8 for w in edge_weights],
-                                     edge_color='gray')
+            weights = [d.get('weight', 0.1) for (u, v, d) in edges]
+            nx.draw_networkx_edges(self.graph, pos,
+                                 width=[w * 2 for w in weights],
+                                 alpha=[w for w in weights])
             
-            # 生成节点标签（使用记忆内容的摘要）
+            # 准备节点标签
             labels = {}
             for node, data in self.graph.nodes(data=True):
                 content = data['content']
+                metadata = data.get('metadata', {})
+                hierarchy = metadata.get('hierarchy', {})
+                cluster = metadata.get('cluster', '未分类')
+                
                 # 提取关键信息作为标签
                 if len(content) > 20:
-                    label = content[:20] + "..."
+                    label = f"{content[:20]}...\n[{cluster}]"
                 else:
-                    label = content
+                    label = f"{content}\n[{cluster}]"
                 labels[node] = label
             
             # 绘制标签
@@ -312,8 +347,15 @@ class GraphManager:
                                   font_family='SimHei')
             
             # 添加图例
-            plt.legend(title="记忆簇", bbox_to_anchor=(1.05, 1), 
-                      loc='upper left', fontsize=8)
+            legend_elements = [plt.Line2D([0], [0], marker='o', color='w',
+                                        markerfacecolor=color_map[cluster],
+                                        markersize=10, label=cluster)
+                             for cluster in unique_clusters]
+            plt.legend(handles=legend_elements,
+                      title="记忆簇",
+                      bbox_to_anchor=(1.05, 1),
+                      loc='upper left',
+                      fontsize=8)
             
             # 调整布局以适应图例
             plt.tight_layout()

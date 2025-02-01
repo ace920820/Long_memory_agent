@@ -10,11 +10,13 @@ import json
 import logging
 import os
 import yaml
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple, Union
 import numpy as np
 from scipy.spatial.distance import cosine
 from transformers import AutoTokenizer, AutoModel
 import torch
+from sklearn.cluster import DBSCAN
+from sklearn.metrics.pairwise import cosine_similarity
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -85,6 +87,54 @@ class HierarchyManager:
             
         except Exception as e:
             logger.error(f"文本编码失败: {str(e)}")
+            raise
+
+    def encode(self, texts: Union[str, List[str]]) -> np.ndarray:
+        """
+        使用 BERT 模型获取文本的嵌入向量
+        Args:
+            texts: 单个文本或文本列表
+        Returns:
+            文本的嵌入向量
+        """
+        try:
+            # 确保输入是列表形式
+            if isinstance(texts, str):
+                texts = [texts]
+            
+            # 对文本进行分词和编码
+            encoded_input = self.tokenizer(
+                texts,
+                padding=True,
+                truncation=True,
+                max_length=512,
+                return_tensors='pt'
+            )
+            
+            # 将输入移到GPU（如果可用）
+            if torch.cuda.is_available():
+                encoded_input = {k: v.cuda() for k, v in encoded_input.items()}
+                self.model = self.model.cuda()
+            
+            # 获取BERT输出
+            with torch.no_grad():
+                model_output = self.model(**encoded_input)
+                
+            # 使用[CLS]标记的输出作为句子表示
+            sentence_embeddings = model_output[0][:, 0]
+            
+            # 如果在GPU上，移回CPU
+            if torch.cuda.is_available():
+                sentence_embeddings = sentence_embeddings.cpu()
+            
+            # 转换为numpy数组
+            embeddings = sentence_embeddings.numpy()
+            
+            logger.debug(f"成功编码 {len(texts)} 条文本")
+            return embeddings
+            
+        except Exception as e:
+            logger.error(f"获取文本嵌入向量失败: {str(e)}")
             raise
 
     def _calculate_similarity(self, text1: str, text2: str) -> float:
@@ -299,4 +349,68 @@ class HierarchyManager:
                     
         except Exception as e:
             logger.error(f"更新层级结构失败: {str(e)}")
+            raise
+
+    def analyze_content_hierarchies(self, contents: List[str]) -> List[Dict]:
+        """
+        分析多个记忆内容的层级关系
+        Args:
+            contents: 记忆内容列表
+        Returns:
+            层级信息列表，每个元素包含 cluster, parent, children 等信息
+        """
+        try:
+            logger.info(f"开始分析 {len(contents)} 条记忆的层级关系")
+            
+            # 使用 BERT 计算内容的嵌入向量
+            embeddings = np.array([self._encode_text(content) for content in contents])
+            
+            # 使用 DBSCAN 进行聚类
+            clustering = DBSCAN(eps=0.5, min_samples=2).fit(embeddings)
+            clusters = clustering.labels_
+            
+            # 构建层级结构
+            hierarchies = []
+            for i, content in enumerate(contents):
+                cluster = int(clusters[i])
+                cluster_name = f"簇_{cluster}" if cluster >= 0 else "未分类"
+                
+                # 计算与其他记忆的关系
+                similarities = cosine_similarity([embeddings[i]], embeddings)[0]
+                
+                # 找出最相似的记忆作为父节点（排除自身）
+                similarities[i] = -1  # 将自身的相似度设为最小
+                parent_idx = np.argmax(similarities)
+                parent_sim = similarities[parent_idx]
+                
+                # 只有当相似度超过阈值时才建立父子关系
+                parent = None
+                if parent_sim > 0.8:
+                    parent = parent_idx
+                
+                # 找出作为子节点的记忆
+                children = []
+                for j, sim in enumerate(similarities):
+                    if j != i and sim > 0.8:
+                        children.append(j)
+                
+                # 构建层级信息
+                hierarchy = {
+                    'cluster': cluster_name,
+                    'parent': parent,
+                    'children': children,
+                    'similarity_scores': {
+                        j: sim for j, sim in enumerate(similarities)
+                        if j != i and sim > 0.5  # 只保留相似度较高的关系
+                    }
+                }
+                
+                hierarchies.append(hierarchy)
+                logger.debug(f"记忆 {i} 的层级信息: {hierarchy}")
+            
+            logger.info("记忆层级分析完成")
+            return hierarchies
+            
+        except Exception as e:
+            logger.error(f"分析记忆层级关系失败: {str(e)}")
             raise
