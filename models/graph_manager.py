@@ -14,6 +14,7 @@ from typing import Dict, List, Tuple, Optional, Any
 from .memory_relationship_manager import MemoryRelationshipManager
 from .hierarchy_manager import HierarchyManager
 import datetime
+import numpy as np
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -73,6 +74,43 @@ class GraphManager:
             # 添加节点
             node_id = len(self.graph.nodes)
             self.graph.add_node(node_id, content=memory, metadata=metadata or {})
+            
+            # 更新与现有节点的关系
+            self._update_relationships(node_id)
+            
+            # 更新层级结构
+            self._update_hierarchy(node_id)
+            
+            logger.info(f"记忆节点添加成功，ID: {node_id}")
+            return True
+            
+        except Exception as e:
+            logger.error(f"添加记忆节点失败: {str(e)}")
+            return False
+
+    def add_memory_with_metadata(self, content: str, metadata: Dict) -> bool:
+        """
+        添加带有元数据的记忆节点
+        Args:
+            content: 记忆内容
+            metadata: 元数据，包含 cluster, type 等信息
+        Returns:
+            是否添加成功
+        """
+        try:
+            if not content or not isinstance(content, str):
+                logger.warning("记忆内容无效")
+                return False
+                
+            logger.info(f"添加新记忆节点: {content[:50]}...")
+            
+            # 添加节点
+            node_id = len(self.graph.nodes)
+            self.graph.add_node(node_id, 
+                              content=content, 
+                              metadata=metadata,
+                              cluster=metadata.get('cluster', '未分类'),
+                              type=metadata.get('type', 'unknown'))
             
             # 更新与现有节点的关系
             self._update_relationships(node_id)
@@ -212,38 +250,76 @@ class GraphManager:
             
             if not self.graph.nodes:
                 logger.warning("图谱为空，生成空白图像")
-                plt.figure(figsize=(12, 8))
+                plt.figure(figsize=(20, 16))
                 plt.text(0.5, 0.5, "空图谱", 
                         horizontalalignment='center',
                         verticalalignment='center',
-                        fontproperties='SimHei')  # 使用中文字体
-                plt.savefig(output_path, bbox_inches='tight')
+                        fontproperties='SimHei')
+                plt.savefig(output_path, bbox_inches='tight', dpi=300)
                 plt.close()
                 return True
             
             # 设置绘图参数
-            plt.figure(figsize=(12, 8))
-            pos = nx.spring_layout(self.graph)
+            plt.figure(figsize=(20, 16))
+            
+            # 按簇进行布局
+            clusters = {}
+            for node, data in self.graph.nodes(data=True):
+                cluster = data.get('cluster', '未分类')
+                if cluster not in clusters:
+                    clusters[cluster] = []
+                clusters[cluster].append(node)
+            
+            # 使用 spring_layout 进行布局，但对不同簇的节点施加不同的引力
+            pos = nx.spring_layout(self.graph, k=2.0)
+            
+            # 为每个簇分配不同的颜色
+            colors = plt.cm.Set3(np.linspace(0, 1, len(clusters)))
+            cluster_colors = dict(zip(clusters.keys(), colors))
             
             # 绘制节点
-            nx.draw_networkx_nodes(self.graph, pos, 
-                                 node_color='lightblue',
-                                 node_size=1000)
+            for cluster, nodes in clusters.items():
+                nx.draw_networkx_nodes(self.graph, pos, 
+                                     nodelist=nodes,
+                                     node_color=[cluster_colors[cluster]],
+                                     node_size=2000,
+                                     alpha=0.7,
+                                     label=f"簇: {cluster}")
             
-            # 绘制边
+            # 绘制边，根据权重调整宽度和透明度
             edges = self.graph.edges(data=True)
             if edges:
-                weights = [d['weight'] for (u, v, d) in edges]
+                edge_weights = [d['weight'] for (_, _, d) in edges]
                 nx.draw_networkx_edges(self.graph, pos, 
-                                     width=[w * 2 for w in weights],
-                                     alpha=0.5)
+                                     width=[w * 3 for w in edge_weights],
+                                     alpha=[w * 0.8 for w in edge_weights],
+                                     edge_color='gray')
             
-            # 添加标签，使用英文字符替代中文
-            labels = {node: f"Memory_{node}" for node in self.graph.nodes()}
-            nx.draw_networkx_labels(self.graph, pos, labels)
+            # 生成节点标签（使用记忆内容的摘要）
+            labels = {}
+            for node, data in self.graph.nodes(data=True):
+                content = data['content']
+                # 提取关键信息作为标签
+                if len(content) > 20:
+                    label = content[:20] + "..."
+                else:
+                    label = content
+                labels[node] = label
+            
+            # 绘制标签
+            nx.draw_networkx_labels(self.graph, pos, labels,
+                                  font_size=8,
+                                  font_family='SimHei')
+            
+            # 添加图例
+            plt.legend(title="记忆簇", bbox_to_anchor=(1.05, 1), 
+                      loc='upper left', fontsize=8)
+            
+            # 调整布局以适应图例
+            plt.tight_layout()
             
             # 保存图像
-            plt.savefig(output_path, bbox_inches='tight')
+            plt.savefig(output_path, bbox_inches='tight', dpi=300)
             plt.close()
             
             logger.info(f"记忆图谱可视化已保存至: {output_path}")
