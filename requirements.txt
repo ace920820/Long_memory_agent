@@ -28,6 +28,13 @@ faiss-cpu==1.7.4
 
 # NLP Tools
 jieba==0.42.1
+spacy==3.7.4
+https://github.com/explosion/spacy-models/releases/download/zh_core_web_sm-3.7.0/zh_core_web_sm-3.7.0-py3-none-any.whl
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0-py3-none-any.whl
+
+# 测试工具
+pytest==8.0.2
+pytest-cov==4.1.0
 
 # Configuration & Environment
 python-dotenv==1.0.1
