@@ -112,32 +112,85 @@ class MemoryRelationshipManager:
 
     def calculate_relationships(self, memory1: str, memory2: str) -> float:
         """
-        计算两个记忆项之间的相似度
+        计算两个记忆之间的语义关联度
         Args:
-            memory1: 第一个记忆
-            memory2: 第二个记忆
+            memory1: 第一个记忆内容
+            memory2: 第二个记忆内容
         Returns:
-            相似度权重 (0-1)
+            语义关联度（0-1之间的浮点数）
         """
         try:
-            # 计算BERT相似度
-            bert_embedding1 = self._encode_text_bert(memory1)
-            bert_embedding2 = self._encode_text_bert(memory2)
-            bert_similarity = 1 - cosine(bert_embedding1, bert_embedding2)
+            if not memory1 or not memory2:
+                logger.warning("记忆内容为空")
+                return 0.0
+
+            logger.info(f"计算记忆关联度:")
+            logger.info(f"记忆1: {memory1[:50]}...")
+            logger.info(f"记忆2: {memory2[:50]}...")
             
-            # 计算TF-IDF相似度
+            # BERT相似度计算
+            bert_similarity = self._calculate_bert_similarity(memory1, memory2)
+            logger.info(f"BERT相似度: {bert_similarity:.4f}")
+            
+            # TF-IDF相似度计算
             tfidf_similarity = self._calculate_tfidf_similarity(memory1, memory2)
+            logger.info(f"TF-IDF相似度: {tfidf_similarity:.4f}")
             
-            # 综合两种相似度（可以根据需要调整权重）
-            combined_similarity = 0.7 * bert_similarity + 0.3 * tfidf_similarity
+            # 组合两种相似度
+            similarity = 0.7 * bert_similarity + 0.3 * tfidf_similarity
+            logger.info(f"综合相似度: {similarity:.4f}")
             
-            logger.debug(f"记忆项相似度 - BERT: {bert_similarity:.4f}, TF-IDF: {tfidf_similarity:.4f}, "
-                        f"综合: {combined_similarity:.4f}")
-            
-            return float(combined_similarity)
+            return similarity
             
         except Exception as e:
-            logger.error(f"计算记忆关系失败: {str(e)}")
+            logger.error(f"计算记忆关联度失败: {str(e)}")
+            return 0.0
+
+    def _calculate_bert_similarity(self, text1: str, text2: str) -> float:
+        """
+        使用BERT模型计算文本相似度
+        """
+        try:
+            # 对文本进行编码
+            inputs1 = self.tokenizer(text1, return_tensors="pt", 
+                                   truncation=True, max_length=512)
+            inputs2 = self.tokenizer(text2, return_tensors="pt", 
+                                   truncation=True, max_length=512)
+            
+            # 获取文本向量表示
+            with torch.no_grad():
+                outputs1 = self.model(**inputs1)
+                outputs2 = self.model(**inputs2)
+            
+            # 使用[CLS]向量作为文本表示
+            embedding1 = outputs1.last_hidden_state[:, 0, :].numpy()
+            embedding2 = outputs2.last_hidden_state[:, 0, :].numpy()
+            
+            # 计算余弦相似度
+            similarity = 1 - cosine(embedding1.flatten(), embedding2.flatten())
+            return float(similarity)
+            
+        except Exception as e:
+            logger.error(f"BERT相似度计算失败: {str(e)}")
+            return 0.0
+
+    def _calculate_tfidf_similarity(self, text1: str, text2: str) -> float:
+        """
+        使用TF-IDF计算文本相似度
+        """
+        try:
+            # 创建TF-IDF向量化器
+            vectorizer = TfidfVectorizer()
+            
+            # 转换文本为TF-IDF向量
+            tfidf_matrix = vectorizer.fit_transform([text1, text2])
+            
+            # 计算余弦相似度
+            similarity = float((tfidf_matrix * tfidf_matrix.T).A[0, 1])
+            return similarity
+            
+        except Exception as e:
+            logger.error(f"TF-IDF相似度计算失败: {str(e)}")
             return 0.0
 
     def build_relationship_graph(self, memories: List[str]) -> Dict:

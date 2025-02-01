@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 from typing import Dict, List, Tuple, Optional, Any
 from .memory_relationship_manager import MemoryRelationshipManager
 from .hierarchy_manager import HierarchyManager
+import datetime
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -132,25 +133,39 @@ class GraphManager:
             content1 = self.graph.nodes[memory_id1]['content']
             content2 = self.graph.nodes[memory_id2]['content']
             
+            logger.info(f"尝试合并记忆节点:")
+            logger.info(f"节点1 ({memory_id1}): {content1[:50]}...")
+            logger.info(f"节点2 ({memory_id2}): {content2[:50]}...")
+            
             # 计算相似度
             similarity = self.relationship_manager.calculate_relationships(content1, content2)
+            logger.info(f"记忆节点相似度: {similarity:.4f}")
             
             if similarity < self.merge_threshold:
-                logger.warning(f"记忆节点相似度 ({similarity}) 低于合并阈值 ({self.merge_threshold})")
+                logger.warning(f"记忆节点相似度 ({similarity:.4f}) 低于合并阈值 ({self.merge_threshold})")
                 return None
             
-            logger.info(f"合并记忆节点: {memory_id1} 和 {memory_id2}")
+            logger.info(f"记忆节点相似度超过阈值，开始合并")
             
             # 合并元数据
             merged_metadata = {
                 **self.graph.nodes[memory_id1].get('metadata', {}),
                 **self.graph.nodes[memory_id2].get('metadata', {})
             }
+            merged_metadata['original_ids'] = [memory_id1, memory_id2]
+            merged_metadata['merge_similarity'] = similarity
+            merged_metadata['merge_time'] = str(datetime.datetime.now())
             
             # 创建新节点
             new_id = len(self.graph.nodes)
+            merged_content = (
+                f"{content1}\n"
+                f"---\n"  # 使用分隔符分隔两个记忆
+                f"{content2}"
+            )
+            
             self.graph.add_node(new_id, 
-                              content=f"{content1}\n---\n{content2}",
+                              content=merged_content,
                               metadata=merged_metadata)
             
             # 继承关系
@@ -158,11 +173,13 @@ class GraphManager:
                 if neighbor != memory_id2:
                     weight = self.graph[memory_id1][neighbor]['weight']
                     self.graph.add_edge(new_id, neighbor, weight=weight)
+                    logger.debug(f"继承节点1关系: {new_id} -> {neighbor}, 权重: {weight:.4f}")
             
             for neighbor in self.graph.neighbors(memory_id2):
                 if neighbor != memory_id1:
                     weight = self.graph[memory_id2][neighbor]['weight']
                     self.graph.add_edge(new_id, neighbor, weight=weight)
+                    logger.debug(f"继承节点2关系: {new_id} -> {neighbor}, 权重: {weight:.4f}")
             
             # 移除原始节点
             self.graph.remove_node(memory_id1)
@@ -189,12 +206,17 @@ class GraphManager:
         try:
             logger.info("开始生成记忆图谱可视化")
             
+            # 设置中文字体
+            plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
+            plt.rcParams['axes.unicode_minus'] = False    # 用来正常显示负号
+            
             if not self.graph.nodes:
                 logger.warning("图谱为空，生成空白图像")
                 plt.figure(figsize=(12, 8))
                 plt.text(0.5, 0.5, "空图谱", 
                         horizontalalignment='center',
-                        verticalalignment='center')
+                        verticalalignment='center',
+                        fontproperties='SimHei')  # 使用中文字体
                 plt.savefig(output_path, bbox_inches='tight')
                 plt.close()
                 return True
@@ -216,9 +238,8 @@ class GraphManager:
                                      width=[w * 2 for w in weights],
                                      alpha=0.5)
             
-            # 添加标签
-            labels = {node: f"{data['content'][:20]}..." 
-                     for node, data in self.graph.nodes(data=True)}
+            # 添加标签，使用英文字符替代中文
+            labels = {node: f"Memory_{node}" for node in self.graph.nodes()}
             nx.draw_networkx_labels(self.graph, pos, labels)
             
             # 保存图像

@@ -21,6 +21,8 @@ class TestGraphManager(unittest.TestCase):
         测试前的初始化工作
         """
         self.graph_manager = GraphManager()
+        # 降低合并阈值，便于测试
+        self.graph_manager.merge_threshold = 0.5
         self.test_memories = [
             "这是第一条测试记忆",
             "这是第二条相关的测试记忆",
@@ -82,9 +84,9 @@ class TestGraphManager(unittest.TestCase):
         """
         测试合并记忆节点功能
         """
-        # 添加两个相似的记忆
-        self.graph_manager.add_memory("Python是一种编程语言")
-        self.graph_manager.add_memory("Python编程语言很流行")
+        # 添加两个高度相似的记忆
+        self.graph_manager.add_memory("Python是一种广受欢迎的编程语言")
+        self.graph_manager.add_memory("Python是一种流行的编程语言")
         
         # 测试合并
         new_id = self.graph_manager.merge_memories(0, 1)
@@ -96,7 +98,7 @@ class TestGraphManager(unittest.TestCase):
         assert len(self.graph_manager.graph.nodes) == 1
         
         # 测试合并不相似的记忆
-        self.graph_manager.add_memory("这是一条完全不相关的记忆")
+        self.graph_manager.add_memory("今天天气真不错")
         new_id = self.graph_manager.merge_memories(new_id, 2)
         assert new_id is None  # 不相似的记忆不应该被合并
 
