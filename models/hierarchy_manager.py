@@ -365,33 +365,78 @@ class HierarchyManager:
             # 使用 BERT 计算内容的嵌入向量
             embeddings = np.array([self._encode_text(content) for content in contents])
             
-            # 使用 DBSCAN 进行聚类
-            clustering = DBSCAN(eps=0.5, min_samples=2).fit(embeddings)
+            # 使用 UMAP 进行降维，减少维度灾难的影响
+            from umap import UMAP
+            n_neighbors = min(15, len(contents) - 1)  # 根据数据量调整邻居数
+            umap = UMAP(
+                n_components=min(16, len(contents) - 1),  # 降维后的维度
+                n_neighbors=n_neighbors,
+                min_dist=0.1,
+                metric='cosine',
+                random_state=42
+            )
+            embeddings_reduced = umap.fit_transform(embeddings)
+            
+            # 使用 DBSCAN 进行聚类，调整参数使其更容易形成簇
+            from sklearn.preprocessing import StandardScaler
+            scaler = StandardScaler()
+            embeddings_scaled = scaler.fit_transform(embeddings_reduced)
+            
+            clustering = DBSCAN(
+                eps=0.5,           # 增大邻域半径
+                min_samples=2,     # 保持较小的最小样本数
+                metric='euclidean'
+            ).fit(embeddings_scaled)
+            
             clusters = clustering.labels_
+            
+            # 如果所有点都是噪声点，则使用 KMeans 进行聚类
+            if len(set(clusters)) <= 1:  # 如果只有一个簇或者都是噪声点
+                logger.warning("DBSCAN 聚类效果不理想，尝试使用 KMeans")
+                from sklearn.cluster import KMeans
+                n_clusters = min(5, len(contents))  # 最多5个簇
+                kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+                clusters = kmeans.fit_predict(embeddings_scaled)
             
             # 构建层级结构
             hierarchies = []
             for i, content in enumerate(contents):
                 cluster = int(clusters[i])
-                cluster_name = f"簇_{cluster}" if cluster >= 0 else "未分类"
+                # 为每个簇生成一个有意义的名称
+                if cluster >= 0:
+                    # 获取同簇的所有内容
+                    cluster_contents = [contents[j] for j, c in enumerate(clusters) if c == cluster]
+                    # 使用最短的内容作为簇的名称
+                    shortest_content = min(cluster_contents, key=len)
+                    if len(shortest_content) > 10:
+                        shortest_content = shortest_content[:10] + "..."
+                    cluster_name = f"簇_{cluster}: {shortest_content}"
+                else:
+                    cluster_name = "未分类"
                 
-                # 计算与其他记忆的关系
-                similarities = cosine_similarity([embeddings[i]], embeddings)[0]
+                # 计算与其他记忆的关系（使用降维后的向量）
+                similarities = cosine_similarity(
+                    [embeddings_scaled[i]], 
+                    embeddings_scaled
+                )[0]
                 
                 # 找出最相似的记忆作为父节点（排除自身）
                 similarities[i] = -1  # 将自身的相似度设为最小
                 parent_idx = np.argmax(similarities)
                 parent_sim = similarities[parent_idx]
                 
+                # 调整相似度阈值，使其更容易建立父子关系
+                threshold = 0.5  # 进一步降低阈值
+                
                 # 只有当相似度超过阈值时才建立父子关系
                 parent = None
-                if parent_sim > 0.8:
+                if parent_sim > threshold:
                     parent = parent_idx
                 
                 # 找出作为子节点的记忆
                 children = []
                 for j, sim in enumerate(similarities):
-                    if j != i and sim > 0.8:
+                    if j != i and sim > threshold:
                         children.append(j)
                 
                 # 构建层级信息
@@ -401,14 +446,20 @@ class HierarchyManager:
                     'children': children,
                     'similarity_scores': {
                         j: sim for j, sim in enumerate(similarities)
-                        if j != i and sim > 0.5  # 只保留相似度较高的关系
+                        if j != i and sim > 0.3  # 降低相似度阈值，显示更多关系
                     }
                 }
                 
                 hierarchies.append(hierarchy)
                 logger.debug(f"记忆 {i} 的层级信息: {hierarchy}")
             
-            logger.info("记忆层级分析完成")
+            # 记录聚类结果统计
+            unique_clusters = set(clusters)
+            cluster_sizes = {c: sum(1 for x in clusters if x == c) for c in unique_clusters}
+            logger.info(f"聚类结果: 共 {len(unique_clusters)} 个簇")
+            for c, size in cluster_sizes.items():
+                logger.info(f"簇_{c}: {size} 个记忆")
+            
             return hierarchies
             
         except Exception as e:
