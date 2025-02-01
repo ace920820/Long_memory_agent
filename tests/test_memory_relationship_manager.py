@@ -97,7 +97,13 @@ class TestMemoryRelationshipManager(unittest.TestCase):
         # 测试相同的记忆
         same_memories = ["测试记忆", "测试记忆"]
         same_graph = self.manager.build_relationship_graph(same_memories)
-        assert len(same_graph) == 2
+        assert len(same_graph) == 2  # 应该有两个不同的键
+        
+        # 验证两个键都存在且包含相同的记忆内容
+        memory_keys = list(same_graph.keys())
+        assert len(memory_keys) == 2
+        assert memory_keys[0] == "测试记忆"
+        assert memory_keys[1] == "测试记忆_1"
         
         # 验证相同记忆的相似度为1
         similarity = self.manager.calculate_relationships(
@@ -105,6 +111,12 @@ class TestMemoryRelationshipManager(unittest.TestCase):
             same_memories[1]
         )
         assert abs(similarity - 1.0) < 1e-6
+        
+        # 验证关系列表
+        for key in same_graph:
+            assert len(same_graph[key]) == 1  # 每个记忆应该与另一个记忆有关系
+            related_memory, weight = same_graph[key][0]
+            assert abs(weight - 1.0) < 1e-6  # 相似度应该接近1
 
 if __name__ == '__main__':
     pytest.main([__file__])

@@ -155,16 +155,28 @@ class MemoryRelationshipManager:
                 logger.info("记忆列表为空，返回空字典")
                 return {}
             
-            # 构建记忆关系字典
+            # 构建记忆关系字典，使用索引来区分相同内容的记忆
             relationship_dict = {}
             for i, memory in enumerate(memories):
-                relationship_dict[memory] = []
+                # 如果记忆内容已存在，添加索引后缀
+                key = memory
+                if memory in relationship_dict:
+                    suffix = 1
+                    while f"{memory}_{suffix}" in relationship_dict:
+                        suffix += 1
+                    key = f"{memory}_{suffix}"
+                    logger.debug(f"处理重复记忆，添加后缀: {key}")
+                relationship_dict[key] = []
             
             # 计算记忆间的关系
-            for i, memory1 in enumerate(memories):
-                for j, memory2 in enumerate(memories[i + 1:], start=i + 1):
-                    weight = self.calculate_relationships(memory1, memory2)
-                    logger.debug(f"记忆 {i} 和记忆 {j} 的相似度: {weight:.4f}")
+            memory_keys = list(relationship_dict.keys())
+            for i, memory1 in enumerate(memory_keys):
+                for j, memory2 in enumerate(memory_keys[i + 1:], start=i + 1):
+                    # 去除后缀计算相似度
+                    memory1_content = memory1.rsplit('_', 1)[0]
+                    memory2_content = memory2.rsplit('_', 1)[0]
+                    weight = self.calculate_relationships(memory1_content, memory2_content)
+                    logger.debug(f"记忆 {memory1} 和记忆 {memory2} 的相似度: {weight:.4f}")
                     
                     # 只添加权重超过阈值的关系
                     if weight > self.similarity_threshold:
@@ -191,28 +203,24 @@ class MemoryRelationshipManager:
         try:
             logger.info(f"开始查找与记忆相关的其他记忆，阈值: {threshold}")
             
-            if not self.relationship_graph:
-                logger.warning("关系图为空，无法获取相关记忆")
-                return []
-            
-            # 获取记忆对应的节点ID
-            node_id = None
-            for node, data in self.relationship_graph.nodes(data=True):
-                if data["content"] == memory:
-                    node_id = node
+            # 在关系字典中查找记忆（可能带有后缀）
+            memory_key = None
+            for key in self.relationship_graph:
+                if key == memory or key.startswith(memory + "_"):
+                    memory_key = key
                     break
             
-            if node_id is None:
+            if memory_key is None:
                 logger.warning(f"未找到记忆: {memory[:50]}...")
                 return []
             
             # 获取所有相关记忆
             related_memories = []
-            for neighbor in self.relationship_graph.neighbors(node_id):
-                weight = self.relationship_graph[node_id][neighbor]["weight"]
+            for related_memory, weight in self.relationship_graph[memory_key]:
                 if weight >= threshold:
-                    memory_content = self.relationship_graph.nodes[neighbor]["content"]
-                    related_memories.append((memory_content, weight))
+                    # 去除后缀返回原始记忆内容
+                    original_memory = related_memory.rsplit('_', 1)[0]
+                    related_memories.append((original_memory, weight))
             
             # 按相似度降序排序
             related_memories.sort(key=lambda x: x[1], reverse=True)
