@@ -531,9 +531,14 @@
 
         // 显示记忆状态
         function showMemoryStatus(status) {
+            if (!status || !status.message) return;
+            
             const memoryNote = document.createElement('div');
             memoryNote.className = 'memory-status';
-            memoryNote.textContent = `${status.message}: ${status.content.split('\n')[0]}`;
+            
+            // 安全地处理content
+            const content = status.content ? status.content.split('\n')[0] : '';
+            memoryNote.textContent = content ? `${status.message}: ${content}` : status.message;
             
             const messagesDiv = document.getElementById('messages');
             messagesDiv.appendChild(memoryNote);
