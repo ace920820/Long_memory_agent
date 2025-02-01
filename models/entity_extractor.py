@@ -24,14 +24,23 @@ class EntityExtractor:
             
             model_name = model_map.get(language, 'zh_core_web_sm')
             
-            # 加载 spaCy 模型
-            self.nlp = spacy.load(model_name)
-            
-            logging.info(f"成功加载 spaCy {model_name} 模型")
+            try:
+                # 尝试加载 spaCy 模型
+                self.nlp = spacy.load(model_name)
+                logging.info(f"成功加载 spaCy {model_name} 模型")
+            except OSError:
+                # 如果模型未安装，提供详细的安装指导
+                install_command = f"python -m spacy download {model_name}"
+                error_msg = (
+                    f"未找到 {model_name} 模型。请使用以下命令安装：\n"
+                    f"    {install_command}\n"
+                    "或者使用默认的中文模型 'zh_core_web_sm'"
+                )
+                logging.error(error_msg)
+                raise ValueError(error_msg)
         
         except Exception as e:
-            logging.error(f"加载 spaCy 模型时发生错误: {e}")
-            logging.warning("请确保已安装对应语言的 spaCy 模型，可使用 'python -m spacy download zh_core_web_sm' 安装")
+            logging.error(f"初始化 EntityExtractor 时发生错误: {e}")
             raise
 
     def extract_entities(self, text: str) -> List[Dict[str, str]]:
@@ -73,26 +82,34 @@ class EntityExtractor:
         
         :return: 支持的实体类型列表
         """
-        return list(self.nlp.get_pipe("ner").labels)
+        try:
+            return list(self.nlp.get_pipe("ner").labels)
+        except Exception as e:
+            logging.error(f"获取实体类型时发生错误: {e}")
+            return []
 
 def main():
     """
     用于测试 EntityExtractor 的主函数
     """
-    extractor = EntityExtractor(language='zh')
+    try:
+        extractor = EntityExtractor(language='zh')
+        
+        # 测试文本
+        test_texts = [
+            "李明是北京大学的教授，他在人工智能领域有着深入的研究。",
+            "2025年，阿里巴巴在杭州举办了一次重要的技术峰会。"
+        ]
+        
+        for text in test_texts:
+            print(f"\n测试文本: {text}")
+            entities = extractor.extract_entities(text)
+            print("提取的实体:")
+            for entity in entities:
+                print(f"- 名称: {entity['name']}, 类型: {entity['type']}, 位置: [{entity['start_pos']}, {entity['end_pos']}]")
     
-    # 测试文本
-    test_texts = [
-        "李明是北京大学的教授，他在人工智能领域有着深入的研究。",
-        "2025年，阿里巴巴在杭州举办了一次重要的技术峰会。"
-    ]
-    
-    for text in test_texts:
-        print(f"\n测试文本: {text}")
-        entities = extractor.extract_entities(text)
-        print("提取的实体:")
-        for entity in entities:
-            print(f"- 名称: {entity['name']}, 类型: {entity['type']}, 位置: [{entity['start_pos']}, {entity['end_pos']}]")
+    except Exception as e:
+        print(f"测试过程中发生错误: {e}")
 
 if __name__ == "__main__":
     # 配置日志

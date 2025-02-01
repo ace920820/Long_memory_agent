@@ -40925,3 +40925,20 @@ nlp算法工程师，兼职自媒体撰稿人
 2025-02-01 18:40:56,411 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
 2025-02-01 18:58:43,103 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\_pytest\\mark\\__init__.py', reloading
 2025-02-01 18:58:43,140 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\_pytest\\config\\__init__.py', reloading
+2025-02-01 18:58:44,085 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-01 18:58:54,399 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-01 18:58:54,400 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-01 19:01:19,508 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\entity_extractor.py', reloading
+2025-02-01 19:01:19,508 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\entity_extractor.py', reloading
+2025-02-01 19:01:19,509 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\entity_extractor.py', reloading
+2025-02-01 19:01:20,863 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-01 19:01:30,038 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-01 19:01:30,039 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-01 19:01:41,144 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\tests\\test_entity_extractor.py', reloading
+2025-02-01 19:01:41,144 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\tests\\test_entity_extractor.py', reloading
+2025-02-01 19:01:41,757 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-01 19:01:51,212 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-01 19:01:51,213 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-01 19:04:52,851 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\en_core_web_sm\\__init__.py', reloading
+2025-02-01 19:04:52,851 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\en_core_web_sm\\__init__.py', reloading
+2025-02-01 19:04:52,851 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\en_core_web_sm\\__init__.py', reloading
