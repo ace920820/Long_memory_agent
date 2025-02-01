@@ -250,6 +250,12 @@ memory:
     time: 0.3
     importance: 0.4
     access: 0.3
+  intra_cluster_recall:
+    enabled: true  # 是否启用簇内召回补偿
+    keyword_match_weight: 0.6  # 关键词匹配权重
+    tfidf_similarity_weight: 0.4  # TF-IDF相似度权重
+    top_k_compensate: 3  # 补偿召回的记忆数量
+    min_compensate_score: 0.3  # 最小补偿分数阈值
 ```
 
 ## 🔌 API接口
@@ -413,6 +419,30 @@ memory:
    - 协调精准召回和综合召回
    - 支持上下文信息处理
    - 提供灵活的配置参数调整
+
+5. **🚀记忆召回机制增强**
+   - 引入"综合召回 vs 精准召回"策略，提升记忆检索的灵活性
+   - 新增簇内召回补偿机制，解决低相似度但高关联度记忆的召回问题
+   
+6. **🔍簇内召回补偿（Intra-Cluster Recall Compensation）**
+   - 基于 TF-IDF 和共现词分析，计算记忆关键词权重
+   - 提高查询与记忆簇关键词匹配度低但仍相关的记忆的召回概率
+   - 动态调整记忆召回策略，增强系统的语义理解能力
+   - 新增配置开关，支持灵活控制补偿机制
+     ```yaml
+     memory:
+       intra_cluster_recall:
+         enabled: true  # 是否启用簇内召回补偿
+         keyword_match_weight: 0.6  # 关键词匹配权重
+         tfidf_similarity_weight: 0.4  # TF-IDF相似度权重
+         top_k_compensate: 3  # 补偿召回的记忆数量
+         min_compensate_score: 0.3  # 最小补偿分数阈值
+     ```
+
+7. **📊召回策略优化**
+   - 引入查询意图分类，自动选择最适合的召回策略
+   - 支持精准召回、综合召回和默认混合召回三种模式
+   - 优化记忆簇内部的语义关联性分析
 
 ## 📧 联系方式
 

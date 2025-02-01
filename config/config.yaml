@@ -48,4 +48,11 @@ memory:
     read: 1.0      # 直接读取权重
     write: 1.5     # 写入权重
     reference: 0.8  # 检索引用权重
-
+  
+  # 簇内召回补偿配置
+  intra_cluster_recall:
+    enabled: false  # 是否启用簇内召回补偿
+    keyword_match_weight: 0.6  # 关键词匹配权重
+    tfidf_similarity_weight: 0.4  # TF-IDF相似度权重
+    top_k_compensate: 3  # 补偿召回的记忆数量
+    min_compensate_score: 0.3  # 最小补偿分数阈值

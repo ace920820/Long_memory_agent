@@ -14,6 +14,11 @@ import random
 from .cluster_manager import ClusterManager
 from .metadata_manager import MetadataManager
 from .memory_summarizer import MemorySummarizer
+import jieba
+import jieba.analyse
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import yaml
 
 class MemoryManager:
     def __init__(self, model_name: str = "bge-small-zh-v1.5", 
@@ -21,7 +26,8 @@ class MemoryManager:
                  rerank_path: str = "S:/models/bge-small-zh-v1.5",
                  memory_file: str = "config/user_memories.json",
                  similarity_threshold: float = 0.5,
-                 new_memory_similarity_threshold: float = 0.9):
+                 new_memory_similarity_threshold: float = 0.9,
+                 config_path: str = "config/config.yaml"):
         """初始化记忆管理器
         
         Args:
@@ -29,7 +35,34 @@ class MemoryManager:
             model_path: 模型本地路径
             memory_file: 记忆存储文件路径
             similarity_threshold: 相似度阈值
+            config_path: 配置文件路径
         """
+        # 读取配置文件
+        try:
+            with open(config_path, 'r', encoding='utf-8') as f:
+                self.config = yaml.safe_load(f)
+        except Exception as e:
+            logging.error(f"读取配置文件失败: {str(e)}")
+            self.config = {}
+
+        # 簇内召回补偿配置
+        self.intra_cluster_recall_config = self.config.get('memory', {}).get('intra_cluster_recall', {
+            'enabled': False,
+            'keyword_match_weight': 0.6,
+            'tfidf_similarity_weight': 0.4,
+            'top_k_compensate': 3,
+            'min_compensate_score': 0.3
+        })
+
+        # 记录配置信息
+        logging.info("簇内召回补偿配置：")
+        logging.info(f"是否启用: {self.intra_cluster_recall_config['enabled']}")
+        logging.info(f"关键词匹配权重: {self.intra_cluster_recall_config['keyword_match_weight']}")
+        logging.info(f"TF-IDF相似度权重: {self.intra_cluster_recall_config['tfidf_similarity_weight']}")
+        logging.info(f"补偿召回数量: {self.intra_cluster_recall_config['top_k_compensate']}")
+        logging.info(f"最小补偿分数阈值: {self.intra_cluster_recall_config['min_compensate_score']}")
+
+        # 原有初始化代码保持不变
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = AutoModel.from_pretrained(model_path)
         self.memory_file = memory_file
@@ -313,9 +346,12 @@ class MemoryManager:
             from .retrieval_manager import RetrievalManager
             retrieval_manager = RetrievalManager(self)
             
+            # 记录当前用户ID，用于簇内召回补偿
+            self.current_user_id = user_id
+            
             # 使用查询分类器判断召回策略
             recall_strategy = retrieval_manager.query_classifier.classify_query(query)
-
+            
             logging.info(f"【召回策略】: {recall_strategy}")
 
             # 根据查询意图选择不同的召回策略
@@ -338,6 +374,20 @@ class MemoryManager:
                         memory = matched_memories[0].copy()
                         memory['content'] = precise_memory  # 使用精准的记忆片段
                         memory['type'] = 'precise_recall'
+                        
+                        # 簇内召回补偿
+                        cluster_id = memory.get('cluster_info', {}).get('cluster_id', -1)
+                        if cluster_id != -1:
+                            compensate_memories = self.improve_retrieval(query, cluster_id)
+                            candidates.extend([
+                                {
+                                    'id': self._generate_memory_id(),
+                                    'content': comp_memory,
+                                    'type': 'precise_recall_compensate',
+                                    'cluster_info': {'cluster_id': cluster_id}
+                                } for comp_memory in compensate_memories
+                            ])
+                        
                         candidates.append(memory)
             
             elif recall_strategy == 'comprehensive':
@@ -350,14 +400,29 @@ class MemoryManager:
                 for result in comprehensive_results:
                     # 如果是簇摘要，直接创建摘要记忆对象
                     if result.get('is_summary', False):
-                        candidates.append({
-                            'id': f"cluster_summary_{result.get('cluster_id', '')}",
+                        cluster_id = result.get('cluster_id', -1)
+                        summary_memory = {
+                            'id': f"cluster_summary_{cluster_id}",
                             'content': result['summary'],
                             'type': 'comprehensive_recall',
                             'timestamp': datetime.now().isoformat(),
                             'similarity': 1.0,
-                            'priority_score': 1.0
-                        })
+                            'priority_score': 1.0,
+                            'cluster_info': {'cluster_id': cluster_id}
+                        }
+                        candidates.append(summary_memory)
+                        
+                        # 簇内召回补偿
+                        if cluster_id != -1:
+                            compensate_memories = self.improve_retrieval(query, cluster_id)
+                            candidates.extend([
+                                {
+                                    'id': self._generate_memory_id(),
+                                    'content': comp_memory,
+                                    'type': 'comprehensive_recall_compensate',
+                                    'cluster_info': {'cluster_id': cluster_id}
+                                } for comp_memory in compensate_memories
+                            ])
                     else:
                         # 如果是具体记忆，转换为记忆对象
                         memory = result.copy()
@@ -385,8 +450,21 @@ class MemoryManager:
                         except Exception as e:
                             logging.warning(f"Error updating memory access stats: {str(e)}")
                         
+                        # 簇内召回补偿
+                        cluster_id = memory.get('cluster_info', {}).get('cluster_id', -1)
+                        if cluster_id != -1:
+                            compensate_memories = self.improve_retrieval(query, cluster_id)
+                            candidates.extend([
+                                {
+                                    'id': self._generate_memory_id(),
+                                    'content': comp_memory,
+                                    'type': 'default_recall_compensate',
+                                    'cluster_info': {'cluster_id': cluster_id}
+                                } for comp_memory in compensate_memories
+                            ])
+                        
                         candidates.append(memory)
-            
+        
             # 获取相关簇的摘要（作为补充）
             cluster_summary = self.get_cluster_summary(user_id, query)
             
@@ -1226,3 +1304,81 @@ class MemoryManager:
         self.metadata_manager.record_access(cluster_id)
         
         return self.memory_summarizer.get_cluster_summary(cluster_id)
+
+    def improve_retrieval(self, query: str, cluster_id: int) -> List[str]:
+        """
+        簇内召回补偿：提高低相似度但高关联度的记忆召回概率
+        
+        Args:
+            query: 查询文本
+            cluster_id: 目标记忆簇ID
+        
+        Returns:
+            List[str]: 补偿后的最佳召回结果
+        """
+        # 检查是否启用簇内召回补偿
+        if not self.intra_cluster_recall_config.get('enabled', False):
+            logging.info("簇内召回补偿未启用，跳过处理")
+            return []
+
+        try:
+            # 获取簇内所有记忆
+            cluster_memories = [
+                m['content'] for m in self.memories.get(self.current_user_id, [])
+                if m.get('cluster_info', {}).get('cluster_id') == cluster_id
+            ]
+            
+            if not cluster_memories:
+                logging.warning(f"簇 {cluster_id} 中没有找到记忆")
+                return []
+            
+            # 使用 TF-IDF 提取关键词
+            tfidf_vectorizer = TfidfVectorizer(stop_words='english')
+            tfidf_matrix = tfidf_vectorizer.fit_transform(cluster_memories)
+            feature_names = tfidf_vectorizer.get_feature_names_out()
+            
+            # 提取查询关键词
+            query_keywords = jieba.analyse.extract_tags(query, topK=5)
+            logging.info(f"查询关键词: {query_keywords}")
+            
+            # 计算查询关键词与簇内记忆的关联度
+            compensate_scores = []
+            for idx, memory in enumerate(cluster_memories):
+                # 计算关键词匹配度
+                keyword_match_score = sum(
+                    keyword in memory for keyword in query_keywords
+                ) / len(query_keywords) if query_keywords else 0
+                
+                # 计算 TF-IDF 相似度
+                memory_tfidf_vector = tfidf_matrix[idx]
+                query_tfidf_vector = tfidf_vectorizer.transform([query])
+                tfidf_similarity = cosine_similarity(memory_tfidf_vector, query_tfidf_vector)[0][0]
+                
+                # 根据配置计算综合评分
+                compensate_score = (
+                    self.intra_cluster_recall_config['keyword_match_weight'] * keyword_match_score +
+                    self.intra_cluster_recall_config['tfidf_similarity_weight'] * tfidf_similarity
+                )
+                
+                # 仅保留高于最小阈值的记忆
+                if compensate_score >= self.intra_cluster_recall_config.get('min_compensate_score', 0.3):
+                    compensate_scores.append((memory, compensate_score))
+                
+                logging.debug(
+                    f"记忆: {memory[:50]}..., "
+                    f"关键词匹配度: {keyword_match_score:.2f}, "
+                    f"TF-IDF相似度: {tfidf_similarity:.2f}, "
+                    f"综合补偿分数: {compensate_score:.2f}"
+                )
+            
+            # 按补偿分数排序并返回
+            compensate_scores.sort(key=lambda x: x[1], reverse=True)
+            top_k = self.intra_cluster_recall_config.get('top_k_compensate', 3)
+            top_memories = [memory for memory, score in compensate_scores[:top_k]]
+            
+            logging.info(f"簇内召回补偿：找到 {len(top_memories)} 个相关记忆")
+            return top_memories
+        
+        except Exception as e:
+            logging.error(f"簇内召回补偿出错: {str(e)}")
+            return []
