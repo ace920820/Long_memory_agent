@@ -141,37 +141,48 @@ class HierarchyManager:
         """
         logger.info(f"开始合并类别 {cluster1_id} 和 {cluster2_id}")
         
-        # 获取类别信息
-        cluster1 = self.hierarchy[cluster1_id]
-        cluster2 = self.hierarchy[cluster2_id]
-        
-        # 合并内容
-        merged_content = f"{cluster1['content']} {cluster2['content']}"
-        
-        # 合并子类别和记忆
-        merged_children = list(set(cluster1["children"] + cluster2["children"]))
-        merged_memories = list(set(cluster1["memories"] + cluster2["memories"]))
-        
-        # 创建新的合并类别
-        new_cluster_id = f"merged_{cluster1_id}_{cluster2_id}"
-        self.hierarchy[new_cluster_id] = {
-            "content": merged_content,
-            "parent": None,
-            "children": merged_children,
-            "memories": merged_memories
-        }
-        
-        # 更新子类别的父类别指向
-        for child_id in merged_children:
-            if child_id in self.hierarchy:
-                self.hierarchy[child_id]["parent"] = new_cluster_id
-                
-        # 删除原类别
-        del self.hierarchy[cluster1_id]
-        del self.hierarchy[cluster2_id]
-        
-        logger.info(f"类别合并完成，新类别ID: {new_cluster_id}")
-        return new_cluster_id
+        try:
+            # 获取类别信息
+            cluster1 = self.hierarchy[cluster1_id]
+            cluster2 = self.hierarchy[cluster2_id]
+            
+            # 计算相似度以确认是否应该合并
+            similarity = self._calculate_similarity(cluster1["content"], cluster2["content"])
+            if similarity <= self.similarity_threshold:
+                logger.info(f"类别相似度 {similarity} 低于阈值 {self.similarity_threshold}，取消合并")
+                return cluster1_id
+            
+            # 合并内容
+            merged_content = f"{cluster1['content']} {cluster2['content']}"
+            
+            # 合并子类别和记忆
+            merged_children = list(set(cluster1["children"] + cluster2["children"]))
+            merged_memories = list(set(cluster1["memories"] + cluster2["memories"]))
+            
+            # 创建新的合并类别
+            new_cluster_id = f"merged_{cluster1_id}_{cluster2_id}"
+            self.hierarchy[new_cluster_id] = {
+                "content": merged_content,
+                "parent": None,
+                "children": merged_children,
+                "memories": merged_memories
+            }
+            
+            # 更新子类别的父类别指向
+            for child_id in merged_children:
+                if child_id in self.hierarchy:
+                    self.hierarchy[child_id]["parent"] = new_cluster_id
+                    
+            # 删除原类别
+            del self.hierarchy[cluster1_id]
+            del self.hierarchy[cluster2_id]
+            
+            logger.info(f"类别合并完成，新类别ID: {new_cluster_id}")
+            return new_cluster_id
+            
+        except Exception as e:
+            logger.error(f"合并类别失败: {str(e)}")
+            raise
 
     def build_hierarchy(self, clusters: Dict[str, Dict]) -> Dict:
         """
@@ -241,18 +252,22 @@ class HierarchyManager:
         try:
             # 寻找最相似的类别
             best_cluster_id = None
-            max_similarity = self.similarity_threshold
+            max_similarity = 0.0  # 初始化为0，而不是相似度阈值
             
             for cluster_id, cluster_info in self.hierarchy.items():
                 similarity = self._calculate_similarity(new_memory, cluster_info["content"])
+                logger.info(f"与类别 {cluster_id} 的相似度: {similarity}")
                 if similarity > max_similarity:
                     max_similarity = similarity
                     best_cluster_id = cluster_id
-                    
-            if best_cluster_id:
+            
+            # 只有当相似度超过阈值时才添加到现有类别
+            if best_cluster_id and max_similarity > self.similarity_threshold:
                 # 将新记忆添加到现有类别
-                logger.info(f"将新记忆添加到类别 {best_cluster_id}")
+                logger.info(f"将新记忆添加到类别 {best_cluster_id}，相似度: {max_similarity}")
                 self.hierarchy[best_cluster_id]["memories"].append(new_memory)
+                # 更新类别内容，加入新记忆的信息
+                self.hierarchy[best_cluster_id]["content"] = f"{self.hierarchy[best_cluster_id]['content']} {new_memory}"
             else:
                 # 创建新类别
                 new_cluster_id = f"cluster_{len(self.hierarchy)}"
@@ -265,11 +280,22 @@ class HierarchyManager:
                     "memories": [new_memory]
                 }
                 
-                # 寻找最佳父类别
-                parent_id = self._find_best_parent(new_memory)
-                if parent_id:
-                    self.hierarchy[new_cluster_id]["parent"] = parent_id
-                    self.hierarchy[parent_id]["children"].append(new_cluster_id)
+                # 寻找潜在的父类别（使用较低的相似度阈值）
+                parent_threshold = self.similarity_threshold * 0.8  # 降低父类别的相似度要求
+                best_parent_id = None
+                max_parent_similarity = parent_threshold
+                
+                for cluster_id, cluster_info in self.hierarchy.items():
+                    if cluster_id != new_cluster_id:  # 不与自己比较
+                        similarity = self._calculate_similarity(new_memory, cluster_info["content"])
+                        if similarity > max_parent_similarity:
+                            max_parent_similarity = similarity
+                            best_parent_id = cluster_id
+                
+                if best_parent_id:
+                    logger.info(f"将新类别 {new_cluster_id} 设置为 {best_parent_id} 的子类别")
+                    self.hierarchy[new_cluster_id]["parent"] = best_parent_id
+                    self.hierarchy[best_parent_id]["children"].append(new_cluster_id)
                     
         except Exception as e:
             logger.error(f"更新层级结构失败: {str(e)}")
