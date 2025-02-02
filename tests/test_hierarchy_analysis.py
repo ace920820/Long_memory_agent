@@ -11,11 +11,132 @@ import sys
 import logging
 import json
 from typing import Dict, List
+import matplotlib.pyplot as plt
+import networkx as nx
+import numpy as np
 from models.hierarchy_manager import HierarchyManager
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', force=True)
 logger = logging.getLogger(__name__)
+
+def visualize_memory_hierarchy(memory_contents: List[str], hierarchies: List[Dict], output_path: str = "memory_hierarchy.png"):
+    """
+    将记忆层级结构可视化为树形图（优化版本）
+    
+    Args:
+        memory_contents: 记忆内容列表
+        hierarchies: 层级结构信息
+        output_path: 输出图片路径
+    """
+    # 预先创建所有节点和边的列表，避免重复操作
+    nodes = []
+    edges = []
+    labels = {}
+    levels = {}  # 节点层级缓存
+    
+    # 一次性构建图结构
+    for i, (content, hierarchy) in enumerate(zip(memory_contents, hierarchies)):
+        nodes.append(i)
+        labels[i] = content[:30] + "..." if len(content) > 30 else content
+        if hierarchy['parent'] is not None:
+            edges.append((hierarchy['parent'], i))
+            # 同时计算层级
+            parent_level = levels.get(hierarchy['parent'], -1)
+            levels[i] = parent_level + 1 if parent_level >= 0 else 0
+        else:
+            levels[i] = 0
+    
+    # 创建图并一次性添加所有节点和边
+    G = nx.DiGraph()
+    G.add_nodes_from(nodes)
+    G.add_edges_from(edges)
+    
+    # 优化层级计算
+    if not levels:  # 如果没有找到任何层级关系
+        for node in G.nodes():
+            levels[node] = len(nx.ancestors(G, node))
+    
+    max_level = max(levels.values())
+    
+    # 预计算每层节点
+    nodes_by_level = {level: [] for level in range(max_level + 1)}
+    for node, level in levels.items():
+        nodes_by_level[level].append(node)
+    
+    # 设置绘图参数（减少重复设置）
+    plt.rcParams['font.sans-serif'] = ['SimHei']
+    plt.rcParams['axes.unicode_minus'] = False
+    
+    fig = plt.figure(figsize=(20, 15), facecolor='white')
+    ax = fig.add_subplot(111)
+    
+    # 使用更快的布局算法
+    pos = {}
+    for level, level_nodes in nodes_by_level.items():
+        x = level / max_level
+        y_positions = np.linspace(-0.8, 0.8, len(level_nodes))
+        for node, y in zip(level_nodes, y_positions):
+            pos[node] = np.array([x, y])
+    
+    # 一次性生成所有颜色
+    level_colors = plt.cm.viridis(np.linspace(0, 1, max_level + 1))
+    
+    # 批量绘制边（减少绘制调用次数）
+    nx.draw_networkx_edges(G, pos,
+                          edge_color='gray',
+                          arrows=True,
+                          arrowsize=20,
+                          width=1.5,
+                          alpha=0.6,
+                          connectionstyle="arc3,rad=0.1",  # 减小弧度以加快渲染
+                          ax=ax)
+    
+    # 批量绘制节点（按层级）
+    for level, nodes_in_level in nodes_by_level.items():
+        if nodes_in_level:  # 避免空列表
+            nx.draw_networkx_nodes(G, pos,
+                                 nodelist=nodes_in_level,
+                                 node_color=[level_colors[level]],
+                                 node_size=2500,  # 稍微减小节点大小以加快渲染
+                                 alpha=0.7,
+                                 ax=ax)
+    
+    # 批量绘制标签
+    nx.draw_networkx_labels(G, pos, labels,
+                          font_size=8,
+                          font_family='SimHei',
+                          font_weight='bold',
+                          ax=ax)
+    
+    # 优化图例（减少元素数量）
+    step = max(1, max_level // 4)  # 只显示部分层级的图例
+    legend_elements = [plt.Line2D([0], [0],
+                                marker='o',
+                                color='w',
+                                label=f'第{i}层',
+                                markerfacecolor=level_colors[i],
+                                markersize=10)
+                      for i in range(0, max_level + 1, step)]
+    
+    ax.legend(handles=legend_elements,
+             loc='center left',
+             bbox_to_anchor=(1, 0.5),
+             title='层级',
+             title_fontsize=12,
+             fontsize=10)
+    
+    ax.axis('off')
+    
+    # 优化保存过程
+    plt.savefig(output_path,
+                dpi=200,  # 稍微降低DPI以加快保存
+                bbox_inches='tight',
+                facecolor='white',
+                format='png')
+    plt.close()
+    
+    logger.info(f"层级结构图已保存至: {output_path}")
 
 def load_user_memories() -> List[Dict]:
     """加载用户记忆数据"""
@@ -103,6 +224,9 @@ def test_memory_hierarchy_analysis():
                     logger.info(f"    父节点: {parent_content}")
                 if member['children']:
                     logger.info(f"    子节点数: {len(member['children'])}")
+        
+        # 生成可视化图形
+        visualize_memory_hierarchy(memory_contents, hierarchies)
         
         # 验证基本属性
         assert len(hierarchies) == len(memory_contents), "层级结构数量应与有效记忆数量相同"
