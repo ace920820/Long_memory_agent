@@ -55,14 +55,26 @@ class HierarchyManager:
             
             # 层级结构，使用字典存储，格式：
             # {
-            #   "cluster_id": {
+            #   "category_id": {
+            #     "name": str,         # 类别名称
             #     "content": str,      # 类别内容摘要
+            #     "level": int,        # 层级深度（0表示根节点）
             #     "parent": str,       # 父类别ID
-            #     "children": List[str] # 子类别ID列表
-            #     "memories": List[str] # 该类别包含的记忆ID列表
+            #     "children": List[str], # 子类别ID列表
+            #     "memories": List[str]  # 该类别包含的记忆ID列表
             #   }
             # }
             self.hierarchy = {}
+            
+            # 缓存已知的概念分类
+            self.concept_cache = {
+                "爱好": ["运动", "影视", "阅读", "音乐", "旅游", "游戏"],
+                "运动": ["滑雪", "冲浪", "篮球", "跑步", "游泳", "健身"],
+                "影视": ["电影", "电视剧", "动画片", "纪录片"],
+                "生活": ["饮食", "购物", "社交", "休闲"],
+                "工作": ["技术", "会议", "项目", "学习"],
+                "情感": ["家人", "朋友", "恋爱", "心情"]
+            }
             
         except Exception as e:
             logger.error(f"初始化层级管理器失败: {str(e)}")
@@ -162,78 +174,199 @@ class HierarchyManager:
             logger.error(f"计算文本相似度失败: {str(e)}")
             return 0.0
 
-    def _find_best_parent(self, cluster_content: str) -> Optional[str]:
+    def _extract_concepts(self, text: str) -> List[str]:
         """
-        为新类别找到最合适的父类别
+        从文本中提取关键概念
         Args:
-            cluster_content: 类别内容
+            text: 输入文本
         Returns:
-            最合适的父类别ID，如果没有合适的则返回None
+            概念列表
         """
-        best_parent = None
-        max_similarity = self.similarity_threshold
-        
-        for cluster_id, cluster_info in self.hierarchy.items():
-            similarity = self._calculate_similarity(cluster_content, cluster_info["content"])
-            if similarity > max_similarity:
-                max_similarity = similarity
-                best_parent = cluster_id
-                
-        logger.info(f"为类别内容 '{cluster_content[:50]}...' 找到最佳父类别: {best_parent}")
-        return best_parent
-
-    def _merge_clusters(self, cluster1_id: str, cluster2_id: str) -> str:
-        """
-        合并两个相似的类别
-        Args:
-            cluster1_id: 第一个类别ID
-            cluster2_id: 第二个类别ID
-        Returns:
-            合并后的类别ID
-        """
-        logger.info(f"开始合并类别 {cluster1_id} 和 {cluster2_id}")
-        
         try:
-            # 获取类别信息
-            cluster1 = self.hierarchy[cluster1_id]
-            cluster2 = self.hierarchy[cluster2_id]
+            # 对文本进行分词和向量化
+            text_embedding = self._encode_text(text)
             
-            # 计算相似度以确认是否应该合并
-            similarity = self._calculate_similarity(cluster1["content"], cluster2["content"])
-            if similarity <= self.similarity_threshold:
-                logger.info(f"类别相似度 {similarity} 低于阈值 {self.similarity_threshold}，取消合并")
-                return cluster1_id
+            # 计算与已知概念的相似度
+            concepts = []
+            for category, subcategories in self.concept_cache.items():
+                # 计算与类别的相似度
+                category_similarity = self._calculate_similarity(text, category)
+                if category_similarity > 0.3:  # 相似度阈值可调
+                    concepts.append(category)
+                
+                # 计算与子类别的相似度
+                for subcategory in subcategories:
+                    subcategory_similarity = self._calculate_similarity(text, subcategory)
+                    if subcategory_similarity > 0.4:  # 子类别需要更高的相似度
+                        concepts.append(subcategory)
             
-            # 合并内容
-            merged_content = f"{cluster1['content']} {cluster2['content']}"
-            
-            # 合并子类别和记忆
-            merged_children = list(set(cluster1["children"] + cluster2["children"]))
-            merged_memories = list(set(cluster1["memories"] + cluster2["memories"]))
-            
-            # 创建新的合并类别
-            new_cluster_id = f"merged_{cluster1_id}_{cluster2_id}"
-            self.hierarchy[new_cluster_id] = {
-                "content": merged_content,
-                "parent": None,
-                "children": merged_children,
-                "memories": merged_memories
-            }
-            
-            # 更新子类别的父类别指向
-            for child_id in merged_children:
-                if child_id in self.hierarchy:
-                    self.hierarchy[child_id]["parent"] = new_cluster_id
-                    
-            # 删除原类别
-            del self.hierarchy[cluster1_id]
-            del self.hierarchy[cluster2_id]
-            
-            logger.info(f"类别合并完成，新类别ID: {new_cluster_id}")
-            return new_cluster_id
+            logger.debug(f"从文本中提取的概念: {concepts}")
+            return list(set(concepts))  # 去重
             
         except Exception as e:
-            logger.error(f"合并类别失败: {str(e)}")
+            logger.error(f"概念提取失败: {str(e)}")
+            return []
+
+    def _find_best_category(self, memory_content: str) -> Tuple[str, float]:
+        """
+        为记忆内容找到最合适的分类
+        Args:
+            memory_content: 记忆内容
+        Returns:
+            (分类名称, 相似度分数)
+        """
+        try:
+            logger.info(f"正在处理的记忆内容: {memory_content}")
+            # 提取记忆中的概念
+            concepts = self._extract_concepts(memory_content)
+            
+            # 如果没有找到概念，返回默认分类
+            if not concepts:
+                logger.info(f"处理结果: 未分类")
+                return "未分类", 0.0
+            
+            # 计算每个概念与记忆内容的相似度
+            best_concept = None
+            max_similarity = 0.0
+            
+            for concept in concepts:
+                similarity = self._calculate_similarity(memory_content, concept)
+                if similarity > max_similarity:
+                    max_similarity = similarity
+                    best_concept = concept
+
+
+            logger.info(f"记忆内容最匹配的分类: {best_concept}，相似度: {max_similarity}")
+            return best_concept, max_similarity
+            
+        except Exception as e:
+            logger.error(f"查找最佳分类失败: {str(e)}")
+            return "未分类", 0.0
+
+    def _create_category_hierarchy(self, category: str) -> str:
+        """
+        创建分类的层级结构
+        Args:
+            category: 分类名称
+        Returns:
+            分类ID
+        """
+        try:
+            # 查找父级分类
+            parent_category = None
+            for parent, children in self.concept_cache.items():
+                if category in children:
+                    parent_category = parent
+                    break
+            
+            # 创建或获取父级分类节点
+            if parent_category:
+                parent_id = f"category_{parent_category}"
+                if parent_id not in self.hierarchy:
+                    self.hierarchy[parent_id] = {
+                        "name": parent_category,
+                        "content": f"与{parent_category}相关的记忆",
+                        "level": 0,
+                        "parent": None,
+                        "children": [],
+                        "memories": []
+                    }
+            
+            # 创建当前分类节点
+            category_id = f"category_{category}"
+            if category_id not in self.hierarchy:
+                self.hierarchy[category_id] = {
+                    "name": category,
+                    "content": f"与{category}相关的记忆",
+                    "level": 1 if parent_category else 0,
+                    "parent": f"category_{parent_category}" if parent_category else None,
+                    "children": [],
+                    "memories": []
+                }
+                
+                # 更新父子关系
+                if parent_category:
+                    self.hierarchy[f"category_{parent_category}"]["children"].append(category_id)
+            
+            logger.info(f"创建分类层级: {category_id}, 父分类: {parent_category}")
+            return category_id
+            
+        except Exception as e:
+            logger.error(f"创建分类层级失败: {str(e)}")
+            raise
+
+    def analyze_content_hierarchies(self, contents: List[str]) -> List[Dict]:
+        """
+        分析多个记忆内容的层级关系
+        Args:
+            contents: 记忆内容列表
+        Returns:
+            层级信息列表，每个元素包含 cluster, parent, children 等信息
+        """
+        try:
+            logger.info(f"开始分析 {len(contents)} 条记忆的层级关系")
+            
+            # 存储每个记忆的层级信息
+            hierarchies = []
+            
+            # 存储类别到记忆索引的映射
+            category_memories = {}
+            
+            # 第一遍：分析每条记忆并分配到类别
+            for i, content in enumerate(contents):
+                logger.info(f"正在处理第 {i+1}/{len(contents)} 条记忆")
+                category, similarity = self._find_best_category(content)
+                category_id = self._create_category_hierarchy(category)
+                
+                if category_id not in category_memories:
+                    category_memories[category_id] = []
+                category_memories[category_id].append(i)
+                
+                # 添加到类别的记忆列表中
+                self.hierarchy[category_id]["memories"].append(i)
+            
+            # 第二遍：建立父子关系
+            for i, content in enumerate(contents):
+                logger.info(f"正在建立第 {i+1}/{len(contents)} 条记忆的父子关系")
+                category, _ = self._find_best_category(content)
+                category_id = f"category_{category}"
+                parent_category_id = self.hierarchy[category_id]["parent"]
+                
+                # 在父类别中找最相似的记忆作为父节点
+                parent_idx = None
+                max_similarity = 0.0
+                
+                if parent_category_id and parent_category_id in category_memories:
+                    for potential_parent_idx in category_memories[parent_category_id]:
+                        if potential_parent_idx != i:  # 避免自己作为自己的父节点
+                            similarity = self._calculate_similarity(content, contents[potential_parent_idx])
+                            if similarity > max_similarity and similarity > self.similarity_threshold:
+                                max_similarity = similarity
+                                parent_idx = potential_parent_idx
+                
+                # 收集层级信息
+                hierarchy_info = {
+                    "cluster": f"{category}: {content[:30]}...",
+                    "parent": parent_idx,  # 使用记忆索引作为父节点
+                    "children": [],  # 先初始化为空，稍后更新
+                    "similarity_scores": {j: self._calculate_similarity(content, other_content)
+                                       for j, other_content in enumerate(contents) if i != j}
+                }
+                
+                hierarchies.append(hierarchy_info)
+                logger.debug(f"记忆 {i} 的层级信息: 分类={category}, 父节点={parent_idx}")
+            
+            # 更新子节点信息
+            logger.info("正在更新子节点信息")
+            for i, hierarchy in enumerate(hierarchies):
+                if hierarchy["parent"] is not None:
+                    hierarchies[hierarchy["parent"]]["children"].append(i)
+            
+            logger.info(f"层级关系分析完成，共处理 {len(hierarchies)} 条记忆")
+            return hierarchies
+            
+        except Exception as e:
+            logger.error(f"分析层级关系失败: {str(e)}")
             raise
 
     def build_hierarchy(self, clusters: Dict[str, Dict]) -> Dict:
@@ -353,133 +486,76 @@ class HierarchyManager:
             logger.error(f"更新层级结构失败: {str(e)}")
             raise
 
-    def analyze_content_hierarchies(self, contents: List[str]) -> List[Dict]:
+    def _find_best_parent(self, cluster_content: str) -> Optional[str]:
         """
-        分析多个记忆内容的层级关系
+        为新类别找到最合适的父类别
         Args:
-            contents: 记忆内容列表
+            cluster_content: 类别内容
         Returns:
-            层级信息列表，每个元素包含 cluster, parent, children 等信息
+            最合适的父类别ID，如果没有合适的则返回None
         """
+        best_parent = None
+        max_similarity = self.similarity_threshold
+        
+        for cluster_id, cluster_info in self.hierarchy.items():
+            similarity = self._calculate_similarity(cluster_content, cluster_info["content"])
+            if similarity > max_similarity:
+                max_similarity = similarity
+                best_parent = cluster_id
+                
+        logger.info(f"为类别内容 '{cluster_content[:50]}...' 找到最佳父类别: {best_parent}")
+        return best_parent
+
+    def _merge_clusters(self, cluster1_id: str, cluster2_id: str) -> str:
+        """
+        合并两个相似的类别
+        Args:
+            cluster1_id: 第一个类别ID
+            cluster2_id: 第二个类别ID
+        Returns:
+            合并后的类别ID
+        """
+        logger.info(f"开始合并类别 {cluster1_id} 和 {cluster2_id}")
+        
         try:
-            if not contents:
-                logger.warning("没有输入内容需要分析")
-                return []
-                
-            logger.info(f"开始分析 {len(contents)} 条记忆的层级关系")
+            # 获取类别信息
+            cluster1 = self.hierarchy[cluster1_id]
+            cluster2 = self.hierarchy[cluster2_id]
             
-            # 使用 BERT 计算内容的嵌入向量
-            embeddings = np.array([self._encode_text(content) for content in contents])
+            # 计算相似度以确认是否应该合并
+            similarity = self._calculate_similarity(cluster1["content"], cluster2["content"])
+            if similarity <= self.similarity_threshold:
+                logger.info(f"类别相似度 {similarity} 低于阈值 {self.similarity_threshold}，取消合并")
+                return cluster1_id
             
-            # 如果数据量太小，直接使用原始向量
-            if len(contents) < 4:
-                embeddings_reduced = embeddings
-            else:
-                # 使用 UMAP 进行降维，减少维度灾难的影响
-                n_neighbors = min(len(contents) - 1, 3)  # 对于小数据集，使用较小的邻居数
-                n_components = min(len(contents) - 1, 8)  # 降维的目标维度不能超过样本数-1
-                
-                umap = UMAP(
-                    n_components=n_components,
-                    n_neighbors=n_neighbors,
-                    min_dist=0.1,
-                    metric='cosine',
-                    random_state=42
-                )
-                embeddings_reduced = umap.fit_transform(embeddings)
+            # 合并内容
+            merged_content = f"{cluster1['content']} {cluster2['content']}"
             
-            # 对于非常小的数据集，直接使用层次聚类
-            if len(contents) < 4:
-                clustering = AgglomerativeClustering(
-                    n_clusters=min(len(contents), 2),
-                    metric='cosine',
-                    linkage='average'
-                )
-                clusters = clustering.fit_predict(embeddings)
-            else:
-                # 使用 DBSCAN 进行聚类
-                scaler = StandardScaler()
-                embeddings_scaled = scaler.fit_transform(embeddings_reduced)
-                
-                clustering = DBSCAN(
-                    eps=0.5,           # 邻域半径
-                    min_samples=2,     # 最小样本数
-                    metric='euclidean'
-                ).fit(embeddings_scaled)
-                
-                clusters = clustering.labels_
-                
-                # 如果所有点都是噪声点，使用层次聚类
-                if len(set(clusters)) <= 1:
-                    logger.warning("DBSCAN 聚类效果不理想，尝试使用层次聚类")
-                    clustering = AgglomerativeClustering(
-                        n_clusters=min(len(contents), 3),
-                        metric='cosine',
-                        linkage='average'
-                    )
-                    clusters = clustering.fit_predict(embeddings_scaled)
+            # 合并子类别和记忆
+            merged_children = list(set(cluster1["children"] + cluster2["children"]))
+            merged_memories = list(set(cluster1["memories"] + cluster2["memories"]))
             
-            # 构建层级结构
-            hierarchies = []
-            for i, content in enumerate(contents):
-                cluster = int(clusters[i])
-                # 为每个簇生成一个有意义的名称
-                if cluster >= 0:
-                    # 获取同簇的所有内容
-                    cluster_contents = [contents[j] for j, c in enumerate(clusters) if c == cluster]
-                    # 使用最短的内容作为簇的名称
-                    shortest_content = min(cluster_contents, key=len)
-                    if len(shortest_content) > 10:
-                        shortest_content = shortest_content[:10] + "..."
-                    cluster_name = f"簇_{cluster}: {shortest_content}"
-                else:
-                    cluster_name = "未分类"
-                
-                # 计算与其他记忆的关系
-                similarities = cosine_similarity([embeddings[i]], embeddings)[0]
-                
-                # 找出最相似的记忆作为父节点（排除自身）
-                similarities[i] = -1  # 将自身的相似度设为最小
-                parent_idx = np.argmax(similarities)
-                parent_sim = similarities[parent_idx]
-                
-                # 使用动态阈值
-                threshold = max(0.3, np.percentile(similarities[similarities > 0], 50))
-                
-                # 只有当相似度超过阈值时才建立父子关系
-                parent = None
-                if parent_sim > threshold:
-                    parent = parent_idx
-                
-                # 找出作为子节点的记忆
-                children = []
-                for j, sim in enumerate(similarities):
-                    if j != i and sim > threshold:
-                        children.append(j)
-                
-                # 构建层级信息
-                hierarchy = {
-                    'cluster': cluster_name,
-                    'parent': parent,
-                    'children': children,
-                    'similarity_scores': {
-                        j: sim for j, sim in enumerate(similarities)
-                        if j != i and sim > threshold * 0.8  # 使用稍低的阈值显示更多关系
-                    }
-                }
-                
-                hierarchies.append(hierarchy)
-                logger.debug(f"记忆 {i} 的层级信息: {hierarchy}")
+            # 创建新的合并类别
+            new_cluster_id = f"merged_{cluster1_id}_{cluster2_id}"
+            self.hierarchy[new_cluster_id] = {
+                "content": merged_content,
+                "parent": None,
+                "children": merged_children,
+                "memories": merged_memories
+            }
             
-            # 记录聚类结果统计
-            unique_clusters = set(clusters)
-            cluster_sizes = {c: sum(1 for x in clusters if x == c) for c in unique_clusters}
-            logger.info(f"聚类结果: 共 {len(unique_clusters)} 个簇")
-            for c, size in cluster_sizes.items():
-                logger.info(f"簇_{c}: {size} 个记忆")
+            # 更新子类别的父类别指向
+            for child_id in merged_children:
+                if child_id in self.hierarchy:
+                    self.hierarchy[child_id]["parent"] = new_cluster_id
+                    
+            # 删除原类别
+            del self.hierarchy[cluster1_id]
+            del self.hierarchy[cluster2_id]
             
-            return hierarchies
+            logger.info(f"类别合并完成，新类别ID: {new_cluster_id}")
+            return new_cluster_id
             
         except Exception as e:
-            logger.error(f"分析记忆层级关系失败: {str(e)}")
+            logger.error(f"合并类别失败: {str(e)}")
             raise

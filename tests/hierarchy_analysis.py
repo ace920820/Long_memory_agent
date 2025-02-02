@@ -74,16 +74,18 @@ def visualize_memory_hierarchy(memory_contents: List[str], hierarchies: List[Dic
     # 使用更快的布局算法
     pos = {}
     for level, level_nodes in nodes_by_level.items():
-        x = level / max_level
-        y_positions = np.linspace(-0.8, 0.8, len(level_nodes))
+        # 避免除以零的问题
+        x = level if max_level == 0 else level / max_level
+        y_positions = np.linspace(-0.8, 0.8, len(level_nodes)) if level_nodes else [0]
         for node, y in zip(level_nodes, y_positions):
             pos[node] = np.array([x, y])
     
     # 一次性生成所有颜色
-    level_colors = plt.cm.viridis(np.linspace(0, 1, max_level + 1))
+    level_colors = plt.cm.viridis(np.linspace(0, 1, max(2, max_level + 1)))  # 确保至少有两种颜色
     
     # 批量绘制边（减少绘制调用次数）
-    nx.draw_networkx_edges(G, pos,
+    if edges:  # 只在有边时绘制
+        nx.draw_networkx_edges(G, pos,
                           edge_color='gray',
                           arrows=True,
                           arrowsize=20,
@@ -110,7 +112,7 @@ def visualize_memory_hierarchy(memory_contents: List[str], hierarchies: List[Dic
                           ax=ax)
     
     # 优化图例（减少元素数量）
-    step = max(1, max_level // 4)  # 只显示部分层级的图例
+    step = max(1, max_level // 4) if max_level > 0 else 1  # 只显示部分层级的图例
     legend_elements = [plt.Line2D([0], [0],
                                 marker='o',
                                 color='w',
@@ -119,12 +121,13 @@ def visualize_memory_hierarchy(memory_contents: List[str], hierarchies: List[Dic
                                 markersize=10)
                       for i in range(0, max_level + 1, step)]
     
-    ax.legend(handles=legend_elements,
-             loc='center left',
-             bbox_to_anchor=(1, 0.5),
-             title='层级',
-             title_fontsize=12,
-             fontsize=10)
+    if legend_elements:  # 只在有图例元素时添加图例
+        ax.legend(handles=legend_elements,
+                 loc='center left',
+                 bbox_to_anchor=(1, 0.5),
+                 title='层级',
+                 title_fontsize=12,
+                 fontsize=10)
     
     ax.axis('off')
     
@@ -154,7 +157,7 @@ def load_user_memories() -> List[Dict]:
         logger.error(f"加载用户记忆数据失败: {str(e)}")
         return []
 
-def test_memory_hierarchy_analysis():
+def memory_hierarchy_analysis():
     """测试记忆层级结构分析"""
     try:
         # 初始化层级管理器
@@ -243,4 +246,4 @@ def test_memory_hierarchy_analysis():
         raise
 
 if __name__ == "__main__":
-    test_memory_hierarchy_analysis()
+    memory_hierarchy_analysis()
