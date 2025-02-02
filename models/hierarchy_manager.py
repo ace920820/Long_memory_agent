@@ -15,8 +15,10 @@ import numpy as np
 from scipy.spatial.distance import cosine
 from transformers import AutoTokenizer, AutoModel
 import torch
-from sklearn.cluster import DBSCAN
+from sklearn.cluster import DBSCAN, AgglomerativeClustering
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.preprocessing import StandardScaler
+from umap import UMAP
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -360,43 +362,62 @@ class HierarchyManager:
             层级信息列表，每个元素包含 cluster, parent, children 等信息
         """
         try:
+            if not contents:
+                logger.warning("没有输入内容需要分析")
+                return []
+                
             logger.info(f"开始分析 {len(contents)} 条记忆的层级关系")
             
             # 使用 BERT 计算内容的嵌入向量
             embeddings = np.array([self._encode_text(content) for content in contents])
             
-            # 使用 UMAP 进行降维，减少维度灾难的影响
-            from umap import UMAP
-            n_neighbors = min(15, len(contents) - 1)  # 根据数据量调整邻居数
-            umap = UMAP(
-                n_components=min(16, len(contents) - 1),  # 降维后的维度
-                n_neighbors=n_neighbors,
-                min_dist=0.1,
-                metric='cosine',
-                random_state=42
-            )
-            embeddings_reduced = umap.fit_transform(embeddings)
+            # 如果数据量太小，直接使用原始向量
+            if len(contents) < 4:
+                embeddings_reduced = embeddings
+            else:
+                # 使用 UMAP 进行降维，减少维度灾难的影响
+                n_neighbors = min(len(contents) - 1, 3)  # 对于小数据集，使用较小的邻居数
+                n_components = min(len(contents) - 1, 8)  # 降维的目标维度不能超过样本数-1
+                
+                umap = UMAP(
+                    n_components=n_components,
+                    n_neighbors=n_neighbors,
+                    min_dist=0.1,
+                    metric='cosine',
+                    random_state=42
+                )
+                embeddings_reduced = umap.fit_transform(embeddings)
             
-            # 使用 DBSCAN 进行聚类，调整参数使其更容易形成簇
-            from sklearn.preprocessing import StandardScaler
-            scaler = StandardScaler()
-            embeddings_scaled = scaler.fit_transform(embeddings_reduced)
-            
-            clustering = DBSCAN(
-                eps=0.5,           # 增大邻域半径
-                min_samples=2,     # 保持较小的最小样本数
-                metric='euclidean'
-            ).fit(embeddings_scaled)
-            
-            clusters = clustering.labels_
-            
-            # 如果所有点都是噪声点，则使用 KMeans 进行聚类
-            if len(set(clusters)) <= 1:  # 如果只有一个簇或者都是噪声点
-                logger.warning("DBSCAN 聚类效果不理想，尝试使用 KMeans")
-                from sklearn.cluster import KMeans
-                n_clusters = min(5, len(contents))  # 最多5个簇
-                kmeans = KMeans(n_clusters=n_clusters, random_state=42)
-                clusters = kmeans.fit_predict(embeddings_scaled)
+            # 对于非常小的数据集，直接使用层次聚类
+            if len(contents) < 4:
+                clustering = AgglomerativeClustering(
+                    n_clusters=min(len(contents), 2),
+                    metric='cosine',
+                    linkage='average'
+                )
+                clusters = clustering.fit_predict(embeddings)
+            else:
+                # 使用 DBSCAN 进行聚类
+                scaler = StandardScaler()
+                embeddings_scaled = scaler.fit_transform(embeddings_reduced)
+                
+                clustering = DBSCAN(
+                    eps=0.5,           # 邻域半径
+                    min_samples=2,     # 最小样本数
+                    metric='euclidean'
+                ).fit(embeddings_scaled)
+                
+                clusters = clustering.labels_
+                
+                # 如果所有点都是噪声点，使用层次聚类
+                if len(set(clusters)) <= 1:
+                    logger.warning("DBSCAN 聚类效果不理想，尝试使用层次聚类")
+                    clustering = AgglomerativeClustering(
+                        n_clusters=min(len(contents), 3),
+                        metric='cosine',
+                        linkage='average'
+                    )
+                    clusters = clustering.fit_predict(embeddings_scaled)
             
             # 构建层级结构
             hierarchies = []
@@ -414,19 +435,16 @@ class HierarchyManager:
                 else:
                     cluster_name = "未分类"
                 
-                # 计算与其他记忆的关系（使用降维后的向量）
-                similarities = cosine_similarity(
-                    [embeddings_scaled[i]], 
-                    embeddings_scaled
-                )[0]
+                # 计算与其他记忆的关系
+                similarities = cosine_similarity([embeddings[i]], embeddings)[0]
                 
                 # 找出最相似的记忆作为父节点（排除自身）
                 similarities[i] = -1  # 将自身的相似度设为最小
                 parent_idx = np.argmax(similarities)
                 parent_sim = similarities[parent_idx]
                 
-                # 调整相似度阈值，使其更容易建立父子关系
-                threshold = 0.5  # 进一步降低阈值
+                # 使用动态阈值
+                threshold = max(0.3, np.percentile(similarities[similarities > 0], 50))
                 
                 # 只有当相似度超过阈值时才建立父子关系
                 parent = None
@@ -446,7 +464,7 @@ class HierarchyManager:
                     'children': children,
                     'similarity_scores': {
                         j: sim for j, sim in enumerate(similarities)
-                        if j != i and sim > 0.3  # 降低相似度阈值，显示更多关系
+                        if j != i and sim > threshold * 0.8  # 使用稍低的阈值显示更多关系
                     }
                 }
                 

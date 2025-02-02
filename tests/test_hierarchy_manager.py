@@ -39,6 +39,10 @@ class TestHierarchyManager:
             "cluster_3": {
                 "content": "数据分析方法讨论",
                 "memories": ["数据预处理技术", "特征工程方法"]
+            },
+            "cluster_4": {
+                "content": "母猪的产后护理",
+                "memories": ["母猪的妊娠期有多久", "母猪需要坐月子吗"]
             }
         }
         
