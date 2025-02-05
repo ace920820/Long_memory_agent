@@ -6,14 +6,14 @@ import logging
 
 class LLMAPIWrapper:
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None, base_url: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"):
-        self.api_key = os.getenv("DASHSCOPE_API_KEY")
-        self.model = model or os.getenv("DASHSCOPE_MODEL")
+        self.api_key = os.getenv("LLM_API_KEY")
+        self.model = model or os.getenv("LLM_MODEL")
         self.base_url = base_url
 
         # 初始化日志记录器
         self.logger = logging.getLogger("LLMAPIWrapper")
         if not self.api_key:
-            raise ValueError("API Key is required. Set it via parameter or environment variable `DASHSCOPE_API_KEY`.")
+            raise ValueError("API Key is required. Set it via parameter or environment variable `LLM_API_KEY`.")
 
     def call_model(
             self,
@@ -81,9 +81,9 @@ class LLMAPIWrapper:
 # Example usage
 if __name__ == "__main__":
     try:
-        api_wrapper = LLMAPIWrapper(api_key=os.getenv("DASHSCOPE_API_KEY"))
+        api_wrapper = LLMAPIWrapper(api_key=os.getenv("LLM_API_KEY"),base_url="https://api.gptsapi.net/v1")
         response = api_wrapper.call_model(
-            model="qwen-plus",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": "你好，你是谁？"}

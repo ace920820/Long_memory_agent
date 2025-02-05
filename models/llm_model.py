@@ -6,12 +6,14 @@ from datetime import datetime
 
 class LLMModel:
     def __init__(self, config=None):
-        config["api_key"] =  os.getenv("DASHSCOPE_API_KEY")
+        config["api_key"] =  os.getenv("LLM_API_KEY")
         self.config = config
-        self.model=  os.getenv("DASHSCOPE_MODEL")
-        if self.model == "deepseek-chat":
+        self.model=  os.getenv("LLM_MODEL")
+        if self.model[:3] == "gpt":
+            self.base_url = "https://api.gptsapi.net/v1"
+        elif self.model[:8] == "deepseek":
             self.base_url = 'https://api.deepseek.com'
-        else:#如果是"qwen-plus"
+        elif self.model[:4] == "qwen":
             self.base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
         self.api_wrapper = LLMAPIWrapper(api_key=config["api_key"], model=self.model,base_url=self.base_url)
 

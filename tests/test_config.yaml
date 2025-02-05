@@ -1,0 +1,9 @@
+embedding:
+  model_path: "BAAI/bge-small-zh"
+  similarity_threshold: 0.5
+  index_path: ""  # 这个值会在测试中动态设置
+
+rerank:
+  model_path: "BAAI/bge-small-zh"
+  batch_size: 32
+  max_length: 512
