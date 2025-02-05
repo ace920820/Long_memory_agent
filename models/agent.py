@@ -82,7 +82,7 @@ class ChatAgent:
             # 1. 获取知识库相关文档
             relevant_docs = []
             if self.rag_module:
-                relevant_docs = self.rag_module.search(user_input, top_k=5)
+                relevant_docs = self.rag_module.search(user_input, top_k=10).split('\n\n')
                 logging.debug(f"Retrieved documents: {relevant_docs}")
 
             # 2. 获取相关记忆
@@ -95,7 +95,7 @@ class ChatAgent:
             context = {
                 'chat_history': self.user_contexts.get(user_id, []),
                 'memories': [memory['content'] for memory in memories] if memories else [],
-                'context': [doc['matched_chunks'] for doc in relevant_docs] if relevant_docs else []
+                'context': [doc for doc in relevant_docs] if relevant_docs else []
             }
 
             # 4. 生成回答

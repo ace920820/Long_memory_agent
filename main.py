@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from models.llm_model import LLMModel
 from models.agent import ChatAgent
 from services.llm_service import LLMService
-from models.rag_module import RAGModule
+from models.raptor_module import RaptorModule
 from models.memory_manager import MemoryManager
 from services.prompt_manager import PromptManager
 from routes.document_routes import init_document_routes
@@ -21,7 +21,7 @@ if sys.stdout.encoding.lower() != 'utf-8':
 def create_rag_module():
     """创建并初始化 RAGModule 实例"""
     try:
-        rag_module = RAGModule()
+        rag_module = RaptorModule()
         print("RAG module initialized successfully")
         return rag_module
     except Exception as e:
@@ -396,6 +396,8 @@ def create_app(rag_module):
     return app
 
 if __name__ == "__main__":
+    api_key = os.environ.get("LLM_API_KEY")
+    os.environ["OPENAI_API_KEY"] = api_key
     # 初始化 RAG 模块
     rag_module = create_rag_module()
     app = create_app(rag_module)

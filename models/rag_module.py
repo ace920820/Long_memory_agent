@@ -10,10 +10,7 @@ from typing import List, Dict
 from datetime import datetime
 import hashlib
 from pathlib import Path
-import docx
-import PyPDF2
-import markdown
-
+from raptor import RetrievalAugmentation
 
 class RAGModule:
     def __init__(self, config_path: str = "config/config.yaml"):
@@ -35,6 +32,8 @@ class RAGModule:
         self.similarity_threshold = embedding_config['similarity_threshold']
         self.index_path = embedding_config['index_path']
         self.docs_path = os.path.join(self.index_path, "documents")
+
+        self.RA = RetrievalAugmentation(tree="data/RAtree")
 
         try:
             # 初始化 BGE 模型
@@ -124,208 +123,6 @@ class RAGModule:
             # 重建索引
             self._rebuild_index()
 
-    def _extract_text_from_file(self, file_path: str) -> str:
-        """从不同类型的文件中提取文本内容"""
-        file_ext = Path(file_path).suffix.lower()
-        
-        try:
-            if file_ext == '.txt':
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    return f.read()
-                    
-            elif file_ext == '.docx':
-                doc = docx.Document(file_path)
-                return '\n'.join([paragraph.text for paragraph in doc.paragraphs])
-                
-            elif file_ext == '.pdf':
-                text = []
-                with open(file_path, 'rb') as f:
-                    pdf_reader = PyPDF2.PdfReader(f)
-                    for page in pdf_reader.pages:
-                        text.append(page.extract_text())
-                return '\n'.join(text)
-                
-            elif file_ext == '.md':
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    md_text = f.read()
-                    html = markdown.markdown(md_text)
-                    # 简单移除HTML标签
-                    text = html.replace('<p>', '').replace('</p>', '\n')
-                    return text
-                    
-            else:
-                raise ValueError(f"Unsupported file type: {file_ext}")
-                
-        except Exception as e:
-            logging.error(f"Error extracting text from {file_path}: {str(e)}")
-            raise
-
-    def _split_text(self, text: str, max_length: int = 200, overlap: int = 30) -> List[str]:
-        """将长文本分割成较小的片段，使用基于语义的递归分割策略
-
-        Args:
-            text: 要分割的文本
-            max_length: 每个文本块的目标长度
-            overlap: 相邻文本块之间的最小重叠字符数
-
-        Returns:
-            List[str]: 分割后的文本块列表
-        """
-        # 定义分隔符，按语义完整性优先级排序
-        delimiters = [
-            "\n\n",  # 段落分隔符
-            "\n",    # 换行符
-            "。",    # 句号
-            "！",    # 感叹号
-            "？",    # 问号
-            "；",    # 分号
-            "：",    # 冒号
-            "，",    # 逗号
-            "、",    # 顿号
-            " ",    # 空格
-            ""      # 无分隔符，按字符分割
-        ]
-        
-        # 允许的长度浮动范围（±10%）
-        length_margin = max_length * 0.1
-        min_length = max_length - length_margin
-        max_length_with_margin = max_length + length_margin
-
-        def find_semantic_split_point(text: str, target_length: int, delimiter: str) -> int:
-            """在目标长度附近找到最合适的分割点"""
-            if delimiter == "":
-                return target_length
-                
-            # 在目标长度前后寻找最近的分隔符
-            left_bound = max(0, target_length - length_margin)
-            right_bound = min(len(text), target_length + length_margin)
-            
-            # 在合理范围内寻找分隔符
-            text_range = text[left_bound:right_bound]
-            last_delimiter_pos = text_range.rfind(delimiter)
-            
-            if last_delimiter_pos != -1:
-                return left_bound + last_delimiter_pos + len(delimiter)
-            return target_length
-
-        def split_by_delimiter(text: str, delimiter: str) -> List[str]:
-            """使用指定的分隔符智能分割文本"""
-            if delimiter == "":
-                return [char for char in text]
-            
-            # 保留分隔符，确保语义完整性
-            segments = []
-            for segment in text.split(delimiter):
-                if segment.strip():
-                    # 如果不是最后一个分段，添加分隔符
-                    if segment != text.split(delimiter)[-1]:
-                        segments.append(segment.strip() + delimiter)
-                    else:
-                        segments.append(segment.strip())
-            return segments
-
-        def recursive_split(text: str, delimiters: List[str], current_level: int = 0) -> List[str]:
-            """递归分割文本，保持语义完整性"""
-            # 如果文本长度在可接受范围内，直接返回
-            if len(text) <= max_length_with_margin:
-                return [text]
-            
-            # 如果已经尝试了所有分隔符，则寻找最佳分割点
-            if current_level >= len(delimiters):
-                chunks = []
-                start = 0
-                while start < len(text):
-                    # 计算当前块的理想长度
-                    remaining_length = len(text) - start
-                    current_max_length = min(max_length_with_margin, remaining_length)
-                    
-                    # 寻找最佳分割点
-                    split_point = find_semantic_split_point(
-                        text[start:], 
-                        current_max_length, 
-                        delimiters[-1]
-                    )
-                    
-                    chunks.append(text[start:start + split_point])
-                    start += split_point - overlap
-                return chunks
-            
-            # 使用当前级别的分隔符分割
-            delimiter = delimiters[current_level]
-            segments = split_by_delimiter(text, delimiter)
-            
-            # 如果分割效果不理想，尝试下一个分隔符
-            if len(segments) <= 1:
-                return recursive_split(text, delimiters, current_level + 1)
-            
-            # 处理分割后的片段
-            chunks = []
-            current_chunk = []
-            current_length = 0
-            
-            for segment in segments:
-                # 如果当前片段过长，递归分割
-                if len(segment) > max_length_with_margin:
-                    # 处理当前累积的chunk
-                    if current_chunk:
-                        chunks.append(''.join(current_chunk))
-                        current_chunk = []
-                        current_length = 0
-                    
-                    # 递归处理长片段
-                    sub_chunks = recursive_split(segment, delimiters, current_level + 1)
-                    chunks.extend(sub_chunks)
-                else:
-                    # 检查添加当前片段是否会导致chunk过长
-                    if current_length + len(segment) > max_length_with_margin:
-                        if current_chunk:
-                            chunks.append(''.join(current_chunk))
-                        current_chunk = [segment]
-                        current_length = len(segment)
-                    else:
-                        current_chunk.append(segment)
-                        current_length += len(segment)
-            
-            # 处理最后一个chunk
-            if current_chunk:
-                chunks.append(''.join(current_chunk))
-            
-            # 智能处理重叠区域
-            if overlap > 0 and len(chunks) > 1:
-                overlapped_chunks = []
-                for i in range(len(chunks)):
-                    if i == 0:
-                        overlapped_chunks.append(chunks[i])
-                    else:
-                        # 在重叠区域内寻找合适的语义边界
-                        prev_chunk = chunks[i-1]
-                        overlap_start = len(prev_chunk) - min(overlap * 2, len(prev_chunk))
-                        overlap_text = prev_chunk[overlap_start:]
-                        
-                        # 在重叠文本中找到最后一个完整的语义单元
-                        best_split_point = 0
-                        for delimiter in delimiters:
-                            if delimiter == "":
-                                continue
-                            last_pos = overlap_text.rfind(delimiter)
-                            if last_pos != -1:
-                                best_split_point = overlap_start + last_pos + len(delimiter)
-                                break
-                        
-                        # 如果找不到合适的分割点，使用默认重叠长度
-                        if best_split_point == 0:
-                            best_split_point = len(prev_chunk) - overlap
-                        
-                        overlap_text = prev_chunk[best_split_point:]
-                        overlapped_chunks.append(overlap_text + chunks[i])
-                
-                chunks = overlapped_chunks
-            
-            return chunks
-        
-        # 开始递归分割
-        return recursive_split(text, delimiters)
-
     def add_file(self, file_path: str, file_name: str = None) -> Dict:
         """添加新文件到知识库
         
@@ -392,62 +189,38 @@ class RAGModule:
 
     def delete_document(self, doc_id: int) -> Dict:
         """从知识库中删除文档
-        
+
         Args:
             doc_id: 文档ID
-            
+
         Returns:
             Dict: 包含操作结果的字典
         """
         try:
             if not 0 <= doc_id < len(self.documents):
                 return {"success": False, "error": "Document not found"}
-                
+
             doc = self.documents[doc_id]
-            
+
             # 删除文件
             file_path = os.path.join(self.docs_path, doc['file_hash'] + '.' + doc['file_type'])
             if os.path.exists(file_path):
                 os.remove(file_path)
-            
+
             # 从列表中移除文档
             self.documents.pop(doc_id)
-            
+
             # 重建索引
             self._rebuild_index()
-            
+
             return {
                 "success": True,
                 "message": "Document deleted successfully"
             }
-            
+
         except Exception as e:
             logging.error(f"Error deleting document: {str(e)}")
             return {"success": False, "error": str(e)}
-
-    def _rebuild_index(self):
-        """重建向量索引"""
-        try:
-            # 收集所有文档片段
-            all_chunks = []
-            for doc in self.documents:
-                all_chunks.extend(doc['chunks'])
-            
-            # 重新编码所有文档
-            if all_chunks:
-                self.document_embeddings = self._encode_text(all_chunks)
-                self.index = faiss.IndexFlatL2(self.dimension)
-                self.index.add(self.document_embeddings.astype('float32'))
-            else:
-                self.document_embeddings = None
-                self.index = faiss.IndexFlatL2(self.dimension)
-            
-            # 保存更新
-            self._save_index()
-            
-        except Exception as e:
-            logging.error(f"Error rebuilding index: {str(e)}")
-            raise
 
     def get_documents(self) -> List[Dict]:
         """获取所有文档的信息"""
@@ -512,62 +285,26 @@ class RAGModule:
             logging.error(f"Error encoding text: {str(e)}")
             raise
 
-    def add_documents(self, documents: List[Dict]) -> None:
-        """添加新文档到知识库
-        
-        Args:
-            documents: 文档列表，每个文档都是一个包含必要字段的字典
-        """
-        try:
-            # 编码新文档
-            all_chunks = []
-            for doc in documents:
-                if isinstance(doc, dict):
-                    all_chunks.extend(doc['chunks'])
-                else:
-                    # 处理纯文本输入的情况
-                    all_chunks.append(doc)
-            
-            new_embeddings = self._encode_text(all_chunks)
-            
-            # 更新索引
-            self.index.add(new_embeddings.astype('float32'))
-            
-            # 更新文档向量
-            if self.document_embeddings is None:
-                self.document_embeddings = new_embeddings
-            else:
-                self.document_embeddings = np.vstack([self.document_embeddings, new_embeddings])
-            
-            # 保存更新
-            self._save_index()
-            
-            logging.info(f"Successfully added {len(documents)} documents")
-            
-        except Exception as e:
-            logging.error(f"Error adding documents: {str(e)}")
-            raise
-
     def _rerank_results(self, query: str, candidates: List[Dict]) -> List[Dict]:
         """使用 BGE-Rerank 对检索结果进行重排序
-        
+
         Args:
             query: 查询文本
             candidates: 第一阶段检索的候选结果
-            
+
         Returns:
             重排序后的结果列表
         """
         if not candidates:
             return candidates
-            
+
         # 准备 rerank 的文本对
         pairs = []
         for doc in candidates:
             # 使用匹配到的文本块进行重排序
             for chunk in doc.get('matched_chunks', []):
                 pairs.append([query, chunk])
-        
+
         # 计算 rerank 分数
         with torch.no_grad():
             inputs = self.reranker_tokenizer(
@@ -579,29 +316,29 @@ class RAGModule:
             )
             scores = self.reranker(**inputs).logits.squeeze()
             scores = torch.sigmoid(scores).tolist()
-        
+
         # 如果只有一个结果，确保 scores 是列表
         if not isinstance(scores, list):
             scores = [scores]
-        
+
         # 更新文档分数并重排序
         for doc, score in zip(candidates, scores):
             doc['rerank_score'] = float(score)
             # 综合考虑向量相似度和 rerank 分数
             doc['final_score'] = 0.3 * doc['similarity'] + 0.7 * doc['rerank_score']
-        
+
         # 按照综合分数重排序
         candidates.sort(key=lambda x: x['final_score'], reverse=True)
-        
+
         return candidates
 
     def search(self, query: str, top_k: int = 5) -> List[Dict]:
         """搜索相关文档，使用两阶段检索策略
-        
+
         Args:
             query: 查询文本
             top_k: 返回的最大结果数量
-            
+
         Returns:
             检索到的文档列表，按相关度排序
         """
@@ -634,7 +371,7 @@ class RAGModule:
             # 第一阶段：向量检索（放宽相似度阈值，获取更多候选）
             search_k = min(top_k * 3, available_chunks)
             distances, indices = self.index.search(
-                np.array([query_vector]).astype('float32'), 
+                np.array([query_vector]).astype('float32'),
                 search_k
             )
 
@@ -647,13 +384,13 @@ class RAGModule:
                     chunk_info = chunk_to_doc[idx]
                     doc_idx = chunk_info['doc_idx']
                     similarity = 1 - distances[0][i]  # 转换距离为相似度
-                    
+
                     # 记录详细的匹配信息
                     logging.info(f"匹配块 {i+1}:")
                     logging.info(f"  文档: {chunk_info['doc_name']}")
                     logging.info(f"  相似度: {similarity:.4f}")
                     logging.info(f"  内容: {chunk_info['chunk']}")
-                    
+
                     # 更新文档的最佳匹配
                     if doc_idx not in doc_best_matches or similarity > doc_best_matches[doc_idx]['similarity']:
                         doc_best_matches[doc_idx] = {
@@ -679,7 +416,7 @@ class RAGModule:
             if initial_results:
                 reranked_results = self._rerank_results(query, initial_results)
                 final_results = reranked_results[:top_k]
-                
+
                 # 记录最终结果
                 logging.info(f"\n最终结果 (共 {len(final_results)} 个文档):")
                 for doc in final_results:
@@ -687,12 +424,12 @@ class RAGModule:
                     logging.info(f"向量相似度: {doc['similarity']:.4f}")
                     logging.info(f"Rerank分数: {doc['rerank_score']:.4f}")
                     logging.info(f"综合分数: {doc['final_score']:.4f}")
-                    
+
                 return final_results
             else:
                 logging.info("没有找到相关文档")
                 return []
-                
+
         except Exception as e:
             logging.error(f"搜索过程中出错: {str(e)}")
             return []
@@ -767,44 +504,6 @@ class RAGModule:
         except Exception as e:
             logging.error(f"Error in RAG response generation: {str(e)}")
             return "抱歉，处理您的请求时出现错误。"
-
-    def update_document(self, doc_id: int, new_content: str) -> bool:
-        """更新知识库中的文档。
-        :param doc_id: 文档ID
-        :param new_content: 新的文档内容
-        :return: 是否成功更新
-        """
-        try:
-            if 0 <= doc_id < len(self.documents):
-                self.documents[doc_id] = new_content
-                embedding = self.model.encode([new_content])
-                self.index.remove_ids([doc_id])
-                self.index.add(embedding)
-                logging.info(f"Successfully updated document {doc_id}")
-                return True
-            return False
-        except Exception as e:
-            logging.error(f"Failed to update document: {str(e)}")
-            return False
-
-    def remove_document(self, doc_id: int) -> bool:
-        """删除知识库中的文档。
-        :param doc_id: 文档ID
-        :return: 是否成功删除
-        """
-        try:
-            if 0 <= doc_id < len(self.documents):
-                self.documents.pop(doc_id)
-                # 重建索引
-                embeddings = self.model.encode(self.documents)
-                self.index = faiss.IndexFlatL2(self.model.get_sentence_embedding_dimension())
-                self.index.add(embeddings)
-                logging.info(f"Successfully removed document {doc_id}")
-                return True
-            return False
-        except Exception as e:
-            logging.error(f"Failed to remove document: {str(e)}")
-            return False
 
     def _save_index(self):
         """保存索引和文档到磁盘"""

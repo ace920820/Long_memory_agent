@@ -1157,6 +1157,31 @@
       "cluster_info": {
         "cluster_id": 29
       }
+    },
+    {
+      "id": "m_1738771405023_4242",
+      "content": "灰姑娘的故事是",
+      "type": "dialogue",
+      "timestamp": "2025-02-06T00:03:25.023199",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-02-06T00:03:25.023199",
+        "last_access": "2025-02-06T00:06:36.569662",
+        "access_history": [
+          {
+            "time": "2025-02-06T00:04:00.788123",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-06T00:06:36.569662",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52,
+      "cluster_info": {
+        "cluster_id": 30
+      }
     }
   ]
 }

@@ -42335,3 +42335,243 @@ nlp算法工程师，兼职自媒体撰稿人
 2025-02-05 21:59:49,758 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
 2025-02-05 21:59:49,760 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
 2025-02-05 22:00:07,207 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\setuptools\\_distutils\\__init__.py', reloading
+2025-02-05 22:00:08,627 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 22:00:18,107 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-05 22:00:18,109 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-05 22:01:33,320 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_tree_builder.py', reloading
+2025-02-05 22:01:33,320 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_tree_builder.py', reloading
+2025-02-05 22:01:33,320 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_tree_builder.py', reloading
+2025-02-05 22:01:33,320 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_tree_builder.py', reloading
+2025-02-05 22:01:33,320 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_tree_builder.py', reloading
+2025-02-05 22:01:33,320 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_tree_builder.py', reloading
+2025-02-05 22:01:33,323 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_utils.py', reloading
+2025-02-05 22:01:33,323 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_utils.py', reloading
+2025-02-05 22:01:33,323 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_utils.py', reloading
+2025-02-05 22:01:33,323 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_utils.py', reloading
+2025-02-05 22:01:33,324 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_utils.py', reloading
+2025-02-05 22:01:33,324 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\EmbeddingModels.py', reloading
+2025-02-05 22:01:33,324 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\EmbeddingModels.py', reloading
+2025-02-05 22:01:33,324 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\EmbeddingModels.py', reloading
+2025-02-05 22:01:33,325 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\EmbeddingModels.py', reloading
+2025-02-05 22:01:33,325 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\EmbeddingModels.py', reloading
+2025-02-05 22:01:33,326 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\FaissRetriever.py', reloading
+2025-02-05 22:01:33,326 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\FaissRetriever.py', reloading
+2025-02-05 22:01:33,327 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\FaissRetriever.py', reloading
+2025-02-05 22:01:33,327 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\FaissRetriever.py', reloading
+2025-02-05 22:01:33,328 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\QAModels.py', reloading
+2025-02-05 22:01:33,328 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\QAModels.py', reloading
+2025-02-05 22:01:33,329 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\QAModels.py', reloading
+2025-02-05 22:01:33,329 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\QAModels.py', reloading
+2025-02-05 22:01:33,329 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\QAModels.py', reloading
+2025-02-05 22:01:33,331 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:01:33,331 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:01:33,332 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:01:33,332 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:01:33,332 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:01:33,332 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:01:33,333 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\Retrievers.py', reloading
+2025-02-05 22:01:33,333 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\Retrievers.py', reloading
+2025-02-05 22:01:33,334 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\Retrievers.py', reloading
+2025-02-05 22:01:33,334 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\Retrievers.py', reloading
+2025-02-05 22:01:33,334 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\Retrievers.py', reloading
+2025-02-05 22:01:33,335 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\SummarizationModels.py', reloading
+2025-02-05 22:01:33,335 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\SummarizationModels.py', reloading
+2025-02-05 22:01:33,336 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\SummarizationModels.py', reloading
+2025-02-05 22:01:33,336 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\SummarizationModels.py', reloading
+2025-02-05 22:01:33,336 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\SummarizationModels.py', reloading
+2025-02-05 22:01:33,337 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_builder.py', reloading
+2025-02-05 22:01:33,338 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_builder.py', reloading
+2025-02-05 22:01:33,338 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_builder.py', reloading
+2025-02-05 22:01:33,338 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_builder.py', reloading
+2025-02-05 22:01:33,338 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_builder.py', reloading
+2025-02-05 22:01:33,338 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_builder.py', reloading
+2025-02-05 22:01:33,339 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-05 22:01:33,339 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-05 22:01:33,339 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-05 22:01:33,339 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-05 22:01:33,340 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-05 22:01:33,340 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_structures.py', reloading
+2025-02-05 22:01:33,341 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_structures.py', reloading
+2025-02-05 22:01:33,341 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_structures.py', reloading
+2025-02-05 22:01:33,341 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_structures.py', reloading
+2025-02-05 22:01:33,341 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_structures.py', reloading
+2025-02-05 22:01:33,342 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\utils.py', reloading
+2025-02-05 22:01:33,343 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\utils.py', reloading
+2025-02-05 22:01:33,343 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\utils.py', reloading
+2025-02-05 22:01:33,343 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\utils.py', reloading
+2025-02-05 22:01:33,343 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\utils.py', reloading
+2025-02-05 22:01:33,345 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\__init__.py', reloading
+2025-02-05 22:01:33,345 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\__init__.py', reloading
+2025-02-05 22:01:33,346 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\__init__.py', reloading
+2025-02-05 22:01:33,346 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\__init__.py', reloading
+2025-02-05 22:01:33,346 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\__init__.py', reloading
+2025-02-05 22:01:34,806 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 22:01:44,789 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-05 22:01:44,791 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-05 22:37:03,198 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:37:03,199 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:37:03,199 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:37:03,199 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:37:03,199 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-05 22:37:04,722 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 22:37:15,382 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-05 22:37:15,382 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-05 22:39:24,278 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_relationship_manager.py', reloading
+2025-02-05 22:39:24,301 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\tests\\test_entity_extractor.py', reloading
+2025-02-05 22:39:25,704 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 22:39:35,697 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-05 22:39:35,698 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-05 23:11:20,271 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-05 23:11:20,271 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-05 23:11:20,279 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 23:52:27,329 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-05 23:52:27,330 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-05 23:52:27,338 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 23:52:42,077 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-05 23:52:42,081 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-05 23:52:42,115 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:52:42] "GET / HTTP/1.1" 200 -
+2025-02-05 23:52:42,243 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:52:42] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-05 23:52:42,620 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:52:42] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:52:42,620 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:52:42] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-05 23:52:42,620 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:52:42] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:52:42,621 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:52:42] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:52:54,226 - root - INFO - tree_retriever.py:303 - Using collapsed_tree
+2025-02-05 23:53:01,842 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-05 23:53:01,875 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-05 23:53:01,875 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-05 23:53:01,875 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-05 23:53:01,875 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-05 23:53:01,898 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-05 23:53:01,899 - root - ERROR - agent.py:142 - Error in chat: string indices must be integers
+2025-02-05 23:53:01,899 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:53:01] "POST /chat HTTP/1.1" 200 -
+2025-02-05 23:54:34,758 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-05 23:54:34,758 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-05 23:54:34,771 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 23:55:08,387 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-05 23:55:08,395 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-05 23:55:08,532 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:55:08] "GET / HTTP/1.1" 200 -
+2025-02-05 23:55:08,603 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:55:08] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-05 23:55:09,082 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:55:09] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:55:09,083 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:55:09] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-05 23:55:09,083 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:55:09] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:55:09,085 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:55:09] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:55:15,538 - root - INFO - tree_retriever.py:303 - Using collapsed_tree
+2025-02-05 23:55:16,652 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-05 23:55:16,678 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-05 23:55:16,678 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-05 23:55:16,678 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-05 23:55:32,673 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-05 23:55:38,158 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-05 23:57:03,781 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\fitz\\mupdf.py', reloading
+2025-02-05 23:57:03,918 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\debugpy\\_vendored\\pydevd\\pydevd_attach_to_process\\winappdbg\\sql.py', reloading
+2025-02-05 23:57:03,933 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\debugpy\\_vendored\\pydevd\\pydevd_attach_to_process\\winappdbg\\win32\\context_i386.py', reloading
+2025-02-05 23:57:03,943 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\debugpy\\_vendored\\pydevd\\pydevd_attach_to_process\\winappdbg\\win32\\context_amd64.py', reloading
+2025-02-05 23:57:03,960 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\IPython\\core\\tests\\test_inputsplitter.py', reloading
+2025-02-05 23:57:03,973 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\openpyxl\\drawing\\line.py', reloading
+2025-02-05 23:57:05,573 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 23:57:37,898 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-05 23:57:37,898 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-05 23:57:37,908 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-05 23:58:04,722 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-05 23:58:04,725 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-05 23:58:04,825 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:58:04] "GET / HTTP/1.1" 200 -
+2025-02-05 23:58:04,867 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:58:04] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-05 23:58:05,269 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:58:05] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-05 23:58:05,271 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:58:05] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:58:05,272 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:58:05] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:58:05,277 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:58:05] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-05 23:58:34,076 - root - INFO - tree_retriever.py:303 - Using collapsed_tree
+2025-02-05 23:58:35,194 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-05 23:58:35,214 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-05 23:58:35,214 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-05 23:58:35,215 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-05 23:58:38,283 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-05 23:58:38,355 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-05 23:58:44,098 - root - ERROR - agent.py:142 - Error in chat: string indices must be integers
+2025-02-05 23:58:44,102 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [05/Feb/2025 23:58:44] "POST /chat HTTP/1.1" 200 -
+2025-02-05 23:59:00,202 - root - INFO - tree_retriever.py:303 - Using collapsed_tree
+2025-02-05 23:59:01,217 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-05 23:59:01,512 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-05 23:59:01,512 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-05 23:59:01,512 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-05 23:59:01,512 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-05 23:59:01,548 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-06 00:00:18,395 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-06 00:00:18,395 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-06 00:00:18,404 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-06 00:00:44,602 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-06 00:00:44,609 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-06 00:00:44,721 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:00:44] "GET / HTTP/1.1" 200 -
+2025-02-06 00:00:44,778 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:00:44] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-06 00:00:45,216 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:00:45] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:00:45,218 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:00:45] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:00:45,220 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:00:45] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-06 00:00:45,221 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:00:45] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:01:04,441 - root - INFO - tree_retriever.py:303 - Using collapsed_tree
+2025-02-06 00:01:05,570 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-06 00:01:05,588 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-06 00:01:05,588 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-06 00:01:05,588 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-06 00:01:05,589 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-06 00:01:05,661 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-06 00:01:28,899 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Program Files\\JetBrains\\PyCharm Community Edition 2024.2.4\\plugins\\python-ce\\helpers\\pydev\\_pydevd_bundle\\pydevd_vars.py', reloading
+2025-02-06 00:01:28,919 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Program Files\\JetBrains\\PyCharm Community Edition 2024.2.4\\plugins\\python-ce\\helpers\\pydev\\_pydevd_bundle\\pydevd_utils.py', reloading
+2025-02-06 00:01:30,492 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-06 00:01:57,612 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-06 00:01:57,612 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-06 00:01:57,623 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-06 00:02:16,615 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-06 00:02:16,618 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-06 00:03:06,260 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:03:06] "GET / HTTP/1.1" 200 -
+2025-02-06 00:03:06,298 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:03:06] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-06 00:03:06,584 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:03:06] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:03:06,584 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:03:06] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-06 00:03:06,593 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:03:06] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:03:06,597 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:03:06] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:03:13,001 - root - INFO - tree_retriever.py:303 - Using collapsed_tree
+2025-02-06 00:03:13,840 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-06 00:03:13,853 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-06 00:03:13,853 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-06 00:03:13,853 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-06 00:03:13,853 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-06 00:03:13,889 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-06 00:03:25,048 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-06 00:03:25,050 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:03:25] "POST /chat HTTP/1.1" 200 -
+2025-02-06 00:03:59,076 - root - INFO - tree_retriever.py:303 - Using collapsed_tree
+2025-02-06 00:04:00,610 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-06 00:04:00,780 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-06 00:04:00,780 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-06 00:04:00,780 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-06 00:04:00,780 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-06 00:04:00,852 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-06 00:06:04,491 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-06 00:06:04,492 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-06 00:06:04,502 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-06 00:06:28,847 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-06 00:06:28,850 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-06 00:06:28,908 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:28] "GET / HTTP/1.1" 200 -
+2025-02-06 00:06:28,909 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:28] "GET / HTTP/1.1" 200 -
+2025-02-06 00:06:28,914 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:28] "GET / HTTP/1.1" 200 -
+2025-02-06 00:06:28,918 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:28] "GET / HTTP/1.1" 200 -
+2025-02-06 00:06:28,975 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:28] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-06 00:06:29,297 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:29] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:06:29,301 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:29] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:06:29,309 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:29] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-06 00:06:29,317 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:29] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-06 00:06:35,464 - root - INFO - tree_retriever.py:303 - Using collapsed_tree
+2025-02-06 00:06:36,543 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-06 00:06:36,559 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-06 00:06:36,559 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-06 00:06:36,560 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-06 00:06:36,560 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-06 00:06:36,569 - root - INFO - memory_manager.py:1321 - 簇内召回补偿未启用，跳过处理
+2025-02-06 00:06:36,625 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-06 00:06:49,375 - root - INFO - memory_manager.py:275 - 发现相似记忆 (相似度: 0.9593)
+2025-02-06 00:06:49,375 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:49] "POST /chat HTTP/1.1" 200 -
