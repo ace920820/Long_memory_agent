@@ -239,3 +239,32 @@ class RaptorModule:
             error_msg = f"回答问题时发生错误: {str(e)}"
             logger.error(error_msg)
             return {"status": "error", "message": error_msg}
+
+    def get_documents(self) -> List[Dict]:
+        """获取所有文档的信息
+        
+        Returns:
+            List[Dict]: 包含所有文档信息的列表，每个文档包含以下信息：
+                - tree_info: 树结构信息
+                - status: 操作状态
+                - message: 状态信息
+        """
+        try:
+            # 获取树结构信息
+            tree_info = self.doc_storage.get_tree_info()
+            logger.info("成功获取文档树结构信息")
+            logger.info(f"{tree_info}")
+            return [{
+                "tree_info": tree_info,
+                "status": "success",
+                "message": "成功获取文档信息"
+            }]
+            
+        except Exception as e:
+            error_msg = f"获取文档信息时发生错误: {str(e)}"
+            logger.error(error_msg)
+            return [{
+                "tree_info": {},
+                "status": "error",
+                "message": error_msg
+            }]
