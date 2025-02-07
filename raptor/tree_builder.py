@@ -293,11 +293,7 @@ class TreeBuilder:
 
         root_nodes = self.construct_tree(all_nodes, all_nodes, layer_to_nodes)
 
-        logging.info("construct_tree根节点完成")
-
         tree = Tree(all_nodes, root_nodes, leaf_nodes, self.num_layers, layer_to_nodes)
-
-        logging.info("RA树构建完成")
 
         return tree
 

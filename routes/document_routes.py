@@ -65,7 +65,7 @@ def upload_document():
         # 删除临时文件
         os.remove(temp_path)
         
-        if result["success"]:
+        if result["status"]=='success':
             return jsonify(result)
         else:
             return jsonify(result), 400

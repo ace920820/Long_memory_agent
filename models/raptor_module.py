@@ -8,6 +8,12 @@ from knowledge_base.storage import DocumentStorage
 # 配置日志记录
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+# 降低Numba的日志级别
+logging.getLogger('numba').setLevel(logging.WARNING)
+# 降低umap的日志级别
+logging.getLogger('umap').setLevel(logging.WARNING)
+logging.getLogger('httpcore').setLevel(logging.WARNING)
+logging.getLogger('httpx').setLevel(logging.WARNING)
 
 class RaptorModule:
     """

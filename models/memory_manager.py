@@ -70,11 +70,18 @@ class MemoryManager:
         self.new_memory_similarity_threshold = new_memory_similarity_threshold
         self.memories = self.load_memories()
         
-        # 初始化 BGE-Rerank 模型
-        self.reranker_tokenizer = AutoTokenizer.from_pretrained(rerank_path)
-        self.reranker = AutoModelForSequenceClassification.from_pretrained(rerank_path)
-        self.reranker.eval()
-        logging.info("Successfully loaded BGE-Rerank model")
+        # 根据配置决定是否加载reranker模型
+        self.rerank_enabled = self.config.get('rerank', {}).get('enabled', False)
+        if self.rerank_enabled:
+            logging.info("正在加载reranker模型...")
+            self.reranker_tokenizer = AutoTokenizer.from_pretrained(rerank_path)
+            self.reranker = AutoModelForSequenceClassification.from_pretrained(rerank_path)
+            self.reranker.eval()
+            logging.info("Successfully loaded BGE-Rerank model")
+        else:
+            logging.info("Rerank功能已禁用，跳过加载reranker模型")
+            self.reranker = None
+            self.reranker_tokenizer = None
         
         # 先获取实际的向量维度
         if self.memories:
@@ -469,7 +476,10 @@ class MemoryManager:
             cluster_summary = self.get_cluster_summary(user_id, query)
             
             # 使用BGE-Rerank重排序
-            reranked_results = self._rerank_results(query, candidates)
+            if self.rerank_enabled:
+                reranked_results = self._rerank_results(query, candidates)
+            else:
+                reranked_results = candidates
             
             # 如果有簇摘要，添加到结果中
             if cluster_summary:
@@ -940,58 +950,33 @@ class MemoryManager:
         if not memories:
             return memories
             
-        # 准备 rerank 的文本对
-        pairs = []
-        for memory in memories:
-            pairs.append([query, memory['content']])
-        
-        # 计算 rerank 分数
-        with torch.no_grad():
-            inputs = self.reranker_tokenizer(
+        if not self.rerank_enabled:
+            return memories
+            
+        try:
+            pairs = [[query, memory['content']] for memory in memories]
+            features = self.reranker_tokenizer(
                 pairs,
                 padding=True,
                 truncation=True,
                 return_tensors='pt',
                 max_length=512
             )
-            scores = self.reranker(**inputs).logits.squeeze()
-            scores = torch.sigmoid(scores).tolist()
-        
-        # 如果只有一个结果，确保 scores 是列表
-        if not isinstance(scores, list):
-            scores = [scores]
-        
-        # 更新记忆分数并重排序
-        for memory, score in zip(memories, scores):
-            memory['rerank_score'] = float(score)
+
+            with torch.no_grad():
+                scores = self.reranker(**features).logits.view(-1,).float()
             
-            # 确保每个记忆都有优先级分数
-            if 'priority_score' not in memory:
-                memory['priority_score'] = self.calculate_priority_score(memory)
+            # 将分数添加到结果中
+            for score, result in zip(scores, memories):
+                result['rerank_score'] = score.item()
             
-            # 确保每个记忆都有相似度分数
-            if 'similarity' not in memory:
-                memory['similarity'] = 0.5  # 设置默认相似度
+            # 根据重排序分数排序
+            reranked_results = sorted(memories, key=lambda x: x['rerank_score'], reverse=True)
+            return reranked_results
             
-            # 综合考虑三个因素：
-            # 1. 向量相似度 (20%)
-            # 2. BGE-Rerank 分数 (50%)
-            # 3. 记忆优先级分数 (30%)
-            memory['final_score'] = (
-                0.2 * memory['similarity'] +  # 向量相似度
-                0.5 * memory['rerank_score'] +  # 语义相关性
-                0.3 * memory['priority_score']  # 记忆重要性
-            )
-            
-            logging.debug(f"Memory scoring - Similarity: {memory['similarity']:.3f}, "
-                       f"Rerank: {memory['rerank_score']:.3f}, "
-                       f"Priority: {memory['priority_score']:.3f}, "
-                       f"Final: {memory['final_score']:.3f}")
-        
-        # 按照综合分数重排序
-        memories.sort(key=lambda x: x['final_score'], reverse=True)
-        
-        return memories
+        except Exception as e:
+            logging.error(f"重排序过程中发生错误: {str(e)}")
+            return memories  # 发生错误时返回原始排序的结果
 
     def encode(self, texts: List[str], convert_to_tensor: bool = False) -> np.ndarray:
         """将文本编码为向量
