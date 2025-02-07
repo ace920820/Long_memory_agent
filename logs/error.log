@@ -105,3 +105,7 @@
 2025-02-01 16:40:21,892 - root - ERROR - llm_model.py:136 - Error generating response: API call failed with status 401: {"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"5db0ed79-5a39-9b09-a067-b38398149a8c"}
 2025-02-05 23:53:01,899 - root - ERROR - agent.py:142 - Error in chat: string indices must be integers
 2025-02-05 23:58:44,098 - root - ERROR - agent.py:142 - Error in chat: string indices must be integers
+2025-02-07 17:57:22,218 - root - ERROR - document_routes.py:27 - Error getting documents: 'RaptorModule' object has no attribute 'get_documents'
+2025-02-07 17:58:34,546 - root - ERROR - document_routes.py:27 - Error getting documents: 'RaptorModule' object has no attribute 'get_documents'
+2025-02-07 18:10:07,885 - root - ERROR - document_routes.py:27 - Error getting documents: 'RaptorModule' object has no attribute 'get_documents'
+2025-02-07 18:16:36,317 - root - ERROR - document_routes.py:27 - Error getting documents: 'RaptorModule' object has no attribute 'get_documents'

@@ -1,7 +1,7 @@
 import copy
 import logging
 import os
-from abc import abstractclassmethod
+from abc import abstractmethod
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from typing import Dict, List, Optional, Set, Tuple
@@ -22,6 +22,9 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 
 class TreeBuilderConfig:
+    """
+    TreeBuilder的配置类，用于设置和验证树构建器的各项参数
+    """
     def __init__(
         self,
         tokenizer=None,
@@ -35,71 +38,73 @@ class TreeBuilderConfig:
         embedding_models=None,
         cluster_embedding_model=None,
     ):
+        # 初始化分词器，默认使用cl100k_base
         if tokenizer is None:
             tokenizer = tiktoken.get_encoding("cl100k_base")
         self.tokenizer = tokenizer
 
+        # 设置每个节点的最大token数，默认为100
         if max_tokens is None:
             max_tokens = 100
         if not isinstance(max_tokens, int) or max_tokens < 1:
-            raise ValueError("max_tokens must be an integer and at least 1")
+            raise ValueError("max_tokens必须是大于等于1的整数")
         self.max_tokens = max_tokens
 
+        # 设置树的层数，默认为5层
         if num_layers is None:
             num_layers = 5
         if not isinstance(num_layers, int) or num_layers < 1:
-            raise ValueError("num_layers must be an integer and at least 1")
+            raise ValueError("num_layers必须是大于等于1的整数")
         self.num_layers = num_layers
 
+        # 设置相似度阈值，默认为0.5
         if threshold is None:
             threshold = 0.5
         if not isinstance(threshold, (int, float)) or not (0 <= threshold <= 1):
-            raise ValueError("threshold must be a number between 0 and 1")
+            raise ValueError("threshold必须是0到1之间的数")
         self.threshold = threshold
 
+        # 设置top_k值，默认为5
         if top_k is None:
             top_k = 5
         if not isinstance(top_k, int) or top_k < 1:
-            raise ValueError("top_k must be an integer and at least 1")
+            raise ValueError("top_k必须是大于等于1的整数")
         self.top_k = top_k
 
+        # 设置选择模式，可以是top_k或threshold
         if selection_mode is None:
             selection_mode = "top_k"
         if selection_mode not in ["top_k", "threshold"]:
-            raise ValueError("selection_mode must be either 'top_k' or 'threshold'")
+            raise ValueError("selection_mode必须是'top_k'或'threshold'")
         self.selection_mode = selection_mode
 
+        # 设置摘要长度，默认为100
         if summarization_length is None:
             summarization_length = 100
         self.summarization_length = summarization_length
 
+        # 设置摘要模型，默认使用GPT3Turbo
         if summarization_model is None:
             summarization_model = GPT3TurboSummarizationModel()
         if not isinstance(summarization_model, BaseSummarizationModel):
-            raise ValueError(
-                "summarization_model must be an instance of BaseSummarizationModel"
-            )
+            raise ValueError("summarization_model必须是BaseSummarizationModel的实例")
         self.summarization_model = summarization_model
 
+        # 设置嵌入模型，默认使用OpenAI
         if embedding_models is None:
             embedding_models = {"OpenAI": OpenAIEmbeddingModel()}
         if not isinstance(embedding_models, dict):
-            raise ValueError(
-                "embedding_models must be a dictionary of model_name: instance pairs"
-            )
+            raise ValueError("embedding_models必须是一个模型名称到实例的字典")
         for model in embedding_models.values():
             if not isinstance(model, BaseEmbeddingModel):
-                raise ValueError(
-                    "All embedding models must be an instance of BaseEmbeddingModel"
-                )
+                raise ValueError("所有嵌入模型必须是BaseEmbeddingModel的实例")
         self.embedding_models = embedding_models
 
+        # 设置聚类嵌入模型
         if cluster_embedding_model is None:
             cluster_embedding_model = "OpenAI"
         if cluster_embedding_model not in self.embedding_models:
-            raise ValueError(
-                "cluster_embedding_model must be a key in the embedding_models dictionary"
-            )
+            raise ValueError("cluster_embedding_model必须是embedding_models字典中的一个键")
         self.cluster_embedding_model = cluster_embedding_model
 
     def log_config(self):
@@ -132,14 +137,13 @@ class TreeBuilderConfig:
 
 class TreeBuilder:
     """
-    The TreeBuilder class is responsible for building a hierarchical text abstraction
-    structure, known as a "tree," using summarization models and
-    embedding models.
+    TreeBuilder类负责使用摘要模型和嵌入模型构建分层文本抽象结构（树）。
     """
 
     def __init__(self, config) -> None:
-        """Initializes the tokenizer, maximum tokens, number of layers, top-k value, threshold, and selection mode."""
-
+        """
+        初始化TreeBuilder，设置分词器、最大token数、层数、top-k值、阈值和选择模式。
+        """
         self.tokenizer = config.tokenizer
         self.max_tokens = config.max_tokens
         self.num_layers = config.num_layers
@@ -152,22 +156,22 @@ class TreeBuilder:
         self.cluster_embedding_model = config.cluster_embedding_model
 
         logging.info(
-            f"Successfully initialized TreeBuilder with Config {config.log_config()}"
+            f"成功初始化TreeBuilder，配置为：{config.log_config()}"
         )
 
     def create_node(
         self, index: int, text: str, children_indices: Optional[Set[int]] = None
     ) -> Tuple[int, Node]:
-        """Creates a new node with the given index, text, and (optionally) children indices.
+        """
+        创建一个新节点
 
-        Args:
-            index (int): The index of the new node.
-            text (str): The text associated with the new node.
-            children_indices (Optional[Set[int]]): A set of indices representing the children of the new node.
-                If not provided, an empty set will be used.
+        参数:
+            index (int): 新节点的索引
+            text (str): 与新节点关联的文本
+            children_indices (Optional[Set[int]]): 子节点的索引集合，如果不提供则使用空集合
 
-        Returns:
-            Tuple[int, Node]: A tuple containing the index and the newly created node.
+        返回:
+            Tuple[int, Node]: 包含索引和新创建节点的元组
         """
         if children_indices is None:
             children_indices = set()
@@ -180,42 +184,40 @@ class TreeBuilder:
 
     def create_embedding(self, text) -> List[float]:
         """
-        Generates embeddings for the given text using the specified embedding model.
+        使用指定的嵌入模型为给定文本生成嵌入向量
 
-        Args:
-            text (str): The text for which to generate embeddings.
+        参数:
+            text (str): 需要生成嵌入向量的文本
 
-        Returns:
-            List[float]: The generated embeddings.
+        返回:
+            List[float]: 生成的嵌入向量
         """
-        return self.embedding_models[self.cluster_embedding_model].create_embedding(
-            text
-        )
+        return self.embedding_models[self.cluster_embedding_model].create_embedding(text)
 
     def summarize(self, context, max_tokens=150) -> str:
         """
-        Generates a summary of the input context using the specified summarization model.
+        使用指定的摘要模型生成输入上下文的摘要
 
-        Args:
-            context (str, optional): The context to summarize.
-            max_tokens (int, optional): The maximum number of tokens in the generated summary. Defaults to 150.o
+        参数:
+            context (str): 需要摘要的上下文
+            max_tokens (int, optional): 生成摘要的最大token数，默认为150
 
-        Returns:
-            str: The generated summary.
+        返回:
+            str: 生成的摘要
         """
         return self.summarization_model.summarize(context, max_tokens)
 
     def get_relevant_nodes(self, current_node, list_nodes) -> List[Node]:
         """
-        Retrieves the top-k most relevant nodes to the current node from the list of nodes
-        based on cosine distance in the embedding space.
+        从节点列表中检索与当前节点最相关的top-k个节点，
+        基于嵌入空间中的余弦距离
 
-        Args:
-            current_node (Node): The current node.
-            list_nodes (List[Node]): The list of nodes.
+        参数:
+            current_node (Node): 当前节点
+            list_nodes (List[Node]): 节点列表
 
-        Returns:
-            List[Node]: The top-k most relevant nodes.
+        返回:
+            List[Node]: top-k个最相关的节点
         """
         embeddings = get_embeddings(list_nodes, self.cluster_embedding_model)
         distances = distances_from_embeddings(
@@ -236,13 +238,14 @@ class TreeBuilder:
         return nodes_to_add
 
     def multithreaded_create_leaf_nodes(self, chunks: List[str]) -> Dict[int, Node]:
-        """Creates leaf nodes using multithreading from the given list of text chunks.
+        """
+        使用多线程从给定的文本块列表创建叶子节点
 
-        Args:
-            chunks (List[str]): A list of text chunks to be turned into leaf nodes.
+        参数:
+            chunks (List[str]): 需要转换为叶子节点的文本块列表
 
-        Returns:
-            Dict[int, Node]: A dictionary mapping node indices to the corresponding leaf nodes.
+        返回:
+            Dict[int, Node]: 节点索引到对应叶子节点的映射字典
         """
         with ThreadPoolExecutor() as executor:
             future_nodes = {
@@ -258,19 +261,19 @@ class TreeBuilder:
         return leaf_nodes
 
     def build_from_text(self, text: str, use_multithreading: bool = True) -> Tree:
-        """Builds a golden tree from the input text, optionally using multithreading.
+        """
+        从输入文本构建RA树，可选择是否使用多线程
 
-        Args:
-            text (str): The input text.
-            use_multithreading (bool, optional): Whether to use multithreading when creating leaf nodes.
-                Default: True.
+        参数:
+            text (str): 输入文本
+            use_multithreading (bool, optional): 创建叶子节点时是否使用多线程，默认为True
 
-        Returns:
-            Tree: The golden tree structure.
+        返回:
+            Tree: 构建的树结构
         """
         chunks = split_text(text, self.tokenizer, self.max_tokens)
 
-        logging.info("Creating Leaf Nodes")
+        logging.info("正在创建叶子节点")
 
         if use_multithreading:
             leaf_nodes = self.multithreaded_create_leaf_nodes(chunks)
@@ -282,10 +285,36 @@ class TreeBuilder:
 
         layer_to_nodes = {0: list(leaf_nodes.values())}
 
-        logging.info(f"Created {len(leaf_nodes)} Leaf Embeddings")
+        logging.info(f"已创建 {len(leaf_nodes)} 个叶子节点嵌入")
 
-        logging.info("Building All Nodes")
+        logging.info("正在构建所有节点")
 
+        all_nodes = copy.deepcopy(leaf_nodes)
+
+        root_nodes = self.construct_tree(all_nodes, all_nodes, layer_to_nodes)
+
+        logging.info("construct_tree根节点完成")
+
+        tree = Tree(all_nodes, root_nodes, leaf_nodes, self.num_layers, layer_to_nodes)
+
+        logging.info("RA树构建完成")
+
+        return tree
+
+    def build_from_leafnodes(self,leaf_nodes):
+        '''
+        从叶子节点字典构建RA树
+
+        参数:
+            leaf_nodes (Dict[int, Node]): 叶子节点的字典
+
+        返回:
+            Tree: 构建的树结构
+        '''
+        layer_to_nodes = {0: list(leaf_nodes.values())}
+
+        logging.info("正在构建所有节点")
+        
         all_nodes = copy.deepcopy(leaf_nodes)
 
         root_nodes = self.construct_tree(all_nodes, all_nodes, layer_to_nodes)
@@ -294,7 +323,8 @@ class TreeBuilder:
 
         return tree
 
-    @abstractclassmethod
+    @classmethod
+    @abstractmethod
     def construct_tree(
         self,
         current_level_nodes: Dict[int, Node],
@@ -303,20 +333,21 @@ class TreeBuilder:
         use_multithreading: bool = True,
     ) -> Dict[int, Node]:
         """
-        Constructs the hierarchical tree structure layer by layer by iteratively summarizing groups
-        of relevant nodes and updating the current_level_nodes and all_tree_nodes dictionaries at each step.
+        通过逐层迭代摘要相关节点组并更新current_level_nodes和all_tree_nodes字典，
+        构建分层树结构
 
-        Args:
-            current_level_nodes (Dict[int, Node]): The current set of nodes.
-            all_tree_nodes (Dict[int, Node]): The dictionary of all nodes.
-            use_multithreading (bool): Whether to use multithreading to speed up the process.
+        参数:
+            current_level_nodes (Dict[int, Node]): 当前节点集
+            all_tree_nodes (Dict[int, Node]): 所有节点的字典
+            layer_to_nodes (Dict[int, List[Node]]): 层级到节点列表的映射
+            use_multithreading (bool): 是否使用多线程加速处理
 
-        Returns:
-            Dict[int, Node]: The final set of root nodes.
+        返回:
+            Dict[int, Node]: 最终的根节点集
         """
         pass
 
-        # logging.info("Using Transformer-like TreeBuilder")
+        # logging.info("使用Transformer-like TreeBuilder")
 
         # def process_node(idx, current_level_nodes, new_level_nodes, all_tree_nodes, next_node_index, lock):
         #     relevant_nodes_chunk = self.get_relevant_nodes(

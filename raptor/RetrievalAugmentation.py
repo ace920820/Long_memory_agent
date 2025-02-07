@@ -200,23 +200,68 @@ class RetrievalAugmentation:
             f"Successfully initialized RetrievalAugmentation with Config {config.log_config()}"
         )
 
+    def add_to_existing(self, docs):
+        """
+        向现有的知识树中添加新文档
+        该方法允许在不重建整个树的情况下添加新的文档内容
+
+        参数:
+            docs (str): 要添加到树中的输入文本
+            
+        返回:
+            bool: 添加成功返回True，失败返回False
+            
+        异常:
+            ValueError: 如果树未初始化
+        """
+        try:
+            if self.tree is None:
+                raise ValueError("树未初始化，请先调用add_documents方法创建树")
+            
+            logging.info("开始向现有树中添加新文档")
+            
+            # 使用tree_builder处理新文档
+            new_tree = self.tree_builder.build_from_text(text=docs)
+            if new_tree is None:
+                logging.error("处理新文档失败")
+                return False
+                
+            logging.info("新文档处理成功，开始合并到现有树中")
+            
+            # 获取新树的所有节点
+            for node_idx in new_tree.leaf_nodes:
+                node = new_tree.all_nodes[node_idx]
+                # 将新节点添加到现有树中
+                self.tree.add_node(node)
+                logging.info(f"已添加新叶子节点: {node.index}")
+            self.tree = self.tree_builder.build_from_leafnodes(self.tree.leaf_nodes)
+            # 更新检索器
+            self.retriever = TreeRetriever(self.tree_retriever_config, self.tree)
+            logging.info("检索器已更新")
+            
+            return True
+            
+        except Exception as e:
+            logging.error(f"向现有树添加文档失败: {str(e)}")
+            return False
+
     def add_documents(self, docs):
         """
         向树中添加文档并创建一个 TreeRetriever 实例。
+        如果树已存在，会提示是否使用add_to_existing方法添加到现有树中。
 
         参数:
             docs (str): 要添加到树中的输入文本。
         """
         if self.tree is not None:
-            user_input = input(
-                "Warning: Overwriting existing tree. Did you mean to call 'add_to_existing' instead? (y/n): "
-            )
-            if user_input.lower() == "y":
-                # self.add_to_existing(docs)
-                return
+            print("检查到目前树非空，改用'add_to_existing'方法添加到现有树中: ")
+            self.add_to_existing(docs)
+            return
 
+        logging.info("开始创建新的知识树")
         self.tree = self.tree_builder.build_from_text(text=docs)
         self.retriever = TreeRetriever(self.tree_retriever_config, self.tree)
+        logging.info("新的知识树创建完成")
 
     def retrieve(
         self,
@@ -305,3 +350,49 @@ class RetrievalAugmentation:
         with open(path, "wb") as file:
             pickle.dump(self.tree, file)
         logging.info(f"Tree successfully saved to {path}")
+
+    def get_all_nodes_info(self):
+        """
+        获取树中所有节点的信息，包括文档块和摘要节点。
+
+        返回:
+            dict: 包含以下信息的字典：
+                - leaf_nodes: 所有叶子节点（文档块）的列表，每个节点包含:
+                    - text: 文档块内容
+                    - index: 节点索引
+                - summary_nodes: 按层级组织的摘要节点字典，每层包含:
+                    - text: 摘要内容
+                    - index: 节点索引
+                    - children: 子节点索引集合
+                - num_layers: 树的层数
+                - total_nodes: 节点总数
+
+        异常:
+            ValueError: 如果树未初始化。
+        """
+        if self.tree is None:
+            raise ValueError("树未初始化。请先调用add_documents方法添加文档。")
+
+        result = {
+            "leaf_nodes": [],
+            "summary_nodes": {},
+            "num_layers": self.tree.num_layers,
+            "total_nodes": len(self.tree.all_nodes)
+        }
+
+        # 添加叶子节点信息
+        for node_idx in self.tree.leaf_nodes:
+            node = self.tree.all_nodes[node_idx]
+            result["leaf_nodes"].append({
+                "text": node.text,
+                "index": node.index
+            })
+        result["summary_nodes"] = []
+        for node_idx in self.tree.root_nodes:
+            node = self.tree.root_nodes[node_idx]
+            result["summary_nodes"].append({
+                "text": node.text,
+                "index": node.index,
+                "children": list(node.children)  # 转换为列表以便序列化
+            })
+        return result

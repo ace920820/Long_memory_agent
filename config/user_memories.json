@@ -1164,9 +1164,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-06T00:03:25.023199",
       "access_stats": {
-        "count": 2,
+        "count": 3,
         "first_access": "2025-02-06T00:03:25.023199",
-        "last_access": "2025-02-06T00:06:36.569662",
+        "last_access": "2025-02-07T17:06:59.724438",
         "access_history": [
           {
             "time": "2025-02-06T00:04:00.788123",
@@ -1175,10 +1175,30 @@
           {
             "time": "2025-02-06T00:06:36.569662",
             "type": "read"
+          },
+          {
+            "time": "2025-02-07T17:06:59.724438",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.52,
+      "priority_score": 0.55,
+      "cluster_info": {
+        "cluster_id": 30
+      }
+    },
+    {
+      "id": "m_1738919223065_5194",
+      "content": "灰姑娘是如何获得幸福",
+      "type": "dialogue",
+      "timestamp": "2025-02-07T17:07:03.065094",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-07T17:07:03.065094",
+        "last_access": "2025-02-07T17:07:03.065094",
+        "access_history": []
+      },
+      "priority_score": 0.0,
       "cluster_info": {
         "cluster_id": 30
       }

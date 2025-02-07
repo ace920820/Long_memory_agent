@@ -42575,3 +42575,357 @@ nlp算法工程师，兼职自媒体撰稿人
 2025-02-06 00:06:36,625 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
 2025-02-06 00:06:49,375 - root - INFO - memory_manager.py:275 - 发现相似记忆 (相似度: 0.9593)
 2025-02-06 00:06:49,375 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [06/Feb/2025 00:06:49] "POST /chat HTTP/1.1" 200 -
+2025-02-07 17:03:07,952 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-07 17:03:07,952 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-07 17:03:07,960 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:03:26,775 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:03:26,781 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 17:03:26,825 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:03:26] "GET / HTTP/1.1" 200 -
+2025-02-07 17:03:26,989 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:03:26] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-07 17:03:27,432 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:03:27] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-07 17:03:27,432 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:03:27] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-07 17:03:27,433 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:03:27] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-07 17:03:27,447 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:03:27] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-07 17:04:02,813 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\logging\\__init__.py', reloading
+2025-02-07 17:04:05,059 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:04:20,143 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:04:20,146 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 17:06:14,234 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\fastapi\\__init__.py', reloading
+2025-02-07 17:06:14,252 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\fastapi\\datastructures.py', reloading
+2025-02-07 17:06:14,269 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\starlette\\datastructures.py', reloading
+2025-02-07 17:06:16,377 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:06:30,804 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:06:30,807 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 17:06:58,685 - root - INFO - tree_retriever.py:310 - 使用扁平化树检索
+2025-02-07 17:06:59,693 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:06:59,713 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-07 17:06:59,713 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-07 17:06:59,713 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-07 17:06:59,714 - root - INFO - memory_manager.py:355 - 【召回策略】: PRECISE
+2025-02-07 17:06:59,724 - root - INFO - memory_manager.py:1321 - 簇内召回补偿未启用，跳过处理
+2025-02-07 17:06:59,789 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-07 17:07:03,077 - root - INFO - memory_manager.py:203 - Successfully saved memories to file
+2025-02-07 17:07:03,080 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:07:03] "POST /chat HTTP/1.1" 200 -
+2025-02-07 17:09:46,227 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\knowledge_base\\storage.py', reloading
+2025-02-07 17:09:46,227 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\knowledge_base\\storage.py', reloading
+2025-02-07 17:09:46,227 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\knowledge_base\\storage.py', reloading
+2025-02-07 17:09:48,594 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:10:17,665 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:10:17,667 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 17:13:46,359 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\raptor_module.py', reloading
+2025-02-07 17:13:46,360 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\raptor_module.py', reloading
+2025-02-07 17:13:46,361 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\raptor_module.py', reloading
+2025-02-07 17:13:51,174 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:14:40,243 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:14:40,249 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 17:16:09,192 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\fastapi\\applications.py', reloading
+2025-02-07 17:16:09,421 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\starlette\\applications.py', reloading
+2025-02-07 17:16:15,887 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:17:10,139 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:17:10,143 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 17:18:42,552 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\raptor_module.py', reloading
+2025-02-07 17:18:42,553 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\raptor_module.py', reloading
+2025-02-07 17:18:42,554 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\raptor_module.py', reloading
+2025-02-07 17:18:46,592 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:56:21,358 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-07 17:56:21,358 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-07 17:56:21,377 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:57:13,033 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:57:13,039 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 17:57:13,130 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:13] "GET / HTTP/1.1" 200 -
+2025-02-07 17:57:13,408 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:13] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-07 17:57:14,701 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:14] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-07 17:57:14,744 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:14] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-07 17:57:14,768 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:14] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-07 17:57:14,821 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:14] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-07 17:57:20,933 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:20] "GET /knowledge-base HTTP/1.1" 200 -
+2025-02-07 17:57:22,218 - root - ERROR - document_routes.py:27 - Error getting documents: 'RaptorModule' object has no attribute 'get_documents'
+2025-02-07 17:57:22,220 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:22] "[35m[1mGET /api/documents HTTP/1.1[0m" 500 -
+2025-02-07 17:57:22,224 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:57:22] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-07 17:57:44,287 - models.raptor_module - INFO - raptor_module.py:88 - 成功读取文件: temp\商业提案.txt, 内容长度: 2702
+2025-02-07 17:57:44,287 - knowledge_base.storage - INFO - storage.py:85 - 准备将文档 1738922264 保存到: data/RAtree\files\1738922264.txt
+2025-02-07 17:57:44,289 - knowledge_base.storage - INFO - storage.py:90 - 文档 1738922264 内容已保存到文件
+2025-02-07 17:57:44,292 - knowledge_base.storage - INFO - storage.py:98 - 文档 1738922264 的元数据已更新
+2025-02-07 17:57:44,293 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-07 17:57:44,315 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-07 17:57:45,479 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,508 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,510 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,585 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,607 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,611 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,621 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,630 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,631 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,648 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,648 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,662 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,737 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,766 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:45,822 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,229 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,259 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,315 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,546 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,555 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,580 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,588 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,644 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,667 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,689 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,692 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,711 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:46,809 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:47,152 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 17:57:48,145 - root - INFO - tree_builder.py:288 - 已创建 29 个叶子节点嵌入
+2025-02-07 17:57:48,145 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-07 17:57:48,191 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-07 17:57:48,191 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-07 17:57:48,370 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\umap\\distances.py', reloading
+2025-02-07 17:57:49,043 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\numba\\cpython\\numbers.py', reloading
+2025-02-07 17:57:51,990 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:58:34,514 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:58:34,516 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 17:58:34,546 - root - ERROR - document_routes.py:27 - Error getting documents: 'RaptorModule' object has no attribute 'get_documents'
+2025-02-07 17:58:34,547 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 17:58:34] "[35m[1mGET /api/documents HTTP/1.1[0m" 500 -
+2025-02-07 17:58:35,258 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\langchain_core\\load\\__init__.py', reloading
+2025-02-07 17:58:35,291 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\srsly\\__init__.py', reloading
+2025-02-07 17:58:35,305 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\srsly\\ujson\\__init__.py', reloading
+2025-02-07 17:58:38,126 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 17:59:14,866 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 17:59:14,870 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 18:08:49,670 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-07 18:08:49,671 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-07 18:08:49,716 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 18:09:46,302 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 18:09:46,314 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 18:09:46,541 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:46] "GET / HTTP/1.1" 200 -
+2025-02-07 18:09:46,543 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:46] "GET / HTTP/1.1" 200 -
+2025-02-07 18:09:46,545 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:46] "GET / HTTP/1.1" 200 -
+2025-02-07 18:09:46,561 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:46] "GET / HTTP/1.1" 200 -
+2025-02-07 18:09:46,787 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:46] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-07 18:09:46,821 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:46] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-07 18:09:47,618 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:47] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:09:47,619 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:47] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-07 18:09:47,621 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:47] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:09:47,643 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:47] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:09:47,648 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:47] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-07 18:09:47,662 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:47] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:09:47,665 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:47] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:09:47,682 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:47] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:09:53,145 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:53] "GET / HTTP/1.1" 200 -
+2025-02-07 18:09:53,320 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:53] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-07 18:09:53,552 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:53] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:09:53,566 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:53] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:09:53,589 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:53] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-07 18:09:53,595 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:09:53] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:10:07,218 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:10:07] "GET /knowledge-base HTTP/1.1" 200 -
+2025-02-07 18:10:07,885 - root - ERROR - document_routes.py:27 - Error getting documents: 'RaptorModule' object has no attribute 'get_documents'
+2025-02-07 18:10:07,892 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:10:07] "[35m[1mGET /api/documents HTTP/1.1[0m" 500 -
+2025-02-07 18:10:07,898 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:10:07] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-07 18:10:16,549 - models.raptor_module - INFO - raptor_module.py:88 - 成功读取文件: temp\商业提案.txt, 内容长度: 2702
+2025-02-07 18:10:16,550 - knowledge_base.storage - INFO - storage.py:85 - 准备将文档 1738923016 保存到: data/RAtree\files\1738923016.txt
+2025-02-07 18:10:16,554 - knowledge_base.storage - INFO - storage.py:90 - 文档 1738923016 内容已保存到文件
+2025-02-07 18:10:16,561 - knowledge_base.storage - INFO - storage.py:98 - 文档 1738923016 的元数据已更新
+2025-02-07 18:10:27,719 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-07 18:10:27,774 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-07 18:10:29,066 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,147 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,162 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,220 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,316 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,371 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,388 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,393 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,396 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,426 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,428 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,431 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,439 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,459 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,497 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,627 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,796 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,860 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:29,949 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,090 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,132 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,181 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,241 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,272 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,290 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,323 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,335 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,363 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,420 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:10:30,433 - root - INFO - tree_builder.py:288 - 已创建 29 个叶子节点嵌入
+2025-02-07 18:10:30,434 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-07 18:10:30,650 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-07 18:10:30,650 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-07 18:10:32,491 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\umap\\utils.py', reloading
+2025-02-07 18:10:35,406 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 18:11:37,683 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 18:11:37,698 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 18:11:43,754 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\bs4\\__init__.py', reloading
+2025-02-07 18:11:43,840 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\bs4\\builder\\__init__.py', reloading
+2025-02-07 18:11:43,870 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\html5lib\\__init__.py', reloading
+2025-02-07 18:11:43,986 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\html5lib\\treebuilders\\__init__.py', reloading
+2025-02-07 18:11:46,532 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 18:12:38,870 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 18:12:38,877 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 18:12:54,392 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\tiktoken\\registry.py', reloading
+2025-02-07 18:12:54,423 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\tiktoken\\core.py', reloading
+2025-02-07 18:12:56,906 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 18:13:47,942 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 18:13:47,948 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 18:13:48,062 - models.raptor_module - INFO - raptor_module.py:88 - 成功读取文件: temp\商业提案.txt, 内容长度: 2702
+2025-02-07 18:13:48,062 - knowledge_base.storage - INFO - storage.py:85 - 准备将文档 1738923228 保存到: data/RAtree\files\1738923228.txt
+2025-02-07 18:13:48,064 - knowledge_base.storage - INFO - storage.py:90 - 文档 1738923228 内容已保存到文件
+2025-02-07 18:13:48,066 - knowledge_base.storage - INFO - storage.py:98 - 文档 1738923228 的元数据已更新
+2025-02-07 18:13:51,443 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-07 18:13:51,460 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-07 18:13:52,449 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,454 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,457 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,536 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,653 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,675 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,702 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,704 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,715 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,727 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,744 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,778 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,784 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,794 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:52,803 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,268 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,273 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,277 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,284 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,286 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,394 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,400 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,581 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,604 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,687 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,696 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:53,708 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:54,003 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:54,189 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:13:54,206 - root - INFO - tree_builder.py:288 - 已创建 29 个叶子节点嵌入
+2025-02-07 18:13:54,207 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-07 18:13:58,313 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-07 18:13:58,314 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-07 18:14:01,002 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\numba\\misc\\quicksort.py', reloading
+2025-02-07 18:14:03,244 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 18:14:47,457 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 18:14:47,462 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 18:15:44,434 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-07 18:15:44,434 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-07 18:15:44,459 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 18:16:33,042 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 18:16:33,046 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 18:16:33,121 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:33] "GET / HTTP/1.1" 200 -
+2025-02-07 18:16:33,122 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:33] "GET / HTTP/1.1" 200 -
+2025-02-07 18:16:33,181 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:33] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-07 18:16:33,601 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:33] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-07 18:16:33,602 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:33] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:16:33,603 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:33] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:16:33,609 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:33] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-07 18:16:36,152 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:36] "GET /knowledge-base HTTP/1.1" 200 -
+2025-02-07 18:16:36,317 - root - ERROR - document_routes.py:27 - Error getting documents: 'RaptorModule' object has no attribute 'get_documents'
+2025-02-07 18:16:36,318 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:36] "[35m[1mGET /api/documents HTTP/1.1[0m" 500 -
+2025-02-07 18:16:36,321 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [07/Feb/2025 18:16:36] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-07 18:16:43,276 - models.raptor_module - INFO - raptor_module.py:88 - 成功读取文件: temp\商业提案.txt, 内容长度: 2702
+2025-02-07 18:16:43,276 - knowledge_base.storage - INFO - storage.py:85 - 准备将文档 1738923403 保存到: data/RAtree\files\1738923403.txt
+2025-02-07 18:16:43,277 - knowledge_base.storage - INFO - storage.py:90 - 文档 1738923403 内容已保存到文件
+2025-02-07 18:16:43,278 - knowledge_base.storage - INFO - storage.py:98 - 文档 1738923403 的元数据已更新
+2025-02-07 18:16:46,701 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-07 18:16:46,715 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-07 18:16:47,780 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:47,908 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:47,959 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:47,984 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:47,986 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:47,993 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:47,996 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,015 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,022 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,045 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,085 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,148 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,232 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,246 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,246 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,248 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,530 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,624 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,724 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,793 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,822 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,846 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:48,963 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:49,067 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:49,079 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:49,100 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:49,121 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:49,153 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:49,196 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:16:49,201 - root - INFO - tree_builder.py:288 - 已创建 29 个叶子节点嵌入
+2025-02-07 18:16:49,201 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-07 18:17:32,043 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\tests\\test_entity_extractor.py', reloading
+2025-02-07 18:17:32,043 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\llm_model.py', reloading
+2025-02-07 18:17:32,045 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_relationship_manager.py', reloading
+2025-02-07 18:17:32,046 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\llm_api_wrapper.py', reloading
+2025-02-07 18:17:32,047 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\tests\\test_rag_module.py', reloading
+2025-02-07 18:17:34,325 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 18:17:57,486 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 18:17:57,488 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-07 18:21:18,416 - models.raptor_module - INFO - raptor_module.py:88 - 成功读取文件: temp\商业提案.txt, 内容长度: 2702
+2025-02-07 18:21:18,417 - knowledge_base.storage - INFO - storage.py:85 - 准备将文档 1738923678 保存到: data/RAtree\files\1738923678.txt
+2025-02-07 18:21:18,419 - knowledge_base.storage - INFO - storage.py:90 - 文档 1738923678 内容已保存到文件
+2025-02-07 18:21:18,419 - knowledge_base.storage - INFO - storage.py:98 - 文档 1738923678 的元数据已更新
+2025-02-07 18:21:21,296 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-07 18:21:21,304 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-07 18:21:22,318 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,398 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,403 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,424 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,426 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,457 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,504 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,693 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,696 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,727 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,729 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,739 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,745 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,775 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,840 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:22,889 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,060 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,132 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,207 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,216 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,227 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,370 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,372 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,403 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,418 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,423 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,498 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,578 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,613 - httpx - INFO - _client.py:1027 - HTTP Request: POST https://api.gptsapi.net/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-07 18:21:23,618 - root - INFO - tree_builder.py:288 - 已创建 29 个叶子节点嵌入
+2025-02-07 18:21:23,618 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-07 18:22:21,308 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-07 18:22:37,787 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-07 18:22:39,319 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\numba\\np\\numpy_support.py', reloading
+2025-02-07 18:22:40,908 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-07 18:23:03,089 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-07 18:23:03,092 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209

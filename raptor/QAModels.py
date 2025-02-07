@@ -99,7 +99,7 @@ class GPT3TurboQAModel(BaseQAModel):
             ],
             temperature=0,
         )
-
+        print(f"上下文：{context}", )
         return response.choices[0].message.content.strip()
 
     @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))

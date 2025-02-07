@@ -32,7 +32,7 @@ class GPT3TurboSummarizationModel(BaseSummarizationModel):
                     {"role": "system", "content": "You are a helpful assistant."},
                     {
                         "role": "user",
-                        "content": f"Write a summary of the following, including as many key details as possible: {context}:",
+                        "content": f"使用汉语回答，总结以下内容，尽可能包含更多关键细节: {context}:",
                     },
                 ],
                 max_tokens=max_tokens,
@@ -63,7 +63,7 @@ class GPT3SummarizationModel(BaseSummarizationModel):
                     {"role": "system", "content": "You are a helpful assistant."},
                     {
                         "role": "user",
-                        "content": f"Write a summary of the following, including as many key details as possible: {context}:",
+                        "content": f"使用汉语回答，总结以下内容，尽可能包含更多关键细节:  {context}:",
                     },
                 ],
                 max_tokens=max_tokens,

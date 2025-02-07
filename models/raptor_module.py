@@ -1,7 +1,9 @@
 import os
+import time
 import logging
 from typing import Dict, List, Optional
 from raptor import RetrievalAugmentation
+from knowledge_base.storage import DocumentStorage
 
 # 配置日志记录
 logging.basicConfig(level=logging.INFO)
@@ -21,12 +23,13 @@ class RaptorModule:
             data_dir: Raptor数据存储目录，默认为 "data/RAtree"
         """
         try:
-            # # 确保数据目录存在
-            # os.makedirs(data_dir, exist_ok=True)
-            # logger.info(f"数据目录已确认: {data_dir}")
-            
-            # 初始化Raptor的RetrievalAugmentation
-            self.RA = RetrievalAugmentation(tree=data_dir)
+            # 初始化DocumentStorage实例
+            self.doc_storage = DocumentStorage(
+                storage_dir=os.path.join(data_dir, "files"),
+                tree_save_path=os.path.join(data_dir, "default_tree")
+            )
+            # 获取DocumentStorage中的RA实例
+            self.RA = self.doc_storage.RA
             logger.info("成功初始化Raptor检索增强模块")
             
         except Exception as e:
@@ -35,7 +38,7 @@ class RaptorModule:
     
     def add_documents(self, text: str) -> Dict:
         """
-        向知识库中添加文档
+        向知识库中添加文档内容，仅更新树结构，不保存元数据
 
         Args:
             text: 要添加的文本内容
@@ -44,13 +47,71 @@ class RaptorModule:
             Dict: 包含操作结果的字典
         """
         try:
-            # 添加文档到Raptor
-            self.RA.add_documents(text)
-            logger.info(f"成功添加文档，文本长度: {len(text)}")
+            # 使用DocumentStorage添加文档到树结构
+            tree_success = self.doc_storage.add_document_in_tree("", text)
+            if not tree_success:
+                return {"status": "error", "message": "添加文档到树结构失败"}
+            
+            # 保存树结构
+            self.doc_storage.save_RA_tree()
+            logger.info(f"成功添加文档到树结构，文本长度: {len(text)}")
+            
             return {"status": "success", "message": "文档添加成功"}
             
         except Exception as e:
             error_msg = f"添加文档时发生错误: {str(e)}"
+            logger.error(error_msg)
+            return {"status": "error", "message": error_msg}
+
+    def add_file(self, file_path: str, file_name: str = None) -> Dict:
+        """添加新文件到知识库，包括更新元数据和树结构
+        
+        Args:
+            file_path: 文件路径
+            file_name: 文件名（可选）
+            
+        Returns:
+            Dict: 包含操作结果的字典
+        """
+        try:
+            # 检查文件是否存在
+            if not os.path.exists(file_path):
+                error_msg = f"文件不存在: {file_path}"
+                logger.error(error_msg)
+                return {"status": "error", "message": error_msg}
+            
+            # 读取文件内容
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # 记录日志
+            logger.info(f"成功读取文件: {file_path}, 内容长度: {len(content)}")
+            
+            # 生成文档ID
+            doc_id = str(int(time.time()))
+            
+            # 添加文档到元数据
+            metadata_success = self.doc_storage.add_document_in_metadata(doc_id, content)
+            if not metadata_success:
+                return {"status": "error", "message": "添加文档元数据失败"}
+            
+            # 添加文档到树结构
+            tree_success = self.doc_storage.add_document_in_tree(doc_id, content)
+            if not tree_success:
+                return {"status": "error", "message": "添加文档到树结构失败"}
+            
+            # 保存树结构
+            self.doc_storage.save_RA_tree()
+            
+            return {
+                "status": "success", 
+                "message": f"文件 {file_name or file_path} 添加成功",
+                "file_path": file_path,
+                "doc_id": doc_id
+            }
+                
+        except Exception as e:
+            error_msg = f"添加文件时发生错误: {str(e)}"
             logger.error(error_msg)
             return {"status": "error", "message": error_msg}
 

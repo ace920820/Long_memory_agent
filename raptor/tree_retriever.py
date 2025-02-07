@@ -17,6 +17,9 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 
 class TreeRetrieverConfig:
+    """
+    TreeRetriever的配置类，用于设置和验证树检索器的各项参数
+    """
     def __init__(
         self,
         tokenizer=None,
@@ -28,68 +31,72 @@ class TreeRetrieverConfig:
         num_layers=None,
         start_layer=None,
     ):
+        # 初始化分词器，默认使用cl100k_base
         if tokenizer is None:
             tokenizer = tiktoken.get_encoding("cl100k_base")
         self.tokenizer = tokenizer
 
+        # 设置相似度阈值，默认为0.5
         if threshold is None:
             threshold = 0.5
         if not isinstance(threshold, float) or not (0 <= threshold <= 1):
-            raise ValueError("threshold must be a float between 0 and 1")
+            raise ValueError("threshold必须是0到1之间的浮点数")
         self.threshold = threshold
 
+        # 设置top_k值，默认为5
         if top_k is None:
             top_k = 5
         if not isinstance(top_k, int) or top_k < 1:
-            raise ValueError("top_k must be an integer and at least 1")
+            raise ValueError("top_k必须是大于等于1的整数")
         self.top_k = top_k
 
+        # 设置选择模式，可以是top_k或threshold
         if selection_mode is None:
             selection_mode = "top_k"
         if not isinstance(selection_mode, str) or selection_mode not in [
             "top_k",
             "threshold",
         ]:
-            raise ValueError(
-                "selection_mode must be a string and either 'top_k' or 'threshold'"
-            )
+            raise ValueError("selection_mode必须是'top_k'或'threshold'")
         self.selection_mode = selection_mode
 
+        # 设置上下文嵌入模型，默认为OpenAI
         if context_embedding_model is None:
             context_embedding_model = "OpenAI"
         if not isinstance(context_embedding_model, str):
-            raise ValueError("context_embedding_model must be a string")
+            raise ValueError("context_embedding_model必须是字符串")
         self.context_embedding_model = context_embedding_model
 
+        # 设置嵌入模型，默认使用OpenAI
         if embedding_model is None:
             embedding_model = OpenAIEmbeddingModel()
         if not isinstance(embedding_model, BaseEmbeddingModel):
-            raise ValueError(
-                "embedding_model must be an instance of BaseEmbeddingModel"
-            )
+            raise ValueError("embedding_model必须是BaseEmbeddingModel的实例")
         self.embedding_model = embedding_model
 
+        # 设置层数
         if num_layers is not None:
             if not isinstance(num_layers, int) or num_layers < 0:
-                raise ValueError("num_layers must be an integer and at least 0")
+                raise ValueError("num_layers必须是大于等于0的整数")
         self.num_layers = num_layers
 
+        # 设置起始层
         if start_layer is not None:
             if not isinstance(start_layer, int) or start_layer < 0:
-                raise ValueError("start_layer must be an integer and at least 0")
+                raise ValueError("start_layer必须是大于等于0的整数")
         self.start_layer = start_layer
 
     def log_config(self):
         config_log = """
         TreeRetrieverConfig:
-            Tokenizer: {tokenizer}
-            Threshold: {threshold}
+            分词器: {tokenizer}
+            阈值: {threshold}
             Top K: {top_k}
-            Selection Mode: {selection_mode}
-            Context Embedding Model: {context_embedding_model}
-            Embedding Model: {embedding_model}
-            Num Layers: {num_layers}
-            Start Layer: {start_layer}
+            选择模式: {selection_mode}
+            上下文嵌入模型: {context_embedding_model}
+            嵌入模型: {embedding_model}
+            层数: {num_layers}
+            起始层: {start_layer}
         """.format(
             tokenizer=self.tokenizer,
             threshold=self.threshold,
@@ -104,20 +111,26 @@ class TreeRetrieverConfig:
 
 
 class TreeRetriever(BaseRetriever):
+    """
+    树检索器类，负责从树结构中检索相关信息
+    """
 
     def __init__(self, config, tree) -> None:
+        """
+        初始化树检索器
+
+        参数:
+            config: 检索器配置
+            tree: 要检索的树结构
+        """
         if not isinstance(tree, Tree):
-            raise ValueError("tree must be an instance of Tree")
+            raise ValueError("tree必须是Tree类的实例")
 
         if config.num_layers is not None and config.num_layers > tree.num_layers + 1:
-            raise ValueError(
-                "num_layers in config must be less than or equal to tree.num_layers + 1"
-            )
+            raise ValueError("config中的num_layers必须小于等于tree.num_layers + 1")
 
         if config.start_layer is not None and config.start_layer > tree.num_layers:
-            raise ValueError(
-                "start_layer in config must be less than or equal to tree.num_layers"
-            )
+            raise ValueError("config中的start_layer必须小于等于tree.num_layers")
 
         self.tree = tree
         self.num_layers = (
@@ -128,7 +141,7 @@ class TreeRetriever(BaseRetriever):
         )
 
         if self.num_layers > self.start_layer + 1:
-            raise ValueError("num_layers must be less than or equal to start_layer + 1")
+            raise ValueError("num_layers必须小于等于start_layer + 1")
 
         self.tokenizer = config.tokenizer
         self.top_k = config.top_k
@@ -140,33 +153,33 @@ class TreeRetriever(BaseRetriever):
         self.tree_node_index_to_layer = reverse_mapping(self.tree.layer_to_nodes)
 
         logging.info(
-            f"Successfully initialized TreeRetriever with Config {config.log_config()}"
+            f"成功初始化TreeRetriever，配置为：{config.log_config()}"
         )
 
     def create_embedding(self, text: str) -> List[float]:
         """
-        Generates embeddings for the given text using the specified embedding model.
+        使用指定的嵌入模型为给定文本生成嵌入向量
 
-        Args:
-            text (str): The text for which to generate embeddings.
+        参数:
+            text (str): 需要生成嵌入向量的文本
 
-        Returns:
-            List[float]: The generated embeddings.
+        返回:
+            List[float]: 生成的嵌入向量
         """
         return self.embedding_model.create_embedding(text)
 
     def retrieve_information_collapse_tree(self, query: str, top_k: int, max_tokens: int) -> str:
         """
-        Retrieves the most relevant information from the tree based on the query.
+        基于查询从树中检索最相关的信息（扁平化检索方式）
 
-        Args:
-            query (str): The query text.
-            max_tokens (int): The maximum number of tokens.
+        参数:
+            query (str): 查询文本
+            top_k (int): 返回的最相关节点数量
+            max_tokens (int): 最大token数量
 
-        Returns:
-            str: The context created using the most relevant nodes.
+        返回:
+            str: 使用最相关节点创建的上下文
         """
-
         query_embedding = self.create_embedding(query)
 
         selected_nodes = []
@@ -181,7 +194,6 @@ class TreeRetriever(BaseRetriever):
 
         total_tokens = 0
         for idx in indices[:top_k]:
-
             node = node_list[idx]
             node_tokens = len(self.tokenizer.encode(node.text))
 
@@ -198,17 +210,16 @@ class TreeRetriever(BaseRetriever):
         self, current_nodes: List[Node], query: str, num_layers: int
     ) -> str:
         """
-        Retrieves the most relevant information from the tree based on the query.
+        基于查询从树中检索最相关的信息（层次检索方式）
 
-        Args:
-            current_nodes (List[Node]): A List of the current nodes.
-            query (str): The query text.
-            num_layers (int): The number of layers to traverse.
+        参数:
+            current_nodes (List[Node]): 当前节点列表
+            query (str): 查询文本
+            num_layers (int): 要遍历的层数
 
-        Returns:
-            str: The context created using the most relevant nodes.
+        返回:
+            str: 使用最相关节点创建的上下文
         """
-
         query_embedding = self.create_embedding(query)
 
         selected_nodes = []
@@ -216,7 +227,6 @@ class TreeRetriever(BaseRetriever):
         node_list = current_nodes
 
         for layer in range(num_layers):
-
             embeddings = get_embeddings(node_list, self.context_embedding_model)
 
             distances = distances_from_embeddings(query_embedding, embeddings)
@@ -236,13 +246,12 @@ class TreeRetriever(BaseRetriever):
             selected_nodes.extend(nodes_to_add)
 
             if layer != num_layers - 1:
-
                 child_nodes = []
 
                 for index in best_indices:
                     child_nodes.extend(node_list[index].children)
 
-                # take the unique values
+                # 取唯一值
                 child_nodes = list(dict.fromkeys(child_nodes))
                 node_list = [self.tree.all_nodes[i] for i in child_nodes]
 
@@ -260,47 +269,45 @@ class TreeRetriever(BaseRetriever):
         return_layer_information: bool = False,
     ) -> str:
         """
-        Queries the tree and returns the most relevant information.
+        查询树并返回最相关的信息
 
-        Args:
-            query (str): The query text.
-            start_layer (int): The layer to start from. Defaults to self.start_layer.
-            num_layers (int): The number of layers to traverse. Defaults to self.num_layers.
-            max_tokens (int): The maximum number of tokens. Defaults to 3500.
-            collapse_tree (bool): Whether to retrieve information from all nodes. Defaults to False.
+        参数:
+            query (str): 查询文本
+            start_layer (int): 起始层，默认为self.start_layer
+            num_layers (int): 要遍历的层数，默认为self.num_layers
+            max_tokens (int): 最大token数，默认为3500
+            collapse_tree (bool): 是否检索所有节点，默认为True
+            return_layer_information (bool): 是否返回层级信息，默认为False
 
-        Returns:
-            str: The result of the query.
+        返回:
+            str: 查询结果
         """
-
         if not isinstance(query, str):
-            raise ValueError("query must be a string")
+            raise ValueError("query必须是字符串")
 
         if not isinstance(max_tokens, int) or max_tokens < 1:
-            raise ValueError("max_tokens must be an integer and at least 1")
+            raise ValueError("max_tokens必须是大于等于1的整数")
 
         if not isinstance(collapse_tree, bool):
-            raise ValueError("collapse_tree must be a boolean")
+            raise ValueError("collapse_tree必须是布尔值")
 
-        # Set defaults
+        # 设置默认值
         start_layer = self.start_layer if start_layer is None else start_layer
         num_layers = self.num_layers if num_layers is None else num_layers
 
         if not isinstance(start_layer, int) or not (
             0 <= start_layer <= self.tree.num_layers
         ):
-            raise ValueError(
-                "start_layer must be an integer between 0 and tree.num_layers"
-            )
+            raise ValueError("start_layer必须是0到tree.num_layers之间的整数")
 
         if not isinstance(num_layers, int) or num_layers < 1:
-            raise ValueError("num_layers must be an integer and at least 1")
+            raise ValueError("num_layers必须是大于等于1的整数")
 
         if num_layers > (start_layer + 1):
-            raise ValueError("num_layers must be less than or equal to start_layer + 1")
+            raise ValueError("num_layers必须小于等于start_layer + 1")
 
         if collapse_tree:
-            logging.info(f"Using collapsed_tree")
+            logging.info(f"使用扁平化树检索")
             selected_nodes, context = self.retrieve_information_collapse_tree(
                 query, top_k, max_tokens
             )
@@ -311,7 +318,6 @@ class TreeRetriever(BaseRetriever):
             )
 
         if return_layer_information:
-
             layer_information = []
 
             for node in selected_nodes:
