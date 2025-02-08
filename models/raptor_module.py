@@ -1,8 +1,7 @@
 import os
 import time
 import logging
-from typing import Dict, List, Optional
-from raptor import RetrievalAugmentation
+from typing import Dict, List
 from knowledge_base.storage import DocumentStorage
 
 # 配置日志记录
@@ -143,7 +142,7 @@ class RaptorModule:
             logging.error(f"搜索过程中出错: {str(e)}")
             return []
 
-    def generate_response(self, query: str, llm_model, context=None, role_prompt=None):
+    def generate_rag_response(self, query: str, llm_model, context=None, role_prompt=None):
         """生成带有检索增强的响应"""
         try:
             # 2. 构建提示词

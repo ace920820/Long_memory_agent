@@ -139,3 +139,19 @@
 2025-02-07 23:25:55,448 - root - ERROR - document_routes.py:115 - Error getting document content: 'RaptorModule' object has no attribute 'documents'
 2025-02-07 23:26:00,055 - root - ERROR - document_routes.py:115 - Error getting document content: 'RaptorModule' object has no attribute 'documents'
 2025-02-07 23:33:41,778 - models.raptor_module - ERROR - raptor_module.py:265 - 获取文档信息时发生错误: 'RetrievalAugmentation' object has no attribute 'get_tree_info'
+2025-02-07 23:52:57,548 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:52:57] code 400, message Bad request version ('jj\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s')
+2025-02-07 23:52:57,549 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:52:57] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06')
+2025-02-07 23:52:57,551 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:52:57] code 400, message Bad request version ('ûúÝ@B2¼¾Î9*k\x15£ð®{DrÊàû\x97\x13Å$\x18RyÌ\x07$ñ\x7fÀþâf')
+2025-02-07 23:52:57,552 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:52:57] code 400, message Bad request version ('Ä7Åw')
+2025-02-07 23:53:05,195 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:05] code 400, message Bad request version ('\x8f\x1a\x98K\\¬í#PWcÇ\x05h\x03=\x83Lè+*\x05\x98YØ\x17')
+2025-02-07 23:53:05,196 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:05] code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+2025-02-07 23:53:05,197 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:05] code 400, message Bad request version ('\x13cG%¬"ãagR¨\x04[')
+2025-02-07 23:53:05,199 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:05] code 400, message Bad request version ('Z¬P\x98Õá]\\ì\x9cÂ×\x88YQ\x99áç\x87d,W.\x9a.;P¦')
+2025-02-07 23:53:06,988 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:06] code 400, message Bad request syntax ('\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03\x8f¬\x9c\x07J\x98ð-I7l')
+2025-02-07 23:53:06,989 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:06] code 400, message Bad request version ('¸Õ¬')
+2025-02-07 23:53:06,990 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:06] code 400, message Bad request version ('\x02h2\x08http/1.1DÍ\x00\x05\x00\x03\x02h2\x00#\x00\x00\x00\x12\x00\x00\x00-\x00\x02\x01\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+2025-02-07 23:53:06,991 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:06] code 400, message Bad request version (';\x0eO"970Z«;S\x14\x03QK=(Ù\x81À')
+2025-02-07 23:53:29,035 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version ('\x9b\x94¿«h\x83\x06´\x95"ùÏ"´\x8de"°5KLc\x81R1i')
+2025-02-07 23:53:29,036 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version (']Ã\\Ðê\x17\xadÐ4\x08«M"æ\x9aIZi\x02EG\x84ü©R\x107\x02\x8a\'\x84\x13CE\x08K\x97)ºÜD\x1bÇÇ+\x00ú®ªiÏz£')
+2025-02-07 23:53:29,036 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version ('LR')
+2025-02-07 23:53:29,038 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')

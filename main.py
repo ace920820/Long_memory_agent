@@ -401,4 +401,4 @@ if __name__ == "__main__":
     # 初始化 RAG 模块
     rag_module = create_rag_module()
     app = create_app(rag_module)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000,debug=True)

@@ -617,9 +617,9 @@
       "type": "dialogue",
       "timestamp": "2025-01-13T19:52:22.943488",
       "access_stats": {
-        "count": 3,
+        "count": 4,
         "first_access": "2025-01-13T19:52:22.943488",
-        "last_access": "2025-02-07T19:42:08.181261",
+        "last_access": "2025-02-07T23:58:39.700215",
         "access_history": [
           {
             "time": "2025-02-01T17:13:55.085005",
@@ -628,10 +628,14 @@
           {
             "time": "2025-02-07T19:42:08.181261",
             "type": "read"
+          },
+          {
+            "time": "2025-02-07T23:58:39.700215",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55,
+      "priority_score": 0.58,
       "cluster_info": {
         "cluster_id": 14
       }
@@ -699,14 +703,10 @@
       "type": "dialogue",
       "timestamp": "2025-01-13T20:05:10.898279",
       "access_stats": {
-        "count": 10,
+        "count": 11,
         "first_access": "2025-01-13T20:05:10.898279",
-        "last_access": "2025-02-07T22:06:56.279746",
+        "last_access": "2025-02-07T23:58:06.036679",
         "access_history": [
-          {
-            "time": "2025-02-01T17:02:55.654230",
-            "type": "read"
-          },
           {
             "time": "2025-02-01T17:09:46.179355",
             "type": "read"
@@ -742,6 +742,10 @@
           {
             "time": "2025-02-07T22:06:56.279746",
             "type": "read"
+          },
+          {
+            "time": "2025-02-07T23:58:06.036679",
+            "type": "read"
           }
         ]
       },
@@ -772,14 +776,10 @@
       "type": "dialogue",
       "timestamp": "2025-01-18T22:47:50.411326",
       "access_stats": {
-        "count": 21,
+        "count": 22,
         "first_access": "2025-01-18T22:47:50.411326",
-        "last_access": "2025-02-05T21:56:12.234475",
+        "last_access": "2025-02-07T23:55:24.846399",
         "access_history": [
-          {
-            "timestamp": "2025-01-20T21:14:12.710787",
-            "type": "read"
-          },
           {
             "timestamp": "2025-01-20T21:22:50.817091",
             "type": "read"
@@ -814,6 +814,10 @@
           },
           {
             "time": "2025-02-05T21:56:12.234475",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-07T23:55:24.846399",
             "type": "read"
           }
         ]
@@ -1140,9 +1144,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-04T23:25:57.934200",
       "access_stats": {
-        "count": 4,
+        "count": 5,
         "first_access": "2025-02-04T23:25:57.934200",
-        "last_access": "2025-02-07T22:06:56.279746",
+        "last_access": "2025-02-07T23:55:24.846399",
         "access_history": [
           {
             "time": "2025-02-04T23:26:15.819345",
@@ -1159,10 +1163,14 @@
           {
             "time": "2025-02-07T22:06:56.279746",
             "type": "read"
+          },
+          {
+            "time": "2025-02-07T23:55:24.846399",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.58,
+      "priority_score": 0.61,
       "cluster_info": {
         "cluster_id": 26
       }
@@ -1173,12 +1181,21 @@
       "type": "dialogue",
       "timestamp": "2025-02-05T21:56:14.525273",
       "access_stats": {
-        "count": 0,
+        "count": 2,
         "first_access": "2025-02-05T21:56:14.525273",
-        "last_access": "2025-02-05T21:56:14.525273",
-        "access_history": []
+        "last_access": "2025-02-07T23:55:24.845880",
+        "access_history": [
+          {
+            "time": "2025-02-07T23:54:58.285254",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-07T23:55:24.845880",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.52,
       "cluster_info": {
         "cluster_id": 27
       }
@@ -1214,12 +1231,33 @@
       "type": "dialogue",
       "timestamp": "2025-02-05T21:57:44.741257",
       "access_stats": {
-        "count": 0,
+        "count": 5,
         "first_access": "2025-02-05T21:57:44.741257",
-        "last_access": "2025-02-05T21:57:44.741257",
-        "access_history": []
+        "last_access": "2025-02-08T10:13:28.966786",
+        "access_history": [
+          {
+            "time": "2025-02-07T23:54:58.285488",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-07T23:56:11.377531",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-08T00:00:11.769126",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-08T00:00:42.567196",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-08T10:13:28.966786",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.61,
       "cluster_info": {
         "cluster_id": 29
       }
@@ -1412,17 +1450,25 @@
       "type": "dialogue",
       "timestamp": "2025-02-07T22:06:47.187699",
       "access_stats": {
-        "count": 1,
+        "count": 3,
         "first_access": "2025-02-07T22:06:47.187699",
-        "last_access": "2025-02-07T22:06:56.279746",
+        "last_access": "2025-02-08T00:00:11.769645",
         "access_history": [
           {
             "time": "2025-02-07T22:06:56.279746",
             "type": "read"
+          },
+          {
+            "time": "2025-02-07T23:54:58.285488",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-08T00:00:11.769645",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.49,
+      "priority_score": 0.55,
       "cluster_info": {
         "cluster_id": 36
       }
@@ -1433,12 +1479,17 @@
       "type": "dialogue",
       "timestamp": "2025-02-07T22:06:58.272177",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-02-07T22:06:58.272177",
-        "last_access": "2025-02-07T22:06:58.272177",
-        "access_history": []
+        "last_access": "2025-02-07T23:54:58.285488",
+        "access_history": [
+          {
+            "time": "2025-02-07T23:54:58.285488",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.49,
       "cluster_info": {
         "cluster_id": 37
       }
@@ -1483,6 +1534,190 @@
       "priority_score": 0.49,
       "cluster_info": {
         "cluster_id": 39
+      }
+    },
+    {
+      "id": "m_1738943684932_1158",
+      "content": "hi",
+      "type": "dialogue",
+      "timestamp": "2025-02-07T23:54:44.932980",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-07T23:54:44.932980",
+        "last_access": "2025-02-07T23:54:44.932980",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": 40
+      }
+    },
+    {
+      "id": "m_1738943701286_4189",
+      "content": "你好呀",
+      "type": "dialogue",
+      "timestamp": "2025-02-07T23:55:01.286581",
+      "access_stats": {
+        "count": 3,
+        "first_access": "2025-02-07T23:55:01.286581",
+        "last_access": "2025-02-08T00:00:11.769126",
+        "access_history": [
+          {
+            "time": "2025-02-07T23:55:24.846399",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-07T23:58:39.700215",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-08T00:00:11.769126",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.55,
+      "cluster_info": {
+        "cluster_id": 41
+      }
+    },
+    {
+      "id": "m_1738943732063_7408",
+      "content": "你是谁",
+      "type": "dialogue",
+      "timestamp": "2025-02-07T23:55:32.063103",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-07T23:55:32.063103",
+        "last_access": "2025-02-07T23:55:32.063103",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": 27
+      }
+    },
+    {
+      "id": "m_1738943774150_2642",
+      "content": "你晚上一般几点睡觉呢",
+      "type": "dialogue",
+      "timestamp": "2025-02-07T23:56:14.150032",
+      "access_stats": {
+        "count": 3,
+        "first_access": "2025-02-07T23:56:14.150032",
+        "last_access": "2025-02-08T10:13:28.965785",
+        "access_history": [
+          {
+            "time": "2025-02-08T00:00:11.769126",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-08T00:00:42.567196",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-08T10:13:28.965785",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.55,
+      "cluster_info": {
+        "cluster_id": 42
+      }
+    },
+    {
+      "id": "m_1738943781527_5494",
+      "content": "纯净水和矿泉水有什么关系",
+      "type": "dialogue",
+      "timestamp": "2025-02-07T23:56:21.527831",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-07T23:56:21.527831",
+        "last_access": "2025-02-07T23:56:21.527831",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": 43
+      }
+    },
+    {
+      "id": "m_1738943890573_7546",
+      "content": "今天晚上和老公一起做了卤牛肉，味道非常棒",
+      "type": "dialogue",
+      "timestamp": "2025-02-07T23:58:10.573761",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-07T23:58:10.573761",
+        "last_access": "2025-02-07T23:58:10.573761",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": 44
+      }
+    },
+    {
+      "id": "m_1738943922203_6117",
+      "content": "是的，很享受，你有类似的体验吗",
+      "type": "dialogue",
+      "timestamp": "2025-02-07T23:58:42.203155",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-07T23:58:42.203155",
+        "last_access": "2025-02-07T23:58:42.203155",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": 45
+      }
+    },
+    {
+      "id": "m_1738944014605_2267",
+      "content": "晚上好呀",
+      "type": "dialogue",
+      "timestamp": "2025-02-08T00:00:14.605716",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-02-08T00:00:14.605716",
+        "last_access": "2025-02-08T10:13:28.966786",
+        "access_history": [
+          {
+            "time": "2025-02-08T00:00:42.567196",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-08T10:13:28.966786",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52,
+      "cluster_info": {
+        "cluster_id": 46
+      }
+    },
+    {
+      "id": "m_1738944045267_8669",
+      "content": "凌晨了，准备睡觉",
+      "type": "dialogue",
+      "timestamp": "2025-02-08T00:00:45.267402",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-02-08T00:00:45.267402",
+        "last_access": "2025-02-08T10:13:28.966786",
+        "access_history": [
+          {
+            "time": "2025-02-08T10:13:28.966786",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": 47
       }
     }
   ]

@@ -113,7 +113,9 @@ class LLMModel:
                 'tokens': 0,
                 'latency': 0
             })
-            
+
+            logging.debug(f"【LLM请求参数】")
+
             # 调用 API
             response = self.api_wrapper.call_llm(messages,model=self.model)
             result = self._process_response(response)

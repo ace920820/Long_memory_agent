@@ -38,7 +38,7 @@ class TreeRetrieverConfig:
 
         # 设置相似度阈值，默认为0.5
         if threshold is None:
-            threshold = 0.5
+            threshold = 0.7
         if not isinstance(threshold, float) or not (0 <= threshold <= 1):
             raise ValueError("threshold必须是0到1之间的浮点数")
         self.threshold = threshold

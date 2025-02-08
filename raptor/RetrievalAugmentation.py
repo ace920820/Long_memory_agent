@@ -163,7 +163,7 @@ class RetrievalAugmentation:
             tree: 树实例或序列化树文件的路径。
         """
         if config is None:
-            config = RetrievalAugmentationConfig()
+            config = RetrievalAugmentationConfig(tr_threshold=0.6)
         if not isinstance(config, RetrievalAugmentationConfig):
             raise ValueError(
                 "config must be an instance of RetrievalAugmentationConfig"
