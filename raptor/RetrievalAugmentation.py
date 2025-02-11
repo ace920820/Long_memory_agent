@@ -245,6 +245,7 @@ class RetrievalAugmentation:
             logging.error(f"向现有树添加文档失败: {str(e)}")
             return False
 
+
     def add_documents(self, docs):
         """
         向树中添加文档并创建一个 TreeRetriever 实例。

@@ -55,3 +55,9 @@ memory:
     tfidf_similarity_weight: 0.4  # TF-IDF相似度权重
     top_k_compensate: 3  # 补偿召回的记忆数量
     min_compensate_score: 0.3  # 最小补偿分数阈值
+
+  # 树结构重构配置
+  tree_rebuild:
+    enabled: true  # 是否启用定期重构
+    rebuild_interval: 20  # 每多少轮对话触发一次重构
+    tree_save_path: "data/RAtree/default_tree"  # 默认树保存路径

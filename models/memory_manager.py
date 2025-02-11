@@ -11,9 +11,6 @@ import re
 import math
 import time
 import random
-from .cluster_manager import ClusterManager
-from .metadata_manager import MetadataManager
-from .memory_summarizer import MemorySummarizer
 import jieba
 import jieba.analyse
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -93,16 +90,6 @@ class MemoryManager:
             self.dimension = 768  # 默认维度
         
         self.indices = {}  # 用户ID到索引的映射
-        
-        # 初始化动态记忆聚类组件
-        self.cluster_manager = ClusterManager(
-            min_cluster_size=3,
-            similarity_threshold=0.75,
-            vector_dim=self.dimension
-        )
-        self.metadata_manager = MetadataManager()
-        self.memory_summarizer = MemorySummarizer(self.metadata_manager)
-        
         # 存储每个用户的记忆簇映射
         self.user_clusters: Dict[str, Dict[int, List[str]]] = {}  # user_id -> {cluster_id -> [memory_ids]}
         
@@ -131,6 +118,19 @@ class MemoryManager:
             'max_memories': 1000,
             'cleanup_threshold': 0.85
         }
+        
+        # 初始化树结构管理
+        self.doc_storage = DocumentStorage()  # 使用默认路径
+        self.dialog_count = 0  # 对话轮数计数器
+        self.tree_rebuild_config = self.config.get('memory', {}).get('tree_rebuild', {
+            'enabled': True,
+            'rebuild_interval': 20,
+            'tree_save_path': "data/RAtree/default_tree"
+        })
+        logging.info("树结构重构配置：")
+        logging.info(f"是否启用: {self.tree_rebuild_config['enabled']}")
+        logging.info(f"重构间隔: {self.tree_rebuild_config['rebuild_interval']} 轮对话")
+        logging.info(f"树保存路径: {self.tree_rebuild_config['tree_save_path']}")
         
         # 初始化或迁移现有记忆的访问统计
         self._initialize_memory_stats()
@@ -309,11 +309,15 @@ class MemoryManager:
                 vector = self.encode([content]).astype('float32')
                 self.indices[user_id].add(vector)
                 
-                # 更新记忆簇
-                self._update_memory_clusters(user_id, memory_id, vector[0])
+                # 添加到树结构
+                self.doc_storage.add_document_in_tree(memory_id, content)
+                logging.info(f"记忆 {memory_id} 已添加到树结构")
+                
+                # 检查是否需要重构树
+                self._check_and_rebuild_tree()
                 
             except Exception as e:
-                logging.error(f"Error updating index: {str(e)}")
+                logging.error(f"Error updating index or tree: {str(e)}")
                 # 回滚记忆添加
                 self.memories[user_id].pop()
                 raise
@@ -418,18 +422,6 @@ class MemoryManager:
                             'cluster_info': {'cluster_id': cluster_id}
                         }
                         candidates.append(summary_memory)
-                        
-                        # 簇内召回补偿
-                        if cluster_id != -1:
-                            compensate_memories = self.improve_retrieval(query, cluster_id)
-                            candidates.extend([
-                                {
-                                    'id': self._generate_memory_id(),
-                                    'content': comp_memory,
-                                    'type': 'comprehensive_recall_compensate',
-                                    'cluster_info': {'cluster_id': cluster_id}
-                                } for comp_memory in compensate_memories
-                            ])
                     else:
                         # 如果是具体记忆，转换为记忆对象
                         memory = result.copy()
@@ -471,27 +463,12 @@ class MemoryManager:
                             ])
                         
                         candidates.append(memory)
-        
-            # 获取相关簇的摘要（作为补充）
-            cluster_summary = self.get_cluster_summary(user_id, query)
             
             # 使用BGE-Rerank重排序
             if self.rerank_enabled:
                 reranked_results = self._rerank_results(query, candidates)
             else:
                 reranked_results = candidates
-            
-            # 如果有簇摘要，添加到结果中
-            if cluster_summary:
-                reranked_results.insert(0, {
-                    'id': 'cluster_summary',
-                    'content': f"相关记忆簇摘要：{cluster_summary}",
-                    'type': 'summary',
-                    'timestamp': datetime.now().isoformat(),
-                    'similarity': 1.0,  # 确保摘要始终排在最前面
-                    'priority_score': 1.0,
-                    'final_score': 1.0
-                })
 
             # 保存更新后的记忆
             try:
@@ -527,48 +504,6 @@ class MemoryManager:
         except Exception as e:
             logging.error(f"Error retrieving memories: {str(e)}")
             return []
-
-    def _restructure_as_fact(self, memories: List[Dict]) -> str:
-        """将记忆重构为事实陈述"""
-        if not memories:
-            return ""
-        
-        content = memories[0]['content']
-        if "用户说:" in content and "助手回答:" in content:
-            # 从对话中提取事实
-            user_part = content.split("助手回答:")[0].replace("用户说:", "").strip()
-            return f"用户表示{user_part}"
-        return content
-
-    def _restructure_as_preference(self, memories: List[Dict]) -> str:
-        """将记忆重构为偏好描述"""
-        if not memories:
-            return ""
-        
-        content = memories[0]['content']
-        if "用户说:" in content:
-            content = content.split("助手回答:")[0].replace("用户说:", "").strip()
-        
-        # 如果内容中没有偏好相关的关键词，尝试添加适当的前缀
-        if not any(keyword in content for keyword in ["最喜欢", "喜欢", "讨厌", "不喜欢"]):
-            if "想" in content or "要" in content:
-                content = f"用户喜欢{content}"
-        
-        return content
-
-    def _restructure_as_personality(self, memories: List[Dict]) -> str:
-        """将记忆重构为性格特征描述"""
-        if not memories:
-            return ""
-        
-        content = memories[0]['content']
-        if "用户说:" in content:
-            content = content.split("助手回答:")[0].replace("用户说:", "").strip()
-        
-        keywords = ["是一个", "性格", "特点", "表现出", "倾向于"]
-        if not any(keyword in content for keyword in keywords):
-            return f"用户在交谈中表现出{content}的特点"
-        return content
 
     def delete_memories(self, user_id: str, memory_ids: List[str]) -> Dict:
         """删除指定的记忆
@@ -978,93 +913,36 @@ class MemoryManager:
                 "error": str(e)
             }
 
-    def _initialize_user_clusters(self, user_id: str) -> None:
-        """初始化用户的记忆簇
-        
-        Args:
-            user_id: 用户ID
+    def _check_and_rebuild_tree(self):
         """
-        if user_id not in self.memories or not self.memories[user_id]:
-            self.user_clusters[user_id] = {}
+        检查是否需要重构树结构，并在需要时执行重构
+        """
+        if not self.tree_rebuild_config['enabled']:
             return
-
-        # 获取所有记忆的向量表示
-        memory_texts = [m['content'] for m in self.memories[user_id]]
-        vectors = self.encode(memory_texts)
-
-        # 初始化用户的簇映射
-        self.user_clusters[user_id] = {}
-
-        # 为每个记忆分配簇
-        for i, vector in enumerate(vectors):
-            memory_id = self.memories[user_id][i]['id']
-            cluster_id = self.cluster_manager.add_memory_vector(vector)
             
-            # 更新用户簇映射
-            if cluster_id not in self.user_clusters[user_id]:
-                self.user_clusters[user_id][cluster_id] = []
-            self.user_clusters[user_id][cluster_id].append(memory_id)
-
-        # 初始化每个簇的元数据和摘要
-        for cluster_id, memory_ids in self.user_clusters[user_id].items():
-            cluster_texts = [
-                m['content'] for m in self.memories[user_id] 
-                if m['id'] in memory_ids
-            ]
-            self.metadata_manager.initialize_metadata(cluster_id, cluster_texts)
-            self.memory_summarizer.update_summary(cluster_id, cluster_texts)
-
-    def _update_memory_clusters(self, user_id: str, memory_id: str, vector: np.ndarray) -> None:
-        """更新记忆的簇分配
+        self.dialog_count += 1
+        logging.info(f"当前对话轮数: {self.dialog_count}")
         
-        Args:
-            user_id: 用户ID
-            memory_id: 记忆ID
-            vector: 记忆的向量表示
-        """
-        # 找到记忆所属的簇
-        cluster_id = self.cluster_manager.add_memory_vector(vector)
-        
-        # 更新用户簇映射
-        if user_id not in self.user_clusters:
-            self.user_clusters[user_id] = {}
-        if cluster_id not in self.user_clusters[user_id]:
-            self.user_clusters[user_id][cluster_id] = []
-        self.user_clusters[user_id][cluster_id].append(memory_id)
-
-        # 更新簇的元数据和摘要
-        cluster_texts = [
-            m['content'] for m in self.memories[user_id] 
-            if m['id'] in self.user_clusters[user_id][cluster_id]
-        ]
-        self.metadata_manager.update_metadata(cluster_id, cluster_texts)
-        self.memory_summarizer.update_summary(cluster_id, cluster_texts)
-
-    def get_cluster_summary(self, user_id: str, query: str) -> Optional[str]:
-        """获取与查询最相关的簇的摘要
-        
-        Args:
-            user_id: 用户ID
-            query: 查询文本
-
-        Returns:
-            簇的摘要，如果没有找到相关簇则返回None
-        """
-        if user_id not in self.user_clusters:
-            return None
-
-        # 获取查询的向量表示
-        query_vector = self.encode([query])[0]
-        
-        # 找到最相关的簇
-        cluster_id = self.cluster_manager.find_related_cluster(query_vector)
-        if cluster_id == -1:
-            return None
-
-        # 记录簇的访问
-        self.metadata_manager.record_access(cluster_id)
-        
-        return self.memory_summarizer.get_cluster_summary(cluster_id)
+        if self.dialog_count >= self.tree_rebuild_config['rebuild_interval']:
+            logging.info("触发树结构重构...")
+            try:
+                # 获取当前树的叶子节点
+                tree_info = self.doc_storage.get_tree_info()
+                if tree_info and 'tree' in tree_info:
+                    # 使用叶子节点重新构建树
+                    self.doc_storage.RA.tree_builder.build_from_leafnodes(tree_info['tree']['leaf_nodes'])
+                    logging.info("树结构重构完成")
+                    
+                    # 保存重构后的树
+                    self.doc_storage.save_RA_tree(self.tree_rebuild_config['tree_save_path'])
+                    logging.info(f"已保存重构后的树到: {self.tree_rebuild_config['tree_save_path']}")
+                    
+                    # 重置计数器
+                    self.dialog_count = 0
+                else:
+                    logging.error("获取树信息失败，跳过重构")
+            except Exception as e:
+                logging.error(f"树结构重构失败: {str(e)}")
 
     def improve_retrieval(self, query: str, cluster_id: int) -> List[str]:
         """
