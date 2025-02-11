@@ -28,8 +28,8 @@ class RetrievalAugmentationConfig:
         # TreeRetrieverConfig arguments
         tr_tokenizer=None,
         tr_threshold=0.5,
-        tr_top_k=5,
-        tr_selection_mode="top_k",
+        tr_top_k=10,
+        tr_selection_mode="threshold",
         tr_context_embedding_model="OpenAI",
         tr_embedding_model=None,
         tr_num_layers=None,
@@ -119,7 +119,7 @@ class RetrievalAugmentationConfig:
                 context_embedding_model=tr_context_embedding_model,
                 embedding_model=tr_embedding_model,
                 num_layers=tr_num_layers,
-                start_layer=tr_start_layer,
+                start_layer=tr_start_layer
             )
         elif not isinstance(tree_retriever_config, TreeRetrieverConfig):
             raise ValueError(
@@ -163,7 +163,7 @@ class RetrievalAugmentation:
             tree: 树实例或序列化树文件的路径。
         """
         if config is None:
-            config = RetrievalAugmentationConfig(tr_threshold=0.6)
+            config = RetrievalAugmentationConfig(tr_threshold=0.1)
         if not isinstance(config, RetrievalAugmentationConfig):
             raise ValueError(
                 "config must be an instance of RetrievalAugmentationConfig"

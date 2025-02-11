@@ -192,10 +192,22 @@ class TreeRetriever(BaseRetriever):
 
         indices = indices_of_nearest_neighbors_from_distances(distances)
 
+        # 先筛选出相似度大于阈值的节点索引
+        filtered_indices = [idx for idx in indices if distances[idx] > self.threshold]
+        logging.info(f"扁平化检索 - 相似度阈值: {self.threshold}")
+        logging.info(f"原始检索节点数: {len(indices)}, 相似度大于阈值的节点数: {len(filtered_indices)}")
+
+        # 从筛选后的结果中取top_k个
+        filtered_indices = filtered_indices[:top_k]
+        logging.info(f"取出前{top_k}个节点")
+
         total_tokens = 0
-        for idx in indices[:top_k]:
+        for idx in filtered_indices:
             node = node_list[idx]
             node_tokens = len(self.tokenizer.encode(node.text))
+            # 添加相似度得分日志
+            logging.info(f"检索到节点 - 相似度得分: {(1-distances[idx]):.4f}")
+            logging.info(f"节点内容: {node.text[:100]}...")  # 只显示前100个字符
 
             if total_tokens + node_tokens > max_tokens:
                 break
@@ -214,7 +226,7 @@ class TreeRetriever(BaseRetriever):
 
         参数:
             current_nodes (List[Node]): 当前节点列表
-            query (str): 查询文本
+            query (str): 查询文本   
             num_layers (int): 要遍历的层数
 
         返回:
@@ -235,11 +247,21 @@ class TreeRetriever(BaseRetriever):
 
             if self.selection_mode == "threshold":
                 best_indices = [
-                    index for index in indices if distances[index] > self.threshold
+                    index for index in indices if (1-distances[index]) > self.threshold
                 ]
+                # 添加阈值模式下的相似度得分日志
+                logging.info(f"第{layer}层检索 - 阈值模式 (阈值={self.threshold})")
+                for idx in best_indices:
+                    logging.info(f"检索到节点 - 相似度得分: {(1-distances[idx]):.4f}")
+                    logging.info(f"节点内容: {node_list[idx].text[:100]}...")  # 只显示前100个字符
 
             elif self.selection_mode == "top_k":
                 best_indices = indices[: self.top_k]
+                # 添加top_k模式下的相似度得分日志
+                logging.info(f"第{layer}层检索 - Top K模式 (K={self.top_k})")
+                for idx in best_indices:
+                    logging.info(f"检索到节点 - 相似度得分: {(1-distances[idx]):.4f}")
+                    logging.info(f"节点内容: {node_list[idx].text[:100]}...")  # 只显示前100个字符
 
             nodes_to_add = [node_list[idx] for idx in best_indices]
 

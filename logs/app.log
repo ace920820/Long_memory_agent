@@ -45360,3 +45360,808 @@ nlp算法工程师，兼职自媒体撰稿人
 2025-02-08 10:15:24,399 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
 2025-02-08 10:17:28,039 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_utils.py', reloading
 2025-02-08 10:17:30,744 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:25:55,846 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 10:25:55,846 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 10:25:55,860 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:26:20,491 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 10:26:20,496 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 10:27:18,181 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-08 10:27:18,184 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-08 10:27:20,996 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:27:51,239 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 10:27:51,242 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 10:30:52,812 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 10:30:52,813 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 10:30:52,829 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:31:09,878 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 10:31:09,881 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 10:31:09,924 - werkzeug - INFO - _internal.py:97 - 10.2.98.98 - - [08/Feb/2025 10:31:09] "GET / HTTP/1.1" 200 -
+2025-02-08 10:31:09,927 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:31:09] "GET / HTTP/1.1" 200 -
+2025-02-08 10:31:09,981 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:31:09] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 10:31:09,994 - werkzeug - INFO - _internal.py:97 - 10.2.98.98 - - [08/Feb/2025 10:31:09] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 10:31:10,636 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:31:10] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-08 10:31:10,637 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:31:10] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:31:10,640 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:31:10] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:31:10,646 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:31:10] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:31:10,662 - werkzeug - INFO - _internal.py:97 - 10.2.98.98 - - [08/Feb/2025 10:31:10] "GET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1" 200 -
+2025-02-08 10:31:10,662 - werkzeug - INFO - _internal.py:97 - 10.2.98.98 - - [08/Feb/2025 10:31:10] "GET /static/images/assistant.jpg HTTP/1.1" 200 -
+2025-02-08 10:31:10,666 - werkzeug - INFO - _internal.py:97 - 10.2.98.98 - - [08/Feb/2025 10:31:10] "GET /static/images/santa.jpg HTTP/1.1" 200 -
+2025-02-08 10:31:10,671 - werkzeug - INFO - _internal.py:97 - 10.2.98.98 - - [08/Feb/2025 10:31:10] "GET /static/images/frank.jpg HTTP/1.1" 200 -
+2025-02-08 10:31:10,682 - werkzeug - INFO - _internal.py:97 - 10.2.98.98 - - [08/Feb/2025 10:31:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:31:17,894 - root - INFO - tree_retriever.py:323 - 使用扁平化树检索
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.1978
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:201 - 节点内容: “你们去了这么久！” 灰姑娘打着哈欠说道，揉了揉眼睛，伸了伸懒腰，装作一副刚睡醒的样子，其实姐姐们不在家的时候，她根本没心思睡觉。...
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2233
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2254
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:201 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2261
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:201 - 节点内容: “要是你去了舞会，” 一位姐姐说，“就不会觉得累了。舞会上有一位最美的公主，是凡人见过最漂亮的人。她对我们非常有礼貌，还送我们橙子和柠檬呢。”...
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2296
+2025-02-08 10:31:19,074 - root - INFO - tree_retriever.py:201 - 节点内容: “想得美！” 夏洛特叫道，“把我的衣服借给你这个脏兮兮的灰丫头！我才没那么傻呢。”...
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2316
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:201 - 节点内容: 所有女士都忙着打量她的衣服和头饰，希望日后也能找到这样的好料子，请手艺精湛的人做出同样的衣服。王子把灰姑娘领到最尊贵的座位上，之后又邀她共舞。她舞姿优雅，众人对她越发赞赏。晚宴十分丰盛，但王子一口也没...
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2346
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。灰姑娘下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂静。...
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2360
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘 作者：夏尔・佩罗 创作时间：1697 年 “我呢，” 大姐说，“我要穿带法式装饰的红色天鹅绒套装。”...
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2367
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:201 - 节点内容: 第二天，两位姐姐去参加舞会，灰姑娘也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让灰姑娘感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还不到...
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2383
+2025-02-08 10:31:19,075 - root - INFO - tree_retriever.py:201 - 节点内容: “我呀，” 小妹说，“就穿平常的衬裙，不过为了搭配，我会披上绣着金花的披风，戴上钻石胸饰，那可不是一般的胸饰。”...
+2025-02-08 10:31:19,085 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 10:31:19,085 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 10:31:19,087 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 10:31:19,088 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 10:31:19,100 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:31:19,100 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:31:19,100 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:31:19,100 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:31:19,224 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 10:31:21,105 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-08 10:31:21,106 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:31:21] "POST /chat HTTP/1.1" 200 -
+2025-02-08 10:43:40,276 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 10:43:40,276 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 10:43:40,282 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:43:52,581 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 10:43:52,584 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 10:44:35,327 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:44:35] "GET / HTTP/1.1" 200 -
+2025-02-08 10:44:35,370 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:44:35] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 10:44:35,658 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:44:35] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:44:35,659 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:44:35] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:44:35,659 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:44:35] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-08 10:44:35,663 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:44:35] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:44:36,638 - root - INFO - tree_retriever.py:323 - 使用扁平化树检索
+2025-02-08 10:44:38,875 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.1978
+2025-02-08 10:44:38,875 - root - INFO - tree_retriever.py:201 - 节点内容: “你们去了这么久！” 灰姑娘打着哈欠说道，揉了揉眼睛，伸了伸懒腰，装作一副刚睡醒的样子，其实姐姐们不在家的时候，她根本没心思睡觉。...
+2025-02-08 10:44:38,876 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2233
+2025-02-08 10:44:38,876 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-08 10:44:38,876 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2255
+2025-02-08 10:44:38,877 - root - INFO - tree_retriever.py:201 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-08 10:44:38,877 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2261
+2025-02-08 10:44:38,877 - root - INFO - tree_retriever.py:201 - 节点内容: “要是你去了舞会，” 一位姐姐说，“就不会觉得累了。舞会上有一位最美的公主，是凡人见过最漂亮的人。她对我们非常有礼貌，还送我们橙子和柠檬呢。”...
+2025-02-08 10:44:38,877 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2296
+2025-02-08 10:44:38,877 - root - INFO - tree_retriever.py:201 - 节点内容: “想得美！” 夏洛特叫道，“把我的衣服借给你这个脏兮兮的灰丫头！我才没那么傻呢。”...
+2025-02-08 10:44:38,878 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2316
+2025-02-08 10:44:38,878 - root - INFO - tree_retriever.py:201 - 节点内容: 所有女士都忙着打量她的衣服和头饰，希望日后也能找到这样的好料子，请手艺精湛的人做出同样的衣服。王子把灰姑娘领到最尊贵的座位上，之后又邀她共舞。她舞姿优雅，众人对她越发赞赏。晚宴十分丰盛，但王子一口也没...
+2025-02-08 10:44:38,878 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2346
+2025-02-08 10:44:38,878 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。灰姑娘下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂静。...
+2025-02-08 10:44:38,879 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2360
+2025-02-08 10:44:38,879 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘 作者：夏尔・佩罗 创作时间：1697 年 “我呢，” 大姐说，“我要穿带法式装饰的红色天鹅绒套装。”...
+2025-02-08 10:44:38,879 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2367
+2025-02-08 10:44:38,879 - root - INFO - tree_retriever.py:201 - 节点内容: 第二天，两位姐姐去参加舞会，灰姑娘也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让灰姑娘感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还不到...
+2025-02-08 10:44:38,879 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2383
+2025-02-08 10:44:38,879 - root - INFO - tree_retriever.py:201 - 节点内容: “我呀，” 小妹说，“就穿平常的衬裙，不过为了搭配，我会披上绣着金花的披风，戴上钻石胸饰，那可不是一般的胸饰。”...
+2025-02-08 10:44:38,896 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 10:44:38,896 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 10:44:38,897 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 10:44:38,898 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 10:44:38,908 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:44:38,909 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:44:38,909 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:44:38,909 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:44:39,049 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 10:44:41,917 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-08 10:44:41,917 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:44:41] "POST /chat HTTP/1.1" 200 -
+2025-02-08 10:48:05,817 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 10:48:05,817 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 10:48:05,829 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:49:38,164 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 10:49:38,167 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 10:50:11,360 - root - INFO - tree_retriever.py:323 - 使用扁平化树检索
+2025-02-08 10:50:15,679 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Program Files\\JetBrains\\PyCharm Community Edition 2024.2.4\\plugins\\python-ce\\helpers\\pydev\\_pydevd_bundle\\pydevd_vars.py', reloading
+2025-02-08 10:50:15,689 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Program Files\\JetBrains\\PyCharm Community Edition 2024.2.4\\plugins\\python-ce\\helpers\\pydev\\_pydevd_bundle\\pydevd_utils.py', reloading
+2025-02-08 10:50:16,875 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:52:37,378 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 10:52:37,378 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 10:52:37,389 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:53:01,741 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 10:53:01,744 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 10:53:42,588 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:53:42] "GET / HTTP/1.1" 200 -
+2025-02-08 10:53:42,622 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:53:42] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 10:53:42,963 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:53:42] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:53:42,966 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:53:42] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:53:42,971 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:53:42] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-08 10:53:42,971 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:53:42] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-08 10:53:48,362 - root - INFO - tree_retriever.py:323 - 使用扁平化树检索
+2025-02-08 10:53:49,477 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.1978
+2025-02-08 10:53:49,477 - root - INFO - tree_retriever.py:201 - 节点内容: “你们去了这么久！” 灰姑娘打着哈欠说道，揉了揉眼睛，伸了伸懒腰，装作一副刚睡醒的样子，其实姐姐们不在家的时候，她根本没心思睡觉。...
+2025-02-08 10:53:49,477 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2233
+2025-02-08 10:53:49,477 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-08 10:53:49,477 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2254
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:201 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2261
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:201 - 节点内容: “要是你去了舞会，” 一位姐姐说，“就不会觉得累了。舞会上有一位最美的公主，是凡人见过最漂亮的人。她对我们非常有礼貌，还送我们橙子和柠檬呢。”...
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2296
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:201 - 节点内容: “想得美！” 夏洛特叫道，“把我的衣服借给你这个脏兮兮的灰丫头！我才没那么傻呢。”...
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2316
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:201 - 节点内容: 所有女士都忙着打量她的衣服和头饰，希望日后也能找到这样的好料子，请手艺精湛的人做出同样的衣服。王子把灰姑娘领到最尊贵的座位上，之后又邀她共舞。她舞姿优雅，众人对她越发赞赏。晚宴十分丰盛，但王子一口也没...
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2346
+2025-02-08 10:53:49,478 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。灰姑娘下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂静。...
+2025-02-08 10:53:49,479 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2360
+2025-02-08 10:53:49,479 - root - INFO - tree_retriever.py:201 - 节点内容: 灰姑娘 作者：夏尔・佩罗 创作时间：1697 年 “我呢，” 大姐说，“我要穿带法式装饰的红色天鹅绒套装。”...
+2025-02-08 10:53:49,479 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2367
+2025-02-08 10:53:49,479 - root - INFO - tree_retriever.py:201 - 节点内容: 第二天，两位姐姐去参加舞会，灰姑娘也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让灰姑娘感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还不到...
+2025-02-08 10:53:49,479 - root - INFO - tree_retriever.py:200 - 检索到节点 (扁平化检索) - 相似度得分: 0.2383
+2025-02-08 10:53:49,479 - root - INFO - tree_retriever.py:201 - 节点内容: “我呀，” 小妹说，“就穿平常的衬裙，不过为了搭配，我会披上绣着金花的披风，戴上钻石胸饰，那可不是一般的胸饰。”...
+2025-02-08 10:53:49,485 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 10:53:49,485 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 10:53:49,485 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 10:53:49,485 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 10:53:49,494 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:53:49,495 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:53:49,495 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:53:49,495 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 10:53:49,605 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 10:53:59,493 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-08 10:53:59,493 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 10:53:59] "POST /chat HTTP/1.1" 200 -
+2025-02-08 10:56:17,170 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\logging\\__init__.py', reloading
+2025-02-08 10:56:19,373 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:58:49,348 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 10:58:49,348 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 10:58:49,360 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 10:59:01,216 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 10:59:01,219 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 11:01:56,502 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:01:56] "GET / HTTP/1.1" 200 -
+2025-02-08 11:01:56,536 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:01:56] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 11:01:56,897 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:01:56] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:01:56,898 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:01:56] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:01:56,899 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:01:56] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:01:56,901 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:01:56] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-08 11:01:58,313 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:02:01,429 - root - INFO - tree_retriever.py:200 - 扁平化检索 - 阈值模式 (阈值=0.6)
+2025-02-08 11:02:01,429 - root - INFO - tree_retriever.py:201 - 原始检索节点数: 92, 过滤后节点数: 0
+2025-02-08 11:02:01,433 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:02:01,433 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:02:01,434 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:02:01,434 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:02:01,448 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:01,448 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:01,448 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:01,448 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:01,572 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:02:03,409 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-08 11:02:03,409 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:02:03] "POST /chat HTTP/1.1" 200 -
+2025-02-08 11:02:20,873 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:02:22,060 - root - INFO - tree_retriever.py:200 - 扁平化检索 - 阈值模式 (阈值=0.6)
+2025-02-08 11:02:22,060 - root - INFO - tree_retriever.py:201 - 原始检索节点数: 92, 过滤后节点数: 0
+2025-02-08 11:02:22,061 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:02:22,061 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:02:22,061 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:02:22,061 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:02:22,073 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:22,073 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:22,073 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:22,176 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:02:25,011 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9595)
+2025-02-08 11:02:25,012 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:02:25] "POST /chat HTTP/1.1" 200 -
+2025-02-08 11:02:56,518 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:02:57,759 - root - INFO - tree_retriever.py:200 - 扁平化检索 - 阈值模式 (阈值=0.6)
+2025-02-08 11:02:57,759 - root - INFO - tree_retriever.py:201 - 原始检索节点数: 92, 过滤后节点数: 0
+2025-02-08 11:02:57,760 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:02:57,760 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:02:57,760 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:02:57,760 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:02:57,773 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:57,774 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:02:57,854 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:03:00,967 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:03:00,969 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:03:00] "POST /chat HTTP/1.1" 200 -
+2025-02-08 11:04:06,659 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 11:04:06,659 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 11:04:06,664 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 11:04:18,334 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 11:04:18,335 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 11:04:18,356 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:18] "GET / HTTP/1.1" 200 -
+2025-02-08 11:04:19,837 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:19] "GET / HTTP/1.1" 200 -
+2025-02-08 11:04:19,869 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:19] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 11:04:20,196 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:20] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:04:20,198 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:20] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-08 11:04:20,198 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:20] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:04:20,200 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:20] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:04:34,207 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:04:38,403 - root - INFO - tree_retriever.py:200 - 扁平化检索 - 阈值模式 (阈值=0.3)
+2025-02-08 11:04:38,403 - root - INFO - tree_retriever.py:201 - 原始检索节点数: 92, 过滤后节点数: 1
+2025-02-08 11:04:38,408 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.3039
+2025-02-08 11:04:38,408 - root - INFO - tree_retriever.py:212 - 节点内容:  项目概述：一句话简介，核心价值 3  核心技术：记忆管理、Agent系统、知识库等 4  应用场景：分行业说明 5  商业潜力：市场规模、盈利模式 6  竞争优势：技术壁垒、灵活性...
+2025-02-08 11:04:38,411 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:04:38,412 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:04:38,412 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:04:38,412 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:04:38,424 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:04:38,425 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:04:38,425 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:04:38,425 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:04:38,536 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:04:44,928 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9967)
+2025-02-08 11:04:44,928 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:44] "POST /chat HTTP/1.1" 200 -
+2025-02-08 11:04:55,615 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:04:56,803 - root - INFO - tree_retriever.py:200 - 扁平化检索 - 阈值模式 (阈值=0.3)
+2025-02-08 11:04:56,803 - root - INFO - tree_retriever.py:201 - 原始检索节点数: 92, 过滤后节点数: 1
+2025-02-08 11:04:56,803 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.3013
+2025-02-08 11:04:56,804 - root - INFO - tree_retriever.py:212 - 节点内容: 未来规划方面，用户提到的开发计划中的多模态交互、分布式扩展等可以作为路线图的一部分，展示项目的持续发展潜力。...
+2025-02-08 11:04:56,805 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:04:56,805 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:04:56,805 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:04:56,805 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:04:56,816 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:04:56,816 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:04:56,816 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:04:56,916 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:04:59,903 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9724)
+2025-02-08 11:04:59,903 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:04:59] "POST /chat HTTP/1.1" 200 -
+2025-02-08 11:05:57,735 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 11:05:57,735 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 11:05:57,746 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 11:06:24,090 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 11:06:24,097 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 11:06:24,222 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:06:24] "GET / HTTP/1.1" 200 -
+2025-02-08 11:06:24,222 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:06:24] "GET / HTTP/1.1" 200 -
+2025-02-08 11:06:24,275 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:06:24] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 11:06:24,551 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:06:24] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:06:24,553 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:06:24] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:06:24,558 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:06:24] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:06:24,560 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:06:24] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-08 11:06:35,588 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:06:37,817 - root - INFO - tree_retriever.py:200 - 扁平化检索 - 阈值模式 (阈值=0.3)
+2025-02-08 11:06:37,817 - root - INFO - tree_retriever.py:201 - 原始检索节点数: 92, 过滤后节点数: 1
+2025-02-08 11:06:37,819 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.3038
+2025-02-08 11:06:37,819 - root - INFO - tree_retriever.py:212 - 节点内容:  项目概述：一句话简介，核心价值 3  核心技术：记忆管理、Agent系统、知识库等 4  应用场景：分行业说明 5  商业潜力：市场规模、盈利模式 6  竞争优势：技术壁垒、灵活性...
+2025-02-08 11:06:37,824 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:06:37,824 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:06:37,825 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:06:37,825 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:06:37,834 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:06:37,835 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:06:37,835 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:06:37,835 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:06:37,939 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:07:00,735 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9967)
+2025-02-08 11:07:00,736 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:07:00] "POST /chat HTTP/1.1" 200 -
+2025-02-08 11:07:23,568 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:08:09,514 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\lxml\\html\\diff.py', reloading
+2025-02-08 11:08:09,539 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\torch\\_tensor_str.py', reloading
+2025-02-08 11:08:09,557 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\torch\\nn\\modules\\activation.py', reloading
+2025-02-08 11:08:09,575 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\sqlalchemy\\util\\_collections.py', reloading
+2025-02-08 11:08:09,590 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\bitsandbytes\\autograd\\_functions.py', reloading
+2025-02-08 11:08:09,603 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\huggingface_hub\\inference\\_generated\\types\\image_segmentation.py', reloading
+2025-02-08 11:08:09,611 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\huggingface_hub\\inference\\_generated\\types\\object_detection.py', reloading
+2025-02-08 11:08:09,624 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\langchain_community\\example_selectors\\ngram_overlap.py', reloading
+2025-02-08 11:08:09,632 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\langchain_experimental\\comprehend_moderation\\base_moderation_config.py', reloading
+2025-02-08 11:08:09,641 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'D:\\Users\\cupid\\anaconda3\\envs\\py39_env\\Lib\\site-packages\\langchain_experimental\\prompt_injection_identifier\\hugging_face_identifier.py', reloading
+2025-02-08 11:08:11,079 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 11:08:32,765 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 11:08:32,767 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 11:09:16,400 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:12:54,582 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 11:12:54,582 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 11:12:54,587 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 11:13:06,912 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 11:13:06,916 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 11:13:13,279 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:13:13] "GET / HTTP/1.1" 200 -
+2025-02-08 11:13:13,319 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:13:13] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 11:13:13,588 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:13:13] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:13:13,588 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:13:13] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:13:13,590 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:13:13] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-08 11:13:13,593 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:13:13] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:13:19,114 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:13:23,412 - root - INFO - tree_retriever.py:200 - 扁平化检索 - 阈值模式 (阈值=0.1)
+2025-02-08 11:13:23,412 - root - INFO - tree_retriever.py:201 - 原始检索节点数: 92, 过滤后节点数: 92
+2025-02-08 11:13:23,431 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1261
+2025-02-08 11:13:23,431 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。灰姑娘既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-08 11:13:23,432 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1305
+2025-02-08 11:13:23,432 - root - INFO - tree_retriever.py:212 - 节点内容: 《灰姑娘》是夏尔・佩罗于1697年创作的童话故事。故事讲述了一个被姐姐们虐待的灰姑娘，却因仙女教母的帮助，在舞会上与王子相遇，并留下了一只水晶鞋。...
+2025-02-08 11:13:23,432 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1340
+2025-02-08 11:13:23,432 - root - INFO - tree_retriever.py:212 - 节点内容: 现在，两位姐姐才发现，灰姑娘就是她们在舞会上见到的那位美丽高贵的女士。她们跪在灰姑娘脚下，请求她原谅曾经对她的种种刁难。灰姑娘把她们扶起来，拥抱她们，说她打心底里原谅了她们，还希望她们以后能一直喜欢她...
+2025-02-08 11:13:23,433 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1344
+2025-02-08 11:13:23,433 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对灰姑娘说：“好了，你看，这一套出行装备很适合去...
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1345
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:212 - 节点内容: 可怜的女孩默默忍受着这一切，也不敢告诉父亲，因为父亲完全受妻子的管束，要是告诉了他，肯定会被责骂。做完家务后，女孩常常走到壁炉角落，坐在炉灰里，因此被人叫做 “灰丫头”。只有妹妹不像姐姐那么粗鲁无礼，...
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1359
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:212 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1372
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:212 - 节点内容: 碰巧，王子举办了一场舞会，邀请了所有有身份的人。灰姑娘的两位姐姐也收到了邀请，因为她们在有身份的人当中也算小有名气。收到邀请，她们欣喜若狂，忙着挑选最适合自己的礼服、衬裙，打理发型。这可给灰姑娘添了新...
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1379
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:212 - 节点内容: “好吧，” 仙女教母说，“只要你是个乖女孩，我就有办法让你去。” 接着，她把灰姑娘带到自己的房间，对她说：“去花园里给我摘个南瓜来。”...
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1382
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘为两位姐姐请来了最好的理发师，设计发型、打理头发，还购买了红色发刷和美人痣贴片。如果是别人，可能会故意弄乱她们的头发，但灰姑娘心地善良，把她们的头发处理...
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1383
+2025-02-08 11:13:23,434 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-08 11:13:23,436 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1394
+2025-02-08 11:13:23,436 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘立即去摘了一个她能找到的最好的南瓜，带给了仙女教母。仙女教母将南瓜挖空，用魔杖变成了一辆华丽的马车。然后，她变六只活鼠为六匹骏马，...
+2025-02-08 11:13:23,443 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1402
+2025-02-08 11:13:23,443 - root - INFO - tree_retriever.py:212 - 节点内容: 之后，仙女教母对灰姑娘说：“再去花园里，在水壶后面你会找到六只蜥蜴，把它们带给我。” “哦，高兴！” 灰姑娘叫道，“可我要穿着这身破衣服去吗？”...
+2025-02-08 11:13:23,443 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1413
+2025-02-08 11:13:23,443 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘正兴高采烈地向仙女教母讲述舞会上发生的一切时，两位姐姐敲门了，灰姑娘跑去开门。...
+2025-02-08 11:13:23,443 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1413
+2025-02-08 11:13:23,443 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘对此似乎并不感兴趣。她确实问了那位公主的名字，但姐姐们说不知道，还说王子为了她十分苦恼，不惜一切代价都想知道她是谁。听到这儿，灰姑娘微笑着回答：“那她一定非常漂亮，你们真幸运！我能见见她吗？亲爱...
+2025-02-08 11:13:23,444 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1429
+2025-02-08 11:13:23,444 - root - INFO - tree_retriever.py:212 - 节点内容: 她的仙女教母对她说：“你是希望能去参加舞会，对吗？” “是的。” 灰姑娘深深地叹了口气，哭着说道。...
+2025-02-08 11:13:23,444 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1438
+2025-02-08 11:13:23,444 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘立刻跑去摘了一个她能找到的最好的南瓜，拿给仙女教母，她实在想不明白这个南瓜怎么能帮她去参加舞会。仙女教母把南瓜瓤都挖了出来，只剩下南瓜壳。做完这些后，她用魔杖敲了敲南瓜，南瓜瞬间变成了一辆华丽的...
+2025-02-08 11:13:23,446 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1438
+2025-02-08 11:13:23,446 - root - INFO - tree_retriever.py:212 - 节点内容: 第二天，两位姐姐去参加舞会，灰姑娘也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让灰姑娘感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还不到...
+2025-02-08 11:13:23,446 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1462
+2025-02-08 11:13:23,447 - root - INFO - tree_retriever.py:212 - 节点内容: 在这些事上，她们也会询问灰姑娘的意见，因为她点子多，给出的建议也总是很不错。实际上，灰姑娘甚至主动提出帮她们做头发，她们欣然接受了。做头发的时候，她们问灰姑娘：“灰姑娘，你难道不想去参加舞会吗？”...
+2025-02-08 11:13:23,447 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1467
+2025-02-08 11:13:23,447 - root - INFO - tree_retriever.py:212 - 节点内容: 换做别人，可能会故意把她们的头发弄乱，但灰姑娘心地善良，把她们的头发打理得十分完美。两位姐姐兴奋得几乎两天没吃东西，为了把身材勒得苗条些，她们弄断了十几根束带，还不停地对着镜子打量自己。...
+2025-02-08 11:13:23,447 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1481
+2025-02-08 11:13:23,447 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘早就料到会是这样的回答，心里暗自庆幸姐姐拒绝了，要是姐姐真把她开玩笑要的衣服借给她，她可就麻烦了。...
+2025-02-08 11:13:23,448 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1501
+2025-02-08 11:13:23,448 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。灰姑娘下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂静。...
+2025-02-08 11:13:23,448 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1516
+2025-02-08 11:13:23,448 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘把捕鼠夹拿给仙女教母，里面有三只大老鼠。仙女选了其中胡须最长的那只，用魔杖碰了碰它，它就变成了一个胖胖的、乐呵呵的马车夫，他的络腮胡是人们见过最漂亮的。...
+2025-02-08 11:13:23,458 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1526
+2025-02-08 11:13:23,458 - root - INFO - tree_retriever.py:212 - 节点内容: 回到家后，灰姑娘跑去见仙女教母，感谢她之后，说自己真希望第二天还能去参加舞会，因为王子邀请了她。...
+2025-02-08 11:13:23,458 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1534
+2025-02-08 11:13:23,458 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘 作者：夏尔・佩罗 创作时间：1697 年 “我呢，” 大姐说，“我要穿带法式装饰的红色天鹅绒套装。”...
+2025-02-08 11:13:23,458 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1539
+2025-02-08 11:13:23,458 - root - INFO - tree_retriever.py:212 - 节点内容: 接着，仙女教母查看捕鼠器，发现里面有六只活蹦乱跳的老鼠，她让灰姑娘把捕鼠器的活门稍微抬起一点。每只老鼠出来的时候，她就用魔杖轻轻点一下，老鼠瞬间就变成了一匹骏马，六匹马毛色漂亮，是带着斑点的灰色，搭配...
+2025-02-08 11:13:23,459 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1542
+2025-02-08 11:13:23,459 - root - INFO - tree_retriever.py:212 - 节点内容: 找不到马车夫，灰姑娘说：“我去看看捕鼠夹里有没有老鼠，说不定能变成马车夫。” “你说得对，” 仙女教母回答道，“去看看吧。”...
+2025-02-08 11:13:23,459 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1553
+2025-02-08 11:13:23,459 - root - INFO - tree_retriever.py:212 - 节点内容: 他让灰姑娘坐下，把水晶鞋套在她的脚上，鞋子很容易就穿上了，就好像是为她的脚量身定制的一样。两位姐姐惊讶极了，而当灰姑娘从口袋里拿出另一只水晶鞋穿上时，她们更是惊愕不已。这时，仙女教母出现了，她用魔杖碰...
+2025-02-08 11:13:23,459 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.1596
+2025-02-08 11:13:23,459 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘看到了这一切，知道那是自己的鞋子，笑着对她们说：“让我试试，说不定合脚呢。”...
+2025-02-08 11:13:23,483 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:13:23,484 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:13:23,484 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:13:23,485 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:13:23,498 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:13:23,498 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:13:23,498 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:13:23,499 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:13:23,627 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:13:26,092 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9967)
+2025-02-08 11:13:26,093 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:13:26] "POST /chat HTTP/1.1" 200 -
+2025-02-08 11:15:33,920 - root - INFO - tree_retriever.py:334 - 使用扁平化树检索
+2025-02-08 11:15:35,315 - root - INFO - tree_retriever.py:200 - 扁平化检索 - 阈值模式 (阈值=0.1)
+2025-02-08 11:15:35,316 - root - INFO - tree_retriever.py:201 - 原始检索节点数: 92, 过滤后节点数: 92
+2025-02-08 11:15:35,316 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2088
+2025-02-08 11:15:35,316 - root - INFO - tree_retriever.py:212 - 节点内容: “你们去了这么久！” 灰姑娘打着哈欠说道，揉了揉眼睛，伸了伸懒腰，装作一副刚睡醒的样子，其实姐姐们不在家的时候，她根本没心思睡觉。...
+2025-02-08 11:15:35,316 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2352
+2025-02-08 11:15:35,316 - root - INFO - tree_retriever.py:212 - 节点内容: “要是你去了舞会，” 一位姐姐说，“就不会觉得累了。舞会上有一位最美的公主，是凡人见过最漂亮的人。她对我们非常有礼貌，还送我们橙子和柠檬呢。”...
+2025-02-08 11:15:35,316 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2357
+2025-02-08 11:15:35,316 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-08 11:15:35,316 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2420
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:212 - 节点内容: “想得美！” 夏洛特叫道，“把我的衣服借给你这个脏兮兮的灰丫头！我才没那么傻呢。”...
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2427
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:212 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2441
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。灰姑娘下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂静。...
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2454
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:212 - 节点内容: 所有女士都忙着打量她的衣服和头饰，希望日后也能找到这样的好料子，请手艺精湛的人做出同样的衣服。王子把灰姑娘领到最尊贵的座位上，之后又邀她共舞。她舞姿优雅，众人对她越发赞赏。晚宴十分丰盛，但王子一口也没...
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2482
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:212 - 节点内容: 她的仙女教母看到她泪流满面，便问她怎么了。 “我希望我能…… 我希望我能……” 她泣不成声，话也说不下去。...
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2488
+2025-02-08 11:15:35,317 - root - INFO - tree_retriever.py:212 - 节点内容: 第二天，两位姐姐去参加舞会，灰姑娘也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让灰姑娘感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还不到...
+2025-02-08 11:15:35,319 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2525
+2025-02-08 11:15:35,319 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘 作者：夏尔・佩罗 创作时间：1697 年 “我呢，” 大姐说，“我要穿带法式装饰的红色天鹅绒套装。”...
+2025-02-08 11:15:35,319 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2525
+2025-02-08 11:15:35,319 - root - INFO - tree_retriever.py:212 - 节点内容: 回到家后，灰姑娘跑去见仙女教母，感谢她之后，说自己真希望第二天还能去参加舞会，因为王子邀请了她。...
+2025-02-08 11:15:35,319 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2530
+2025-02-08 11:15:35,319 - root - INFO - tree_retriever.py:212 - 节点内容: 5% 的情况下取得了胜利。这是一个惊人的事实。阿雷金 - 托夫特分析的冲突中，一方的军事力量和人口至少是对手的十倍，即便在这种一边倒的较量中，弱者也有近三分之一的胜率。...
+2025-02-08 11:15:35,327 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2532
+2025-02-08 11:15:35,327 - root - INFO - tree_retriever.py:212 - 节点内容: 王宫大门的守卫被问到是否看到一位公主出去。他们回答说，只看到一个穿着破旧的年轻女孩离开，看起来更像一个穷苦的乡下丫头，而不是大家闺秀。...
+2025-02-08 11:15:35,327 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2541
+2025-02-08 11:15:35,327 - root - INFO - tree_retriever.py:212 - 节点内容: “我呀，” 小妹说，“就穿平常的衬裙，不过为了搭配，我会披上绣着金花的披风，戴上钻石胸饰，那可不是一般的胸饰。”...
+2025-02-08 11:15:35,327 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2563
+2025-02-08 11:15:35,328 - root - INFO - tree_retriever.py:212 - 节点内容: 她的仙女教母对她说：“你是希望能去参加舞会，对吗？” “是的。” 灰姑娘深深地叹了口气，哭着说道。...
+2025-02-08 11:15:35,328 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2564
+2025-02-08 11:15:35,328 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对灰姑娘说：“好了，你看，这一套出行装备很适合去...
+2025-02-08 11:15:35,328 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2575
+2025-02-08 11:15:35,329 - root - INFO - tree_retriever.py:212 - 节点内容: 接着，仙女教母查看捕鼠器，发现里面有六只活蹦乱跳的老鼠，她让灰姑娘把捕鼠器的活门稍微抬起一点。每只老鼠出来的时候，她就用魔杖轻轻点一下，老鼠瞬间就变成了一匹骏马，六匹马毛色漂亮，是带着斑点的灰色，搭配...
+2025-02-08 11:15:35,329 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2588
+2025-02-08 11:15:35,329 - root - INFO - tree_retriever.py:212 - 节点内容: 找不到马车夫，灰姑娘说：“我去看看捕鼠夹里有没有老鼠，说不定能变成马车夫。” “你说得对，” 仙女教母回答道，“去看看吧。”...
+2025-02-08 11:15:35,329 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2590
+2025-02-08 11:15:35,329 - root - INFO - tree_retriever.py:212 - 节点内容: 可怜的女孩默默忍受着这一切，也不敢告诉父亲，因为父亲完全受妻子的管束，要是告诉了他，肯定会被责骂。做完家务后，女孩常常走到壁炉角落，坐在炉灰里，因此被人叫做 “灰丫头”。只有妹妹不像姐姐那么粗鲁无礼，...
+2025-02-08 11:15:35,330 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2596
+2025-02-08 11:15:35,330 - root - INFO - tree_retriever.py:212 - 节点内容: 她们告诉灰姑娘，那位女士在，但十二点一到就匆匆离开了，走得太急，还掉了一只世上最漂亮的水晶鞋，王子捡到了那只鞋。在舞会上，王子一直盯着她看，肯定是深深爱上了这只水晶鞋的主人。...
+2025-02-08 11:15:35,330 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2596
+2025-02-08 11:15:35,330 - root - INFO - tree_retriever.py:212 - 节点内容: “好吧，” 仙女教母说，“只要你是个乖女孩，我就有办法让你去。” 接着，她把灰姑娘带到自己的房间，对她说：“去花园里给我摘个南瓜来。”...
+2025-02-08 11:15:35,332 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2601
+2025-02-08 11:15:35,332 - root - INFO - tree_retriever.py:212 - 节点内容: （三维架构图动态演示） 1  记忆引擎——AI的"海马体" •	三阶记忆衰减算法： 24h线性衰减(保留95%) → 7天指数衰减(保留60%) → 长期对数衰减(保留30%)...
+2025-02-08 11:15:35,332 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2601
+2025-02-08 11:15:35,332 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘正兴高采烈地向仙女教母讲述舞会上发生的一切时，两位姐姐敲门了，灰姑娘跑去开门。...
+2025-02-08 11:15:35,332 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2603
+2025-02-08 11:15:35,332 - root - INFO - tree_retriever.py:212 - 节点内容: 只听见一阵嘈杂的声音：“她真美啊！她真美啊！” 国王虽然年事已高，也忍不住盯着她看，还轻声对王后说，他已经很久没见过如此美丽动人的姑娘了。...
+2025-02-08 11:15:35,343 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2604
+2025-02-08 11:15:35,343 - root - INFO - tree_retriever.py:212 - 节点内容: 婚礼仪式刚一结束，继母就露出了真面目。她无法忍受这个漂亮女孩的优秀品质，尤其是这些品质让她自己的女儿显得更加惹人厌。她让女孩干家里最粗重的活，女孩要洗刷碗碟、擦拭桌子，打扫夫人以及两位小姐 —— 她女...
+2025-02-08 11:15:35,344 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2608
+2025-02-08 11:15:35,344 - root - INFO - tree_retriever.py:212 - 节点内容: 于是，仙女教母用魔杖碰了碰灰姑娘，刹那间，她的衣服变成了金银织就的华服，上面还镶嵌着珠宝。之后，仙女教母又给了她一双水晶鞋，是世界上最漂亮的水晶鞋。打扮好后，灰姑娘上了马车。但仙女教母再三叮嘱她，一定...
+2025-02-08 11:15:35,344 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2613
+2025-02-08 11:15:35,345 - root - INFO - tree_retriever.py:212 - 节点内容: 在《圣经》中大卫和歌利亚的故事里，大卫最初穿上铠甲、戴上铜盔，佩上剑，准备和歌利亚进行一场传统的剑斗。但随后他停了下来。“我穿着这些走不了路，因为我不习惯，” 他说（根据罗伯特・奥尔特的翻译），然后捡...
+2025-02-08 11:15:35,345 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2615
+2025-02-08 11:15:35,345 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘早就料到会是这样的回答，心里暗自庆幸姐姐拒绝了，要是姐姐真把她开玩笑要的衣服借给她，她可就麻烦了。...
+2025-02-08 11:15:35,346 - root - INFO - tree_retriever.py:211 - 检索到节点 - 相似度得分: 0.2615
+2025-02-08 11:15:35,346 - root - INFO - tree_retriever.py:212 - 节点内容: 灰姑娘对此似乎并不感兴趣。她确实问了那位公主的名字，但姐姐们说不知道，还说王子为了她十分苦恼，不惜一切代价都想知道她是谁。听到这儿，灰姑娘微笑着回答：“那她一定非常漂亮，你们真幸运！我能见见她吗？亲爱...
+2025-02-08 11:15:35,358 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:15:35,359 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:15:35,359 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:15:35,359 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:15:35,373 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:15:35,373 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:15:35,373 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:15:35,373 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:15:35,488 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:15:38,584 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9831)
+2025-02-08 11:15:38,585 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:15:38] "POST /chat HTTP/1.1" 200 -
+2025-02-08 11:16:34,022 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-08 11:16:34,022 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-08 11:16:34,023 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-08 11:16:36,937 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 11:16:50,874 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 11:16:50,876 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 11:17:45,512 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-08 11:17:45,512 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-08 11:17:47,543 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 11:18:03,968 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 11:18:03,972 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 11:18:42,937 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.98:5000
+2025-02-08 11:18:42,937 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-08 11:18:42,942 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 11:18:57,386 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 11:18:57,392 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-08 11:18:57,440 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:18:57] "GET / HTTP/1.1" 200 -
+2025-02-08 11:18:57,475 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:18:57] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-08 11:18:57,824 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:18:57] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:18:57,825 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:18:57] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-08 11:18:57,826 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:18:57] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:18:57,826 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:18:57] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-08 11:19:03,807 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-08 11:19:04,786 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-08 11:19:04,787 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 92, 相似度大于阈值的节点数: 92
+2025-02-08 11:19:04,787 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1259
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。灰姑娘既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1304
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:210 - 节点内容: 《灰姑娘》是夏尔・佩罗于1697年创作的童话故事。故事讲述了一个被姐姐们虐待的灰姑娘，却因仙女教母的帮助，在舞会上与王子相遇，并留下了一只水晶鞋。...
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1336
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:210 - 节点内容: 现在，两位姐姐才发现，灰姑娘就是她们在舞会上见到的那位美丽高贵的女士。她们跪在灰姑娘脚下，请求她原谅曾经对她的种种刁难。灰姑娘把她们扶起来，拥抱她们，说她打心底里原谅了她们，还希望她们以后能一直喜欢她...
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1341
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对灰姑娘说：“好了，你看，这一套出行装备很适合去...
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1342
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:210 - 节点内容: 可怜的女孩默默忍受着这一切，也不敢告诉父亲，因为父亲完全受妻子的管束，要是告诉了他，肯定会被责骂。做完家务后，女孩常常走到壁炉角落，坐在炉灰里，因此被人叫做 “灰丫头”。只有妹妹不像姐姐那么粗鲁无礼，...
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1356
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:210 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-08 11:19:04,794 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1370
+2025-02-08 11:19:04,796 - root - INFO - tree_retriever.py:210 - 节点内容: 碰巧，王子举办了一场舞会，邀请了所有有身份的人。灰姑娘的两位姐姐也收到了邀请，因为她们在有身份的人当中也算小有名气。收到邀请，她们欣喜若狂，忙着挑选最适合自己的礼服、衬裙，打理发型。这可给灰姑娘添了新...
+2025-02-08 11:19:04,796 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1376
+2025-02-08 11:19:04,796 - root - INFO - tree_retriever.py:210 - 节点内容: “好吧，” 仙女教母说，“只要你是个乖女孩，我就有办法让你去。” 接着，她把灰姑娘带到自己的房间，对她说：“去花园里给我摘个南瓜来。”...
+2025-02-08 11:19:04,796 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1380
+2025-02-08 11:19:04,796 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘为两位姐姐请来了最好的理发师，设计发型、打理头发，还购买了红色发刷和美人痣贴片。如果是别人，可能会故意弄乱她们的头发，但灰姑娘心地善良，把她们的头发处理...
+2025-02-08 11:19:04,796 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1380
+2025-02-08 11:19:04,796 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-08 11:19:04,812 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-08 11:19:04,813 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-08 11:19:04,813 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-08 11:19:04,813 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-08 11:19:04,821 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:19:04,821 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:19:04,821 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:19:04,821 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-08 11:19:04,911 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-08 11:19:07,392 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9967)
+2025-02-08 11:19:07,392 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [08/Feb/2025 11:19:07] "POST /chat HTTP/1.1" 200 -
+2025-02-08 13:54:36,866 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-08 13:54:39,946 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-08 13:54:56,486 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-08 13:54:56,490 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-11 19:13:10,526 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_utils.py', reloading
+2025-02-11 19:13:10,535 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\raptor_module.py', reloading
+2025-02-11 19:13:10,536 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\hierarchy_manager.py', reloading
+2025-02-11 19:13:10,537 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\knowledge_base\\storage.py', reloading
+2025-02-11 19:13:10,537 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_manager.py', reloading
+2025-02-11 19:13:10,544 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_retriever.py', reloading
+2025-02-11 19:13:10,782 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\knowledge_base\\__init__.py', reloading
+2025-02-11 19:13:10,794 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\generate_requirements.py', reloading
+2025-02-11 19:13:10,807 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\knowledge_base\\api.py', reloading
+2025-02-11 19:13:10,827 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\knowledge_base\\upload.py', reloading
+2025-02-11 19:13:10,839 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\main.py', reloading
+2025-02-11 19:13:10,847 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\agent.py', reloading
+2025-02-11 19:13:10,849 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\cluster_manager.py', reloading
+2025-02-11 19:13:10,867 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\comprehensive_retriever.py', reloading
+2025-02-11 19:13:10,883 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\entity_extractor.py', reloading
+2025-02-11 19:13:10,903 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\graph_manager.py', reloading
+2025-02-11 19:13:10,929 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\llm_api_wrapper.py', reloading
+2025-02-11 19:13:10,935 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\llm_model.py', reloading
+2025-02-11 19:13:10,970 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_relationship_manager.py', reloading
+2025-02-11 19:13:10,991 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\memory_summarizer.py', reloading
+2025-02-11 19:13:11,000 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\metadata_manager.py', reloading
+2025-02-11 19:13:11,006 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\precise_retriever.py', reloading
+2025-02-11 19:13:11,018 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\query_classifier.py', reloading
+2025-02-11 19:13:11,038 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\models\\retrieval_manager.py', reloading
+2025-02-11 19:13:11,069 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\EmbeddingModels.py', reloading
+2025-02-11 19:13:11,075 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\FaissRetriever.py', reloading
+2025-02-11 19:13:11,091 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\QAModels.py', reloading
+2025-02-11 19:13:11,120 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\RetrievalAugmentation.py', reloading
+2025-02-11 19:13:11,141 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\Retrievers.py', reloading
+2025-02-11 19:13:11,158 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\SummarizationModels.py', reloading
+2025-02-11 19:13:11,174 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\tests\\test_rag_module.py', reloading
+2025-02-11 19:13:11,176 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\__init__.py', reloading
+2025-02-11 19:13:11,179 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\cluster_tree_builder.py', reloading
+2025-02-11 19:13:11,198 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_builder.py', reloading
+2025-02-11 19:13:11,227 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\utils.py', reloading
+2025-02-11 19:13:11,234 - werkzeug - INFO - _internal.py:97 -  * Detected change in 'S:\\PyCharm\\long_mem_agent\\raptor\\tree_structures.py', reloading
+2025-02-11 19:13:14,450 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-11 19:13:32,075 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-11 19:13:32,075 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-11 19:16:52,290 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:16:52] "GET / HTTP/1.1" 200 -
+2025-02-11 19:16:52,384 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:16:52] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-11 19:16:52,756 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:16:52] "GET /static/images/frank.jpg HTTP/1.1" 200 -
+2025-02-11 19:16:52,756 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:16:52] "GET /static/images/assistant.jpg HTTP/1.1" 200 -
+2025-02-11 19:16:52,761 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:16:52] "GET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1" 200 -
+2025-02-11 19:16:52,776 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:16:52] "GET /static/images/santa.jpg HTTP/1.1" 200 -
+2025-02-11 19:16:53,637 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:16:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-11 19:17:04,658 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-11 19:17:05,937 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-11 19:17:05,937 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 92, 相似度大于阈值的节点数: 92
+2025-02-11 19:17:05,937 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1261
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。灰姑娘既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1305
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:210 - 节点内容: 《灰姑娘》是夏尔・佩罗于1697年创作的童话故事。故事讲述了一个被姐姐们虐待的灰姑娘，却因仙女教母的帮助，在舞会上与王子相遇，并留下了一只水晶鞋。...
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1340
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:210 - 节点内容: 现在，两位姐姐才发现，灰姑娘就是她们在舞会上见到的那位美丽高贵的女士。她们跪在灰姑娘脚下，请求她原谅曾经对她的种种刁难。灰姑娘把她们扶起来，拥抱她们，说她打心底里原谅了她们，还希望她们以后能一直喜欢她...
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1344
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对灰姑娘说：“好了，你看，这一套出行装备很适合去...
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1345
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:210 - 节点内容: 可怜的女孩默默忍受着这一切，也不敢告诉父亲，因为父亲完全受妻子的管束，要是告诉了他，肯定会被责骂。做完家务后，女孩常常走到壁炉角落，坐在炉灰里，因此被人叫做 “灰丫头”。只有妹妹不像姐姐那么粗鲁无礼，...
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1359
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:210 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1372
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:210 - 节点内容: 碰巧，王子举办了一场舞会，邀请了所有有身份的人。灰姑娘的两位姐姐也收到了邀请，因为她们在有身份的人当中也算小有名气。收到邀请，她们欣喜若狂，忙着挑选最适合自己的礼服、衬裙，打理发型。这可给灰姑娘添了新...
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1379
+2025-02-11 19:17:05,939 - root - INFO - tree_retriever.py:210 - 节点内容: “好吧，” 仙女教母说，“只要你是个乖女孩，我就有办法让你去。” 接着，她把灰姑娘带到自己的房间，对她说：“去花园里给我摘个南瓜来。”...
+2025-02-11 19:17:05,944 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1382
+2025-02-11 19:17:05,944 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘为两位姐姐请来了最好的理发师，设计发型、打理头发，还购买了红色发刷和美人痣贴片。如果是别人，可能会故意弄乱她们的头发，但灰姑娘心地善良，把她们的头发处理...
+2025-02-11 19:17:05,944 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1383
+2025-02-11 19:17:05,944 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-11 19:17:05,960 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-11 19:17:05,960 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-11 19:17:05,960 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-11 19:17:05,960 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-11 19:17:05,975 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:17:05,975 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:17:05,975 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:17:05,975 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:17:06,112 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-11 19:17:09,178 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9967)
+2025-02-11 19:17:09,178 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:17:09] "POST /chat HTTP/1.1" 200 -
+2025-02-11 19:17:36,116 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 92, 相似度大于阈值的节点数: 91
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1199
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。灰姑娘既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1265
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1267
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:210 - 节点内容: 可怜的女孩默默忍受着这一切，也不敢告诉父亲，因为父亲完全受妻子的管束，要是告诉了他，肯定会被责骂。做完家务后，女孩常常走到壁炉角落，坐在炉灰里，因此被人叫做 “灰丫头”。只有妹妹不像姐姐那么粗鲁无礼，...
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1276
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘正兴高采烈地向仙女教母讲述舞会上发生的一切时，两位姐姐敲门了，灰姑娘跑去开门。...
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1342
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:210 - 节点内容: 第二天，两位姐姐去参加舞会，灰姑娘也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让灰姑娘感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还不到...
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1352
+2025-02-11 19:17:36,996 - root - INFO - tree_retriever.py:210 - 节点内容: 现在，两位姐姐才发现，灰姑娘就是她们在舞会上见到的那位美丽高贵的女士。她们跪在灰姑娘脚下，请求她原谅曾经对她的种种刁难。灰姑娘把她们扶起来，拥抱她们，说她打心底里原谅了她们，还希望她们以后能一直喜欢她...
+2025-02-11 19:17:36,997 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1370
+2025-02-11 19:17:36,997 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘 作者：夏尔・佩罗 创作时间：1697 年 “我呢，” 大姐说，“我要穿带法式装饰的红色天鹅绒套装。”...
+2025-02-11 19:17:36,997 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1375
+2025-02-11 19:17:36,997 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘对此似乎并不感兴趣。她确实问了那位公主的名字，但姐姐们说不知道，还说王子为了她十分苦恼，不惜一切代价都想知道她是谁。听到这儿，灰姑娘微笑着回答：“那她一定非常漂亮，你们真幸运！我能见见她吗？亲爱...
+2025-02-11 19:17:36,997 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1409
+2025-02-11 19:17:36,997 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对灰姑娘说：“好了，你看，这一套出行装备很适合去...
+2025-02-11 19:17:36,997 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1435
+2025-02-11 19:17:36,997 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。灰姑娘下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂静。...
+2025-02-11 19:17:37,003 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-11 19:17:37,003 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-11 19:17:37,003 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-11 19:17:37,003 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-11 19:17:37,013 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:17:37,013 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:17:37,058 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-11 19:17:40,148 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9616)
+2025-02-11 19:17:40,149 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:17:40] "POST /chat HTTP/1.1" 200 -
+2025-02-11 19:19:38,103 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.171:5000
+2025-02-11 19:19:38,103 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:19:38,120 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-11 19:20:03,833 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-11 19:20:03,842 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-11 19:20:03,973 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:20:03] "GET / HTTP/1.1" 200 -
+2025-02-11 19:20:04,096 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:20:04] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-11 19:20:04,627 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:20:04] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:20:04,627 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:20:04] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:20:04,630 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:20:04] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:20:04,630 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:20:04] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-11 19:20:23,489 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-11 19:20:28,795 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-11 19:20:29,479 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 92, 相似度大于阈值的节点数: 92
+2025-02-11 19:24:59,916 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.171:5000
+2025-02-11 19:24:59,916 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:24:59,923 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-11 19:25:14,570 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-11 19:25:14,576 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-11 19:25:14,625 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:25:14] "GET / HTTP/1.1" 200 -
+2025-02-11 19:25:14,691 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:25:14] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-11 19:25:14,970 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:25:14] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:25:14,970 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:25:14] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:25:14,972 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:25:14] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-11 19:25:14,976 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:25:14] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:25:21,789 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-11 19:25:23,184 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-11 19:25:23,184 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 92, 相似度大于阈值的节点数: 92
+2025-02-11 19:25:23,184 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-11 19:25:23,194 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1259
+2025-02-11 19:25:23,194 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。灰姑娘既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-11 19:25:23,195 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1304
+2025-02-11 19:25:23,195 - root - INFO - tree_retriever.py:210 - 节点内容: 《灰姑娘》是夏尔・佩罗于1697年创作的童话故事。故事讲述了一个被姐姐们虐待的灰姑娘，却因仙女教母的帮助，在舞会上与王子相遇，并留下了一只水晶鞋。...
+2025-02-11 19:25:23,195 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1336
+2025-02-11 19:25:23,195 - root - INFO - tree_retriever.py:210 - 节点内容: 现在，两位姐姐才发现，灰姑娘就是她们在舞会上见到的那位美丽高贵的女士。她们跪在灰姑娘脚下，请求她原谅曾经对她的种种刁难。灰姑娘把她们扶起来，拥抱她们，说她打心底里原谅了她们，还希望她们以后能一直喜欢她...
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1341
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对灰姑娘说：“好了，你看，这一套出行装备很适合去...
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1342
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:210 - 节点内容: 可怜的女孩默默忍受着这一切，也不敢告诉父亲，因为父亲完全受妻子的管束，要是告诉了他，肯定会被责骂。做完家务后，女孩常常走到壁炉角落，坐在炉灰里，因此被人叫做 “灰丫头”。只有妹妹不像姐姐那么粗鲁无礼，...
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1356
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:210 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1370
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:210 - 节点内容: 碰巧，王子举办了一场舞会，邀请了所有有身份的人。灰姑娘的两位姐姐也收到了邀请，因为她们在有身份的人当中也算小有名气。收到邀请，她们欣喜若狂，忙着挑选最适合自己的礼服、衬裙，打理发型。这可给灰姑娘添了新...
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1376
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:210 - 节点内容: “好吧，” 仙女教母说，“只要你是个乖女孩，我就有办法让你去。” 接着，她把灰姑娘带到自己的房间，对她说：“去花园里给我摘个南瓜来。”...
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1380
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘为两位姐姐请来了最好的理发师，设计发型、打理头发，还购买了红色发刷和美人痣贴片。如果是别人，可能会故意弄乱她们的头发，但灰姑娘心地善良，把她们的头发处理...
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1380
+2025-02-11 19:25:23,196 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-11 19:25:23,200 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-11 19:25:23,200 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-11 19:25:23,200 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-11 19:25:23,200 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-11 19:25:23,208 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:25:23,210 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:25:23,210 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:25:23,210 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:25:23,303 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-11 19:25:27,389 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9967)
+2025-02-11 19:25:27,389 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:25:27] "POST /chat HTTP/1.1" 200 -
+2025-02-11 19:26:06,449 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.171:5000
+2025-02-11 19:26:06,449 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:26:06,462 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-11 19:26:31,553 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-11 19:26:31,558 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-11 19:26:31,615 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:26:31] "GET / HTTP/1.1" 200 -
+2025-02-11 19:26:31,652 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:26:31] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-11 19:26:31,944 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:26:31] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-11 19:26:31,955 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:26:31] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:26:31,960 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:26:31] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:26:31,968 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:26:31] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:26:39,742 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-11 19:26:42,819 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-11 19:26:43,294 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 92, 相似度大于阈值的节点数: 92
+2025-02-11 19:29:43,208 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.171:5000
+2025-02-11 19:29:43,208 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:29:43,219 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-11 19:30:04,971 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-11 19:30:04,975 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-11 19:30:11,640 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:30:11] "GET / HTTP/1.1" 200 -
+2025-02-11 19:30:11,682 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:30:11] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-11 19:30:11,982 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:30:11] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-11 19:30:11,988 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:30:11] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:30:11,989 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:30:11] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:30:11,993 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:30:11] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:31:12,837 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.171:5000
+2025-02-11 19:31:12,837 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:31:12,842 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-11 19:31:24,489 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-11 19:31:24,489 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-11 19:31:39,581 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.171:5000
+2025-02-11 19:31:39,582 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-11 19:31:39,586 - werkzeug - INFO - _internal.py:97 -  * Restarting with watchdog (windowsapi)
+2025-02-11 19:31:51,060 - werkzeug - WARNING - _internal.py:97 -  * Debugger is active!
+2025-02-11 19:31:51,060 - werkzeug - INFO - _internal.py:97 -  * Debugger PIN: 126-843-209
+2025-02-11 19:31:55,727 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:31:55] "GET / HTTP/1.1" 200 -
+2025-02-11 19:31:55,766 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:31:55] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-11 19:31:56,037 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:31:56] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:31:56,037 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:31:56] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:31:56,037 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:31:56] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-11 19:31:56,037 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:31:56] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-11 19:32:23,918 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-11 19:32:24,936 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-11 19:32:24,936 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 92, 相似度大于阈值的节点数: 92
+2025-02-11 19:32:24,936 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1259
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。灰姑娘既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1304
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 《灰姑娘》是夏尔・佩罗于1697年创作的童话故事。故事讲述了一个被姐姐们虐待的灰姑娘，却因仙女教母的帮助，在舞会上与王子相遇，并留下了一只水晶鞋。...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1336
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 现在，两位姐姐才发现，灰姑娘就是她们在舞会上见到的那位美丽高贵的女士。她们跪在灰姑娘脚下，请求她原谅曾经对她的种种刁难。灰姑娘把她们扶起来，拥抱她们，说她打心底里原谅了她们，还希望她们以后能一直喜欢她...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1341
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对灰姑娘说：“好了，你看，这一套出行装备很适合去...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1342
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 可怜的女孩默默忍受着这一切，也不敢告诉父亲，因为父亲完全受妻子的管束，要是告诉了他，肯定会被责骂。做完家务后，女孩常常走到壁炉角落，坐在炉灰里，因此被人叫做 “灰丫头”。只有妹妹不像姐姐那么粗鲁无礼，...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1356
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 两位姐姐从舞会回来后，灰姑娘问她们玩得是否开心，那位美丽的女士是否也在。...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1370
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 碰巧，王子举办了一场舞会，邀请了所有有身份的人。灰姑娘的两位姐姐也收到了邀请，因为她们在有身份的人当中也算小有名气。收到邀请，她们欣喜若狂，忙着挑选最适合自己的礼服、衬裙，打理发型。这可给灰姑娘添了新...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1376
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: “好吧，” 仙女教母说，“只要你是个乖女孩，我就有办法让你去。” 接着，她把灰姑娘带到自己的房间，对她说：“去花园里给我摘个南瓜来。”...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1380
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘为两位姐姐请来了最好的理发师，设计发型、打理头发，还购买了红色发刷和美人痣贴片。如果是别人，可能会故意弄乱她们的头发，但灰姑娘心地善良，把她们的头发处理...
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.1380
+2025-02-11 19:32:24,939 - root - INFO - tree_retriever.py:210 - 节点内容: 灰姑娘走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。灰姑娘正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，...
+2025-02-11 19:32:24,943 - root - INFO - precise_retriever.py:35 - PreciseRetriever initialized with top_k=5, min_score=0.50
+2025-02-11 19:32:24,943 - root - INFO - comprehensive_retriever.py:33 - ComprehensiveRetriever initialized with min_score=0.50
+2025-02-11 19:32:24,943 - root - INFO - retrieval_manager.py:39 - RetrievalManager initialized with all components
+2025-02-11 19:32:24,945 - root - INFO - memory_manager.py:362 - 【召回策略】: PRECISE
+2025-02-11 19:32:24,960 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:32:24,960 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:32:24,960 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:32:24,960 - root - INFO - memory_manager.py:1306 - 簇内召回补偿未启用，跳过处理
+2025-02-11 19:32:25,100 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-11 19:32:28,266 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9967)
+2025-02-11 19:32:28,266 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [11/Feb/2025 19:32:28] "POST /chat HTTP/1.1" 200 -
