@@ -315,19 +315,6 @@ def create_app(rag_module):
             logging.error(f"Error updating memory priority: {str(e)}")
             return jsonify({"error": "Failed to update memory priority"}), 500
 
-    @app.route('/api/memories/clean-low-priority', methods=['POST'])
-    def clean_low_priority():
-        try:
-            data = request.json
-            user_id = data.get('user_id', 'default_user')
-            
-            result = memory_manager.clean_low_priority_memories(user_id)
-            return jsonify(result)
-            
-        except Exception as e:
-            logging.error(f"Error cleaning low priority memories: {str(e)}")
-            return jsonify({"error": "Failed to clean low priority memories"}), 500
-
     @app.route('/api/memories/access', methods=['POST'])
     def access_memory():
         try:

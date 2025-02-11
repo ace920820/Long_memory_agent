@@ -8,7 +8,6 @@
 import unittest
 import pytest
 import os
-import networkx as nx
 from models.graph_manager import GraphManager
 
 class TestGraphManager(unittest.TestCase):

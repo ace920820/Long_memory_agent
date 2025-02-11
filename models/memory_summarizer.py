@@ -1,6 +1,5 @@
-from typing import Dict, List, Optional, Set
+from typing import Dict, List, Optional
 import numpy as np
-from collections import Counter
 import jieba
 from sklearn.feature_extraction.text import TfidfVectorizer
 from loguru import logger

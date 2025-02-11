@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
+【暂不使用】
 记忆图谱管理模块
 负责构建和管理完整的记忆图谱，包括层级关系和记忆关联
 """
@@ -12,7 +13,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from typing import Dict, List, Tuple, Optional, Any
 from .memory_relationship_manager import MemoryRelationshipManager
-from .hierarchy_manager import HierarchyManager
+from models.hierarchy_manager import HierarchyManager
 import datetime
 import numpy as np
 

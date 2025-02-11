@@ -1,6 +1,5 @@
 import pytest
 import logging
-import spacy
 
 from models.entity_extractor import EntityExtractor
 

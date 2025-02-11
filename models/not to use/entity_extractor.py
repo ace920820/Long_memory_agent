@@ -4,6 +4,8 @@ from typing import List, Dict, Optional
 
 class EntityExtractor:
     """
+    【暂不使用】
+
     实体提取器，使用 spaCy 进行命名实体识别（NER）
     
     支持多种语言的实体识别，可以提取文本中的命名实体及其类型

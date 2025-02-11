@@ -7,6 +7,11 @@ from loguru import logger
 import os
 
 
+"""
+【暂不使用】
+
+"""
+
 class MetadataManager:
     def __init__(
         self,

@@ -1,6 +1,5 @@
 import unittest
 import pytest
-import torch
 from models.memory_relationship_manager import MemoryRelationshipManager
 
 class TestMemoryRelationshipManager(unittest.TestCase):

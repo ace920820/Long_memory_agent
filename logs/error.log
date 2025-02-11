@@ -155,3 +155,4 @@
 2025-02-07 23:53:29,036 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version (']Ã\\Ðê\x17\xadÐ4\x08«M"æ\x9aIZi\x02EG\x84ü©R\x107\x02\x8a\'\x84\x13CE\x08K\x97)ºÜD\x1bÇÇ+\x00ú®ªiÏz£')
 2025-02-07 23:53:29,036 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version ('LR')
 2025-02-07 23:53:29,038 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+2025-02-11 19:46:20,100 - root - ERROR - document_routes.py:115 - Error getting document content: 'RaptorModule' object has no attribute 'documents'
