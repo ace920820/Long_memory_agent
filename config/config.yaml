@@ -18,16 +18,6 @@ embedding:
   similarity_threshold: 0.5
   index_path: "data/vector_store"
 
-# 图谱管理配置
-graph:
-  merge_threshold: 0.8  # 记忆合并阈值
-  visualization:
-    node_size: 1000
-    edge_alpha: 0.5
-    figure_size: [12, 8]
-  storage:
-    save_interval: 300  # 自动保存间隔（秒）
-    backup_count: 3    # 保留的备份文件数量
 
 # 角色配置路径
 roles_path: roles/
