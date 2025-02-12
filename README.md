@@ -259,6 +259,4 @@ python main.py
 4. 发起Pull Request
 
 ## 📧 联系方式
-- 邮箱：[联系邮箱]
-- GitHub：[项目地址]
-- 文档：[文档地址]
+- 邮箱：cupid.rjsl@163.com
