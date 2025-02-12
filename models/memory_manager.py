@@ -16,6 +16,7 @@ import jieba.analyse
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import yaml
+from knowledge_base import DocumentStorage
 
 class MemoryManager:
     def __init__(self, model_name: str = "bge-small-zh-v1.5", 
@@ -96,7 +97,6 @@ class MemoryManager:
         # 为每个用户创建索引
         for user_id, memories in self.memories.items():
             self.create_user_index(user_id)
-            self._initialize_user_clusters(user_id)  # 初始化用户的记忆簇
         
         # 确保记忆文件存在
         if not os.path.exists(memory_file):
@@ -339,148 +339,88 @@ class MemoryManager:
             }
 
     def retrieve_memories(self, user_id: str, query: str, top_k: int = 5) -> List[Dict]:
-        """检索相关记忆，支持综合召回和精准召回
-    
+        """检索相关记忆
+        
         Args:
             user_id: 用户ID
             query: 查询文本
             top_k: 返回的记忆数量
-        
+            
         Returns:
-            List[Dict]: 相关记忆列表，包括精准召回和综合召回结果
+            List[Dict]: 相关记忆列表，每个记忆包含id、content等信息
         """
         if user_id not in self.memories or not self.memories[user_id]:
+            logging.warning(f"用户 {user_id} 没有记忆或记忆为空")
             return []
 
         try:
-            # 初始化检索管理器
-            from .retrieval_manager import RetrievalManager
-            retrieval_manager = RetrievalManager(self)
+            # 使用RetrievalAugmentation检索相关内容
+            retrieved_contents = self.doc_storage.RA.retrieve(
+                question=query,
+                top_k=top_k,
+                max_tokens=3500,  # 使用默认值
+                collapse_tree=True,  # 折叠树结构
+                return_layer_information=True  # 返回层级信息以便后续处理
+            )
             
-            # 记录当前用户ID，用于簇内召回补偿
-            self.current_user_id = user_id
-            
-            # 使用查询分类器判断召回策略
-            recall_strategy = retrieval_manager.query_classifier.classify_query(query)
-            
-            logging.info(f"【召回策略】: {recall_strategy}")
-
-            # 根据查询意图选择不同的召回策略
-            if recall_strategy == 'precise':
-                # 精准召回：返回最相关的记忆片段
-                precise_results = retrieval_manager.precise_retriever.retrieve_precise(
-                    query, user_id, top_k
-                )
+            if not retrieved_contents:
+                logging.warning(f"未找到与查询 '{query}' 相关的记忆")
+                return []
                 
-                # 将精准召回的结果转换为记忆对象
-                candidates = []
-                for precise_memory in precise_results:
-                    # 在原始记忆中查找对应的完整记忆
-                    matched_memories = [
-                        m for m in self.memories[user_id] 
-                        if precise_memory in m['content']
-                    ]
+            # 解析检索结果
+            context, layer_info = retrieved_contents
+            logging.info(f"检索到相关内容，层级信息: {layer_info}")
+            
+            # 将检索到的内容转换为记忆对象
+            memories = []
+            for memory_content in context.split("\n"):  # 按行分割检索到的内容
+                if not memory_content.strip():
+                    continue
                     
-                    if matched_memories:
-                        memory = matched_memories[0].copy()
-                        memory['content'] = precise_memory  # 使用精准的记忆片段
-                        memory['type'] = 'precise_recall'
-                        
-                        # 簇内召回补偿
-                        cluster_id = memory.get('cluster_info', {}).get('cluster_id', -1)
-                        if cluster_id != -1:
-                            compensate_memories = self.improve_retrieval(query, cluster_id)
-                            candidates.extend([
-                                {
-                                    'id': self._generate_memory_id(),
-                                    'content': comp_memory,
-                                    'type': 'precise_recall_compensate',
-                                    'cluster_info': {'cluster_id': cluster_id}
-                                } for comp_memory in compensate_memories
-                            ])
-                        
-                        candidates.append(memory)
-            
-            elif recall_strategy == 'comprehensive':
-                # 综合召回：返回记忆簇摘要
-                comprehensive_results = retrieval_manager.comprehensive_retriever.retrieve_comprehensive(
-                    query, user_id, top_k
-                )
-                
-                candidates = []
-                for result in comprehensive_results:
-                    # 如果是簇摘要，直接创建摘要记忆对象
-                    if result.get('is_summary', False):
-                        cluster_id = result.get('cluster_id', -1)
-                        summary_memory = {
-                            'id': f"cluster_summary_{cluster_id}",
-                            'content': result['summary'],
-                            'type': 'comprehensive_recall',
-                            'timestamp': datetime.now().isoformat(),
-                            'similarity': 1.0,
-                            'priority_score': 1.0,
-                            'cluster_info': {'cluster_id': cluster_id}
-                        }
-                        candidates.append(summary_memory)
-                    else:
-                        # 如果是具体记忆，转换为记忆对象
-                        memory = result.copy()
-                        memory['type'] = 'comprehensive_recall'
-                        candidates.append(memory)
-            
-            else:  # 默认为混合策略
-                # 编码查询文本
-                query_vector = self.encode([query]).astype('float32')
-                
-                # 使用FAISS搜索相似向量
-                D, I = self.indices[user_id].search(query_vector, min(top_k * 2, len(self.memories[user_id])))
-                
-                candidates = []
-                # 获取候选记忆并更新访问统计
-                for i, idx in enumerate(I[0]):
-                    if idx < len(self.memories[user_id]) and D[0][i] >= self.similarity_threshold:
-                        memory = self.memories[user_id][idx].copy()
-                        memory['similarity'] = float(D[0][i])  # 添加相似度分数
-                        memory['type'] = 'default_recall'
-                        
-                        # 更新记忆访问统计
-                        try:
-                            self.update_memory_access(user_id, memory['id'], 'read')
-                        except Exception as e:
-                            logging.warning(f"Error updating memory access stats: {str(e)}")
-                        
-                        # 簇内召回补偿
-                        cluster_id = memory.get('cluster_info', {}).get('cluster_id', -1)
-                        if cluster_id != -1:
-                            compensate_memories = self.improve_retrieval(query, cluster_id)
-                            candidates.extend([
-                                {
-                                    'id': self._generate_memory_id(),
-                                    'content': comp_memory,
-                                    'type': 'default_recall_compensate',
-                                    'cluster_info': {'cluster_id': cluster_id}
-                                } for comp_memory in compensate_memories
-                            ])
-                        
-                        candidates.append(memory)
+                # 在原始记忆中查找对应的完整记忆
+                matched_memories = [
+                    m for m in self.memories[user_id]
+                    if memory_content in m['content']
+                ]
+
+                if matched_memories:
+                    memory = matched_memories[0].copy()
+                    memory['content'] = memory_content  # 使用检索到的片段
+                    memory['type'] = 'tree_retrieval'
+                    
+                    # 更新记忆访问统计
+                    try:
+                        self.update_memory_access(user_id, memory['id'], 'read')
+                    except Exception as e:
+                        logging.warning(f"更新记忆访问统计失败: {str(e)}")
+                    
+                    memories.append(memory)
+                else:
+                    # 如果在原始记忆中找不到，创建新的记忆对象
+                    memory = {
+                        'id': self._generate_memory_id(),
+                        'content': memory_content,
+                        'type': 'tree_retrieval',
+                        'timestamp': datetime.now().isoformat(),
+                        'similarity': 1.0,  # 默认相似度
+                    }
+                    memories.append(memory)
             
             # 使用BGE-Rerank重排序
-            if self.rerank_enabled:
-                reranked_results = self._rerank_results(query, candidates)
-            else:
-                reranked_results = candidates
-
-            # 保存更新后的记忆
-            try:
-                self.save_memories()
-            except Exception as e:
-                logging.warning(f"Error saving memories after updating access stats: {str(e)}")
+            if self.rerank_enabled and memories:
+                memories = self._rerank_results(query, memories)
+            
+            # # 保存更新后的记忆
+            # try:
+            #     self.save_memories()
+            # except Exception as e:
+            #     logging.warning(f"保存记忆失败: {str(e)}")
 
             # 返回top_k个结果
-            return reranked_results[:top_k]
+            return memories[:top_k]
 
         except Exception as e:
-            logging.error(f"Error retrieving memories: {str(e)}")
+            logging.error(f"检索记忆失败: {str(e)}")
             return []
 
     def get_all_memories(self, user_id: str) -> List[Dict]:
