@@ -15,6 +15,7 @@
 
 ## 🎯 项目简介
 Long Memory Agent是一个基于RAPTOR（Recursive Abstraction of Passages for Tree-Organized Retrieval）树形结构的智能对话系统。它能够高效管理长期记忆，实现智能的知识检索和对话生成。
+![85e7ceea0efcbf13c3d03a1eebd2b6d](https://github.com/user-attachments/assets/b9610a40-5b70-4c43-a03b-b3847c9ce1ee)
 
 ### 主要功能
 - 智能记忆管理：基于RAPTOR的树形层级记忆组织
