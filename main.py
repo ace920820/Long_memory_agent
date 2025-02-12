@@ -298,6 +298,38 @@ def create_app(rag_module):
             logging.error(f"Error in clean_memories endpoint: {str(e)}")
             return jsonify({"error": "Failed to clean memories"}), 500
 
+    @app.route('/api/memories/rebuild', methods=['POST'])
+    def rebuild_memory_tree():
+        """重构和保存记忆树"""
+        try:
+            data = request.json
+            user_id = data.get('user_id', 'default_user')
+            logging.info(f"开始为用户 {user_id} 重构记忆树")
+            
+            # 调用MemoryManager的重构方法
+            result = memory_manager.rebuild_tree()
+            
+            if result['success']:
+                return jsonify({
+                    "success": True,
+                    "message": "记忆树重构成功"
+                })
+            else:
+                return jsonify({
+                    "success": False,
+                    "message": result['message'],
+                    "error": result.get('error', '未知错误')
+                }), 500
+                
+        except Exception as e:
+            error_msg = f"记忆树重构失败: {str(e)}"
+            logging.error(error_msg)
+            return jsonify({
+                "success": False,
+                "message": error_msg,
+                "error": str(e)
+            }), 500
+
     @app.route('/api/memories/priority', methods=['POST'])
     def update_memory_priority():
         try:

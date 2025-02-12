@@ -156,3 +156,8 @@
 2025-02-07 23:53:29,036 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version ('LR')
 2025-02-07 23:53:29,038 - werkzeug - ERROR - _internal.py:97 - 192.168.1.4 - - [07/Feb/2025 23:53:29] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
 2025-02-11 19:46:20,100 - root - ERROR - document_routes.py:115 - Error getting document content: 'RaptorModule' object has no attribute 'documents'
+2025-02-12 10:33:50,205 - root - ERROR - memory_routes.py:22 - 获取记忆列表失败: 'MemoryManager' object has no attribute 'get_memories'
+2025-02-12 10:34:02,037 - root - ERROR - memory_routes.py:22 - 获取记忆列表失败: 'MemoryManager' object has no attribute 'get_memories'
+2025-02-12 10:34:28,458 - root - ERROR - memory_routes.py:22 - 获取记忆列表失败: 'MemoryManager' object has no attribute 'get_memories'
+2025-02-12 10:48:52,053 - root - ERROR - memory_manager.py:895 - 记忆树重构失败: 'list' object has no attribute 'values'
+2025-02-12 11:01:19,973 - root - ERROR - memory_manager.py:895 - 记忆树重构失败: 'RetrievalAugmentation' object has no attribute 'leaf_nodes'

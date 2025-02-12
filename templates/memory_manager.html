@@ -71,6 +71,9 @@
                     <button onclick="deleteSelectedMemories()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
                         批量删除
                     </button>
+                    <button onclick="rebuildMemoryTree()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        重构记忆树
+                    </button>
                     <button onclick="cleanMemories()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
                         清理重复
                     </button>
@@ -492,6 +495,31 @@
             } catch (error) {
                 console.error('Error deleting memories:', error);
                 showNotification('删除记忆时发生错误', 'error');
+            }
+        }
+
+        // 重构和保存记忆树
+        async function rebuildMemoryTree() {
+            try {
+                console.log('开始重构记忆树');  // 调试日志
+                const response = await fetch('/api/memories/rebuild', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_id: 'default_user'
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('记忆树重构成功', 'success');
+                } else {
+                    showNotification(`重构失败: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                console.error('Error rebuilding memory tree:', error);
+                showNotification('重构记忆树时发生错误', 'error');
             }
         }
 

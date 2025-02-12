@@ -853,6 +853,52 @@ class MemoryManager:
                 "error": str(e)
             }
 
+    def rebuild_tree(self) -> Dict:
+        """
+        重构记忆树结构
+        
+        Returns:
+            Dict: 包含操作结果的字典，格式如下：
+            {
+                "success": bool,  # 操作是否成功
+                "message": str,   # 操作结果描述
+                "error": str      # 如果失败，错误信息
+            }
+        """
+        logging.info("开始重构记忆树...")
+        try:
+            # 获取当前树的叶子节点
+            leaf_nodes = self.doc_storage.RA.tree.leaf_nodes
+            if leaf_nodes:
+                # 使用叶子节点重新构建树
+                self.doc_storage.RA.tree_builder.build_from_leafnodes(leaf_nodes)
+                logging.info("记忆树重构完成")
+                
+                # 保存重构后的树
+                self.doc_storage.save_RA_tree(self.tree_rebuild_config['tree_save_path'])
+                logging.info(f"已保存重构后的树到: {self.tree_rebuild_config['tree_save_path']}")
+                
+                return {
+                    "success": True,
+                    "message": "记忆树重构成功"
+                }
+            else:
+                error_msg = "获取树信息失败，无法重构"
+                logging.error(error_msg)
+                return {
+                    "success": False,
+                    "message": error_msg,
+                    "error": "树信息不完整"
+                }
+        except Exception as e:
+            error_msg = f"记忆树重构失败: {str(e)}"
+            logging.error(error_msg)
+            return {
+                "success": False,
+                "message": error_msg,
+                "error": str(e)
+            }
+
     def _check_and_rebuild_tree(self):
         """
         检查是否需要重构树结构，并在需要时执行重构
@@ -865,24 +911,14 @@ class MemoryManager:
         
         if self.dialog_count >= self.tree_rebuild_config['rebuild_interval']:
             logging.info("触发树结构重构...")
-            try:
-                # 获取当前树的叶子节点
-                tree_info = self.doc_storage.get_tree_info()
-                if tree_info and 'tree' in tree_info:
-                    # 使用叶子节点重新构建树
-                    self.doc_storage.RA.tree_builder.build_from_leafnodes(tree_info['tree']['leaf_nodes'])
-                    logging.info("树结构重构完成")
-                    
-                    # 保存重构后的树
-                    self.doc_storage.save_RA_tree(self.tree_rebuild_config['tree_save_path'])
-                    logging.info(f"已保存重构后的树到: {self.tree_rebuild_config['tree_save_path']}")
-                    
-                    # 重置计数器
-                    self.dialog_count = 0
-                else:
-                    logging.error("获取树信息失败，跳过重构")
-            except Exception as e:
-                logging.error(f"树结构重构失败: {str(e)}")
+            result = self.rebuild_tree()
+            
+            if result['success']:
+                # 重置计数器
+                self.dialog_count = 0
+                logging.info("树结构重构成功，计数器已重置")
+            else:
+                logging.error(f"树结构重构失败: {result.get('error', '未知错误')}")
 
     def improve_retrieval(self, query: str, cluster_id: int) -> List[str]:
         """
