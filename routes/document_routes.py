@@ -32,8 +32,11 @@ def get_documents():
 
 @document_bp.route('/api/documents', methods=['POST'])
 def upload_document():
-    """上传新文档"""
+    """上传新文档并添加到RA树结构中"""
     try:
+        # 记录开始处理上传请求
+        logging.info("开始处理文档上传请求")
+        
         if 'files' not in request.files:
             return jsonify({
                 "success": False,
@@ -54,27 +57,49 @@ def upload_document():
             }), 400
             
         # 保存文件到临时目录
-        filename = file.filename
+        filename = secure_filename(file.filename)
         temp_path = os.path.join('temp', filename)
         os.makedirs('temp', exist_ok=True)
         file.save(temp_path)
         
-        # 添加文件到知识库
-        result = document_bp.rag_module.add_file(temp_path, filename)
+        logging.info(f"文件已保存到临时路径: {temp_path}")
         
-        # 删除临时文件
-        os.remove(temp_path)
-        
-        if result["status"]=='success':
-            return jsonify(result)
-        else:
-            return jsonify(result), 400
+        try:
+            # 读取文件内容
+            with open(temp_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            logging.info(f"成功读取文件内容，长度: {len(content)}")
+            
+            # 使用add_documents方法添加到RA树
+            result = document_bp.rag_module.add_documents(content)
+            
+            if result["status"] == "success":
+                logging.info(f"文档 {filename} 已成功添加到RA树")
+                return jsonify({
+                    "success": True,
+                    "message": f"文档 {filename} 上传并添加到知识库成功",
+                    "filename": filename
+                })
+            else:
+                logging.error(f"添加文档到RA树失败: {result['message']}")
+                return jsonify({
+                    "success": False,
+                    "error": result["message"]
+                }), 400
+                
+        finally:
+            # 删除临时文件
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
+                logging.info(f"临时文件已删除: {temp_path}")
             
     except Exception as e:
-        logging.error(f"Error uploading document: {str(e)}")
+        error_msg = f"处理文档上传时发生错误: {str(e)}"
+        logging.error(error_msg)
         return jsonify({
             "success": False,
-            "error": str(e)
+            "error": error_msg
         }), 500
 
 @document_bp.route('/api/documents/<int:doc_id>', methods=['DELETE'])

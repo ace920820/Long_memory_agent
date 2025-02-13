@@ -20,7 +20,7 @@ class RaptorModule:
     用于文档的存储、检索和问答
     """
     
-    def __init__(self, data_dir: str = "data/RAtree"):
+    def __init__(self, data_dir: str = "data/RAtree",tree_save_filename = 'document_tree'):
         """
         初始化RaptorModule
 
@@ -31,7 +31,7 @@ class RaptorModule:
             # 初始化DocumentStorage实例
             self.doc_storage = DocumentStorage(
                 storage_dir=os.path.join(data_dir, "files"),
-                tree_save_path=os.path.join(data_dir, "default_tree")
+                tree_save_path=os.path.join(data_dir, tree_save_filename)
             )
             # 获取DocumentStorage中的RA实例
             self.RA = self.doc_storage.RA

@@ -21,7 +21,7 @@ if sys.stdout.encoding.lower() != 'utf-8':
 def create_rag_module():
     """创建并初始化 RAGModule 实例"""
     try:
-        rag_module = RaptorModule()
+        rag_module = RaptorModule(data_dir="data/RAtree",tree_save_filename='document_tree')
         print("RAG module initialized successfully")
         return rag_module
     except Exception as e:
@@ -420,4 +420,5 @@ if __name__ == "__main__":
     # 初始化 RAG 模块
     rag_module = create_rag_module()
     app = create_app(rag_module)
-    app.run(host='0.0.0.0', port=5000,debug=True)
+    # 关闭debug模式和自动重载功能
+    app.run(host='0.0.0.0', port=5000, debug=False, use_reloader=False)

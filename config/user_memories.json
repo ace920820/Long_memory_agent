@@ -2224,9 +2224,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-12T11:09:45.229390",
       "access_stats": {
-        "count": 4,
+        "count": 10,
         "first_access": "2025-02-12T11:09:45.229390",
-        "last_access": "2025-02-12T11:20:15.208988",
+        "last_access": "2025-02-12T13:38:30.116714",
         "access_history": [
           {
             "time": "2025-02-12T11:12:41.153529",
@@ -2243,10 +2243,34 @@
           {
             "time": "2025-02-12T11:20:15.208988",
             "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:35:32.026062",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:36:44.422544",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:37:13.021144",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:37:41.650075",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:38:12.682312",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:38:30.116714",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.58,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -2290,9 +2314,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-12T11:14:10.661726",
       "access_stats": {
-        "count": 4,
+        "count": 10,
         "first_access": "2025-02-12T11:14:10.661726",
-        "last_access": "2025-02-12T11:20:15.208988",
+        "last_access": "2025-02-12T13:38:30.116714",
         "access_history": [
           {
             "time": "2025-02-12T11:15:37.149667",
@@ -2309,10 +2333,34 @@
           {
             "time": "2025-02-12T11:20:15.208988",
             "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:35:32.026062",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:36:44.422544",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:37:13.021144",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:37:41.650075",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:38:12.682312",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:38:30.116714",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.58,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -2323,9 +2371,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-12T11:15:40.549225",
       "access_stats": {
-        "count": 3,
+        "count": 5,
         "first_access": "2025-02-12T11:15:40.549225",
-        "last_access": "2025-02-12T11:20:15.208988",
+        "last_access": "2025-02-12T13:38:12.682312",
         "access_history": [
           {
             "time": "2025-02-12T11:16:10.873933",
@@ -2338,10 +2386,18 @@
           {
             "time": "2025-02-12T11:20:15.208988",
             "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:37:13.021144",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:38:12.682312",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55,
+      "priority_score": 0.61,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -2389,9 +2445,320 @@
       "type": "dialogue",
       "timestamp": "2025-02-12T11:20:18.153567",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-02-12T11:20:18.153567",
-        "last_access": "2025-02-12T11:20:18.153567",
+        "last_access": "2025-02-12T13:37:13.021144",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:37:13.021144",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338636661_8098",
+      "content": "举了什么例子？",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:37:16.661345",
+      "access_stats": {
+        "count": 5,
+        "first_access": "2025-02-12T13:37:16.661345",
+        "last_access": "2025-02-12T13:41:25.643465",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:38:30.116714",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:39:14.355321",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:39:38.593825",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:40:50.868792",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:41:25.643465",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.61,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338664253_6054",
+      "content": "文章还举了其他的什么例子吗",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:37:44.253348",
+      "access_stats": {
+        "count": 6,
+        "first_access": "2025-02-12T13:37:44.253348",
+        "last_access": "2025-02-12T13:42:05.561003",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:38:12.682312",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:38:30.116714",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:39:14.355321",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:39:38.593825",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:41:25.643465",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:42:05.561003",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.64,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338695674_4867",
+      "content": "文章是否和篮球有关？",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:38:15.674474",
+      "access_stats": {
+        "count": 4,
+        "first_access": "2025-02-12T13:38:15.674474",
+        "last_access": "2025-02-12T13:42:05.560006",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:38:30.116714",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:39:14.355321",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:40:50.867804",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:42:05.560006",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.58,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338712590_2327",
+      "content": "这是不是也算是一个例子呢",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:38:32.590108",
+      "access_stats": {
+        "count": 3,
+        "first_access": "2025-02-12T13:38:32.590108",
+        "last_access": "2025-02-12T13:41:25.643465",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:39:14.355321",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:39:38.593825",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:41:25.643465",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.55,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338758034_1821",
+      "content": "全场紧逼战术为啥可以作为弱者战胜强者的战术呢？作者为什么用它来举例",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:39:18.034327",
+      "access_stats": {
+        "count": 5,
+        "first_access": "2025-02-12T13:39:18.034327",
+        "last_access": "2025-02-12T13:44:34.638155",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:39:38.593825",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:40:50.867804",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:41:25.643465",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:42:05.560006",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:44:34.638155",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.61,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338782266_3431",
+      "content": "强队为什么不使用这种技术",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:39:42.266744",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-02-12T13:39:42.266744",
+        "last_access": "2025-02-12T13:40:50.868792",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:40:50.868792",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338855246_9471",
+      "content": "劳伦斯获得胜利的关键之处在于？",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:40:55.246727",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-02-12T13:40:55.246727",
+        "last_access": "2025-02-12T13:42:05.560006",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:41:25.643465",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:42:05.560006",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338888771_3948",
+      "content": "所以说，强弱其实是相对的，要取决于在何种规则下",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:41:28.771579",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-02-12T13:41:28.771579",
+        "last_access": "2025-02-12T13:45:48.629155",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:44:34.638155",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-12T13:45:48.629155",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739338929142_8347",
+      "content": "嗨，Frank，我最近阅读了大卫如何战胜歌利亚这篇文章，你读过吗？你怎么看待这篇文章",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:42:09.142768",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-02-12T13:42:09.142768",
+        "last_access": "2025-02-12T13:45:48.629155",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:45:48.629155",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739339079606_8006",
+      "content": "我最近还读了一本书，名字叫做权力的七条规则，分别是1.不要自我设限；2.打破规则；3.展现强大；4.建立个人品牌;5.经营社交圈子；6获得权力立即使用7权力可以为一切行为辩护。你认可这些规则吗，能不能给我一些具体建议",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:44:39.606339",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-02-12T13:44:39.606339",
+        "last_access": "2025-02-12T13:45:48.629155",
+        "access_history": [
+          {
+            "time": "2025-02-12T13:45:48.629155",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739339154846_4029",
+      "content": "Frank, 我认为一个人的气质和状态跟他的心理状态精神状态息息相关，我想你给我一些指导，让我更加擅长于\"以强大的方式出现\"",
+      "type": "dialogue",
+      "timestamp": "2025-02-12T13:45:54.846657",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-12T13:45:54.846657",
+        "last_access": "2025-02-12T13:45:54.846657",
         "access_history": []
       },
       "priority_score": 0.0,
