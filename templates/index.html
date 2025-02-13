@@ -68,13 +68,13 @@
             border-color: var(--primary);
         }
 
-        .role-list {
+        .chat-list {
             flex: 1;
             overflow-y: auto;
             padding: 8px;
         }
 
-        .role-item {
+        .chat-item {
             display: flex;
             align-items: center;
             padding: 12px;
@@ -82,23 +82,56 @@
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.2s;
+            color: var(--text-primary);
+            text-decoration: none;
         }
 
-        .role-item:hover {
+        .chat-item:hover {
             background: rgba(0,0,0,0.05);
         }
 
-        .role-item.active {
+        .chat-item.active {
             background: var(--primary);
             color: white;
         }
 
-        .role-item img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            margin-right: 12px;
-            object-fit: cover;
+        .chat-item-title {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chat-item-delete {
+            opacity: 0;
+            transition: opacity 0.2s;
+            color: inherit;
+            padding: 4px;
+        }
+
+        .chat-item:hover .chat-item-delete {
+            opacity: 1;
+        }
+
+        .new-chat-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .new-chat-button:hover {
+            background: #0051D5;
         }
 
         /* 主内容区域 */
@@ -301,6 +334,77 @@
             padding: 4px;
         }
 
+        /* 角色选择器样式 */
+        .role-selector {
+            margin-top: 20px;
+            padding: 0 12px;
+        }
+
+        .role-selector-title {
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .role-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .role-option:hover {
+            border-color: var(--primary);
+            background: rgba(0,122,255,0.05);
+        }
+
+        .role-option.active {
+            border-color: var(--primary);
+            background: rgba(0,122,255,0.1);
+        }
+
+        .role-option-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            object-fit: cover;
+            background: var(--background);
+        }
+
+        .role-option-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .role-option-description {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 480px) {
+            .role-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .sidebar {
@@ -337,16 +441,85 @@
         .tooltip.visible {
             opacity: 1;
         }
+
+        /* 状态提示样式 */
+        .status-message {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            margin: 8px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .status-message .loading-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .status-message .dot {
+            width: 4px;
+            height: 4px;
+            background: currentColor;
+            border-radius: 50%;
+            animation: dotPulse 1.5s infinite;
+        }
+
+        .status-message .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .status-message .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .memory-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            margin: 8px auto;
+            font-size: 14px;
+            color: var(--success);
+            background: rgba(52, 199, 89, 0.1);
+            border-radius: 8px;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            max-width: max-content;
+        }
+
+        .memory-status.error {
+            color: var(--error);
+            background: rgba(255, 59, 48, 0.1);
+        }
     </style>
 </head>
 <body>
     <!-- 侧边栏 -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            <input type="text" class="search-bar" placeholder="搜索角色..." onkeyup="filterRoles(this.value)">
+            <button class="new-chat-button" onclick="createNewChat()">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                新对话
+            </button>
+            <input type="text" class="search-bar" placeholder="搜索对话..." onkeyup="filterChats(this.value)">
         </div>
-        <div class="role-list" id="roleSelector">
-            <!-- 角色列表将通过 JavaScript 动态生成 -->
+        <div class="chat-list" id="chatList">
+            <!-- 对话列表将通过 JavaScript 动态生成 -->
         </div>
     </aside>
 
@@ -381,7 +554,12 @@
                 <span class="modal-close" onclick="closeSettingsModal()">✕</span>
             </div>
             <div class="settings-content">
-                <!-- 设置选项将通过 JavaScript 动态添加 -->
+                <div class="role-selector">
+                    <h3 class="role-selector-title">选择角色</h3>
+                    <div class="role-grid" id="roleSelector">
+                        <!-- 角色选项将通过 JavaScript 动态生成 -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -390,12 +568,14 @@
         // 全局状态管理
         const state = {
             currentRole: null,
+            currentChat: null,
             roles: {},
+            chats: [],
             isTyping: false
         };
 
         // 消息处理函数
-        function addMessage(content, type) {
+        function addMessage(content, type, isTyping = true) {
             const messagesDiv = document.getElementById('messages');
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message';
@@ -404,7 +584,7 @@
             // 创建消息内容
             const messageContent = document.createElement('div');
             messageContent.className = 'message-content';
-            
+
             // 处理不同的响应格式
             let text = '';
             if (typeof content === 'string') {
@@ -444,7 +624,7 @@
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
             // 添加打字机效果
-            if (type === 'assistant') {
+            if (type === 'assistant' && isTyping) {
                 typewriterEffect(messageContent, text);
             }
         }
@@ -484,77 +664,130 @@
 
         // 发送消息
         async function sendMessage() {
-            const userInput = document.getElementById('user_input');
-            const text = userInput.value.trim();
-            if (!text || state.isTyping) return;
+            if (!state.currentChat) {
+                createNewChat();
+            }
 
-            // 清空输入框并禁用
-            userInput.value = '';
-            userInput.disabled = true;
+            const input = document.getElementById('user_input');
+            const content = input.value.trim();
 
-            // 添加用户消息
-            addMessage(text, 'user');
+            if (content && !state.isTyping) {
+                input.value = '';
+                input.disabled = true;
+                state.isTyping = true;
 
-            try {
-                const response = await fetch('/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ user_input: text })
-                });
+                // 添加用户消息
+                addMessage(content, 'user');
 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                // 保存消息到当前对话
+                const chat = state.chats.find(c => c.id === state.currentChat);
+                if (chat) {
+                    chat.messages.push({ content, type: 'user' });
+                    if (chat.title === '新对话') {
+                        chat.title = content.slice(0, 20) + (content.length > 20 ? '...' : '');
+                        updateChatList();
+                    }
                 }
 
-                const result = await response.json();
-                
-                // 添加助手消息
-                if (result.error) {
-                    addMessage({ error: result.error }, 'assistant');
-                } else {
-                    addMessage({ response: result.response }, 'assistant');
-                }
+                try {
+                    // 添加记忆检索状态
+                    const retrievingStatus = addStatusMessage('正在检索记忆');
 
-                // 处理记忆状态
-                if (result.memory_status?.success) {
-                    showMemoryStatus(result.memory_status);
+                    const response = await fetch('/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ user_input: content })
+                    });
+
+                    // 移除记忆检索状态
+                    retrievingStatus.remove();
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    // 添加答案生成状态
+                    const generatingStatus = addStatusMessage('正在组织答案');
+
+                    const result = await response.json();
+
+                    // 移除答案生成状态
+                    generatingStatus.remove();
+
+                    // 添加助手消息
+                    if (result.error) {
+                        addMessage({ error: result.error }, 'assistant');
+                    } else {
+                        addMessage({ response: result.response }, 'assistant');
+                    }
+
+                    // 处理记忆状态
+                    if (result.memory_status?.success) {
+                        showMemoryStatus(result.memory_status);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    addMessage({ error: '发送消息时出错，请稍后重试' }, 'assistant');
+                } finally {
+                    input.disabled = false;
+                    input.focus();
+                    state.isTyping = false;
                 }
-            } catch (error) {
-                console.error('Error:', error);
-                addMessage({ error: '发送消息时出错，请稍后重试' }, 'assistant');
-            } finally {
-                // 重新启用输入框
-                userInput.disabled = false;
-                userInput.focus();
             }
         }
 
         // 显示记忆状态
         function showMemoryStatus(status) {
             if (!status || !status.message) return;
-            
+
             const memoryNote = document.createElement('div');
             memoryNote.className = 'memory-status';
-            
+
+            // 根据状态类型设置不同的图标
+            const icon = status.success ? '✓' : '!';
+
             // 安全地处理content
             const content = status.content ? status.content.split('\n')[0] : '';
-            memoryNote.textContent = content ? `${status.message}: ${content}` : status.message;
-            
+            memoryNote.innerHTML = `
+                <span>${icon}</span>
+                <span>${content ? `${status.message}: ${content}` : status.message}</span>
+            `;
+
             const messagesDiv = document.getElementById('messages');
             messagesDiv.appendChild(memoryNote);
-            
+
             // 3秒后淡出
             setTimeout(() => {
                 memoryNote.style.opacity = '0';
-                setTimeout(() => memoryNote.remove(), 500);
+                setTimeout(() => memoryNote.remove(), 300);
             }, 3000);
+        }
+
+        // 添加状态消息
+        function addStatusMessage(text) {
+            const messagesDiv = document.getElementById('messages');
+            const statusDiv = document.createElement('div');
+            statusDiv.className = 'status-message';
+
+            statusDiv.innerHTML = `
+                ${text}
+                <div class="loading-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            `;
+
+            messagesDiv.appendChild(statusDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            return statusDiv;
         }
 
         // 角色管理
         function filterRoles(query) {
             const roles = document.querySelectorAll('.role-item');
             const normalizedQuery = query.toLowerCase();
-            
+
             roles.forEach(role => {
                 const text = role.textContent.toLowerCase();
                 const shouldShow = text.includes(normalizedQuery);
@@ -563,32 +796,29 @@
         }
 
         async function generateRoleButtons() {
-            const roleSelector = document.getElementById('roleSelector');
-            roleSelector.innerHTML = '';
-
             try {
                 const response = await fetch('/get_available_roles');
                 const result = await response.json();
-                
+
                 if (!response.ok) throw new Error('Failed to fetch roles');
-                
+
                 state.roles = result.roles;
-                
+                const roleSelector = document.getElementById('roleSelector');
+                roleSelector.innerHTML = '';
+
                 Object.entries(result.roles).forEach(([roleId, roleInfo]) => {
                     const roleDiv = document.createElement('div');
-                    roleDiv.className = 'role-item';
-                    roleDiv.dataset.roleId = roleId;
-                    
-                    const avatar = document.createElement('img');
-                    avatar.src = roleInfo.avatar || '/static/images/default_avatar.png';
-                    avatar.alt = roleInfo.name;
-                    
-                    const name = document.createElement('span');
-                    name.textContent = roleInfo.name;
-                    
-                    roleDiv.appendChild(avatar);
-                    roleDiv.appendChild(name);
-                    
+                    roleDiv.className = 'role-option';
+                    if (roleId === state.currentRole) {
+                        roleDiv.classList.add('active');
+                    }
+
+                    roleDiv.innerHTML = `
+                        <img class="role-option-image" src="${roleInfo.avatar || '/static/images/default_avatar.png'}" alt="${roleInfo.name}">
+                        <div class="role-option-name">${roleInfo.name}</div>
+                        <div class="role-option-description">${roleInfo.description || ''}</div>
+                    `;
+
                     roleDiv.onclick = () => setRole(roleId);
                     roleSelector.appendChild(roleDiv);
                 });
@@ -603,14 +833,14 @@
                 const response = await fetch('/set_role', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
-                        role: roleId,  
-                        user_id: 'default_user'  
+                    body: JSON.stringify({
+                        role: roleId,
+                        user_id: 'default_user'
                     })
                 });
 
                 const result = await response.json();
-                
+
                 if (response.ok) {
                     state.currentRole = roleId;
                     updateActiveRole(roleId);
@@ -638,7 +868,7 @@
             errorDiv.className = 'error-message';
             errorDiv.textContent = message;
             document.body.appendChild(errorDiv);
-            
+
             setTimeout(() => {
                 errorDiv.style.opacity = '0';
                 setTimeout(() => errorDiv.remove(), 500);
@@ -657,7 +887,7 @@
         function openSettingsModal() {
             const modal = document.getElementById('settingsModal');
             modal.classList.add('visible');
-            
+
             // 阻止冒泡
             modal.onclick = (e) => {
                 if (e.target === modal) {
@@ -674,6 +904,91 @@
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             sidebar.classList.toggle('visible');
+        }
+
+        // 创建新对话
+        function createNewChat() {
+            const chatId = Date.now().toString();
+            const chat = {
+                id: chatId,
+                title: '新对话',
+                messages: []
+            };
+            state.chats.unshift(chat);
+            state.currentChat = chatId;
+            updateChatList();
+            clearMessages();
+        }
+
+        // 更新对话列表
+        function updateChatList() {
+            const chatList = document.getElementById('chatList');
+            chatList.innerHTML = '';
+
+            state.chats.forEach(chat => {
+                const chatItem = document.createElement('div');
+                chatItem.className = `chat-item${chat.id === state.currentChat ? ' active' : ''}`;
+                chatItem.onclick = () => switchChat(chat.id);
+
+                chatItem.innerHTML = `
+                    <span class="chat-item-title">${chat.title}</span>
+                    <span class="chat-item-delete" onclick="deleteChat('${chat.id}', event)">✕</span>
+                `;
+
+                chatList.appendChild(chatItem);
+            });
+        }
+
+        // 切换对话
+        function switchChat(chatId) {
+            state.currentChat = chatId;
+            updateChatList();
+            loadChatMessages(chatId);
+        }
+
+        // 删除对话
+        function deleteChat(chatId, event) {
+            event.stopPropagation();
+            if (confirm('确定要删除这个对话吗？')) {
+                state.chats = state.chats.filter(chat => chat.id !== chatId);
+                if (state.currentChat === chatId) {
+                    state.currentChat = state.chats[0]?.id || null;
+                }
+                updateChatList();
+                if (state.currentChat) {
+                    loadChatMessages(state.currentChat);
+                } else {
+                    clearMessages();
+                }
+            }
+        }
+
+        // 加载对话消息
+        function loadChatMessages(chatId) {
+            const chat = state.chats.find(c => c.id === chatId);
+            clearMessages();
+            if (chat && chat.messages) {
+                chat.messages.forEach(msg => {
+                    addMessage(msg.content, msg.type, false);
+                });
+            }
+        }
+
+        // 清空消息区域
+        function clearMessages() {
+            const messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML = '';
+        }
+
+        // 搜索对话
+        function filterChats(query) {
+            const chatItems = document.querySelectorAll('.chat-item');
+            query = query.toLowerCase();
+
+            chatItems.forEach(item => {
+                const title = item.querySelector('.chat-item-title').textContent.toLowerCase();
+                item.style.display = title.includes(query) ? 'flex' : 'none';
+            });
         }
 
         // 初始化
