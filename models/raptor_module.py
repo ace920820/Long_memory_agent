@@ -41,7 +41,7 @@ class RaptorModule:
             logger.error(f"初始化RaptorModule时发生错误: {str(e)}")
             raise
     
-    def add_documents(self, text: str) -> Dict:
+    def add_documents_no_saving(self, text: str) -> Dict:
         """
         向知识库中添加文档内容，仅更新树结构，不保存元数据
 
@@ -58,8 +58,8 @@ class RaptorModule:
                 return {"status": "error", "message": "添加文档到树结构失败"}
             
             # 保存树结构
-            self.doc_storage.save_RA_tree()
-            logger.info(f"成功添加文档到树结构，文本长度: {len(text)}")
+            # self.doc_storage.save_RA_tree()
+            # logger.info(f"成功添加文档到树结构，文本长度: {len(text)}")
             
             return {"status": "success", "message": "文档添加成功"}
             

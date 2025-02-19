@@ -72,7 +72,7 @@ def upload_document():
             logging.info(f"成功读取文件内容，长度: {len(content)}")
             
             # 使用add_documents方法添加到RA树
-            result = document_bp.rag_module.add_documents(content)
+            result = document_bp.rag_module.add_documents_no_saving(content)
             
             if result["status"] == "success":
                 logging.info(f"文档 {filename} 已成功添加到RA树")

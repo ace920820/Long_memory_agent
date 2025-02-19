@@ -2861,9 +2861,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T23:08:38.109138",
       "access_stats": {
-        "count": 6,
+        "count": 9,
         "first_access": "2025-02-13T23:08:38.109138",
-        "last_access": "2025-02-13T23:24:18.888774",
+        "last_access": "2025-02-19T22:50:10.219545",
         "access_history": [
           {
             "time": "2025-02-13T23:09:11.951995",
@@ -2888,10 +2888,22 @@
           {
             "time": "2025-02-13T23:24:18.888774",
             "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:47:28.536393",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:48:23.638326",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:50:10.219545",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.64,
+      "priority_score": 0.73,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -2927,12 +2939,21 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T23:10:31.188695",
       "access_stats": {
-        "count": 0,
+        "count": 2,
         "first_access": "2025-02-13T23:10:31.188695",
-        "last_access": "2025-02-13T23:10:31.188695",
-        "access_history": []
+        "last_access": "2025-02-19T22:48:23.638326",
+        "access_history": [
+          {
+            "time": "2025-02-19T22:47:28.536393",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:48:23.638326",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.52,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -2943,12 +2964,25 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T23:14:54.490915",
       "access_stats": {
-        "count": 0,
+        "count": 3,
         "first_access": "2025-02-13T23:14:54.490915",
-        "last_access": "2025-02-13T23:14:54.490915",
-        "access_history": []
+        "last_access": "2025-02-19T22:50:10.219545",
+        "access_history": [
+          {
+            "time": "2025-02-19T22:47:28.536393",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:48:23.638326",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:50:10.219545",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.55,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -2991,9 +3025,46 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T23:24:24.097912",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-02-13T23:24:24.097912",
-        "last_access": "2025-02-13T23:24:24.097912",
+        "last_access": "2025-02-19T22:50:10.219545",
+        "access_history": [
+          {
+            "time": "2025-02-19T22:50:10.219545",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739976512145_1151",
+      "content": "我的意思是，白雪公主的故事是怎样的，如何最后得到幸福",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T22:48:32.145262",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-19T22:48:32.145262",
+        "last_access": "2025-02-19T22:48:32.145262",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739976619288_8671",
+      "content": "请只使用参考文本中的信息，重新回答我，白雪公主的故事是怎样的，如何最后得到幸福",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T22:50:19.288306",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-19T22:50:19.288306",
+        "last_access": "2025-02-19T22:50:19.288306",
         "access_history": []
       },
       "priority_score": 0.0,

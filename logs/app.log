@@ -51158,3 +51158,117 @@ TypeError: get_documents() takes 1 positional argument but 2 were given
 2025-02-13 23:29:56,245 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 26, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 32, 'layer_number': 0}, {'node_index': 4, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}]
 2025-02-13 23:30:02,636 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
 2025-02-13 23:30:02,636 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [13/Feb/2025 23:30:02] "POST /chat HTTP/1.1" 200 -
+2025-02-17 18:32:38,300 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.83.50:5000
+2025-02-17 18:32:38,300 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-17 18:32:40,484 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:40] "GET / HTTP/1.1" 200 -
+2025-02-17 18:32:40,601 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:40] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-17 18:32:41,085 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:41] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-17 18:32:41,085 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:41] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-17 18:32:41,091 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:41] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-17 18:32:41,093 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:41] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-17 18:32:41,106 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-17 18:32:42,984 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:42] "GET /knowledge-base HTTP/1.1" 200 -
+2025-02-17 18:32:43,962 - knowledge_base.storage - INFO - storage.py:188 - 开始获取完整树结构
+2025-02-17 18:32:43,963 - knowledge_base.storage - INFO - storage.py:194 - 树结构获取成功
+2025-02-17 18:32:43,963 - models.raptor_module - INFO - raptor_module.py:254 - 成功获取文档树结构信息
+2025-02-17 18:32:43,963 - models.raptor_module - INFO - raptor_module.py:255 - {'tree': {'leaf_nodes': [], 'summary_nodes': [], 'num_layers': 0, 'total_nodes': 0}}
+2025-02-17 18:32:43,964 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:43] "GET /api/documents HTTP/1.1" 200 -
+2025-02-17 18:32:44,023 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:44] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-17 18:32:44,036 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:44] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-17 18:32:46,259 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:46] "GET / HTTP/1.1" 200 -
+2025-02-17 18:32:46,332 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:46] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-17 18:32:46,397 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:46] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-17 18:32:46,404 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:46] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-17 18:32:46,426 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:46] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-17 18:32:46,434 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:46] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-17 18:32:47,224 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:47] "GET /memory-manager HTTP/1.1" 200 -
+2025-02-17 18:32:47,552 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-17 18:32:47,554 - root - INFO - memory_manager.py:441 - Successfully retrieved 95 memories for user default_user
+2025-02-17 18:32:47,555 - root - INFO - main.py:203 - 成功获取 95 条记忆
+2025-02-17 18:32:47,557 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:47] "GET /api/memories HTTP/1.1" 200 -
+2025-02-17 18:32:55,625 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:55] "GET / HTTP/1.1" 200 -
+2025-02-17 18:32:55,685 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:55] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-17 18:32:55,895 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:55] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-17 18:32:56,445 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:56] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-17 18:32:56,449 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:56] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-17 18:32:56,452 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Feb/2025 18:32:56] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:33:49,459 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 22:33:49,460 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 22:33:53,748 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:33:53] "GET / HTTP/1.1" 200 -
+2025-02-19 22:33:53,819 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:33:53] "[33mGET /get_chats HTTP/1.1[0m" 404 -
+2025-02-19 22:33:53,915 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:33:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-19 22:34:41,158 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 22:34:41,158 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 22:34:44,376 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:34:44] "GET / HTTP/1.1" 200 -
+2025-02-19 22:34:44,455 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:34:44] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 22:34:44,886 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:34:44] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:34:44,887 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:34:44] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 22:34:44,887 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:34:44] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:34:44,890 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:34:44] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:34:44,899 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:34:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-19 22:34:46,975 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:34:48,399 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:34:48,399 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 22:34:48,399 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 22:34:48,400 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:34:49,770 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:34:49,770 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 29, 相似度大于阈值的节点数: 29
+2025-02-19 22:34:49,770 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8391
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8216
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8019
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:210 - 节点内容: 你对学粤语有什么建议吗...
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7902
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7819
+2025-02-19 22:34:49,775 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个python的helloworld...
+2025-02-19 22:34:49,775 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 32, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 31, 'layer_number': 0}]
+2025-02-19 22:34:57,512 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9062)
+2025-02-19 22:34:57,512 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:34:57] "POST /chat HTTP/1.1" 200 -
+2025-02-19 22:36:00,632 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 22:36:00,632 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 22:36:07,477 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:07] "GET / HTTP/1.1" 200 -
+2025-02-19 22:36:07,565 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:07] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 22:36:08,014 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:08] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:36:08,015 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:08] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:36:08,019 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:08] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 22:36:08,021 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:08] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:36:08,526 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:08] "GET /knowledge-base HTTP/1.1" 200 -
+2025-02-19 22:36:09,235 - knowledge_base.storage - INFO - storage.py:188 - 开始获取完整树结构
+2025-02-19 22:36:09,236 - knowledge_base.storage - INFO - storage.py:194 - 树结构获取成功
+2025-02-19 22:36:09,236 - models.raptor_module - INFO - raptor_module.py:254 - 成功获取文档树结构信息
+2025-02-19 22:36:09,238 - models.raptor_module - INFO - raptor_module.py:255 - {'tree': {'leaf_nodes': [], 'summary_nodes': [], 'num_layers': 0, 'total_nodes': 0}}
+2025-02-19 22:36:09,238 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:09] "GET /api/documents HTTP/1.1" 200 -
+2025-02-19 22:36:09,245 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:09] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-19 22:36:09,264 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:36:09] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-19 22:36:21,046 - root - INFO - document_routes.py:38 - 开始处理文档上传请求
+2025-02-19 22:36:55,115 - root - INFO - document_routes.py:65 - 文件已保存到临时路径: temp\txt
+2025-02-19 22:37:06,585 - root - INFO - document_routes.py:72 - 成功读取文件内容，长度: 4074
+2025-02-19 22:37:11,744 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 22:37:11,759 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 22:37:21,888 - openai._base_client - INFO - _base_client.py:919 - Retrying request to /embeddings in 0.914076 seconds
+2025-02-19 22:37:21,888 - openai._base_client - INFO - _base_client.py:919 - Retrying request to /embeddings in 0.940433 seconds
+2025-02-19 22:37:53,248 - root - INFO - tree_builder.py:288 - 已创建 43 个叶子节点嵌入
+2025-02-19 22:37:53,249 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 22:43:47,635 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 22:43:47,636 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 22:43:51,290 - root - INFO - document_routes.py:38 - 开始处理文档上传请求
+2025-02-19 22:43:54,261 - root - INFO - document_routes.py:65 - 文件已保存到临时路径: temp\txt
+2025-02-19 22:43:54,269 - root - INFO - document_routes.py:72 - 成功读取文件内容，长度: 4074
