@@ -51272,3 +51272,1296 @@ TypeError: get_documents() takes 1 positional argument but 2 were given
 2025-02-19 22:43:51,290 - root - INFO - document_routes.py:38 - 开始处理文档上传请求
 2025-02-19 22:43:54,261 - root - INFO - document_routes.py:65 - 文件已保存到临时路径: temp\txt
 2025-02-19 22:43:54,269 - root - INFO - document_routes.py:72 - 成功读取文件内容，长度: 4074
+2025-02-19 22:45:06,005 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 22:45:06,005 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 22:45:08,542 - root - INFO - document_routes.py:38 - 开始处理文档上传请求
+2025-02-19 22:45:08,543 - root - INFO - document_routes.py:65 - 文件已保存到临时路径: temp\txt
+2025-02-19 22:45:08,556 - root - INFO - document_routes.py:72 - 成功读取文件内容，长度: 4074
+2025-02-19 22:45:08,556 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 22:45:08,564 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 22:45:16,002 - root - INFO - tree_builder.py:288 - 已创建 43 个叶子节点嵌入
+2025-02-19 22:45:16,002 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 22:45:16,032 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:45:16,032 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 22:45:24,845 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-02-19 22:45:26,791 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 917, Summarized Text Length: 100
+2025-02-19 22:45:35,847 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 524, Summarized Text Length: 100
+2025-02-19 22:45:38,588 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 836, Summarized Text Length: 99
+2025-02-19 22:45:41,445 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 897, Summarized Text Length: 98
+2025-02-19 22:45:47,981 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 513, Summarized Text Length: 99
+2025-02-19 22:46:00,022 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 262, Summarized Text Length: 99
+2025-02-19 22:46:03,626 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 691, Summarized Text Length: 98
+2025-02-19 22:46:08,434 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 767, Summarized Text Length: 100
+2025-02-19 22:46:09,465 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 1
+2025-02-19 22:46:09,465 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 1
+2025-02-19 22:46:09,465 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 22:46:09,465 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 14，新索引: 0
+2025-02-19 22:46:09,465 - root - INFO - tree_structures.py:63 - 节点 0 已添加到树中
+2025-02-19 22:46:09,465 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 0
+2025-02-19 22:46:09,466 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 7，新索引: 1
+2025-02-19 22:46:09,466 - root - INFO - tree_structures.py:63 - 节点 1 已添加到树中
+2025-02-19 22:46:09,466 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 1
+2025-02-19 22:46:09,466 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 11，新索引: 2
+2025-02-19 22:46:09,466 - root - INFO - tree_structures.py:63 - 节点 2 已添加到树中
+2025-02-19 22:46:09,466 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 2
+2025-02-19 22:46:09,466 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 10，新索引: 3
+2025-02-19 22:46:09,466 - root - INFO - tree_structures.py:63 - 节点 3 已添加到树中
+2025-02-19 22:46:09,466 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 3
+2025-02-19 22:46:09,466 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 4，新索引: 4
+2025-02-19 22:46:09,467 - root - INFO - tree_structures.py:63 - 节点 4 已添加到树中
+2025-02-19 22:46:09,467 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 4
+2025-02-19 22:46:09,467 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 16，新索引: 5
+2025-02-19 22:46:09,467 - root - INFO - tree_structures.py:63 - 节点 5 已添加到树中
+2025-02-19 22:46:09,467 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 5
+2025-02-19 22:46:09,467 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 17，新索引: 6
+2025-02-19 22:46:09,467 - root - INFO - tree_structures.py:63 - 节点 6 已添加到树中
+2025-02-19 22:46:09,468 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 6
+2025-02-19 22:46:09,468 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 5，新索引: 7
+2025-02-19 22:46:09,468 - root - INFO - tree_structures.py:63 - 节点 7 已添加到树中
+2025-02-19 22:46:09,468 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 7
+2025-02-19 22:46:09,468 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 19，新索引: 8
+2025-02-19 22:46:09,468 - root - INFO - tree_structures.py:63 - 节点 8 已添加到树中
+2025-02-19 22:46:09,468 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 8
+2025-02-19 22:46:09,468 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 18，新索引: 9
+2025-02-19 22:46:09,468 - root - INFO - tree_structures.py:63 - 节点 9 已添加到树中
+2025-02-19 22:46:09,468 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 9
+2025-02-19 22:46:09,468 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 9，新索引: 10
+2025-02-19 22:46:09,468 - root - INFO - tree_structures.py:63 - 节点 10 已添加到树中
+2025-02-19 22:46:09,468 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 10
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 6，新索引: 11
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:63 - 节点 11 已添加到树中
+2025-02-19 22:46:09,469 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 11
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 21，新索引: 12
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:63 - 节点 12 已添加到树中
+2025-02-19 22:46:09,469 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 12
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 22，新索引: 13
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:63 - 节点 13 已添加到树中
+2025-02-19 22:46:09,469 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 13
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 8，新索引: 14
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:63 - 节点 14 已添加到树中
+2025-02-19 22:46:09,469 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 14
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 15
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:63 - 节点 15 已添加到树中
+2025-02-19 22:46:09,469 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 15
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 24，新索引: 16
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:63 - 节点 16 已添加到树中
+2025-02-19 22:46:09,469 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 16
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 23，新索引: 17
+2025-02-19 22:46:09,469 - root - INFO - tree_structures.py:63 - 节点 17 已添加到树中
+2025-02-19 22:46:09,469 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 17
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 2，新索引: 18
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:63 - 节点 18 已添加到树中
+2025-02-19 22:46:09,470 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 18
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 1，新索引: 19
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:63 - 节点 19 已添加到树中
+2025-02-19 22:46:09,470 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 19
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 25，新索引: 20
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:63 - 节点 20 已添加到树中
+2025-02-19 22:46:09,470 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 20
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 26，新索引: 21
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:63 - 节点 21 已添加到树中
+2025-02-19 22:46:09,470 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 21
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 13，新索引: 22
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:63 - 节点 22 已添加到树中
+2025-02-19 22:46:09,470 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 22
+2025-02-19 22:46:09,470 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 12，新索引: 23
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:63 - 节点 23 已添加到树中
+2025-02-19 22:46:09,471 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 23
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 3，新索引: 24
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:63 - 节点 24 已添加到树中
+2025-02-19 22:46:09,471 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 24
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 27，新索引: 25
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:63 - 节点 25 已添加到树中
+2025-02-19 22:46:09,471 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 25
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 15，新索引: 26
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:63 - 节点 26 已添加到树中
+2025-02-19 22:46:09,471 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 26
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 28，新索引: 27
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:63 - 节点 27 已添加到树中
+2025-02-19 22:46:09,471 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 27
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 31，新索引: 28
+2025-02-19 22:46:09,471 - root - INFO - tree_structures.py:63 - 节点 28 已添加到树中
+2025-02-19 22:46:09,471 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 28
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 29，新索引: 29
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:63 - 节点 29 已添加到树中
+2025-02-19 22:46:09,472 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 29
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 33，新索引: 30
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:63 - 节点 30 已添加到树中
+2025-02-19 22:46:09,472 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 30
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 35，新索引: 31
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:63 - 节点 31 已添加到树中
+2025-02-19 22:46:09,472 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 31
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 32，新索引: 32
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:63 - 节点 32 已添加到树中
+2025-02-19 22:46:09,472 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 32
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 34，新索引: 33
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:63 - 节点 33 已添加到树中
+2025-02-19 22:46:09,472 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 33
+2025-02-19 22:46:09,472 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 38，新索引: 34
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:63 - 节点 34 已添加到树中
+2025-02-19 22:46:09,473 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 34
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 39，新索引: 35
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:63 - 节点 35 已添加到树中
+2025-02-19 22:46:09,473 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 35
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 30，新索引: 36
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:63 - 节点 36 已添加到树中
+2025-02-19 22:46:09,473 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 36
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 42，新索引: 37
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:63 - 节点 37 已添加到树中
+2025-02-19 22:46:09,473 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 37
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 41，新索引: 38
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:63 - 节点 38 已添加到树中
+2025-02-19 22:46:09,473 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 38
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 36，新索引: 39
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:63 - 节点 39 已添加到树中
+2025-02-19 22:46:09,473 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 39
+2025-02-19 22:46:09,473 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 40，新索引: 40
+2025-02-19 22:46:09,474 - root - INFO - tree_structures.py:63 - 节点 40 已添加到树中
+2025-02-19 22:46:09,474 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 40
+2025-02-19 22:46:09,474 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 37，新索引: 41
+2025-02-19 22:46:09,474 - root - INFO - tree_structures.py:63 - 节点 41 已添加到树中
+2025-02-19 22:46:09,474 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 41
+2025-02-19 22:46:09,474 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 20，新索引: 42
+2025-02-19 22:46:09,474 - root - INFO - tree_structures.py:63 - 节点 42 已添加到树中
+2025-02-19 22:46:09,474 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 42
+2025-02-19 22:46:09,475 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:46:09,509 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:46:09,510 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 22:46:17,075 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-02-19 22:46:20,569 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 511, Summarized Text Length: 100
+2025-02-19 22:46:24,289 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 605, Summarized Text Length: 100
+2025-02-19 22:46:28,447 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 486, Summarized Text Length: 99
+2025-02-19 22:46:31,173 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 315, Summarized Text Length: 99
+2025-02-19 22:46:34,678 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 799, Summarized Text Length: 99
+2025-02-19 22:46:38,017 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 180, Summarized Text Length: 99
+2025-02-19 22:46:42,813 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1007, Summarized Text Length: 100
+2025-02-19 22:46:46,845 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 836, Summarized Text Length: 100
+2025-02-19 22:46:49,613 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 348, Summarized Text Length: 100
+2025-02-19 22:46:52,915 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 320, Summarized Text Length: 100
+2025-02-19 22:46:53,856 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000018F2A361F40>
+            层数: None
+            起始层: None
+        
+2025-02-19 22:46:53,856 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 22:46:53,858 - knowledge_base.storage - INFO - storage.py:120 - 文档  已添加到运行中的RA树结构
+2025-02-19 22:46:53,858 - root - INFO - document_routes.py:78 - 文档 txt 已成功添加到RA树
+2025-02-19 22:46:53,858 - root - INFO - document_routes.py:95 - 临时文件已删除: temp\txt
+2025-02-19 22:46:53,859 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:46:53] "POST /api/documents HTTP/1.1" 200 -
+2025-02-19 22:46:53,875 - knowledge_base.storage - INFO - storage.py:188 - 开始获取完整树结构
+2025-02-19 22:46:53,875 - knowledge_base.storage - INFO - storage.py:194 - 树结构获取成功
+2025-02-19 22:46:53,875 - models.raptor_module - INFO - raptor_module.py:254 - 成功获取文档树结构信息
+2025-02-19 22:46:53,876 - models.raptor_module - INFO - raptor_module.py:255 - {'tree': {'leaf_nodes': [{'text': '接着，仙女教母查看捕鼠器，发现里面有六只活蹦乱跳的老鼠，她让白雪公主把捕鼠器的活门稍微抬起一点。每只老鼠出来的时候，她就用魔杖轻轻点一下，老鼠瞬间就变成了一匹骏马，六匹马毛色漂亮，是带着斑点的灰色，搭配在一起十分好看。', 'index': 0}, {'text': '她们请来了能找到的最好的理发师，为她们设计发型、打理头发，还从拉波什小姐那里买来了红色发刷和美人痣贴片。', 'index': 1}, {'text': '她的仙女教母看到她泪流满面，便问她怎么了。 “我希望我能…… 我希望我能……” 她泣不成声，话也说不下去。', 'index': 2}, {'text': '终于，舞会那天到了。她们前往王宫，白雪公主一直目送着她们，直到看不见为止。看不见姐姐们的身影后，她便哭了起来。', 'index': 3}, {'text': '白雪公主 作者：夏尔・佩罗 创作时间：1697 年 “我呢，” 大姐说，“我要穿带法式装饰的红色天鹅绒套装。”', 'index': 4}, {'text': '白雪公主把捕鼠夹拿给仙女教母，里面有三只大老鼠。仙女选了其中胡须最长的那只，用魔杖碰了碰它，它就变成了一个胖胖的、乐呵呵的马车夫，他的络腮胡是人们见过最漂亮的。', 'index': 5}, {'text': '找不到马车夫，白雪公主说：“我去看看捕鼠夹里有没有老鼠，说不定能变成马车夫。” “你说得对，” 仙女教母回答道，“去看看吧。”', 'index': 6}, {'text': '“我呀，” 小妹说，“就穿平常的衬裙，不过为了搭配，我会披上绣着金花的披风，戴上钻石胸饰，那可不是一般的胸饰。”', 'index': 7}, {'text': '于是，仙女教母用魔杖碰了碰白雪公主，刹那间，她的衣服变成了金银织就的华服，上面还镶嵌着珠宝。之后，仙女教母又给了她一双水晶鞋，是世界上最漂亮的水晶鞋。打扮好后，白雪公主上了马车。但仙女教母再三叮嘱她，一定不能待到午夜之后，还告诉她，如果多待哪怕一刻，马车就会变回南瓜，马匹变回老鼠，马车夫变回老鼠，侍从变回蜥蜴，她的衣服也会恢复原样。', 'index': 8}, {'text': '白雪公主照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对白雪公主说：“好了，你看，这一套出行装备很适合去参加舞会吧，你难道不高兴吗？”', 'index': 9}, {'text': '“唉！” 白雪公主说，“你们这是在笑话我，像我这样的人可去不了那种地方。” “你说得对，” 她们回应道，“要是在舞会上看到一个灰丫头，人们会笑掉大牙的。”', 'index': 10}, {'text': '在这些事上，她们也会询问白雪公主的意见，因为她点子多，给出的建议也总是很不错。实际上，白雪公主甚至主动提出帮她们做头发，她们欣然接受了。做头发的时候，她们问白雪公主：“白雪公主，你难道不想去参加舞会吗？”', 'index': 11}, {'text': '之后，仙女教母对白雪公主说：“再去花园里，在水壶后面你会找到六只蜥蜴，把它们带给我。” “哦，高兴！” 白雪公主叫道，“可我要穿着这身破衣服去吗？”', 'index': 12}, {'text': '所有女士都忙着打量她的衣服和头饰，希望日后也能找到这样的好料子，请手艺精湛的人做出同样的衣服。王子把白雪公主领到最尊贵的座位上，之后又邀她共舞。她舞姿优雅，众人对她越发赞赏。晚宴十分丰盛，但王子一口也没吃，只顾着目不转睛地看着她。', 'index': 13}, {'text': '换做别人，可能会故意把她们的头发弄乱，但白雪公主心地善良，把她们的头发打理得十分完美。两位姐姐兴奋得几乎两天没吃东西，为了把身材勒得苗条些，她们弄断了十几根束带，还不停地对着镜子打量自己。', 'index': 14}, {'text': '从前，有一位绅士，他的第二任妻子是人们见过的最傲慢、最高傲的女人。她和前夫育有两个女儿，这两个女儿在各方面都和她如出一辙。这位绅士和另一位妻子也育有一个小女儿，这个女孩善良无比，性情温柔甜美，这都遗传自她的母亲，她的母亲是世界上最善良的人。', 'index': 15}, {'text': '只听见一阵嘈杂的声音：“她真美啊！她真美啊！” 国王虽然年事已高，也忍不住盯着她看，还轻声对王后说，他已经很久没见过如此美丽动人的姑娘了。', 'index': 16}, {'text': '白雪公主走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。白雪公主正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝礼，然后匆匆离开。', 'index': 17}, {'text': '可怜的女孩默默忍受着这一切，也不敢告诉父亲，因为父亲完全受妻子的管束，要是告诉了他，肯定会被责骂。做完家务后，女孩常常走到壁炉角落，坐在炉灰里，因此被人叫做 “灰丫头”。只有妹妹不像姐姐那么粗鲁无礼，会叫她 “白雪公主”。尽管白雪公主衣着朴素，但她比姐妹们漂亮百倍，即便她们总是穿着华丽。', 'index': 18}, {'text': '婚礼仪式刚一结束，继母就露出了真面目。她无法忍受这个漂亮女孩的优秀品质，尤其是这些品质让她自己的女儿显得更加惹人厌。她让女孩干家里最粗重的活，女孩要洗刷碗碟、擦拭桌子，打扫夫人以及两位小姐 —— 她女儿的房间。女孩睡在又小又破的阁楼里，睡在一张破旧的草垫床上，而她的姐妹们却睡在布置精美的房间里，地板镶嵌得十分考究，床也是最时新的款式，房间里还有巨大的镜子，能让她们从头到脚照见自己的全身。', 'index': 19}, {'text': '回到家后，白雪公主跑去见仙女教母，感谢她之后，说自己真希望第二天还能去参加舞会，因为王子邀请了她。', 'index': 20}, {'text': '白雪公主正兴高采烈地向仙女教母讲述舞会上发生的一切时，两位姐姐敲门了，白雪公主跑去开门。', 'index': 21}, {'text': '白雪公主立刻跑去摘了一个她能找到的最好的南瓜，拿给仙女教母，她实在想不明白这个南瓜怎么能帮她去参加舞会。仙女教母把南瓜瓤都挖了出来，只剩下南瓜壳。做完这些后，她用魔杖敲了敲南瓜，南瓜瞬间变成了一辆华丽的马车，周身都镀着金。', 'index': 22}, {'text': '她的仙女教母对她说：“你是希望能去参加舞会，对吗？” “是的。” 白雪公主深深地叹了口气，哭着说道。', 'index': 23}, {'text': '碰巧，王子举办了一场舞会，邀请了所有有身份的人。白雪公主的两位姐姐也收到了邀请，因为她们在有身份的人当中也算小有名气。收到邀请，她们欣喜若狂，忙着挑选最适合自己的礼服、衬裙，打理发型。这可给白雪公主添了新麻烦，因为姐姐们的亚麻衣物要她熨烫，褶边也要她来打褶。她们整天都在讨论该如何打扮。', 'index': 24}, {'text': '“你们去了这么久！” 白雪公主打着哈欠说道，揉了揉眼睛，伸了伸懒腰，装作一副刚睡醒的样子，其实姐姐们不在家的时候，她根本没心思睡觉。', 'index': 25}, {'text': '“好吧，” 仙女教母说，“只要你是个乖女孩，我就有办法让你去。” 接着，她把白雪公主带到自己的房间，对她说：“去花园里给我摘个南瓜来。”', 'index': 26}, {'text': '白雪公主对此似乎并不感兴趣。她确实问了那位公主的名字，但姐姐们说不知道，还说王子为了她十分苦恼，不惜一切代价都想知道她是谁。听到这儿，白雪公主微笑着回答：“那她一定非常漂亮，你们真幸运！我能见见她吗？亲爱的夏洛特，把你平时穿的黄色裙子借给我吧。”', 'index': 27}, {'text': '第二天，两位姐姐去参加舞会，白雪公主也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让白雪公主感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还不到十一点，这时却听到时钟敲响了十二点。她像小鹿一样敏捷地跳起来，匆匆逃离。王子在后面追赶，但没能追上她。她落下了一只水晶鞋，王子小心翼翼地捡了起来。白雪公主到家时已经气喘吁吁，身上又变回了那件破旧的衣服，除了掉落的那只水晶鞋的另一只，她所有的华丽服饰都不见了。', 'index': 28}, {'text': '“要是你去了舞会，” 一位姐姐说，“就不会觉得累了。舞会上有一位最美的公主，是凡人见过最漂亮的人。她对我们非常有礼貌，还送我们橙子和柠檬呢。”', 'index': 29}, {'text': '王宫大门的守卫被问到是否看到一位公主出去。他们回答说，只看到一个穿着破旧的年轻女孩离开，看起来更像一个穷苦的乡下丫头，而不是大家闺秀。', 'index': 30}, {'text': '几天后，王子让人吹着喇叭宣告，他要娶能穿上这只水晶鞋的女子为妻。人们先让公主们试穿，接着是公爵夫人和宫里的其他人，但都不合适。水晶鞋被送到白雪公主的两位姐姐那里，她们想尽办法想把脚塞进鞋里，却都以失败告终。', 'index': 31}, {'text': '白雪公主早就料到会是这样的回答，心里暗自庆幸姐姐拒绝了，要是姐姐真把她开玩笑要的衣服借给她，她可就麻烦了。', 'index': 32}, {'text': '她们告诉白雪公主，那位女士在，但十二点一到就匆匆离开了，走得太急，还掉了一只世上最漂亮的水晶鞋，王子捡到了那只鞋。在舞会上，王子一直盯着她看，肯定是深深爱上了这只水晶鞋的主人。', 'index': 33}, {'text': '现在，两位姐姐才发现，白雪公主就是她们在舞会上见到的那位美丽高贵的女士。她们跪在白雪公主脚下，请求她原谅曾经对她的种种刁难。白雪公主把她们扶起来，拥抱她们，说她打心底里原谅了她们，还希望她们以后能一直喜欢她。', 'index': 34}, {'text': '白雪公主就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。白雪公主既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。', 'index': 35}, {'text': '“想得美！” 夏洛特叫道，“把我的衣服借给你这个脏兮兮的灰丫头！我才没那么傻呢。”', 'index': 36}, {'text': '姐姐们哄堂大笑，开始打趣她。被派来试鞋的先生认真地看着白雪公主，发现她长得十分美丽，便说她也应该试一下，而且他接到的命令是让每个人都试。', 'index': 37}, {'text': '另一个寓意：毫无疑问，拥有智慧、勇气、良好的教养和常识是巨大的优势。这些及类似的才能都来自上天，拥有它们是件好事。然而，如果没有教父或教母的庇佑，即便拥有这些，也未必能获得成功。', 'index': 38}, {'text': '两位姐姐从舞会回来后，白雪公主问她们玩得是否开心，那位美丽的女士是否也在。 白雪公主看到了这一切，知道那是自己的鞋子，笑着对她们说：“让我试试，说不定合脚呢。”', 'index': 39}, {'text': '美貌是稀世珍宝，总会受人赞赏。然而，优雅更为珍贵，其价值无可估量。这是仙女教母教会白雪公主像女王一样举止优雅时，赐予她的礼物。对于年轻女子来说，赢得人心时，优雅比漂亮的发型更重要。这是仙女真正的馈赠。没有它，一事无成；有了它，万事皆有可能。', 'index': 40}, {'text': '他让白雪公主坐下，把水晶鞋套在她的脚上，鞋子很容易就穿上了，就好像是为她的脚量身定制的一样。两位姐姐惊讶极了，而当白雪公主从口袋里拿出另一只水晶鞋穿上时，她们更是惊愕不已。这时，仙女教母出现了，她用魔杖碰了碰白雪公主的衣服，让它们变得比之前任何一件都更加华丽。', 'index': 41}, {'text': '白雪公主答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。白雪公主下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂静。所有人都停止了跳舞，小提琴也不再演奏，这位神秘的新来者美得让人陶醉。', 'index': 42}], 'summary_nodes': [{'text': '仙女教母查看捕鼠器，发现里面有六只老鼠，每只老鼠出来时她用魔杖变成骏马。白雪公主拿来另一个捕鼠器，里面有三只大老鼠，其中一只变成了胖胖的马车夫', 'index': 43, 'children': [0, 5, 6, 22]}, {'text': '小妹脱颖而出，穿着平常的衬裙，但配上绣着金花的披风和钻石胸饰，引来众人羡慕。女士们打量她的服饰，希望找到类似好料。王子对白雪公主倾心', 'index': 44, 'children': [37, 7, 13, 24, 30]}, {'text': '《白雪公主》是由法国作家夏尔・佩罗于1697年创作的童话故事。故事中，白雪公主的两位姐姐对着镜子挑选漂亮的衣服，而白雪公主却没有兴趣。她想要穿着姐', 'index': 45, 'children': [32, 35, 4, 36, 27]}, {'text': '她们邀请了顶级理发师为她们设计头发，购买了红色发刷和美人痣贴片，还征求白雪公主的意见。白雪公主给出了宝贵建议，甚至帮她们打理头发。姐妹俩为了保持身材', 'index': 46, 'children': [1, 11, 14]}, {'text': '白雪公主对姐姐们非常有礼貌，还分享了王子送给她的橙子和柠檬。姐姐们惊讶地没认出她。在舞会上，她聊天时听到时钟敲响十一点三刻就匆忙离开。第二天，白', 'index': 47, 'children': [42, 17, 21, 25, 28]}, {'text': '仙女教母告诉白雪公主去花园找六只蜥蜴，带给她。白雪公主高兴地同意，但担心破衣服是否合适。仙女教母说只要白雪公主听话，她有办法。之后，她带', 'index': 48, 'children': [26, 12]}, {'text': '从前，有一位绅士，他的第二任妻子是人们见过的最傲慢、最高傲的女人。她和前夫育有两个女儿，这两个女儿在各方面都和她如出一辙。这位绅士和另一位妻子也育有', 'index': 49, 'children': [38, 40, 15, 16, 18, 19]}, {'text': '仙女教母用魔杖碰了碰白雪公主，使她的衣服转变成金银织就的华服，还镶嵌着珠宝，再赠送她世界上最美丽的水晶鞋。白雪公主上了马车，但被叮嘱不能', 'index': 50, 'children': [33, 8, 9, 41, 31]}, {'text': '在这个故事中，白雪公主的仙女教母看到她泪流满面，询问她发生了什么事。白雪公主无法说出话，只是泣不成声地表达出希望能做到某事的愿望。\n\n最终，她们前往王宫参', 'index': 51, 'children': [2, 3, 20, 23, 29]}, {'text': '白雪公主在舞会上被姐姐们取笑，被称为灰丫头，认为自己不能去那种地方。后来，姐姐们发现白雪公主就是舞会上那位美丽高贵的女士。她们请求原谅，白雪公主宽恕她', 'index': 52, 'children': [10, 34, 39]}], 'num_layers': 1, 'total_nodes': 53}}
+2025-02-19 22:46:53,882 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:46:53] "GET /api/documents HTTP/1.1" 200 -
+2025-02-19 22:46:53,892 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:46:53] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-19 22:47:08,792 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:47:08] "GET / HTTP/1.1" 200 -
+2025-02-19 22:47:08,857 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:47:08] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 22:47:09,207 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:47:09] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 22:47:09,207 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:47:09] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:47:09,208 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:47:09] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:47:09,211 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:47:09] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:47:19,904 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 53, 相似度大于阈值的节点数: 53
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8723
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。白雪公主既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8721
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对白雪公主说：“好了，你看，这一套出行装备很适...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8655
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主立刻跑去摘了一个她能找到的最好的南瓜，拿给仙女教母，她实在想不明白这个南瓜怎么能帮她去参加舞会。仙女教母把南瓜瓤都挖了出来，只剩下南瓜壳。做完这些后，她用魔杖敲了敲南瓜，南瓜瞬间变成了一辆华丽...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8618
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 仙女教母查看捕鼠器，发现里面有六只老鼠，每只老鼠出来时她用魔杖变成骏马。白雪公主拿来另一个捕鼠器，里面有三只大老鼠，其中一只变成了胖胖的马车夫...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8614
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 碰巧，王子举办了一场舞会，邀请了所有有身份的人。白雪公主的两位姐姐也收到了邀请，因为她们在有身份的人当中也算小有名气。收到邀请，她们欣喜若狂，忙着挑选最适合自己的礼服、衬裙，打理发型。这可给白雪公主添...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8612
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。白雪公主下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8612
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 他让白雪公主坐下，把水晶鞋套在她的脚上，鞋子很容易就穿上了，就好像是为她的脚量身定制的一样。两位姐姐惊讶极了，而当白雪公主从口袋里拿出另一只水晶鞋穿上时，她们更是惊愕不已。这时，仙女教母出现了，她用魔...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8593
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。白雪公主正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8589
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主对此似乎并不感兴趣。她确实问了那位公主的名字，但姐姐们说不知道，还说王子为了她十分苦恼，不惜一切代价都想知道她是谁。听到这儿，白雪公主微笑着回答：“那她一定非常漂亮，你们真幸运！我能见见她吗？...
+2025-02-19 22:47:27,421 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8572
+2025-02-19 22:47:27,424 - root - INFO - tree_retriever.py:210 - 节点内容: 第二天，两位姐姐去参加舞会，白雪公主也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让白雪公主感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还...
+2025-02-19 22:47:27,440 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:47:28,535 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 29, 相似度大于阈值的节点数: 29
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7839
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:210 - 节点内容: 要把大象装冰箱，总共分几步？...
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7806
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7737
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7541
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7523
+2025-02-19 22:47:28,536 - root - INFO - tree_retriever.py:210 - 节点内容: 我也喜欢泡澡，我准备2月15号去和朋友一起泡澡...
+2025-02-19 22:47:28,536 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 29, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}, {'node_index': 28, 'layer_number': 0}]
+2025-02-19 22:47:32,772 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9724)
+2025-02-19 22:47:32,772 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:47:32] "POST /chat HTTP/1.1" 200 -
+2025-02-19 22:48:19,428 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:48:21,412 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:48:21,412 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 53, 相似度大于阈值的节点数: 53
+2025-02-19 22:48:21,412 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 22:48:21,412 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8591
+2025-02-19 22:48:21,412 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对白雪公主说：“好了，你看，这一套出行装备很适...
+2025-02-19 22:48:21,412 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8587
+2025-02-19 22:48:21,412 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。白雪公主既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8568
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:210 - 节点内容: 终于，舞会那天到了。她们前往王宫，白雪公主一直目送着她们，直到看不见为止。看不见姐姐们的身影后，她便哭了起来。...
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8560
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。白雪公主下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂...
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8554
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:210 - 节点内容: 回到家后，白雪公主跑去见仙女教母，感谢她之后，说自己真希望第二天还能去参加舞会，因为王子邀请了她。...
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8534
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:210 - 节点内容: 于是，仙女教母用魔杖碰了碰白雪公主，刹那间，她的衣服变成了金银织就的华服，上面还镶嵌着珠宝。之后，仙女教母又给了她一双水晶鞋，是世界上最漂亮的水晶鞋。打扮好后，白雪公主上了马车。但仙女教母再三叮嘱她，...
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8508
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主立刻跑去摘了一个她能找到的最好的南瓜，拿给仙女教母，她实在想不明白这个南瓜怎么能帮她去参加舞会。仙女教母把南瓜瓤都挖了出来，只剩下南瓜壳。做完这些后，她用魔杖敲了敲南瓜，南瓜瞬间变成了一辆华丽...
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8504
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:210 - 节点内容: 第二天，两位姐姐去参加舞会，白雪公主也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让白雪公主感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还...
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8499
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:210 - 节点内容: 所有女士都忙着打量她的衣服和头饰，希望日后也能找到这样的好料子，请手艺精湛的人做出同样的衣服。王子把白雪公主领到最尊贵的座位上，之后又邀她共舞。她舞姿优雅，众人对她越发赞赏。晚宴十分丰盛，但王子一口也...
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8498
+2025-02-19 22:48:21,419 - root - INFO - tree_retriever.py:210 - 节点内容: 找不到马车夫，白雪公主说：“我去看看捕鼠夹里有没有老鼠，说不定能变成马车夫。” “你说得对，” 仙女教母回答道，“去看看吧。”...
+2025-02-19 22:48:21,427 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:48:23,636 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:48:23,636 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 29, 相似度大于阈值的节点数: 29
+2025-02-19 22:48:23,636 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 22:48:23,636 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7973
+2025-02-19 22:48:23,636 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 22:48:23,638 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7756
+2025-02-19 22:48:23,638 - root - INFO - tree_retriever.py:210 - 节点内容: 要把大象装冰箱，总共分几步？...
+2025-02-19 22:48:23,638 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7544
+2025-02-19 22:48:23,638 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-02-19 22:48:23,638 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7504
+2025-02-19 22:48:23,638 - root - INFO - tree_retriever.py:210 - 节点内容: 我也喜欢泡澡，我准备2月15号去和朋友一起泡澡...
+2025-02-19 22:48:23,638 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7472
+2025-02-19 22:48:23,638 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-02-19 22:48:23,638 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 26, 'layer_number': 0}, {'node_index': 29, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}, {'node_index': 28, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}]
+2025-02-19 22:48:32,155 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 22:48:32,156 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 22:48:33,138 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 22:48:33,138 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 22:48:33,140 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:48:33,140 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 22:48:33,140 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-19 22:48:33,140 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 22:48:33,140 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 33
+2025-02-19 22:48:33,140 - root - INFO - tree_structures.py:63 - 节点 33 已添加到树中
+2025-02-19 22:48:33,140 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 33
+2025-02-19 22:48:33,140 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:48:33,168 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:48:33,168 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000018F29F975B0>
+            层数: None
+            起始层: None
+        
+2025-02-19 22:48:33,169 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 22:48:33,169 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739976512145_1151 已添加到运行中的RA树结构
+2025-02-19 22:48:33,169 - root - INFO - memory_manager.py:314 - 记忆 m_1739976512145_1151 已添加到树结构
+2025-02-19 22:48:33,169 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 22:48:33,169 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 22:48:33,169 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 22:48:33,169 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:48:33,193 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:48:33,193 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 22:48:33,215 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 22:48:33,216 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 22:48:33,216 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 22:48:33,216 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 22:48:33,226 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 22:48:33,226 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:48:33] "POST /chat HTTP/1.1" 200 -
+2025-02-19 22:50:03,312 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:50:05,708 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:50:05,708 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 53, 相似度大于阈值的节点数: 53
+2025-02-19 22:50:05,708 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 22:50:05,709 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8570
+2025-02-19 22:50:05,709 - root - INFO - tree_retriever.py:210 - 节点内容: 第二天，两位姐姐去参加舞会，白雪公主也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让白雪公主感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还...
+2025-02-19 22:50:05,709 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8555
+2025-02-19 22:50:05,709 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。白雪公主既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8550
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:210 - 节点内容: 于是，仙女教母用魔杖碰了碰白雪公主，刹那间，她的衣服变成了金银织就的华服，上面还镶嵌着珠宝。之后，仙女教母又给了她一双水晶鞋，是世界上最漂亮的水晶鞋。打扮好后，白雪公主上了马车。但仙女教母再三叮嘱她，...
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8525
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主答应仙女教母会在午夜前离开舞会，接着便驾车而去，高兴得几乎无法自已。王子听说有一位不知来历的公主来了，便跑出去迎接。白雪公主下车时，王子伸手相迎，并将她领到大厅，来到众人面前。顿时，全场一片寂...
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8525
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主对此似乎并不感兴趣。她确实问了那位公主的名字，但姐姐们说不知道，还说王子为了她十分苦恼，不惜一切代价都想知道她是谁。听到这儿，白雪公主微笑着回答：“那她一定非常漂亮，你们真幸运！我能见见她吗？...
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8520
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:210 - 节点内容: 之后，仙女教母对白雪公主说：“再去花园里，在水壶后面你会找到六只蜥蜴，把它们带给我。” “哦，高兴！” 白雪公主叫道，“可我要穿着这身破衣服去吗？”...
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8515
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对白雪公主说：“好了，你看，这一套出行装备很适...
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8489
+2025-02-19 22:50:05,710 - root - INFO - tree_retriever.py:210 - 节点内容: 仙女教母查看捕鼠器，发现里面有六只老鼠，每只老鼠出来时她用魔杖变成骏马。白雪公主拿来另一个捕鼠器，里面有三只大老鼠，其中一只变成了胖胖的马车夫...
+2025-02-19 22:50:05,711 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8488
+2025-02-19 22:50:05,711 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主 作者：夏尔・佩罗 创作时间：1697 年 “我呢，” 大姐说，“我要穿带法式装饰的红色天鹅绒套装。”...
+2025-02-19 22:50:05,711 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8487
+2025-02-19 22:50:05,711 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主立刻跑去摘了一个她能找到的最好的南瓜，拿给仙女教母，她实在想不明白这个南瓜怎么能帮她去参加舞会。仙女教母把南瓜瓤都挖了出来，只剩下南瓜壳。做完这些后，她用魔杖敲了敲南瓜，南瓜瞬间变成了一辆华丽...
+2025-02-19 22:50:05,724 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 30, 相似度大于阈值的节点数: 29
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7828
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:210 - 节点内容: 要把大象装冰箱，总共分几步？...
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7828
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7758
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-02-19 22:50:10,213 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7744
+2025-02-19 22:50:10,219 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-02-19 22:50:10,219 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7695
+2025-02-19 22:50:10,219 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 22:50:10,219 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 29, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}, {'node_index': 32, 'layer_number': 0}]
+2025-02-19 22:50:19,312 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 22:50:19,312 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 22:50:23,494 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 22:50:23,494 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 22:50:23,498 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:50:23,498 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 22:50:23,498 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 34
+2025-02-19 22:50:23,498 - root - INFO - tree_structures.py:63 - 节点 34 已添加到树中
+2025-02-19 22:50:23,498 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 34
+2025-02-19 22:50:23,498 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:50:23,525 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:50:23,525 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000018F29F975B0>
+            层数: None
+            起始层: None
+        
+2025-02-19 22:50:23,525 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 22:50:23,525 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739976619288_8671 已添加到运行中的RA树结构
+2025-02-19 22:50:23,525 - root - INFO - memory_manager.py:314 - 记忆 m_1739976619288_8671 已添加到树结构
+2025-02-19 22:50:23,525 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 22:50:23,525 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 22:50:23,525 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 22:50:23,525 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:50:23,554 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:50:23,554 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 22:50:23,559 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 22:50:23,559 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 22:50:23,559 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 22:50:23,560 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 22:50:23,563 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 22:50:23,570 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:50:23] "POST /chat HTTP/1.1" 200 -
+2025-02-19 22:54:10,048 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 53, 相似度大于阈值的节点数: 53
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8624
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主就这样穿着这身衣服被带到王子面前。王子觉得她比以前更迷人了，几天后，他们举行了婚礼。白雪公主既美丽又善良，她让两位姐姐住在宫里，还在同一天为她们和宫里的两位贵族公子牵线搭桥。...
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8561
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:210 - 节点内容: 所有女士都忙着打量她的衣服和头饰，希望日后也能找到这样的好料子，请手艺精湛的人做出同样的衣服。王子把白雪公主领到最尊贵的座位上，之后又邀她共舞。她舞姿优雅，众人对她越发赞赏。晚宴十分丰盛，但王子一口也...
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8548
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:210 - 节点内容: 他让白雪公主坐下，把水晶鞋套在她的脚上，鞋子很容易就穿上了，就好像是为她的脚量身定制的一样。两位姐姐惊讶极了，而当白雪公主从口袋里拿出另一只水晶鞋穿上时，她们更是惊愕不已。这时，仙女教母出现了，她用魔...
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8525
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:210 - 节点内容: 于是，仙女教母用魔杖碰了碰白雪公主，刹那间，她的衣服变成了金银织就的华服，上面还镶嵌着珠宝。之后，仙女教母又给了她一双水晶鞋，是世界上最漂亮的水晶鞋。打扮好后，白雪公主上了马车。但仙女教母再三叮嘱她，...
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8515
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主照做了，仙女教母立刻把它们变成了六个侍从。这些侍从马上跳到马车后面，他们的制服上满是金银装饰，彼此紧紧跟着，就好像一辈子只干这个似的。仙女教母接着对白雪公主说：“好了，你看，这一套出行装备很适...
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8511
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:210 - 节点内容: 仙女教母查看捕鼠器，发现里面有六只老鼠，每只老鼠出来时她用魔杖变成骏马。白雪公主拿来另一个捕鼠器，里面有三只大老鼠，其中一只变成了胖胖的马车夫...
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8503
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主走到姐姐们身边坐下，对她们非常有礼貌，还把王子送给她的橙子和柠檬分给她们吃，这让姐姐们十分惊讶，因为她们没认出她来。白雪公主正和姐姐们聊天时，听到时钟敲响了十一点三刻，于是她立刻向众人行了屈膝...
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8496
+2025-02-19 22:54:14,669 - root - INFO - tree_retriever.py:210 - 节点内容: 小妹脱颖而出，穿着平常的衬裙，但配上绣着金花的披风和钻石胸饰，引来众人羡慕。女士们打量她的服饰，希望找到类似好料。王子对白雪公主倾心...
+2025-02-19 22:54:14,674 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8494
+2025-02-19 22:54:14,674 - root - INFO - tree_retriever.py:210 - 节点内容: 第二天，两位姐姐去参加舞会，白雪公主也去了，而且这次她打扮得比之前更加华丽。王子始终陪在她身边，不停地赞美她，对她说着温柔的话。这一切非但没有让白雪公主感到厌烦，她甚至完全忘了仙女教母的叮嘱。她以为还...
+2025-02-19 22:54:14,674 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8486
+2025-02-19 22:54:14,674 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主立刻跑去摘了一个她能找到的最好的南瓜，拿给仙女教母，她实在想不明白这个南瓜怎么能帮她去参加舞会。仙女教母把南瓜瓤都挖了出来，只剩下南瓜壳。做完这些后，她用魔杖敲了敲南瓜，南瓜瞬间变成了一辆华丽...
+2025-02-19 22:54:14,689 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:54:19,085 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:54:19,085 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 31, 相似度大于阈值的节点数: 31
+2025-02-19 22:54:19,085 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 22:54:19,085 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8589
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:210 - 节点内容: 我的意思是，白雪公主的故事是怎样的，如何最后得到幸福...
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8475
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:210 - 节点内容: 请只使用参考文本中的信息，重新回答我，白雪公主的故事是怎样的，如何最后得到幸福...
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7838
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7698
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:210 - 节点内容: 要把大象装冰箱，总共分几步？...
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7648
+2025-02-19 22:54:19,088 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-02-19 22:54:19,088 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 33, 'layer_number': 0}, {'node_index': 34, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 29, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}]
+2025-02-19 22:54:26,944 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 22:54:26,944 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 22:54:28,295 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 22:54:28,295 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 22:54:28,298 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:54:28,298 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 22:54:28,298 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 35
+2025-02-19 22:54:28,298 - root - INFO - tree_structures.py:63 - 节点 35 已添加到树中
+2025-02-19 22:54:28,298 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 35
+2025-02-19 22:54:28,298 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:54:28,324 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:54:28,329 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000018F29F975B0>
+            层数: None
+            起始层: None
+        
+2025-02-19 22:54:28,329 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 22:54:28,329 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739976866934_8186 已添加到运行中的RA树结构
+2025-02-19 22:54:28,329 - root - INFO - memory_manager.py:314 - 记忆 m_1739976866934_8186 已添加到树结构
+2025-02-19 22:54:28,329 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 22:54:28,329 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 22:54:28,329 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 22:54:28,329 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:54:28,348 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:54:28,352 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 22:54:28,356 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 22:54:28,356 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 22:54:28,356 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 22:54:28,356 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 22:54:28,371 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 22:54:28,373 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:54:28] "POST /chat HTTP/1.1" 200 -
+2025-02-19 22:54:54,251 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 22:54:54,252 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 22:54:57,474 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:54:57] "GET / HTTP/1.1" 200 -
+2025-02-19 22:54:57,925 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:54:57] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 22:54:58,246 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:54:58] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:54:58,247 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:54:58] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:54:58,247 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:54:58] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:54:58,252 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:54:58] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 22:55:10,790 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:55:14,790 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:55:14,790 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 22:55:14,790 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 22:55:14,790 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:55:15,994 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:55:15,994 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 32, 相似度大于阈值的节点数: 32
+2025-02-19 22:55:15,994 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 22:55:15,996 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8556
+2025-02-19 22:55:15,996 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 22:55:15,996 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8308
+2025-02-19 22:55:15,996 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主最重要的三个特质...
+2025-02-19 22:55:15,998 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8049
+2025-02-19 22:55:15,998 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-19 22:55:15,998 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7992
+2025-02-19 22:55:15,998 - root - INFO - tree_retriever.py:210 - 节点内容: 你对学粤语有什么建议吗...
+2025-02-19 22:55:15,998 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7905
+2025-02-19 22:55:15,998 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-19 22:55:15,998 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 26, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}]
+2025-02-19 22:55:24,356 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 22:55:24,356 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 22:55:25,341 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 22:55:25,341 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 22:55:25,341 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:55:25,341 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 22:55:25,341 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-19 22:55:25,341 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 22:55:25,341 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 36
+2025-02-19 22:55:25,341 - root - INFO - tree_structures.py:63 - 节点 36 已添加到树中
+2025-02-19 22:55:25,341 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 36
+2025-02-19 22:55:25,341 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:55:25,374 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:55:25,374 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x000001ED26A8B7C0>
+            层数: None
+            起始层: None
+        
+2025-02-19 22:55:25,374 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 22:55:25,374 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739976924326_4778 已添加到运行中的RA树结构
+2025-02-19 22:55:25,374 - root - INFO - memory_manager.py:314 - 记忆 m_1739976924326_4778 已添加到树结构
+2025-02-19 22:55:25,374 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 22:55:25,374 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 22:55:25,374 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 22:55:25,374 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:55:25,394 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:55:25,394 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 22:55:25,398 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 22:55:25,398 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 22:55:25,398 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 22:55:25,398 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 22:55:25,408 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 22:55:25,409 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:55:25] "POST /chat HTTP/1.1" 200 -
+2025-02-19 22:55:39,348 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:55:43,325 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:55:43,325 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 22:55:43,325 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 22:55:43,325 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 33, 相似度大于阈值的节点数: 33
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8185
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8059
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个python的helloworld...
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8034
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:210 - 节点内容: 工具使用：小宇宙 app 收听播客；在项目中使用 from_pretrained()和 load_state_dict()方法加载分词器和模型；使用 Excel 文件处理数据；处理 JSON 文件；使...
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7967
+2025-02-19 22:55:45,440 - root - INFO - tree_retriever.py:210 - 节点内容: 技术栈：BERT 文本分类、知识图谱、LLM 技术；使用基于 BERT 的模型；利用大语言模型进行高效准确标注；重构意图识别代码并添加异步通信功能；使用安卓系统；使用 zndz 接口进行大语言模型调用...
+2025-02-19 22:55:45,444 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7816
+2025-02-19 22:55:45,444 - root - INFO - tree_retriever.py:210 - 节点内容: 参与字节跳动活动，与团队用 “逗包” 大语言模型写代码，期望结识同行、寻找工作或合作机会。...
+2025-02-19 22:55:45,444 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 32, 'layer_number': 0}, {'node_index': 31, 'layer_number': 0}, {'node_index': 12, 'layer_number': 0}, {'node_index': 7, 'layer_number': 0}, {'node_index': 20, 'layer_number': 0}]
+2025-02-19 22:55:56,502 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 22:55:56,502 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 22:56:00,675 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 22:56:00,675 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 22:56:00,676 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:56:00,677 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 22:56:00,677 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 37
+2025-02-19 22:56:00,677 - root - INFO - tree_structures.py:63 - 节点 37 已添加到树中
+2025-02-19 22:56:00,677 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 37
+2025-02-19 22:56:00,677 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:56:00,710 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:56:00,711 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x000001ED26A8B7C0>
+            层数: None
+            起始层: None
+        
+2025-02-19 22:56:00,711 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 22:56:00,711 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739976956492_7645 已添加到运行中的RA树结构
+2025-02-19 22:56:00,711 - root - INFO - memory_manager.py:314 - 记忆 m_1739976956492_7645 已添加到树结构
+2025-02-19 22:56:00,711 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 22:56:00,711 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 22:56:00,711 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 22:56:00,711 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 22:56:00,744 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 22:56:00,744 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 22:56:00,757 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 22:56:00,757 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 22:56:00,757 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 22:56:00,757 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 22:56:00,762 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 22:56:00,769 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:56:00] "POST /chat HTTP/1.1" 200 -
+2025-02-19 22:57:35,397 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 22:57:35,397 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 22:58:53,402 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 22:58:53,404 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 22:58:57,381 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:58:57] "GET / HTTP/1.1" 200 -
+2025-02-19 22:58:59,409 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:58:59] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 22:59:00,307 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:59:00] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:59:00,373 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:59:00] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 22:59:00,474 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:59:00] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 22:59:00,528 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 22:59:00] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:00:07,967 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:00:12,694 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:00:12,694 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:00:12,694 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:00:12,698 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:00:13,711 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:00:13,711 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 34, 相似度大于阈值的节点数: 32
+2025-02-19 23:00:13,711 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8382
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8126
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8105
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8082
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主最重要的三个特质...
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8021
+2025-02-19 23:00:13,715 - root - INFO - tree_retriever.py:210 - 节点内容: 工具使用：小宇宙 app 收听播客；在项目中使用 from_pretrained()和 load_state_dict()方法加载分词器和模型；使用 Excel 文件处理数据；处理 JSON 文件；使...
+2025-02-19 23:00:13,715 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 26, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}, {'node_index': 12, 'layer_number': 0}]
+2025-02-19 23:00:23,021 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 23:00:23,021 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 23:00:24,048 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 23:00:24,048 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 23:00:24,048 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:00:24,048 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 23:00:24,048 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-19 23:00:24,048 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 23:00:24,048 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 38
+2025-02-19 23:00:24,048 - root - INFO - tree_structures.py:63 - 节点 38 已添加到树中
+2025-02-19 23:00:24,048 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 38
+2025-02-19 23:00:24,048 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:00:24,082 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:00:24,082 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000027926A5FA00>
+            层数: None
+            起始层: None
+        
+2025-02-19 23:00:24,082 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 23:00:24,082 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739977222990_8608 已添加到运行中的RA树结构
+2025-02-19 23:00:24,082 - root - INFO - memory_manager.py:314 - 记忆 m_1739977222990_8608 已添加到树结构
+2025-02-19 23:00:24,082 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 23:00:24,082 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 23:00:24,082 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 23:00:24,082 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:00:24,112 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:00:24,112 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 23:00:24,120 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 23:00:24,120 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 23:00:24,120 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 23:00:24,120 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 23:00:24,130 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 23:00:24,131 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:00:24] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:02:43,307 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:02:43,307 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:02:53,818 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:02:53] "GET / HTTP/1.1" 200 -
+2025-02-19 23:02:54,085 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:02:54] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:02:54,544 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:02:54] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:02:54,545 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:02:54] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:02:54,552 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:02:54] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:02:54,555 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:02:54] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:02:56,314 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:02:57,337 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:02:57,337 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:02:57,337 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:02:57,337 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:02:58,514 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:02:58,514 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 35, 相似度大于阈值的节点数: 32
+2025-02-19 23:02:58,514 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8382
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8126
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8105
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8082
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主最重要的三个特质...
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8021
+2025-02-19 23:02:58,519 - root - INFO - tree_retriever.py:210 - 节点内容: 工具使用：小宇宙 app 收听播客；在项目中使用 from_pretrained()和 load_state_dict()方法加载分词器和模型；使用 Excel 文件处理数据；处理 JSON 文件；使...
+2025-02-19 23:02:58,519 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 26, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}, {'node_index': 12, 'layer_number': 0}]
+2025-02-19 23:03:07,361 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-19 23:03:07,361 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:03:07] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:04:08,148 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:04:09,111 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:04:09,111 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:04:09,111 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:04:09,111 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:04:10,262 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:04:10,262 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 35, 相似度大于阈值的节点数: 35
+2025-02-19 23:04:10,262 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8103
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7966
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个python的helloworld...
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.6973
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:210 - 节点内容: 工具使用：小宇宙 app 收听播客；在项目中使用 from_pretrained()和 load_state_dict()方法加载分词器和模型；使用 Excel 文件处理数据；处理 JSON 文件；使...
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.6934
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.6826
+2025-02-19 23:04:10,269 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:04:10,269 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 32, 'layer_number': 0}, {'node_index': 31, 'layer_number': 0}, {'node_index': 12, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 37, 'layer_number': 0}]
+2025-02-19 23:04:13,894 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 23:04:13,894 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 23:04:15,130 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 23:04:15,130 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 23:04:15,131 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:04:15,131 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 23:04:15,131 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-19 23:04:15,132 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 23:04:15,132 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 39
+2025-02-19 23:04:15,132 - root - INFO - tree_structures.py:63 - 节点 39 已添加到树中
+2025-02-19 23:04:15,132 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 39
+2025-02-19 23:04:15,132 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:04:15,161 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:04:15,161 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x00000299A58FB9A0>
+            层数: None
+            起始层: None
+        
+2025-02-19 23:04:15,161 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 23:04:15,161 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739977453885_3690 已添加到运行中的RA树结构
+2025-02-19 23:04:15,161 - root - INFO - memory_manager.py:314 - 记忆 m_1739977453885_3690 已添加到树结构
+2025-02-19 23:04:15,161 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 23:04:15,161 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 23:04:15,161 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 23:04:15,161 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:04:15,190 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:04:15,190 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 23:04:15,190 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 23:04:15,190 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 23:04:15,190 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 23:04:15,190 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 23:04:15,210 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 23:04:15,210 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:04:15] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:05:11,838 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:05:11,838 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:05:12,993 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:05:12] "GET / HTTP/1.1" 200 -
+2025-02-19 23:05:13,133 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:05:13] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:05:13,566 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:05:13] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:05:13,568 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:05:13] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:05:13,571 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:05:13] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:05:13,573 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:05:13] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:05:20,524 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:05:21,861 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:05:21,861 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:05:21,861 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:05:21,861 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:05:23,375 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:05:23,375 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 36, 相似度大于阈值的节点数: 36
+2025-02-19 23:05:23,375 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:05:23,380 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8391
+2025-02-19 23:05:23,381 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 23:05:23,381 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8216
+2025-02-19 23:05:23,381 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 23:05:23,381 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8019
+2025-02-19 23:05:23,381 - root - INFO - tree_retriever.py:210 - 节点内容: 你对学粤语有什么建议吗...
+2025-02-19 23:05:23,382 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7921
+2025-02-19 23:05:23,382 - root - INFO - tree_retriever.py:210 - 节点内容: 请说出你认为最能代表我的三项特质...
+2025-02-19 23:05:23,382 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7906
+2025-02-19 23:05:23,382 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式描述最能代表我的三项特质...
+2025-02-19 23:05:23,382 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 32, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 36, 'layer_number': 0}, {'node_index': 38, 'layer_number': 0}]
+2025-02-19 23:05:31,713 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9062)
+2025-02-19 23:05:31,713 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:05:31] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:10:59,467 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:10:59,467 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:11:00,833 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:11:00] "GET / HTTP/1.1" 200 -
+2025-02-19 23:11:04,122 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:11:04] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:11:04,422 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:11:04] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:11:04,425 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:11:04] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:11:04,430 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:11:04] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:11:04,431 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:11:04] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:11:11,410 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:11:13,694 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:11:13,694 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:11:13,694 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:11:13,694 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 36, 相似度大于阈值的节点数: 36
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8220
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8096
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个python的helloworld...
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8014
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式描述最能代表我的三项特质...
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7971
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7729
+2025-02-19 23:11:14,783 - root - INFO - tree_retriever.py:210 - 节点内容: def hello():     print("Hello World ")...
+2025-02-19 23:11:14,783 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 37, 'layer_number': 0}, {'node_index': 31, 'layer_number': 0}, {'node_index': 38, 'layer_number': 0}, {'node_index': 32, 'layer_number': 0}, {'node_index': 39, 'layer_number': 0}]
+2025-02-19 23:11:25,038 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 23:11:25,040 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 23:11:26,573 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 23:11:26,573 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 23:11:26,574 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:11:26,574 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 23:11:26,574 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-19 23:11:26,574 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 23:11:26,574 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 40
+2025-02-19 23:11:26,574 - root - INFO - tree_structures.py:63 - 节点 40 已添加到树中
+2025-02-19 23:11:26,574 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 40
+2025-02-19 23:11:26,574 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:11:26,610 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:11:26,610 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000023D258F5B50>
+            层数: None
+            起始层: None
+        
+2025-02-19 23:11:26,610 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 23:11:26,610 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739977884975_8608 已添加到运行中的RA树结构
+2025-02-19 23:11:26,610 - root - INFO - memory_manager.py:314 - 记忆 m_1739977884975_8608 已添加到树结构
+2025-02-19 23:11:26,610 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 23:11:26,610 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 23:11:26,610 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 23:11:26,610 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:11:26,633 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:11:26,634 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 23:11:26,638 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 23:11:26,638 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 23:11:26,638 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 23:11:26,639 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 23:11:26,646 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 23:11:26,647 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:11:26] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:16:47,675 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:16:47,675 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:16:49,311 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:16:49] "GET / HTTP/1.1" 200 -
+2025-02-19 23:16:49,565 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:16:49] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:16:49,911 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:16:49] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:16:49,911 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:16:49] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:16:49,913 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:16:49] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:16:49,914 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:16:49] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:16:52,957 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:16:54,704 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:16:54,704 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:16:54,704 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:16:54,704 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:16:55,839 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:16:55,839 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 37, 相似度大于阈值的节点数: 36
+2025-02-19 23:16:55,839 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:16:55,844 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8325
+2025-02-19 23:16:55,845 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个python的helloworld...
+2025-02-19 23:16:55,846 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8228
+2025-02-19 23:16:55,846 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 23:16:55,846 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8121
+2025-02-19 23:16:55,846 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:16:55,846 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7967
+2025-02-19 23:16:55,846 - root - INFO - tree_retriever.py:210 - 节点内容: def hello():     print("Hello World ")...
+2025-02-19 23:16:55,846 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7919
+2025-02-19 23:16:55,846 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式描述最能代表我的三项特质...
+2025-02-19 23:16:55,846 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 31, 'layer_number': 0}, {'node_index': 32, 'layer_number': 0}, {'node_index': 37, 'layer_number': 0}, {'node_index': 39, 'layer_number': 0}, {'node_index': 38, 'layer_number': 0}]
+2025-02-19 23:17:04,954 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 23:17:04,954 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 23:17:07,298 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 23:17:07,298 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 23:17:07,299 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:17:07,299 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 23:17:07,299 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-19 23:17:07,299 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 23:17:07,299 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 41
+2025-02-19 23:17:07,299 - root - INFO - tree_structures.py:63 - 节点 41 已添加到树中
+2025-02-19 23:17:07,299 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 41
+2025-02-19 23:17:07,299 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:17:07,326 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:17:07,326 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x00000171A5918C10>
+            层数: None
+            起始层: None
+        
+2025-02-19 23:17:07,326 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 23:17:07,326 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739978224834_7309 已添加到运行中的RA树结构
+2025-02-19 23:17:07,326 - root - INFO - memory_manager.py:314 - 记忆 m_1739978224834_7309 已添加到树结构
+2025-02-19 23:17:07,327 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 23:17:07,327 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 23:17:07,327 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 23:17:07,327 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:17:07,348 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:17:07,351 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 23:17:07,354 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 23:17:07,354 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 23:17:07,354 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 23:17:07,354 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 23:17:07,364 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 23:17:07,366 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:17:07] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:17:33,478 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:17:34,844 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:17:34,844 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:17:34,844 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:17:34,844 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 38, 相似度大于阈值的节点数: 37
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8753
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8723
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:210 - 节点内容: 请说出你认为最能代表我的三项特质...
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8431
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8067
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8031
+2025-02-19 23:17:35,911 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主最重要的三个特质...
+2025-02-19 23:17:35,911 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 37, 'layer_number': 0}, {'node_index': 36, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}]
+2025-02-19 23:17:45,954 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 23:17:45,956 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 23:17:46,982 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 23:17:46,982 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 23:17:46,983 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:17:46,983 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 23:17:46,983 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 42
+2025-02-19 23:17:46,983 - root - INFO - tree_structures.py:63 - 节点 42 已添加到树中
+2025-02-19 23:17:46,983 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 42
+2025-02-19 23:17:46,983 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:17:47,037 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:17:47,037 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x00000171A5918C10>
+            层数: None
+            起始层: None
+        
+2025-02-19 23:17:47,039 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 23:17:47,039 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739978265933_9471 已添加到运行中的RA树结构
+2025-02-19 23:17:47,039 - root - INFO - memory_manager.py:314 - 记忆 m_1739978265933_9471 已添加到树结构
+2025-02-19 23:17:47,039 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 23:17:47,039 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 23:17:47,039 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 23:17:47,039 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:17:47,090 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:17:47,090 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 23:17:47,101 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 23:17:47,101 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 23:17:47,101 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 23:17:47,101 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 23:17:47,114 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 23:17:47,114 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:17:47] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:23:57,757 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:23:57,757 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:23:59,678 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:23:59] "GET / HTTP/1.1" 200 -
+2025-02-19 23:24:00,183 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:24:00] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:24:00,666 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:24:00] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:24:00,666 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:24:00] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:24:00,667 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:24:00] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:24:00,673 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:24:00] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:24:08,516 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:24:09,702 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:24:09,702 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:24:09,702 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:24:09,702 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:24:10,833 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:24:10,833 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 39, 相似度大于阈值的节点数: 37
+2025-02-19 23:24:10,833 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:24:10,838 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8753
+2025-02-19 23:24:10,838 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:24:10,840 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8723
+2025-02-19 23:24:10,840 - root - INFO - tree_retriever.py:210 - 节点内容: 请说出你认为最能代表我的三项特质...
+2025-02-19 23:24:10,840 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8431
+2025-02-19 23:24:10,840 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 23:24:10,840 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8067
+2025-02-19 23:24:10,840 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-19 23:24:10,840 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8031
+2025-02-19 23:24:10,840 - root - INFO - tree_retriever.py:210 - 节点内容: 白雪公主最重要的三个特质...
+2025-02-19 23:24:10,840 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 37, 'layer_number': 0}, {'node_index': 36, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}]
+2025-02-19 23:24:19,374 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-19 23:24:19,379 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:24:19] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:25:55,311 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:25:55] "GET / HTTP/1.1" 200 -
+2025-02-19 23:25:55,565 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:25:55] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:25:55,627 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:25:55] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:25:55,630 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:25:55] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:25:55,640 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:25:55] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:25:55,644 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:25:55] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:26:02,686 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:26:02] "GET / HTTP/1.1" 200 -
+2025-02-19 23:26:03,055 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:26:03] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:26:03,174 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:26:03] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:26:03,177 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:26:03] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:26:03,188 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:26:03] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:26:03,198 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:26:03] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:29:30,857 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:29:30,857 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:29:52,499 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:29:52] "GET / HTTP/1.1" 200 -
+2025-02-19 23:29:52,867 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:29:52] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:29:53,227 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:29:53] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:29:53,228 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:29:53] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:29:53,230 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:29:53] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:29:53,232 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:29:53] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:29:53,240 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:29:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-19 23:32:12,611 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:32:12,611 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:32:15,672 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:32:15] "GET / HTTP/1.1" 200 -
+2025-02-19 23:32:15,885 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:32:15] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:32:16,417 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:32:16] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:32:16,419 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:32:16] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:32:16,421 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:32:16] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:32:16,423 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:32:16] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:32:31,311 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:32:33,963 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:32:33,969 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:32:33,969 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:32:33,969 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:32:35,125 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:32:35,129 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 39, 相似度大于阈值的节点数: 37
+2025-02-19 23:32:35,129 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:32:35,132 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8906
+2025-02-19 23:32:35,132 - root - INFO - tree_retriever.py:210 - 节点内容: 请说出你认为最能代表我的三项特质...
+2025-02-19 23:32:35,132 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8456
+2025-02-19 23:32:35,132 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:32:35,132 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8452
+2025-02-19 23:32:35,132 - root - INFO - tree_retriever.py:210 - 节点内容: 我是什么样的人...
+2025-02-19 23:32:35,133 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8235
+2025-02-19 23:32:35,133 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-19 23:32:35,133 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8225
+2025-02-19 23:32:35,133 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-19 23:32:35,134 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 36, 'layer_number': 0}, {'node_index': 37, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}]
+2025-02-19 23:32:44,380 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 23:32:44,382 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 23:32:48,539 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 23:32:48,539 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 23:32:48,542 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:32:48,542 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 23:32:48,542 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-19 23:32:48,542 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 23:32:48,542 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 43
+2025-02-19 23:32:48,542 - root - INFO - tree_structures.py:63 - 节点 43 已添加到树中
+2025-02-19 23:32:48,542 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 43
+2025-02-19 23:32:48,542 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:32:48,575 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:32:48,575 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000016DAA2ABD30>
+            层数: None
+            起始层: None
+        
+2025-02-19 23:32:48,575 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 23:32:48,575 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739979164340_5208 已添加到运行中的RA树结构
+2025-02-19 23:32:48,575 - root - INFO - memory_manager.py:314 - 记忆 m_1739979164340_5208 已添加到树结构
+2025-02-19 23:32:48,575 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 23:32:48,575 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 23:32:48,575 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 23:32:48,575 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:32:48,598 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:32:48,598 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 23:32:48,604 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 23:32:48,604 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 23:32:48,604 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 23:32:48,604 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 23:32:48,614 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 23:32:48,614 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:32:48] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:40:42,057 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:40:42,057 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:40:53,302 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:40:53] "GET / HTTP/1.1" 200 -
+2025-02-19 23:40:53,395 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:40:53] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:40:53,757 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:40:53] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:40:53,757 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:40:53] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:40:53,757 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:40:53] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:40:53,758 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:40:53] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:40:59,077 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:41:00,249 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:41:00,250 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:41:00,250 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:41:00,250 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:41:01,315 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:41:01,315 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 40, 相似度大于阈值的节点数: 38
+2025-02-19 23:41:01,315 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8260
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8156
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式描述最能代表我的三项特质...
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7959
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式，描述一下我这个人的三个核心特征...
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7949
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7823
+2025-02-19 23:41:01,319 - root - INFO - tree_retriever.py:210 - 节点内容: 请用md格式回答我总结我的三项特质...
+2025-02-19 23:41:01,319 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 37, 'layer_number': 0}, {'node_index': 38, 'layer_number': 0}, {'node_index': 42, 'layer_number': 0}, {'node_index': 32, 'layer_number': 0}, {'node_index': 43, 'layer_number': 0}]
+2025-02-19 23:41:04,690 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-19 23:41:04,690 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-19 23:41:05,715 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-19 23:41:05,715 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-19 23:41:05,715 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:41:05,715 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-19 23:41:05,715 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-19 23:41:05,715 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-19 23:41:05,715 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 44
+2025-02-19 23:41:05,715 - root - INFO - tree_structures.py:63 - 节点 44 已添加到树中
+2025-02-19 23:41:05,715 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 44
+2025-02-19 23:41:05,715 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:41:05,751 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:41:05,751 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x000001C3A7CEEE20>
+            层数: None
+            起始层: None
+        
+2025-02-19 23:41:05,751 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-19 23:41:05,751 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1739979664669_3690 已添加到运行中的RA树结构
+2025-02-19 23:41:05,751 - root - INFO - memory_manager.py:314 - 记忆 m_1739979664669_3690 已添加到树结构
+2025-02-19 23:41:05,751 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-19 23:41:05,751 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-19 23:41:05,751 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-19 23:41:05,751 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-19 23:41:05,774 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-19 23:41:05,774 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-19 23:41:05,781 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-19 23:41:05,781 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-19 23:41:05,781 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-19 23:41:05,781 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-19 23:41:05,788 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-19 23:41:05,790 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:41:05] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:43:16,947 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:43:16] "GET / HTTP/1.1" 200 -
+2025-02-19 23:43:17,026 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:43:17] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:43:17,074 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:43:17] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:43:17,076 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:43:17] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:43:17,080 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:43:17] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:43:17,083 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:43:17] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:43:20,069 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:43:21,061 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:43:21,061 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:43:21,061 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:43:21,061 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 41, 相似度大于阈值的节点数: 38
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8243
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8149
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式描述最能代表我的三项特质...
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7947
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式，描述一下我这个人的三个核心特征...
+2025-02-19 23:43:22,210 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7934
+2025-02-19 23:43:22,211 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 23:43:22,211 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7820
+2025-02-19 23:43:22,211 - root - INFO - tree_retriever.py:210 - 节点内容: 请用md格式回答我总结我的三项特质...
+2025-02-19 23:43:22,211 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 37, 'layer_number': 0}, {'node_index': 38, 'layer_number': 0}, {'node_index': 42, 'layer_number': 0}, {'node_index': 32, 'layer_number': 0}, {'node_index': 43, 'layer_number': 0}]
+2025-02-19 23:43:25,619 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-19 23:43:25,621 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:43:25] "POST /chat HTTP/1.1" 200 -
+2025-02-19 23:45:32,708 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:45:32,708 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:45:33,922 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:33] "GET / HTTP/1.1" 200 -
+2025-02-19 23:45:34,141 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:34] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:45:34,598 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:34] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:45:34,600 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:34] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:45:34,600 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:34] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:45:34,603 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:34] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:45:51,365 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:51] "GET / HTTP/1.1" 200 -
+2025-02-19 23:45:51,439 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:51] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:45:51,469 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:51] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:45:51,471 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:51] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:45:51,485 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:51] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:45:51,493 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:45:51] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:46:14,740 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:46:14,740 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:46:51,286 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:46:51,286 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:46:53,019 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:46:53] "GET / HTTP/1.1" 200 -
+2025-02-19 23:46:53,231 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:46:53] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:46:53,808 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:46:53] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:46:53,809 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:46:53] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:46:53,810 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:46:53] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:46:53,811 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:46:53] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:52:14,062 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:14] "GET / HTTP/1.1" 200 -
+2025-02-19 23:52:14,117 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:14] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:52:14,131 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:14] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:14,135 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:14] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:52:14,143 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:14] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:14,145 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:14] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,223 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "GET / HTTP/1.1" 200 -
+2025-02-19 23:52:15,262 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:52:15,282 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,290 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,298 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,300 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,785 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "GET / HTTP/1.1" 200 -
+2025-02-19 23:52:15,833 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:52:15,846 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,853 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,860 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,869 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:15,960 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:15] "GET / HTTP/1.1" 200 -
+2025-02-19 23:52:16,014 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:16] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:52:16,039 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:16] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:16,039 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:16] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:16,040 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:16] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:52:16,047 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:16] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:41,176 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2025-02-19 23:52:41,176 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-19 23:52:49,834 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:49] "GET / HTTP/1.1" 200 -
+2025-02-19 23:52:50,084 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:50] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-19 23:52:50,447 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:50] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:50,448 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:50] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-19 23:52:50,448 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:50] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:50,452 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:52:50] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-19 23:52:58,271 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:52:59,485 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:52:59,485 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-19 23:52:59,485 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-19 23:52:59,486 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-19 23:53:00,732 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-19 23:53:00,732 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 41, 相似度大于阈值的节点数: 38
+2025-02-19 23:53:00,732 - root - INFO - tree_retriever.py:202 - 取出前5个节点
+2025-02-19 23:53:00,735 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8120
+2025-02-19 23:53:00,735 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式...
+2025-02-19 23:53:00,735 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8050
+2025-02-19 23:53:00,735 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个python的helloworld...
+2025-02-19 23:53:00,736 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7997
+2025-02-19 23:53:00,736 - root - INFO - tree_retriever.py:210 - 节点内容: 写helloworld...
+2025-02-19 23:53:00,736 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7984
+2025-02-19 23:53:00,736 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式描述最能代表我的三项特质...
+2025-02-19 23:53:00,736 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7802
+2025-02-19 23:53:00,736 - root - INFO - tree_retriever.py:210 - 节点内容: 请使用markdown格式，描述一下我这个人的三个核心特征...
+2025-02-19 23:53:00,736 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 37, 'layer_number': 0}, {'node_index': 31, 'layer_number': 0}, {'node_index': 32, 'layer_number': 0}, {'node_index': 38, 'layer_number': 0}, {'node_index': 42, 'layer_number': 0}]
+2025-02-19 23:53:03,576 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9384)
+2025-02-19 23:53:03,576 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [19/Feb/2025 23:53:03] "POST /chat HTTP/1.1" 200 -

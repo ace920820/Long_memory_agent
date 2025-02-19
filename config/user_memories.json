@@ -2836,9 +2836,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T22:56:14.691759",
       "access_stats": {
-        "count": 2,
+        "count": 3,
         "first_access": "2025-02-13T22:56:14.691759",
-        "last_access": "2025-02-13T23:15:35.182810",
+        "last_access": "2025-02-19T22:55:15.998492",
         "access_history": [
           {
             "time": "2025-02-13T23:08:32.549369",
@@ -2847,10 +2847,14 @@
           {
             "time": "2025-02-13T23:15:35.182810",
             "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:55:15.998492",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.52,
+      "priority_score": 0.55,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -2861,30 +2865,10 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T23:08:38.109138",
       "access_stats": {
-        "count": 9,
+        "count": 15,
         "first_access": "2025-02-13T23:08:38.109138",
-        "last_access": "2025-02-19T22:50:10.219545",
+        "last_access": "2025-02-19T23:32:35.134625",
         "access_history": [
-          {
-            "time": "2025-02-13T23:09:11.951995",
-            "type": "read"
-          },
-          {
-            "time": "2025-02-13T23:09:40.322303",
-            "type": "read"
-          },
-          {
-            "time": "2025-02-13T23:10:25.430602",
-            "type": "read"
-          },
-          {
-            "time": "2025-02-13T23:14:47.716033",
-            "type": "read"
-          },
-          {
-            "time": "2025-02-13T23:16:30.424711",
-            "type": "read"
-          },
           {
             "time": "2025-02-13T23:24:18.888774",
             "type": "read"
@@ -2900,10 +2884,34 @@
           {
             "time": "2025-02-19T22:50:10.219545",
             "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:54:19.088298",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:55:15.998492",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:00:13.715779",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:02:58.519801",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:17:35.911319",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:32:35.134625",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.73,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -2964,9 +2972,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T23:14:54.490915",
       "access_stats": {
-        "count": 3,
+        "count": 4,
         "first_access": "2025-02-13T23:14:54.490915",
-        "last_access": "2025-02-19T22:50:10.219545",
+        "last_access": "2025-02-19T22:54:19.088298",
         "access_history": [
           {
             "time": "2025-02-19T22:47:28.536393",
@@ -2979,10 +2987,14 @@
           {
             "time": "2025-02-19T22:50:10.219545",
             "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:54:19.088298",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55,
+      "priority_score": 0.58,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3009,12 +3021,29 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T23:16:34.385451",
       "access_stats": {
-        "count": 0,
+        "count": 4,
         "first_access": "2025-02-13T23:16:34.385451",
-        "last_access": "2025-02-13T23:16:34.385451",
-        "access_history": []
+        "last_access": "2025-02-19T23:16:55.846435",
+        "access_history": [
+          {
+            "time": "2025-02-19T22:55:45.444633",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:04:10.269523",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:11:14.783366",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:16:55.846435",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.58,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3025,17 +3054,37 @@
       "type": "dialogue",
       "timestamp": "2025-02-13T23:24:24.097912",
       "access_stats": {
-        "count": 1,
+        "count": 6,
         "first_access": "2025-02-13T23:24:24.097912",
-        "last_access": "2025-02-19T22:50:10.219545",
+        "last_access": "2025-02-19T23:41:01.319897",
         "access_history": [
           {
             "time": "2025-02-19T22:50:10.219545",
             "type": "read"
+          },
+          {
+            "time": "2025-02-19T22:55:45.444633",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:04:10.269523",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:11:14.783366",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:16:55.846435",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:41:01.319897",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.49,
+      "priority_score": 0.64,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3046,12 +3095,17 @@
       "type": "dialogue",
       "timestamp": "2025-02-19T22:48:32.145262",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-02-19T22:48:32.145262",
-        "last_access": "2025-02-19T22:48:32.145262",
-        "access_history": []
+        "last_access": "2025-02-19T22:54:19.088298",
+        "access_history": [
+          {
+            "time": "2025-02-19T22:54:19.088298",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.49,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3062,9 +3116,248 @@
       "type": "dialogue",
       "timestamp": "2025-02-19T22:50:19.288306",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-02-19T22:50:19.288306",
-        "last_access": "2025-02-19T22:50:19.288306",
+        "last_access": "2025-02-19T22:54:19.088298",
+        "access_history": [
+          {
+            "time": "2025-02-19T22:54:19.088298",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739976866934_8186",
+      "content": "白雪公主最重要的三个特质",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T22:54:26.934875",
+      "access_stats": {
+        "count": 4,
+        "first_access": "2025-02-19T22:54:26.934875",
+        "last_access": "2025-02-19T23:17:35.911319",
+        "access_history": [
+          {
+            "time": "2025-02-19T22:55:15.998492",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:00:13.715779",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:02:58.521331",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:17:35.911319",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.58,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739976924326_4778",
+      "content": "请说出你认为最能代表我的三项特质",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T22:55:24.326413",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-02-19T22:55:24.326413",
+        "last_access": "2025-02-19T23:32:35.134625",
+        "access_history": [
+          {
+            "time": "2025-02-19T23:17:35.911319",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:32:35.134625",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739976956492_7645",
+      "content": "请使用markdown格式",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T22:55:56.492181",
+      "access_stats": {
+        "count": 6,
+        "first_access": "2025-02-19T22:55:56.492181",
+        "last_access": "2025-02-19T23:41:01.319897",
+        "access_history": [
+          {
+            "time": "2025-02-19T23:04:10.269523",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:11:14.783366",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:16:55.846435",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:17:35.911319",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:32:35.134625",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:41:01.319897",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.64,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739977222990_8608",
+      "content": "请使用markdown格式描述最能代表我的三项特质",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T23:00:22.990095",
+      "access_stats": {
+        "count": 3,
+        "first_access": "2025-02-19T23:00:22.990095",
+        "last_access": "2025-02-19T23:41:01.319897",
+        "access_history": [
+          {
+            "time": "2025-02-19T23:11:14.783366",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:16:55.846435",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-19T23:41:01.319897",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.55,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739977453885_3690",
+      "content": "def hello():     print(\"Hello World!\")",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T23:04:13.885586",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-19T23:04:13.885586",
+        "last_access": "2025-02-19T23:04:13.885586",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739977884975_8608",
+      "content": "# 标题 ## 二级标题  这是**粗体**文本，这是*斜体*文本。  代码示例： ```python def hello():     print(\"Hello World!\")",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T23:11:24.975249",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-19T23:11:24.975249",
+        "last_access": "2025-02-19T23:11:24.975249",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739978224834_7309",
+      "content": "# 测试标题  这是一段**粗体**文本。  代码示例： ```python def hello():     print(\"你好，世界！\")",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T23:17:04.834874",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-19T23:17:04.834874",
+        "last_access": "2025-02-19T23:17:04.834874",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739978265933_9471",
+      "content": "请使用markdown格式，描述一下我这个人的三个核心特征",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T23:17:45.933737",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-02-19T23:17:45.933737",
+        "last_access": "2025-02-19T23:41:01.319897",
+        "access_history": [
+          {
+            "time": "2025-02-19T23:41:01.319897",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739979164340_5208",
+      "content": "请用md格式回答我总结我的三项特质",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T23:32:44.340008",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-02-19T23:32:44.340008",
+        "last_access": "2025-02-19T23:41:01.319897",
+        "access_history": [
+          {
+            "time": "2025-02-19T23:41:01.319897",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1739979664669_3690",
+      "content": "# 测试标题  这是一个**粗体**文本，这是*斜体*文本。  - 列表项1 - 列表项2  1. 有序列表1 2. 有序列表2  这是一个简单的代码：`console.log('test')`",
+      "type": "dialogue",
+      "timestamp": "2025-02-19T23:41:04.669309",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-19T23:41:04.669309",
+        "last_access": "2025-02-19T23:41:04.669309",
         "access_history": []
       },
       "priority_score": 0.0,
