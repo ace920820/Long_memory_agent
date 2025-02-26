@@ -88,7 +88,7 @@ class ChatAgent:
             # 2. 获取相关记忆
             memories = []
             if self.memory_manager:
-                memories = self.memory_manager.retrieve_memories(user_id, user_input)
+                memories = self.memory_manager.retrieve_memories(user_id, user_input,top_k=10)
                 logging.debug(f"Retrieved memories: {memories}")
 
             # 3. 构建上下文

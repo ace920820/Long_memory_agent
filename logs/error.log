@@ -174,3 +174,8 @@ Traceback (most recent call last):
   File "S:\PyCharm\long_mem_agent\routes\document_routes.py", line 182, in generate
     response = document_bp.rag_module.get_documents(query)
 TypeError: get_documents() takes 1 positional argument but 2 were given
+2025-02-24 19:54:44,884 - root - ERROR - RetrievalAugmentation.py:245 - 向现有树添加文档失败: expected string or buffer
+2025-02-24 19:56:46,095 - root - ERROR - raptor_module.py:142 - 搜索过程中出错: 15
+2025-02-24 19:56:46,096 - root - ERROR - agent.py:142 - Error in chat: 'list' object has no attribute 'split'
+2025-02-24 19:57:01,645 - root - ERROR - raptor_module.py:142 - 搜索过程中出错: 10
+2025-02-24 19:57:01,645 - root - ERROR - agent.py:142 - Error in chat: 'list' object has no attribute 'split'
