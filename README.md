@@ -25,6 +25,9 @@ Long Memory Agent是一个基于RAPTOR（Recursive Abstraction of Passages for T
 - 对话生成：基于检索增强的上下文感知对话
 - 知识库管理：支持多种格式文档的智能处理和组织
 
+![image](https://github.com/user-attachments/assets/336854df-ef98-4a44-a13a-0cbb25af455d)
+
+
 ## 🌟 核心特性
 
 ### 1. RAPTOR树形结构
@@ -40,6 +43,9 @@ Long Memory Agent是一个基于RAPTOR（Recursive Abstraction of Passages for T
   - 折叠树检索策略
   - 多粒度匹配优化
   - k近邻快速检索
+
+![image](https://github.com/user-attachments/assets/7d3e2d6e-97e6-46ea-81d9-dfddb0491f03)
+
 
 ### 2. 智能记忆管理
 - **记忆存储系统**
