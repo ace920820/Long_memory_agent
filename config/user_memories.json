@@ -3441,9 +3441,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-26T10:51:47.553331",
       "access_stats": {
-        "count": 2,
+        "count": 4,
         "first_access": "2025-02-26T10:51:47.553331",
-        "last_access": "2025-02-27T09:50:51.930466",
+        "last_access": "2025-02-27T23:00:54.284290",
         "access_history": [
           {
             "time": "2025-02-26T11:26:22.106819",
@@ -3452,10 +3452,18 @@
           {
             "time": "2025-02-27T09:50:51.930466",
             "type": "read"
+          },
+          {
+            "time": "2025-02-27T23:00:03.321211",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-27T23:00:54.284290",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.52,
+      "priority_score": 0.58,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3511,17 +3519,87 @@
       "type": "dialogue",
       "timestamp": "2025-02-27T09:50:55.127429",
       "access_stats": {
-        "count": 1,
+        "count": 3,
         "first_access": "2025-02-27T09:50:55.127429",
-        "last_access": "2025-02-27T09:51:31.225403",
+        "last_access": "2025-02-27T23:00:54.284290",
         "access_history": [
           {
             "time": "2025-02-27T09:51:31.225403",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-27T23:00:03.321211",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-27T23:00:54.284290",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.55,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1740668338490_8480",
+      "content": "GQA:Training Generalized Multi-Query Transformer Models from  Multi-Head Checkpoints这篇文章写了什么",
+      "type": "dialogue",
+      "timestamp": "2025-02-27T22:58:58.490349",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-02-27T22:58:58.490349",
+        "last_access": "2025-02-27T23:00:54.284290",
+        "access_history": [
+          {
+            "time": "2025-02-27T23:00:03.321211",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-27T23:00:54.284290",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1740668409005_3290",
+      "content": "GQA为什么比MHA快，而比MQA准确呢？",
+      "type": "dialogue",
+      "timestamp": "2025-02-27T23:00:09.005003",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-02-27T23:00:09.005003",
+        "last_access": "2025-02-27T23:00:54.284290",
+        "access_history": [
+          {
+            "time": "2025-02-27T23:00:54.284290",
             "type": "read"
           }
         ]
       },
       "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1740668459537_6743",
+      "content": "什么样的任务适合GQA，什么样的任务适合MHA？",
+      "type": "dialogue",
+      "timestamp": "2025-02-27T23:00:59.537802",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-27T23:00:59.537802",
+        "last_access": "2025-02-27T23:00:59.537802",
+        "access_history": []
+      },
+      "priority_score": 0.0,
       "cluster_info": {
         "cluster_id": -1
       }
