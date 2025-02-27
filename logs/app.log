@@ -53573,3 +53573,433 @@ TypeError: get_documents() takes 1 positional argument but 2 were given
 2025-02-26 11:00:54,354 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7823
 2025-02-26 11:00:54,354 - root - INFO - tree_retriever.py:210 - 节点内容: 研究方向：设计对话系统长期记忆模块，运用信息提取和 LightRAG 技术；探索人工智能在智能家居和个人助理领域的应用；开发控制大模型代码输出的语法规范；优化基于 LangChain 的对话系统响应时...
 2025-02-26 11:00:54,354 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 14, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 4, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}, {'node_index': 7, 'layer_number': 0}, {'node_index': 0, 'layer_number': 0}, {'node_index': 12, 'layer_number': 0}, {'node_index': 6, 'layer_number': 0}, {'node_index': 1, 'layer_number': 0}, {'node_index': 9, 'layer_number': 0}]
+2025-02-26 11:01:11,997 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.96.193:5000
+2025-02-26 11:01:11,997 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-26 11:01:15,002 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:01:15] "GET / HTTP/1.1" 200 -
+2025-02-26 11:01:15,338 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:01:15] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-26 11:01:15,615 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:01:15] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-26 11:01:15,616 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:01:15] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-26 11:01:15,619 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:01:15] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-26 11:01:15,619 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:01:15] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-26 11:01:17,049 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-26 11:01:18,224 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-26 11:01:18,225 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-26 11:01:18,225 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-26 11:01:18,225 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-26 11:01:19,378 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-26 11:01:19,378 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 22, 相似度大于阈值的节点数: 21
+2025-02-26 11:01:19,378 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-26 11:01:19,379 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8064
+2025-02-26 11:01:19,379 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-26 11:01:19,380 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8050
+2025-02-26 11:01:19,380 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-26 11:01:19,380 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7954
+2025-02-26 11:01:19,380 - root - INFO - tree_retriever.py:210 - 节点内容: 职业目标：成为有影响力、有威严的人；创立自己的事业；在人工智能领域发展，把握 AI 带来的机遇。...
+2025-02-26 11:01:19,380 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7941
+2025-02-26 11:01:19,380 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-02-26 11:01:19,380 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7857
+2025-02-26 11:01:19,380 - root - INFO - tree_retriever.py:210 - 节点内容: 技术栈：BERT 文本分类、知识图谱、LLM 技术；使用基于 BERT 的模型；利用大语言模型进行高效准确标注；重构意图识别代码并添加异步通信功能；使用安卓系统；使用 zndz 接口进行大语言模型调用...
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7855
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:210 - 节点内容: 1  职业相关 职业背景：拥有超 4 年经验的机器学习工程师，早期在金融行业积累商业思维与决策能力。...
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7840
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:210 - 节点内容: 工具使用：小宇宙 app 收听播客；在项目中使用 from_pretrained()和 load_state_dict()方法加载分词器和模型；使用 Excel 文件处理数据；处理 JSON 文件；使...
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7836
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:210 - 节点内容: 0 自动标注脚本、导诊模型推理 API 接口、分诊对话系统等）；开发基于 RAG 的对话系统；文本分类项目；设计基于大语言模型、LangChain 和 RAG 的智能代理系统；“高血压慢性病管理中的用...
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7825
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:210 - 节点内容: 0 自动标注脚本、导诊模型推理 API 接口、分诊对话系统等）；开发基于 RAG 的对话系统，涉及多项技术（如意图识别、使用大语言模型改写查询等）；进行文本分类项目；设计基于大语言模型、LangCha...
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7823
+2025-02-26 11:01:19,381 - root - INFO - tree_retriever.py:210 - 节点内容: 研究方向：设计对话系统长期记忆模块，运用信息提取和 LightRAG 技术；探索人工智能在智能家居和个人助理领域的应用；开发控制大模型代码输出的语法规范；优化基于 LangChain 的对话系统响应时...
+2025-02-26 11:01:19,381 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 14, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 4, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}, {'node_index': 7, 'layer_number': 0}, {'node_index': 0, 'layer_number': 0}, {'node_index': 12, 'layer_number': 0}, {'node_index': 6, 'layer_number': 0}, {'node_index': 1, 'layer_number': 0}, {'node_index': 9, 'layer_number': 0}]
+2025-02-26 11:01:24,974 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9553)
+2025-02-26 11:01:24,975 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:01:24] "POST /chat HTTP/1.1" 200 -
+2025-02-26 11:26:19,604 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-26 11:26:20,975 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-26 11:26:20,975 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-26 11:26:20,975 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-26 11:26:20,975 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 22, 相似度大于阈值的节点数: 22
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8088
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 用markdown格式回复，描述一下我是个什么样的人...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7758
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 参与字节跳动活动，与团队用 “逗包” 大语言模型写代码，期望结识同行、寻找工作或合作机会。...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7656
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7581
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 技术栈：BERT 文本分类、知识图谱、LLM 技术；使用基于 BERT 的模型；利用大语言模型进行高效准确标注；重构意图识别代码并添加异步通信功能；使用安卓系统；使用 zndz 接口进行大语言模型调用...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7575
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 工具使用：小宇宙 app 收听播客；在项目中使用 from_pretrained()和 load_state_dict()方法加载分词器和模型；使用 Excel 文件处理数据；处理 JSON 文件；使...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7539
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 00 进行自我肯定和反思；中午 12 00 - 13 00 可安排听播客等内容。...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7529
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7505
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 职业目标：成为有影响力、有威严的人；创立自己的事业；在人工智能领域发展，把握 AI 带来的机遇。...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7489
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7443
+2025-02-26 11:26:22,106 - root - INFO - tree_retriever.py:210 - 节点内容: 技能提升：学习大语言模型知识，用于职业发展和面试；练习 Leetcode 编程题；提升动态规划（DP）的理解和应用能力；学习博弈论；提升英语口语水平；学习如何在工作场景获得权力。 2...
+2025-02-26 11:26:22,106 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 25, 'layer_number': 0}, {'node_index': 20, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 7, 'layer_number': 0}, {'node_index': 12, 'layer_number': 0}, {'node_index': 11, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 4, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 5, 'layer_number': 0}]
+2025-02-26 11:26:25,908 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-26 11:26:25,908 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-26 11:26:27,017 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-26 11:26:27,017 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-26 11:26:27,018 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-26 11:26:27,018 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-26 11:26:27,018 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-26 11:26:27,018 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-26 11:26:27,018 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 26
+2025-02-26 11:26:27,018 - root - INFO - tree_structures.py:63 - 节点 26 已添加到树中
+2025-02-26 11:26:27,018 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 26
+2025-02-26 11:26:27,018 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-26 11:26:27,042 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-26 11:26:27,042 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000029E258B31F0>
+            层数: None
+            起始层: None
+        
+2025-02-26 11:26:27,042 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-26 11:26:27,042 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1740540385899_1830 已添加到运行中的RA树结构
+2025-02-26 11:26:27,042 - root - INFO - memory_manager.py:314 - 记忆 m_1740540385899_1830 已添加到树结构
+2025-02-26 11:26:27,042 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-26 11:26:27,042 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-26 11:26:27,042 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-26 11:26:27,042 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-26 11:26:27,065 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-26 11:26:27,065 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-26 11:26:27,071 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-26 11:26:27,071 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-26 11:26:27,071 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-26 11:26:27,071 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-26 11:26:27,080 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-26 11:26:27,080 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:26:27] "POST /chat HTTP/1.1" 200 -
+2025-02-26 11:29:41,813 - root - INFO - agent.py:164 - Cleared conversation history for user default_user after role change to frank_underwood
+2025-02-26 11:29:41,814 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:29:41] "POST /set_role HTTP/1.1" 200 -
+2025-02-26 11:30:48,103 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-26 11:30:49,236 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-26 11:30:49,243 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-26 11:30:49,243 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-26 11:30:49,243 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-26 11:30:50,462 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-26 11:30:50,462 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 23, 相似度大于阈值的节点数: 23
+2025-02-26 11:30:50,462 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-26 11:30:50,462 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8253
+2025-02-26 11:30:50,462 - root - INFO - tree_retriever.py:210 - 节点内容: 工具使用：小宇宙 app 收听播客；在项目中使用 from_pretrained()和 load_state_dict()方法加载分词器和模型；使用 Excel 文件处理数据；处理 JSON 文件；使...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8169
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 技术栈：BERT 文本分类、知识图谱、LLM 技术；使用基于 BERT 的模型；利用大语言模型进行高效准确标注；重构意图识别代码并添加异步通信功能；使用安卓系统；使用 zndz 接口进行大语言模型调用...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8141
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 研究方向：设计对话系统长期记忆模块，运用信息提取和 LightRAG 技术；探索人工智能在智能家居和个人助理领域的应用；开发控制大模型代码输出的语法规范；优化基于 LangChain 的对话系统响应时...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8115
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 当前工作：负责用 AI 工具辅助编程的高级对话系统开发中的数据分析；开发控制大模型代码输出的语法规范；参与训练模型项目，使用扩展数据集训练模型并评估性能；开发导诊相关系统（如导诊 2...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8103
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 0 自动标注脚本、导诊模型推理 API 接口、分诊对话系统等）；开发基于 RAG 的对话系统；文本分类项目；设计基于大语言模型、LangChain 和 RAG 的智能代理系统；“高血压慢性病管理中的用...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8068
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8048
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 技能提升：学习大语言模型知识，用于职业发展和面试；练习 Leetcode 编程题；提升动态规划（DP）的理解和应用能力；学习博弈论；提升英语口语水平；学习如何在工作场景获得权力。 2...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8020
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 0 自动标注脚本、导诊模型推理 API 接口、分诊对话系统等）；开发基于 RAG 的对话系统，涉及多项技术（如意图识别、使用大语言模型改写查询等）；进行文本分类项目；设计基于大语言模型、LangCha...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7971
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 参与字节跳动活动，与团队用 “逗包” 大语言模型写代码，期望结识同行、寻找工作或合作机会。...
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7971
+2025-02-26 11:30:50,467 - root - INFO - tree_retriever.py:210 - 节点内容: 1  职业相关 职业背景：拥有超 4 年经验的机器学习工程师，早期在金融行业积累商业思维与决策能力。...
+2025-02-26 11:30:50,467 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 12, 'layer_number': 0}, {'node_index': 7, 'layer_number': 0}, {'node_index': 9, 'layer_number': 0}, {'node_index': 2, 'layer_number': 0}, {'node_index': 6, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 5, 'layer_number': 0}, {'node_index': 1, 'layer_number': 0}, {'node_index': 20, 'layer_number': 0}, {'node_index': 0, 'layer_number': 0}]
+2025-02-26 11:30:54,817 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-26 11:30:54,817 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-26 11:30:55,949 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-26 11:30:55,949 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-26 11:30:55,949 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-26 11:30:55,949 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-26 11:30:55,949 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 27
+2025-02-26 11:30:55,949 - root - INFO - tree_structures.py:63 - 节点 27 已添加到树中
+2025-02-26 11:30:55,949 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 27
+2025-02-26 11:30:55,949 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-26 11:30:55,960 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-26 11:30:55,960 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000029E258B31F0>
+            层数: None
+            起始层: None
+        
+2025-02-26 11:30:55,960 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-26 11:30:55,960 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1740540654798_1415 已添加到运行中的RA树结构
+2025-02-26 11:30:55,960 - root - INFO - memory_manager.py:314 - 记忆 m_1740540654798_1415 已添加到树结构
+2025-02-26 11:30:55,960 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-26 11:30:55,960 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-26 11:30:55,960 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-26 11:30:55,960 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-26 11:30:55,970 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-26 11:30:55,970 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-26 11:30:55,972 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-26 11:30:55,972 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-26 11:30:55,972 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-26 11:30:55,972 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-26 11:30:55,978 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-26 11:30:55,978 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:30:55] "POST /chat HTTP/1.1" 200 -
+2025-02-26 11:31:58,334 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:31:58] "GET /memory-manager HTTP/1.1" 200 -
+2025-02-26 11:31:58,849 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-26 11:31:58,849 - root - INFO - memory_manager.py:441 - Successfully retrieved 115 memories for user default_user
+2025-02-26 11:31:58,849 - root - INFO - main.py:203 - 成功获取 115 条记忆
+2025-02-26 11:31:58,850 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [26/Feb/2025 11:31:58] "GET /api/memories HTTP/1.1" 200 -
+2025-02-27 08:59:29,207 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.34:5000
+2025-02-27 08:59:29,207 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-02-27 08:59:40,622 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 08:59:40] "GET /memory-manager HTTP/1.1" 200 -
+2025-02-27 08:59:41,051 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-27 08:59:41,052 - root - INFO - memory_manager.py:441 - Successfully retrieved 115 memories for user default_user
+2025-02-27 08:59:41,052 - root - INFO - main.py:203 - 成功获取 115 条记忆
+2025-02-27 08:59:41,053 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 08:59:41] "GET /api/memories HTTP/1.1" 200 -
+2025-02-27 09:03:56,597 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:03:56] "GET / HTTP/1.1" 200 -
+2025-02-27 09:03:57,011 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:03:57] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-27 09:03:57,343 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:03:57] "GET /static/images/frank.jpg HTTP/1.1" 200 -
+2025-02-27 09:03:57,343 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:03:57] "GET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1" 200 -
+2025-02-27 09:03:57,344 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:03:57] "GET /static/images/santa.jpg HTTP/1.1" 200 -
+2025-02-27 09:03:57,347 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:03:57] "GET /static/images/assistant.jpg HTTP/1.1" 200 -
+2025-02-27 09:39:08,663 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-27 09:39:10,079 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-27 09:39:10,079 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-27 09:39:10,079 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-27 09:39:10,079 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-27 09:39:11,884 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-27 09:39:11,886 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 24, 相似度大于阈值的节点数: 23
+2025-02-27 09:39:11,886 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-27 09:39:11,921 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8131
+2025-02-27 09:39:11,921 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-27 09:39:11,922 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8003
+2025-02-27 09:39:11,922 - root - INFO - tree_retriever.py:210 - 节点内容: 职业目标：成为有影响力、有威严的人；创立自己的事业；在人工智能领域发展，把握 AI 带来的机遇。...
+2025-02-27 09:39:11,925 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7968
+2025-02-27 09:39:11,926 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-27 09:39:11,926 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7882
+2025-02-27 09:39:11,926 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-02-27 09:39:11,927 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7843
+2025-02-27 09:39:11,927 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-02-27 09:39:11,927 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7822
+2025-02-27 09:39:11,927 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-02-27 09:39:11,927 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7814
+2025-02-27 09:39:11,927 - root - INFO - tree_retriever.py:210 - 节点内容: 1  职业相关 职业背景：拥有超 4 年经验的机器学习工程师，早期在金融行业积累商业思维与决策能力。...
+2025-02-27 09:39:11,928 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7749
+2025-02-27 09:39:11,928 - root - INFO - tree_retriever.py:210 - 节点内容: 00 进行自我肯定和反思；中午 12 00 - 13 00 可安排听播客等内容。...
+2025-02-27 09:39:11,928 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7739
+2025-02-27 09:39:11,928 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个helloword把...
+2025-02-27 09:39:11,928 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7716
+2025-02-27 09:39:11,928 - root - INFO - tree_retriever.py:210 - 节点内容: 最近买了新电视，晚上想看轻松的电影，寻求推荐。 工作日日程安排。 开车通勤，通勤时不便学习 LLM 内容。 有时会信息过载感到疲劳，想调整信息接收行为。 称呼助手为 “V”。...
+2025-02-27 09:39:11,928 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 16, 'layer_number': 0}, {'node_index': 4, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}, {'node_index': 0, 'layer_number': 0}, {'node_index': 11, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 18, 'layer_number': 0}]
+2025-02-27 09:39:15,015 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:39:15] "GET /memory-manager HTTP/1.1" 200 -
+2025-02-27 09:39:15,669 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-27 09:39:15,669 - root - INFO - memory_manager.py:441 - Successfully retrieved 115 memories for user default_user
+2025-02-27 09:39:15,670 - root - INFO - main.py:203 - 成功获取 115 条记忆
+2025-02-27 09:39:15,696 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:39:15] "GET /api/memories HTTP/1.1" 200 -
+2025-02-27 09:39:16,706 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9910)
+2025-02-27 09:39:16,707 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:39:16] "POST /chat HTTP/1.1" 200 -
+2025-02-27 09:40:58,644 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:40:58] "GET /memory-manager HTTP/1.1" 200 -
+2025-02-27 09:40:58,829 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-27 09:40:58,829 - root - INFO - memory_manager.py:441 - Successfully retrieved 115 memories for user default_user
+2025-02-27 09:40:58,830 - root - INFO - main.py:203 - 成功获取 115 条记忆
+2025-02-27 09:40:58,831 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:40:58] "GET /api/memories HTTP/1.1" 200 -
+2025-02-27 09:41:11,466 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:41:11] "GET / HTTP/1.1" 200 -
+2025-02-27 09:41:11,528 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:41:11] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-27 09:41:11,559 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:41:11] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:41:11,559 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:41:11] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:41:11,560 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:41:11] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-27 09:41:11,562 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:41:11] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:50:05,322 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:50:05] "GET / HTTP/1.1" 200 -
+2025-02-27 09:50:05,393 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:50:05] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-27 09:50:05,466 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:50:05] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:50:05,467 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:50:05] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:50:05,469 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:50:05] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-27 09:50:05,471 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:50:05] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:50:15,673 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-27 09:50:16,929 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-27 09:50:16,929 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-27 09:50:16,929 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-27 09:50:16,929 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-27 09:50:18,285 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-27 09:50:18,285 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 24, 相似度大于阈值的节点数: 23
+2025-02-27 09:50:18,285 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-27 09:50:18,287 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8107
+2025-02-27 09:50:18,287 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-27 09:50:18,288 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8031
+2025-02-27 09:50:18,288 - root - INFO - tree_retriever.py:210 - 节点内容: 职业目标：成为有影响力、有威严的人；创立自己的事业；在人工智能领域发展，把握 AI 带来的机遇。...
+2025-02-27 09:50:18,288 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7981
+2025-02-27 09:50:18,289 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-27 09:50:18,289 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7910
+2025-02-27 09:50:18,289 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-02-27 09:50:18,289 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7866
+2025-02-27 09:50:18,289 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-02-27 09:50:18,289 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7857
+2025-02-27 09:50:18,289 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-02-27 09:50:18,290 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7824
+2025-02-27 09:50:18,290 - root - INFO - tree_retriever.py:210 - 节点内容: 1  职业相关 职业背景：拥有超 4 年经验的机器学习工程师，早期在金融行业积累商业思维与决策能力。...
+2025-02-27 09:50:18,290 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7807
+2025-02-27 09:50:18,290 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个helloword把...
+2025-02-27 09:50:18,290 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7757
+2025-02-27 09:50:18,290 - root - INFO - tree_retriever.py:210 - 节点内容: 00 进行自我肯定和反思；中午 12 00 - 13 00 可安排听播客等内容。...
+2025-02-27 09:50:18,293 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7754
+2025-02-27 09:50:18,293 - root - INFO - tree_retriever.py:210 - 节点内容: claude3 7 thinking更新了，这种最新的大模型的出现让我非常激动，有了这样的工具，拓展了我的代码实现能力，让我可以轻松地设计和开发更加强大的功能...
+2025-02-27 09:50:18,293 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 16, 'layer_number': 0}, {'node_index': 4, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}, {'node_index': 0, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 11, 'layer_number': 0}, {'node_index': 27, 'layer_number': 0}]
+2025-02-27 09:50:23,273 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-27 09:50:23,273 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:50:23] "POST /chat HTTP/1.1" 200 -
+2025-02-27 09:50:49,607 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-27 09:50:50,773 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-27 09:50:50,773 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-27 09:50:50,773 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-27 09:50:50,773 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-27 09:50:51,924 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-27 09:50:51,924 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 24, 相似度大于阈值的节点数: 24
+2025-02-27 09:50:51,924 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-27 09:50:51,927 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7930
+2025-02-27 09:50:51,927 - root - INFO - tree_retriever.py:210 - 节点内容: 最近买了新电视，晚上想看轻松的电影，寻求推荐。 工作日日程安排。 开车通勤，通勤时不便学习 LLM 内容。 有时会信息过载感到疲劳，想调整信息接收行为。 称呼助手为 “V”。...
+2025-02-27 09:50:51,927 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7813
+2025-02-27 09:50:51,927 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-02-27 09:50:51,927 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7769
+2025-02-27 09:50:51,927 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-02-27 09:50:51,927 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7750
+2025-02-27 09:50:51,927 - root - INFO - tree_retriever.py:210 - 节点内容: 用markdown格式回复，描述一下我是个什么样的人...
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7716
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7617
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7582
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:210 - 节点内容: claude3 7 thinking更新了，这种最新的大模型的出现让我非常激动，有了这样的工具，拓展了我的代码实现能力，让我可以轻松地设计和开发更加强大的功能...
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7568
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:210 - 节点内容: 00 进行自我肯定和反思；中午 12 00 - 13 00 可安排听播客等内容。...
+2025-02-27 09:50:51,928 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7408
+2025-02-27 09:50:51,929 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-27 09:50:51,929 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7363
+2025-02-27 09:50:51,929 - root - INFO - tree_retriever.py:210 - 节点内容: 研究方向：设计对话系统长期记忆模块，运用信息提取和 LightRAG 技术；探索人工智能在智能家居和个人助理领域的应用；开发控制大模型代码输出的语法规范；优化基于 LangChain 的对话系统响应时...
+2025-02-27 09:50:51,929 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 18, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 27, 'layer_number': 0}, {'node_index': 11, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 9, 'layer_number': 0}]
+2025-02-27 09:50:55,139 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-02-27 09:50:55,141 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-02-27 09:50:56,324 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-02-27 09:50:56,324 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-02-27 09:50:56,332 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-27 09:50:56,332 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-02-27 09:50:56,332 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-02-27 09:50:56,332 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-02-27 09:50:56,333 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 28
+2025-02-27 09:50:56,333 - root - INFO - tree_structures.py:63 - 节点 28 已添加到树中
+2025-02-27 09:50:56,333 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 28
+2025-02-27 09:50:56,333 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-27 09:50:56,357 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-27 09:50:56,357 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000022E2593E640>
+            层数: None
+            起始层: None
+        
+2025-02-27 09:50:56,358 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-02-27 09:50:56,358 - knowledge_base.storage - INFO - storage.py:120 - 文档 m_1740621055127_7886 已添加到运行中的RA树结构
+2025-02-27 09:50:56,358 - root - INFO - memory_manager.py:314 - 记忆 m_1740621055127_7886 已添加到树结构
+2025-02-27 09:50:56,358 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-02-27 09:50:56,358 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-02-27 09:50:56,360 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-02-27 09:50:56,360 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-02-27 09:50:56,376 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-02-27 09:50:56,376 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-02-27 09:50:56,380 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-02-27 09:50:56,380 - knowledge_base.storage - INFO - storage.py:139 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-02-27 09:50:56,380 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-02-27 09:50:56,380 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-02-27 09:50:56,387 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-27 09:50:56,388 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:50:56] "POST /chat HTTP/1.1" 200 -
+2025-02-27 09:51:06,015 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:06] "GET /memory-manager HTTP/1.1" 200 -
+2025-02-27 09:51:06,159 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-27 09:51:06,159 - root - INFO - memory_manager.py:441 - Successfully retrieved 116 memories for user default_user
+2025-02-27 09:51:06,160 - root - INFO - main.py:203 - 成功获取 116 条记忆
+2025-02-27 09:51:06,160 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:06] "GET /api/memories HTTP/1.1" 200 -
+2025-02-27 09:51:26,373 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:26] "GET / HTTP/1.1" 200 -
+2025-02-27 09:51:26,420 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:26] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-27 09:51:26,431 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:26] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:51:26,432 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:26] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:51:26,434 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:26] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-27 09:51:26,436 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:26] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:51:27,507 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-27 09:51:29,239 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-27 09:51:29,239 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-02-27 09:51:29,239 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-27 09:51:29,239 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-02-27 09:51:31,222 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-02-27 09:51:31,222 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 25, 相似度大于阈值的节点数: 24
+2025-02-27 09:51:31,222 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-02-27 09:51:31,223 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8107
+2025-02-27 09:51:31,223 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-02-27 09:51:31,223 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8087
+2025-02-27 09:51:31,223 - root - INFO - tree_retriever.py:210 - 节点内容: 我最喜欢的电视剧是什么...
+2025-02-27 09:51:31,223 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8031
+2025-02-27 09:51:31,223 - root - INFO - tree_retriever.py:210 - 节点内容: 职业目标：成为有影响力、有威严的人；创立自己的事业；在人工智能领域发展，把握 AI 带来的机遇。...
+2025-02-27 09:51:31,224 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7981
+2025-02-27 09:51:31,224 - root - INFO - tree_retriever.py:210 - 节点内容: 习惯养成：学习 LLM 模型；练习 Leetcode 编程；塑造自信的自我形象；培养自信的肢体语言和外在表现。 4  兴趣与偏好...
+2025-02-27 09:51:31,224 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7910
+2025-02-27 09:51:31,224 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7866
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7857
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7824
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:210 - 节点内容: 1  职业相关 职业背景：拥有超 4 年经验的机器学习工程师，早期在金融行业积累商业思维与决策能力。...
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7807
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个helloword把...
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7757
+2025-02-27 09:51:31,225 - root - INFO - tree_retriever.py:210 - 节点内容: 00 进行自我肯定和反思；中午 12 00 - 13 00 可安排听播客等内容。...
+2025-02-27 09:51:31,225 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 16, 'layer_number': 0}, {'node_index': 28, 'layer_number': 0}, {'node_index': 4, 'layer_number': 0}, {'node_index': 14, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}, {'node_index': 0, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}, {'node_index': 11, 'layer_number': 0}]
+2025-02-27 09:51:34,870 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-02-27 09:51:34,870 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:51:34] "POST /chat HTTP/1.1" 200 -
+2025-02-27 09:52:38,524 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:52:38] "GET /memory-manager HTTP/1.1" 200 -
+2025-02-27 09:52:38,620 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-27 09:52:38,620 - root - INFO - memory_manager.py:441 - Successfully retrieved 116 memories for user default_user
+2025-02-27 09:52:38,620 - root - INFO - main.py:203 - 成功获取 116 条记忆
+2025-02-27 09:52:38,621 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:52:38] "GET /api/memories HTTP/1.1" 200 -
+2025-02-27 09:52:44,330 - root - INFO - memory_manager.py:462 - Attempting to delete memories ['m_1736100510510_2261'] for user default_user
+2025-02-27 09:52:44,330 - root - INFO - memory_manager.py:472 - Deleting memory with id m_1736100510510_2261
+2025-02-27 09:52:45,066 - root - INFO - memory_manager.py:462 - Attempting to delete memories ['m_1736100510510_7130'] for user default_user
+2025-02-27 09:52:45,066 - root - INFO - memory_manager.py:472 - Deleting memory with id m_1736100510510_7130
+2025-02-27 09:52:45,311 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-27 09:52:45,312 - root - INFO - memory_manager.py:490 - Successfully deleted 1 memories
+2025-02-27 09:52:45,312 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:52:45] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-02-27 09:52:45,317 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-27 09:52:45,317 - root - INFO - memory_manager.py:441 - Successfully retrieved 114 memories for user default_user
+2025-02-27 09:52:45,317 - root - INFO - main.py:203 - 成功获取 114 条记忆
+2025-02-27 09:52:45,319 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:52:45] "GET /api/memories HTTP/1.1" 200 -
+2025-02-27 09:52:46,058 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-02-27 09:52:46,059 - root - INFO - memory_manager.py:490 - Successfully deleted 1 memories
+2025-02-27 09:52:46,059 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:52:46] "POST /api/memories/delete HTTP/1.1" 200 -
+2025-02-27 09:52:46,062 - root - INFO - main.py:167 - 正在获取用户 default_user 的记忆列表
+2025-02-27 09:52:46,062 - root - INFO - memory_manager.py:441 - Successfully retrieved 114 memories for user default_user
+2025-02-27 09:52:46,062 - root - INFO - main.py:203 - 成功获取 114 条记忆
+2025-02-27 09:52:46,063 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:52:46] "GET /api/memories HTTP/1.1" 200 -
+2025-02-27 09:53:36,552 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:36] "GET / HTTP/1.1" 200 -
+2025-02-27 09:53:36,613 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:36] "GET /get_available_roles HTTP/1.1" 200 -
+2025-02-27 09:53:36,642 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:36] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:53:36,644 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:36] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:53:36,650 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:36] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-02-27 09:53:36,651 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:36] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-02-27 09:53:37,249 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:37] "GET /knowledge-base HTTP/1.1" 200 -
+2025-02-27 09:53:37,590 - knowledge_base.storage - INFO - storage.py:188 - 开始获取完整树结构
+2025-02-27 09:53:37,591 - knowledge_base.storage - INFO - storage.py:194 - 树结构获取成功
+2025-02-27 09:53:37,596 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:37] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-02-27 09:53:37,596 - models.raptor_module - INFO - raptor_module.py:254 - 成功获取文档树结构信息
+2025-02-27 09:53:37,596 - models.raptor_module - INFO - raptor_module.py:255 - {'tree': {'leaf_nodes': [], 'summary_nodes': [], 'num_layers': 0, 'total_nodes': 0}}
+2025-02-27 09:53:37,597 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:37] "GET /api/documents HTTP/1.1" 200 -
+2025-02-27 09:53:37,602 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [27/Feb/2025 09:53:37] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -

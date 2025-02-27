@@ -57,10 +57,6 @@ class RaptorModule:
             if not tree_success:
                 return {"status": "error", "message": "添加文档到树结构失败"}
             
-            # 保存树结构
-            # self.doc_storage.save_RA_tree()
-            # logger.info(f"成功添加文档到树结构，文本长度: {len(text)}")
-            
             return {"status": "success", "message": "文档添加成功"}
             
         except Exception as e:
