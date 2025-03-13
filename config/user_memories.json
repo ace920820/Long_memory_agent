@@ -3441,9 +3441,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-26T10:51:47.553331",
       "access_stats": {
-        "count": 4,
+        "count": 9,
         "first_access": "2025-02-26T10:51:47.553331",
-        "last_access": "2025-02-27T23:00:54.284290",
+        "last_access": "2025-03-12T15:22:20.050593",
         "access_history": [
           {
             "time": "2025-02-26T11:26:22.106819",
@@ -3460,10 +3460,30 @@
           {
             "time": "2025-02-27T23:00:54.284290",
             "type": "read"
+          },
+          {
+            "time": "2025-03-06T11:18:31.217096",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T19:20:00.512866",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T19:23:00.205895",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-11T14:40:05.609676",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-12T15:22:20.050593",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.58,
+      "priority_score": 0.73,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3474,9 +3494,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-26T11:26:25.899134",
       "access_stats": {
-        "count": 3,
+        "count": 9,
         "first_access": "2025-02-26T11:26:25.899134",
-        "last_access": "2025-02-27T09:51:31.225403",
+        "last_access": "2025-03-12T15:22:20.050593",
         "access_history": [
           {
             "time": "2025-02-27T09:39:11.928058",
@@ -3489,10 +3509,34 @@
           {
             "time": "2025-02-27T09:51:31.225403",
             "type": "read"
+          },
+          {
+            "time": "2025-02-27T23:02:27.500060",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T11:18:31.217096",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T19:19:38.828578",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T19:20:00.512866",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T19:23:00.205895",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-12T15:22:20.050593",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55,
+      "priority_score": 0.73,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3519,9 +3563,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-27T09:50:55.127429",
       "access_stats": {
-        "count": 3,
+        "count": 10,
         "first_access": "2025-02-27T09:50:55.127429",
-        "last_access": "2025-02-27T23:00:54.284290",
+        "last_access": "2025-03-12T15:20:07.151472",
         "access_history": [
           {
             "time": "2025-02-27T09:51:31.225403",
@@ -3534,10 +3578,38 @@
           {
             "time": "2025-02-27T23:00:54.284290",
             "type": "read"
+          },
+          {
+            "time": "2025-02-27T23:02:27.500060",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T11:18:31.217096",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T19:19:38.827360",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T19:23:00.205895",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-11T14:40:05.608674",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-12T15:19:11.614926",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-12T15:20:07.151472",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3573,17 +3645,21 @@
       "type": "dialogue",
       "timestamp": "2025-02-27T23:00:09.005003",
       "access_stats": {
-        "count": 1,
+        "count": 2,
         "first_access": "2025-02-27T23:00:09.005003",
-        "last_access": "2025-02-27T23:00:54.284290",
+        "last_access": "2025-02-28T00:21:31.442939",
         "access_history": [
           {
             "time": "2025-02-27T23:00:54.284290",
             "type": "read"
+          },
+          {
+            "time": "2025-02-28T00:21:31.442939",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.49,
+      "priority_score": 0.52,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3594,9 +3670,154 @@
       "type": "dialogue",
       "timestamp": "2025-02-27T23:00:59.537802",
       "access_stats": {
-        "count": 0,
+        "count": 4,
         "first_access": "2025-02-27T23:00:59.537802",
-        "last_access": "2025-02-27T23:00:59.537802",
+        "last_access": "2025-03-12T15:20:07.151472",
+        "access_history": [
+          {
+            "time": "2025-02-27T23:02:27.500060",
+            "type": "read"
+          },
+          {
+            "time": "2025-02-28T00:21:31.442939",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-06T19:19:38.828578",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-12T15:20:07.151472",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.58,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1740673297012_3842",
+      "content": "用三个维度概括GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints这篇文章的内容",
+      "type": "dialogue",
+      "timestamp": "2025-02-28T00:21:37.012970",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-02-28T00:21:37.012970",
+        "last_access": "2025-02-28T00:21:37.012970",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1741260190983_1734",
+      "content": "你好啊，你觉得今年该送我什么礼物",
+      "type": "dialogue",
+      "timestamp": "2025-03-06T19:23:10.983372",
+      "access_stats": {
+        "count": 3,
+        "first_access": "2025-03-06T19:23:10.983372",
+        "last_access": "2025-03-12T15:22:20.050593",
+        "access_history": [
+          {
+            "time": "2025-03-11T14:40:05.609676",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-12T15:19:11.614926",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-12T15:22:20.050593",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.55,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1741675210473_8211",
+      "content": "我喜欢吃冰淇淋",
+      "type": "dialogue",
+      "timestamp": "2025-03-11T14:40:10.473866",
+      "access_stats": {
+        "count": 2,
+        "first_access": "2025-03-11T14:40:10.473866",
+        "last_access": "2025-03-12T15:22:20.050593",
+        "access_history": [
+          {
+            "time": "2025-03-12T15:19:11.614926",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-12T15:22:20.050593",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1741763961939_4271",
+      "content": "彭浦镇第二社区可以看耳鸣吗",
+      "type": "dialogue",
+      "timestamp": "2025-03-12T15:19:21.939643",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-03-12T15:19:21.939643",
+        "last_access": "2025-03-12T15:22:20.050593",
+        "access_history": [
+          {
+            "time": "2025-03-12T15:22:20.050593",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1741764011804_1415",
+      "content": "方锦副主任擅长什么",
+      "type": "dialogue",
+      "timestamp": "2025-03-12T15:20:11.804569",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-03-12T15:20:11.804569",
+        "last_access": "2025-03-12T15:22:20.049555",
+        "access_history": [
+          {
+            "time": "2025-03-12T15:22:20.049555",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1741764146960_6703",
+      "content": "介绍一下方锦",
+      "type": "dialogue",
+      "timestamp": "2025-03-12T15:22:26.960302",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-03-12T15:22:26.960302",
+        "last_access": "2025-03-12T15:22:26.960302",
         "access_history": []
       },
       "priority_score": 0.0,

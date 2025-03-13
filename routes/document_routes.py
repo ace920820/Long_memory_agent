@@ -60,6 +60,17 @@ def upload_document():
             
         # 保存文件到临时目录
         filename = secure_filename(file.filename)
+        logging.info(f"安全化后的文件名: {filename}")  # 添加日志记录文件名
+
+        # 检查安全化后的文件名是否包含扩展名
+        if '.' not in filename:
+            # 从原始文件名获取扩展名
+            original_ext = file.filename.rsplit('.', 1)[1].lower() if '.' in file.filename else ''
+            if original_ext and original_ext in ALLOWED_EXTENSIONS:
+                # 添加原始扩展名
+                filename = f"{filename}.{original_ext}"
+                logging.info(f"添加扩展名后的文件名: {filename}")
+        
         temp_path = os.path.join('temp', filename)
         os.makedirs('temp', exist_ok=True)
         file.save(temp_path)
@@ -68,7 +79,18 @@ def upload_document():
         
         try:
             # 根据文件类型处理文档内容
-            file_ext = filename.rsplit('.', 1)[1].lower()
+            if '.' in filename:
+                file_ext = filename.rsplit('.', 1)[1].lower()
+            else:
+                # 如果文件名中没有扩展名，尝试从原始文件名获取
+                file_ext = file.filename.rsplit('.', 1)[1].lower() if '.' in file.filename else ''
+                if not file_ext:
+                    return jsonify({
+                        "success": False,
+                        "error": "无法确定文件类型"
+                    }), 400
+            
+            logging.info(f"检测到文件类型: {file_ext}")
             content = ""
             
             if file_ext == 'pdf':
@@ -162,8 +184,8 @@ def extract_text_from_pdf(pdf_path: str) -> str:
         logging.error(error_msg)
         raise Exception(error_msg)
 
-@document_bp.route('/api/test_pdf_extract', methods=['POST'], endpoint='pdf_extract_test')
-def pdf_extract_test():
+@document_bp.route('/api/test_pdf_extract', methods=['POST'])
+def test_pdf_extract():
     """测试PDF文本提取功能"""
     try:
         # 记录开始处理上传请求
@@ -224,7 +246,67 @@ def pdf_extract_test():
             "error": error_msg
         }), 500
 
-@document_bp.route('/pdf_test', endpoint='pdf_test_page_view')
+@document_bp.route('/test_pdf_extract', methods=['POST'])
+def test_pdf_extract_web():
+    """
+    用于测试PDF文本提取功能的网页接口
+    接收PDF文件上传并返回提取的文本
+    """
+    # 记录网页端PDF提取请求的开始
+    logging.info("收到网页端PDF文本提取测试请求")
+    
+    # 获取上传的文件
+    if 'file' not in request.files:
+        logging.error("未接收到文件")
+        return jsonify({'error': '未接收到文件'}), 400
+    
+    file = request.files['file']
+    
+    # 检查文件名是否为空
+    if file.filename == '':
+        logging.error("未选择文件")
+        return jsonify({'error': '未选择文件'}), 400
+    
+    # 检查文件是否为PDF
+    if not file.filename.endswith('.pdf'):
+        logging.error(f"不支持的文件类型: {file.filename}")
+        return jsonify({'error': '仅支持PDF文件'}), 400
+    
+    try:
+        # 创建临时文件
+        temp_dir = tempfile.gettempdir()
+        temp_file_path = os.path.join(temp_dir, file.filename)
+        
+        logging.info(f"保存上传的PDF文件到临时路径: {temp_file_path}")
+        file.save(temp_file_path)
+        
+        # 提取PDF文本
+        logging.info(f"开始提取PDF文本: {file.filename}")
+        extracted_text = extract_text_from_pdf(temp_file_path)
+        
+        # 计算文本长度
+        text_length = len(extracted_text)
+        logging.info(f"PDF文本提取成功，共 {text_length} 个字符")
+        
+        # 提取文本预览（最多1000个字符）
+        preview_length = min(1000, text_length)
+        text_preview = extracted_text[:preview_length]
+        
+        # 删除临时文件
+        os.remove(temp_file_path)
+        logging.info(f"已删除临时文件: {temp_file_path}")
+        
+        return jsonify({
+            'success': True,
+            'text_length': text_length,
+            'preview': text_preview
+        })
+    
+    except Exception as e:
+        logging.error(f"PDF处理错误: {str(e)}", exc_info=True)
+        return jsonify({'error': f'PDF处理错误: {str(e)}'}), 500
+
+@document_bp.route('/pdf_test')
 def pdf_test_page():
     """
     渲染PDF测试页面
