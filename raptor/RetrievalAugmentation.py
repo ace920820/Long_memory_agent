@@ -36,7 +36,7 @@ class RetrievalAugmentationConfig:
         tr_start_layer=None,
         # TreeBuilderConfig arguments
         tb_tokenizer=None,
-        tb_max_tokens=100,
+        tb_max_tokens=300,
         tb_num_layers=5,
         tb_threshold=0.5,
         tb_top_k=5,
