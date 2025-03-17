@@ -6,14 +6,14 @@ raptor:
   
   # 树结构参数
   num_layers: 5          # 树的层数
-  threshold: 0.5         # 相似度阈值
+  threshold: 0.1         # 相似度阈值
   top_k: 5               # 检索时返回的最大结果数
   selection_mode: "top_k" # 检索模式，可选 "top_k" 或 "threshold"
   
   # 嵌入模型参数
   embedding:
     # 模型类型: "openai" 或 "local"
-    model_type: "openai"
+    model_type: "local"
     
     # OpenAI嵌入模型配置，当model_type为"openai"时使用
     openai:

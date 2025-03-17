@@ -192,3 +192,4 @@ TypeError: get_documents() takes 1 positional argument but 2 were given
 2025-03-12 14:51:59,374 - root - ERROR - document_routes.py:122 - 处理文档上传时发生错误: list index out of range
 2025-03-12 15:04:24,825 - root - ERROR - document_routes.py:122 - 处理文档上传时发生错误: list index out of range
 2025-03-12 15:10:59,718 - root - ERROR - document_routes.py:122 - 处理文档上传时发生错误: list index out of range
+2025-03-17 14:15:42,401 - knowledge_base.storage - ERROR - storage.py:214 - 获取树结构失败: 20

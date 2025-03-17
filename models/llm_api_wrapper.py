@@ -6,14 +6,14 @@ import logging
 
 class LLMAPIWrapper:
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None, base_url: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"):
-        self.api_key = os.getenv("LLM_API_KEY")
+        self.api_key = os.getenv("OPENAI_API_KEY")
         self.model = model or os.getenv("LLM_MODEL")
         self.base_url = base_url
 
         # 初始化日志记录器
         self.logger = logging.getLogger("LLMAPIWrapper")
         if not self.api_key:
-            raise ValueError("API Key is required. Set it via parameter or environment variable `LLM_API_KEY`.")
+            raise ValueError("API Key is required. Set it via parameter or environment variable `OPENAI_API_KEY`.")
 
     def call_model(
             self,

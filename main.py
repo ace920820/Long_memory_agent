@@ -415,8 +415,7 @@ def create_app(rag_module):
     return app
 
 if __name__ == "__main__":
-    api_key = os.environ.get("LLM_API_KEY")
-    os.environ["OPENAI_API_KEY"] = api_key
+    api_key = os.environ.get("OPENAI_API_KEY")
     # 初始化 RAG 模块
     rag_module = create_rag_module()
     app = create_app(rag_module)

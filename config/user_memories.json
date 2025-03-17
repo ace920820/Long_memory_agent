@@ -3441,14 +3441,10 @@
       "type": "dialogue",
       "timestamp": "2025-02-26T10:51:47.553331",
       "access_stats": {
-        "count": 9,
+        "count": 11,
         "first_access": "2025-02-26T10:51:47.553331",
-        "last_access": "2025-03-12T15:22:20.050593",
+        "last_access": "2025-03-17T14:10:30.618237",
         "access_history": [
-          {
-            "time": "2025-02-26T11:26:22.106819",
-            "type": "read"
-          },
           {
             "time": "2025-02-27T09:50:51.930466",
             "type": "read"
@@ -3480,10 +3476,18 @@
           {
             "time": "2025-03-12T15:22:20.050593",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:09:49.186324",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:10:30.618237",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.73,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3494,9 +3498,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-26T11:26:25.899134",
       "access_stats": {
-        "count": 9,
+        "count": 10,
         "first_access": "2025-02-26T11:26:25.899134",
-        "last_access": "2025-03-12T15:22:20.050593",
+        "last_access": "2025-03-17T14:09:49.186324",
         "access_history": [
           {
             "time": "2025-02-27T09:39:11.928058",
@@ -3533,10 +3537,14 @@
           {
             "time": "2025-03-12T15:22:20.050593",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:09:49.186324",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.73,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3563,18 +3571,10 @@
       "type": "dialogue",
       "timestamp": "2025-02-27T09:50:55.127429",
       "access_stats": {
-        "count": 17,
+        "count": 19,
         "first_access": "2025-02-27T09:50:55.127429",
-        "last_access": "2025-03-15T16:07:46.190962",
+        "last_access": "2025-03-17T14:11:54.584986",
         "access_history": [
-          {
-            "time": "2025-03-11T14:40:05.608674",
-            "type": "read"
-          },
-          {
-            "time": "2025-03-12T15:19:11.614926",
-            "type": "read"
-          },
           {
             "time": "2025-03-12T15:20:07.151472",
             "type": "read"
@@ -3605,6 +3605,14 @@
           },
           {
             "time": "2025-03-15T16:07:46.190962",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:54.584986",
             "type": "read"
           }
         ]
@@ -3645,9 +3653,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-27T23:00:09.005003",
       "access_stats": {
-        "count": 3,
+        "count": 4,
         "first_access": "2025-02-27T23:00:09.005003",
-        "last_access": "2025-03-13T23:35:15.646872",
+        "last_access": "2025-03-17T14:11:54.584986",
         "access_history": [
           {
             "time": "2025-02-27T23:00:54.284290",
@@ -3660,10 +3668,14 @@
           {
             "time": "2025-03-13T23:35:15.646872",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:54.584986",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55,
+      "priority_score": 0.58,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3674,9 +3686,9 @@
       "type": "dialogue",
       "timestamp": "2025-02-27T23:00:59.537802",
       "access_stats": {
-        "count": 6,
+        "count": 7,
         "first_access": "2025-02-27T23:00:59.537802",
-        "last_access": "2025-03-15T15:53:34.532113",
+        "last_access": "2025-03-17T14:11:54.584986",
         "access_history": [
           {
             "time": "2025-02-27T23:02:27.500060",
@@ -3701,10 +3713,14 @@
           {
             "time": "2025-03-15T15:53:34.532113",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:54.584986",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.64,
+      "priority_score": 0.67,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3829,9 +3845,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-12T15:19:21.939643",
       "access_stats": {
-        "count": 4,
+        "count": 7,
         "first_access": "2025-03-12T15:19:21.939643",
-        "last_access": "2025-03-13T23:35:15.646377",
+        "last_access": "2025-03-17T14:11:54.584986",
         "access_history": [
           {
             "time": "2025-03-12T15:22:20.050593",
@@ -3848,10 +3864,22 @@
           {
             "time": "2025-03-13T23:35:15.646377",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:09:49.186324",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:10:30.616194",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:54.584986",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.58,
+      "priority_score": 0.67,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3862,22 +3890,10 @@
       "type": "dialogue",
       "timestamp": "2025-03-12T15:20:11.804569",
       "access_stats": {
-        "count": 9,
+        "count": 13,
         "first_access": "2025-03-12T15:20:11.804569",
-        "last_access": "2025-03-15T16:07:46.190962",
+        "last_access": "2025-03-17T14:11:54.584986",
         "access_history": [
-          {
-            "time": "2025-03-12T15:22:20.049555",
-            "type": "read"
-          },
-          {
-            "time": "2025-03-13T23:10:27.852328",
-            "type": "read"
-          },
-          {
-            "time": "2025-03-13T23:31:47.008505",
-            "type": "read"
-          },
           {
             "time": "2025-03-13T23:32:57.733746",
             "type": "read"
@@ -3901,10 +3917,26 @@
           {
             "time": "2025-03-15T16:07:46.190962",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:09:49.186324",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:10:30.618237",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:54.584986",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.73,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3915,9 +3947,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-12T15:22:26.960302",
       "access_stats": {
-        "count": 6,
+        "count": 8,
         "first_access": "2025-03-12T15:22:26.960302",
-        "last_access": "2025-03-15T16:07:46.190962",
+        "last_access": "2025-03-17T14:11:30.186951",
         "access_history": [
           {
             "time": "2025-03-13T23:10:27.852328",
@@ -3942,10 +3974,18 @@
           {
             "time": "2025-03-15T16:07:46.190962",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:10:30.616194",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.64,
+      "priority_score": 0.7,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3956,9 +3996,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:10:36.400198",
       "access_stats": {
-        "count": 2,
+        "count": 5,
         "first_access": "2025-03-13T23:10:36.400198",
-        "last_access": "2025-03-13T23:35:15.646377",
+        "last_access": "2025-03-17T14:11:54.584986",
         "access_history": [
           {
             "time": "2025-03-13T23:32:57.734660",
@@ -3967,10 +4007,22 @@
           {
             "time": "2025-03-13T23:35:15.646377",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:09:49.186324",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:10:30.616194",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:54.584986",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.52,
+      "priority_score": 0.61,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3981,9 +4033,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:32:38.084078",
       "access_stats": {
-        "count": 6,
+        "count": 9,
         "first_access": "2025-03-13T23:32:38.084078",
-        "last_access": "2025-03-15T16:07:46.190962",
+        "last_access": "2025-03-17T14:11:54.584986",
         "access_history": [
           {
             "time": "2025-03-13T23:32:57.733746",
@@ -4008,10 +4060,22 @@
           {
             "time": "2025-03-15T16:07:46.190962",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:09:49.186324",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:54.584986",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.64,
+      "priority_score": 0.73,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4022,9 +4086,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:33:05.376162",
       "access_stats": {
-        "count": 2,
+        "count": 3,
         "first_access": "2025-03-13T23:33:05.376162",
-        "last_access": "2025-03-15T16:07:46.190962",
+        "last_access": "2025-03-17T14:11:30.186951",
         "access_history": [
           {
             "time": "2025-03-15T15:53:34.532113",
@@ -4033,10 +4097,14 @@
           {
             "time": "2025-03-15T16:07:46.190962",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.52,
+      "priority_score": 0.55,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4047,9 +4115,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:34:01.979933",
       "access_stats": {
-        "count": 2,
+        "count": 5,
         "first_access": "2025-03-13T23:34:01.979933",
-        "last_access": "2025-03-15T16:07:46.190962",
+        "last_access": "2025-03-17T14:11:54.584986",
         "access_history": [
           {
             "time": "2025-03-13T23:35:15.645880",
@@ -4058,10 +4126,22 @@
           {
             "time": "2025-03-15T16:07:46.190962",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:10:30.616194",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:54.584986",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.52,
+      "priority_score": 0.61,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4072,12 +4152,17 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:35:25.179809",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-03-13T23:35:25.179809",
-        "last_access": "2025-03-13T23:35:25.179809",
-        "access_history": []
+        "last_access": "2025-03-17T14:10:30.616194",
+        "access_history": [
+          {
+            "time": "2025-03-17T14:10:30.616194",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.49,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4088,9 +4173,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-15T15:53:38.643870",
       "access_stats": {
-        "count": 2,
+        "count": 3,
         "first_access": "2025-03-15T15:53:38.643870",
-        "last_access": "2025-03-15T16:07:46.190962",
+        "last_access": "2025-03-17T14:11:30.186951",
         "access_history": [
           {
             "time": "2025-03-15T15:54:28.148754",
@@ -4099,10 +4184,14 @@
           {
             "time": "2025-03-15T16:07:46.190962",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.52,
+      "priority_score": 0.55,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4113,9 +4202,67 @@
       "type": "dialogue",
       "timestamp": "2025-03-15T16:07:54.416579",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-03-15T16:07:54.416579",
-        "last_access": "2025-03-15T16:07:54.416579",
+        "last_access": "2025-03-17T14:11:30.186951",
+        "access_history": [
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1742191835334_6917",
+      "content": "介绍一下彭浦镇第二社区卫生中心",
+      "type": "dialogue",
+      "timestamp": "2025-03-17T14:10:35.334520",
+      "access_stats": {
+        "count": 1,
+        "first_access": "2025-03-17T14:10:35.334520",
+        "last_access": "2025-03-17T14:11:30.186951",
+        "access_history": [
+          {
+            "time": "2025-03-17T14:11:30.186951",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.49,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1742191895461_3791",
+      "content": "有哪些王牌家医？",
+      "type": "dialogue",
+      "timestamp": "2025-03-17T14:11:35.461134",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-03-17T14:11:35.461134",
+        "last_access": "2025-03-17T14:11:35.461134",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1742191919244_6650",
+      "content": "他们的电话分别是什么",
+      "type": "dialogue",
+      "timestamp": "2025-03-17T14:11:59.244268",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-03-17T14:11:59.244268",
+        "last_access": "2025-03-17T14:11:59.244268",
         "access_history": []
       },
       "priority_score": 0.0,

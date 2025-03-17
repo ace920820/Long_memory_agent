@@ -35,10 +35,10 @@ def split_text(
         List[str]: A list of text chunks.
     """
     # Split the text into sentences using multiple delimiters
-    delimiters = [".", "!", "?", "\n"]
+    delimiters = ["。", "！", "？", "!", "?", "\n"]
     regex_pattern = "|".join(map(re.escape, delimiters))
     sentences = re.split(regex_pattern, text)
-    overlap = 20
+    overlap = 0
 
     # Calculate the number of tokens for each sentence
     n_tokens = [len(tokenizer.encode(" " + sentence)) for sentence in sentences]
@@ -122,7 +122,7 @@ def recursive_split_text(
     def _recursive_split(text_segment, delimiters_idx=0):
         # 定义分隔符列表，按优先级排序
         delimiters = [
-            [".", "!", "?", "\n"],  # 主要分隔符（句子边界）
+            [".", "!", "?", "。", "！", "？","\n"],  # 主要分隔符（句子边界）
             [",", ";", ":"],        # 次要分隔符（子句边界）
             [" "]                   # 最后的分隔符（单词边界）
         ]
