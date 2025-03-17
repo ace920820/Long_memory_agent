@@ -14,15 +14,26 @@ logger = logging.getLogger(__name__)
 class RaptorConfigManager:
     """RAPTOR配置管理器类，负责加载和管理RAPTOR相关配置"""
     
-    def __init__(self, config_path="config/raptor_config.yaml"):
+    def __init__(self, config_path="config/raptor_config.yaml", global_config_path="config/config.yaml"):
         """
         初始化配置管理器
         
         Args:
             config_path (str): RAPTOR配置文件路径
+            global_config_path (str): 全局配置文件路径
         """
         self.config_path = config_path
+        self.global_config_path = global_config_path
+        
+        # 加载配置
         self.config = self._load_config()
+        self.global_config = self._load_global_config()
+        
+        # 初始化重排序模型和tokenizer
+        self.reranker = None
+        self.reranker_tokenizer = None
+        self._init_reranker()
+        
         logger.info(f"RAPTOR配置管理器初始化，配置文件: {config_path}")
     
     def _load_config(self):
@@ -42,6 +53,96 @@ class RaptorConfigManager:
         except Exception as e:
             logger.error(f"加载RAPTOR配置失败: {str(e)}")
             return {}
+    
+    def _load_global_config(self):
+        """
+        加载全局配置文件
+        
+        Returns:
+            dict: 全局配置字典
+        """
+        try:
+            if os.path.exists(self.global_config_path):
+                with open(self.global_config_path, "r", encoding="utf-8") as f:
+                    return yaml.safe_load(f)
+            else:
+                logger.warning(f"全局配置文件不存在: {self.global_config_path}，使用默认配置")
+                return {}
+        except Exception as e:
+            logger.error(f"加载全局配置失败: {str(e)}")
+            return {}
+            
+    def _init_reranker(self):
+        """
+        初始化重排序模型
+        """
+        # 检查是否启用了重排序
+        rerank_enabled = self.global_config.get('rerank', {}).get('enabled', False)
+        if not rerank_enabled:
+            logger.info("Rerank功能未启用，跳过加载重排序模型")
+            return
+            
+        try:
+            # 导入需要的库
+            import torch
+            from transformers import AutoTokenizer, AutoModelForSequenceClassification
+            
+            # 获取模型路径
+            model_path = self.global_config.get('rerank', {}).get('model_path', "D:/models/bge-reranker-base")
+            
+            # 加载模型
+            logger.info(f"正在加载重排序模型: {model_path}")
+            self.reranker_tokenizer = AutoTokenizer.from_pretrained(model_path)
+            self.reranker = AutoModelForSequenceClassification.from_pretrained(model_path)
+            self.reranker.eval()
+            logger.info("重排序模型加载成功")
+        except Exception as e:
+            logger.error(f"加载重排序模型失败: {str(e)}")
+    
+    def get_reranker(self):
+        """
+        获取重排序模型
+        
+        Returns:
+            重排序模型实例，如果未加载则返回None
+        """
+        if self.reranker is None and self.global_config.get('rerank', {}).get('enabled', False):
+            # 如果模型未加载但配置中启用了重排序，尝试加载模型
+            self._load_reranker()
+        return self.reranker
+    
+    def get_reranker_tokenizer(self):
+        """
+        获取重排序模型的tokenizer
+        
+        Returns:
+            重排序模型的tokenizer，如果未加载则返回None
+        """
+        if self.reranker_tokenizer is None and self.global_config.get('rerank', {}).get('enabled', False):
+            # 如果tokenizer未加载但配置中启用了重排序，尝试加载模型
+            self._load_reranker()
+        return self.reranker_tokenizer
+    
+    def _load_reranker(self):
+        """
+        加载重排序模型
+        """
+        try:
+            # 导入需要的库
+            import torch
+            from transformers import AutoTokenizer, AutoModelForSequenceClassification
+            
+            # 获取模型路径
+            model_path = self.global_config.get('rerank', {}).get('model_path', "D:/models/bge-reranker-base")
+            
+            # 加载模型
+            logger.info(f"正在加载重排序模型: {model_path}")
+            self.reranker_tokenizer = AutoTokenizer.from_pretrained(model_path)
+            self.reranker = AutoModelForSequenceClassification.from_pretrained(model_path)
+            self.reranker.eval()
+            logger.info("重排序模型加载成功")
+        except Exception as e:
+            logger.error(f"加载重排序模型失败: {str(e)}")
     
     def get_embedding_model(self):
         """
@@ -118,3 +219,12 @@ class RaptorConfigManager:
             tr_top_k=top_k,
             tr_selection_mode=selection_mode
         )
+
+    def is_rerank_enabled(self):
+        """
+        检查是否启用了重排序功能
+        
+        Returns:
+            bool: 是否启用重排序
+        """
+        return self.global_config.get('rerank', {}).get('enabled', False)
