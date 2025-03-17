@@ -24,3 +24,7 @@ raptor:
     local:
       model_path: "D:/models/bge-small-zh-v1.5"  # 本地模型路径
       model_name: "bge-small-zh-v1.5"            # 模型名称
+  
+  # 重排序配置
+  rerank:
+    enabled: true       # 是否在检索时使用重排序

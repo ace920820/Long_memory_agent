@@ -193,3 +193,26 @@ TypeError: get_documents() takes 1 positional argument but 2 were given
 2025-03-12 15:04:24,825 - root - ERROR - document_routes.py:122 - 处理文档上传时发生错误: list index out of range
 2025-03-12 15:10:59,718 - root - ERROR - document_routes.py:122 - 处理文档上传时发生错误: list index out of range
 2025-03-17 14:15:42,401 - knowledge_base.storage - ERROR - storage.py:214 - 获取树结构失败: 20
+2025-03-17 15:37:15,601 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:39:14,707 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:39:50,104 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:42:37,631 - root - ERROR - raptor_module.py:275 - 搜索过程中出错: 'RetrievalAugmentation' object has no attribute 'embedding_model'
+2025-03-17 15:42:37,631 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:43:39,687 - root - ERROR - raptor_module.py:275 - 搜索过程中出错: 'RetrievalAugmentation' object has no attribute 'embedding_model'
+2025-03-17 15:43:39,688 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:47:45,139 - root - ERROR - raptor_module.py:275 - 搜索过程中出错: 'RetrievalAugmentation' object has no attribute 'embedding_model'
+2025-03-17 15:47:45,139 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:48:27,417 - root - ERROR - raptor_module.py:275 - 搜索过程中出错: 'RetrievalAugmentation' object has no attribute 'embedding_model'
+2025-03-17 15:58:37,499 - root - ERROR - agent.py:142 - Error in chat: search() got an unexpected keyword argument 'top_k'
+2025-03-17 15:59:49,564 - root - ERROR - agent.py:142 - Error in chat: search() got an unexpected keyword argument 'top_k'
+2025-03-17 16:00:12,815 - root - ERROR - agent.py:142 - Error in chat: search() got an unexpected keyword argument 'top_k'
+2025-03-17 16:00:42,480 - root - ERROR - agent.py:142 - Error in chat: search() got an unexpected keyword argument 'top_k'
+2025-03-17 16:13:41,527 - root - ERROR - raptor_module.py:405 - 执行查询时发生错误: 'ClusterTreeBuilder' object has no attribute 'tree'
+2025-03-17 16:13:41,527 - root - ERROR - raptor_module.py:407 - Traceback (most recent call last):
+  File "S:\PyCharm\long_mem_agent\models\raptor_module.py", line 195, in search
+    if not self.RA.tree_builder.tree or len(self.RA.tree_builder.tree) == 0:
+AttributeError: 'ClusterTreeBuilder' object has no attribute 'tree'
+
+2025-03-17 16:13:41,718 - root - ERROR - agent.py:142 - Error in chat: 'list' object has no attribute 'split'
+2025-03-17 16:15:41,393 - root - ERROR - utils.py:271 - 没有有效的嵌入向量，无法计算距离
+2025-03-17 16:16:54,864 - knowledge_base.storage - ERROR - storage.py:214 - 获取树结构失败: 20

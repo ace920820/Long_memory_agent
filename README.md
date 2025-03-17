@@ -24,6 +24,7 @@ Long Memory Agent是一个基于RAPTOR（Recursive Abstraction of Passages for T
 - 高效知识检索：折叠树检索策略，支持多层级并行搜索
 - 对话生成：基于检索增强的上下文感知对话
 - 知识库管理：支持多种格式文档的智能处理和组织
+- 动态日志管理：支持多级别日志控制，便于调试和生产环境切换
 
 ![image](https://github.com/user-attachments/assets/336854df-ef98-4a44-a13a-0cbb25af455d)
 
@@ -132,6 +133,17 @@ pip install -r requirements.txt
 python main.py
 ```
 
+5. 控制日志级别（可选）
+```bash
+# 设置为调试级别（非常详细的日志）
+python set_log_level.py debug
+
+# 设置为生产环境（只显示警告和错误）
+python set_log_level.py prod
+
+# 其他选项：info, warning, error, dev
+```
+
 ## ⚙️ 配置说明
 
 ### 配置文件
@@ -146,8 +158,38 @@ python main.py
 - **memory_threshold**: 记忆阈值
 - **retrieval_top_k**: 检索TOP-K
 - **embedding_model**: 向量模型选择
+- **use_rerank**: 是否使用重排序 (true/false)
+- **rerank_model**: 重排序模型选择
+- **log_level**: 日志级别 (DEBUG/INFO/WARNING/ERROR)
+- **flexible_embedding**: 灵活嵌入模型配置
+
+### 环境变量
+可通过环境变量动态控制系统行为：
+- **LOG_LEVEL**: 控制日志输出级别 (DEBUG/INFO/WARNING/ERROR)
+- **EMBEDDING_MODEL**: 指定使用的嵌入模型
+- **RERANK_ENABLED**: 控制是否启用重排序 (true/false)
+- **RERANK_MODEL**: 指定使用的重排序模型
 
 ## 🔄 最新更新
+
+### 2025年3月更新
+1. **RAPTOR模块增强**
+   - 修复 RaptorModule search 方法，支持 top_k 参数和重排序功能
+   - 添加 RAPTOR 灵活嵌入模型配置支持和参数控制方案
+   - 添加 Raptor 测试脚本，提供全面测试覆盖
+   - 增加中文符号的切分，优化中文文本处理能力
+
+2. **系统配置优化**
+   - 更新重排序配置管理器，完善日志输出
+   - 清理环境变量管理混乱问题
+   - 添加动态日志级别控制功能
+   - 支持DEBUG级别的详细调试信息输出
+
+3. **代码质量改进**
+   - 实现两阶段检索流程，提升检索精度
+   - 增强错误处理和异常捕获机制
+   - 添加空树检查，提高系统稳定性
+   - 改进日志系统，支持动态日志级别调整
 
 ### 2025年2月更新
 1. **RAPTOR树形结构增强**

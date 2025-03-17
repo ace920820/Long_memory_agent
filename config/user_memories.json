@@ -3441,18 +3441,10 @@
       "type": "dialogue",
       "timestamp": "2025-02-26T10:51:47.553331",
       "access_stats": {
-        "count": 11,
+        "count": 13,
         "first_access": "2025-02-26T10:51:47.553331",
-        "last_access": "2025-03-17T14:10:30.618237",
+        "last_access": "2025-03-17T16:36:52.333227",
         "access_history": [
-          {
-            "time": "2025-02-27T09:50:51.930466",
-            "type": "read"
-          },
-          {
-            "time": "2025-02-27T23:00:03.321211",
-            "type": "read"
-          },
           {
             "time": "2025-02-27T23:00:54.284290",
             "type": "read"
@@ -3484,6 +3476,14 @@
           {
             "time": "2025-03-17T14:10:30.618237",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:36:52.333227",
+            "type": "read"
           }
         ]
       },
@@ -3498,14 +3498,10 @@
       "type": "dialogue",
       "timestamp": "2025-02-26T11:26:25.899134",
       "access_stats": {
-        "count": 10,
+        "count": 11,
         "first_access": "2025-02-26T11:26:25.899134",
-        "last_access": "2025-03-17T14:09:49.186324",
+        "last_access": "2025-03-17T16:15:43.546690",
         "access_history": [
-          {
-            "time": "2025-02-27T09:39:11.928058",
-            "type": "read"
-          },
           {
             "time": "2025-02-27T09:50:18.293335",
             "type": "read"
@@ -3541,6 +3537,10 @@
           {
             "time": "2025-03-17T14:09:49.186324",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
           }
         ]
       },
@@ -3571,18 +3571,10 @@
       "type": "dialogue",
       "timestamp": "2025-02-27T09:50:55.127429",
       "access_stats": {
-        "count": 19,
+        "count": 21,
         "first_access": "2025-02-27T09:50:55.127429",
-        "last_access": "2025-03-17T14:11:54.584986",
+        "last_access": "2025-03-17T16:18:29.975170",
         "access_history": [
-          {
-            "time": "2025-03-12T15:20:07.151472",
-            "type": "read"
-          },
-          {
-            "time": "2025-03-13T23:10:27.852328",
-            "type": "read"
-          },
           {
             "time": "2025-03-13T23:31:47.009002",
             "type": "read"
@@ -3613,6 +3605,14 @@
           },
           {
             "time": "2025-03-17T14:11:54.584986",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:18:29.975170",
             "type": "read"
           }
         ]
@@ -3747,9 +3747,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-06T19:23:10.983372",
       "access_stats": {
-        "count": 8,
+        "count": 10,
         "first_access": "2025-03-06T19:23:10.983372",
-        "last_access": "2025-03-15T16:07:46.190962",
+        "last_access": "2025-03-17T16:17:13.025261",
         "access_history": [
           {
             "time": "2025-03-11T14:40:05.609676",
@@ -3782,10 +3782,18 @@
           {
             "time": "2025-03-15T16:07:46.190962",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:17:13.025261",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.7,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3796,9 +3804,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-11T14:40:10.473866",
       "access_stats": {
-        "count": 8,
+        "count": 10,
         "first_access": "2025-03-11T14:40:10.473866",
-        "last_access": "2025-03-15T15:54:28.148754",
+        "last_access": "2025-03-17T16:17:13.025261",
         "access_history": [
           {
             "time": "2025-03-12T15:19:11.614926",
@@ -3831,10 +3839,18 @@
           {
             "time": "2025-03-15T15:54:28.148754",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:17:13.025261",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.7,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3845,9 +3861,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-12T15:19:21.939643",
       "access_stats": {
-        "count": 7,
+        "count": 9,
         "first_access": "2025-03-12T15:19:21.939643",
-        "last_access": "2025-03-17T14:11:54.584986",
+        "last_access": "2025-03-17T16:36:52.333227",
         "access_history": [
           {
             "time": "2025-03-12T15:22:20.050593",
@@ -3876,10 +3892,18 @@
           {
             "time": "2025-03-17T14:11:54.584986",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:36:52.333227",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.67,
+      "priority_score": 0.73,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3890,18 +3914,10 @@
       "type": "dialogue",
       "timestamp": "2025-03-12T15:20:11.804569",
       "access_stats": {
-        "count": 13,
+        "count": 15,
         "first_access": "2025-03-12T15:20:11.804569",
-        "last_access": "2025-03-17T14:11:54.584986",
+        "last_access": "2025-03-17T16:36:52.333227",
         "access_history": [
-          {
-            "time": "2025-03-13T23:32:57.733746",
-            "type": "read"
-          },
-          {
-            "time": "2025-03-13T23:33:50.810917",
-            "type": "read"
-          },
           {
             "time": "2025-03-13T23:35:15.646377",
             "type": "read"
@@ -3933,6 +3949,14 @@
           {
             "time": "2025-03-17T14:11:54.584986",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:18:29.975170",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:36:52.333227",
+            "type": "read"
           }
         ]
       },
@@ -3947,18 +3971,10 @@
       "type": "dialogue",
       "timestamp": "2025-03-12T15:22:26.960302",
       "access_stats": {
-        "count": 8,
+        "count": 12,
         "first_access": "2025-03-12T15:22:26.960302",
-        "last_access": "2025-03-17T14:11:30.186951",
+        "last_access": "2025-03-17T16:36:52.333227",
         "access_history": [
-          {
-            "time": "2025-03-13T23:10:27.852328",
-            "type": "read"
-          },
-          {
-            "time": "2025-03-13T23:31:47.007492",
-            "type": "read"
-          },
           {
             "time": "2025-03-13T23:32:21.267167",
             "type": "read"
@@ -3982,10 +3998,26 @@
           {
             "time": "2025-03-17T14:11:30.186951",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:17:13.025261",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:18:29.975170",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:36:52.333227",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.7,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -3996,9 +4028,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:10:36.400198",
       "access_stats": {
-        "count": 5,
+        "count": 7,
         "first_access": "2025-03-13T23:10:36.400198",
-        "last_access": "2025-03-17T14:11:54.584986",
+        "last_access": "2025-03-17T16:36:52.333227",
         "access_history": [
           {
             "time": "2025-03-13T23:32:57.734660",
@@ -4019,10 +4051,18 @@
           {
             "time": "2025-03-17T14:11:54.584986",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:36:52.333227",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.61,
+      "priority_score": 0.67,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4033,18 +4073,10 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:32:38.084078",
       "access_stats": {
-        "count": 9,
+        "count": 12,
         "first_access": "2025-03-13T23:32:38.084078",
-        "last_access": "2025-03-17T14:11:54.584986",
+        "last_access": "2025-03-17T16:36:52.333227",
         "access_history": [
-          {
-            "time": "2025-03-13T23:32:57.733746",
-            "type": "read"
-          },
-          {
-            "time": "2025-03-13T23:33:50.811414",
-            "type": "read"
-          },
           {
             "time": "2025-03-13T23:35:15.646377",
             "type": "read"
@@ -4072,10 +4104,22 @@
           {
             "time": "2025-03-17T14:11:54.584986",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:17:13.025261",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:18:29.975170",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:36:52.333227",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.73,
+      "priority_score": 0.76,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4086,9 +4130,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:33:05.376162",
       "access_stats": {
-        "count": 3,
+        "count": 5,
         "first_access": "2025-03-13T23:33:05.376162",
-        "last_access": "2025-03-17T14:11:30.186951",
+        "last_access": "2025-03-17T16:18:29.975170",
         "access_history": [
           {
             "time": "2025-03-15T15:53:34.532113",
@@ -4101,10 +4145,18 @@
           {
             "time": "2025-03-17T14:11:30.186951",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:18:29.975170",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55,
+      "priority_score": 0.61,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4115,9 +4167,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:34:01.979933",
       "access_stats": {
-        "count": 5,
+        "count": 7,
         "first_access": "2025-03-13T23:34:01.979933",
-        "last_access": "2025-03-17T14:11:54.584986",
+        "last_access": "2025-03-17T16:18:29.975170",
         "access_history": [
           {
             "time": "2025-03-13T23:35:15.645880",
@@ -4138,10 +4190,18 @@
           {
             "time": "2025-03-17T14:11:54.584986",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:17:13.025261",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:18:29.975170",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.61,
+      "priority_score": 0.67,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4152,17 +4212,25 @@
       "type": "dialogue",
       "timestamp": "2025-03-13T23:35:25.179809",
       "access_stats": {
-        "count": 1,
+        "count": 3,
         "first_access": "2025-03-13T23:35:25.179809",
-        "last_access": "2025-03-17T14:10:30.616194",
+        "last_access": "2025-03-17T16:36:52.333227",
         "access_history": [
           {
             "time": "2025-03-17T14:10:30.616194",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:17:13.025261",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:36:52.333227",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.49,
+      "priority_score": 0.55,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4173,9 +4241,9 @@
       "type": "dialogue",
       "timestamp": "2025-03-15T15:53:38.643870",
       "access_stats": {
-        "count": 3,
+        "count": 4,
         "first_access": "2025-03-15T15:53:38.643870",
-        "last_access": "2025-03-17T14:11:30.186951",
+        "last_access": "2025-03-17T16:15:43.546690",
         "access_history": [
           {
             "time": "2025-03-15T15:54:28.148754",
@@ -4188,10 +4256,14 @@
           {
             "time": "2025-03-17T14:11:30.186951",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:15:43.546690",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.55,
+      "priority_score": 0.58,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4223,17 +4295,25 @@
       "type": "dialogue",
       "timestamp": "2025-03-17T14:10:35.334520",
       "access_stats": {
-        "count": 1,
+        "count": 3,
         "first_access": "2025-03-17T14:10:35.334520",
-        "last_access": "2025-03-17T14:11:30.186951",
+        "last_access": "2025-03-17T16:18:29.975170",
         "access_history": [
           {
             "time": "2025-03-17T14:11:30.186951",
             "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:17:13.025261",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:18:29.975170",
+            "type": "read"
           }
         ]
       },
-      "priority_score": 0.49,
+      "priority_score": 0.55,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4244,12 +4324,17 @@
       "type": "dialogue",
       "timestamp": "2025-03-17T14:11:35.461134",
       "access_stats": {
-        "count": 0,
+        "count": 1,
         "first_access": "2025-03-17T14:11:35.461134",
-        "last_access": "2025-03-17T14:11:35.461134",
-        "access_history": []
+        "last_access": "2025-03-17T16:18:29.975170",
+        "access_history": [
+          {
+            "time": "2025-03-17T16:18:29.975170",
+            "type": "read"
+          }
+        ]
       },
-      "priority_score": 0.0,
+      "priority_score": 0.49,
       "cluster_info": {
         "cluster_id": -1
       }
@@ -4260,9 +4345,50 @@
       "type": "dialogue",
       "timestamp": "2025-03-17T14:11:59.244268",
       "access_stats": {
-        "count": 0,
+        "count": 2,
         "first_access": "2025-03-17T14:11:59.244268",
-        "last_access": "2025-03-17T14:11:59.244268",
+        "last_access": "2025-03-17T16:18:29.975170",
+        "access_history": [
+          {
+            "time": "2025-03-17T16:17:13.025261",
+            "type": "read"
+          },
+          {
+            "time": "2025-03-17T16:18:29.975170",
+            "type": "read"
+          }
+        ]
+      },
+      "priority_score": 0.52,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1742199514670_9450",
+      "content": "金牌家庭医生都有谁",
+      "type": "dialogue",
+      "timestamp": "2025-03-17T16:18:34.670846",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-03-17T16:18:34.670846",
+        "last_access": "2025-03-17T16:18:34.670846",
+        "access_history": []
+      },
+      "priority_score": 0.0,
+      "cluster_info": {
+        "cluster_id": -1
+      }
+    },
+    {
+      "id": "m_1742200619392_6917",
+      "content": "介绍一下彭浦镇",
+      "type": "dialogue",
+      "timestamp": "2025-03-17T16:36:59.392892",
+      "access_stats": {
+        "count": 0,
+        "first_access": "2025-03-17T16:36:59.392892",
+        "last_access": "2025-03-17T16:36:59.392892",
         "access_history": []
       },
       "priority_score": 0.0,

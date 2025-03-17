@@ -57105,3 +57105,1199 @@ TypeError: get_documents() takes 1 positional argument but 2 were given
 2025-03-17 14:33:28,720 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 33, 'layer_number': 0}, {'node_index': 34, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 40, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}, {'node_index': 43, 'layer_number': 0}, {'node_index': 28, 'layer_number': 0}, {'node_index': 38, 'layer_number': 0}, {'node_index': 37, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}]
 2025-03-17 14:33:37,664 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9741)
 2025-03-17 14:33:37,665 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 14:33:37] "POST /chat HTTP/1.1" 200 -
+2025-03-17 15:37:09,729 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 15:37:09,729 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 15:37:12,571 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:37:12] "GET / HTTP/1.1" 200 -
+2025-03-17 15:37:12,682 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:37:12] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 15:37:13,081 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:37:13] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:37:13,082 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:37:13] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 15:37:13,085 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:37:13] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:37:13,088 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:37:13] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:37:15,523 - root - INFO - raptor_module.py:174 - 使用配置文件中的重排序设置: True
+2025-03-17 15:37:15,523 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 15:37:15,600 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 15:37:15,601 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-03-17 15:37:15,601 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 15:37:15,601 - root - INFO - raptor_module.py:185 - 使用重排序进行检索，查询文本: 你好啊
+2025-03-17 15:37:15,601 - root - WARNING - raptor_module.py:263 - 无法对文本进行分段，跳过重排序
+2025-03-17 15:37:15,601 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:37:15,602 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:37:15] "POST /chat HTTP/1.1" 200 -
+2025-03-17 15:38:32,736 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 15:38:32,738 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 15:38:50,275 - root - INFO - raptor_module.py:174 - 使用配置文件中的重排序设置: True
+2025-03-17 15:38:50,275 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 15:39:14,706 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 15:39:14,706 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-03-17 15:39:14,706 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 15:39:14,707 - root - INFO - raptor_module.py:185 - 使用重排序进行检索，查询文本: 你好啊
+2025-03-17 15:39:14,707 - root - WARNING - raptor_module.py:263 - 无法对文本进行分段，跳过重排序
+2025-03-17 15:39:14,707 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:39:14,711 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:39:14] "POST /chat HTTP/1.1" 200 -
+2025-03-17 15:39:23,297 - root - INFO - raptor_module.py:174 - 使用配置文件中的重排序设置: True
+2025-03-17 15:39:23,298 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 15:39:50,103 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 15:39:50,103 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-03-17 15:39:50,103 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 15:39:50,104 - root - INFO - raptor_module.py:185 - 使用重排序进行检索，查询文本: 你好啊
+2025-03-17 15:39:50,104 - root - WARNING - raptor_module.py:263 - 无法对文本进行分段，跳过重排序
+2025-03-17 15:39:50,104 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:39:50,104 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:39:50] "POST /chat HTTP/1.1" 200 -
+2025-03-17 15:39:54,421 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:39:54] "GET /knowledge-base HTTP/1.1" 200 -
+2025-03-17 15:39:55,016 - knowledge_base.storage - INFO - storage.py:203 - 开始获取完整树结构
+2025-03-17 15:39:55,016 - knowledge_base.storage - INFO - storage.py:209 - 树结构获取成功
+2025-03-17 15:39:55,017 - models.raptor_module - INFO - raptor_module.py:387 - 成功获取文档树结构信息
+2025-03-17 15:39:55,017 - models.raptor_module - INFO - raptor_module.py:388 - {'tree': {'leaf_nodes': [], 'summary_nodes': [], 'num_layers': 0, 'total_nodes': 0}}
+2025-03-17 15:39:55,017 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:39:55] "GET /api/documents HTTP/1.1" 200 -
+2025-03-17 15:39:55,032 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:39:55] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 15:39:55,039 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:39:55] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 15:40:00,190 - root - INFO - document_routes.py:40 - 开始处理文档上传请求
+2025-03-17 15:40:00,194 - root - INFO - document_routes.py:63 - 安全化后的文件名: txt
+2025-03-17 15:40:00,195 - root - INFO - document_routes.py:72 - 添加扩展名后的文件名: txt.txt
+2025-03-17 15:40:00,195 - root - INFO - document_routes.py:78 - 文件已保存到临时路径: temp\txt.txt
+2025-03-17 15:40:00,195 - root - INFO - document_routes.py:93 - 检测到文件类型: txt
+2025-03-17 15:40:00,207 - root - INFO - document_routes.py:111 - 成功读取文件内容，长度: 4177
+2025-03-17 15:40:00,207 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-03-17 15:40:00,218 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-03-17 15:40:01,332 - root - INFO - tree_builder.py:288 - 已创建 17 个叶子节点嵌入
+2025-03-17 15:40:01,332 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-03-17 15:40:01,334 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 15:40:01,334 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 15:40:19,768 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 15:40:23,201 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 99
+2025-03-17 15:40:25,976 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 15:40:29,653 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 99
+2025-03-17 15:40:29,700 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 1
+2025-03-17 15:40:29,700 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 1
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 0
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 0 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 0
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 2，新索引: 1
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 1 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 1
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 1，新索引: 2
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 2 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 2
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 3，新索引: 3
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 3 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 3
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 7，新索引: 4
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 4 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 4
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 4，新索引: 5
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 5 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 5
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 5，新索引: 6
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 6 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 6
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 6，新索引: 7
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 7 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 7
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 8，新索引: 8
+2025-03-17 15:40:29,700 - root - INFO - tree_structures.py:63 - 节点 8 已添加到树中
+2025-03-17 15:40:29,700 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 8
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 10，新索引: 9
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:63 - 节点 9 已添加到树中
+2025-03-17 15:40:29,707 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 9
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 11，新索引: 10
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:63 - 节点 10 已添加到树中
+2025-03-17 15:40:29,707 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 10
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 9，新索引: 11
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:63 - 节点 11 已添加到树中
+2025-03-17 15:40:29,707 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 11
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 13，新索引: 12
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:63 - 节点 12 已添加到树中
+2025-03-17 15:40:29,707 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 12
+2025-03-17 15:40:29,707 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 15，新索引: 13
+2025-03-17 15:40:29,709 - root - INFO - tree_structures.py:63 - 节点 13 已添加到树中
+2025-03-17 15:40:29,709 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 13
+2025-03-17 15:40:29,709 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 14，新索引: 14
+2025-03-17 15:40:29,709 - root - INFO - tree_structures.py:63 - 节点 14 已添加到树中
+2025-03-17 15:40:29,709 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 14
+2025-03-17 15:40:29,709 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 12，新索引: 15
+2025-03-17 15:40:29,709 - root - INFO - tree_structures.py:63 - 节点 15 已添加到树中
+2025-03-17 15:40:29,709 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 15
+2025-03-17 15:40:29,709 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 16，新索引: 16
+2025-03-17 15:40:29,709 - root - INFO - tree_structures.py:63 - 节点 16 已添加到树中
+2025-03-17 15:40:29,709 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 16
+2025-03-17 15:40:29,709 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 15:40:29,710 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 15:40:29,710 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 15:41:17,664 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 15:41:21,884 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 100
+2025-03-17 15:41:25,034 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 15:41:28,501 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 100
+2025-03-17 15:41:28,559 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 5
+            选择模式: top_k
+            上下文嵌入模型: EMB
+            嵌入模型: <raptor.EmbeddingModels.SBertEmbeddingModel object at 0x000002B28C8DC430>
+            层数: None
+            起始层: None
+        
+2025-03-17 15:41:28,560 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-03-17 15:41:28,560 - knowledge_base.storage - INFO - storage.py:135 - 文档  已添加到运行中的RA树结构
+2025-03-17 15:41:28,560 - root - INFO - document_routes.py:123 - 文档 txt.txt 已成功添加到RA树
+2025-03-17 15:41:28,561 - root - INFO - document_routes.py:140 - 临时文件已删除: temp\txt.txt
+2025-03-17 15:41:28,561 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:41:28] "POST /api/documents HTTP/1.1" 200 -
+2025-03-17 15:41:28,569 - knowledge_base.storage - INFO - storage.py:203 - 开始获取完整树结构
+2025-03-17 15:41:28,569 - knowledge_base.storage - INFO - storage.py:209 - 树结构获取成功
+2025-03-17 15:41:28,569 - models.raptor_module - INFO - raptor_module.py:387 - 成功获取文档树结构信息
+2025-03-17 15:41:28,569 - models.raptor_module - INFO - raptor_module.py:388 - {'tree': {'leaf_nodes': [{'text': '彭浦镇第二社区卫生服务中心简介 中心简介：彭浦镇第二社区卫生服务中心坐落于上海市静安区高平路1011号，下设6个社区卫生服务站点，服务周边人口6.68万人，设有全科、内科、外科、妇科、儿科、眼科、口腔科、康复医学科、中医科、医学检验科、医学影像科及预防保健科等业务科室，实际开放床位212张，配备有CT、DR、骨密度仪、心脏超声诊断仪、肺功能检测仪等大型及重要医疗设备仪器，年门诊量176534人次，住院患者人次748人次，年新建家庭病床261张 中心医护人员132人，其中全科医生33人，签约居民27110人', 'index': 0}, {'text': '慢性肾脏病专病门诊以治疗慢性肾脏病为主，邀请CKD领域名老中医、岳阳医院原肾内科陶明龙主任定期来我中心坐诊，依托中心慢性肾脏病“防、治、康”一体化管理化管理中心建设，在社区对慢性肾脏病高危人群进行早期监测，为社区居民对疾病提供早发现、早诊断、早管理、早治疗途径，从而改善疾病愈后', 'index': 1}, {'text': '中心为上海市康复医学会社区康复实训基地，是上海市首批示范性社区康复中心 中心的院训为“团结、敬业、仁爱、奉献”，为社区居民提供基本医疗和公共卫生等服务 1、中心外观照片 2、门诊便民服务中心 3、中心病房照片 4、中心大型设备CT 5、中心大型设备骨密度仪 特色科室（2到3个）： 中心中医科设有慢性肾脏病专病门诊和帕金森病专病门诊', 'index': 2}, {'text': '帕金森病专病门诊是以针灸治疗帕金森病、颈椎病、膝骨性关节炎、类风湿关节炎为特色诊疗技术，荣获上海市中医特色专病专科（颤病）能力建设、吴焕淦上海市名中医工作室基层工作站等荣誉称号 特色门诊基于上海市针灸经络研究所名中医吴焕淦教授学术思想和临床经验，定期邀请其工作室成员临床示范性带教坐诊，为辖区居民的健康保驾护航 1、中医馆 2、特色诊疗科室：中医慢性肾脏病专病门诊', 'index': 3}, {'text': '擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午 08:00-11:30（周一至周五）                                      下午 13:00-16:45（周一、三、五）                                           14:00-16:45（周二、四）                                      夏令时（周一至周五）下午就诊时间为14:00-16:45           延时及双休日服务时间：上午08:00-11:30（周六） 站点服务（填对外开放的）： 服务站名称\t地址\t电话\t服务项目\t服务时间', 'index': 4}, {'text': '3、特色诊疗科室：帕金森病专病门诊 中心康复科是上海市首批示范性社区康复中心 位于三楼的康复综合治疗区，涵盖了康复医学科门诊、康复功能评定室、物理治疗(PT)室、作业治疗(OT)室、语言吞咽治疗(ST)室、物理因子治疗室、感统训练室、儿童康复室、光疗室、高频室、传统康复治疗室等多个治疗科室', 'index': 5}, {'text': '中心结合社区人群不同康复需求和特点，提供整合型的康复服务，如运动训练、物理因子治疗、作业治疗、言语治疗、感统训练等52个项目，通过结合传统中医适宜技术，治疗基本涵盖了神经系统、骨-关节系统、慢性疼痛、老年疾病、儿童康复等康复领域，提供社区常见脑梗死脑出血后遗症、颈椎病、腰椎间盘突出、骨关节炎、COPD、冠心病、骨折后等常见病多发病以及小儿自闭症的康复服务 4、示范性社区康复中心 王牌家医1 姓名：张忆梓 学历：医学硕士', 'index': 6}, {'text': '职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得荣誉：曾担任2项区级课题第一负责人，发表论文十余篇，获得专利1项 联系电话：13761818079 王牌家医2 姓名：方锦 学历：本科 职称：副主任医师 科室：全科门诊', 'index': 7}, {'text': '场中路2600弄社区卫生服务站\t场中路2600弄112号\t56436129\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 永和小区社区卫生服务站\t原平路917弄21号甲\t56512005\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊', 'index': 8}, {'text': '周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站\t场中路3308弄8号\t56526877\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 联系信息：中心地址：上海市静安区高平路1011号   邮政编码：200436 总机电话：56622027     专人接待咨询服务电话：56622027转8216 静安区卫生健康学科人才工作报告', 'index': 9}, {'text': '1.\t人才、学科建设--重要文件和政策 •\t中共中央、国务院  《“健康中国2030”规划纲要》 强调卫生健康人才队伍建设的重要性，提出加强医学教育、科研创新和临床实践的结合，培养高层次医学人才 •\t国家卫健委  《“十四五”卫生健康人才发展规划》 促进人才服务能力提高与结构优化，完善人才管理制度机制，营造人才发展的良好环境 •\t科技部、国家卫健委《“十四五”卫生与健康科技创新专项规划》 加强医学科技创新，支持高水平医学研究平台建设，培养具有国际竞争力的医学科技人才', 'index': 10}, {'text': '每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站\t少年村路672号\t56320616\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 塘南社区卫生服务站\t高平路809弄63号\t56522095\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30', 'index': 11}, {'text': '2.\t静安区卫生系统近三年学科建设成果 国家级重点学科突破：静安区中心医院——卒中后肢体瘫痪的诊治、康护体系建设 市卫生健康委员会临床重点专科：2020-2022：静中心：手及上肢外科、消化内科、药剂科；闸中心：肾内科、血液肿瘤科、药剂科；市北：眼科；三康：重症康复科 2024-2026：静中心：骨科、放射科；闸中心：血液科；市北：眼科；三康：康复科', 'index': 12}, {'text': '闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.\t静安区学科人才建设SWOT分析 1)\t静安区卫生系统学科人才建设优势 区域人口密度大：2022年全市第二医疗服务需求旺盛，丰富的临床病例资源 医疗资源丰富品类齐全：拥有不同层级的医疗卫生机构，有利于不同医疗机构之间的合作与交流 特色专科建设成效显著：康复医学、老年医学、中医等特色专科建设方面取得显著成效 三级医院数量多：便于开展紧密的合作与交流，形成分级诊疗体系', 'index': 13}, {'text': '市中管局中医特色专病专科（社区）（2023年）：江宁：推拿科；彭浦新村：肺胀；芷江西：中医骨伤科；彭二：颤病；大宁：鼻鼽；彭浦镇：骨瘘  静安区学科建设系列项目：2021-2024年：共计19个，其中包括重点学科:3个；重要薄弱学科6个；培育学科5个；优势专病5个； 2024-2027年:共计15个，其中重点学科：3个； 重要薄弱学科3个 ； 培育学科4 个； 优势专病5 个 3.\t近三年人才建设成果 高级人才引进：静中心-曲志伟、苏凡、陈家伟、丁粤粤', 'index': 14}, {'text': '•\t市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •\t市政府  《上海市加强公共卫生体系建设三年行动计划（2023-2025年）》 重点支持公共卫生学科人才建设，培养高水平的公共卫生学科带头人，提升疾控体系的核心竞争力 •\t市卫健委等10个部门《关于进一步加强本市医学队列建设和研究的实施方案》 构建高水平医学队列研究平台，培养创新型队列研究人才，推动医学科技创新和成果转化', 'index': 15}, {'text': '5.\t静安区卫生系统学科人才培养措施 加强高层次人才引进与培养：制定更具吸引力的人才引进政策，为高层次卫生学科人才提供优厚的薪酬待遇、住房补贴、科研经费等支持 拓展人才培养渠道：推进大学附属医院、社区卫生中心教学能力建设 实施人才梯队培养计划：开展“十百千”人才培养计划，形成不同层次、不同结构的人才队伍梯队 完善人才激励与保障机制：健全绩效考核评价制度，优化人才职业发展路径，加强人才服务与保障', 'index': 16}], 'summary_nodes': [{'text': '1. 人才、学科建设的重要文件和政策包括《“健康中国2030”规划纲要》强调卫生健康人才队伍建设、《“十四五”卫生健康人才发展规划》促进人才服务能力提高与结构优化、《“十', 'index': 17, 'children': [10, 12, 13, 14, 15, 16]}, {'text': '这家诊所擅长诊治社区常见病和多发病，特别擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎、白内障和青光眼。他们的服务时间是工作日上午08:00-11:30和下', 'index': 18, 'children': [8, 9, 11, 4]}, {'text': '彭浦镇第二社区卫生服务中心位于上海市静安区高平路1011号，下设6个社区卫生服务站点，服务周边人口6.68万人，拥有全科、内科、外科、妇科、儿科、眼科、口腔科、康复医学科、中医', 'index': 19, 'children': [0, 1, 2, 3, 5, 6, 7]}], 'num_layers': 1, 'total_nodes': 20}}
+2025-03-17 15:41:28,574 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:41:28] "GET /api/documents HTTP/1.1" 200 -
+2025-03-17 15:41:28,585 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:41:28] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 15:42:30,900 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:42:30] "GET / HTTP/1.1" 200 -
+2025-03-17 15:42:30,968 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:42:30] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 15:42:31,427 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:42:31] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:42:31,429 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:42:31] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:42:31,429 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:42:31] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:42:31,432 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:42:31] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 15:42:35,295 - root - INFO - raptor_module.py:174 - 使用配置文件中的重排序设置: True
+2025-03-17 15:42:35,295 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 15:42:37,625 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 15:42:37,625 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 15:42:37,625 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 15:42:37,625 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3649
+2025-03-17 15:42:37,625 - root - INFO - tree_retriever.py:210 - 节点内容: •	市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •	市政府  《上海市加强公共卫生体系建设三年行动计...
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3645
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:210 - 节点内容: 1.	人才、学科建设--重要文件和政策 •	中共中央、国务院  《“健康中国2030”规划纲要》 强调卫生健康人才队伍建设的重要性，提出加强医学教育、科研创新和临床实践的结合，培养高层次医学人才 •	...
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3439
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:210 - 节点内容: 场中路2600弄社区卫生服务站	场中路2600弄112号	56436129	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）...
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3436
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:210 - 节点内容: 这家诊所擅长诊治社区常见病和多发病，特别擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎、白内障和青光眼。他们的服务时间是工作日上午08:00-11:30和下...
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3428
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:210 - 节点内容: 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站	场中路3308弄8号	56526877	全科门诊、中医、预防保健、康复	周一 上午8:...
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3397
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:210 - 节点内容: 5.	静安区卫生系统学科人才培养措施 加强高层次人才引进与培养：制定更具吸引力的人才引进政策，为高层次卫生学科人才提供优厚的薪酬待遇、住房补贴、科研经费等支持 拓展人才培养渠道：推进大学附属医院、社区...
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3385
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:210 - 节点内容: 擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午...
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3368
+2025-03-17 15:42:37,628 - root - INFO - tree_retriever.py:210 - 节点内容: 每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站	少年村路672号	56320616	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30...
+2025-03-17 15:42:37,631 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3335
+2025-03-17 15:42:37,631 - root - INFO - tree_retriever.py:210 - 节点内容: 职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得...
+2025-03-17 15:42:37,631 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3196
+2025-03-17 15:42:37,631 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 15:42:37,631 - root - INFO - raptor_module.py:185 - 使用重排序进行检索，查询文本: 你好啊
+2025-03-17 15:42:37,631 - root - ERROR - raptor_module.py:275 - 搜索过程中出错: 'RetrievalAugmentation' object has no attribute 'embedding_model'
+2025-03-17 15:42:37,631 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:42:37,631 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:42:37] "POST /chat HTTP/1.1" 200 -
+2025-03-17 15:42:48,464 - root - INFO - raptor_module.py:174 - 使用配置文件中的重排序设置: True
+2025-03-17 15:42:48,465 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 15:43:39,669 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 15:43:39,671 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 15:43:39,671 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 15:43:39,676 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3649
+2025-03-17 15:43:39,676 - root - INFO - tree_retriever.py:210 - 节点内容: •	市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •	市政府  《上海市加强公共卫生体系建设三年行动计...
+2025-03-17 15:43:39,676 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3645
+2025-03-17 15:43:39,676 - root - INFO - tree_retriever.py:210 - 节点内容: 1.	人才、学科建设--重要文件和政策 •	中共中央、国务院  《“健康中国2030”规划纲要》 强调卫生健康人才队伍建设的重要性，提出加强医学教育、科研创新和临床实践的结合，培养高层次医学人才 •	...
+2025-03-17 15:43:39,676 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3439
+2025-03-17 15:43:39,676 - root - INFO - tree_retriever.py:210 - 节点内容: 场中路2600弄社区卫生服务站	场中路2600弄112号	56436129	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）...
+2025-03-17 15:43:39,676 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3436
+2025-03-17 15:43:39,676 - root - INFO - tree_retriever.py:210 - 节点内容: 这家诊所擅长诊治社区常见病和多发病，特别擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎、白内障和青光眼。他们的服务时间是工作日上午08:00-11:30和下...
+2025-03-17 15:43:39,679 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3428
+2025-03-17 15:43:39,679 - root - INFO - tree_retriever.py:210 - 节点内容: 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站	场中路3308弄8号	56526877	全科门诊、中医、预防保健、康复	周一 上午8:...
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3397
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:210 - 节点内容: 5.	静安区卫生系统学科人才培养措施 加强高层次人才引进与培养：制定更具吸引力的人才引进政策，为高层次卫生学科人才提供优厚的薪酬待遇、住房补贴、科研经费等支持 拓展人才培养渠道：推进大学附属医院、社区...
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3385
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:210 - 节点内容: 擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午...
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3368
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:210 - 节点内容: 每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站	少年村路672号	56320616	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30...
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3335
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:210 - 节点内容: 职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得...
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3196
+2025-03-17 15:43:39,680 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 15:43:39,685 - root - INFO - raptor_module.py:185 - 使用重排序进行检索，查询文本: 你好啊
+2025-03-17 15:43:39,687 - root - ERROR - raptor_module.py:275 - 搜索过程中出错: 'RetrievalAugmentation' object has no attribute 'embedding_model'
+2025-03-17 15:43:39,688 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:43:39,691 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:43:39] "POST /chat HTTP/1.1" 200 -
+2025-03-17 15:44:27,020 - root - INFO - raptor_module.py:174 - 使用配置文件中的重排序设置: True
+2025-03-17 15:44:27,022 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 15:44:36,177 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 15:44:39,936 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 15:44:44,731 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 15:44:50,076 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3649
+2025-03-17 15:44:52,128 - root - INFO - tree_retriever.py:210 - 节点内容: •	市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •	市政府  《上海市加强公共卫生体系建设三年行动计...
+2025-03-17 15:45:12,253 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3645
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:210 - 节点内容: 1.	人才、学科建设--重要文件和政策 •	中共中央、国务院  《“健康中国2030”规划纲要》 强调卫生健康人才队伍建设的重要性，提出加强医学教育、科研创新和临床实践的结合，培养高层次医学人才 •	...
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3439
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:210 - 节点内容: 场中路2600弄社区卫生服务站	场中路2600弄112号	56436129	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）...
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3436
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:210 - 节点内容: 这家诊所擅长诊治社区常见病和多发病，特别擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎、白内障和青光眼。他们的服务时间是工作日上午08:00-11:30和下...
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3428
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:210 - 节点内容: 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站	场中路3308弄8号	56526877	全科门诊、中医、预防保健、康复	周一 上午8:...
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3397
+2025-03-17 15:45:12,254 - root - INFO - tree_retriever.py:210 - 节点内容: 5.	静安区卫生系统学科人才培养措施 加强高层次人才引进与培养：制定更具吸引力的人才引进政策，为高层次卫生学科人才提供优厚的薪酬待遇、住房补贴、科研经费等支持 拓展人才培养渠道：推进大学附属医院、社区...
+2025-03-17 15:45:12,257 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3385
+2025-03-17 15:45:12,257 - root - INFO - tree_retriever.py:210 - 节点内容: 擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午...
+2025-03-17 15:45:12,257 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3368
+2025-03-17 15:45:12,257 - root - INFO - tree_retriever.py:210 - 节点内容: 每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站	少年村路672号	56320616	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30...
+2025-03-17 15:45:12,259 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3335
+2025-03-17 15:45:12,259 - root - INFO - tree_retriever.py:210 - 节点内容: 职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得...
+2025-03-17 15:45:12,259 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3196
+2025-03-17 15:45:12,259 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 15:46:00,997 - root - INFO - raptor_module.py:185 - 使用重排序进行检索，查询文本: 你好啊
+2025-03-17 15:47:45,139 - root - ERROR - raptor_module.py:275 - 搜索过程中出错: 'RetrievalAugmentation' object has no attribute 'embedding_model'
+2025-03-17 15:47:45,139 - root - ERROR - agent.py:142 - Error in chat: 'dict' object has no attribute 'split'
+2025-03-17 15:47:45,143 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:47:45] "POST /chat HTTP/1.1" 200 -
+2025-03-17 15:47:55,293 - root - INFO - raptor_module.py:174 - 使用配置文件中的重排序设置: True
+2025-03-17 15:47:55,293 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 15:47:57,431 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 15:47:57,431 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 15:47:57,431 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 15:47:57,431 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3649
+2025-03-17 15:47:57,431 - root - INFO - tree_retriever.py:210 - 节点内容: •	市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •	市政府  《上海市加强公共卫生体系建设三年行动计...
+2025-03-17 15:47:57,431 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3645
+2025-03-17 15:47:57,431 - root - INFO - tree_retriever.py:210 - 节点内容: 1.	人才、学科建设--重要文件和政策 •	中共中央、国务院  《“健康中国2030”规划纲要》 强调卫生健康人才队伍建设的重要性，提出加强医学教育、科研创新和临床实践的结合，培养高层次医学人才 •	...
+2025-03-17 15:47:57,434 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3439
+2025-03-17 15:47:57,434 - root - INFO - tree_retriever.py:210 - 节点内容: 场中路2600弄社区卫生服务站	场中路2600弄112号	56436129	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）...
+2025-03-17 15:47:57,434 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3436
+2025-03-17 15:47:57,434 - root - INFO - tree_retriever.py:210 - 节点内容: 这家诊所擅长诊治社区常见病和多发病，特别擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎、白内障和青光眼。他们的服务时间是工作日上午08:00-11:30和下...
+2025-03-17 15:47:57,434 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3428
+2025-03-17 15:47:57,434 - root - INFO - tree_retriever.py:210 - 节点内容: 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站	场中路3308弄8号	56526877	全科门诊、中医、预防保健、康复	周一 上午8:...
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3397
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:210 - 节点内容: 5.	静安区卫生系统学科人才培养措施 加强高层次人才引进与培养：制定更具吸引力的人才引进政策，为高层次卫生学科人才提供优厚的薪酬待遇、住房补贴、科研经费等支持 拓展人才培养渠道：推进大学附属医院、社区...
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3385
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:210 - 节点内容: 擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午...
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3368
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:210 - 节点内容: 每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站	少年村路672号	56320616	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30...
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3335
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:210 - 节点内容: 职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得...
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3196
+2025-03-17 15:47:57,436 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 15:48:01,784 - root - INFO - raptor_module.py:185 - 使用重排序进行检索，查询文本: 你好啊
+2025-03-17 15:48:27,417 - root - ERROR - raptor_module.py:275 - 搜索过程中出错: 'RetrievalAugmentation' object has no attribute 'embedding_model'
+2025-03-17 15:58:31,168 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 15:58:31,168 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 15:58:35,719 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:58:35] "GET / HTTP/1.1" 200 -
+2025-03-17 15:58:35,787 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:58:35] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 15:58:36,256 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:58:36] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:58:36,258 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:58:36] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 15:58:36,258 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:58:36] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:58:36,259 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:58:36] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:58:37,499 - root - ERROR - agent.py:142 - Error in chat: search() got an unexpected keyword argument 'top_k'
+2025-03-17 15:58:37,500 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:58:37] "POST /chat HTTP/1.1" 200 -
+2025-03-17 15:59:42,758 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 15:59:42,759 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 15:59:47,023 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:59:47] "GET / HTTP/1.1" 200 -
+2025-03-17 15:59:47,083 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:59:47] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 15:59:47,668 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:59:47] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:59:47,668 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:59:47] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 15:59:47,678 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:59:47] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:59:47,680 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:59:47] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 15:59:49,564 - root - ERROR - agent.py:142 - Error in chat: search() got an unexpected keyword argument 'top_k'
+2025-03-17 15:59:49,590 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 15:59:49] "POST /chat HTTP/1.1" 200 -
+2025-03-17 16:00:12,815 - root - ERROR - agent.py:142 - Error in chat: search() got an unexpected keyword argument 'top_k'
+2025-03-17 16:00:12,818 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:00:12] "POST /chat HTTP/1.1" 200 -
+2025-03-17 16:00:42,480 - root - ERROR - agent.py:142 - Error in chat: search() got an unexpected keyword argument 'top_k'
+2025-03-17 16:13:31,235 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 16:13:31,236 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 16:13:33,855 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:13:33] "GET / HTTP/1.1" 200 -
+2025-03-17 16:13:34,039 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:13:34] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 16:13:34,621 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:13:34] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:13:34,624 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:13:34] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 16:13:34,631 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:13:34] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:13:34,637 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:13:34] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:13:37,779 - root - INFO - raptor_module.py:166 - 开始执行查询: '你好啊'，top_k=10
+2025-03-17 16:13:37,790 - utils.raptor_config_manager - INFO - raptor_config_manager.py:94 - 正在加载重排序模型: D:/models/bge-reranker-base
+2025-03-17 16:13:41,524 - utils.raptor_config_manager - INFO - raptor_config_manager.py:98 - 重排序模型加载成功
+2025-03-17 16:13:41,527 - utils.raptor_config_manager - INFO - raptor_config_manager.py:37 - RAPTOR配置管理器初始化，配置文件: config/raptor_config.yaml
+2025-03-17 16:13:41,527 - root - ERROR - raptor_module.py:405 - 执行查询时发生错误: 'ClusterTreeBuilder' object has no attribute 'tree'
+2025-03-17 16:13:41,527 - root - ERROR - raptor_module.py:407 - Traceback (most recent call last):
+  File "S:\PyCharm\long_mem_agent\models\raptor_module.py", line 195, in search
+    if not self.RA.tree_builder.tree or len(self.RA.tree_builder.tree) == 0:
+AttributeError: 'ClusterTreeBuilder' object has no attribute 'tree'
+
+2025-03-17 16:13:41,718 - root - ERROR - agent.py:142 - Error in chat: 'list' object has no attribute 'split'
+2025-03-17 16:13:41,718 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:13:41] "POST /chat HTTP/1.1" 200 -
+2025-03-17 16:15:28,800 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 16:15:28,800 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 16:15:30,531 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:15:30] "GET / HTTP/1.1" 200 -
+2025-03-17 16:15:30,907 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:15:30] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 16:15:31,444 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:15:31] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:15:31,445 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:15:31] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:15:31,446 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:15:31] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 16:15:31,449 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:15:31] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:15:33,325 - root - INFO - raptor_module.py:166 - 开始执行查询: '你好啊'，top_k=10
+2025-03-17 16:15:33,332 - utils.raptor_config_manager - INFO - raptor_config_manager.py:94 - 正在加载重排序模型: D:/models/bge-reranker-base
+2025-03-17 16:15:41,001 - utils.raptor_config_manager - INFO - raptor_config_manager.py:98 - 重排序模型加载成功
+2025-03-17 16:15:41,001 - utils.raptor_config_manager - INFO - raptor_config_manager.py:37 - RAPTOR配置管理器初始化，配置文件: config/raptor_config.yaml
+2025-03-17 16:15:41,001 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:15:41,393 - root - ERROR - utils.py:271 - 没有有效的嵌入向量，无法计算距离
+2025-03-17 16:15:41,393 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:15:41,393 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 0, 相似度大于阈值的节点数: 0
+2025-03-17 16:15:41,393 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:15:41,393 - root - INFO - raptor_module.py:214 - 重排序功能已启用，开始处理检索结果
+2025-03-17 16:15:41,394 - root - INFO - raptor_module.py:406 - 查询完成，返回结果类型: str
+2025-03-17 16:15:42,054 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:15:43,540 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:15:43,541 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 44, 相似度大于阈值的节点数: 44
+2025-03-17 16:15:43,541 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:15:43,544 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8694
+2025-03-17 16:15:43,544 - root - INFO - tree_retriever.py:210 - 节点内容: 你好啊，你觉得今年该送我什么礼物...
+2025-03-17 16:15:43,544 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8111
+2025-03-17 16:15:43,544 - root - INFO - tree_retriever.py:210 - 节点内容: 我喜欢吃冰淇淋...
+2025-03-17 16:15:43,544 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7991
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:210 - 节点内容: 用markdown格式回复，描述一下我是个什么样的人...
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7934
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:210 - 节点内容: 有人擅长高血压吗...
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7898
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇第二社区可以看耳鸣吗...
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7897
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:210 - 节点内容: 我最喜欢什么运动...
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7892
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:210 - 节点内容: 我最喜欢的电视剧是什么...
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7884
+2025-03-17 16:15:43,545 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇能不能看耳鸣...
+2025-03-17 16:15:43,546 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7870
+2025-03-17 16:15:43,546 - root - INFO - tree_retriever.py:210 - 节点内容: 介绍一下方锦...
+2025-03-17 16:15:43,546 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7868
+2025-03-17 16:15:43,546 - root - INFO - tree_retriever.py:210 - 节点内容: 写一个helloword把...
+2025-03-17 16:15:43,546 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 33, 'layer_number': 0}, {'node_index': 34, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 40, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}, {'node_index': 43, 'layer_number': 0}, {'node_index': 28, 'layer_number': 0}, {'node_index': 38, 'layer_number': 0}, {'node_index': 37, 'layer_number': 0}, {'node_index': 26, 'layer_number': 0}]
+2025-03-17 16:15:46,755 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9741)
+2025-03-17 16:15:46,756 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:15:46] "POST /chat HTTP/1.1" 200 -
+2025-03-17 16:16:01,789 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:01] "GET /knowledge-base HTTP/1.1" 200 -
+2025-03-17 16:16:02,543 - knowledge_base.storage - INFO - storage.py:203 - 开始获取完整树结构
+2025-03-17 16:16:02,543 - knowledge_base.storage - INFO - storage.py:209 - 树结构获取成功
+2025-03-17 16:16:02,543 - models.raptor_module - INFO - raptor_module.py:525 - 成功获取文档树结构信息
+2025-03-17 16:16:02,544 - models.raptor_module - INFO - raptor_module.py:526 - {'tree': {'leaf_nodes': [], 'summary_nodes': [], 'num_layers': 0, 'total_nodes': 0}}
+2025-03-17 16:16:02,544 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:02] "GET /api/documents HTTP/1.1" 200 -
+2025-03-17 16:16:02,547 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:02] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:16:02,671 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:02] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:16:07,720 - root - INFO - document_routes.py:40 - 开始处理文档上传请求
+2025-03-17 16:16:07,727 - root - INFO - document_routes.py:63 - 安全化后的文件名: txt
+2025-03-17 16:16:07,727 - root - INFO - document_routes.py:72 - 添加扩展名后的文件名: txt.txt
+2025-03-17 16:16:07,729 - root - INFO - document_routes.py:78 - 文件已保存到临时路径: temp\txt.txt
+2025-03-17 16:16:07,729 - root - INFO - document_routes.py:93 - 检测到文件类型: txt
+2025-03-17 16:16:07,736 - root - INFO - document_routes.py:111 - 成功读取文件内容，长度: 4177
+2025-03-17 16:16:07,740 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-03-17 16:16:07,749 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-03-17 16:16:09,702 - root - INFO - document_routes.py:40 - 开始处理文档上传请求
+2025-03-17 16:16:09,703 - root - INFO - document_routes.py:63 - 安全化后的文件名: txt
+2025-03-17 16:16:09,703 - root - INFO - document_routes.py:72 - 添加扩展名后的文件名: txt.txt
+2025-03-17 16:16:09,708 - root - INFO - document_routes.py:78 - 文件已保存到临时路径: temp\txt.txt
+2025-03-17 16:16:09,709 - root - INFO - document_routes.py:93 - 检测到文件类型: txt
+2025-03-17 16:16:09,724 - root - INFO - document_routes.py:111 - 成功读取文件内容，长度: 4177
+2025-03-17 16:16:09,724 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-03-17 16:16:09,736 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-03-17 16:16:15,965 - root - INFO - tree_builder.py:288 - 已创建 17 个叶子节点嵌入
+2025-03-17 16:16:15,966 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-03-17 16:16:15,967 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:16:15,967 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:16:16,255 - root - INFO - tree_builder.py:288 - 已创建 17 个叶子节点嵌入
+2025-03-17 16:16:16,256 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-03-17 16:16:16,268 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:16:16,268 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:16:28,769 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 16:16:31,304 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 16:16:31,925 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 100
+2025-03-17 16:16:34,153 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 100
+2025-03-17 16:16:34,871 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 16:16:36,920 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 16:16:37,955 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 99
+2025-03-17 16:16:37,984 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 1
+2025-03-17 16:16:37,984 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 1
+2025-03-17 16:16:37,984 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-03-17 16:16:37,984 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 2，新索引: 0
+2025-03-17 16:16:37,984 - root - INFO - tree_structures.py:63 - 节点 0 已添加到树中
+2025-03-17 16:16:37,984 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 0
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 1
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:63 - 节点 1 已添加到树中
+2025-03-17 16:16:37,985 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 1
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 1，新索引: 2
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:63 - 节点 2 已添加到树中
+2025-03-17 16:16:37,985 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 2
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 3，新索引: 3
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:63 - 节点 3 已添加到树中
+2025-03-17 16:16:37,985 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 3
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 5，新索引: 4
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:63 - 节点 4 已添加到树中
+2025-03-17 16:16:37,985 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 4
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 4，新索引: 5
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:63 - 节点 5 已添加到树中
+2025-03-17 16:16:37,985 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 5
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 6，新索引: 6
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:63 - 节点 6 已添加到树中
+2025-03-17 16:16:37,985 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 6
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 8，新索引: 7
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:63 - 节点 7 已添加到树中
+2025-03-17 16:16:37,985 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 7
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 9，新索引: 8
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:63 - 节点 8 已添加到树中
+2025-03-17 16:16:37,985 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 8
+2025-03-17 16:16:37,985 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 7，新索引: 9
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:63 - 节点 9 已添加到树中
+2025-03-17 16:16:37,986 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 9
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 14，新索引: 10
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:63 - 节点 10 已添加到树中
+2025-03-17 16:16:37,986 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 10
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 11，新索引: 11
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:63 - 节点 11 已添加到树中
+2025-03-17 16:16:37,986 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 11
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 10，新索引: 12
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:63 - 节点 12 已添加到树中
+2025-03-17 16:16:37,986 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 12
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 15，新索引: 13
+2025-03-17 16:16:37,986 - root - INFO - tree_structures.py:63 - 节点 13 已添加到树中
+2025-03-17 16:16:37,987 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 13
+2025-03-17 16:16:37,987 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 12，新索引: 14
+2025-03-17 16:16:37,987 - root - INFO - tree_structures.py:63 - 节点 14 已添加到树中
+2025-03-17 16:16:37,987 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 14
+2025-03-17 16:16:37,987 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 13，新索引: 15
+2025-03-17 16:16:37,987 - root - INFO - tree_structures.py:63 - 节点 15 已添加到树中
+2025-03-17 16:16:37,987 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 15
+2025-03-17 16:16:37,987 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 16，新索引: 16
+2025-03-17 16:16:37,988 - root - INFO - tree_structures.py:63 - 节点 16 已添加到树中
+2025-03-17 16:16:37,988 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 16
+2025-03-17 16:16:37,988 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 16:16:37,988 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:16:37,988 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:16:39,729 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 99
+2025-03-17 16:16:39,802 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 1
+2025-03-17 16:16:39,802 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 1
+2025-03-17 16:16:39,802 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-03-17 16:16:39,802 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 1，新索引: 17
+2025-03-17 16:16:39,802 - root - INFO - tree_structures.py:63 - 节点 17 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 17
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 2，新索引: 18
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 18 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 18
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 19
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 19 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 19
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 3，新索引: 20
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 20 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 20
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 4，新索引: 21
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 21 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 21
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 6，新索引: 22
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 22 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 22
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 7，新索引: 23
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 23 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 23
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 5，新索引: 24
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 24 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 24
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 8，新索引: 25
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 25 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 25
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 13，新索引: 26
+2025-03-17 16:16:39,803 - root - INFO - tree_structures.py:63 - 节点 26 已添加到树中
+2025-03-17 16:16:39,803 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 26
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 9，新索引: 27
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:63 - 节点 27 已添加到树中
+2025-03-17 16:16:39,805 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 27
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 10，新索引: 28
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:63 - 节点 28 已添加到树中
+2025-03-17 16:16:39,805 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 28
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 11，新索引: 29
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:63 - 节点 29 已添加到树中
+2025-03-17 16:16:39,805 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 29
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 14，新索引: 30
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:63 - 节点 30 已添加到树中
+2025-03-17 16:16:39,805 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 30
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 12，新索引: 31
+2025-03-17 16:16:39,805 - root - INFO - tree_structures.py:63 - 节点 31 已添加到树中
+2025-03-17 16:16:39,806 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 31
+2025-03-17 16:16:39,806 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 15，新索引: 32
+2025-03-17 16:16:39,806 - root - INFO - tree_structures.py:63 - 节点 32 已添加到树中
+2025-03-17 16:16:39,806 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 32
+2025-03-17 16:16:39,806 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 16，新索引: 33
+2025-03-17 16:16:39,807 - root - INFO - tree_structures.py:63 - 节点 33 已添加到树中
+2025-03-17 16:16:39,807 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 33
+2025-03-17 16:16:39,807 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 16:16:39,808 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:16:39,808 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:16:42,901 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 16:16:45,688 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 16:16:49,878 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 100
+2025-03-17 16:16:54,633 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 100
+2025-03-17 16:16:54,840 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 16:16:54,843 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 5
+            选择模式: top_k
+            上下文嵌入模型: EMB
+            嵌入模型: <raptor.EmbeddingModels.SBertEmbeddingModel object at 0x0000026D23C6B4C0>
+            层数: None
+            起始层: None
+        
+2025-03-17 16:16:54,843 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-03-17 16:16:54,843 - knowledge_base.storage - INFO - storage.py:135 - 文档  已添加到运行中的RA树结构
+2025-03-17 16:16:54,843 - root - INFO - document_routes.py:123 - 文档 txt.txt 已成功添加到RA树
+2025-03-17 16:16:54,843 - root - INFO - document_routes.py:140 - 临时文件已删除: temp\txt.txt
+2025-03-17 16:16:54,844 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:54] "POST /api/documents HTTP/1.1" 200 -
+2025-03-17 16:16:54,864 - knowledge_base.storage - INFO - storage.py:203 - 开始获取完整树结构
+2025-03-17 16:16:54,864 - knowledge_base.storage - ERROR - storage.py:214 - 获取树结构失败: 20
+2025-03-17 16:16:54,864 - models.raptor_module - INFO - raptor_module.py:525 - 成功获取文档树结构信息
+2025-03-17 16:16:54,865 - models.raptor_module - INFO - raptor_module.py:526 - None
+2025-03-17 16:16:54,865 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:54] "GET /api/documents HTTP/1.1" 200 -
+2025-03-17 16:16:54,870 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:54] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:16:57,295 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 974, Summarized Text Length: 99
+2025-03-17 16:16:57,716 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:57] "GET / HTTP/1.1" 200 -
+2025-03-17 16:16:58,152 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:58] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 16:16:58,167 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:58] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:16:58,170 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:58] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:16:58,176 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:58] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 16:16:58,180 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:16:58] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:17:02,418 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 2262, Summarized Text Length: 100
+2025-03-17 16:17:03,401 - root - INFO - raptor_module.py:166 - 开始执行查询: '彭浦镇可以看耳鸣吗'，top_k=10
+2025-03-17 16:17:03,414 - utils.raptor_config_manager - INFO - raptor_config_manager.py:94 - 正在加载重排序模型: D:/models/bge-reranker-base
+2025-03-17 16:17:09,565 - utils.raptor_config_manager - INFO - raptor_config_manager.py:98 - 重排序模型加载成功
+2025-03-17 16:17:09,565 - utils.raptor_config_manager - INFO - raptor_config_manager.py:37 - RAPTOR配置管理器初始化，配置文件: config/raptor_config.yaml
+2025-03-17 16:17:09,565 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:17:09,670 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:17:09,671 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 16:17:09,671 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:17:09,671 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5803
+2025-03-17 16:17:09,671 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇第二社区卫生服务中心设有6个社区卫生服务站，服务周边人口6.68万人，提供全科、内科、外科、妇科、儿科、眼科、口腔科、康复医学科、中医科等业务，年门诊量达176534人次。中心...
+2025-03-17 16:17:09,671 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5575
+2025-03-17 16:17:09,671 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇第二社区卫生服务中心简介 中心简介：彭浦镇第二社区卫生服务中心坐落于上海市静安区高平路1011号，下设6个社区卫生服务站点，服务周边人口6.68万人，设有全科、内科、外科、妇科、儿科、眼科、口腔...
+2025-03-17 16:17:09,673 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5225
+2025-03-17 16:17:09,673 - root - INFO - tree_retriever.py:210 - 节点内容: 市中管局中医特色专病专科（社区）的分布涵盖了江宁的推拿科，彭浦新村的肺胀，芷江西的中医骨伤科，彭二的颤病，大宁的鼻鼽，以及彭浦镇的骨瘘...
+2025-03-17 16:17:09,673 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5183
+2025-03-17 16:17:09,673 - root - INFO - tree_retriever.py:210 - 节点内容: 擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午...
+2025-03-17 16:17:09,673 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4717
+2025-03-17 16:17:09,674 - root - INFO - tree_retriever.py:210 - 节点内容: 市中管局中医特色专病专科（社区）（2023年）：江宁：推拿科；彭浦新村：肺胀；芷江西：中医骨伤科；彭二：颤病；大宁：鼻鼽；彭浦镇：骨瘘  静安区学科建设系列项目：2021-2024年：共计19个，其中...
+2025-03-17 16:17:09,674 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4271
+2025-03-17 16:17:09,674 - root - INFO - tree_retriever.py:210 - 节点内容: 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站	场中路3308弄8号	56526877	全科门诊、中医、预防保健、康复	周一 上午8:...
+2025-03-17 16:17:09,674 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4141
+2025-03-17 16:17:09,674 - root - INFO - tree_retriever.py:210 - 节点内容: 每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站	少年村路672号	56320616	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30...
+2025-03-17 16:17:09,674 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4123
+2025-03-17 16:17:09,675 - root - INFO - tree_retriever.py:210 - 节点内容: 场中路2600弄社区卫生服务站	场中路2600弄112号	56436129	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）...
+2025-03-17 16:17:09,675 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3928
+2025-03-17 16:17:09,675 - root - INFO - tree_retriever.py:210 - 节点内容: 总结内容如下：
+1. 静安区内有多个社区卫生服务站，包括场中路2600弄、永和小区、少年村路672号、塘南和海鹰社区卫生服务站。
+2. 这些社区卫生服务站提供全科门诊、中医、预防保健和康复...
+2025-03-17 16:17:09,675 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3913
+2025-03-17 16:17:09,675 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 16:17:09,869 - root - INFO - raptor_module.py:214 - 重排序功能已启用，开始处理检索结果
+2025-03-17 16:17:10,408 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1584, Summarized Text Length: 100
+2025-03-17 16:17:11,797 - root - INFO - utils.py:367 - 重排序完成，获得 10 个重排序分数
+2025-03-17 16:17:11,797 - root - INFO - raptor_module.py:332 - 重排序完成，重新排序了 10 个段落
+2025-03-17 16:17:11,797 - root - INFO - raptor_module.py:406 - 查询完成，返回结果类型: str
+2025-03-17 16:17:12,057 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:17:13,022 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:17:13,023 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 44, 相似度大于阈值的节点数: 42
+2025-03-17 16:17:13,023 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:17:13,023 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8438
+2025-03-17 16:17:13,023 - root - INFO - tree_retriever.py:210 - 节点内容: 介绍一下彭浦镇第二社区卫生中心...
+2025-03-17 16:17:13,023 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7941
+2025-03-17 16:17:13,023 - root - INFO - tree_retriever.py:210 - 节点内容: 静安区人才建设有什么优势？...
+2025-03-17 16:17:13,023 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7899
+2025-03-17 16:17:13,023 - root - INFO - tree_retriever.py:210 - 节点内容: 介绍一下方锦...
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7847
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7770
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:210 - 节点内容: 00 进行自我肯定和反思；中午 12 00 - 13 00 可安排听播客等内容。...
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7728
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:210 - 节点内容: 他们的电话分别是什么...
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7705
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:210 - 节点内容: 我喜欢吃冰淇淋...
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7705
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:210 - 节点内容: 你好啊，你觉得今年该送我什么礼物...
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7692
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:210 - 节点内容: 方锦擅长什么...
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7687
+2025-03-17 16:17:13,024 - root - INFO - tree_retriever.py:210 - 节点内容: 静安卫生系统有哪些学科建设成果？...
+2025-03-17 16:17:13,024 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 45, 'layer_number': 0}, {'node_index': 42, 'layer_number': 0}, {'node_index': 37, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 11, 'layer_number': 0}, {'node_index': 47, 'layer_number': 0}, {'node_index': 34, 'layer_number': 0}, {'node_index': 33, 'layer_number': 0}, {'node_index': 39, 'layer_number': 0}, {'node_index': 41, 'layer_number': 0}]
+2025-03-17 16:17:13,516 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1694, Summarized Text Length: 100
+2025-03-17 16:17:16,445 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1492, Summarized Text Length: 100
+2025-03-17 16:17:17,560 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 0.9622)
+2025-03-17 16:17:17,561 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:17:17] "POST /chat HTTP/1.1" 200 -
+2025-03-17 16:17:19,408 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 970, Summarized Text Length: 99
+2025-03-17 16:17:19,428 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 5
+            选择模式: top_k
+            上下文嵌入模型: EMB
+            嵌入模型: <raptor.EmbeddingModels.SBertEmbeddingModel object at 0x0000026D23C6B4C0>
+            层数: None
+            起始层: None
+        
+2025-03-17 16:17:19,428 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-03-17 16:17:19,429 - knowledge_base.storage - INFO - storage.py:135 - 文档  已添加到运行中的RA树结构
+2025-03-17 16:17:19,431 - root - INFO - document_routes.py:123 - 文档 txt.txt 已成功添加到RA树
+2025-03-17 16:17:19,431 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:17:19] "POST /api/documents HTTP/1.1" 200 -
+2025-03-17 16:18:11,082 - root - INFO - raptor_module.py:166 - 开始执行查询: '金牌家庭医生都有谁'，top_k=10
+2025-03-17 16:18:11,098 - utils.raptor_config_manager - INFO - raptor_config_manager.py:94 - 正在加载重排序模型: D:/models/bge-reranker-base
+2025-03-17 16:18:17,951 - utils.raptor_config_manager - INFO - raptor_config_manager.py:98 - 重排序模型加载成功
+2025-03-17 16:18:17,954 - utils.raptor_config_manager - INFO - raptor_config_manager.py:37 - RAPTOR配置管理器初始化，配置文件: config/raptor_config.yaml
+2025-03-17 16:18:17,954 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:18:17,999 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:18:17,999 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 40, 相似度大于阈值的节点数: 40
+2025-03-17 16:18:17,999 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:18:18,002 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4992
+2025-03-17 16:18:18,002 - root - INFO - tree_retriever.py:210 - 节点内容: 职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得...
+2025-03-17 16:18:18,002 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4992
+2025-03-17 16:18:18,002 - root - INFO - tree_retriever.py:210 - 节点内容: 职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得...
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4645
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4645
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4193
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:210 - 节点内容: 帕金森病专病门诊是以针灸治疗帕金森病、颈椎病、膝骨性关节炎、类风湿关节炎为特色诊疗技术，荣获上海市中医特色专病专科（颤病）能力建设、吴焕淦上海市名中医工作室基层工作站等荣誉称号 特色门诊基于上海市针灸...
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4193
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:210 - 节点内容: 帕金森病专病门诊是以针灸治疗帕金森病、颈椎病、膝骨性关节炎、类风湿关节炎为特色诊疗技术，荣获上海市中医特色专病专科（颤病）能力建设、吴焕淦上海市名中医工作室基层工作站等荣誉称号 特色门诊基于上海市针灸...
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4050
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:210 - 节点内容: •	市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •	市政府  《上海市加强公共卫生体系建设三年行动计...
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4050
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:210 - 节点内容: •	市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •	市政府  《上海市加强公共卫生体系建设三年行动计...
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3987
+2025-03-17 16:18:18,003 - root - INFO - tree_retriever.py:210 - 节点内容: 2.	静安区卫生系统近三年学科建设成果 国家级重点学科突破：静安区中心医院——卒中后肢体瘫痪的诊治、康护体系建设 市卫生健康委员会临床重点专科：2020-2022：静中心：手及上肢外科、消化内科、药剂...
+2025-03-17 16:18:18,008 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3987
+2025-03-17 16:18:18,008 - root - INFO - tree_retriever.py:210 - 节点内容: 2.	静安区卫生系统近三年学科建设成果 国家级重点学科突破：静安区中心医院——卒中后肢体瘫痪的诊治、康护体系建设 市卫生健康委员会临床重点专科：2020-2022：静中心：手及上肢外科、消化内科、药剂...
+2025-03-17 16:18:18,008 - root - INFO - raptor_module.py:214 - 重排序功能已启用，开始处理检索结果
+2025-03-17 16:18:26,965 - root - INFO - utils.py:367 - 重排序完成，获得 10 个重排序分数
+2025-03-17 16:18:26,965 - root - INFO - raptor_module.py:332 - 重排序完成，重新排序了 10 个段落
+2025-03-17 16:18:26,967 - root - INFO - raptor_module.py:406 - 查询完成，返回结果类型: str
+2025-03-17 16:18:27,554 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 44, 相似度大于阈值的节点数: 43
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8845
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:210 - 节点内容: 有哪些王牌家医...
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8110
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:210 - 节点内容: 有人擅长高血压吗...
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7909
+2025-03-17 16:18:29,972 - root - INFO - tree_retriever.py:210 - 节点内容: 方锦副主任擅长什么...
+2025-03-17 16:18:29,973 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7886
+2025-03-17 16:18:29,973 - root - INFO - tree_retriever.py:210 - 节点内容: 方锦擅长什么...
+2025-03-17 16:18:29,973 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7721
+2025-03-17 16:18:29,973 - root - INFO - tree_retriever.py:210 - 节点内容: 我最喜欢的电视剧是什么...
+2025-03-17 16:18:29,973 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7701
+2025-03-17 16:18:29,973 - root - INFO - tree_retriever.py:210 - 节点内容: 介绍一下彭浦镇第二社区卫生中心...
+2025-03-17 16:18:29,974 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7650
+2025-03-17 16:18:29,974 - root - INFO - tree_retriever.py:210 - 节点内容: 介绍一下方锦...
+2025-03-17 16:18:29,974 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7596
+2025-03-17 16:18:29,974 - root - INFO - tree_retriever.py:210 - 节点内容: 他们的电话分别是什么...
+2025-03-17 16:18:29,974 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7585
+2025-03-17 16:18:29,974 - root - INFO - tree_retriever.py:210 - 节点内容: 静安卫生系统有哪些学科建设成果？...
+2025-03-17 16:18:29,975 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7580
+2025-03-17 16:18:29,975 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-03-17 16:18:29,975 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 46, 'layer_number': 0}, {'node_index': 40, 'layer_number': 0}, {'node_index': 36, 'layer_number': 0}, {'node_index': 39, 'layer_number': 0}, {'node_index': 28, 'layer_number': 0}, {'node_index': 45, 'layer_number': 0}, {'node_index': 37, 'layer_number': 0}, {'node_index': 47, 'layer_number': 0}, {'node_index': 41, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}]
+2025-03-17 16:18:34,708 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-03-17 16:18:34,708 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-03-17 16:18:36,004 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-03-17 16:18:36,004 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-03-17 16:18:36,005 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:18:36,005 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:18:36,005 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-03-17 16:18:36,005 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-03-17 16:18:36,005 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 48
+2025-03-17 16:18:36,005 - root - INFO - tree_structures.py:63 - 节点 48 已添加到树中
+2025-03-17 16:18:36,005 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 48
+2025-03-17 16:18:36,005 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 16:18:36,027 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:18:36,027 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000026D260B56D0>
+            层数: None
+            起始层: None
+        
+2025-03-17 16:18:36,028 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-03-17 16:18:36,028 - knowledge_base.storage - INFO - storage.py:135 - 文档 m_1742199514670_9450 已添加到运行中的RA树结构
+2025-03-17 16:18:36,028 - root - INFO - memory_manager.py:314 - 记忆 m_1742199514670_9450 已添加到树结构
+2025-03-17 16:18:36,028 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-03-17 16:18:36,028 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-03-17 16:18:36,028 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-03-17 16:18:36,028 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 16:18:36,047 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:18:36,047 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-03-17 16:18:36,054 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-03-17 16:18:36,054 - knowledge_base.storage - INFO - storage.py:154 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-03-17 16:18:36,055 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-03-17 16:18:36,055 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-03-17 16:18:36,065 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-03-17 16:18:36,066 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:18:36] "POST /chat HTTP/1.1" 200 -
+2025-03-17 16:20:27,326 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 16:20:27,326 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 16:25:07,267 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 16:25:07,269 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 16:25:12,343 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:12] "GET / HTTP/1.1" 200 -
+2025-03-17 16:25:12,504 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:12] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 16:25:13,164 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:13] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:25:13,186 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:13] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:25:13,190 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:13] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 16:25:13,195 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:13] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:25:13,515 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:13] "GET /knowledge-base HTTP/1.1" 200 -
+2025-03-17 16:25:13,995 - knowledge_base.storage - INFO - storage.py:203 - 开始获取完整树结构
+2025-03-17 16:25:13,995 - knowledge_base.storage - INFO - storage.py:209 - 树结构获取成功
+2025-03-17 16:25:13,995 - models.raptor_module - INFO - raptor_module.py:526 - 成功获取文档树结构信息
+2025-03-17 16:25:13,995 - models.raptor_module - INFO - raptor_module.py:527 - {'tree': {'leaf_nodes': [], 'summary_nodes': [], 'num_layers': 0, 'total_nodes': 0}}
+2025-03-17 16:25:13,995 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:13] "GET /api/documents HTTP/1.1" 200 -
+2025-03-17 16:25:14,002 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:14] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:25:14,019 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:14] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:25:18,668 - root - INFO - document_routes.py:40 - 开始处理文档上传请求
+2025-03-17 16:25:18,682 - root - INFO - document_routes.py:63 - 安全化后的文件名: txt
+2025-03-17 16:25:18,682 - root - INFO - document_routes.py:72 - 添加扩展名后的文件名: txt.txt
+2025-03-17 16:25:18,685 - root - INFO - document_routes.py:78 - 文件已保存到临时路径: temp\txt.txt
+2025-03-17 16:25:18,685 - root - INFO - document_routes.py:93 - 检测到文件类型: txt
+2025-03-17 16:25:18,699 - root - INFO - document_routes.py:111 - 成功读取文件内容，长度: 4177
+2025-03-17 16:25:18,704 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-03-17 16:25:18,727 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-03-17 16:25:20,356 - root - INFO - tree_builder.py:288 - 已创建 17 个叶子节点嵌入
+2025-03-17 16:25:20,357 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-03-17 16:25:20,359 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:25:20,360 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:25:40,010 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 16:25:42,907 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 100
+2025-03-17 16:25:45,577 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 16:25:48,081 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 99
+2025-03-17 16:25:48,113 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 1
+2025-03-17 16:25:48,113 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 1
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 5，新索引: 0
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 0 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 0
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 6，新索引: 1
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 1 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 1
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 4，新索引: 2
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 2 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 2
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 8，新索引: 3
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 3 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 3
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 10，新索引: 4
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 4 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 4
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 2，新索引: 5
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 5 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 5
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 12，新索引: 6
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 6 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 6
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 1，新索引: 7
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 7 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 7
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 8
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 8 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 8
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 9，新索引: 9
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 9 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 9
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 7，新索引: 10
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 10 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 10
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 3，新索引: 11
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 11 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 11
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 14，新索引: 12
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 12 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 12
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 13，新索引: 13
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 13 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 13
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 11，新索引: 14
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 14 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 14
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 15，新索引: 15
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 15 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 15
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 16，新索引: 16
+2025-03-17 16:25:48,113 - root - INFO - tree_structures.py:63 - 节点 16 已添加到树中
+2025-03-17 16:25:48,113 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 16
+2025-03-17 16:25:48,113 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 16:25:48,113 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:25:48,113 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:25:52,015 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 16:25:54,475 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 100
+2025-03-17 16:25:57,085 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 16:25:59,643 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 99
+2025-03-17 16:25:59,671 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 5
+            选择模式: top_k
+            上下文嵌入模型: EMB
+            嵌入模型: <raptor.EmbeddingModels.SBertEmbeddingModel object at 0x000002272178EDF0>
+            层数: None
+            起始层: None
+        
+2025-03-17 16:25:59,671 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-03-17 16:25:59,671 - knowledge_base.storage - INFO - storage.py:135 - 文档  已添加到运行中的RA树结构
+2025-03-17 16:25:59,671 - root - INFO - document_routes.py:123 - 文档 txt.txt 已成功添加到RA树
+2025-03-17 16:25:59,671 - root - INFO - document_routes.py:140 - 临时文件已删除: temp\txt.txt
+2025-03-17 16:25:59,671 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:59] "POST /api/documents HTTP/1.1" 200 -
+2025-03-17 16:25:59,675 - knowledge_base.storage - INFO - storage.py:203 - 开始获取完整树结构
+2025-03-17 16:25:59,680 - knowledge_base.storage - INFO - storage.py:209 - 树结构获取成功
+2025-03-17 16:25:59,680 - models.raptor_module - INFO - raptor_module.py:526 - 成功获取文档树结构信息
+2025-03-17 16:25:59,680 - models.raptor_module - INFO - raptor_module.py:527 - {'tree': {'leaf_nodes': [{'text': '中心结合社区人群不同康复需求和特点，提供整合型的康复服务，如运动训练、物理因子治疗、作业治疗、言语治疗、感统训练等52个项目，通过结合传统中医适宜技术，治疗基本涵盖了神经系统、骨-关节系统、慢性疼痛、老年疾病、儿童康复等康复领域，提供社区常见脑梗死脑出血后遗症、颈椎病、腰椎间盘突出、骨关节炎、COPD、冠心病、骨折后等常见病多发病以及小儿自闭症的康复服务 4、示范性社区康复中心 王牌家医1 姓名：张忆梓 学历：医学硕士', 'index': 0}, {'text': '职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得荣誉：曾担任2项区级课题第一负责人，发表论文十余篇，获得专利1项 联系电话：13761818079 王牌家医2 姓名：方锦 学历：本科 职称：副主任医师 科室：全科门诊', 'index': 1}, {'text': '3、特色诊疗科室：帕金森病专病门诊 中心康复科是上海市首批示范性社区康复中心 位于三楼的康复综合治疗区，涵盖了康复医学科门诊、康复功能评定室、物理治疗(PT)室、作业治疗(OT)室、语言吞咽治疗(ST)室、物理因子治疗室、感统训练室、儿童康复室、光疗室、高频室、传统康复治疗室等多个治疗科室', 'index': 2}, {'text': '场中路2600弄社区卫生服务站\t场中路2600弄112号\t56436129\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 永和小区社区卫生服务站\t原平路917弄21号甲\t56512005\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊', 'index': 3}, {'text': '周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站\t场中路3308弄8号\t56526877\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 联系信息：中心地址：上海市静安区高平路1011号   邮政编码：200436 总机电话：56622027     专人接待咨询服务电话：56622027转8216 静安区卫生健康学科人才工作报告', 'index': 4}, {'text': '慢性肾脏病专病门诊以治疗慢性肾脏病为主，邀请CKD领域名老中医、岳阳医院原肾内科陶明龙主任定期来我中心坐诊，依托中心慢性肾脏病“防、治、康”一体化管理化管理中心建设，在社区对慢性肾脏病高危人群进行早期监测，为社区居民对疾病提供早发现、早诊断、早管理、早治疗途径，从而改善疾病愈后', 'index': 5}, {'text': '•\t市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •\t市政府  《上海市加强公共卫生体系建设三年行动计划（2023-2025年）》 重点支持公共卫生学科人才建设，培养高水平的公共卫生学科带头人，提升疾控体系的核心竞争力 •\t市卫健委等10个部门《关于进一步加强本市医学队列建设和研究的实施方案》 构建高水平医学队列研究平台，培养创新型队列研究人才，推动医学科技创新和成果转化', 'index': 6}, {'text': '中心为上海市康复医学会社区康复实训基地，是上海市首批示范性社区康复中心 中心的院训为“团结、敬业、仁爱、奉献”，为社区居民提供基本医疗和公共卫生等服务 1、中心外观照片 2、门诊便民服务中心 3、中心病房照片 4、中心大型设备CT 5、中心大型设备骨密度仪 特色科室（2到3个）： 中心中医科设有慢性肾脏病专病门诊和帕金森病专病门诊', 'index': 7}, {'text': '彭浦镇第二社区卫生服务中心简介 中心简介：彭浦镇第二社区卫生服务中心坐落于上海市静安区高平路1011号，下设6个社区卫生服务站点，服务周边人口6.68万人，设有全科、内科、外科、妇科、儿科、眼科、口腔科、康复医学科、中医科、医学检验科、医学影像科及预防保健科等业务科室，实际开放床位212张，配备有CT、DR、骨密度仪、心脏超声诊断仪、肺功能检测仪等大型及重要医疗设备仪器，年门诊量176534人次，住院患者人次748人次，年新建家庭病床261张 中心医护人员132人，其中全科医生33人，签约居民27110人', 'index': 8}, {'text': '每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站\t少年村路672号\t56320616\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 塘南社区卫生服务站\t高平路809弄63号\t56522095\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30', 'index': 9}, {'text': '擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午 08:00-11:30（周一至周五）                                      下午 13:00-16:45（周一、三、五）                                           14:00-16:45（周二、四）                                      夏令时（周一至周五）下午就诊时间为14:00-16:45           延时及双休日服务时间：上午08:00-11:30（周六） 站点服务（填对外开放的）： 服务站名称\t地址\t电话\t服务项目\t服务时间', 'index': 10}, {'text': '帕金森病专病门诊是以针灸治疗帕金森病、颈椎病、膝骨性关节炎、类风湿关节炎为特色诊疗技术，荣获上海市中医特色专病专科（颤病）能力建设、吴焕淦上海市名中医工作室基层工作站等荣誉称号 特色门诊基于上海市针灸经络研究所名中医吴焕淦教授学术思想和临床经验，定期邀请其工作室成员临床示范性带教坐诊，为辖区居民的健康保驾护航 1、中医馆 2、特色诊疗科室：中医慢性肾脏病专病门诊', 'index': 11}, {'text': '市中管局中医特色专病专科（社区）（2023年）：江宁：推拿科；彭浦新村：肺胀；芷江西：中医骨伤科；彭二：颤病；大宁：鼻鼽；彭浦镇：骨瘘  静安区学科建设系列项目：2021-2024年：共计19个，其中包括重点学科:3个；重要薄弱学科6个；培育学科5个；优势专病5个； 2024-2027年:共计15个，其中重点学科：3个； 重要薄弱学科3个 ； 培育学科4 个； 优势专病5 个 3.\t近三年人才建设成果 高级人才引进：静中心-曲志伟、苏凡、陈家伟、丁粤粤', 'index': 12}, {'text': '2.\t静安区卫生系统近三年学科建设成果 国家级重点学科突破：静安区中心医院——卒中后肢体瘫痪的诊治、康护体系建设 市卫生健康委员会临床重点专科：2020-2022：静中心：手及上肢外科、消化内科、药剂科；闸中心：肾内科、血液肿瘤科、药剂科；市北：眼科；三康：重症康复科 2024-2026：静中心：骨科、放射科；闸中心：血液科；市北：眼科；三康：康复科', 'index': 13}, {'text': '1.\t人才、学科建设--重要文件和政策 •\t中共中央、国务院  《“健康中国2030”规划纲要》 强调卫生健康人才队伍建设的重要性，提出加强医学教育、科研创新和临床实践的结合，培养高层次医学人才 •\t国家卫健委  《“十四五”卫生健康人才发展规划》 促进人才服务能力提高与结构优化，完善人才管理制度机制，营造人才发展的良好环境 •\t科技部、国家卫健委《“十四五”卫生与健康科技创新专项规划》 加强医学科技创新，支持高水平医学研究平台建设，培养具有国际竞争力的医学科技人才', 'index': 14}, {'text': '闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.\t静安区学科人才建设SWOT分析 1)\t静安区卫生系统学科人才建设优势 区域人口密度大：2022年全市第二医疗服务需求旺盛，丰富的临床病例资源 医疗资源丰富品类齐全：拥有不同层级的医疗卫生机构，有利于不同医疗机构之间的合作与交流 特色专科建设成效显著：康复医学、老年医学、中医等特色专科建设方面取得显著成效 三级医院数量多：便于开展紧密的合作与交流，形成分级诊疗体系', 'index': 15}, {'text': '5.\t静安区卫生系统学科人才培养措施 加强高层次人才引进与培养：制定更具吸引力的人才引进政策，为高层次卫生学科人才提供优厚的薪酬待遇、住房补贴、科研经费等支持 拓展人才培养渠道：推进大学附属医院、社区卫生中心教学能力建设 实施人才梯队培养计划：开展“十百千”人才培养计划，形成不同层次、不同结构的人才队伍梯队 完善人才激励与保障机制：健全绩效考核评价制度，优化人才职业发展路径，加强人才服务与保障', 'index': 16}], 'summary_nodes': [{'text': '上海市在卫生健康领域制定了多项规划和计划，包括加快紧缺人才培养和医学科学家培养，提升公共卫生学科竞争力，构建高水平医学队列研究平台等。静安区卫生系统', 'index': 17, 'children': [6, 12, 13, 14, 15, 16]}, {'text': '上海市静安区的社区卫生服务站提供全科门诊、中医、预防保健和康复服务。其中，无论是场中路2600弄社区卫生服务站、永和小区社区卫生服务站、海鹰社区卫生服务站、少年村路672号社区卫生服务站还是', 'index': 18, 'children': [9, 10, 3, 4]}, {'text': '中心结合社区人群不同康复需求和特点，提供整合型的康复服务，共有52个项目，包括运动训练、物理因子治疗、作业治疗、言语治疗、感统训练等。结合传统中医适宜技术，治疗范', 'index': 19, 'children': [0, 1, 2, 5, 7, 8, 11]}], 'num_layers': 1, 'total_nodes': 20}}
+2025-03-17 16:25:59,681 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:59] "GET /api/documents HTTP/1.1" 200 -
+2025-03-17 16:25:59,688 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:25:59] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:26:06,611 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:26:06] "GET / HTTP/1.1" 200 -
+2025-03-17 16:26:06,741 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:26:06] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 16:26:06,781 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:26:06] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:26:06,787 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:26:06] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:26:06,793 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:26:06] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 16:26:06,793 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:26:06] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:26:22,625 - root - INFO - raptor_module.py:167 - 开始执行查询: '介绍一下彭浦镇'，top_k=10
+2025-03-17 16:26:22,664 - utils.raptor_config_manager - INFO - raptor_config_manager.py:94 - 正在加载重排序模型: D:/models/bge-reranker-base
+2025-03-17 16:26:26,075 - utils.raptor_config_manager - INFO - raptor_config_manager.py:98 - 重排序模型加载成功
+2025-03-17 16:26:26,075 - utils.raptor_config_manager - INFO - raptor_config_manager.py:37 - RAPTOR配置管理器初始化，配置文件: config/raptor_config.yaml
+2025-03-17 16:26:33,898 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:26:35,616 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:26:36,244 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 16:26:37,446 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:26:45,118 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.6986
+2025-03-17 16:26:45,118 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇第二社区卫生服务中心简介 中心简介：彭浦镇第二社区卫生服务中心坐落于上海市静安区高平路1011号，下设6个社区卫生服务站点，服务周边人口6.68万人，设有全科、内科、外科、妇科、儿科、眼科、口腔...
+2025-03-17 16:26:45,120 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5540
+2025-03-17 16:26:45,120 - root - INFO - tree_retriever.py:210 - 节点内容: 市中管局中医特色专病专科（社区）（2023年）：江宁：推拿科；彭浦新村：肺胀；芷江西：中医骨伤科；彭二：颤病；大宁：鼻鼽；彭浦镇：骨瘘  静安区学科建设系列项目：2021-2024年：共计19个，其中...
+2025-03-17 16:26:45,120 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5111
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:210 - 节点内容: 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站	场中路3308弄8号	56526877	全科门诊、中医、预防保健、康复	周一 上午8:...
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5058
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:210 - 节点内容: 每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站	少年村路672号	56320616	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30...
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4925
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4844
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:210 - 节点内容: 场中路2600弄社区卫生服务站	场中路2600弄112号	56436129	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）...
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4742
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:210 - 节点内容: 3、特色诊疗科室：帕金森病专病门诊 中心康复科是上海市首批示范性社区康复中心 位于三楼的康复综合治疗区，涵盖了康复医学科门诊、康复功能评定室、物理治疗(PT)室、作业治疗(OT)室、语言吞咽治疗(ST...
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4623
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:210 - 节点内容: 上海市静安区的社区卫生服务站提供全科门诊、中医、预防保健和康复服务。其中，无论是场中路2600弄社区卫生服务站、永和小区社区卫生服务站、海鹰社区卫生服务站、少年村路672号社区卫生服务站还是...
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4478
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:210 - 节点内容: 中心为上海市康复医学会社区康复实训基地，是上海市首批示范性社区康复中心 中心的院训为“团结、敬业、仁爱、奉献”，为社区居民提供基本医疗和公共卫生等服务 1、中心外观照片 2、门诊便民服务中心 3、中心...
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4428
+2025-03-17 16:26:45,121 - root - INFO - tree_retriever.py:210 - 节点内容: 擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午...
+2025-03-17 16:27:17,326 - root - INFO - raptor_module.py:215 - 重排序功能已启用，开始处理检索结果
+2025-03-17 16:35:33,842 - root - INFO - raptor_module.py:333 - 重排序完成，重新排序了 10 个段落
+2025-03-17 16:35:33,842 - root - INFO - raptor_module.py:407 - 查询完成，返回结果类型: str
+2025-03-17 16:35:33,842 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 45, 相似度大于阈值的节点数: 44
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8612
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇能不能看耳鸣...
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8557
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇第二社区可以看耳鸣吗...
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8536
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:210 - 节点内容: 介绍一下方锦...
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7929
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:210 - 节点内容: 静安区人才建设有什么优势？...
+2025-03-17 16:36:52,327 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7921
+2025-03-17 16:36:52,331 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-03-17 16:36:52,331 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7774
+2025-03-17 16:36:52,331 - root - INFO - tree_retriever.py:210 - 节点内容: 准备在本地搬家，约十公里，计划找搬家公司，已打包一半物品，打算先打包非必需品。 中国处于长期降息周期。...
+2025-03-17 16:36:52,331 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7769
+2025-03-17 16:36:52,332 - root - INFO - tree_retriever.py:210 - 节点内容: 用markdown格式回复，描述一下我是个什么样的人...
+2025-03-17 16:36:52,332 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7728
+2025-03-17 16:36:52,332 - root - INFO - tree_retriever.py:210 - 节点内容: 方锦擅长什么...
+2025-03-17 16:36:52,332 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7701
+2025-03-17 16:36:52,332 - root - INFO - tree_retriever.py:210 - 节点内容: 方锦副主任擅长什么...
+2025-03-17 16:36:52,333 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7638
+2025-03-17 16:36:52,333 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-03-17 16:36:52,333 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 38, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}, {'node_index': 37, 'layer_number': 0}, {'node_index': 42, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 19, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 39, 'layer_number': 0}, {'node_index': 36, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}]
+2025-03-17 16:36:59,402 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-03-17 16:36:59,405 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-03-17 16:37:00,565 - root - INFO - tree_builder.py:288 - 已创建 1 个叶子节点嵌入
+2025-03-17 16:37:00,565 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-03-17 16:37:00,572 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:37:00,573 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:37:00,573 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 0
+2025-03-17 16:37:00,573 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-03-17 16:37:00,573 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 49
+2025-03-17 16:37:00,573 - root - INFO - tree_structures.py:63 - 节点 49 已添加到树中
+2025-03-17 16:37:00,573 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 49
+2025-03-17 16:37:00,573 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 16:37:00,737 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:37:00,737 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 10
+            选择模式: threshold
+            上下文嵌入模型: OpenAI
+            嵌入模型: <raptor.EmbeddingModels.OpenAIEmbeddingModel object at 0x0000022727F31340>
+            层数: None
+            起始层: None
+        
+2025-03-17 16:37:00,737 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-03-17 16:37:00,737 - knowledge_base.storage - INFO - storage.py:135 - 文档 m_1742200619392_6917 已添加到运行中的RA树结构
+2025-03-17 16:37:00,737 - root - INFO - memory_manager.py:314 - 记忆 m_1742200619392_6917 已添加到树结构
+2025-03-17 16:37:00,740 - root - INFO - memory_manager.py:910 - 当前对话轮数: 1
+2025-03-17 16:37:00,740 - root - INFO - memory_manager.py:913 - 触发树结构重构...
+2025-03-17 16:37:00,740 - root - INFO - memory_manager.py:868 - 开始重构记忆树...
+2025-03-17 16:37:00,740 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 16:37:00,887 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:37:00,887 - root - INFO - memory_manager.py:875 - 记忆树重构完成
+2025-03-17 16:37:00,893 - root - INFO - RetrievalAugmentation.py:353 - Tree successfully saved to data/RAtree/default_tree
+2025-03-17 16:37:00,893 - knowledge_base.storage - INFO - storage.py:154 - 已将运行中的RA树结构保存到: data/RAtree/default_tree
+2025-03-17 16:37:00,893 - root - INFO - memory_manager.py:879 - 已保存重构后的树到: data/RAtree/default_tree
+2025-03-17 16:37:00,893 - root - INFO - memory_manager.py:919 - 树结构重构成功，计数器已重置
+2025-03-17 16:37:00,987 - root - INFO - memory_manager.py:210 - Successfully saved memories to file
+2025-03-17 16:37:00,990 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:37:00] "POST /chat HTTP/1.1" 200 -
+2025-03-17 16:37:23,000 - root - INFO - raptor_module.py:167 - 开始执行查询: '介绍一下 方锦'，top_k=10
+2025-03-17 16:37:23,024 - utils.raptor_config_manager - INFO - raptor_config_manager.py:94 - 正在加载重排序模型: D:/models/bge-reranker-base
+2025-03-17 16:37:24,902 - utils.raptor_config_manager - INFO - raptor_config_manager.py:98 - 重排序模型加载成功
+2025-03-17 16:37:24,902 - utils.raptor_config_manager - INFO - raptor_config_manager.py:37 - RAPTOR配置管理器初始化，配置文件: config/raptor_config.yaml
+2025-03-17 16:37:28,161 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:37:29,587 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:37:29,588 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 16:37:29,588 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:37:29,588 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.6150
+2025-03-17 16:37:29,588 - root - INFO - tree_retriever.py:210 - 节点内容: 职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得...
+2025-03-17 16:37:29,588 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4464
+2025-03-17 16:37:29,588 - root - INFO - tree_retriever.py:210 - 节点内容: 场中路2600弄社区卫生服务站	场中路2600弄112号	56436129	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）...
+2025-03-17 16:37:29,591 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4441
+2025-03-17 16:37:29,591 - root - INFO - tree_retriever.py:210 - 节点内容: 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站	场中路3308弄8号	56526877	全科门诊、中医、预防保健、康复	周一 上午8:...
+2025-03-17 16:37:29,591 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4309
+2025-03-17 16:37:29,591 - root - INFO - tree_retriever.py:210 - 节点内容: 中心结合社区人群不同康复需求和特点，提供整合型的康复服务，如运动训练、物理因子治疗、作业治疗、言语治疗、感统训练等52个项目，通过结合传统中医适宜技术，治疗基本涵盖了神经系统、骨-关节系统、慢性疼痛、...
+2025-03-17 16:37:29,591 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4304
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:210 - 节点内容: 2.	静安区卫生系统近三年学科建设成果 国家级重点学科突破：静安区中心医院——卒中后肢体瘫痪的诊治、康护体系建设 市卫生健康委员会临床重点专科：2020-2022：静中心：手及上肢外科、消化内科、药剂...
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4293
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:210 - 节点内容: 市中管局中医特色专病专科（社区）（2023年）：江宁：推拿科；彭浦新村：肺胀；芷江西：中医骨伤科；彭二：颤病；大宁：鼻鼽；彭浦镇：骨瘘  静安区学科建设系列项目：2021-2024年：共计19个，其中...
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4145
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4144
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:210 - 节点内容: 中心为上海市康复医学会社区康复实训基地，是上海市首批示范性社区康复中心 中心的院训为“团结、敬业、仁爱、奉献”，为社区居民提供基本医疗和公共卫生等服务 1、中心外观照片 2、门诊便民服务中心 3、中心...
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4131
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:210 - 节点内容: 每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站	少年村路672号	56320616	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30...
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.3945
+2025-03-17 16:37:29,593 - root - INFO - tree_retriever.py:210 - 节点内容: •	市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •	市政府  《上海市加强公共卫生体系建设三年行动计...
+2025-03-17 16:37:29,593 - root - INFO - raptor_module.py:215 - 重排序功能已启用，开始处理检索结果
+2025-03-17 16:37:34,582 - root - INFO - raptor_module.py:333 - 重排序完成，重新排序了 10 个段落
+2025-03-17 16:37:34,582 - root - INFO - raptor_module.py:407 - 查询完成，返回结果类型: str
+2025-03-17 16:37:34,833 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:37:38,338 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:37:38,338 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 46, 相似度大于阈值的节点数: 45
+2025-03-17 16:37:38,338 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:37:38,338 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8660
+2025-03-17 16:37:38,338 - root - INFO - tree_retriever.py:210 - 节点内容: 方锦擅长什么...
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8477
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:210 - 节点内容: 介绍一下彭浦镇...
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8393
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:210 - 节点内容: 方锦副主任擅长什么...
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.8225
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:210 - 节点内容: 介绍一下彭浦镇第二社区卫生中心...
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7940
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:210 - 节点内容: 兴趣领域：博弈论；人工智能在智能家居、个人助理领域的应用；金融、经济和商业相关的 YouTube 频道；大仲马的文学作品；阅读。...
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7898
+2025-03-17 16:37:38,340 - root - INFO - tree_retriever.py:210 - 节点内容: 阅读习惯：喜欢纸质书，尤其是精装书；对《三个火枪手》《基督山伯爵》感兴趣。 5  其他 计划本周末去乌镇旅行，想了解景点游览时间和餐厅推荐。...
+2025-03-17 16:37:38,342 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7827
+2025-03-17 16:37:38,342 - root - INFO - tree_retriever.py:210 - 节点内容: 用markdown格式回复，描述一下我是个什么样的人...
+2025-03-17 16:37:38,342 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7793
+2025-03-17 16:37:38,342 - root - INFO - tree_retriever.py:210 - 节点内容: 娱乐方式：看电影；听音乐、播客、音频课程；玩游戏（但婚后时间减少）；喜欢运动，包括滑雪、滑板和冲浪。...
+2025-03-17 16:37:38,342 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7772
+2025-03-17 16:37:38,343 - root - INFO - tree_retriever.py:210 - 节点内容: 交流风格偏好：希望助手热情、充满活力；喜欢简洁、口语化且互动轮次多的对话；希望对话时使用低沉、有磁性的声音和更多胸腔共鸣；更喜欢用中文交流；喜欢通俗易懂且保持清晰的翻译。...
+2025-03-17 16:37:38,343 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.7768
+2025-03-17 16:37:38,343 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇第二社区可以看耳鸣吗...
+2025-03-17 16:37:38,343 - root - INFO - memory_manager.py:372 - 检索到相关内容，层级信息: [{'node_index': 39, 'layer_number': 0}, {'node_index': 49, 'layer_number': 0}, {'node_index': 36, 'layer_number': 0}, {'node_index': 45, 'layer_number': 0}, {'node_index': 13, 'layer_number': 0}, {'node_index': 17, 'layer_number': 0}, {'node_index': 25, 'layer_number': 0}, {'node_index': 15, 'layer_number': 0}, {'node_index': 16, 'layer_number': 0}, {'node_index': 35, 'layer_number': 0}]
+2025-03-17 16:37:45,644 - root - INFO - memory_manager.py:282 - 发现相似记忆 (相似度: 1.0000)
+2025-03-17 16:37:45,650 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:37:45] "POST /chat HTTP/1.1" 200 -
+2025-03-17 16:38:04,799 - root - INFO - raptor_module.py:167 - 开始执行查询: '还有别的金牌家医生吗'，top_k=10
+2025-03-17 16:38:04,842 - utils.raptor_config_manager - INFO - raptor_config_manager.py:94 - 正在加载重排序模型: D:/models/bge-reranker-base
+2025-03-17 16:38:06,707 - utils.raptor_config_manager - INFO - raptor_config_manager.py:98 - 重排序模型加载成功
+2025-03-17 16:38:06,707 - utils.raptor_config_manager - INFO - raptor_config_manager.py:37 - RAPTOR配置管理器初始化，配置文件: config/raptor_config.yaml
+2025-03-17 16:38:09,869 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:38:11,369 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:38:11,369 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 16:38:11,369 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:38:11,370 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5286
+2025-03-17 16:38:11,370 - root - INFO - tree_retriever.py:210 - 节点内容: 职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得...
+2025-03-17 16:38:11,371 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4831
+2025-03-17 16:38:11,371 - root - INFO - tree_retriever.py:210 - 节点内容: 帕金森病专病门诊是以针灸治疗帕金森病、颈椎病、膝骨性关节炎、类风湿关节炎为特色诊疗技术，荣获上海市中医特色专病专科（颤病）能力建设、吴焕淦上海市名中医工作室基层工作站等荣誉称号 特色门诊基于上海市针灸...
+2025-03-17 16:38:11,371 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4673
+2025-03-17 16:38:11,372 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 16:38:11,372 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4439
+2025-03-17 16:38:11,372 - root - INFO - tree_retriever.py:210 - 节点内容: 上海市在卫生健康领域制定了多项规划和计划，包括加快紧缺人才培养和医学科学家培养，提升公共卫生学科竞争力，构建高水平医学队列研究平台等。静安区卫生系统...
+2025-03-17 16:38:11,373 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4380
+2025-03-17 16:38:11,373 - root - INFO - tree_retriever.py:210 - 节点内容: •	市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •	市政府  《上海市加强公共卫生体系建设三年行动计...
+2025-03-17 16:38:11,373 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4140
+2025-03-17 16:38:11,373 - root - INFO - tree_retriever.py:210 - 节点内容: 2.	静安区卫生系统近三年学科建设成果 国家级重点学科突破：静安区中心医院——卒中后肢体瘫痪的诊治、康护体系建设 市卫生健康委员会临床重点专科：2020-2022：静中心：手及上肢外科、消化内科、药剂...
+2025-03-17 16:38:11,373 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4125
+2025-03-17 16:38:11,373 - root - INFO - tree_retriever.py:210 - 节点内容: 3、特色诊疗科室：帕金森病专病门诊 中心康复科是上海市首批示范性社区康复中心 位于三楼的康复综合治疗区，涵盖了康复医学科门诊、康复功能评定室、物理治疗(PT)室、作业治疗(OT)室、语言吞咽治疗(ST...
+2025-03-17 16:38:11,373 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4096
+2025-03-17 16:38:11,375 - root - INFO - tree_retriever.py:210 - 节点内容: 1.	人才、学科建设--重要文件和政策 •	中共中央、国务院  《“健康中国2030”规划纲要》 强调卫生健康人才队伍建设的重要性，提出加强医学教育、科研创新和临床实践的结合，培养高层次医学人才 •	...
+2025-03-17 16:38:11,375 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4007
+2025-03-17 16:38:11,375 - root - INFO - tree_retriever.py:210 - 节点内容: 市中管局中医特色专病专科（社区）（2023年）：江宁：推拿科；彭浦新村：肺胀；芷江西：中医骨伤科；彭二：颤病；大宁：鼻鼽；彭浦镇：骨瘘  静安区学科建设系列项目：2021-2024年：共计19个，其中...
+2025-03-17 16:38:11,375 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4006
+2025-03-17 16:38:11,375 - root - INFO - tree_retriever.py:210 - 节点内容: 5.	静安区卫生系统学科人才培养措施 加强高层次人才引进与培养：制定更具吸引力的人才引进政策，为高层次卫生学科人才提供优厚的薪酬待遇、住房补贴、科研经费等支持 拓展人才培养渠道：推进大学附属医院、社区...
+2025-03-17 16:38:11,375 - root - INFO - raptor_module.py:215 - 重排序功能已启用，开始处理检索结果
+2025-03-17 16:48:11,942 - werkzeug - INFO - _internal.py:97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.98.115:5000
+2025-03-17 16:48:11,942 - werkzeug - INFO - _internal.py:97 - [33mPress CTRL+C to quit[0m
+2025-03-17 16:48:14,769 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:48:14] "GET /knowledge-base HTTP/1.1" 200 -
+2025-03-17 16:48:15,120 - knowledge_base.storage - INFO - storage.py:203 - 开始获取完整树结构
+2025-03-17 16:48:15,121 - knowledge_base.storage - INFO - storage.py:209 - 树结构获取成功
+2025-03-17 16:48:15,121 - models.raptor_module - INFO - raptor_module.py:526 - 成功获取文档树结构信息
+2025-03-17 16:48:15,121 - models.raptor_module - INFO - raptor_module.py:527 - {'tree': {'leaf_nodes': [], 'summary_nodes': [], 'num_layers': 0, 'total_nodes': 0}}
+2025-03-17 16:48:15,122 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:48:15] "GET /api/documents HTTP/1.1" 200 -
+2025-03-17 16:48:15,126 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:48:15] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:48:15,137 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:48:15] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:48:20,843 - root - INFO - document_routes.py:40 - 开始处理文档上传请求
+2025-03-17 16:48:20,847 - root - INFO - document_routes.py:63 - 安全化后的文件名: txt
+2025-03-17 16:48:20,847 - root - INFO - document_routes.py:72 - 添加扩展名后的文件名: txt.txt
+2025-03-17 16:48:20,848 - root - INFO - document_routes.py:78 - 文件已保存到临时路径: temp\txt.txt
+2025-03-17 16:48:20,848 - root - INFO - document_routes.py:93 - 检测到文件类型: txt
+2025-03-17 16:48:20,864 - root - INFO - document_routes.py:111 - 成功读取文件内容，长度: 4177
+2025-03-17 16:48:20,864 - root - INFO - RetrievalAugmentation.py:221 - 开始向现有树中添加新文档
+2025-03-17 16:48:20,878 - root - INFO - tree_builder.py:276 - 正在创建叶子节点
+2025-03-17 16:48:21,351 - root - INFO - tree_builder.py:288 - 已创建 17 个叶子节点嵌入
+2025-03-17 16:48:21,351 - root - INFO - tree_builder.py:290 - 正在构建所有节点
+2025-03-17 16:48:21,352 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:48:21,354 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:48:36,844 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 16:48:40,979 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 100
+2025-03-17 16:48:44,395 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 16:48:50,179 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 100
+2025-03-17 16:48:50,210 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 1
+2025-03-17 16:48:50,210 - root - INFO - cluster_tree_builder.py:97 - Stopping Layer construction: Cannot Create More Layers. Total Layers in tree: 1
+2025-03-17 16:48:50,210 - root - INFO - RetrievalAugmentation.py:229 - 新文档处理成功，开始合并到现有树中
+2025-03-17 16:48:50,210 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 1，新索引: 0
+2025-03-17 16:48:50,210 - root - INFO - tree_structures.py:63 - 节点 0 已添加到树中
+2025-03-17 16:48:50,210 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 0
+2025-03-17 16:48:50,210 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 0，新索引: 1
+2025-03-17 16:48:50,210 - root - INFO - tree_structures.py:63 - 节点 1 已添加到树中
+2025-03-17 16:48:50,210 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 1
+2025-03-17 16:48:50,210 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 4，新索引: 2
+2025-03-17 16:48:50,211 - root - INFO - tree_structures.py:63 - 节点 2 已添加到树中
+2025-03-17 16:48:50,211 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 2
+2025-03-17 16:48:50,211 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 3，新索引: 3
+2025-03-17 16:48:50,211 - root - INFO - tree_structures.py:63 - 节点 3 已添加到树中
+2025-03-17 16:48:50,211 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 3
+2025-03-17 16:48:50,211 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 6，新索引: 4
+2025-03-17 16:48:50,211 - root - INFO - tree_structures.py:63 - 节点 4 已添加到树中
+2025-03-17 16:48:50,211 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 4
+2025-03-17 16:48:50,211 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 8，新索引: 5
+2025-03-17 16:48:50,211 - root - INFO - tree_structures.py:63 - 节点 5 已添加到树中
+2025-03-17 16:48:50,211 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 5
+2025-03-17 16:48:50,212 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 5，新索引: 6
+2025-03-17 16:48:50,212 - root - INFO - tree_structures.py:63 - 节点 6 已添加到树中
+2025-03-17 16:48:50,212 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 6
+2025-03-17 16:48:50,212 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 10，新索引: 7
+2025-03-17 16:48:50,212 - root - INFO - tree_structures.py:63 - 节点 7 已添加到树中
+2025-03-17 16:48:50,212 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 7
+2025-03-17 16:48:50,212 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 2，新索引: 8
+2025-03-17 16:48:50,212 - root - INFO - tree_structures.py:63 - 节点 8 已添加到树中
+2025-03-17 16:48:50,212 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 8
+2025-03-17 16:48:50,212 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 9，新索引: 9
+2025-03-17 16:48:50,212 - root - INFO - tree_structures.py:63 - 节点 9 已添加到树中
+2025-03-17 16:48:50,213 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 9
+2025-03-17 16:48:50,213 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 13，新索引: 10
+2025-03-17 16:48:50,213 - root - INFO - tree_structures.py:63 - 节点 10 已添加到树中
+2025-03-17 16:48:50,213 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 10
+2025-03-17 16:48:50,213 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 7，新索引: 11
+2025-03-17 16:48:50,213 - root - INFO - tree_structures.py:63 - 节点 11 已添加到树中
+2025-03-17 16:48:50,213 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 11
+2025-03-17 16:48:50,213 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 12，新索引: 12
+2025-03-17 16:48:50,213 - root - INFO - tree_structures.py:63 - 节点 12 已添加到树中
+2025-03-17 16:48:50,214 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 12
+2025-03-17 16:48:50,214 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 15，新索引: 13
+2025-03-17 16:48:50,214 - root - INFO - tree_structures.py:63 - 节点 13 已添加到树中
+2025-03-17 16:48:50,214 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 13
+2025-03-17 16:48:50,214 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 14，新索引: 14
+2025-03-17 16:48:50,214 - root - INFO - tree_structures.py:63 - 节点 14 已添加到树中
+2025-03-17 16:48:50,214 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 14
+2025-03-17 16:48:50,214 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 11，新索引: 15
+2025-03-17 16:48:50,214 - root - INFO - tree_structures.py:63 - 节点 15 已添加到树中
+2025-03-17 16:48:50,215 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 15
+2025-03-17 16:48:50,215 - root - INFO - tree_structures.py:52 - 正在添加新节点，原始索引: 16，新索引: 16
+2025-03-17 16:48:50,215 - root - INFO - tree_structures.py:63 - 节点 16 已添加到树中
+2025-03-17 16:48:50,215 - root - INFO - RetrievalAugmentation.py:236 - 已添加新叶子节点: 16
+2025-03-17 16:48:50,215 - root - INFO - tree_builder.py:312 - 正在构建所有节点
+2025-03-17 16:48:50,216 - root - INFO - cluster_tree_builder.py:62 - Using Cluster TreeBuilder
+2025-03-17 16:48:50,216 - root - INFO - cluster_tree_builder.py:91 - Constructing Layer 0
+2025-03-17 16:48:56,025 - root - INFO - cluster_tree_builder.py:112 - Summarization Length: 100
+2025-03-17 16:48:59,509 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1639, Summarized Text Length: 100
+2025-03-17 16:49:02,217 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1131, Summarized Text Length: 100
+2025-03-17 16:49:04,813 - root - INFO - cluster_tree_builder.py:76 - Node Texts Length: 1718, Summarized Text Length: 100
+2025-03-17 16:49:04,854 - root - INFO - tree_retriever.py:155 - 成功初始化TreeRetriever，配置为：
+        TreeRetrieverConfig:
+            分词器: <Encoding 'cl100k_base'>
+            阈值: 0.1
+            Top K: 5
+            选择模式: top_k
+            上下文嵌入模型: EMB
+            嵌入模型: <raptor.EmbeddingModels.SBertEmbeddingModel object at 0x00000232217A9FA0>
+            层数: None
+            起始层: None
+        
+2025-03-17 16:49:04,856 - root - INFO - RetrievalAugmentation.py:240 - 检索器已更新
+2025-03-17 16:49:04,856 - knowledge_base.storage - INFO - storage.py:135 - 文档  已添加到运行中的RA树结构
+2025-03-17 16:49:04,856 - root - INFO - document_routes.py:123 - 文档 txt.txt 已成功添加到RA树
+2025-03-17 16:49:04,857 - root - INFO - document_routes.py:140 - 临时文件已删除: temp\txt.txt
+2025-03-17 16:49:04,857 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:49:04] "POST /api/documents HTTP/1.1" 200 -
+2025-03-17 16:49:04,868 - knowledge_base.storage - INFO - storage.py:203 - 开始获取完整树结构
+2025-03-17 16:49:04,868 - knowledge_base.storage - INFO - storage.py:209 - 树结构获取成功
+2025-03-17 16:49:04,868 - models.raptor_module - INFO - raptor_module.py:526 - 成功获取文档树结构信息
+2025-03-17 16:49:04,869 - models.raptor_module - INFO - raptor_module.py:527 - {'tree': {'leaf_nodes': [{'text': '中心为上海市康复医学会社区康复实训基地，是上海市首批示范性社区康复中心 中心的院训为“团结、敬业、仁爱、奉献”，为社区居民提供基本医疗和公共卫生等服务 1、中心外观照片 2、门诊便民服务中心 3、中心病房照片 4、中心大型设备CT 5、中心大型设备骨密度仪 特色科室（2到3个）： 中心中医科设有慢性肾脏病专病门诊和帕金森病专病门诊', 'index': 0}, {'text': '彭浦镇第二社区卫生服务中心简介 中心简介：彭浦镇第二社区卫生服务中心坐落于上海市静安区高平路1011号，下设6个社区卫生服务站点，服务周边人口6.68万人，设有全科、内科、外科、妇科、儿科、眼科、口腔科、康复医学科、中医科、医学检验科、医学影像科及预防保健科等业务科室，实际开放床位212张，配备有CT、DR、骨密度仪、心脏超声诊断仪、肺功能检测仪等大型及重要医疗设备仪器，年门诊量176534人次，住院患者人次748人次，年新建家庭病床261张 中心医护人员132人，其中全科医生33人，签约居民27110人', 'index': 1}, {'text': '3、特色诊疗科室：帕金森病专病门诊 中心康复科是上海市首批示范性社区康复中心 位于三楼的康复综合治疗区，涵盖了康复医学科门诊、康复功能评定室、物理治疗(PT)室、作业治疗(OT)室、语言吞咽治疗(ST)室、物理因子治疗室、感统训练室、儿童康复室、光疗室、高频室、传统康复治疗室等多个治疗科室', 'index': 2}, {'text': '帕金森病专病门诊是以针灸治疗帕金森病、颈椎病、膝骨性关节炎、类风湿关节炎为特色诊疗技术，荣获上海市中医特色专病专科（颤病）能力建设、吴焕淦上海市名中医工作室基层工作站等荣誉称号 特色门诊基于上海市针灸经络研究所名中医吴焕淦教授学术思想和临床经验，定期邀请其工作室成员临床示范性带教坐诊，为辖区居民的健康保驾护航 1、中医馆 2、特色诊疗科室：中医慢性肾脏病专病门诊', 'index': 3}, {'text': '职称：主任医师 科室：全科门诊 擅长诊疗服务内容：擅长社区常见病的诊治，尤其是高血压、糖尿病、冠心病、脑卒中等常见病、多发病的诊断及治疗 曾于二甲医院内科工作十余年，从事病房带组、门诊、急诊工作 获得荣誉：曾担任2项区级课题第一负责人，发表论文十余篇，获得专利1项 联系电话：13761818079 王牌家医2 姓名：方锦 学历：本科 职称：副主任医师 科室：全科门诊', 'index': 4}, {'text': '场中路2600弄社区卫生服务站\t场中路2600弄112号\t56436129\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 永和小区社区卫生服务站\t原平路917弄21号甲\t56512005\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊', 'index': 5}, {'text': '中心结合社区人群不同康复需求和特点，提供整合型的康复服务，如运动训练、物理因子治疗、作业治疗、言语治疗、感统训练等52个项目，通过结合传统中医适宜技术，治疗基本涵盖了神经系统、骨-关节系统、慢性疼痛、老年疾病、儿童康复等康复领域，提供社区常见脑梗死脑出血后遗症、颈椎病、腰椎间盘突出、骨关节炎、COPD、冠心病、骨折后等常见病多发病以及小儿自闭症的康复服务 4、示范性社区康复中心 王牌家医1 姓名：张忆梓 学历：医学硕士', 'index': 6}, {'text': '周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站\t场中路3308弄8号\t56526877\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 联系信息：中心地址：上海市静安区高平路1011号   邮政编码：200436 总机电话：56622027     专人接待咨询服务电话：56622027转8216 静安区卫生健康学科人才工作报告', 'index': 7}, {'text': '慢性肾脏病专病门诊以治疗慢性肾脏病为主，邀请CKD领域名老中医、岳阳医院原肾内科陶明龙主任定期来我中心坐诊，依托中心慢性肾脏病“防、治、康”一体化管理化管理中心建设，在社区对慢性肾脏病高危人群进行早期监测，为社区居民对疾病提供早发现、早诊断、早管理、早治疗途径，从而改善疾病愈后', 'index': 8}, {'text': '每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站\t少年村路672号\t56320616\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 塘南社区卫生服务站\t高平路809弄63号\t56522095\t全科门诊、中医、预防保健、康复\t周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）           周二、周四 上午8:00-11:15，下午14:00-15:30', 'index': 9}, {'text': '2.\t静安区卫生系统近三年学科建设成果 国家级重点学科突破：静安区中心医院——卒中后肢体瘫痪的诊治、康护体系建设 市卫生健康委员会临床重点专科：2020-2022：静中心：手及上肢外科、消化内科、药剂科；闸中心：肾内科、血液肿瘤科、药剂科；市北：眼科；三康：重症康复科 2024-2026：静中心：骨科、放射科；闸中心：血液科；市北：眼科；三康：康复科', 'index': 10}, {'text': '擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午 08:00-11:30（周一至周五）                                      下午 13:00-16:45（周一、三、五）                                           14:00-16:45（周二、四）                                      夏令时（周一至周五）下午就诊时间为14:00-16:45           延时及双休日服务时间：上午08:00-11:30（周六） 站点服务（填对外开放的）： 服务站名称\t地址\t电话\t服务项目\t服务时间', 'index': 11}, {'text': '•\t市卫健委  《上海市卫生健康发展“十四五”规划》 加快各类紧缺人才培养，引进高层次、创新型人才和团队，培养医学科学家、医学工程师等高端医学人才 •\t市政府  《上海市加强公共卫生体系建设三年行动计划（2023-2025年）》 重点支持公共卫生学科人才建设，培养高水平的公共卫生学科带头人，提升疾控体系的核心竞争力 •\t市卫健委等10个部门《关于进一步加强本市医学队列建设和研究的实施方案》 构建高水平医学队列研究平台，培养创新型队列研究人才，推动医学科技创新和成果转化', 'index': 12}, {'text': '闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.\t静安区学科人才建设SWOT分析 1)\t静安区卫生系统学科人才建设优势 区域人口密度大：2022年全市第二医疗服务需求旺盛，丰富的临床病例资源 医疗资源丰富品类齐全：拥有不同层级的医疗卫生机构，有利于不同医疗机构之间的合作与交流 特色专科建设成效显著：康复医学、老年医学、中医等特色专科建设方面取得显著成效 三级医院数量多：便于开展紧密的合作与交流，形成分级诊疗体系', 'index': 13}, {'text': '市中管局中医特色专病专科（社区）（2023年）：江宁：推拿科；彭浦新村：肺胀；芷江西：中医骨伤科；彭二：颤病；大宁：鼻鼽；彭浦镇：骨瘘  静安区学科建设系列项目：2021-2024年：共计19个，其中包括重点学科:3个；重要薄弱学科6个；培育学科5个；优势专病5个； 2024-2027年:共计15个，其中重点学科：3个； 重要薄弱学科3个 ； 培育学科4 个； 优势专病5 个 3.\t近三年人才建设成果 高级人才引进：静中心-曲志伟、苏凡、陈家伟、丁粤粤', 'index': 14}, {'text': '1.\t人才、学科建设--重要文件和政策 •\t中共中央、国务院  《“健康中国2030”规划纲要》 强调卫生健康人才队伍建设的重要性，提出加强医学教育、科研创新和临床实践的结合，培养高层次医学人才 •\t国家卫健委  《“十四五”卫生健康人才发展规划》 促进人才服务能力提高与结构优化，完善人才管理制度机制，营造人才发展的良好环境 •\t科技部、国家卫健委《“十四五”卫生与健康科技创新专项规划》 加强医学科技创新，支持高水平医学研究平台建设，培养具有国际竞争力的医学科技人才', 'index': 15}, {'text': '5.\t静安区卫生系统学科人才培养措施 加强高层次人才引进与培养：制定更具吸引力的人才引进政策，为高层次卫生学科人才提供优厚的薪酬待遇、住房补贴、科研经费等支持 拓展人才培养渠道：推进大学附属医院、社区卫生中心教学能力建设 实施人才梯队培养计划：开展“十百千”人才培养计划，形成不同层次、不同结构的人才队伍梯队 完善人才激励与保障机制：健全绩效考核评价制度，优化人才职业发展路径，加强人才服务与保障', 'index': 16}], 'summary_nodes': [{'text': '静安区卫生系统近三年在学科建设上取得了许多成果。国家级重点学科突破包括静安区中心医院在卒中后肢体瘫痪的诊治和康护体系建设方面。市卫生健康委员会确定了2020-2022和', 'index': 17, 'children': [10, 12, 13, 14, 15, 16]}, {'text': '上海市静安区健康服务站地址、联系信息及服务时间总结如下：\n\n1. 场中路2600弄社区卫生服务站：全科门诊、中医、预防保健、康复。周一上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30），', 'index': 18, 'children': [9, 11, 5, 7]}, {'text': '中心概况：\n- 中心为上海市康复医学会社区康复实训基地，是上海市首批示范性社区康复中心。\n- 中心院训为“团结、敬业、仁爱、奉献”，为社区居民提供基本医疗和公共卫生等', 'index': 19, 'children': [0, 1, 2, 3, 4, 6, 8]}], 'num_layers': 1, 'total_nodes': 20}}
+2025-03-17 16:49:04,870 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:49:04] "GET /api/documents HTTP/1.1" 200 -
+2025-03-17 16:49:04,879 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:49:04] "[33mGET /api/documents/stats HTTP/1.1[0m" 404 -
+2025-03-17 16:56:00,655 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:56:00] "GET / HTTP/1.1" 200 -
+2025-03-17 16:56:00,736 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:56:00] "GET /get_available_roles HTTP/1.1" 200 -
+2025-03-17 16:56:01,377 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:56:01] "[36mGET /static/images/assistant.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:56:01,379 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:56:01] "[36mGET /static/images/Christmas_reindeer_avatar_80x80.png HTTP/1.1[0m" 304 -
+2025-03-17 16:56:01,382 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:56:01] "[36mGET /static/images/frank.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:56:01,392 - werkzeug - INFO - _internal.py:97 - 127.0.0.1 - - [17/Mar/2025 16:56:01] "[36mGET /static/images/santa.jpg HTTP/1.1[0m" 304 -
+2025-03-17 16:56:12,852 - root - INFO - raptor_module.py:167 - 开始执行查询: '介绍一下彭浦镇'，top_k=10
+2025-03-17 16:56:12,893 - utils.raptor_config_manager - INFO - raptor_config_manager.py:94 - 正在加载重排序模型: D:/models/bge-reranker-base
+2025-03-17 16:56:16,512 - utils.raptor_config_manager - INFO - raptor_config_manager.py:98 - 重排序模型加载成功
+2025-03-17 16:56:16,512 - utils.raptor_config_manager - INFO - raptor_config_manager.py:37 - RAPTOR配置管理器初始化，配置文件: config/raptor_config.yaml
+2025-03-17 16:56:24,742 - root - INFO - tree_retriever.py:332 - 使用扁平化树检索
+2025-03-17 16:56:26,110 - root - INFO - tree_retriever.py:197 - 扁平化检索 - 相似度阈值: 0.1
+2025-03-17 16:56:26,112 - root - INFO - tree_retriever.py:198 - 原始检索节点数: 20, 相似度大于阈值的节点数: 20
+2025-03-17 16:56:26,112 - root - INFO - tree_retriever.py:202 - 取出前10个节点
+2025-03-17 16:56:26,113 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.6986
+2025-03-17 16:56:26,113 - root - INFO - tree_retriever.py:210 - 节点内容: 彭浦镇第二社区卫生服务中心简介 中心简介：彭浦镇第二社区卫生服务中心坐落于上海市静安区高平路1011号，下设6个社区卫生服务站点，服务周边人口6.68万人，设有全科、内科、外科、妇科、儿科、眼科、口腔...
+2025-03-17 16:56:26,114 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5540
+2025-03-17 16:56:26,114 - root - INFO - tree_retriever.py:210 - 节点内容: 市中管局中医特色专病专科（社区）（2023年）：江宁：推拿科；彭浦新村：肺胀；芷江西：中医骨伤科；彭二：颤病；大宁：鼻鼽；彭浦镇：骨瘘  静安区学科建设系列项目：2021-2024年：共计19个，其中...
+2025-03-17 16:56:26,115 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5111
+2025-03-17 16:56:26,115 - root - INFO - tree_retriever.py:210 - 节点内容: 周三、周五  上午8:00-11:15，下午无门诊 每年6月16日至9月15日实行夏令时作息 海鹰社区卫生服务站	场中路3308弄8号	56526877	全科门诊、中医、预防保健、康复	周一 上午8:...
+2025-03-17 16:56:26,116 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.5058
+2025-03-17 16:56:26,116 - root - INFO - tree_retriever.py:210 - 节点内容: 每年6月16日至9月15日实行夏令时作息 少年村路672号社区卫生服务站	少年村路672号	56320616	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30...
+2025-03-17 16:56:26,116 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4970
+2025-03-17 16:56:26,117 - root - INFO - tree_retriever.py:210 - 节点内容: 上海市静安区健康服务站地址、联系信息及服务时间总结如下：
+
+1. 场中路2600弄社区卫生服务站：全科门诊、中医、预防保健、康复。周一上午8:00-11:15，下午13:30-15:30（夏令时为14...
+2025-03-17 16:56:26,117 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4925
+2025-03-17 16:56:26,117 - root - INFO - tree_retriever.py:210 - 节点内容: 闸中心：管军、林辉、刘龙民、周运恒、刘靖、张卫东 市北：曹华明、常玉清、孙沐炎、叶敏、姜昊声、贾一平 4.	静安区学科人才建设SWOT分析 1)	静安区卫生系统学科人才建设优势 区域人口密度大：202...
+2025-03-17 16:56:26,118 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4844
+2025-03-17 16:56:26,118 - root - INFO - tree_retriever.py:210 - 节点内容: 场中路2600弄社区卫生服务站	场中路2600弄112号	56436129	全科门诊、中医、预防保健、康复	周一 上午8:00-11:15，下午13:30-15:30（夏令时为14:00-15:30）...
+2025-03-17 16:56:26,118 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4742
+2025-03-17 16:56:26,118 - root - INFO - tree_retriever.py:210 - 节点内容: 3、特色诊疗科室：帕金森病专病门诊 中心康复科是上海市首批示范性社区康复中心 位于三楼的康复综合治疗区，涵盖了康复医学科门诊、康复功能评定室、物理治疗(PT)室、作业治疗(OT)室、语言吞咽治疗(ST...
+2025-03-17 16:56:26,118 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4478
+2025-03-17 16:56:26,119 - root - INFO - tree_retriever.py:210 - 节点内容: 中心为上海市康复医学会社区康复实训基地，是上海市首批示范性社区康复中心 中心的院训为“团结、敬业、仁爱、奉献”，为社区居民提供基本医疗和公共卫生等服务 1、中心外观照片 2、门诊便民服务中心 3、中心...
+2025-03-17 16:56:26,119 - root - INFO - tree_retriever.py:209 - 检索到节点 - 相似度得分: 0.4428
+2025-03-17 16:56:26,119 - root - INFO - tree_retriever.py:210 - 节点内容: 擅长诊疗服务内容：擅长社区常见病、多发病的诊治，尤其擅长神经性耳鸣耳聋、慢性咽炎、变应性鼻炎以及白内障、青光眼的诊断和治疗 联系电话：18917120764 服务时间：中心门诊时间（含计免儿保）：上午...
+2025-03-17 16:56:26,119 - root - INFO - raptor_module.py:215 - 重排序功能已启用，开始处理检索结果
