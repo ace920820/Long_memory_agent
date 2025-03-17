@@ -1,11 +1,20 @@
 import os
-import time
 import logging
-from typing import Dict, List
+import json
+import time
+from typing import Dict, List, Optional, Union
+
+# 导入知识库存储
 from knowledge_base.storage import DocumentStorage
 
+# 导入 Raptor 相关组件
+from raptor.RetrievalAugmentation import RetrievalAugmentation
+from raptor.tree_retriever import TreeRetriever
+from utils.raptor_config_manager import RaptorConfigManager
+from utils import configure_logging
+
 # 配置日志记录
-logging.basicConfig(level=logging.INFO)
+configure_logging(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 # 降低Numba的日志级别
 logging.getLogger('numba').setLevel(logging.WARNING)
@@ -13,13 +22,6 @@ logging.getLogger('numba').setLevel(logging.WARNING)
 logging.getLogger('umap').setLevel(logging.WARNING)
 logging.getLogger('httpcore').setLevel(logging.WARNING)
 logging.getLogger('httpx').setLevel(logging.WARNING)
-
-# 导入配置管理器
-try:
-    from utils.raptor_config_manager import RaptorConfigManager
-except ImportError:
-    logger.warning("无法导入RaptorConfigManager，将使用默认配置")
-    RaptorConfigManager = None
 
 class RaptorModule:
     """
@@ -42,12 +44,22 @@ class RaptorModule:
             
             # 尝试使用配置管理器
             ra_config = None
+            self.reranker = None
+            self.reranker_tokenizer = None
+            self.config_manager = None
+            
             if use_config_manager and RaptorConfigManager is not None:
                 try:
                     # 初始化配置管理器
-                    config_manager = RaptorConfigManager()
+                    self.config_manager = RaptorConfigManager()
                     # 获取RA配置
-                    ra_config = config_manager.get_ra_config()
+                    ra_config = self.config_manager.get_ra_config()
+                    # 尝试加载重排序模型
+                    logging.info("尝试加载重排序模型")
+                    self.reranker = self.config_manager.get_reranker()
+                    self.reranker_tokenizer = self.config_manager.get_reranker_tokenizer()
+                    if self.reranker is not None:
+                        logger.info("成功加载重排序模型")
                     logger.info("成功使用配置管理器初始化RAPTOR配置")
                 except Exception as e:
                     logger.warning(f"使用配置管理器失败: {str(e)}，将使用默认配置")
@@ -141,27 +153,266 @@ class RaptorModule:
             logger.error(error_msg)
             return {"status": "error", "message": error_msg}
 
-    def search(self, query: str, top_k: int = 5) -> List[Dict]:
+    def search(self, query: str, top_k: int = 5, use_rerank: bool = None) -> Union[Dict, str, List]:
         """搜索相关文档，使用两阶段检索策略
 
         Args:
             query: 查询文本
-            top_k: 返回的最大结果数量
+            top_k: 返回的最大结果数量，默认为5
+            use_rerank: 是否使用重排序，None时使用配置文件设置
 
         Returns:
-            检索到的文档列表，按相关度排序
+            Dict or str or List: 检索到的文档和相关信息
         """
+        logging.info(f"开始执行查询: '{query}'，top_k={top_k}")
+        
+        # 查询参数
         start_layer: int = None
         num_layers: int = None
         max_tokens: int = 3500
         collapse_tree: bool = True
+        
+        # 获取全局重排序配置
+        from utils.raptor_config_manager import RaptorConfigManager
+        config_manager = RaptorConfigManager()
+        
+        # 如果没有指定是否重排序，则使用全局配置
+        if use_rerank is None:
+            rerank_enabled = config_manager.is_rerank_enabled()
+            logging.debug(f"使用全局配置的重排序设置: {rerank_enabled}")
+        else:
+            rerank_enabled = use_rerank
+            logging.debug(f"使用传入的重排序设置: {rerank_enabled}")
+        
+        # 如果启用重排序，则预加载重排序模型
+        if rerank_enabled:
+            if not hasattr(self, 'reranker') or self.reranker is None:
+                logging.info("加载重排序模型和分词器")
+                self.reranker = config_manager.get_reranker()
+                self.reranker_tokenizer = config_manager.get_reranker_tokenizer()
+        
         try:
-           context, layer_information = self.RA.retrieve(
-               query, start_layer, num_layers, top_k, max_tokens, collapse_tree, True)
-           return context
+            # 检查树是否为空
+            if self.RA.tree is None:
+                logging.warning("检索树为空，返回空列表")
+                return []
+            
+            # 检查检索器是否正常初始化
+            if self.RA.retriever is None:
+                logging.warning("检索器未初始化，无法执行检索，返回空列表")
+                return []
+            
+            # 执行实际查询
+            logging.debug(f"调用RetrievalAugmentation执行检索，top_k={top_k}")
+            context, layer_information = self.RA.retrieve(
+                query, start_layer, num_layers, top_k, max_tokens, collapse_tree, True
+            )
+            
+            logging.debug(f"检索结果类型: {type(context).__name__}")
+            
+            # 如果启用重排序且结果不为空，则进行重排序
+            if rerank_enabled:
+                logging.info("重排序功能已启用，开始处理检索结果")
+                
+                # 处理字典格式的结果
+                if isinstance(context, dict) and 'context' in context and isinstance(context['context'], list) and len(context['context']) > 0:
+                    # 获取上下文文本列表
+                    node_texts = context['context']
+                    logging.debug(f"处理字典格式的检索结果，包含 {len(node_texts)} 个文本段")
+                    
+                    # 使用自定义的距离计算函数进行重排序
+                    try:
+                        # 使用TreeRetriever的嵌入模型获取嵌入向量
+                        logging.debug("开始获取查询嵌入向量")
+                        query_embedding = self.RA.retriever.create_embedding(query)
+                        
+                        # 提取所有文本块的嵌入向量
+                        logging.debug(f"开始获取 {len(node_texts)} 个文本段的嵌入向量")
+                        node_embeddings = []
+                        for i, text in enumerate(node_texts):
+                            try:
+                                node_embeddings.append(self.RA.retriever.create_embedding(text))
+                                if (i+1) % 10 == 0:
+                                    logging.debug(f"已处理 {i+1}/{len(node_texts)} 个文本段的嵌入向量")
+                            except Exception as e:
+                                logging.error(f"获取文本嵌入向量时发生错误 (文本段 {i+1}): {str(e)}")
+                                node_embeddings.append(None)
+                        
+                        # 使用重排序功能计算距离和重排序分数
+                        logging.debug("开始使用distances_from_embeddings函数计算嵌入距离和重排序得分")
+                        from raptor.utils import distances_from_embeddings
+                        start_time = time.time()
+                        _, rerank_scores = distances_from_embeddings(
+                            query_embedding=query_embedding,
+                            embeddings=node_embeddings,
+                            rerank=True,
+                            query_text=query,
+                            node_texts=node_texts,
+                            reranker=self.reranker,
+                            reranker_tokenizer=self.reranker_tokenizer
+                        )
+                        elapsed_time = time.time() - start_time
+                        logging.debug(f"distances_from_embeddings函数执行完成，耗时 {elapsed_time:.2f} 秒")
+                        
+                        # 将文本和重排序分数结合
+                        combined = list(zip(node_texts, rerank_scores))
+                        # 按重排序分数排序（降序）
+                        sorted_results = sorted(combined, key=lambda x: x[1], reverse=True)
+                        
+                        # 记录排序前后的变化
+                        if len(sorted_results) > 1:
+                            logging.debug("重排序前后的变化 (仅显示前5项):")
+                            for i, (text, score) in enumerate(sorted_results[:min(5, len(sorted_results))]):
+                                orig_idx = node_texts.index(text)
+                                logging.debug(f"  现排名 {i+1}：原排名 {orig_idx+1}，得分 {score:.4f}")
+                        
+                        # 更新上下文
+                        context['context'] = [item[0] for item in sorted_results]
+                        # 记录重排序分数
+                        context['rerank_scores'] = [item[1] for item in sorted_results]
+                        logging.info(f"重排序完成，重新排序了 {len(sorted_results)} 个结果")
+                    except Exception as e:
+                        logging.error(f"重排序过程中发生错误: {str(e)}")
+                        # 发生错误时保持原始结果不变
+                
+                # 处理字符串格式的结果（纯文本）
+                elif isinstance(context, str) and context.strip():
+                    # 分割文本成段落
+                    paragraphs = [p.strip() for p in context.split("\n\n") if p.strip()]
+                    if paragraphs:
+                        logging.debug(f"处理字符串格式的检索结果，将其分割为 {len(paragraphs)} 个段落")
+                        
+                        # 获取查询嵌入向量
+                        try:
+                            # 使用TreeRetriever的嵌入模型获取嵌入向量
+                            logging.debug("开始获取查询嵌入向量")
+                            query_embedding = self.RA.retriever.create_embedding(query)
+                            
+                            # 提取所有段落的嵌入向量
+                            logging.debug(f"开始获取 {len(paragraphs)} 个段落的嵌入向量")
+                            paragraph_embeddings = []
+                            for i, p in enumerate(paragraphs):
+                                try:
+                                    paragraph_embeddings.append(self.RA.retriever.create_embedding(p))
+                                    if (i+1) % 10 == 0:
+                                        logging.debug(f"已处理 {i+1}/{len(paragraphs)} 个段落的嵌入向量")
+                                except Exception as e:
+                                    logging.error(f"获取段落嵌入向量时发生错误 (段落 {i+1}): {str(e)}")
+                                    paragraph_embeddings.append(None)
+                            
+                            # 使用重排序功能计算距离和重排序分数
+                            logging.debug("开始使用distances_from_embeddings函数计算嵌入距离和重排序得分")
+                            from raptor.utils import distances_from_embeddings
+                            start_time = time.time()
+                            _, rerank_scores = distances_from_embeddings(
+                                query_embedding=query_embedding,
+                                embeddings=paragraph_embeddings,
+                                rerank=True,
+                                query_text=query,
+                                node_texts=paragraphs,
+                                reranker=self.reranker,
+                                reranker_tokenizer=self.reranker_tokenizer
+                            )
+                            elapsed_time = time.time() - start_time
+                            logging.debug(f"distances_from_embeddings函数执行完成，耗时 {elapsed_time:.2f} 秒")
+                            
+                            # 将段落和重排序分数结合
+                            combined = list(zip(paragraphs, rerank_scores))
+                            # 按重排序分数排序（降序）
+                            sorted_results = sorted(combined, key=lambda x: x[1], reverse=True)
+                            
+                            # 记录排序前后的变化
+                            if len(sorted_results) > 1:
+                                logging.debug("重排序前后的变化 (仅显示前5项):")
+                                for i, (text, score) in enumerate(sorted_results[:min(5, len(sorted_results))]):
+                                    orig_idx = paragraphs.index(text)
+                                    logging.debug(f"  现排名 {i+1}：原排名 {orig_idx+1}，得分 {score:.4f}")
+                            
+                            # 返回排序后的文本，用双换行符连接
+                            context = "\n\n".join([item[0] for item in sorted_results])
+                            logging.info(f"重排序完成，重新排序了 {len(sorted_results)} 个段落")
+                        except Exception as e:
+                            logging.error(f"处理段落时发生错误: {str(e)}")
+                            # 如果处理失败，保持原始文本不变
+                    else:
+                        logging.warning("无法对文本进行分段，跳过重排序")
+                
+                # 处理列表格式的结果
+                elif isinstance(context, list) and len(context) > 0:
+                    logging.debug(f"处理列表格式的检索结果，包含 {len(context)} 个项目")
+                    if all(isinstance(item, str) for item in context):
+                        try:
+                            # 获取查询嵌入向量
+                            logging.debug("开始获取查询嵌入向量")
+                            query_embedding = self.RA.retriever.create_embedding(query)
+                            
+                            # 提取所有项目的嵌入向量
+                            logging.debug(f"开始获取 {len(context)} 个项目的嵌入向量")
+                            item_embeddings = []
+                            for i, item in enumerate(context):
+                                try:
+                                    item_embeddings.append(self.RA.retriever.create_embedding(item))
+                                    if (i+1) % 10 == 0:
+                                        logging.debug(f"已处理 {i+1}/{len(context)} 个项目的嵌入向量")
+                                except Exception as e:
+                                    logging.error(f"获取项目嵌入向量时发生错误 (项目 {i+1}): {str(e)}")
+                                    item_embeddings.append(None)
+                            
+                            # 使用重排序功能计算距离和重排序分数
+                            logging.debug("开始使用distances_from_embeddings函数计算嵌入距离和重排序得分")
+                            from raptor.utils import distances_from_embeddings
+                            start_time = time.time()
+                            _, rerank_scores = distances_from_embeddings(
+                                query_embedding=query_embedding,
+                                embeddings=item_embeddings,
+                                rerank=True,
+                                query_text=query,
+                                node_texts=context,
+                                reranker=self.reranker,
+                                reranker_tokenizer=self.reranker_tokenizer
+                            )
+                            elapsed_time = time.time() - start_time
+                            logging.debug(f"distances_from_embeddings函数执行完成，耗时 {elapsed_time:.2f} 秒")
+                            
+                            # 将项目和重排序分数结合
+                            combined = list(zip(context, rerank_scores))
+                            # 按重排序分数排序（降序）
+                            sorted_results = sorted(combined, key=lambda x: x[1], reverse=True)
+                            
+                            # 记录排序前后的变化
+                            if len(sorted_results) > 1:
+                                logging.debug("重排序前后的变化 (仅显示前5项):")
+                                for i, (text, score) in enumerate(sorted_results[:min(5, len(sorted_results))]):
+                                    orig_idx = context.index(text)
+                                    logging.debug(f"  现排名 {i+1}：原排名 {orig_idx+1}，得分 {score:.4f}")
+                            
+                            # 返回排序后的列表
+                            context = [item[0] for item in sorted_results]
+                            logging.info(f"重排序完成，重新排序了 {len(sorted_results)} 个项目")
+                        except Exception as e:
+                            logging.error(f"处理列表时发生错误: {str(e)}")
+                            # 如果处理失败，保持原始列表不变
+                    else:
+                        logging.warning("列表中包含非字符串项目，跳过重排序")
+            
+            # 返回最终结果
+            if isinstance(context, dict) and 'context' in context:
+                # 如果是字典格式，转换为字符串以与原有接口兼容
+                if isinstance(context['context'], list):
+                    result = "\n\n".join(context['context'])
+                    logging.info(f"查询完成，返回 {len(context['context'])} 个结果（已转换为字符串格式）")
+                    return result
+                return context
+            else:
+                logging.info(f"查询完成，返回结果类型: {type(context).__name__}")
+                return context
+            
         except Exception as e:
-            logging.error(f"搜索过程中出错: {str(e)}")
-            return []
+            error_msg = f"执行查询时发生错误: {str(e)}"
+            logging.error(error_msg)
+            import traceback
+            logging.error(traceback.format_exc())
+            return []  # 发生错误时返回空列表，与原接口保持一致
 
     def generate_rag_response(self, query: str, llm_model, context=None, role_prompt=None):
         """生成带有检索增强的响应"""

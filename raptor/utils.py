@@ -1,14 +1,16 @@
 import logging
 import re
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Optional, Union, Tuple
 
 import numpy as np
 import tiktoken
 from scipy import spatial
+import torch
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 from .tree_structures import Node
 
-logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
+logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.DEBUG)
 
 
 def reverse_mapping(layer_to_nodes: Dict[int, List[Node]]) -> Dict[Node, int]:
@@ -116,7 +118,7 @@ def recursive_split_text(
     Returns:
         List[str]: 文本块列表。
     """
-    logging.info(f"开始递归切分文本，文本长度：{len(text)}，最大token数：{max_tokens}，重叠token数：{overlap}")
+    logging.debug(f"开始递归切分文本，文本长度：{len(text)}，最大token数：{max_tokens}，重叠token数：{overlap}")
     
     # 定义递归切分函数
     def _recursive_split(text_segment, delimiters_idx=0):
@@ -163,7 +165,7 @@ def recursive_split_text(
         
         # 如果当前分隔符无法有效切分文本（只得到一个段落），尝试下一级分隔符
         if len(full_segments) <= 1:
-            logging.info(f"使用分隔符 {current_delimiters} 无法有效切分文本，尝试下一级分隔符")
+            logging.debug(f"使用分隔符 {current_delimiters} 无法有效切分文本，尝试下一级分隔符")
             return _recursive_split(text_segment, delimiters_idx + 1)
         
         # 处理切分后的段落
@@ -180,7 +182,7 @@ def recursive_split_text(
             
             # 如果单个段落超过最大token数，递归切分
             if segment_tokens > max_tokens:
-                logging.info(f"单个段落token数 ({segment_tokens}) 超过最大限制 ({max_tokens})，递归切分此段落")
+                logging.debug(f"单个段落token数 ({segment_tokens}) 超过最大限制 ({max_tokens})，递归切分此段落")
                 sub_chunks = _recursive_split(segment, delimiters_idx + 1)
                 result_chunks.extend(sub_chunks)
             
@@ -221,7 +223,7 @@ def recursive_split_text(
     
     # 开始递归切分
     chunks = _recursive_split(text)
-    logging.info(f"递归切分完成，共生成 {len(chunks)} 个文本块")
+    logging.debug(f"递归切分完成，共生成 {len(chunks)} 个文本块")
     return chunks
 
 
@@ -229,36 +231,156 @@ def distances_from_embeddings(
     query_embedding: List[float],
     embeddings: List[List[float]],
     distance_metric: str = "cosine",
-) -> List[float]:
+    rerank: bool = False,
+    query_text: Optional[str] = None,
+    node_texts: Optional[List[str]] = None,
+    reranker = None,
+    reranker_tokenizer = None,
+) -> Union[List[float], Tuple[List[float], List[float]]]:
     """
-    Calculates the distances between a query embedding and a list of embeddings.
+    计算查询嵌入与文档嵌入之间的距离
 
     Args:
-        query_embedding (List[float]): The query embedding.
-        embeddings (List[List[float]]): A list of embeddings to compare against the query embedding.
-        distance_metric (str, optional): The distance metric to use for calculation. Defaults to 'cosine'.
+        query_embedding: 查询文本的嵌入向量
+        embeddings: 文档嵌入向量列表
+        distance_metric: 距离度量方式，支持 'cosine', 'L1', 'L2', 'Linf'
+        rerank: 是否使用重排序
+        query_text: 查询文本，仅当 rerank=True 时使用
+        node_texts: 节点文本列表，仅当 rerank=True 时使用
+        reranker: 重排序模型，如果为None且rerank=True，则加载全局配置中的模型
+        reranker_tokenizer: 重排序模型的分词器，如果为None且rerank=True，则加载全局配置中的分词器
 
     Returns:
-        List[float]: The calculated distances between the query embedding and the list of embeddings.
+        距离列表或同时包含距离列表和重排序分数的元组
     """
-    distance_metrics = {
-        "cosine": spatial.distance.cosine,
-        "L1": spatial.distance.cityblock,
-        "L2": spatial.distance.euclidean,
-        "Linf": spatial.distance.chebyshev,
-    }
+    try:
+        # 检查嵌入向量是否有效
+        if query_embedding is None:
+            logging.error("查询嵌入向量为None，无法计算距离")
+            return [1.0] * len(embeddings)  # 返回最大距离
+            
+        # 过滤掉None值的嵌入向量，同时记录对应的索引
+        valid_embeddings = []
+        valid_indices = []
+        for i, emb in enumerate(embeddings):
+            if emb is not None:
+                valid_embeddings.append(emb)
+                valid_indices.append(i)
+                
+        if not valid_embeddings:
+            logging.error("没有有效的嵌入向量，无法计算距离")
+            return [1.0] * len(embeddings)  # 返回最大距离
+        
+        logging.debug(f"有效嵌入向量数量: {len(valid_embeddings)}/{len(embeddings)}")
+        
+        # 计算有效嵌入向量的距离
+        distances = np.ones(len(embeddings))  # 预设为最大距离
 
-    if distance_metric not in distance_metrics:
-        raise ValueError(
-            f"Unsupported distance metric '{distance_metric}'. Supported metrics are: {list(distance_metrics.keys())}"
-        )
+        if distance_metric == "cosine":
+            query_embedding = np.array(query_embedding)
+            query_embedding_norm = np.linalg.norm(query_embedding)
+            
+            for i, idx in enumerate(valid_indices):
+                embedding = np.array(valid_embeddings[i])
+                embedding_norm = np.linalg.norm(embedding)
+                
+                # 避免除零错误
+                if query_embedding_norm == 0 or embedding_norm == 0:
+                    distances[idx] = 1.0
+                    continue
+                
+                # 点积除以模长的乘积，得到余弦相似度
+                cosine_similarity = np.dot(query_embedding, embedding) / (query_embedding_norm * embedding_norm)
+                
+                # 余弦距离 = 1 - 余弦相似度
+                distances[idx] = 1 - cosine_similarity
 
-    distances = [
-        distance_metrics[distance_metric](query_embedding, embedding)
-        for embedding in embeddings
-    ]
+        elif distance_metric == "L1":
+            for i, idx in enumerate(valid_indices):
+                distances[idx] = np.sum(np.abs(np.array(query_embedding) - np.array(valid_embeddings[i])))
 
-    return distances
+        elif distance_metric == "L2":
+            for i, idx in enumerate(valid_indices):
+                distances[idx] = np.sqrt(np.sum((np.array(query_embedding) - np.array(valid_embeddings[i])) ** 2))
+
+        elif distance_metric == "Linf":
+            for i, idx in enumerate(valid_indices):
+                distances[idx] = np.max(np.abs(np.array(query_embedding) - np.array(valid_embeddings[i])))
+
+        else:
+            raise ValueError(f"不支持的距离度量方式: {distance_metric}")
+
+        # 如果启用重排序且提供了必要的参数
+        if rerank and query_text and node_texts and len(node_texts) > 0:
+            rerank_scores = []
+            try:
+                # 如果没有提供reranker或tokenizer，则加载全局配置中的模型
+                if reranker is None or reranker_tokenizer is None:
+                    from utils.raptor_config_manager import RaptorConfigManager
+                    config_manager = RaptorConfigManager()
+                    reranker = config_manager.get_reranker()
+                    reranker_tokenizer = config_manager.get_reranker_tokenizer()
+                    logging.debug("从全局配置加载重排序模型")
+                    
+                logging.debug(f"开始对 {len(node_texts)} 个文本段进行重排序")
+                
+                # 创建查询-文档对
+                pairs = [[query_text, text] for text in node_texts]
+                
+                # 使用分词器处理输入
+                logging.debug("使用分词器处理查询-文档对")
+                features = reranker_tokenizer(
+                    pairs,
+                    padding=True,
+                    truncation=True,
+                    return_tensors='pt',
+                    max_length=512
+                )
+                
+                import torch
+                # 使用模型预测得分
+                logging.debug("使用重排序模型预测得分")
+                with torch.no_grad():
+                    scores = reranker(**features).logits.view(-1,).float()
+                
+                # 将PyTorch张量转换为Python列表
+                rerank_scores = scores.tolist()
+                
+                # 记录重排序前后的排名变化
+                original_ranks = list(range(len(distances)))
+                sorted_by_distance = sorted(zip(original_ranks, distances), key=lambda x: x[1])
+                sorted_by_rerank = sorted(zip(original_ranks, rerank_scores), key=lambda x: x[1], reverse=True)
+                
+                distance_ranks = [rank for rank, _ in sorted_by_distance]
+                rerank_ranks = [rank for rank, _ in sorted_by_rerank]
+                
+                logging.debug(f"重排序完成。排名变化较大的项 (原始排名 -> 重排序后排名):")
+                rank_changes = []
+                for i, (orig_rank, new_rank) in enumerate(zip(distance_ranks[:5], rerank_ranks[:5])):
+                    rank_change = distance_ranks.index(new_rank) - i
+                    if abs(rank_change) > 0:
+                        rank_changes.append(f"{distance_ranks.index(new_rank)+1} -> {i+1}")
+                
+                if rank_changes:
+                    logging.debug(", ".join(rank_changes))
+                    
+                logging.debug(f"重排序完成，获得 {len(rerank_scores)} 个重排序分数")
+                
+                # 返回原始距离和重排序分数
+                return distances.tolist(), rerank_scores
+                
+            except Exception as e:
+                logging.error(f"重排序过程中发生错误: {str(e)}")
+                # 发生错误时仅返回原始距离
+                return distances.tolist()
+        
+        # 如果不使用重排序，仅返回原始距离
+        return distances.tolist()
+        
+    except Exception as e:
+        logging.error(f"计算距离时发生错误: {str(e)}")
+        # 发生错误时返回全为1的距离列表（表示最大距离）
+        return [1.0] * len(embeddings)
 
 
 def get_node_list(node_dict: Dict[int, Node]) -> List[Node]:
