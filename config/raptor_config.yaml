@@ -1,0 +1,26 @@
+# RAPTOR配置
+raptor:
+  # 文本分割参数
+  chunk_size: 300        # 文本块大小（max_tokens）
+  overlap: 0            # 文本块重叠大小
+  
+  # 树结构参数
+  num_layers: 5          # 树的层数
+  threshold: 0.5         # 相似度阈值
+  top_k: 5               # 检索时返回的最大结果数
+  selection_mode: "top_k" # 检索模式，可选 "top_k" 或 "threshold"
+  
+  # 嵌入模型参数
+  embedding:
+    # 模型类型: "openai" 或 "local"
+    model_type: "openai"
+    
+    # OpenAI嵌入模型配置，当model_type为"openai"时使用
+    openai:
+      model: "text-embedding-ada-002"
+      base_url: "https://api.gptsapi.net/v1"  # OpenAI API基础URL
+    
+    # 本地嵌入模型配置，当model_type为"local"时使用
+    local:
+      model_path: "D:/models/bge-small-zh-v1.5"  # 本地模型路径
+      model_name: "bge-small-zh-v1.5"            # 模型名称

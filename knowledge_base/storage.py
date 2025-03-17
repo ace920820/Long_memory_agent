@@ -24,24 +24,39 @@ logger = logging.getLogger(__name__)
 class DocumentStorage:
     """文档存储类 - 负责文档的存储和树结构管理"""
     
-    def __init__(self, storage_dir: str = "data/RAtree/files", tree_save_path: str = "data/RAtree/default_tree"):
+    def __init__(self, storage_dir: str = "data/RAtree/files", tree_save_path: str = "data/RAtree/default_tree", ra_config=None):
         """
         初始化文档存储类
         
         Args:
-            storage_dir: 文档存储目录
-            tree_save_path: RA树结构保存路径
+            storage_dir (str): 文档存储目录
+            tree_save_path (str): RA树结构保存路径
+            ra_config: RAPTOR配置对象，如果为None则使用默认配置
         """
         self.storage_dir = storage_dir
         self.metadata_file = os.path.join(storage_dir, "metadata.json")
         self._ensure_storage_exists()
         self.metadata = self._load_metadata()
         
+        # 记录配置信息
+        logger.info(f"初始化文档存储，存储目录: {storage_dir}, RA保存路径: {tree_save_path}")
+        if ra_config:
+            logger.info("使用自定义RAPTOR配置")
+        
         # 初始化RA
         self.tree_save_path = tree_save_path
         os.makedirs(os.path.dirname(tree_save_path), exist_ok=True)
-        self.RA = RetrievalAugmentation(tree=tree_save_path)
-        logger.info(f"初始化文档存储，存储目录: {storage_dir}, RA保存路径: {tree_save_path}")
+        
+        # 检查是否存在保存的树结构
+        tree_exists = os.path.exists(tree_save_path)
+        if tree_exists:
+            logger.info(f"加载现有树结构: {tree_save_path}")
+            self.RA = RetrievalAugmentation(config=ra_config, tree=tree_save_path)
+        else:
+            logger.info(f"创建新的树结构")
+            self.RA = RetrievalAugmentation(config=ra_config)
+            
+        logger.info(f"文档存储初始化完成，树结构{'已加载' if tree_exists else '已创建'}")
     
     def _ensure_storage_exists(self):
         """确保存储目录和元数据文件存在"""

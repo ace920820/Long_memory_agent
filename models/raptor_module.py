@@ -14,24 +14,49 @@ logging.getLogger('umap').setLevel(logging.WARNING)
 logging.getLogger('httpcore').setLevel(logging.WARNING)
 logging.getLogger('httpx').setLevel(logging.WARNING)
 
+# 导入配置管理器
+try:
+    from utils.raptor_config_manager import RaptorConfigManager
+except ImportError:
+    logger.warning("无法导入RaptorConfigManager，将使用默认配置")
+    RaptorConfigManager = None
+
 class RaptorModule:
     """
     基于Raptor的检索增强模块
     用于文档的存储、检索和问答
     """
     
-    def __init__(self, data_dir: str = "data/RAtree",tree_save_filename = 'document_tree'):
+    def __init__(self, data_dir: str = "data/RAtree", tree_save_filename = 'document_tree', use_config_manager: bool = True):
         """
         初始化RaptorModule
 
         Args:
-            data_dir: Raptor数据存储目录，默认为 "data/RAtree"
+            data_dir (str): Raptor数据存储目录，默认为 "data/RAtree"
+            tree_save_filename (str): 树结构保存的文件名，默认为 'document_tree'
+            use_config_manager (bool): 是否使用配置管理器，默认为True
         """
         try:
+            # 记录配置信息
+            logger.info(f"初始化RaptorModule: data_dir={data_dir}, tree_save_filename={tree_save_filename}, use_config_manager={use_config_manager}")
+            
+            # 尝试使用配置管理器
+            ra_config = None
+            if use_config_manager and RaptorConfigManager is not None:
+                try:
+                    # 初始化配置管理器
+                    config_manager = RaptorConfigManager()
+                    # 获取RA配置
+                    ra_config = config_manager.get_ra_config()
+                    logger.info("成功使用配置管理器初始化RAPTOR配置")
+                except Exception as e:
+                    logger.warning(f"使用配置管理器失败: {str(e)}，将使用默认配置")
+            
             # 初始化DocumentStorage实例
             self.doc_storage = DocumentStorage(
                 storage_dir=os.path.join(data_dir, "files"),
-                tree_save_path=os.path.join(data_dir, tree_save_filename)
+                tree_save_path=os.path.join(data_dir, tree_save_filename),
+                ra_config=ra_config
             )
             # 获取DocumentStorage中的RA实例
             self.RA = self.doc_storage.RA
