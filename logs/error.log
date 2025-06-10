@@ -216,3 +216,8 @@ AttributeError: 'ClusterTreeBuilder' object has no attribute 'tree'
 2025-03-17 16:13:41,718 - root - ERROR - agent.py:142 - Error in chat: 'list' object has no attribute 'split'
 2025-03-17 16:15:41,393 - root - ERROR - utils.py:271 - 没有有效的嵌入向量，无法计算距离
 2025-03-17 16:16:54,864 - knowledge_base.storage - ERROR - storage.py:214 - 获取树结构失败: 20
+2025-03-18 14:13:06,691 - root - ERROR - utils.py:271 - 没有有效的嵌入向量，无法计算距离
+2025-03-24 19:05:47,309 - root - ERROR - utils.py:271 - 没有有效的嵌入向量，无法计算距离
+2025-03-25 21:54:40,572 - root - ERROR - utils.py:271 - 没有有效的嵌入向量，无法计算距离
+2025-03-25 22:02:18,332 - root - ERROR - utils.py:271 - 没有有效的嵌入向量，无法计算距离
+2025-04-17 13:23:14,280 - root - ERROR - utils.py:271 - 没有有效的嵌入向量，无法计算距离

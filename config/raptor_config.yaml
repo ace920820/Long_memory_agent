@@ -13,7 +13,7 @@ raptor:
   # 嵌入模型参数
   embedding:
     # 模型类型: "openai" 或 "local"
-    model_type: "local"
+    model_type: "openai"
     
     # OpenAI嵌入模型配置，当model_type为"openai"时使用
     openai:

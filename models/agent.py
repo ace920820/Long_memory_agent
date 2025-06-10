@@ -82,7 +82,7 @@ class ChatAgent:
             # 1. 获取知识库相关文档
             relevant_docs = []
             if self.rag_module:
-                relevant_docs = self.rag_module.search(user_input, top_k=10).split('\n\n')
+                relevant_docs = self.rag_module.search(user_input, top_k=10, use_rerank=True).split('\n\n')
                 logging.debug(f"Retrieved documents: {relevant_docs}")
 
             # 2. 获取相关记忆
